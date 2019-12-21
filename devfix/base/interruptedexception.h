@@ -2,7 +2,7 @@
 
 #include "exception.h"
 
-namespace devfix::util
+namespace devfix::base
 {
 
 /**
@@ -28,4 +28,4 @@ struct interruptedexception : public exception
   {}
 };
 
-} // namespace devfix::util
+} // namespace devfix::base

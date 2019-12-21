@@ -18,7 +18,7 @@ PLATFORM_UNSUPPORTED;
 namespace devfix::net
 {
 
-inetaddress inetaddress::create_by_host(family family, port_t port, const std::string &host)
+inetaddress inetaddress::create_by_host(const std::string &host, port_t port, family family)
 {
 
 #if PLATFORM_LINUX == 1
@@ -31,9 +31,9 @@ inetaddress inetaddress::create_by_host(family family, port_t port, const std::s
 
   return inetaddress
       {
-          family,
+          *reinterpret_cast<union address *>(hostent->h_addr),
           port,
-          *reinterpret_cast<union address *>(hostent->h_addr)
+          family
       };
 #endif
 

@@ -34,11 +34,11 @@ struct inetaddress
   };
 
   // keep variables public
-  family family_;
-  port_t port_;
   address address_;
+  port_t port_;
+  family family_;
 
-  [[nodiscard]] static inetaddress create_by_host(family family, port_t port, const std::string &host);
+  [[nodiscard]] static inetaddress create_by_host(const std::string &host, port_t port, family family = family::IPV4);
 
   [[nodiscard]] std::string get_host() const noexcept;
 

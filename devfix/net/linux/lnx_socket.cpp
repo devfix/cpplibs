@@ -22,7 +22,7 @@
 namespace devfix::net::lnx
 {
 
-lnx_socket::lnx_socket(devfix::net::inetaddress inetaddress) :
+lnx_socket::lnx_socket(const inetaddress &inetaddress) :
     remote_address_(inetaddress),
     local_address_()
 {
@@ -66,18 +66,17 @@ inetaddress lnx_socket::get_remote_address() const noexcept
 
 void lnx_socket::read(char *buf, std::size_t len)
 {
-  linux;
-  std::uint16_t time = 0;
+  timeout_t time = 0;
   while (len)
   {
     if (interrupted())
     {
-      throw util::interruptedexception(SOURCE_LINE);
+      throw base::interruptedexception(SOURCE_LINE);
     }
 
     if (time > timeout_)
     {
-      throw util::timeoutexception(SOURCE_LINE);
+      throw base::timeoutexception(SOURCE_LINE);
     }
 
     std::size_t n = std::min(out_buf_.size(), len);

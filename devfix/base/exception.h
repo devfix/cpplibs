@@ -8,7 +8,7 @@
 #include <string>
 #include "platform.h"
 
-namespace devfix::util
+namespace devfix::base
 {
 
 /*! Abstract exception base class. */
@@ -52,4 +52,4 @@ struct exception : public std::exception
 
 #define exception_guard(err, exception_class) exception_guard_m(err, exception_class, std::strerror(errno))
 
-} // namespace devfix::util
+} // namespace devfix::base

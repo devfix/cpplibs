@@ -1,5 +1,5 @@
 file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*.h")
 file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*.cpp")
-add_library(devfixbase ${HEADERS} ${SOURCES})
+add_library(devfixbase ${HEADERS} ${SOURCES} memory.h)
 set_target_properties(devfixbase PROPERTIES LINKER_LANGUAGE CXX)
 target_compile_options(devfixbase PRIVATE ${WARNINGS})

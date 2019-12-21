@@ -1,6 +1,6 @@
 file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*.h")
 file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*.cpp")
-add_library(devfixnet ${HEADERS} ${SOURCES})
+add_library(devfixnet ${HEADERS} ${SOURCES} netbuilder.cpp netbuilder.h)
 set_target_properties(devfixnet PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(devfixnet devfixbase)
 target_compile_options(devfixnet PRIVATE ${WARNINGS})

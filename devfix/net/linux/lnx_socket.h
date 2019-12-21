@@ -17,7 +17,7 @@ namespace devfix::net::lnx
 
 struct lnx_socket : public socket
 {
-  explicit lnx_socket(inetaddress inetaddress);
+  explicit lnx_socket(const inetaddress &inetaddress);
   ~lnx_socket() override;
 
   [[nodiscard]] inetaddress get_local_address() const noexcept override;

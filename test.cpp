@@ -7,22 +7,24 @@
 #include <iostream>
 #include "devfix/net/linux/lnx_socket.h"
 #include "devfix/base/interruptedexception.h"
+#include "devfix/net/netbuilder.h"
 
 using namespace devfix::net;
-using namespace devfix::util;
+using namespace devfix::base;
 
 int main()
 {
-  lnx::lnx_socket linuxsocket(inetaddress::create_by_host(inetaddress::family::IPV4, 20000, "localhost"));
+  auto socket = netbuilder::create_socket(inetaddress::create_by_host("localhost", 20000));
+
   std::thread thread(
-      [&linuxsocket]
+      [&socket]
       {
-        linuxsocket.set_out_buf_size(4);
+        socket->set_out_buf_size(4);
 
         char uff[8];
         try
         {
-          linuxsocket.read(uff, sizeof(uff));
+          socket->read(uff, sizeof(uff));
         } catch (interruptedexception &interruptedexception)
         {
           std::cout << "interrupted" << std::endl;
@@ -31,7 +33,7 @@ int main()
       });
 
   sleep(1);
-  linuxsocket.set_interrupted(true);
+  socket->set_interrupted(true);
 
   thread.join();
 }
