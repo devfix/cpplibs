@@ -16,6 +16,9 @@ int main()
 {
   auto socket = netbuilder::create_socket(inetaddress::create_by_host("localhost", 20000));
 
+  std::cout << "remote address: " << socket->get_remote_address().get_host() << ":" << socket->get_remote_address().port_ << std::endl;
+  std::cout << "local address:  " << socket->get_local_address().get_host() << ":" << socket->get_local_address().port_ << std::endl;
+
   std::thread thread(
       [&socket]
       {

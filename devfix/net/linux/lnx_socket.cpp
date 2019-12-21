@@ -29,21 +29,25 @@ lnx_socket::lnx_socket(const inetaddress &inetaddress) :
   int family = (remote_address_.family_ == inetaddress::family::IPV4) ? AF_INET : 0;
   exception_guard_m(!family, socketexception, "unsupported address family");
 
+  // create socket
   fd_ = ::socket(family, SOCK_STREAM, 0);
   exception_guard_m(fd_ < 0, socketexception, "create failed");
 
+  // connect socket to remote address
   struct sockaddr_in sockaddr_remote{};
   remote_address_.set_sockaddr(sockaddr_remote);
   int err = ::connect(fd_, reinterpret_cast<struct sockaddr *>(&sockaddr_remote), sizeof(sockaddr_remote));
   exception_guard_m(err, socketexception, "connect failed");
 
+  // get local address
   struct sockaddr_in sockaddr_local{};
   ::socklen_t sockaddr_local_length = sizeof(sockaddr_local);
   err = ::getsockname(fd_, reinterpret_cast<sockaddr *>(&sockaddr_local), &sockaddr_local_length);
   exception_guard_m(err, socketexception, "getsockname failed");
   local_address_.get_sockaddr(sockaddr_local);
 
-  _set_read_refresh();
+  // set socket timeout to enable non blocking mode
+  _set_read_blocking_time();
 }
 
 lnx_socket::~lnx_socket()
@@ -85,7 +89,7 @@ void lnx_socket::read(char *buf, std::size_t len)
     {
       if (errno == EAGAIN)
       {
-        time += DEFAULT_READ_REFRESH;
+        time += DEFAULT_READ_BLOCKING_TIME;
       } else
       {
         exception_guard(rc, socketexception);
@@ -191,14 +195,14 @@ std::size_t lnx_socket::get_in_buf_available() const noexcept
   return in_buf_idx_;
 }
 
-void lnx_socket::_set_read_refresh()
+void lnx_socket::_set_read_blocking_time()
 {
   // https://stackoverflow.com/a/2939145/10574851
   struct timeval tv{
-      DEFAULT_READ_REFRESH / 1000,
-      (DEFAULT_READ_REFRESH % 1000) * 1000
+      DEFAULT_READ_BLOCKING_TIME / 1000,
+      (DEFAULT_READ_BLOCKING_TIME % 1000) * 1000
   };
-  int err = setsockopt(fd_, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<char *>(&tv), sizeof tv);
+  int err = ::setsockopt(fd_, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<char *>(&tv), sizeof tv);
   exception_guard(err, socketexception);
 }
 

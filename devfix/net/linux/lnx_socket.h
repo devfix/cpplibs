@@ -57,7 +57,7 @@ struct lnx_socket : public socket
   std::vector<char> in_buf_ = std::vector<char>(DEFAULT_IN_BUF_SIZE);
   std::size_t in_buf_idx_ = 0;
 
-  void _set_read_refresh();
+  void _set_read_blocking_time();
 
   /**
    * ufftata
