@@ -17,6 +17,7 @@
 #include <unistd.h>
 #include <sys/ioctl.h>
 #include <sys/socket.h>
+#include <linux/tcp.h>
 #include <netinet/in.h>
 
 namespace devfix::net::lnx
@@ -83,8 +84,7 @@ void lnx_socket::read(char *buf, std::size_t len)
       throw base::timeoutexception(SOURCE_LINE);
     }
 
-    std::size_t n = std::min(out_buf_.size(), len);
-    ssize_t rc = ::read(fd_, buf, n);
+    ssize_t rc = ::read(fd_, buf, len);
     if (rc < 0)
     {
       if (errno == EAGAIN)
@@ -94,7 +94,7 @@ void lnx_socket::read(char *buf, std::size_t len)
       {
         exception_guard(rc, socketexception);
       }
-    } else if (rc > 0)
+    } else
     {
       len -= static_cast<std::size_t>(rc);
       buf += rc;
@@ -104,33 +104,33 @@ void lnx_socket::read(char *buf, std::size_t len)
 
 void lnx_socket::write(const char *buf, std::size_t len)
 {
-  while (len)
+  while(len)
   {
-    std::size_t n = std::min(get_out_buf_size() - out_buf_idx_, len);
-    std::memcpy(out_buf_.data() + out_buf_idx_, buf, n);
-    out_buf_idx_ += n;
-    buf += n;
-    len -= n;
-    if (out_buf_idx_ == get_out_buf_size())
-    {
-      flush();
-    }
+    ssize_t rc = ::write(fd_, buf, len);
+    exception_guard(rc < 0, socketexception);
+    len -= static_cast<std::size_t>(rc);
+    buf += rc;
   }
 }
 
 void lnx_socket::flush()
 {
-  if (out_buf_idx_)
-  {
-    ssize_t err = ::write(fd_, out_buf_.data(), out_buf_idx_);
-    out_buf_idx_ = 0;
-    exception_guard(err, socketexception);
-  }
+  // disable Nagle algorithm and re-enable it
+  int flag = 1;
+  int err = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
+  exception_guard(err, socketexception);
+
+  flag = 0;
+  err = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
+  exception_guard(err, socketexception);
+
 }
 
 std::size_t lnx_socket::available() const
 {
-  return _queue_available() + in_buf_idx_;
+  int n;
+  exception_guard(ioctl(fd_, FIONREAD, &n), socketexception);
+  return static_cast<std::size_t>(n);
 }
 
 void lnx_socket::close()
@@ -165,36 +165,6 @@ socket::timeout_t lnx_socket::get_timeout() const noexcept
   return timeout_;
 }
 
-void lnx_socket::set_out_buf_size(std::size_t size) noexcept
-{
-  out_buf_.resize(size);
-}
-
-std::size_t lnx_socket::get_out_buf_size() const noexcept
-{
-  return out_buf_.size();
-}
-
-std::size_t lnx_socket::get_out_buf_available() const noexcept
-{
-  return out_buf_idx_;
-}
-
-void lnx_socket::set_in_buf_size(std::size_t size) noexcept
-{
-  in_buf_.resize(size);
-}
-
-std::size_t lnx_socket::get_in_buf_size() const noexcept
-{
-  return in_buf_.size();
-}
-
-std::size_t lnx_socket::get_in_buf_available() const noexcept
-{
-  return in_buf_idx_;
-}
-
 void lnx_socket::_set_read_blocking_time()
 {
   // https://stackoverflow.com/a/2939145/10574851
@@ -204,13 +174,6 @@ void lnx_socket::_set_read_blocking_time()
   };
   int err = ::setsockopt(fd_, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<char *>(&tv), sizeof tv);
   exception_guard(err, socketexception);
-}
-
-std::size_t lnx_socket::_queue_available() const
-{
-  int n;
-  exception_guard(ioctl(fd_, FIONREAD, &n), socketexception);
-  return static_cast<std::size_t>(n);
 }
 
 } // namespace devfix::net::lnx

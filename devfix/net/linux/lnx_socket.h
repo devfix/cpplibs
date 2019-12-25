@@ -38,32 +38,14 @@ struct lnx_socket : public socket
   void set_timeout(timeout_t timeout) noexcept override;
   [[nodiscard]] timeout_t get_timeout() const noexcept override;
 
-  void set_out_buf_size(std::size_t size) noexcept override;
-  [[nodiscard]] std::size_t get_out_buf_size() const noexcept override;
-  [[nodiscard]] std::size_t get_out_buf_available() const noexcept override;
-
-  void set_in_buf_size(std::size_t size) noexcept override;
-  [[nodiscard]] std::size_t get_in_buf_size() const noexcept override;
-  [[nodiscard]] std::size_t get_in_buf_available() const noexcept override;
-
  private:
   int fd_ = -1;
   inetaddress remote_address_;
   inetaddress local_address_;
   std::atomic_bool interrupted_ = false;
   timeout_t timeout_ = DEFAULT_TIMEOUT;
-  std::vector<char> out_buf_ = std::vector<char>(DEFAULT_OUT_BUF_SIZE);
-  std::size_t out_buf_idx_ = 0;
-  std::vector<char> in_buf_ = std::vector<char>(DEFAULT_IN_BUF_SIZE);
-  std::size_t in_buf_idx_ = 0;
 
   void _set_read_blocking_time();
-
-  /**
-   * ufftata
-   * @return
-   */
-  [[nodiscard]] std::size_t _queue_available() const;
 };
 
 } // namespace devfix::net::lnx

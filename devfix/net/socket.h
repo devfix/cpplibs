@@ -20,8 +20,6 @@ namespace devfix::net
 struct socket
 {
   typedef std::uint32_t timeout_t;
-  static constexpr std::size_t DEFAULT_OUT_BUF_SIZE = 1024; //!< default buffer size in bytes
-  static constexpr std::size_t DEFAULT_IN_BUF_SIZE = 1024; //!< default buffer size in bytes
   static constexpr timeout_t DEFAULT_TIMEOUT = 3000; //!< default read timeout in milliseconds
   static constexpr timeout_t DEFAULT_READ_BLOCKING_TIME = 100; //!< default read timeout until refresh in milliseconds
 
@@ -55,14 +53,6 @@ struct socket
 
   virtual void set_timeout(timeout_t timeout) noexcept = 0;
   [[nodiscard]] virtual timeout_t get_timeout() const noexcept = 0;
-
-  virtual void set_out_buf_size(std::size_t size) noexcept = 0;
-  [[nodiscard]] virtual std::size_t get_out_buf_size() const noexcept = 0;
-  [[nodiscard]] virtual std::size_t get_out_buf_available() const noexcept = 0;
-
-  virtual void set_in_buf_size(std::size_t size) noexcept = 0;
-  [[nodiscard]] virtual std::size_t get_in_buf_size() const noexcept = 0;
-  [[nodiscard]] virtual std::size_t get_in_buf_available() const noexcept = 0;
 
 };
 

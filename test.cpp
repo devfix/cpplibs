@@ -22,8 +22,6 @@ int main()
   std::thread thread(
       [&socket]
       {
-        socket->set_out_buf_size(4);
-
         char uff[8];
         try
         {
