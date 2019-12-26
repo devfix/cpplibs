@@ -4,4 +4,4 @@ run ./configure
 make -C build
 
 ## Documentation
-available: [here](doc/html/)
+available: [here](https://devfix.github.io/cpplibs/html/index.html)
