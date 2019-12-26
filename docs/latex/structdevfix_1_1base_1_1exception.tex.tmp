@@ -1,0 +1,77 @@
+\hypertarget{structdevfix_1_1base_1_1exception}{}\section{devfix\+:\+:base\+:\+:exception Struct Reference}
+\label{structdevfix_1_1base_1_1exception}\index{devfix\+::base\+::exception@{devfix\+::base\+::exception}}
+
+
+{\ttfamily \#include $<$exception.\+h$>$}
+
+
+
+Inheritance diagram for devfix\+:\+:base\+:\+:exception\+:
+% FIG 0
+
+
+Collaboration diagram for devfix\+:\+:base\+:\+:exception\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdevfix_1_1base_1_1exception_a35a6e0dfce2f54db998b8fc01514df90}{exception} ()=delete
+\item 
+\hyperlink{structdevfix_1_1base_1_1exception_a418d8fc796478a6023478994dd9f8b30}{exception} (std\+::string what\+\_\+arg, int err=-\/1)
+\item 
+\hyperlink{structdevfix_1_1base_1_1exception_ae6ff994aceddbbaea1eaa5e1f8853985}{$\sim$exception} () override=default
+\item 
+const char $\ast$ \hyperlink{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}{what} () const noexcept final
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1exception_a1aac7f151fcf3783f0b5d2fae38acc79}\label{structdevfix_1_1base_1_1exception_a1aac7f151fcf3783f0b5d2fae38acc79}} 
+std\+::string \hyperlink{structdevfix_1_1base_1_1exception_a1aac7f151fcf3783f0b5d2fae38acc79}{what\+\_\+arg\+\_\+}
+\begin{DoxyCompactList}\small\item\em failure description \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Abstract exception base class. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1exception_a35a6e0dfce2f54db998b8fc01514df90}\label{structdevfix_1_1base_1_1exception_a35a6e0dfce2f54db998b8fc01514df90}} 
+\index{devfix\+::base\+::exception@{devfix\+::base\+::exception}!exception@{exception}}
+\index{exception@{exception}!devfix\+::base\+::exception@{devfix\+::base\+::exception}}
+\subsubsection{\texorpdfstring{exception()}{exception()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily devfix\+::base\+::exception\+::exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+Delete simple constructor, always enforce a failure description. \mbox{\Hypertarget{structdevfix_1_1base_1_1exception_a418d8fc796478a6023478994dd9f8b30}\label{structdevfix_1_1base_1_1exception_a418d8fc796478a6023478994dd9f8b30}} 
+\index{devfix\+::base\+::exception@{devfix\+::base\+::exception}!exception@{exception}}
+\index{exception@{exception}!devfix\+::base\+::exception@{devfix\+::base\+::exception}}
+\subsubsection{\texorpdfstring{exception()}{exception()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily devfix\+::base\+::exception\+::exception (\begin{DoxyParamCaption}\item[{std\+::string}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs the exception object with what\+\_\+arg as explanatory std\+::string that can be accessed through \hyperlink{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}{what()}. 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+arg} & failure description \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1exception_ae6ff994aceddbbaea1eaa5e1f8853985}\label{structdevfix_1_1base_1_1exception_ae6ff994aceddbbaea1eaa5e1f8853985}} 
+\index{devfix\+::base\+::exception@{devfix\+::base\+::exception}!````~exception@{$\sim$exception}}
+\index{````~exception@{$\sim$exception}!devfix\+::base\+::exception@{devfix\+::base\+::exception}}
+\subsubsection{\texorpdfstring{$\sim$exception()}{~exception()}}
+{\footnotesize\ttfamily devfix\+::base\+::exception\+::$\sim$exception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
+
+Virtual constructor to make class abstract. 
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}\label{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}} 
+\index{devfix\+::base\+::exception@{devfix\+::base\+::exception}!what@{what}}
+\index{what@{what}!devfix\+::base\+::exception@{devfix\+::base\+::exception}}
+\subsubsection{\texorpdfstring{what()}{what()}}
+{\footnotesize\ttfamily const char$\ast$ devfix\+::base\+::exception\+::what (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [final]}, {\ttfamily [noexcept]}}
+
+Returns a C-\/style character string describing the general cause of the current error. \begin{DoxyReturn}{Returns}
+explanatory string 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/exception.\+h\end{DoxyCompactItemize}

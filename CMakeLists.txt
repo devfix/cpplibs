@@ -3,6 +3,8 @@ project(cpplibs CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 
+find_package(Doxygen)
+
 set(WARNINGS
         -pedantic
         -Wall
@@ -49,3 +51,29 @@ add_subdirectory(devfix/net)
 
 add_executable(cpplibs test.cpp)
 target_link_libraries(cpplibs devfixnet pthread)
+
+
+if(DOXYGEN_FOUND)
+
+    set(DOXYGEN_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
+    set(DOXYGEN_OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/docs)
+
+    add_custom_command(
+            OUTPUT ${DOXYGEN_OUTPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_INPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo "Done."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            DEPENDS ${DOXYGEN_INPUT}
+    )
+
+    add_custom_target(apidoc ALL DEPENDS ${DOXYGEN_OUTPUT})
+
+    add_custom_target(apidoc_forced
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."
+            COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_INPUT}
+            COMMAND ${CMAKE_COMMAND} -E echo "Done."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
+            )
+
+endif(DOXYGEN_FOUND)

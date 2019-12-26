@@ -35,7 +35,6 @@ struct socket
 
   /**
    * Get the number of bytes that are immediately available for	reading.
-   * @return number of bytes
    */
   [[nodiscard]] virtual std::size_t available() const = 0;
 
@@ -46,9 +45,21 @@ struct socket
    *  A new socket needs to be created.
    */
   virtual void close() = 0;
+
+  /**
+   * @returns true if the close() function got previously called.
+   */
   [[nodiscard]] virtual bool closed() const = 0;
 
+  /**
+   * Set the socket as interrupted.
+   * @param interrupted If set true, any read call returns after the read blocking time expired and throws an exception.
+   */
   virtual void set_interrupted(bool interrupted) noexcept = 0;
+
+  /**
+   * @returns true if the socket is interrupted.
+   */
   [[nodiscard]] virtual bool interrupted() const noexcept = 0;
 
   virtual void set_timeout(timeout_t timeout) noexcept = 0;
