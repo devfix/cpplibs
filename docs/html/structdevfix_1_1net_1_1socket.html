@@ -86,23 +86,12 @@ virtual <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress
 <tr class="memitem:abe198b5e4a8196f9c64a07387e97a76b"><td class="memItemLeft" align="right" valign="top"><a id="abe198b5e4a8196f9c64a07387e97a76b"></a>
 virtual <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a>&#160;</td><td class="memItemRight" valign="bottom"><b>get_remote_address</b> () const noexcept=0</td></tr>
 <tr class="separator:abe198b5e4a8196f9c64a07387e97a76b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aeebcbcea382ae2bb1ee2bcba990ca997"><td class="memItemLeft" align="right" valign="top"><a id="aeebcbcea382ae2bb1ee2bcba990ca997"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>read</b> (char *buf, std::size_t len)=0</td></tr>
-<tr class="separator:aeebcbcea382ae2bb1ee2bcba990ca997"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab4901b9adf27318c7089ec907c523cd8"><td class="memItemLeft" align="right" valign="top"><a id="ab4901b9adf27318c7089ec907c523cd8"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (const char *buf, std::size_t len)=0</td></tr>
-<tr class="separator:ab4901b9adf27318c7089ec907c523cd8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab65025aff040388ea07b812f1678a712"><td class="memItemLeft" align="right" valign="top"><a id="ab65025aff040388ea07b812f1678a712"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>flush</b> ()=0</td></tr>
-<tr class="separator:ab65025aff040388ea07b812f1678a712"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad4b71445fc8888f0f30766de187ce05e"><td class="memItemLeft" align="right" valign="top">virtual std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#ad4b71445fc8888f0f30766de187ce05e">available</a> () const =0</td></tr>
-<tr class="separator:ad4b71445fc8888f0f30766de187ce05e"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac82979d2e68f6f740ccfb7937fcd7f67"><td class="memItemLeft" align="right" valign="top"><a id="ac82979d2e68f6f740ccfb7937fcd7f67"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#ac82979d2e68f6f740ccfb7937fcd7f67">close</a> ()=0</td></tr>
-<tr class="memdesc:ac82979d2e68f6f740ccfb7937fcd7f67"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes this socket. Once a socket has been closed, it is not available for further networking use (i.e. can't be reconnected or rebound). A new socket needs to be created. <br /></td></tr>
-<tr class="separator:ac82979d2e68f6f740ccfb7937fcd7f67"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae84cb7f6da7cb70c4e26cab16e17411e"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#ae84cb7f6da7cb70c4e26cab16e17411e">closed</a> () const =0</td></tr>
-<tr class="separator:ae84cb7f6da7cb70c4e26cab16e17411e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3a00115497ccb83e8497a7e33be06b03"><td class="memItemLeft" align="right" valign="top"><a id="a3a00115497ccb83e8497a7e33be06b03"></a>
+virtual <a class="el" href="structdevfix_1_1base_1_1io_1_1inputstream.html">base::io::inputstream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_inputstream</b> () const noexcept=0</td></tr>
+<tr class="separator:a3a00115497ccb83e8497a7e33be06b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac0320fa786f14778a3a1e2796d9dce57"><td class="memItemLeft" align="right" valign="top"><a id="ac0320fa786f14778a3a1e2796d9dce57"></a>
+virtual <a class="el" href="structdevfix_1_1base_1_1io_1_1outputstream.html">base::io::outputstream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_outputstream</b> () const noexcept=0</td></tr>
+<tr class="separator:ac0320fa786f14778a3a1e2796d9dce57"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3fa8d7dcd44e7740b29ad6674005eb5d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d">set_interrupted</a> (bool <a class="el" href="structdevfix_1_1net_1_1socket.html#a7cfe151f1124d46fb19fad0c374c9352">interrupted</a>) noexcept=0</td></tr>
 <tr class="separator:a3fa8d7dcd44e7740b29ad6674005eb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7cfe151f1124d46fb19fad0c374c9352"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a7cfe151f1124d46fb19fad0c374c9352">interrupted</a> () const noexcept=0</td></tr>
@@ -126,58 +115,6 @@ static constexpr timeout_t&#160;</td><td class="memItemRight" valign="bottom"><a
 <tr class="separator:a77c3214eb436d06825a4cc2aafcc63ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="ad4b71445fc8888f0f30766de187ce05e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad4b71445fc8888f0f30766de187ce05e">&#9670;&nbsp;</a></span>available()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual std::size_t devfix::net::socket::available </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<p>Get the number of bytes that are immediately available for reading. </p>
-
-</div>
-</div>
-<a id="ae84cb7f6da7cb70c4e26cab16e17411e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae84cb7f6da7cb70c4e26cab16e17411e">&#9670;&nbsp;</a></span>closed()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool devfix::net::socket::closed </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>true if the <a class="el" href="structdevfix_1_1net_1_1socket.html#ac82979d2e68f6f740ccfb7937fcd7f67" title="Closes this socket. Once a socket has been closed, it is not available for further networking use (i...">close()</a> function got previously called. </dd></dl>
-
-</div>
-</div>
 <a id="a7cfe151f1124d46fb19fad0c374c9352"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a7cfe151f1124d46fb19fad0c374c9352">&#9670;&nbsp;</a></span>interrupted()</h2>
 

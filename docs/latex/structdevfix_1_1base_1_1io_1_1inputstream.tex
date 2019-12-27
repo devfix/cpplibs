@@ -1,0 +1,56 @@
+\hypertarget{structdevfix_1_1base_1_1io_1_1inputstream}{}\section{devfix\+:\+:base\+:\+:io\+:\+:inputstream Struct Reference}
+\label{structdevfix_1_1base_1_1io_1_1inputstream}\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
+
+
+Inheritance diagram for devfix\+:\+:base\+:\+:io\+:\+:inputstream\+:
+% FIG 0
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}\label{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}} 
+virtual void {\bfseries read} (void $\ast$buf, std\+::size\+\_\+t len)=0
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a1868a733fd646b29daae6874e07e4e03}\label{structdevfix_1_1base_1_1io_1_1inputstream_a1868a733fd646b29daae6874e07e4e03}} 
+virtual void {\bfseries skip} (std\+::size\+\_\+t n)=0
+\item 
+virtual std\+::size\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}{available} ()=0
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}\label{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}} 
+virtual void \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}{close} ()=0
+\begin{DoxyCompactList}\small\item\em Closes this socket. Once a socket has been closed, it is not available for further networking use (i.\+e. can\textquotesingle{}t be reconnected or rebound). A new socket needs to be created. \end{DoxyCompactList}\item 
+virtual bool \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}{is\+\_\+closed} ()=0
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}\label{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}} 
+\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}!available@{available}}
+\index{available@{available}!devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
+\subsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily virtual std\+::size\+\_\+t devfix\+::base\+::io\+::inputstream\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+the number of bytes that are immediately available for reading 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_a911f4ba79499a623de30cf16d3d26d47}{devfix\+::base\+::io\+::source}.
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}\label{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}} 
+\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}!is\+\_\+closed@{is\+\_\+closed}}
+\index{is\+\_\+closed@{is\+\_\+closed}!devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
+\subsubsection{\texorpdfstring{is\+\_\+closed()}{is\_closed()}}
+{\footnotesize\ttfamily virtual bool devfix\+::base\+::io\+::inputstream\+::is\+\_\+closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if the \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}{close()} function got previously called 
+\end{DoxyReturn}
+
+
+Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_a406834cf6651d48949b96d0ef49cc6c1}{devfix\+::base\+::io\+::source}.
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/io/inputstream.\+h\end{DoxyCompactItemize}

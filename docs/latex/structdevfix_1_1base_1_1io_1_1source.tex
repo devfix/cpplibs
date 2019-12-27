@@ -1,0 +1,64 @@
+\hypertarget{structdevfix_1_1base_1_1io_1_1source}{}\section{devfix\+:\+:base\+:\+:io\+:\+:source Struct Reference}
+\label{structdevfix_1_1base_1_1io_1_1source}\index{devfix\+::base\+::io\+::source@{devfix\+::base\+::io\+::source}}
+
+
+Inheritance diagram for devfix\+:\+:base\+:\+:io\+:\+:source\+:
+% FIG 0
+
+
+Collaboration diagram for devfix\+:\+:base\+:\+:io\+:\+:source\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1source_af8bef20f5b54153c3fd1fbc7daa263c5}\label{structdevfix_1_1base_1_1io_1_1source_af8bef20f5b54153c3fd1fbc7daa263c5}} 
+{\bfseries source} (read\+\_\+t read, skip\+\_\+t skip, available\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1source_a911f4ba79499a623de30cf16d3d26d47}{available}, close\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1source_aa00a381c8a166cbbc5dbf6de4b56590e}{close}=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+O\+SE, is\+\_\+closed\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1source_a406834cf6651d48949b96d0ef49cc6c1}{is\+\_\+closed}=D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+S\+\_\+\+C\+L\+O\+S\+ED)
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1source_a9fbd4d20aa150910ced44018e1b3156a}\label{structdevfix_1_1base_1_1io_1_1source_a9fbd4d20aa150910ced44018e1b3156a}} 
+void {\bfseries read} (void $\ast$buf, std\+::size\+\_\+t len) override
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1source_a21cb579307589cbc6f9e02d64c66f4b2}\label{structdevfix_1_1base_1_1io_1_1source_a21cb579307589cbc6f9e02d64c66f4b2}} 
+void {\bfseries skip} (std\+::size\+\_\+t n) override
+\item 
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1source_a911f4ba79499a623de30cf16d3d26d47}{available} () override
+\item 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1source_aa00a381c8a166cbbc5dbf6de4b56590e}\label{structdevfix_1_1base_1_1io_1_1source_aa00a381c8a166cbbc5dbf6de4b56590e}} 
+void \hyperlink{structdevfix_1_1base_1_1io_1_1source_aa00a381c8a166cbbc5dbf6de4b56590e}{close} () override
+\begin{DoxyCompactList}\small\item\em Closes this socket. Once a socket has been closed, it is not available for further networking use (i.\+e. can\textquotesingle{}t be reconnected or rebound). A new socket needs to be created. \end{DoxyCompactList}\item 
+bool \hyperlink{structdevfix_1_1base_1_1io_1_1source_a406834cf6651d48949b96d0ef49cc6c1}{is\+\_\+closed} () override
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1source_a911f4ba79499a623de30cf16d3d26d47}\label{structdevfix_1_1base_1_1io_1_1source_a911f4ba79499a623de30cf16d3d26d47}} 
+\index{devfix\+::base\+::io\+::source@{devfix\+::base\+::io\+::source}!available@{available}}
+\index{available@{available}!devfix\+::base\+::io\+::source@{devfix\+::base\+::io\+::source}}
+\subsubsection{\texorpdfstring{available()}{available()}}
+{\footnotesize\ttfamily std\+::size\+\_\+t devfix\+::base\+::io\+::source\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+the number of bytes that are immediately available for reading 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}{devfix\+::base\+::io\+::inputstream}.
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1source_a406834cf6651d48949b96d0ef49cc6c1}\label{structdevfix_1_1base_1_1io_1_1source_a406834cf6651d48949b96d0ef49cc6c1}} 
+\index{devfix\+::base\+::io\+::source@{devfix\+::base\+::io\+::source}!is\+\_\+closed@{is\+\_\+closed}}
+\index{is\+\_\+closed@{is\+\_\+closed}!devfix\+::base\+::io\+::source@{devfix\+::base\+::io\+::source}}
+\subsubsection{\texorpdfstring{is\+\_\+closed()}{is\_closed()}}
+{\footnotesize\ttfamily bool devfix\+::base\+::io\+::source\+::is\+\_\+closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [virtual]}}
+
+\begin{DoxyReturn}{Returns}
+true if the \hyperlink{structdevfix_1_1base_1_1io_1_1source_aa00a381c8a166cbbc5dbf6de4b56590e}{close()} function got previously called 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}{devfix\+::base\+::io\+::inputstream}.
+
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/io/source.\+h\item 
+devfix/base/io/source.\+cpp\end{DoxyCompactItemize}

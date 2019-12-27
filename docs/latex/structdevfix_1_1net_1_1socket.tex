@@ -15,21 +15,11 @@ virtual \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} {\bfseries g
 \mbox{\Hypertarget{structdevfix_1_1net_1_1socket_abe198b5e4a8196f9c64a07387e97a76b}\label{structdevfix_1_1net_1_1socket_abe198b5e4a8196f9c64a07387e97a76b}} 
 virtual \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} {\bfseries get\+\_\+remote\+\_\+address} () const noexcept=0
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_aeebcbcea382ae2bb1ee2bcba990ca997}\label{structdevfix_1_1net_1_1socket_aeebcbcea382ae2bb1ee2bcba990ca997}} 
-virtual void {\bfseries read} (char $\ast$buf, std\+::size\+\_\+t len)=0
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a3a00115497ccb83e8497a7e33be06b03}\label{structdevfix_1_1net_1_1socket_a3a00115497ccb83e8497a7e33be06b03}} 
+virtual \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream}{base\+::io\+::inputstream} \& {\bfseries get\+\_\+inputstream} () const noexcept=0
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ab4901b9adf27318c7089ec907c523cd8}\label{structdevfix_1_1net_1_1socket_ab4901b9adf27318c7089ec907c523cd8}} 
-virtual void {\bfseries write} (const char $\ast$buf, std\+::size\+\_\+t len)=0
-\item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ab65025aff040388ea07b812f1678a712}\label{structdevfix_1_1net_1_1socket_ab65025aff040388ea07b812f1678a712}} 
-virtual void {\bfseries flush} ()=0
-\item 
-virtual std\+::size\+\_\+t \hyperlink{structdevfix_1_1net_1_1socket_ad4b71445fc8888f0f30766de187ce05e}{available} () const =0
-\item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ac82979d2e68f6f740ccfb7937fcd7f67}\label{structdevfix_1_1net_1_1socket_ac82979d2e68f6f740ccfb7937fcd7f67}} 
-virtual void \hyperlink{structdevfix_1_1net_1_1socket_ac82979d2e68f6f740ccfb7937fcd7f67}{close} ()=0
-\begin{DoxyCompactList}\small\item\em Closes this socket. Once a socket has been closed, it is not available for further networking use (i.\+e. can\textquotesingle{}t be reconnected or rebound). A new socket needs to be created. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{structdevfix_1_1net_1_1socket_ae84cb7f6da7cb70c4e26cab16e17411e}{closed} () const =0
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ac0320fa786f14778a3a1e2796d9dce57}\label{structdevfix_1_1net_1_1socket_ac0320fa786f14778a3a1e2796d9dce57}} 
+virtual \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream}{base\+::io\+::outputstream} \& {\bfseries get\+\_\+outputstream} () const noexcept=0
 \item 
 virtual void \hyperlink{structdevfix_1_1net_1_1socket_a3fa8d7dcd44e7740b29ad6674005eb5d}{set\+\_\+interrupted} (bool \hyperlink{structdevfix_1_1net_1_1socket_a7cfe151f1124d46fb19fad0c374c9352}{interrupted}) noexcept=0
 \item 
@@ -53,21 +43,6 @@ static constexpr timeout\+\_\+t \hyperlink{structdevfix_1_1net_1_1socket_a77c321
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ad4b71445fc8888f0f30766de187ce05e}\label{structdevfix_1_1net_1_1socket_ad4b71445fc8888f0f30766de187ce05e}} 
-\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!available@{available}}
-\index{available@{available}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
-\subsubsection{\texorpdfstring{available()}{available()}}
-{\footnotesize\ttfamily virtual std\+::size\+\_\+t devfix\+::net\+::socket\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-Get the number of bytes that are immediately available for reading. \mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ae84cb7f6da7cb70c4e26cab16e17411e}\label{structdevfix_1_1net_1_1socket_ae84cb7f6da7cb70c4e26cab16e17411e}} 
-\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!closed@{closed}}
-\index{closed@{closed}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
-\subsubsection{\texorpdfstring{closed()}{closed()}}
-{\footnotesize\ttfamily virtual bool devfix\+::net\+::socket\+::closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
-
-\begin{DoxyReturn}{Returns}
-true if the \hyperlink{structdevfix_1_1net_1_1socket_ac82979d2e68f6f740ccfb7937fcd7f67}{close()} function got previously called. 
-\end{DoxyReturn}
 \mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a7cfe151f1124d46fb19fad0c374c9352}\label{structdevfix_1_1net_1_1socket_a7cfe151f1124d46fb19fad0c374c9352}} 
 \index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!interrupted@{interrupted}}
 \index{interrupted@{interrupted}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
