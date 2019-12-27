@@ -25,7 +25,20 @@ namespace devfix::net::lnx
 
 lnx_socket::lnx_socket(const inetaddress &inetaddress) :
     remote_address_(inetaddress),
-    local_address_()
+    local_address_(),
+    source_(std::make_unique<base::io::source>(
+        std::bind(&lnx_socket::_read, this, std::placeholders::_1, std::placeholders::_2),
+        std::bind(&lnx_socket::_skip, this, std::placeholders::_1),
+        std::bind(&lnx_socket::_available, this),
+        std::bind(&lnx_socket::_close, this),
+        std::bind(&lnx_socket::_is_closed, this)
+    )),
+    sink_(std::make_unique<base::io::sink>(
+        std::bind(&lnx_socket::_write, this, std::placeholders::_1, std::placeholders::_2),
+        std::bind(&lnx_socket::_flush, this),
+        std::bind(&lnx_socket::_close, this),
+        std::bind(&lnx_socket::_is_closed, this)
+    ))
 {
   int family = (remote_address_.family_ == inetaddress::family::IPV4) ? AF_INET : 0;
   exception_guard_m(!family, socketexception, "unsupported address family");
@@ -53,9 +66,9 @@ lnx_socket::lnx_socket(const inetaddress &inetaddress) :
 
 lnx_socket::~lnx_socket()
 {
-  if (!closed())
+  if (!_is_closed())
   {
-    close();
+    _close();
   }
 }
 
@@ -69,80 +82,14 @@ inetaddress lnx_socket::get_remote_address() const noexcept
   return remote_address_;
 }
 
-void lnx_socket::read(char *buf, std::size_t len)
+base::io::inputstream &lnx_socket::get_inputstream() const noexcept
 {
-  timeout_t time = 0;
-  while (len)
-  {
-    if (interrupted())
-    {
-      throw base::interruptedexception(SOURCE_LINE);
-    }
-
-    if (time > timeout_)
-    {
-      throw base::timeoutexception(SOURCE_LINE);
-    }
-
-    ssize_t rc = ::read(fd_, buf, len);
-    if (rc < 0)
-    {
-      if (errno == EAGAIN)
-      {
-        time += DEFAULT_READ_BLOCKING_TIME;
-      } else
-      {
-        exception_guard(rc, socketexception);
-      }
-    } else
-    {
-      len -= static_cast<std::size_t>(rc);
-      buf += rc;
-    }
-  }
+  return *source_;
 }
 
-void lnx_socket::write(const char *buf, std::size_t len)
+base::io::outputstream &lnx_socket::get_outputstream() const noexcept
 {
-  while(len)
-  {
-    ssize_t rc = ::write(fd_, buf, len);
-    exception_guard(rc < 0, socketexception);
-    len -= static_cast<std::size_t>(rc);
-    buf += rc;
-  }
-}
-
-void lnx_socket::flush()
-{
-  // disable Nagle algorithm and re-enable it
-  int flag = 1;
-  int err = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
-  exception_guard(err, socketexception);
-
-  flag = 0;
-  err = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
-  exception_guard(err, socketexception);
-
-}
-
-std::size_t lnx_socket::available() const
-{
-  int n;
-  exception_guard(ioctl(fd_, FIONREAD, &n), socketexception);
-  return static_cast<std::size_t>(n);
-}
-
-void lnx_socket::close()
-{
-  int err = ::close(fd_);
-  fd_ = -1;
-  exception_guard(err, socketexception);
-}
-
-bool lnx_socket::closed() const
-{
-  return fd_ < 0;
+  return *sink_;
 }
 
 void lnx_socket::set_interrupted(bool interrupted) noexcept
@@ -174,6 +121,88 @@ void lnx_socket::_set_read_blocking_time()
   };
   int err = ::setsockopt(fd_, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<char *>(&tv), sizeof tv);
   exception_guard(err, socketexception);
+}
+
+void lnx_socket::_read(void *buf, std::size_t len)
+{
+  char *c_ptr = static_cast<char *>(buf);
+  timeout_t time = 0;
+  while (len)
+  {
+    if (interrupted())
+    {
+      throw base::interruptedexception(SOURCE_LINE);
+    }
+
+    if (time > timeout_)
+    {
+      throw base::timeoutexception(SOURCE_LINE);
+    }
+
+    ssize_t rc = ::read(fd_, c_ptr, len);
+    if (rc < 0)
+    {
+      if (errno == EAGAIN)
+      {
+        time += DEFAULT_READ_BLOCKING_TIME;
+      } else
+      {
+        exception_guard(rc, socketexception);
+      }
+    } else
+    {
+      len -= static_cast<std::size_t>(rc);
+      c_ptr += rc;
+    }
+  }
+}
+
+void lnx_socket::_write(void *buf, std::size_t len)
+{
+  char *c_ptr = static_cast<char *>(buf);
+  while (len)
+  {
+    ssize_t rc = ::write(fd_, c_ptr, len);
+    exception_guard(rc < 0, socketexception);
+    len -= static_cast<std::size_t>(rc);
+    c_ptr += rc;
+  }
+}
+
+void lnx_socket::_skip(std::size_t n)
+{
+  exception_guard(::lseek(fd_, static_cast<long>(n), SEEK_CUR), socketexception);
+}
+
+void lnx::lnx_socket::_flush()
+{
+  // disable Nagle algorithm and re-enable it
+  int flag = 1;
+  int err = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
+  exception_guard(err, socketexception);
+
+  flag = 0;
+  err = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
+  exception_guard(err, socketexception);
+}
+
+std::size_t lnx_socket::_available()
+{
+  int n;
+  exception_guard(::ioctl(fd_, FIONREAD, &n), socketexception);
+  return static_cast<std::size_t>(n);
+}
+
+void lnx_socket::_close()
+{
+  int err = ::close(fd_);
+  fd_ = -1;
+  exception_guard(err, socketexception);
+}
+
+bool lnx_socket::_is_closed()
+{
+  return fd_ < 0;
 }
 
 } // namespace devfix::net::lnx

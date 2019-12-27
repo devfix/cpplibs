@@ -9,8 +9,11 @@
 
 #if PLATFORM_LINUX == 1
 
+#include <atomic>
 #include "../socket.h"
 #include "../inetaddress.h"
+#include "../../base/io/source.h"
+#include "../../base/io/sink.h"
 
 namespace devfix::net::lnx
 {
@@ -23,14 +26,8 @@ struct lnx_socket : public socket
   [[nodiscard]] inetaddress get_local_address() const noexcept override;
   [[nodiscard]] inetaddress get_remote_address() const noexcept override;
 
-  void read(char *buf, std::size_t len) override;
-  void write(const char *buf, std::size_t len) override;
-
-  void flush() override;
-  [[nodiscard]] std::size_t available() const override;
-
-  void close() override;
-  [[nodiscard]] bool closed() const override;
+  [[nodiscard]] base::io::inputstream &get_inputstream() const noexcept override;
+  [[nodiscard]] base::io::outputstream &get_outputstream() const noexcept override;
 
   void set_interrupted(bool interrupted) noexcept override;
   [[nodiscard]] bool interrupted() const noexcept override;
@@ -44,8 +41,17 @@ struct lnx_socket : public socket
   inetaddress local_address_;
   std::atomic_bool interrupted_ = false;
   timeout_t timeout_ = DEFAULT_TIMEOUT;
+  base::up<base::io::source> source_;
+  base::up<base::io::sink> sink_;
 
   void _set_read_blocking_time();
+  void _read(void *buf, std::size_t len);
+  void _write(void *buf, std::size_t len);
+  void _skip(std::size_t n);
+  void _flush();
+  std::size_t _available();
+  void _close();
+  bool _is_closed();
 };
 
 } // namespace devfix::net::lnx

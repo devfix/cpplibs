@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['socket',['socket',['../structdevfix_1_1net_1_1socket.html',1,'devfix::net']]],
-  ['socketexception',['socketexception',['../structdevfix_1_1net_1_1socketexception.html',1,'devfix::net']]]
+  ['outputstream',['outputstream',['../structdevfix_1_1base_1_1stream_1_1outputstream.html',1,'devfix::base::io']]]
 ];

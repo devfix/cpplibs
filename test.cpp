@@ -23,9 +23,13 @@ int main()
       [&socket]
       {
         char uff[8];
+        devfix::base::io::inputstream &is = socket->get_inputstream();
         try
         {
-          socket->read(uff, sizeof(uff));
+          is.read(uff, sizeof(uff));
+
+          long n;
+          is.read(&n, sizeof(n));
         } catch (interruptedexception &interruptedexception)
         {
           std::cout << "interrupted" << std::endl;

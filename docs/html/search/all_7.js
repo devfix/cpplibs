@@ -1,4 +1,6 @@
 var searchData=
 [
-  ['timeoutexception',['timeoutexception',['../structdevfix_1_1base_1_1timeoutexception.html',1,'devfix::base::timeoutexception'],['../structdevfix_1_1base_1_1timeoutexception.html#ad900adf164c04e3a33dafd38ded1f024',1,'devfix::base::timeoutexception::timeoutexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1timeoutexception.html#a684cb2e6e0d78b98d30c505a6bf9066d',1,'devfix::base::timeoutexception::timeoutexception(const char *what_arg, int err=-1)']]]
+  ['set_5finterrupted',['set_interrupted',['../structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d',1,'devfix::net::socket']]],
+  ['socket',['socket',['../structdevfix_1_1net_1_1socket.html',1,'devfix::net']]],
+  ['socketexception',['socketexception',['../structdevfix_1_1net_1_1socketexception.html',1,'devfix::net::socketexception'],['../structdevfix_1_1net_1_1socketexception.html#aeab5d004d494103b37156a5f23a5296a',1,'devfix::net::socketexception::socketexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1net_1_1socketexception.html#a6da69f635eb11f932a0e960545d023bd',1,'devfix::net::socketexception::socketexception(const char *what_arg, int err=-1)']]]
 ];
