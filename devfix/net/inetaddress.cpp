@@ -50,14 +50,14 @@ std::string inetaddress::get_host() const noexcept
 
 #if PLATFORM_LINUX == 1
 
-void inetaddress::get_sockaddr(struct sockaddr_in &sockaddr)
+void inetaddress::get_from_sockaddr(const struct sockaddr_in &sockaddr)
 {
   set_linux_family(sockaddr.sin_family);
   port_ = ntohs(sockaddr.sin_port);
   address_.s_addr = sockaddr.sin_addr.s_addr;
 }
 
-void inetaddress::set_sockaddr(struct sockaddr_in &sockaddr) const
+void inetaddress::set_to_sockaddr(struct sockaddr_in &sockaddr) const
 {
   ::bzero(&sockaddr, sizeof(sockaddr));
   sockaddr.sin_family = get_linux_family();

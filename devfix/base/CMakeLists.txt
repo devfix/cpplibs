@@ -1,5 +1,3 @@
-file(GLOB_RECURSE HEADERS RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*.h")
-file(GLOB_RECURSE SOURCES RELATIVE ${CMAKE_CURRENT_LIST_DIR} "*.cpp")
-add_library(devfixbase ${HEADERS} ${SOURCES} memory.h io/inputstream.h io/source.cpp io/source.h io/sink.cpp io/sink.h io/iotypes.h)
+add_library(devfixbase exception.h interruptedexception.h memory.h platform.h timeoutexception.h io/inputstream.h io/source.cpp io/source.h io/sink.cpp io/sink.h io/iotypes.h)
 set_target_properties(devfixbase PROPERTIES LINKER_LANGUAGE CXX)
 target_compile_options(devfixbase PRIVATE ${WARNINGS})

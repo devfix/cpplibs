@@ -10,7 +10,7 @@
 #if PLATFORM_LINUX == 1
 
 #include <atomic>
-#include "../socket.h"
+#include "../test_socket.h"
 #include "../inetaddress.h"
 #include "../../base/io/source.h"
 #include "../../base/io/sink.h"

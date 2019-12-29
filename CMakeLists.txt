@@ -49,8 +49,8 @@ add_subdirectory(devfix/base)
 add_subdirectory(devfix/net)
 
 
-add_executable(cpplibs test.cpp)
-target_link_libraries(cpplibs devfixnet pthread)
+add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp)
+target_link_libraries(testrunner gtest devfixnet pthread)
 
 
 if(DOXYGEN_FOUND)
@@ -66,8 +66,6 @@ if(DOXYGEN_FOUND)
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
             DEPENDS ${DOXYGEN_INPUT}
     )
-
-    # add_custom_target(documentation_auto ALL DEPENDS ${DOXYGEN_OUTPUT})
 
     add_custom_target(documentation
             COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."

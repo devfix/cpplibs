@@ -34,17 +34,17 @@ struct inetaddress
   };
 
   // keep variables public
-  address address_;
-  port_t port_;
-  family family_;
+  address address_ = {0};
+  port_t port_ = 0;
+  family family_ = family::UNSUPPORTED;
 
   [[nodiscard]] static inetaddress create_by_host(const std::string &host, port_t port, family family = family::IPV4);
 
   [[nodiscard]] std::string get_host() const noexcept;
 
 #if PLATFORM_LINUX == 1
-  void get_sockaddr(struct sockaddr_in &sockaddr);
-  void set_sockaddr(struct sockaddr_in &sockaddr) const;
+  void get_from_sockaddr(const struct sockaddr_in &sockaddr);
+  void set_to_sockaddr(struct sockaddr_in &sockaddr) const;
   sa_family_t get_linux_family() const;
   void set_linux_family(sa_family_t address_family);
 #endif

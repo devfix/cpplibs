@@ -19,6 +19,7 @@
 #include <sys/socket.h>
 #include <linux/tcp.h>
 #include <netinet/in.h>
+#include <iostream>
 
 namespace devfix::net::lnx
 {
@@ -91,7 +92,7 @@ lnx_socket::lnx_socket(inetaddress remote_address) :
 
   // connect socket to remote address
   struct sockaddr_in sockaddr_remote{};
-  remote_address_.set_sockaddr(sockaddr_remote);
+  remote_address_.set_to_sockaddr(sockaddr_remote);
   int rc = ::connect(fd_, reinterpret_cast<struct sockaddr *>(&sockaddr_remote), sizeof(sockaddr_remote));
   exception_guard(rc, socketexception);
 
@@ -104,7 +105,7 @@ lnx_socket::lnx_socket(inetaddress remote_address) :
 lnx_socket::lnx_socket(int fd, devfix::net::inetaddress remote_address) :
     fd_(fd),
     remote_address_(remote_address),
-    local_address_(get_local_address()),
+    local_address_(_get_local_address()),
     source_(std::make_unique<base::io::source>(
         std::bind(&lnx_socket::_read, this, std::placeholders::_1, std::placeholders::_2),
         std::bind(&lnx_socket::_skip, this, std::placeholders::_1),
@@ -132,7 +133,7 @@ inetaddress lnx_socket::_get_local_address() const
   exception_guard(rc, socketexception);
 
   inetaddress inetaddress{};
-  inetaddress.get_sockaddr(sockaddr_in);
+  inetaddress.get_from_sockaddr(sockaddr_in);
   return inetaddress;
 }
 

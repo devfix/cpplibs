@@ -28,14 +28,14 @@ std::unique_ptr<socket> lnx_serversocket::accept()
   exception_guard(fd < 0, socketexception);
 
   inetaddress remote_address{};
-  remote_address.set_sockaddr(sockaddr_in);
+  remote_address.get_from_sockaddr(sockaddr_in);
 
   return std::unique_ptr<socket>(new lnx_socket(fd, remote_address));
 }
 
 const inetaddress &lnx_serversocket::get_address() const noexcept
 {
-  return inetaddress_;
+  return local_address_;
 }
 
 bool lnx_serversocket::get_reuse_address() const noexcept
@@ -71,7 +71,7 @@ bool lnx_serversocket::is_closed() const noexcept
 }
 
 lnx_serversocket::lnx_serversocket(inetaddress inetaddress, bool reuse_address) :
-    inetaddress_(inetaddress),
+    local_address_(inetaddress),
     reuse_address_(reuse_address)
 {
   fd_ = ::socket(inetaddress.get_linux_family(), SOCK_STREAM, 0);
@@ -82,7 +82,7 @@ lnx_serversocket::lnx_serversocket(inetaddress inetaddress, bool reuse_address) 
   exception_guard(rc, socketexception);
 
   struct sockaddr_in address{};
-  inetaddress_.set_sockaddr(address);
+  local_address_.set_to_sockaddr(address);
 
   rc = ::bind(fd_, reinterpret_cast<const sockaddr *>(&address), sizeof(address));
   exception_guard(rc, socketexception);

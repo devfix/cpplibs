@@ -41,7 +41,7 @@ struct lnx_serversocket : public serversocket
 
  private:
   static constexpr int MAX_QUEUED_REQUESTS = 5;
-  const inetaddress inetaddress_;
+  const inetaddress local_address_;
   bool reuse_address_ = false;
   int fd_ = -1;
   socket::timeout_t accept_timeout_ = 0;
