@@ -52,19 +52,30 @@ std::string inetaddress::get_host() const noexcept
 
 void inetaddress::get_sockaddr(struct sockaddr_in &sockaddr)
 {
-  family_ = sockaddr.sin_family == AF_INET ? family::IPV4 : family::UNSUPPORTED;
+  set_linux_family(sockaddr.sin_family);
   port_ = ntohs(sockaddr.sin_port);
   address_.s_addr = sockaddr.sin_addr.s_addr;
-  exception_guard_m(family_ == family::UNSUPPORTED, socketexception, "unsupported address family");
 }
 
 void inetaddress::set_sockaddr(struct sockaddr_in &sockaddr) const
 {
   ::bzero(&sockaddr, sizeof(sockaddr));
-  sockaddr.sin_family = (family_ == family::IPV4) ? AF_INET : 0;
+  sockaddr.sin_family = get_linux_family();
   sockaddr.sin_port = htons(port_);
   sockaddr.sin_addr.s_addr = address_.s_addr;
-  exception_guard_m(!sockaddr.sin_family, socketexception, "unsupported address family");
+}
+
+sa_family_t inetaddress::get_linux_family() const
+{
+  sa_family_t address_family = (family_ == inetaddress::family::IPV4) ? AF_INET : 0;
+  exception_guard_m(!address_family, socketexception, "unsupported address family");
+  return address_family;
+}
+
+void inetaddress::set_linux_family(sa_family_t address_family)
+{
+  family_ = (address_family == AF_INET) ? family::IPV4 : family::UNSUPPORTED;
+  exception_guard_m(family_ == family::UNSUPPORTED, socketexception, "unsupported address family");
 }
 
 #endif

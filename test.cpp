@@ -5,7 +5,6 @@
 #include <thread>
 #include <unistd.h>
 #include <iostream>
-#include "devfix/net/linux/lnx_socket.h"
 #include "devfix/base/interruptedexception.h"
 #include "devfix/net/netbuilder.h"
 

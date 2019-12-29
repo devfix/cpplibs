@@ -6,7 +6,7 @@
 
 #include <exception>
 #include <string>
-#include "platform.h"
+#include <cstring>
 
 namespace devfix::base
 {
@@ -25,7 +25,7 @@ struct exception : public std::exception
    * Constructs the exception object with what_arg as explanatory std::string that can be accessed through what().
    * @param what_arg failure description
    */
-  explicit exception(std::string what_arg, int err = -1) : what_arg_(std::move(what_arg))
+  explicit exception(std::string what_arg, int err = -1) : what_arg_(std::move(what_arg)), err_(err)
   {}
 
   /**
@@ -42,14 +42,21 @@ struct exception : public std::exception
     return what_arg_.data();
   }
 
+  [[nodiscard]] int get_errno() const noexcept
+  {
+    return err_;
+  }
+
  protected:
   std::string what_arg_; //!< failure description
+  int err_;
 };
 
 #define exception_guard_m(err, exception_class, message) \
   if (err) \
     throw exception_class(message + std::string(" @ ") + SOURCE_LINE, errno)
 
-#define exception_guard(err, exception_class) exception_guard_m(err, exception_class, std::strerror(errno))
+#define exception_guard(err, exception_class) \
+  exception_guard_m(err, exception_class, std::strerror(errno))
 
 } // namespace devfix::base

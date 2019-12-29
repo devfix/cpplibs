@@ -22,8 +22,8 @@ struct socket
 
   virtual ~socket() = default;
 
-  [[nodiscard]] virtual inetaddress get_local_address() const noexcept = 0;
-  [[nodiscard]] virtual inetaddress get_remote_address() const noexcept = 0;
+  [[nodiscard]] virtual const inetaddress &get_local_address() const noexcept = 0;
+  [[nodiscard]] virtual const inetaddress &get_remote_address() const noexcept = 0;
 
   [[nodiscard]] virtual base::io::inputstream &get_inputstream() const noexcept = 0;
   [[nodiscard]] virtual base::io::outputstream &get_outputstream() const noexcept = 0;

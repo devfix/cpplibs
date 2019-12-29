@@ -8,7 +8,8 @@
 #include "socket.h"
 
 #if PLATFORM_LINUX == 1
-#include "linux/lnx_socket.h"
+#include "lnx/lnx_socket.h"
+#include "lnx/lnx_serversocket.h"
 #else
 PLATFORM_UNSUPPORTED;
 #endif
@@ -24,7 +25,9 @@ struct netbuilder
    * @param inetaddress remote address
    * @return
    */
-  static base::up<socket> create_socket(inetaddress adr);
+  static std::unique_ptr<socket> create_socket(inetaddress adr);
+
+  static std::unique_ptr<serversocket> create_serversocket(inetaddress adr, bool reuse_address = false);
 
 };
 

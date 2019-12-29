@@ -15,16 +15,28 @@
 #include "../../base/io/source.h"
 #include "../../base/io/sink.h"
 
+
+// forward declaration for external builder
+namespace devfix::net
+{
+struct [[maybe_unused]] netbuilder;
+}
+
 namespace devfix::net::lnx
 {
 
+// forward declaration for accept() in lnx_serversocket
+struct /*[[maybe_unused]]*/ lnx_serversocket;
+
 struct lnx_socket : public socket
 {
-  explicit lnx_socket(const inetaddress &inetaddress);
+  friend struct net::netbuilder;
+  friend struct lnx_serversocket;
+
   ~lnx_socket() override;
 
-  [[nodiscard]] inetaddress get_local_address() const noexcept override;
-  [[nodiscard]] inetaddress get_remote_address() const noexcept override;
+  [[nodiscard]] const inetaddress &get_local_address() const noexcept override;
+  [[nodiscard]] const inetaddress &get_remote_address() const noexcept override;
 
   [[nodiscard]] base::io::inputstream &get_inputstream() const noexcept override;
   [[nodiscard]] base::io::outputstream &get_outputstream() const noexcept override;
@@ -41,10 +53,14 @@ struct lnx_socket : public socket
   inetaddress local_address_;
   std::atomic_bool interrupted_ = false;
   timeout_t timeout_ = DEFAULT_TIMEOUT;
-  base::up<base::io::source> source_;
-  base::up<base::io::sink> sink_;
+  std::unique_ptr<base::io::source> source_;
+  std::unique_ptr<base::io::sink> sink_;
 
-  void _set_read_blocking_time();
+  explicit lnx_socket(inetaddress remote_address);
+  lnx_socket(int fd, inetaddress remote_address);
+
+  [[nodiscard]] inetaddress _get_local_address() const;
+  void _configure_read_blocking_time();
   void _read(void *buf, std::size_t len);
   void _write(void *buf, std::size_t len);
   void _skip(std::size_t n);

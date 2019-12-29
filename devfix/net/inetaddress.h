@@ -45,6 +45,8 @@ struct inetaddress
 #if PLATFORM_LINUX == 1
   void get_sockaddr(struct sockaddr_in &sockaddr);
   void set_sockaddr(struct sockaddr_in &sockaddr) const;
+  sa_family_t get_linux_family() const;
+  void set_linux_family(sa_family_t address_family);
 #endif
 
 } __attribute__((packed));
