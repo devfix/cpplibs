@@ -16,7 +16,7 @@ struct sink : public outputstream
 
   sink(write_t write, flush_t flush, close_t close = DEFAULT_CLOSE, is_closed_t is_closed = DEFAULT_IS_CLOSED);
 
-  void write(void * buf, std::size_t len);
+  void write(const void * buf, std::size_t len);
 
   void flush();
 

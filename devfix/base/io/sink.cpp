@@ -19,7 +19,7 @@ sink::sink(devfix::base::io::write_t write,
     is_closed_(std::move(is_closed))
 {}
 
-void sink::write(void *buf, std::size_t len)
+void sink::write(const void *buf, std::size_t len)
 {
   write_(buf, len);
 }

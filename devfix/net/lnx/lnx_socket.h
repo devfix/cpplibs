@@ -62,7 +62,7 @@ struct lnx_socket : public socket
   [[nodiscard]] inetaddress _get_local_address() const;
   void _configure_read_blocking_time();
   void _read(void *buf, std::size_t len);
-  void _write(void *buf, std::size_t len);
+  void _write(const void *buf, std::size_t len);
   void _skip(std::size_t n);
   void _flush();
   std::size_t _available();

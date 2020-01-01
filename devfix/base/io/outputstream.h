@@ -13,7 +13,7 @@ struct outputstream
 {
   virtual ~outputstream() = default;
 
-  virtual void write(void * buf, std::size_t len) = 0;
+  virtual void write(const void * buf, std::size_t len) = 0;
 
   virtual void flush() = 0;
 
