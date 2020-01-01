@@ -18,7 +18,7 @@ constexpr bool MUTE = false;
 constexpr long TEST_LONG = 1000000;
 constexpr float TEST_FLOAT = 3.1415f;
 
-TEST(TestSocket, Address)
+TEST(Socket, Address)
 {
   std::atomic_bool server_ready = false;
   inetaddress server_local_address{};

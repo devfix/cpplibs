@@ -9,8 +9,19 @@
 namespace devfix::base::io
 {
 
+/**
+ * @brief Superclass of all classes representing an input stream of bytes.
+ *
+ * Applications that need to define a subclass of InputStream must always provide a method that returns the next byte of input.
+ */
 struct inputstream
 {
+
+  /**
+   * @brief Default virtual destructor.
+   *
+   * Needed for correct deletion of instances of a derived class through a pointer to base class.
+   */
   virtual ~inputstream() = default;
 
   virtual void read(void *buf, std::size_t len) = 0;

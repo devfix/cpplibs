@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['serversocket',['serversocket',['../structdevfix_1_1net_1_1serversocket.html',1,'devfix::net']]],
   ['set_5finterrupted',['set_interrupted',['../structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d',1,'devfix::net::socket']]],
   ['sink',['sink',['../structdevfix_1_1base_1_1io_1_1sink.html',1,'devfix::base::io']]],
   ['socket',['socket',['../structdevfix_1_1net_1_1socket.html',1,'devfix::net']]],

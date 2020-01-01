@@ -2,11 +2,22 @@
 \label{structdevfix_1_1base_1_1io_1_1inputstream}\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
 
 
+Superclass of all classes representing an input stream of bytes.  
+
+
+
+
+{\ttfamily \#include $<$inputstream.\+h$>$}
+
+
+
 Inheritance diagram for devfix\+:\+:base\+:\+:io\+:\+:inputstream\+:
 % FIG 0
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+virtual \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1da9f4c189be9ee315caabd2b4fdc125}{$\sim$inputstream} ()=default
+\begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\item 
 \mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}\label{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}} 
 virtual void {\bfseries read} (void $\ast$buf, std\+::size\+\_\+t len)=0
 \item 
@@ -21,6 +32,24 @@ virtual void \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757e
 virtual bool \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}{is\+\_\+closed} ()=0
 \end{DoxyCompactItemize}
 
+
+\subsection{Detailed Description}
+Superclass of all classes representing an input stream of bytes. 
+
+Applications that need to define a subclass of Input\+Stream must always provide a method that returns the next byte of input. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a1da9f4c189be9ee315caabd2b4fdc125}\label{structdevfix_1_1base_1_1io_1_1inputstream_a1da9f4c189be9ee315caabd2b4fdc125}} 
+\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}!````~inputstream@{$\sim$inputstream}}
+\index{````~inputstream@{$\sim$inputstream}!devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
+\subsubsection{\texorpdfstring{$\sim$inputstream()}{~inputstream()}}
+{\footnotesize\ttfamily virtual devfix\+::base\+::io\+::inputstream\+::$\sim$inputstream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
+Default virtual destructor. 
+
+Needed for correct deletion of instances of a derived class through a pointer to base class 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}\label{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}} 
