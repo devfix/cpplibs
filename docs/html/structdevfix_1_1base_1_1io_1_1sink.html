@@ -86,21 +86,161 @@ Collaboration diagram for devfix::base::io::sink:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a5e065482904521fde4ac8d0e378529c8"><td class="memItemLeft" align="right" valign="top"><a id="a5e065482904521fde4ac8d0e378529c8"></a>
-&#160;</td><td class="memItemRight" valign="bottom"><b>sink</b> (write_t write, flush_t flush, close_t close=DEFAULT_CLOSE, is_closed_t is_closed=DEFAULT_IS_CLOSED)</td></tr>
+&#160;</td><td class="memItemRight" valign="bottom"><b>sink</b> (write_t <a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#a6eade9933d316139e952b7a442f3c56d">write</a>, flush_t <a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#abf208747c9be8295972fbc4696ddc557">flush</a>, close_t <a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#a2d110d27baa88f462540e7fd59fb8b3c">close</a>=DEFAULT_CLOSE, is_closed_t <a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#a1e5782219f9256d8ff09385fa6f3b156">is_closed</a>=DEFAULT_IS_CLOSED)</td></tr>
 <tr class="separator:a5e065482904521fde4ac8d0e378529c8"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a912eebd869f230d506a2c8fcd69051b4"><td class="memItemLeft" align="right" valign="top"><a id="a912eebd869f230d506a2c8fcd69051b4"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>write</b> (void *buf, std::size_t len)</td></tr>
-<tr class="separator:a912eebd869f230d506a2c8fcd69051b4"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf208747c9be8295972fbc4696ddc557"><td class="memItemLeft" align="right" valign="top"><a id="abf208747c9be8295972fbc4696ddc557"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>flush</b> ()</td></tr>
+<tr class="memitem:a6eade9933d316139e952b7a442f3c56d"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#a6eade9933d316139e952b7a442f3c56d">write</a> (const void *buf, std::size_t len)</td></tr>
+<tr class="memdesc:a6eade9933d316139e952b7a442f3c56d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Writes len bytes from the specified buffer to this output stream.  <a href="#a6eade9933d316139e952b7a442f3c56d">More...</a><br /></td></tr>
+<tr class="separator:a6eade9933d316139e952b7a442f3c56d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abf208747c9be8295972fbc4696ddc557"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#abf208747c9be8295972fbc4696ddc557">flush</a> ()</td></tr>
+<tr class="memdesc:abf208747c9be8295972fbc4696ddc557"><td class="mdescLeft">&#160;</td><td class="mdescRight">Flushes this <em>outputstream</em> and forces any buffered output bytes to be written out.  <a href="#abf208747c9be8295972fbc4696ddc557">More...</a><br /></td></tr>
 <tr class="separator:abf208747c9be8295972fbc4696ddc557"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2d110d27baa88f462540e7fd59fb8b3c"><td class="memItemLeft" align="right" valign="top"><a id="a2d110d27baa88f462540e7fd59fb8b3c"></a>
-void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()</td></tr>
+<tr class="memitem:a2d110d27baa88f462540e7fd59fb8b3c"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#a2d110d27baa88f462540e7fd59fb8b3c">close</a> ()</td></tr>
+<tr class="memdesc:a2d110d27baa88f462540e7fd59fb8b3c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes this <em>outputstream</em> and releases any system resources associated with this stream.  <a href="#a2d110d27baa88f462540e7fd59fb8b3c">More...</a><br /></td></tr>
 <tr class="separator:a2d110d27baa88f462540e7fd59fb8b3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a1e5782219f9256d8ff09385fa6f3b156"><td class="memItemLeft" align="right" valign="top"><a id="a1e5782219f9256d8ff09385fa6f3b156"></a>
-bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_closed</b> ()</td></tr>
+<tr class="memitem:a1e5782219f9256d8ff09385fa6f3b156"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#a1e5782219f9256d8ff09385fa6f3b156">is_closed</a> ()</td></tr>
+<tr class="memdesc:a1e5782219f9256d8ff09385fa6f3b156"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the <em>outputstream</em> is closed or available for further calls of output operations.  <a href="#a1e5782219f9256d8ff09385fa6f3b156">More...</a><br /></td></tr>
 <tr class="separator:a1e5782219f9256d8ff09385fa6f3b156"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a2d110d27baa88f462540e7fd59fb8b3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2d110d27baa88f462540e7fd59fb8b3c">&#9670;&nbsp;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void devfix::base::io::sink::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Closes this <em>outputstream</em> and releases any system resources associated with this stream. </p>
+<p>The general contract of close is that it closes the output stream. A closed stream cannot perform output operations and cannot be reopened. </p>
+
+<p>Implements <a class="el" href="structdevfix_1_1base_1_1io_1_1outputstream.html#a060c2e7040e6bb831b8150f64bd8abf7">devfix::base::io::outputstream</a>.</p>
+
+</div>
+</div>
+<a id="abf208747c9be8295972fbc4696ddc557"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abf208747c9be8295972fbc4696ddc557">&#9670;&nbsp;</a></span>flush()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void devfix::base::io::sink::flush </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Flushes this <em>outputstream</em> and forces any buffered output bytes to be written out. </p>
+<p>The general contract of flush is that calling it is an indication that, if any bytes previously written have been buffered by the implementation of the output stream, such bytes should immediately be written to their intended destination.</p>
+<p>If the intended destination of this stream is an abstraction provided by the underlying operating system, for example a file, then flushing the stream guarantees only that bytes previously written to the stream are passed to the operating system for writing; it does not guarantee that they are actually written to a physical device such as a disk drive. </p>
+
+<p>Implements <a class="el" href="structdevfix_1_1base_1_1io_1_1outputstream.html#a3fe3b34675a2d70331e6ca235388e0cc">devfix::base::io::outputstream</a>.</p>
+
+</div>
+</div>
+<a id="a1e5782219f9256d8ff09385fa6f3b156"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1e5782219f9256d8ff09385fa6f3b156">&#9670;&nbsp;</a></span>is_closed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">bool devfix::base::io::sink::is_closed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Returns if the <em>outputstream</em> is closed or available for further calls of output operations. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the <em>outputstream</em> got previously closed. </dd></dl>
+
+<p>Implements <a class="el" href="structdevfix_1_1base_1_1io_1_1outputstream.html#a52bd2eac8f6fbc496eab5138a48d2f06">devfix::base::io::outputstream</a>.</p>
+
+</div>
+</div>
+<a id="a6eade9933d316139e952b7a442f3c56d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6eade9933d316139e952b7a442f3c56d">&#9670;&nbsp;</a></span>write()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">void devfix::base::io::sink::write </td>
+          <td>(</td>
+          <td class="paramtype">const void *&#160;</td>
+          <td class="paramname"><em>buf</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>Writes len bytes from the specified buffer to this output stream. </p>
+<p>Element b[0] is the first byte written and b[len-1] is the last byte written by this operation.</p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">buf</td><td>the data. </td></tr>
+    <tr><td class="paramname">len</td><td>the number of bytes to write. </td></tr>
+  </table>
+  </dd>
+</dl>
+
+<p>Implements <a class="el" href="structdevfix_1_1base_1_1io_1_1outputstream.html#ac7e5fcd6883c7c8f53356a4eb8284c00">devfix::base::io::outputstream</a>.</p>
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>devfix/base/io/<a class="el" href="sink_8h_source.html">sink.h</a></li>
 <li>devfix/base/io/sink.cpp</li>

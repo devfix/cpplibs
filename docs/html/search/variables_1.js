@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['what_5farg_5f',['what_arg_',['../structdevfix_1_1base_1_1exception.html#a1aac7f151fcf3783f0b5d2fae38acc79',1,'devfix::base::exception']]]
+  ['what_5farg_5f',['what_arg_',['../structdevfix_1_1base_1_1baseexception.html#ae91966707d8a72b2d07708971806a4d6',1,'devfix::base::baseexception']]]
 ];

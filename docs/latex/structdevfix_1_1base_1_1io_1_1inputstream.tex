@@ -18,19 +18,16 @@ Inheritance diagram for devfix\+:\+:base\+:\+:io\+:\+:inputstream\+:
 \item 
 virtual \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1da9f4c189be9ee315caabd2b4fdc125}{$\sim$inputstream} ()=default
 \begin{DoxyCompactList}\small\item\em Default virtual destructor. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}\label{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}} 
-virtual void {\bfseries read} (void $\ast$buf, std\+::size\+\_\+t len)=0
-\item 
-\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a1868a733fd646b29daae6874e07e4e03}\label{structdevfix_1_1base_1_1io_1_1inputstream_a1868a733fd646b29daae6874e07e4e03}} 
-virtual void {\bfseries skip} (std\+::size\+\_\+t n)=0
-\item 
+virtual void \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}{read} (void $\ast$buf, std\+::size\+\_\+t len)=0
+\begin{DoxyCompactList}\small\item\em Reads bytes from the input stream and stores them into the buffer. \end{DoxyCompactList}\item 
+virtual void \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1868a733fd646b29daae6874e07e4e03}{skip} (std\+::size\+\_\+t n)=0
+\begin{DoxyCompactList}\small\item\em Skips over and discards n bytes of data from this input stream. \end{DoxyCompactList}\item 
 virtual std\+::size\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}{available} ()=0
-\item 
-\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}\label{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}} 
+\begin{DoxyCompactList}\small\item\em Returns an estimate of the number of bytes that can be read (or skipped over) from this input stream without blocking by the next invocation of a method for this input stream. \end{DoxyCompactList}\item 
 virtual void \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}{close} ()=0
-\begin{DoxyCompactList}\small\item\em Closes this socket. Once a socket has been closed, it is not available for further networking use (i.\+e. can\textquotesingle{}t be reconnected or rebound). A new socket needs to be created. \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em Closes this input stream and releases any system resources associated with the stream. \end{DoxyCompactList}\item 
 virtual bool \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}{is\+\_\+closed} ()=0
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Returns if the {\itshape inputstream} is closed or available for further calls of input operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -49,7 +46,7 @@ Applications that need to define a subclass of Input\+Stream must always provide
 
 Default virtual destructor. 
 
-Needed for correct deletion of instances of a derived class through a pointer to base class 
+Needed for correct deletion of instances of a derived classes through a pointer to base class. 
 
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}\label{structdevfix_1_1base_1_1io_1_1inputstream_ace04813af676b6c81fa452eb4d81a796}} 
@@ -58,12 +55,38 @@ Needed for correct deletion of instances of a derived class through a pointer to
 \subsubsection{\texorpdfstring{available()}{available()}}
 {\footnotesize\ttfamily virtual std\+::size\+\_\+t devfix\+::base\+::io\+::inputstream\+::available (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Returns an estimate of the number of bytes that can be read (or skipped over) from this input stream without blocking by the next invocation of a method for this input stream. 
+
+A single read or skip of this many bytes will not block, but may read or skip fewer bytes.
+
+Note that while some implementations of {\itshape inputstream} will return the total number of bytes in the stream, many will not. It is never correct to use the return value of this method to allocate a buffer intended to hold all data in this stream.
+
+A subclass\textquotesingle{} implementation of this method may choose to throw an I\+O\+Exception if this input stream has been closed by invoking the \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}{close()} method.
+
+This method should be overridden by subclasses.
+
 \begin{DoxyReturn}{Returns}
-the number of bytes that are immediately available for reading 
+an estimate of the number of bytes that can be read (or skipped over) from this input stream without blocking or 0 when it reaches the end of the input stream. 
 \end{DoxyReturn}
 
 
 Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_a911f4ba79499a623de30cf16d3d26d47}{devfix\+::base\+::io\+::source}.
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}\label{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}} 
+\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}!close@{close}}
+\index{close@{close}!devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily virtual void devfix\+::base\+::io\+::inputstream\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Closes this input stream and releases any system resources associated with the stream. 
+
+A closed stream cannot perform input operations and cannot be reopened. 
+
+Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_aa00a381c8a166cbbc5dbf6de4b56590e}{devfix\+::base\+::io\+::source}.
 
 \mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}\label{structdevfix_1_1base_1_1io_1_1inputstream_a9da6b400424ff476ed0479193c219fa9}} 
 \index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}!is\+\_\+closed@{is\+\_\+closed}}
@@ -71,12 +94,66 @@ Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_a911f4ba79499a623
 \subsubsection{\texorpdfstring{is\+\_\+closed()}{is\_closed()}}
 {\footnotesize\ttfamily virtual bool devfix\+::base\+::io\+::inputstream\+::is\+\_\+closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
+
+
+Returns if the {\itshape inputstream} is closed or available for further calls of input operations. 
+
 \begin{DoxyReturn}{Returns}
-true if the \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream_a1188eff97757eb9625be91dfeca17af7}{close()} function got previously called 
+true if the {\itshape inputstream} got previously closed. 
 \end{DoxyReturn}
 
 
 Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_a406834cf6651d48949b96d0ef49cc6c1}{devfix\+::base\+::io\+::source}.
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}\label{structdevfix_1_1base_1_1io_1_1inputstream_a17e1a21881ae263650ebdaafaee2e71a}} 
+\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}!read@{read}}
+\index{read@{read}!devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
+\subsubsection{\texorpdfstring{read()}{read()}}
+{\footnotesize\ttfamily virtual void devfix\+::base\+::io\+::inputstream\+::read (\begin{DoxyParamCaption}\item[{void $\ast$}]{buf,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Reads bytes from the input stream and stores them into the buffer. 
+
+This method blocks until input data is available, end of file is detected, or another exception is thrown.
+
+If len is zero, then no bytes are read. If no byte is available because the stream is at end of file, an exception is thrown.
+
+The first byte read is stored into element b\mbox{[}0\mbox{]}, the next one into b\mbox{[}1\mbox{]}, and so on. If no exception was thrown, the number of bytes read is always equal to len.
+
+Subclasses are encouraged to provide a more efficient implementation of this method.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the buffer into which the data is read. \\
+\hline
+{\em len} & the maximum number of bytes to read. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_a9fbd4d20aa150910ced44018e1b3156a}{devfix\+::base\+::io\+::source}.
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1inputstream_a1868a733fd646b29daae6874e07e4e03}\label{structdevfix_1_1base_1_1io_1_1inputstream_a1868a733fd646b29daae6874e07e4e03}} 
+\index{devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}!skip@{skip}}
+\index{skip@{skip}!devfix\+::base\+::io\+::inputstream@{devfix\+::base\+::io\+::inputstream}}
+\subsubsection{\texorpdfstring{skip()}{skip()}}
+{\footnotesize\ttfamily virtual void devfix\+::base\+::io\+::inputstream\+::skip (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+
+
+Skips over and discards n bytes of data from this input stream. 
+
+The skip method may, for a variety of reasons, end up skipping over some smaller number of bytes, possibly 0. This may result from any of a number of conditions; reaching end of file before n bytes have been skipped is only one possibility.
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & the number of bytes to be skipped. \\
+\hline
+\end{DoxyParams}
+
+
+Implemented in \hyperlink{structdevfix_1_1base_1_1io_1_1source_a21cb579307589cbc6f9e02d64c66f4b2}{devfix\+::base\+::io\+::source}.
 
 
 

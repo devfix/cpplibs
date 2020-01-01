@@ -2,6 +2,11 @@
 \label{structdevfix_1_1net_1_1socketexception}\index{devfix\+::net\+::socketexception@{devfix\+::net\+::socketexception}}
 
 
+Thrown to indicate that there is an error creating or accessing a Socket.  
+
+
+
+
 {\ttfamily \#include $<$socketexception.\+h$>$}
 
 
@@ -23,12 +28,7 @@ Collaboration diagram for devfix\+:\+:net\+:\+:socketexception\+:
 
 
 \subsection{Detailed Description}
-Exception for server problems, for instance buffer overflow or i/o-\/errors. 
-\begin{DoxyTemplParams}{Template Parameters}
-{\em T} & Type of character \\
-\hline
-\end{DoxyTemplParams}
-
+Thrown to indicate that there is an error creating or accessing a Socket. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{structdevfix_1_1net_1_1socketexception_aeab5d004d494103b37156a5f23a5296a}\label{structdevfix_1_1net_1_1socketexception_aeab5d004d494103b37156a5f23a5296a}} 
@@ -37,9 +37,11 @@ Exception for server problems, for instance buffer overflow or i/o-\/errors.
 \subsubsection{\texorpdfstring{socketexception()}{socketexception()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily devfix\+::net\+::socketexception\+::socketexception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
-Constructs the exception object with what\+\_\+arg as explanatory std\+::string that can be accessed through \hyperlink{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}{what()}. 
+Constructs the exception object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1baseexception_a10cc739c08d7d38b89abea342824396f}{what()}. 
 \begin{DoxyParams}{Parameters}
-{\em what\+\_\+arg} & description \\
+{\em what\+\_\+arg} & explanatory std\+::string \\
+\hline
+{\em err} & c error code (errno) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{structdevfix_1_1net_1_1socketexception_a6da69f635eb11f932a0e960545d023bd}\label{structdevfix_1_1net_1_1socketexception_a6da69f635eb11f932a0e960545d023bd}} 
@@ -48,9 +50,11 @@ Constructs the exception object with what\+\_\+arg as explanatory std\+::string 
 \subsubsection{\texorpdfstring{socketexception()}{socketexception()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily devfix\+::net\+::socketexception\+::socketexception (\begin{DoxyParamCaption}\item[{const char $\ast$}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
-Constructs the exception object with what\+\_\+arg as explanatory c-\/string that can be accessed through \hyperlink{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}{what()}. 
+Constructs the exception object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1baseexception_a10cc739c08d7d38b89abea342824396f}{what()}. 
 \begin{DoxyParams}{Parameters}
-{\em what\+\_\+arg} & description \\
+{\em what\+\_\+arg} & explanatory c-\/string \\
+\hline
+{\em err} & c error code (errno) \\
 \hline
 \end{DoxyParams}
 

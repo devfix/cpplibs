@@ -1,30 +1,30 @@
 #pragma once
 
-#include "../base/exception.h"
+#include "../base/exception/exception.h"
 
 namespace devfix::net
 {
 
 /**
- * Exception for server problems, for instance buffer overflow or i/o-errors.
- * @tparam T Type of character
+ * \brief Thrown to indicate that there is an error creating or accessing a Socket.
  */
-
-struct socketexception : public base::exception
+struct socketexception : public base::baseexception
 {
 
   /**
-   * Constructs the exception object with what_arg as explanatory std::string that can be accessed through what().
-   * @param what_arg description
+   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * @param what_arg explanatory std::string
+   * @param err c error code (errno)
    */
-  explicit socketexception(const std::string &what_arg, int err = -1) : base::exception(what_arg, err)
+  explicit socketexception(const std::string &what_arg, int err = -1) : base::baseexception(what_arg, err)
   {}
 
   /**
-   * Constructs the exception object with what_arg as explanatory c-string that can be accessed through what().
-   * @param what_arg description
+   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * @param what_arg explanatory c-string
+   * @param err c error code (errno)
    */
-  explicit socketexception(const char *what_arg, int err = -1) : base::exception(what_arg, err)
+  explicit socketexception(const char *what_arg, int err = -1) : base::baseexception(what_arg, err)
   {}
 };
 

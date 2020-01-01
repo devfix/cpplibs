@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['_7eexception',['~exception',['../structdevfix_1_1base_1_1exception.html#ae6ff994aceddbbaea1eaa5e1f8853985',1,'devfix::base::exception']]],
-  ['_7einputstream',['~inputstream',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a1da9f4c189be9ee315caabd2b4fdc125',1,'devfix::base::io::inputstream']]]
+  ['timeoutexception',['timeoutexception',['../structdevfix_1_1base_1_1timeoutexception.html#ad900adf164c04e3a33dafd38ded1f024',1,'devfix::base::timeoutexception::timeoutexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1timeoutexception.html#a684cb2e6e0d78b98d30c505a6bf9066d',1,'devfix::base::timeoutexception::timeoutexception(const char *what_arg, int err=-1)']]]
 ];

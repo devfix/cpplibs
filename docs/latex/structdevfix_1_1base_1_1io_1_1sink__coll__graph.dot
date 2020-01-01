@@ -4,5 +4,5 @@ digraph "devfix::base::io::sink"
   node [fontname="Helvetica",fontsize="10",shape=record];
   Node2 [label="devfix::base::io::sink",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
   Node3 -> Node2 [dir="back",color="midnightblue",fontsize="10",style="solid"];
-  Node3 [label="devfix::base::io::outputstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdevfix_1_1base_1_1io_1_1outputstream.html"];
+  Node3 [label="devfix::base::io::outputstream",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$structdevfix_1_1base_1_1io_1_1outputstream.html",tooltip="Superclass of all classes representing an output stream of bytes. "];
 }

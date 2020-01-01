@@ -2,6 +2,11 @@
 \label{structdevfix_1_1base_1_1interruptedexception}\index{devfix\+::base\+::interruptedexception@{devfix\+::base\+::interruptedexception}}
 
 
+Thrown when an operation is interrupted, either before or during the activity.  
+
+
+
+
 {\ttfamily \#include $<$interruptedexception.\+h$>$}
 
 
@@ -23,12 +28,9 @@ Collaboration diagram for devfix\+:\+:base\+:\+:interruptedexception\+:
 
 
 \subsection{Detailed Description}
-Exception for interruptions. 
-\begin{DoxyTemplParams}{Template Parameters}
-{\em T} & Type of character \\
-\hline
-\end{DoxyTemplParams}
+Thrown when an operation is interrupted, either before or during the activity. 
 
+Occasionally a method may wish to test whether the current operation has been interrupted, and if so, to immediately throw this exception. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1interruptedexception_ac7860de3d6456588f4afb1cb5b517ff5}\label{structdevfix_1_1base_1_1interruptedexception_ac7860de3d6456588f4afb1cb5b517ff5}} 
@@ -37,9 +39,11 @@ Exception for interruptions.
 \subsubsection{\texorpdfstring{interruptedexception()}{interruptedexception()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily devfix\+::base\+::interruptedexception\+::interruptedexception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
-Constructs the exception object with what\+\_\+arg as explanatory std\+::string that can be accessed through \hyperlink{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}{what()}. 
+Constructs the exception object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1baseexception_a10cc739c08d7d38b89abea342824396f}{what()}. 
 \begin{DoxyParams}{Parameters}
-{\em what\+\_\+arg} & description \\
+{\em what\+\_\+arg} & explanatory std\+::string \\
+\hline
+{\em err} & c error code (errno) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1interruptedexception_a3115c6a0ad2a463d04629df99ec4d119}\label{structdevfix_1_1base_1_1interruptedexception_a3115c6a0ad2a463d04629df99ec4d119}} 
@@ -48,13 +52,15 @@ Constructs the exception object with what\+\_\+arg as explanatory std\+::string 
 \subsubsection{\texorpdfstring{interruptedexception()}{interruptedexception()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
 {\footnotesize\ttfamily devfix\+::base\+::interruptedexception\+::interruptedexception (\begin{DoxyParamCaption}\item[{const char $\ast$}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
-Constructs the exception object with what\+\_\+arg as explanatory c-\/string that can be accessed through \hyperlink{structdevfix_1_1base_1_1exception_ad2066a6a81737c0fdf776120a6ca69d2}{what()}. 
+Constructs the exception object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1baseexception_a10cc739c08d7d38b89abea342824396f}{what()}. 
 \begin{DoxyParams}{Parameters}
-{\em what\+\_\+arg} & description \\
+{\em what\+\_\+arg} & explanatory c-\/string \\
+\hline
+{\em err} & c error code (errno) \\
 \hline
 \end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-devfix/base/interruptedexception.\+h\end{DoxyCompactItemize}
+devfix/base/exception/interruptedexception.\+h\end{DoxyCompactItemize}

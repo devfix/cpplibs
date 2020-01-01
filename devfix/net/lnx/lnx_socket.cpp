@@ -10,8 +10,8 @@
 
 #include "lnx_socket.h"
 #include "../socketexception.h"
-#include "../../base/timeoutexception.h"
-#include "../../base/interruptedexception.h"
+#include "../../base/exception/timeoutexception.h"
+#include "../../base/exception/interruptedexception.h"
 
 #include <cstring>
 #include <unistd.h>

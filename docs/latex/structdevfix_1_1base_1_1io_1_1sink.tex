@@ -12,20 +12,89 @@ Collaboration diagram for devfix\+:\+:base\+:\+:io\+:\+:sink\+:
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1sink_a5e065482904521fde4ac8d0e378529c8}\label{structdevfix_1_1base_1_1io_1_1sink_a5e065482904521fde4ac8d0e378529c8}} 
-{\bfseries sink} (write\+\_\+t write, flush\+\_\+t flush, close\+\_\+t close=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+O\+SE, is\+\_\+closed\+\_\+t is\+\_\+closed=D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+S\+\_\+\+C\+L\+O\+S\+ED)
+{\bfseries sink} (write\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1sink_a6eade9933d316139e952b7a442f3c56d}{write}, flush\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1sink_abf208747c9be8295972fbc4696ddc557}{flush}, close\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1sink_a2d110d27baa88f462540e7fd59fb8b3c}{close}=D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+O\+SE, is\+\_\+closed\+\_\+t \hyperlink{structdevfix_1_1base_1_1io_1_1sink_a1e5782219f9256d8ff09385fa6f3b156}{is\+\_\+closed}=D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+S\+\_\+\+C\+L\+O\+S\+ED)
 \item 
-\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1sink_a912eebd869f230d506a2c8fcd69051b4}\label{structdevfix_1_1base_1_1io_1_1sink_a912eebd869f230d506a2c8fcd69051b4}} 
-void {\bfseries write} (void $\ast$buf, std\+::size\+\_\+t len)
-\item 
-\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1sink_abf208747c9be8295972fbc4696ddc557}\label{structdevfix_1_1base_1_1io_1_1sink_abf208747c9be8295972fbc4696ddc557}} 
-void {\bfseries flush} ()
-\item 
+void \hyperlink{structdevfix_1_1base_1_1io_1_1sink_a6eade9933d316139e952b7a442f3c56d}{write} (const void $\ast$buf, std\+::size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em Writes len bytes from the specified buffer to this output stream. \end{DoxyCompactList}\item 
+void \hyperlink{structdevfix_1_1base_1_1io_1_1sink_abf208747c9be8295972fbc4696ddc557}{flush} ()
+\begin{DoxyCompactList}\small\item\em Flushes this {\itshape outputstream} and forces any buffered output bytes to be written out. \end{DoxyCompactList}\item 
+void \hyperlink{structdevfix_1_1base_1_1io_1_1sink_a2d110d27baa88f462540e7fd59fb8b3c}{close} ()
+\begin{DoxyCompactList}\small\item\em Closes this {\itshape outputstream} and releases any system resources associated with this stream. \end{DoxyCompactList}\item 
+bool \hyperlink{structdevfix_1_1base_1_1io_1_1sink_a1e5782219f9256d8ff09385fa6f3b156}{is\+\_\+closed} ()
+\begin{DoxyCompactList}\small\item\em Returns if the {\itshape outputstream} is closed or available for further calls of output operations. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1sink_a2d110d27baa88f462540e7fd59fb8b3c}\label{structdevfix_1_1base_1_1io_1_1sink_a2d110d27baa88f462540e7fd59fb8b3c}} 
-void {\bfseries close} ()
-\item 
+\index{devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}!close@{close}}
+\index{close@{close}!devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}}
+\subsubsection{\texorpdfstring{close()}{close()}}
+{\footnotesize\ttfamily void devfix\+::base\+::io\+::sink\+::close (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Closes this {\itshape outputstream} and releases any system resources associated with this stream. 
+
+The general contract of close is that it closes the output stream. A closed stream cannot perform output operations and cannot be reopened. 
+
+Implements \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream_a060c2e7040e6bb831b8150f64bd8abf7}{devfix\+::base\+::io\+::outputstream}.
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1sink_abf208747c9be8295972fbc4696ddc557}\label{structdevfix_1_1base_1_1io_1_1sink_abf208747c9be8295972fbc4696ddc557}} 
+\index{devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}!flush@{flush}}
+\index{flush@{flush}!devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}}
+\subsubsection{\texorpdfstring{flush()}{flush()}}
+{\footnotesize\ttfamily void devfix\+::base\+::io\+::sink\+::flush (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Flushes this {\itshape outputstream} and forces any buffered output bytes to be written out. 
+
+The general contract of flush is that calling it is an indication that, if any bytes previously written have been buffered by the implementation of the output stream, such bytes should immediately be written to their intended destination.
+
+If the intended destination of this stream is an abstraction provided by the underlying operating system, for example a file, then flushing the stream guarantees only that bytes previously written to the stream are passed to the operating system for writing; it does not guarantee that they are actually written to a physical device such as a disk drive. 
+
+Implements \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream_a3fe3b34675a2d70331e6ca235388e0cc}{devfix\+::base\+::io\+::outputstream}.
+
 \mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1sink_a1e5782219f9256d8ff09385fa6f3b156}\label{structdevfix_1_1base_1_1io_1_1sink_a1e5782219f9256d8ff09385fa6f3b156}} 
-bool {\bfseries is\+\_\+closed} ()
-\end{DoxyCompactItemize}
+\index{devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}!is\+\_\+closed@{is\+\_\+closed}}
+\index{is\+\_\+closed@{is\+\_\+closed}!devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}}
+\subsubsection{\texorpdfstring{is\+\_\+closed()}{is\_closed()}}
+{\footnotesize\ttfamily bool devfix\+::base\+::io\+::sink\+::is\+\_\+closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Returns if the {\itshape outputstream} is closed or available for further calls of output operations. 
+
+\begin{DoxyReturn}{Returns}
+true if the {\itshape outputstream} got previously closed. 
+\end{DoxyReturn}
+
+
+Implements \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream_a52bd2eac8f6fbc496eab5138a48d2f06}{devfix\+::base\+::io\+::outputstream}.
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1io_1_1sink_a6eade9933d316139e952b7a442f3c56d}\label{structdevfix_1_1base_1_1io_1_1sink_a6eade9933d316139e952b7a442f3c56d}} 
+\index{devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}!write@{write}}
+\index{write@{write}!devfix\+::base\+::io\+::sink@{devfix\+::base\+::io\+::sink}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily void devfix\+::base\+::io\+::sink\+::write (\begin{DoxyParamCaption}\item[{const void $\ast$}]{buf,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}}
+
+
+
+Writes len bytes from the specified buffer to this output stream. 
+
+Element b\mbox{[}0\mbox{]} is the first byte written and b\mbox{[}len-\/1\mbox{]} is the last byte written by this operation.
+
+
+\begin{DoxyParams}{Parameters}
+{\em buf} & the data. \\
+\hline
+{\em len} & the number of bytes to write. \\
+\hline
+\end{DoxyParams}
+
+
+Implements \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream_ac7e5fcd6883c7c8f53356a4eb8284c00}{devfix\+::base\+::io\+::outputstream}.
+
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}

@@ -1,5 +1,10 @@
 var searchData=
 [
-  ['what',['what',['../structdevfix_1_1base_1_1exception.html#ad2066a6a81737c0fdf776120a6ca69d2',1,'devfix::base::exception']]],
-  ['what_5farg_5f',['what_arg_',['../structdevfix_1_1base_1_1exception.html#a1aac7f151fcf3783f0b5d2fae38acc79',1,'devfix::base::exception']]]
+  ['serversocket',['serversocket',['../structdevfix_1_1net_1_1serversocket.html',1,'devfix::net']]],
+  ['set_5finterrupted',['set_interrupted',['../structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d',1,'devfix::net::socket']]],
+  ['sink',['sink',['../structdevfix_1_1base_1_1io_1_1sink.html',1,'devfix::base::io']]],
+  ['skip',['skip',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a1868a733fd646b29daae6874e07e4e03',1,'devfix::base::io::inputstream::skip()'],['../structdevfix_1_1base_1_1io_1_1source.html#a21cb579307589cbc6f9e02d64c66f4b2',1,'devfix::base::io::source::skip()']]],
+  ['socket',['socket',['../structdevfix_1_1net_1_1socket.html',1,'devfix::net']]],
+  ['socketexception',['socketexception',['../structdevfix_1_1net_1_1socketexception.html',1,'devfix::net::socketexception'],['../structdevfix_1_1net_1_1socketexception.html#aeab5d004d494103b37156a5f23a5296a',1,'devfix::net::socketexception::socketexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1net_1_1socketexception.html#a6da69f635eb11f932a0e960545d023bd',1,'devfix::net::socketexception::socketexception(const char *what_arg, int err=-1)']]],
+  ['source',['source',['../structdevfix_1_1base_1_1io_1_1source.html',1,'devfix::base::io']]]
 ];

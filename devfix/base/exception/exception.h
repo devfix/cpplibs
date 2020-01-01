@@ -4,34 +4,34 @@
 
 #pragma once
 
-#include <exception>
-#include <string>
-#include <cstring>
+#include "../../../../../../../../usr/include/c++/8/exception"
+#include "../../../../../../../../usr/include/c++/8/string"
+#include "../../../../../../../../usr/include/c++/8/cstring"
 
 namespace devfix::base
 {
 
 /*! Abstract exception base class. */
 
-struct exception : public std::exception
+struct baseexception : public std::exception
 {
 
   /**
    * Delete simple constructor, always enforce a failure description.
    */
-  exception() = delete;
+  baseexception() = delete;
 
   /**
    * Constructs the exception object with what_arg as explanatory std::string that can be accessed through what().
    * @param what_arg failure description
    */
-  explicit exception(std::string what_arg, int err = -1) : what_arg_(std::move(what_arg)), err_(err)
+  explicit baseexception(std::string what_arg, int err = -1) : what_arg_(std::move(what_arg)), err_(err)
   {}
 
   /**
    * Virtual constructor to make class abstract.
    */
-  ~exception() override = default;
+  ~baseexception() override = default;
 
   /**
    * Returns a C-style character string describing the general cause of the current error.
