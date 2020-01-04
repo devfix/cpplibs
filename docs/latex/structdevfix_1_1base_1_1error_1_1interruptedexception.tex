@@ -1,0 +1,66 @@
+\hypertarget{structdevfix_1_1base_1_1error_1_1interruptedexception}{}\section{devfix\+:\+:base\+:\+:error\+:\+:interruptedexception Struct Reference}
+\label{structdevfix_1_1base_1_1error_1_1interruptedexception}\index{devfix\+::base\+::error\+::interruptedexception@{devfix\+::base\+::error\+::interruptedexception}}
+
+
+Thrown when an operation is interrupted, either before or during the activity.  
+
+
+
+
+{\ttfamily \#include $<$interruptedexception.\+h$>$}
+
+
+
+Inheritance diagram for devfix\+:\+:base\+:\+:error\+:\+:interruptedexception\+:
+% FIG 0
+
+
+Collaboration diagram for devfix\+:\+:base\+:\+:error\+:\+:interruptedexception\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdevfix_1_1base_1_1error_1_1interruptedexception_a9b2d1244ef3e3029d231be8b84fa4c16}{interruptedexception} (const std\+::string \&what\+\_\+arg, int err=-\/1)
+\item 
+\hyperlink{structdevfix_1_1base_1_1error_1_1interruptedexception_a244a67233ab2b7be511706d8398ed860}{interruptedexception} (const char $\ast$what\+\_\+arg, int err=-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Thrown when an operation is interrupted, either before or during the activity. 
+
+Occasionally a method may wish to test whether the current operation has been interrupted, and if so, to immediately throw this error. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1interruptedexception_a9b2d1244ef3e3029d231be8b84fa4c16}\label{structdevfix_1_1base_1_1error_1_1interruptedexception_a9b2d1244ef3e3029d231be8b84fa4c16}} 
+\index{devfix\+::base\+::error\+::interruptedexception@{devfix\+::base\+::error\+::interruptedexception}!interruptedexception@{interruptedexception}}
+\index{interruptedexception@{interruptedexception}!devfix\+::base\+::error\+::interruptedexception@{devfix\+::base\+::error\+::interruptedexception}}
+\subsubsection{\texorpdfstring{interruptedexception()}{interruptedexception()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily devfix\+::base\+::error\+::interruptedexception\+::interruptedexception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs the error object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}{what()}. 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+arg} & explanatory std\+::string \\
+\hline
+{\em err} & c error code (errno) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1interruptedexception_a244a67233ab2b7be511706d8398ed860}\label{structdevfix_1_1base_1_1error_1_1interruptedexception_a244a67233ab2b7be511706d8398ed860}} 
+\index{devfix\+::base\+::error\+::interruptedexception@{devfix\+::base\+::error\+::interruptedexception}!interruptedexception@{interruptedexception}}
+\index{interruptedexception@{interruptedexception}!devfix\+::base\+::error\+::interruptedexception@{devfix\+::base\+::error\+::interruptedexception}}
+\subsubsection{\texorpdfstring{interruptedexception()}{interruptedexception()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily devfix\+::base\+::error\+::interruptedexception\+::interruptedexception (\begin{DoxyParamCaption}\item[{const char $\ast$}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs the error object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}{what()}. 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+arg} & explanatory c-\/string \\
+\hline
+{\em err} & c error code (errno) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/error/interruptedexception.\+h\end{DoxyCompactItemize}

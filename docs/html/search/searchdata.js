@@ -2,26 +2,29 @@ var indexSectionsWithContent =
 {
   0: "abcdfinorstw~",
   1: "abinost",
-  2: "abcfirstw~",
-  3: "dw",
-  4: "c"
+  2: "d",
+  3: "abcfirstw~",
+  4: "dw",
+  5: "c"
 };
 
 var indexSectionNames =
 {
   0: "all",
   1: "classes",
-  2: "functions",
-  3: "variables",
-  4: "pages"
+  2: "namespaces",
+  3: "functions",
+  4: "variables",
+  5: "pages"
 };
 
 var indexSectionLabels =
 {
   0: "All",
   1: "Classes",
-  2: "Functions",
-  3: "Variables",
-  4: "Pages"
+  2: "Namespaces",
+  3: "Functions",
+  4: "Variables",
+  5: "Pages"
 };
 

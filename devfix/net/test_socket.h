@@ -30,7 +30,7 @@ struct socket
 
   /**
    * Set the socket as interrupted.
-   * @param interrupted If set true, any read call returns after the read blocking time expired and throws an exception.
+   * @param interrupted If set true, any read call returns after the read blocking time expired and throws an error.
    */
   virtual void set_interrupted(bool interrupted) noexcept = 0;
 

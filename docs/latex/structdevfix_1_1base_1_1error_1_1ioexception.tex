@@ -1,0 +1,66 @@
+\hypertarget{structdevfix_1_1base_1_1error_1_1ioexception}{}\section{devfix\+:\+:base\+:\+:error\+:\+:ioexception Struct Reference}
+\label{structdevfix_1_1base_1_1error_1_1ioexception}\index{devfix\+::base\+::error\+::ioexception@{devfix\+::base\+::error\+::ioexception}}
+
+
+Signals that an I/O error of some sort has occurred.  
+
+
+
+
+{\ttfamily \#include $<$ioexception.\+h$>$}
+
+
+
+Inheritance diagram for devfix\+:\+:base\+:\+:error\+:\+:ioexception\+:
+% FIG 0
+
+
+Collaboration diagram for devfix\+:\+:base\+:\+:error\+:\+:ioexception\+:
+% FIG 1
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdevfix_1_1base_1_1error_1_1ioexception_acaf6aa89dc63021cbf6241b897c570da}{ioexception} (const std\+::string \&what\+\_\+arg, int err=-\/1)
+\item 
+\hyperlink{structdevfix_1_1base_1_1error_1_1ioexception_a93e7dfc50605b9f6a9c5cd78dac59a44}{ioexception} (const char $\ast$what\+\_\+arg, int err=-\/1)
+\end{DoxyCompactItemize}
+\subsection*{Additional Inherited Members}
+
+
+\subsection{Detailed Description}
+Signals that an I/O error of some sort has occurred. 
+
+This class is the general class of exceptions produced by failed or interrupted I/O operations. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1ioexception_acaf6aa89dc63021cbf6241b897c570da}\label{structdevfix_1_1base_1_1error_1_1ioexception_acaf6aa89dc63021cbf6241b897c570da}} 
+\index{devfix\+::base\+::error\+::ioexception@{devfix\+::base\+::error\+::ioexception}!ioexception@{ioexception}}
+\index{ioexception@{ioexception}!devfix\+::base\+::error\+::ioexception@{devfix\+::base\+::error\+::ioexception}}
+\subsubsection{\texorpdfstring{ioexception()}{ioexception()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily devfix\+::base\+::error\+::ioexception\+::ioexception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs the error object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}{what()}. 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+arg} & explanatory std\+::string \\
+\hline
+{\em err} & c error code (errno) \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1ioexception_a93e7dfc50605b9f6a9c5cd78dac59a44}\label{structdevfix_1_1base_1_1error_1_1ioexception_a93e7dfc50605b9f6a9c5cd78dac59a44}} 
+\index{devfix\+::base\+::error\+::ioexception@{devfix\+::base\+::error\+::ioexception}!ioexception@{ioexception}}
+\index{ioexception@{ioexception}!devfix\+::base\+::error\+::ioexception@{devfix\+::base\+::error\+::ioexception}}
+\subsubsection{\texorpdfstring{ioexception()}{ioexception()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily devfix\+::base\+::error\+::ioexception\+::ioexception (\begin{DoxyParamCaption}\item[{const char $\ast$}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+Constructs the error object with what\+\_\+arg as explanatory string that can be accessed through \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}{what()}. 
+\begin{DoxyParams}{Parameters}
+{\em what\+\_\+arg} & explanatory c-\/string \\
+\hline
+{\em err} & c error code (errno) \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/error/ioexception.\+h\end{DoxyCompactItemize}

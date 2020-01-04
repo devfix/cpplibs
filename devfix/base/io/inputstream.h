@@ -27,13 +27,13 @@ struct inputstream
   /**
    * \brief Reads bytes from the input stream and stores them into the buffer.
    *
-   * This method blocks until input data is available, end of file is detected, or another exception is thrown.
+   * This method blocks until input data is available, end of file is detected, or another error is thrown.
    *
    * If len is zero, then no bytes are read.
-   * If no byte is available because the stream is at end of file, an exception is thrown.
+   * If no byte is available because the stream is at end of file, an error is thrown.
    *
    * The first byte read is stored into element b[0], the next one into b[1], and so on.
-   * If no exception was thrown, the number of bytes read is always equal to len.
+   * If no error was thrown, the number of bytes read is always equal to len.
    *
    * Subclasses are encouraged to provide a more efficient implementation of this method.
    *

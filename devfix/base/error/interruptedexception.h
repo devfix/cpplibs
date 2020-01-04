@@ -1,20 +1,20 @@
 #pragma once
 
-#include "exception.h"
+#include "baseexception.h"
 
-namespace devfix::base
+namespace devfix::base::error
 {
 
 /**
  * \brief Thrown when an operation is interrupted, either before or during the activity.
  *
- * Occasionally a method may wish to test whether the current operation has been interrupted, and if so, to immediately throw this exception.
+ * Occasionally a method may wish to test whether the current operation has been interrupted, and if so, to immediately throw this error.
  */
 struct interruptedexception : public baseexception
 {
 
   /**
-   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * Constructs the error object with what_arg as explanatory string that can be accessed through what().
    * @param what_arg explanatory std::string
    * @param err c error code (errno)
    */
@@ -22,7 +22,7 @@ struct interruptedexception : public baseexception
   {}
 
   /**
-   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * Constructs the error object with what_arg as explanatory string that can be accessed through what().
    * @param what_arg explanatory c-string
    * @param err c error code (errno)
    */
@@ -30,4 +30,4 @@ struct interruptedexception : public baseexception
   {}
 };
 
-} // namespace devfix::base
+} // namespace devfix::base::error

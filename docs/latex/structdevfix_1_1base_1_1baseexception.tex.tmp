@@ -2,7 +2,12 @@
 \label{structdevfix_1_1base_1_1baseexception}\index{devfix\+::base\+::baseexception@{devfix\+::base\+::baseexception}}
 
 
-{\ttfamily \#include $<$exception.\+h$>$}
+Abstract exception base class.  
+
+
+
+
+{\ttfamily \#include $<$baseexception.\+h$>$}
 
 
 
@@ -39,6 +44,8 @@ int {\bfseries err\+\_\+}
 
 \subsection{Detailed Description}
 Abstract exception base class. 
+
+This class is the parent of more specific exceptions and cannot be thrown directly. 
 
 \subsection{Constructor \& Destructor Documentation}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1baseexception_a8e7e8164a43fef8e5b4ad3005f92f814}\label{structdevfix_1_1base_1_1baseexception_a8e7e8164a43fef8e5b4ad3005f92f814}} 
@@ -80,4 +87,4 @@ explanatory string
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-devfix/base/exception/exception.\+h\end{DoxyCompactItemize}
+devfix/base/exception/baseexception.\+h\end{DoxyCompactItemize}

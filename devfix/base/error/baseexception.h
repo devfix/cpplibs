@@ -4,15 +4,18 @@
 
 #pragma once
 
-#include "../../../../../../../../usr/include/c++/8/exception"
-#include "../../../../../../../../usr/include/c++/8/string"
-#include "../../../../../../../../usr/include/c++/8/cstring"
+#include <exception>
+#include <string>
+#include <cstring>
 
-namespace devfix::base
+namespace devfix::base::error
 {
 
-/*! Abstract exception base class. */
-
+/**
+ * \brief Abstract error base class.
+ *
+ * This class is the parent of more specific exceptions and cannot be thrown directly.
+ */
 struct baseexception : public std::exception
 {
 
@@ -22,7 +25,7 @@ struct baseexception : public std::exception
   baseexception() = delete;
 
   /**
-   * Constructs the exception object with what_arg as explanatory std::string that can be accessed through what().
+   * Constructs the error object with what_arg as explanatory std::string that can be accessed through what().
    * @param what_arg failure description
    */
   explicit baseexception(std::string what_arg, int err = -1) : what_arg_(std::move(what_arg)), err_(err)
@@ -59,4 +62,4 @@ struct baseexception : public std::exception
 #define exception_guard(err, exception_class) \
   exception_guard_m(err, exception_class, std::strerror(errno))
 
-} // namespace devfix::base
+} // namespace devfix::base::error

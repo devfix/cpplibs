@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../base/exception/exception.h"
+#include "../base/exception/baseexception.h"
 
 namespace devfix::net
 {
@@ -12,7 +12,7 @@ struct socketexception : public base::baseexception
 {
 
   /**
-   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * Constructs the error object with what_arg as explanatory string that can be accessed through what().
    * @param what_arg explanatory std::string
    * @param err c error code (errno)
    */
@@ -20,7 +20,7 @@ struct socketexception : public base::baseexception
   {}
 
   /**
-   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * Constructs the error object with what_arg as explanatory string that can be accessed through what().
    * @param what_arg explanatory c-string
    * @param err c error code (errno)
    */

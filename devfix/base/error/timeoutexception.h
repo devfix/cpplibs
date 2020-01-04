@@ -1,8 +1,8 @@
 #pragma once
 
-#include "exception.h"
+#include "baseexception.h"
 
-namespace devfix::base
+namespace devfix::base::error
 {
 
 /**
@@ -11,11 +11,11 @@ namespace devfix::base
  * Blocking operations for which a timeout is specified need a means to indicate that the timeout has occurred.
  * For many such operations it is possible to return a value that indicates timeout; when that is not possible or desirable then TimeoutException should be declared and thrown.
  */
-struct timeoutexception : public base::baseexception
+struct timeoutexception : public baseexception
 {
 
   /**
-   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * Constructs the error object with what_arg as explanatory string that can be accessed through what().
    * @param what_arg explanatory std::string
    * @param err c error code (errno)
    */
@@ -23,7 +23,7 @@ struct timeoutexception : public base::baseexception
   {}
 
   /**
-   * Constructs the exception object with what_arg as explanatory string that can be accessed through what().
+   * Constructs the error object with what_arg as explanatory string that can be accessed through what().
    * @param what_arg explanatory c-string
    * @param err c error code (errno)
    */
@@ -31,4 +31,4 @@ struct timeoutexception : public base::baseexception
   {}
 };
 
-} // namespace devfix::base
+} // namespace devfix::base::error
