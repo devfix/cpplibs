@@ -10,8 +10,8 @@
 
 #include "lnx_socket.h"
 #include "../socketexception.h"
-#include "../../base/exception/timeoutexception.h"
-#include "../../base/exception/interruptedexception.h"
+#include "../../base/error/timeoutexception.h"
+#include "../../base/error/interruptedexception.h"
 
 #include <cstring>
 #include <unistd.h>
@@ -139,11 +139,11 @@ namespace devfix::net::lnx {
         timeout_t time = 0;
         while (len) {
             if (interrupted()) {
-                throw base::interruptedexception(SOURCE_LINE);
+                throw base::error::interruptedexception(SOURCE_LINE);
             }
 
             if (time > timeout_) {
-                throw base::timeoutexception(SOURCE_LINE);
+                throw base::error::timeoutexception(SOURCE_LINE);
             }
 
             ssize_t rc = ::read(fd_, buf, len);

@@ -19,7 +19,7 @@ struct timeoutexception : public baseexception
    * @param what_arg explanatory std::string
    * @param err c error code (errno)
    */
-  explicit timeoutexception(const std::string &what_arg, int err = -1) : base::baseexception(what_arg, err)
+  explicit timeoutexception(const std::string &what_arg, int err = -1) : baseexception(what_arg, err)
   {}
 
   /**
@@ -27,7 +27,7 @@ struct timeoutexception : public baseexception
    * @param what_arg explanatory c-string
    * @param err c error code (errno)
    */
-  explicit timeoutexception(const char *what_arg, int err = -1) : base::baseexception(what_arg, err)
+  explicit timeoutexception(const char *what_arg, int err = -1) : baseexception(what_arg, err)
   {}
 };
 

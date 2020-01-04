@@ -8,7 +8,7 @@
 
 #include <unistd.h>
 #include "lnx_serversocket.h"
-#include "../../base/exception/baseexception.h"
+#include "../../base/error/baseexception.h"
 #include "../socketexception.h"
 #include "lnx_socket.h"
 
