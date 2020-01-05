@@ -28,7 +28,7 @@ TEST(Socket, Address) {
       [&server_ready, &server_local_address, &server_remote_address]()
       {
         auto server = netbuilder::create_serversocket(
-            {0, TEST_PORT, inetaddress::family::IPV4},
+            {"0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4},
             true
         );
         server_ready = true;
@@ -40,17 +40,17 @@ TEST(Socket, Address) {
 
   while (!server_ready);
 
-  auto client = netbuilder::create_socket(inetaddress::create_by_host("localhost", TEST_PORT));
+  auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
 
   const inetaddress &local_address = client->get_local_address();
   const inetaddress &remote_address = client->get_remote_address();
 
   server_thread.join();
 
-  ASSERT_EQ(local_address.port_, server_remote_address.port_);
-  ASSERT_EQ(remote_address.port_, server_local_address.port_);
-  ASSERT_EQ(local_address.address_.s_addr, server_remote_address.address_.s_addr);
-  ASSERT_EQ(remote_address.address_.s_addr, server_local_address.address_.s_addr);
+  ASSERT_EQ(local_address.get_port(), server_remote_address.get_port());
+  ASSERT_EQ(remote_address.get_port(), server_local_address.get_port());
+  ASSERT_EQ(local_address.get_address(), server_remote_address.get_address());
+  ASSERT_EQ(remote_address.get_address(), server_local_address.get_address());
   ASSERT_EQ(local_address.get_host(), server_remote_address.get_host());
   ASSERT_EQ(remote_address.get_host(), server_local_address.get_host());
 }
@@ -64,7 +64,7 @@ TEST(Socket, IO) {
       [&server_ready, &server_local_address, &server_remote_address]()
       {
         auto server = netbuilder::create_serversocket(
-            {0, TEST_PORT, inetaddress::family::IPV4},
+            {"0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4},
             true
         );
         server_ready = true;
@@ -93,7 +93,7 @@ TEST(Socket, IO) {
 
   while (!server_ready);
 
-  auto client = netbuilder::create_socket(inetaddress::create_by_host("localhost", TEST_PORT));
+  auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
   auto &is = client->get_inputstream();
   auto &os = client->get_outputstream();
 
