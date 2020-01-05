@@ -8,7 +8,7 @@
 
 #include <unistd.h>
 #include "lnx_serversocket.h"
-#include "../../base/exception/baseexception.h"
+#include "../../base/error/baseexception.h"
 #include "../socketexception.h"
 #include "lnx_socket.h"
 
@@ -27,9 +27,7 @@ std::unique_ptr<socket> lnx_serversocket::accept()
   int fd = ::accept(fd_, reinterpret_cast<sockaddr *>(&sockaddr_in), &socklen);
   exception_guard(fd < 0, socketexception);
 
-  inetaddress remote_address{};
-  remote_address.get_from_sockaddr(sockaddr_in);
-
+  inetaddress remote_address(sockaddr_in);
   return std::unique_ptr<socket>(new lnx_socket(fd, remote_address));
 }
 
@@ -81,8 +79,7 @@ lnx_serversocket::lnx_serversocket(inetaddress inetaddress, bool reuse_address) 
   int rc = setsockopt(fd_, SOL_SOCKET, SO_REUSEADDR, &flag, sizeof(flag));
   exception_guard(rc, socketexception);
 
-  struct sockaddr_in address{};
-  local_address_.set_to_sockaddr(address);
+  struct sockaddr_in address = local_address_;
 
   rc = ::bind(fd_, reinterpret_cast<const sockaddr *>(&address), sizeof(address));
   exception_guard(rc, socketexception);

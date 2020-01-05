@@ -10,8 +10,8 @@
 
 #include "lnx_socket.h"
 #include "../socketexception.h"
-#include "../../base/exception/timeoutexception.h"
-#include "../../base/exception/interruptedexception.h"
+#include "../../base/error/timeoutexception.h"
+#include "../../base/error/interruptedexception.h"
 
 #include <cstring>
 #include <unistd.h>
@@ -81,12 +81,13 @@ namespace devfix::net::lnx {
         exception_guard(fd_ < 0, socketexception);
 
         // connect socket to remote address
-        struct sockaddr_in sockaddr_remote{};
-        remote_address_.set_to_sockaddr(sockaddr_remote);
+        struct sockaddr_in sockaddr_remote = remote_address;
         int rc = ::connect(fd_, reinterpret_cast<struct sockaddr *>(&sockaddr_remote), sizeof(sockaddr_remote));
         exception_guard(rc, socketexception);
 
         local_address_ = _get_local_address();
+        inetaddress a;
+        inetaddress b(a);
 
         // set socket read timeout to enable non blocking mode
         _configure_read_blocking_time();
@@ -119,10 +120,7 @@ namespace devfix::net::lnx {
         socklen_t socklen = sizeof(sockaddr_in);
         rc = getsockname(fd_, reinterpret_cast<struct sockaddr *>(&sockaddr_in), &socklen);
         exception_guard(rc, socketexception);
-
-        inetaddress inetaddress{};
-        inetaddress.get_from_sockaddr(sockaddr_in);
-        return inetaddress;
+        return inetaddress(sockaddr_in);
     }
 
     void lnx_socket::_configure_read_blocking_time() {
@@ -139,11 +137,11 @@ namespace devfix::net::lnx {
         timeout_t time = 0;
         while (len) {
             if (interrupted()) {
-                throw base::interruptedexception(SOURCE_LINE);
+                throw base::error::interruptedexception(SOURCE_LINE);
             }
 
             if (time > timeout_) {
-                throw base::timeoutexception(SOURCE_LINE);
+                throw base::error::timeoutexception(SOURCE_LINE);
             }
 
             ssize_t rc = ::read(fd_, buf, len);

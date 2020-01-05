@@ -13,7 +13,7 @@ union \hyperlink{uniondevfix_1_1net_1_1inetaddress_1_1address}{address}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a31ec66f69260c75bfa5105d8e042ff06}\label{structdevfix_1_1net_1_1inetaddress_a31ec66f69260c75bfa5105d8e042ff06}} 
-enum {\bfseries family} \+: char \{ {\bfseries U\+N\+S\+U\+P\+P\+O\+R\+T\+ED} = 0, 
+enum {\bfseries family_t} \+: char \{ {\bfseries U\+N\+S\+U\+P\+P\+O\+R\+T\+ED} = 0,
 {\bfseries I\+P\+V4} = 1
  \}
 \item 
@@ -30,13 +30,13 @@ std\+::string {\bfseries get\+\_\+host} () const noexcept
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a1805a7f56b3c4313232293580b052c7c}\label{structdevfix_1_1net_1_1inetaddress_a1805a7f56b3c4313232293580b052c7c}} 
-static \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} {\bfseries create\+\_\+by\+\_\+host} (const std\+::string \&host, port\+\_\+t port, family family=family\+::\+I\+P\+V4)
+static \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} {\bfseries create\+\_\+by\+\_\+host} (const std\+::string \&host, port\+\_\+t port, family_t family_t=family_t\+::\+I\+P\+V4)
 \end{DoxyCompactItemize}
 \subsection*{Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
 \mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a3752ca3c3b6522ec4e1777287627cbe3}\label{structdevfix_1_1net_1_1inetaddress_a3752ca3c3b6522ec4e1777287627cbe3}} 
-enum devfix\+::net\+::inetaddress\+::family {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+}
+enum devfix\+::net\+::inetaddress\+::family_t {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+}
 \item 
 \mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a902c9b8140f7c1fad452ef9de7f86561}\label{structdevfix_1_1net_1_1inetaddress_a902c9b8140f7c1fad452ef9de7f86561}} 
 \hyperlink{uniondevfix_1_1net_1_1inetaddress_1_1address}{address} {\bfseries address\+\_\+} = \{0\}
@@ -45,7 +45,7 @@ enum devfix\+::net\+::inetaddress\+::family {\bfseries \+\_\+\+\_\+attribute\+\_
 port\+\_\+t {\bfseries port\+\_\+} = 0
 \item 
 \mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_af025a2c8b37c28f5553f6f0c350d3765}\label{structdevfix_1_1net_1_1inetaddress_af025a2c8b37c28f5553f6f0c350d3765}} 
-family {\bfseries family\+\_\+} = family\+::\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED
+family_t {\bfseries family_t\+\_\+} = family_t\+::\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED
 \end{DoxyCompactItemize}
 
 

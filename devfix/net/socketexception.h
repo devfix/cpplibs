@@ -1,6 +1,6 @@
 #pragma once
 
-#include "../base/exception/baseexception.h"
+#include "../base/error/baseexception.h"
 
 namespace devfix::net
 {
@@ -8,7 +8,7 @@ namespace devfix::net
 /**
  * \brief Thrown to indicate that there is an error creating or accessing a Socket.
  */
-struct socketexception : public base::baseexception
+ struct socketexception : public base::error::baseexception
 {
 
   /**
@@ -16,7 +16,7 @@ struct socketexception : public base::baseexception
    * @param what_arg explanatory std::string
    * @param err c error code (errno)
    */
-  explicit socketexception(const std::string &what_arg, int err = -1) : base::baseexception(what_arg, err)
+  explicit socketexception(const std::string &what_arg, int err = -1) : base::error::baseexception(what_arg, err)
   {}
 
   /**
@@ -24,7 +24,7 @@ struct socketexception : public base::baseexception
    * @param what_arg explanatory c-string
    * @param err c error code (errno)
    */
-  explicit socketexception(const char *what_arg, int err = -1) : base::baseexception(what_arg, err)
+  explicit socketexception(const char *what_arg, int err = -1) : base::error::baseexception(what_arg, err)
   {}
 };
 
