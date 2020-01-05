@@ -48,7 +48,6 @@ set(WARNINGS ${WARNINGS}
 add_subdirectory(devfix/base)
 add_subdirectory(devfix/net)
 
-
 add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp)
 target_link_libraries(testrunner gtest devfixnet pthread)
 

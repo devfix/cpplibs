@@ -45,4 +45,6 @@ TEST(Inetaddress, CreateByHost)
     ASSERT_EQ(inetaddr.get_family(), inetaddress::family_t::IPV4);
     ASSERT_EQ(inetaddr.get_address(), 0x0100007F); // check for 127.0.0.1
     ASSERT_EQ(inetaddr.get_host(), "127.0.0.1");
+
+	throw std::runtime_error(SOURCE_LINE);
 }

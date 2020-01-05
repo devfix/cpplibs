@@ -19,6 +19,8 @@ namespace devfix::net
 
 struct netbuilder
 {
+  netbuilder() = delete;
+
   /**
    * \brief Creates a socket and connects it to the specified remote internet address.
    * The Socket will also bind() to the local address and port supplied.
