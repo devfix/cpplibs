@@ -1,0 +1,6 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node2" href="$structdevfix_1_1net_1_1inetaddress.html#ad2c4af8ffc473aebc58bc1bbe0277e7d" title="devfix::net::inetaddress\l::get_port" alt="" coords="109,5,268,47"/>
+<area shape="rect" id="node3" href="$structdevfix_1_1net_1_1inetaddress.html#a254e4950de6c6443a39196c6c7f58db4" title="devfix::net::inetaddress\l::get_family" alt="" coords="109,71,268,112"/>
+<area shape="rect" id="node4" href="$structdevfix_1_1net_1_1inetaddress.html#a8c606f2398a2d3c9436c4932d6c590b2" title="devfix::net::inetaddress\l::get_address" alt="" coords="109,136,268,177"/>
+<area shape="rect" id="node5" href="$structdevfix_1_1net_1_1inetaddress.html#a4524692fae7a767e38600012c6f8f3cf" title="devfix::net::inetaddress\l::get_host" alt="" coords="109,201,268,243"/>
+</map>

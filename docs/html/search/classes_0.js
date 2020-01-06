@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['address',['address',['../uniondevfix_1_1net_1_1inetaddress_1_1address.html',1,'devfix::net::inetaddress::address'],['../unionaddress.html',1,'address']]]
+  ['baseexception',['baseexception',['../structdevfix_1_1base_1_1error_1_1baseexception.html',1,'devfix::base::error']]]
 ];

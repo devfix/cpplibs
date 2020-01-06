@@ -59,7 +59,7 @@ $(function() {
 
 <div id="nav-path" class="navpath">
   <ul>
-<li class="navelem"><b>devfix</b></li><li class="navelem"><b>net</b></li><li class="navelem"><a class="el" href="structdevfix_1_1net_1_1serversocket.html">serversocket</a></li>  </ul>
+<li class="navelem"><a class="el" href="namespacedevfix.html">devfix</a></li><li class="navelem"><a class="el" href="namespacedevfix_1_1net.html">net</a></li><li class="navelem"><a class="el" href="structdevfix_1_1net_1_1serversocket.html">serversocket</a></li>  </ul>
 </div>
 </div><!-- top -->
 <div class="header">
@@ -70,31 +70,231 @@ $(function() {
 <div class="title">devfix::net::serversocket Struct Reference<span class="mlabels"><span class="mlabel">abstract</span></span></div>  </div>
 </div><!--header-->
 <div class="contents">
+
+<p><code>#include &lt;<a class="el" href="serversocket_8h_source.html">serversocket.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:a7b3ea6aad486060acdd1385a08f7db81"><td class="memItemLeft" align="right" valign="top"><a id="a7b3ea6aad486060acdd1385a08f7db81"></a>
-virtual std::unique_ptr&lt; <a class="el" href="structdevfix_1_1net_1_1socket.html">socket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><b>accept</b> ()=0</td></tr>
+<tr class="memitem:afd9f315c4018808c790478710f52d8ab"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#afd9f315c4018808c790478710f52d8ab">~serversocket</a> ()=default</td></tr>
+<tr class="separator:afd9f315c4018808c790478710f52d8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b3ea6aad486060acdd1385a08f7db81"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="structdevfix_1_1net_1_1socket.html">socket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81">accept</a> ()=0</td></tr>
 <tr class="separator:a7b3ea6aad486060acdd1385a08f7db81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a087a819b8173bfa101ea65ea8a17eb8c"><td class="memItemLeft" align="right" valign="top"><a id="a087a819b8173bfa101ea65ea8a17eb8c"></a>
-virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><b>get_address</b> () const noexcept=0</td></tr>
+<tr class="memitem:a087a819b8173bfa101ea65ea8a17eb8c"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a087a819b8173bfa101ea65ea8a17eb8c">get_address</a> () const noexcept=0</td></tr>
 <tr class="separator:a087a819b8173bfa101ea65ea8a17eb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7efdb1f57d0e482542fda50a2403230d"><td class="memItemLeft" align="right" valign="top"><a id="a7efdb1f57d0e482542fda50a2403230d"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>get_reuse_address</b> () const noexcept=0</td></tr>
+<tr class="memitem:a7efdb1f57d0e482542fda50a2403230d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7efdb1f57d0e482542fda50a2403230d">get_reuse_address</a> () const noexcept=0</td></tr>
 <tr class="separator:a7efdb1f57d0e482542fda50a2403230d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="memItemLeft" align="right" valign="top"><a id="ae67a25cf26fe54ce7b10d07ff9219ce7"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>set_accept_timeout</b> (socket::timeout_t timeout)=0</td></tr>
+<tr class="memitem:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#ae67a25cf26fe54ce7b10d07ff9219ce7">set_accept_timeout</a> (<a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a> timeout)=0</td></tr>
 <tr class="separator:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acde0979277bf9536f54bb0fb6a9cc881"><td class="memItemLeft" align="right" valign="top"><a id="acde0979277bf9536f54bb0fb6a9cc881"></a>
-virtual socket::timeout_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_accept_timeout</b> () const noexcept=0</td></tr>
+<tr class="memitem:acde0979277bf9536f54bb0fb6a9cc881"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#acde0979277bf9536f54bb0fb6a9cc881">get_accept_timeout</a> () const noexcept=0</td></tr>
 <tr class="separator:acde0979277bf9536f54bb0fb6a9cc881"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="memItemLeft" align="right" valign="top"><a id="ab1762c3364c8298dbac6c3dd67a1e7aa"></a>
-virtual void&#160;</td><td class="memItemRight" valign="bottom"><b>close</b> ()=0</td></tr>
+<tr class="memitem:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#ab1762c3364c8298dbac6c3dd67a1e7aa">close</a> ()=0</td></tr>
 <tr class="separator:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="memItemLeft" align="right" valign="top"><a id="a37cc4e3ecede2a0bc52f90e49fcbe4a9"></a>
-virtual bool&#160;</td><td class="memItemRight" valign="bottom"><b>is_closed</b> () const noexcept=0</td></tr>
+<tr class="memitem:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a37cc4e3ecede2a0bc52f90e49fcbe4a9">is_closed</a> () const noexcept=0</td></tr>
 <tr class="separator:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a id="afd9f315c4018808c790478710f52d8ab"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd9f315c4018808c790478710f52d8ab">&#9670;&nbsp;</a></span>~serversocket()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual devfix::net::serversocket::~serversocket </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">virtual</span><span class="mlabel">default</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Function Documentation</h2>
+<a id="a7b3ea6aad486060acdd1385a08f7db81"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b3ea6aad486060acdd1385a08f7db81">&#9670;&nbsp;</a></span>accept()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual std::unique_ptr&lt;<a class="el" href="structdevfix_1_1net_1_1socket.html">socket</a>&gt; devfix::net::serversocket::accept </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab1762c3364c8298dbac6c3dd67a1e7aa"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab1762c3364c8298dbac6c3dd67a1e7aa">&#9670;&nbsp;</a></span>close()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void devfix::net::serversocket::close </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acde0979277bf9536f54bb0fb6a9cc881"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acde0979277bf9536f54bb0fb6a9cc881">&#9670;&nbsp;</a></span>get_accept_timeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual <a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a> devfix::net::serversocket::get_accept_timeout </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a087a819b8173bfa101ea65ea8a17eb8c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a087a819b8173bfa101ea65ea8a17eb8c">&#9670;&nbsp;</a></span>get_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a>&amp; devfix::net::serversocket::get_address </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a7efdb1f57d0e482542fda50a2403230d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7efdb1f57d0e482542fda50a2403230d">&#9670;&nbsp;</a></span>get_reuse_address()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool devfix::net::serversocket::get_reuse_address </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a37cc4e3ecede2a0bc52f90e49fcbe4a9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a37cc4e3ecede2a0bc52f90e49fcbe4a9">&#9670;&nbsp;</a></span>is_closed()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool devfix::net::serversocket::is_closed </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ae67a25cf26fe54ce7b10d07ff9219ce7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae67a25cf26fe54ce7b10d07ff9219ce7">&#9670;&nbsp;</a></span>set_accept_timeout()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual void devfix::net::serversocket::set_accept_timeout </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a>&#160;</td>
+          <td class="paramname"><em>timeout</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <hr/>The documentation for this struct was generated from the following file:<ul>
 <li>devfix/net/<a class="el" href="serversocket_8h_source.html">serversocket.h</a></li>
 </ul>

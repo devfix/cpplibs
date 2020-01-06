@@ -1,0 +1,4 @@
+<map id="TEST" name="TEST">
+<area shape="rect" id="node2" href="$structdevfix_1_1net_1_1netbuilder.html#a9d685e1822c0be5d68fd6ba62876798b" title="devfix::net::netbuilder\l::create_serversocket" alt="" coords="109,5,257,47"/>
+<area shape="rect" id="node3" href="$structdevfix_1_1net_1_1netbuilder.html#a9d9eb6cb050ca920aa647baaf4692405" title="Creates a socket and connects it to the specified remote internet address. The Socket will also bind(..." alt="" coords="110,71,257,112"/>
+</map>

@@ -1,10 +1,21 @@
 var searchData=
 [
-  ['serversocket',['serversocket',['../structdevfix_1_1net_1_1serversocket.html',1,'devfix::net']]],
-  ['set_5finterrupted',['set_interrupted',['../structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d',1,'devfix::net::socket']]],
-  ['sink',['sink',['../structdevfix_1_1base_1_1io_1_1sink.html',1,'devfix::base::io']]],
-  ['skip',['skip',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a1868a733fd646b29daae6874e07e4e03',1,'devfix::base::io::inputstream::skip()'],['../structdevfix_1_1base_1_1io_1_1source.html#a21cb579307589cbc6f9e02d64c66f4b2',1,'devfix::base::io::source::skip()']]],
-  ['socket',['socket',['../structdevfix_1_1net_1_1socket.html',1,'devfix::net']]],
-  ['socketexception',['socketexception',['../structdevfix_1_1net_1_1socketexception.html',1,'devfix::net::socketexception'],['../structdevfix_1_1net_1_1socketexception.html#aeab5d004d494103b37156a5f23a5296a',1,'devfix::net::socketexception::socketexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1net_1_1socketexception.html#a6da69f635eb11f932a0e960545d023bd',1,'devfix::net::socketexception::socketexception(const char *what_arg, int err=-1)']]],
-  ['source',['source',['../structdevfix_1_1base_1_1io_1_1source.html',1,'devfix::base::io']]]
+  ['inetaddress',['inetaddress',['../structdevfix_1_1net_1_1inetaddress.html',1,'devfix::net::inetaddress'],['../structdevfix_1_1net_1_1inetaddress.html#a823bec9f0bc7437854ec9270c610756a',1,'devfix::net::inetaddress::inetaddress()=default'],['../structdevfix_1_1net_1_1inetaddress.html#a2b5fb7c7cb63230d6188c74d90e323dc',1,'devfix::net::inetaddress::inetaddress(const std::string &amp;host, port_t port, family_t family=family_t::IPV4)']]],
+  ['inetaddress_2ecpp',['inetaddress.cpp',['../inetaddress_8cpp.html',1,'']]],
+  ['inetaddress_2eh',['inetaddress.h',['../inetaddress_8h.html',1,'']]],
+  ['info_5farch',['info_arch',['../CMakeCXXCompilerId_8cpp.html#a59647e99d304ed33b15cb284c27ed391',1,'CMakeCXXCompilerId.cpp']]],
+  ['info_5fcompiler',['info_compiler',['../CMakeCXXCompilerId_8cpp.html#a4b0efeb7a5d59313986b3a0390f050f6',1,'CMakeCXXCompilerId.cpp']]],
+  ['info_5flanguage_5fdialect_5fdefault',['info_language_dialect_default',['../CMakeCXXCompilerId_8cpp.html#a1ce162bad2fe6966ac8b33cc19e120b8',1,'CMakeCXXCompilerId.cpp']]],
+  ['info_5fplatform',['info_platform',['../CMakeCXXCompilerId_8cpp.html#a2321403dee54ee23f0c2fa849c60f7d4',1,'CMakeCXXCompilerId.cpp']]],
+  ['inputstream',['inputstream',['../structdevfix_1_1base_1_1io_1_1inputstream.html',1,'devfix::base::io']]],
+  ['inputstream_2eh',['inputstream.h',['../inputstream_8h.html',1,'']]],
+  ['interrupted',['interrupted',['../structdevfix_1_1net_1_1socket.html#a7cfe151f1124d46fb19fad0c374c9352',1,'devfix::net::socket']]],
+  ['interruptedexception',['interruptedexception',['../structdevfix_1_1base_1_1error_1_1interruptedexception.html',1,'devfix::base::error::interruptedexception'],['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#a9b2d1244ef3e3029d231be8b84fa4c16',1,'devfix::base::error::interruptedexception::interruptedexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#a244a67233ab2b7be511706d8398ed860',1,'devfix::base::error::interruptedexception::interruptedexception(const char *what_arg, int err=-1)']]],
+  ['interruptedexception_2eh',['interruptedexception.h',['../interruptedexception_8h.html',1,'']]],
+  ['ioexception',['ioexception',['../structdevfix_1_1base_1_1error_1_1ioexception.html',1,'devfix::base::error::ioexception'],['../structdevfix_1_1base_1_1error_1_1ioexception.html#acaf6aa89dc63021cbf6241b897c570da',1,'devfix::base::error::ioexception::ioexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1ioexception.html#a93e7dfc50605b9f6a9c5cd78dac59a44',1,'devfix::base::error::ioexception::ioexception(const char *what_arg, int err=-1)']]],
+  ['ioexception_2eh',['ioexception.h',['../ioexception_8h.html',1,'']]],
+  ['iotypes_2eh',['iotypes.h',['../iotypes_8h.html',1,'']]],
+  ['ipv4',['IPV4',['../structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4ae638ca944d27f97f46a5986a5aa53434',1,'devfix::net::inetaddress']]],
+  ['is_5fclosed',['is_closed',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a9da6b400424ff476ed0479193c219fa9',1,'devfix::base::io::inputstream::is_closed()'],['../structdevfix_1_1base_1_1io_1_1outputstream.html#a52bd2eac8f6fbc496eab5138a48d2f06',1,'devfix::base::io::outputstream::is_closed()'],['../structdevfix_1_1base_1_1io_1_1sink.html#a1e5782219f9256d8ff09385fa6f3b156',1,'devfix::base::io::sink::is_closed()'],['../structdevfix_1_1base_1_1io_1_1source.html#a406834cf6651d48949b96d0ef49cc6c1',1,'devfix::base::io::source::is_closed()'],['../structdevfix_1_1net_1_1serversocket.html#a37cc4e3ecede2a0bc52f90e49fcbe4a9',1,'devfix::net::serversocket::is_closed()']]],
+  ['is_5fclosed_5ft',['is_closed_t',['../namespacedevfix_1_1base_1_1io.html#a14f89d4437ced6ede49c044ee8e71f17',1,'devfix::base::io']]]
 ];

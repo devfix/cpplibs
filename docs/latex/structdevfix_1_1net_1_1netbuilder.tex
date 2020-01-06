@@ -1,16 +1,46 @@
 \hypertarget{structdevfix_1_1net_1_1netbuilder}{}\section{devfix\+:\+:net\+:\+:netbuilder Struct Reference}
 \label{structdevfix_1_1net_1_1netbuilder}\index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
+
+
+{\ttfamily \#include $<$netbuilder.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdevfix_1_1net_1_1netbuilder_a36946dc1bd85a68d5c38aaf8533dd401}{netbuilder} ()=delete
+\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
 static std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1socket}{socket} $>$ \hyperlink{structdevfix_1_1net_1_1netbuilder_a9d9eb6cb050ca920aa647baaf4692405}{create\+\_\+socket} (\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} adr)
 \begin{DoxyCompactList}\small\item\em Creates a socket and connects it to the specified remote internet address. The Socket will also bind() to the local address and port supplied. \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}\label{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}} 
-static std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1serversocket}{serversocket} $>$ {\bfseries create\+\_\+serversocket} (\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} adr, bool reuse\+\_\+address=false)
+static std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1serversocket}{serversocket} $>$ \hyperlink{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}{create\+\_\+serversocket} (\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} adr, bool reuse\+\_\+address=false)
 \end{DoxyCompactItemize}
 
 
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1netbuilder_a36946dc1bd85a68d5c38aaf8533dd401}\label{structdevfix_1_1net_1_1netbuilder_a36946dc1bd85a68d5c38aaf8533dd401}} 
+\index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}!netbuilder@{netbuilder}}
+\index{netbuilder@{netbuilder}!devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
+\subsubsection{\texorpdfstring{netbuilder()}{netbuilder()}}
+{\footnotesize\ttfamily devfix\+::net\+::netbuilder\+::netbuilder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}\label{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}} 
+\index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}!create\+\_\+serversocket@{create\+\_\+serversocket}}
+\index{create\+\_\+serversocket@{create\+\_\+serversocket}!devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
+\subsubsection{\texorpdfstring{create\+\_\+serversocket()}{create\_serversocket()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1serversocket}{serversocket} $>$ devfix\+::net\+::netbuilder\+::create\+\_\+serversocket (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress}}]{adr,  }\item[{bool}]{reuse\+\_\+address = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=269pt]{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{structdevfix_1_1net_1_1netbuilder_a9d9eb6cb050ca920aa647baaf4692405}\label{structdevfix_1_1net_1_1netbuilder_a9d9eb6cb050ca920aa647baaf4692405}} 
 \index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}!create\+\_\+socket@{create\+\_\+socket}}
 \index{create\+\_\+socket@{create\+\_\+socket}!devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
@@ -29,9 +59,16 @@ Creates a socket and connects it to the specified remote internet address. The S
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=268pt]{structdevfix_1_1net_1_1netbuilder_a9d9eb6cb050ca920aa647baaf4692405_icgraph}
+\end{center}
+\end{figure}
 
 
 The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
 \item 
-devfix/net/netbuilder.\+h\item 
-devfix/net/netbuilder.\+cpp\end{DoxyCompactItemize}
+devfix/net/\hyperlink{netbuilder_8h}{netbuilder.\+h}\item 
+devfix/net/\hyperlink{netbuilder_8cpp}{netbuilder.\+cpp}\end{DoxyCompactItemize}

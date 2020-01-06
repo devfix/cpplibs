@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['timeoutexception',['timeoutexception',['../structdevfix_1_1base_1_1error_1_1timeoutexception.html#abb684b432a5367385d8f975898226c8d',1,'devfix::base::error::timeoutexception::timeoutexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1timeoutexception.html#a7096cca05d73ac6da75746d1737e1ec1',1,'devfix::base::error::timeoutexception::timeoutexception(const char *what_arg, int err=-1)']]]
+  ['netbuilder',['netbuilder',['../structdevfix_1_1net_1_1netbuilder.html#a36946dc1bd85a68d5c38aaf8533dd401',1,'devfix::net::netbuilder']]]
 ];

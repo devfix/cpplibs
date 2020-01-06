@@ -1,48 +1,93 @@
 \hypertarget{structdevfix_1_1net_1_1socket}{}\section{devfix\+:\+:net\+:\+:socket Struct Reference}
 \label{structdevfix_1_1net_1_1socket}\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+
+
+{\ttfamily \#include $<$socket.\+h$>$}
+
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}\label{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}} 
-typedef std\+::uint32\+\_\+t {\bfseries timeout\+\_\+t}
+typedef std\+::uint32\+\_\+t \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t}
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a570b728ca81a3d47ca7733ff21063318}\label{structdevfix_1_1net_1_1socket_a570b728ca81a3d47ca7733ff21063318}} 
-virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} \& {\bfseries get\+\_\+local\+\_\+address} () const noexcept=0
+virtual \hyperlink{structdevfix_1_1net_1_1socket_ad9d4d9643894e213faefd4e37938f1fe}{$\sim$socket} ()=default
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_afb69dcc8da66eb15a927d031f50a4ba2}\label{structdevfix_1_1net_1_1socket_afb69dcc8da66eb15a927d031f50a4ba2}} 
-virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} \& {\bfseries get\+\_\+remote\+\_\+address} () const noexcept=0
+virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} \& \hyperlink{structdevfix_1_1net_1_1socket_a570b728ca81a3d47ca7733ff21063318}{get\+\_\+local\+\_\+address} () const noexcept=0
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a3a00115497ccb83e8497a7e33be06b03}\label{structdevfix_1_1net_1_1socket_a3a00115497ccb83e8497a7e33be06b03}} 
-virtual \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream}{base\+::io\+::inputstream} \& {\bfseries get\+\_\+inputstream} () const noexcept=0
+virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} \& \hyperlink{structdevfix_1_1net_1_1socket_afb69dcc8da66eb15a927d031f50a4ba2}{get\+\_\+remote\+\_\+address} () const noexcept=0
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ac0320fa786f14778a3a1e2796d9dce57}\label{structdevfix_1_1net_1_1socket_ac0320fa786f14778a3a1e2796d9dce57}} 
-virtual \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream}{base\+::io\+::outputstream} \& {\bfseries get\+\_\+outputstream} () const noexcept=0
+virtual \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream}{base\+::io\+::inputstream} \& \hyperlink{structdevfix_1_1net_1_1socket_a3a00115497ccb83e8497a7e33be06b03}{get\+\_\+inputstream} () const noexcept=0
+\item 
+virtual \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream}{base\+::io\+::outputstream} \& \hyperlink{structdevfix_1_1net_1_1socket_ac0320fa786f14778a3a1e2796d9dce57}{get\+\_\+outputstream} () const noexcept=0
 \item 
 virtual void \hyperlink{structdevfix_1_1net_1_1socket_a3fa8d7dcd44e7740b29ad6674005eb5d}{set\+\_\+interrupted} (bool \hyperlink{structdevfix_1_1net_1_1socket_a7cfe151f1124d46fb19fad0c374c9352}{interrupted}) noexcept=0
 \item 
 virtual bool \hyperlink{structdevfix_1_1net_1_1socket_a7cfe151f1124d46fb19fad0c374c9352}{interrupted} () const noexcept=0
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ae1cf3b2c4f5d39225d6585c387f967d5}\label{structdevfix_1_1net_1_1socket_ae1cf3b2c4f5d39225d6585c387f967d5}} 
-virtual void {\bfseries set\+\_\+timeout} (timeout\+\_\+t timeout) noexcept=0
+virtual void \hyperlink{structdevfix_1_1net_1_1socket_ae1cf3b2c4f5d39225d6585c387f967d5}{set\+\_\+timeout} (\hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t} timeout) noexcept=0
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_afac86b6ad30a758ce590e7a144764967}\label{structdevfix_1_1net_1_1socket_afac86b6ad30a758ce590e7a144764967}} 
-virtual timeout\+\_\+t {\bfseries get\+\_\+timeout} () const noexcept=0
+virtual \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t} \hyperlink{structdevfix_1_1net_1_1socket_afac86b6ad30a758ce590e7a144764967}{get\+\_\+timeout} () const noexcept=0
 \end{DoxyCompactItemize}
 \subsection*{Static Public Attributes}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a1bd6468be497aed208ad6d5632683a5d}\label{structdevfix_1_1net_1_1socket_a1bd6468be497aed208ad6d5632683a5d}} 
-static constexpr timeout\+\_\+t \hyperlink{structdevfix_1_1net_1_1socket_a1bd6468be497aed208ad6d5632683a5d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT} = 3000
+static constexpr \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t} \hyperlink{structdevfix_1_1net_1_1socket_a1bd6468be497aed208ad6d5632683a5d}{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT} = 3000
 \begin{DoxyCompactList}\small\item\em default read timeout in milliseconds \end{DoxyCompactList}\item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a77c3214eb436d06825a4cc2aafcc63ce}\label{structdevfix_1_1net_1_1socket_a77c3214eb436d06825a4cc2aafcc63ce}} 
-static constexpr timeout\+\_\+t \hyperlink{structdevfix_1_1net_1_1socket_a77c3214eb436d06825a4cc2aafcc63ce}{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME} = 100
+static constexpr \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t} \hyperlink{structdevfix_1_1net_1_1socket_a77c3214eb436d06825a4cc2aafcc63ce}{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME} = 100
 \begin{DoxyCompactList}\small\item\em default read timeout until refresh in milliseconds \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}\label{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!timeout\+\_\+t@{timeout\+\_\+t}}
+\index{timeout\+\_\+t@{timeout\+\_\+t}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{timeout\+\_\+t}{timeout\_t}}
+{\footnotesize\ttfamily typedef std\+::uint32\+\_\+t \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{devfix\+::net\+::socket\+::timeout\+\_\+t}}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ad9d4d9643894e213faefd4e37938f1fe}\label{structdevfix_1_1net_1_1socket_ad9d4d9643894e213faefd4e37938f1fe}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!````~socket@{$\sim$socket}}
+\index{````~socket@{$\sim$socket}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{$\sim$socket()}{~socket()}}
+{\footnotesize\ttfamily virtual devfix\+::net\+::socket\+::$\sim$socket (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+
+
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a3a00115497ccb83e8497a7e33be06b03}\label{structdevfix_1_1net_1_1socket_a3a00115497ccb83e8497a7e33be06b03}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!get\+\_\+inputstream@{get\+\_\+inputstream}}
+\index{get\+\_\+inputstream@{get\+\_\+inputstream}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{get\+\_\+inputstream()}{get\_inputstream()}}
+{\footnotesize\ttfamily virtual \hyperlink{structdevfix_1_1base_1_1io_1_1inputstream}{base\+::io\+::inputstream}\& devfix\+::net\+::socket\+::get\+\_\+inputstream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a570b728ca81a3d47ca7733ff21063318}\label{structdevfix_1_1net_1_1socket_a570b728ca81a3d47ca7733ff21063318}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!get\+\_\+local\+\_\+address@{get\+\_\+local\+\_\+address}}
+\index{get\+\_\+local\+\_\+address@{get\+\_\+local\+\_\+address}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{get\+\_\+local\+\_\+address()}{get\_local\_address()}}
+{\footnotesize\ttfamily virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress}\& devfix\+::net\+::socket\+::get\+\_\+local\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ac0320fa786f14778a3a1e2796d9dce57}\label{structdevfix_1_1net_1_1socket_ac0320fa786f14778a3a1e2796d9dce57}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!get\+\_\+outputstream@{get\+\_\+outputstream}}
+\index{get\+\_\+outputstream@{get\+\_\+outputstream}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{get\+\_\+outputstream()}{get\_outputstream()}}
+{\footnotesize\ttfamily virtual \hyperlink{structdevfix_1_1base_1_1io_1_1outputstream}{base\+::io\+::outputstream}\& devfix\+::net\+::socket\+::get\+\_\+outputstream (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_afb69dcc8da66eb15a927d031f50a4ba2}\label{structdevfix_1_1net_1_1socket_afb69dcc8da66eb15a927d031f50a4ba2}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!get\+\_\+remote\+\_\+address@{get\+\_\+remote\+\_\+address}}
+\index{get\+\_\+remote\+\_\+address@{get\+\_\+remote\+\_\+address}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{get\+\_\+remote\+\_\+address()}{get\_remote\_address()}}
+{\footnotesize\ttfamily virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress}\& devfix\+::net\+::socket\+::get\+\_\+remote\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_afac86b6ad30a758ce590e7a144764967}\label{structdevfix_1_1net_1_1socket_afac86b6ad30a758ce590e7a144764967}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!get\+\_\+timeout@{get\+\_\+timeout}}
+\index{get\+\_\+timeout@{get\+\_\+timeout}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{get\+\_\+timeout()}{get\_timeout()}}
+{\footnotesize\ttfamily virtual \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t} devfix\+::net\+::socket\+::get\+\_\+timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
 \mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a7cfe151f1124d46fb19fad0c374c9352}\label{structdevfix_1_1net_1_1socket_a7cfe151f1124d46fb19fad0c374c9352}} 
 \index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!interrupted@{interrupted}}
 \index{interrupted@{interrupted}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
@@ -63,8 +108,37 @@ Set the socket as interrupted.
 {\em interrupted} & If set true, any read call returns after the read blocking time expired and throws an error. \\
 \hline
 \end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_ae1cf3b2c4f5d39225d6585c387f967d5}\label{structdevfix_1_1net_1_1socket_ae1cf3b2c4f5d39225d6585c387f967d5}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!set\+\_\+timeout@{set\+\_\+timeout}}
+\index{set\+\_\+timeout@{set\+\_\+timeout}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{set\+\_\+timeout()}{set\_timeout()}}
+{\footnotesize\ttfamily virtual void devfix\+::net\+::socket\+::set\+\_\+timeout (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t}}]{timeout }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a77c3214eb436d06825a4cc2aafcc63ce}\label{structdevfix_1_1net_1_1socket_a77c3214eb436d06825a4cc2aafcc63ce}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME@{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME@{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME}{DEFAULT\_READ\_BLOCKING\_TIME}}
+{\footnotesize\ttfamily constexpr \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t} devfix\+::net\+::socket\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME = 100\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+default read timeout until refresh in milliseconds 
+
+\mbox{\Hypertarget{structdevfix_1_1net_1_1socket_a1bd6468be497aed208ad6d5632683a5d}\label{structdevfix_1_1net_1_1socket_a1bd6468be497aed208ad6d5632683a5d}} 
+\index{devfix\+::net\+::socket@{devfix\+::net\+::socket}!D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}}
+\index{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT@{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}!devfix\+::net\+::socket@{devfix\+::net\+::socket}}
+\subsubsection{\texorpdfstring{D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}{DEFAULT\_TIMEOUT}}
+{\footnotesize\ttfamily constexpr \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{timeout\+\_\+t} devfix\+::net\+::socket\+::\+D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT = 3000\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+default read timeout in milliseconds 
+
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
 \item 
-devfix/net/socket.\+h\end{DoxyCompactItemize}
+devfix/net/\hyperlink{socket_8h}{socket.\+h}\end{DoxyCompactItemize}
