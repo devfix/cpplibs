@@ -54,15 +54,29 @@ namespace devfix::net
 
 	sa_family_t inetaddress::get_linux_family() const
 	{
-		sa_family_t address_family = (family_ == inetaddress::family_t::IPV4) ? AF_INET : 0;
-		exception_guard_m(!address_family, socketexception, "unsupported address family_t");
+		sa_family_t address_family = 0;
+		switch(family_)
+		{
+		case family_t::IPV4:
+			address_family = AF_INET;
+			break;
+		case family_t::UNSPECIFIED:
+		default:
+			exception_guard_m(true, socketexception, "unspecified or unsupported address family");
+		}
 		return address_family;
 	}
 
 	void inetaddress::set_linux_family(sa_family_t address_family)
 	{
-		family_ = (address_family == AF_INET) ? family_t::IPV4 : family_t::UNSUPPORTED;
-		exception_guard_m(family_ == family_t::UNSUPPORTED, socketexception, "unsupported address family_t");
+		switch (address_family)
+		{
+		case AF_INET:
+			family_ = family_t::IPV4;
+			break;
+		default:
+			exception_guard_m(true, socketexception, "unspecified or unsupported address family");
+		}
 	}
 
 #endif

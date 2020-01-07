@@ -9,9 +9,15 @@
 namespace devfix::base
 {
 
+	/**
+	 * \brief Alias for std::unique_ptr.
+	 */
 	template<class T>
 	using up=std::unique_ptr<T>;
 
+	/**
+	 * \brief Alias for std::shared_ptr.
+	 */
 	template<class T>
 	using sp=std::shared_ptr<T>;
 
