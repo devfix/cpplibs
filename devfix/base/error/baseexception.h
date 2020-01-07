@@ -27,6 +27,7 @@ struct baseexception : public std::exception
   /**
    * Constructs the error object with what_arg as explanatory std::string that can be accessed through what().
    * @param what_arg failure description
+   * @param err c error code (errno)
    */
   explicit baseexception(std::string what_arg, int err = -1) : what_arg_(std::move(what_arg)), err_(err)
   {}

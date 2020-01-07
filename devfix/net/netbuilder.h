@@ -24,7 +24,7 @@ struct netbuilder
   /**
    * \brief Creates a socket and connects it to the specified remote internet address.
    * The Socket will also bind() to the local address and port supplied.
-   * @param inetaddress remote address
+   * @param adr remote address
    * @return
    */
   static std::unique_ptr<socket> create_socket(inetaddress adr);
