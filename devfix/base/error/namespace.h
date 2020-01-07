@@ -10,4 +10,5 @@
  * More specific exceptions are in the namespace of their corresponding functionality.
  */
 namespace devfix::base::error
-{}
+{
+}

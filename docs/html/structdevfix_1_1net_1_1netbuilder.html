@@ -72,22 +72,30 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Builder class for platform independent instantiation.  
+ <a href="structdevfix_1_1net_1_1netbuilder.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="netbuilder_8h_source.html">netbuilder.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a36946dc1bd85a68d5c38aaf8533dd401"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1netbuilder.html#a36946dc1bd85a68d5c38aaf8533dd401">netbuilder</a> ()=delete</td></tr>
+<tr class="memdesc:a36946dc1bd85a68d5c38aaf8533dd401"><td class="mdescLeft">&#160;</td><td class="mdescRight">Allow no instances of builder class.  <a href="#a36946dc1bd85a68d5c38aaf8533dd401">More...</a><br /></td></tr>
 <tr class="separator:a36946dc1bd85a68d5c38aaf8533dd401"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a9d9eb6cb050ca920aa647baaf4692405"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="structdevfix_1_1net_1_1socket.html">socket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1netbuilder.html#a9d9eb6cb050ca920aa647baaf4692405">create_socket</a> (<a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> adr)</td></tr>
-<tr class="memdesc:a9d9eb6cb050ca920aa647baaf4692405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a socket and connects it to the specified remote internet address. The Socket will also bind() to the local address and port supplied.  <a href="#a9d9eb6cb050ca920aa647baaf4692405">More...</a><br /></td></tr>
+<tr class="memdesc:a9d9eb6cb050ca920aa647baaf4692405"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a socket and connects it to the specified remote internet address.  <a href="#a9d9eb6cb050ca920aa647baaf4692405">More...</a><br /></td></tr>
 <tr class="separator:a9d9eb6cb050ca920aa647baaf4692405"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9d685e1822c0be5d68fd6ba62876798b"><td class="memItemLeft" align="right" valign="top">static std::unique_ptr&lt; <a class="el" href="structdevfix_1_1net_1_1serversocket.html">serversocket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1netbuilder.html#a9d685e1822c0be5d68fd6ba62876798b">create_serversocket</a> (<a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> adr, bool reuse_address=false)</td></tr>
+<tr class="memdesc:a9d685e1822c0be5d68fd6ba62876798b"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a server socket and binds it to the supplied local address.  <a href="#a9d685e1822c0be5d68fd6ba62876798b">More...</a><br /></td></tr>
 <tr class="separator:a9d685e1822c0be5d68fd6ba62876798b"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Builder class for platform independent instantiation. </p>
+<p>This class is the only one which has access to the constructors of network classes. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="a36946dc1bd85a68d5c38aaf8533dd401"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a36946dc1bd85a68d5c38aaf8533dd401">&#9670;&nbsp;</a></span>netbuilder()</h2>
 
@@ -110,6 +118,8 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Allow no instances of builder class. </p>
 
 </div>
 </div>
@@ -147,6 +157,16 @@ Static Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a server socket and binds it to the supplied local address. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">adr</td><td>local address for access restriction and port to listen on </td></tr>
+    <tr><td class="paramname">reuse_address</td><td>if true allow bind to a port which remains in TIME_WAIT </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>socket in listen state with platform specific implementation </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -182,14 +202,14 @@ Here is the caller graph for this function:</div>
 </table>
 </div><div class="memdoc">
 
-<p>Creates a socket and connects it to the specified remote internet address. The Socket will also bind() to the local address and port supplied. </p>
+<p>Creates a socket and connects it to the specified remote internet address. </p>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
     <tr><td class="paramname">adr</td><td>remote address </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>connected socket with platform specific implementation </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

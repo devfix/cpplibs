@@ -17,20 +17,33 @@ PLATFORM_UNSUPPORTED;
 namespace devfix::net
 {
 
-struct netbuilder
-{
-  netbuilder() = delete;
+/**
+ * \brief Builder class for platform independent instantiation.
+ *
+ * This class is the only one which has access to the constructors of network classes.
+ */
+	struct netbuilder
+	{
+		/**
+		 * \brief Allow no instances of builder class
+		 */
+		netbuilder() = delete;
 
-  /**
-   * \brief Creates a socket and connects it to the specified remote internet address.
-   * The Socket will also bind() to the local address and port supplied.
-   * @param adr remote address
-   * @return
-   */
-  static std::unique_ptr<socket> create_socket(inetaddress adr);
+		/**
+		 * \brief Creates a socket and connects it to the specified remote internet address.
+		 * @param adr remote address
+		 * @return connected socket with platform specific implementation
+		 */
+		static std::unique_ptr<socket> create_socket(inetaddress adr);
 
-  static std::unique_ptr<serversocket> create_serversocket(inetaddress adr, bool reuse_address = false);
+		/**
+		 * \brief Creates a server socket and binds it to the supplied local address.
+		 * \param adr local address for access restriction and port to listen on
+		 * \param reuse_address if true allow bind to a port which remains in TIME_WAIT
+		 * \return socket in listen state with platform specific implementation
+		 */
+		static std::unique_ptr<serversocket> create_serversocket(inetaddress adr, bool reuse_address = false);
 
-};
+	};
 
 } // namespace devfix::net
