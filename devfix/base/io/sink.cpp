@@ -9,7 +9,8 @@
 namespace devfix::base::io
 {
 
-	sink::sink(devfix::base::io::write_t write,
+	sink::sink(
+		devfix::base::io::write_t write,
 		devfix::base::io::flush_t flush,
 		devfix::base::io::close_t close,
 		devfix::base::io::is_closed_t is_closed)

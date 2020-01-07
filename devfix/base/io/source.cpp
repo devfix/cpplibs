@@ -7,7 +7,12 @@
 namespace devfix::base::io
 {
 
-	source::source(read_t read, skip_t skip, available_t available, close_t close, is_closed_t is_closed)
+	source::source(
+		read_t read,
+		skip_t skip,
+		available_t available,
+		close_t close,
+		is_closed_t is_closed)
 		:
 		read_(std::move(read)),
 		skip_(std::move(skip)),

@@ -11,13 +11,27 @@
 namespace devfix::base::io
 {
 
+	/**
+	 * \brief Adapter class to create an <i>inputstream</i> from function pointers.
+	 */
 	struct source : public inputstream
 	{
-		source(read_t read,
+
+		/**
+		 * \brief Create an <i>inputstream</i> from function pointers to the member the functions of the interface.
+		 * \param read function pointer to implementation of read()
+		 * \param skip function pointer to implementation of skip()
+		 * \param available function pointer to implementation of available()
+		 * \param close function pointer to implementation of close()
+		 * \param is_closed function pointer to implementation of is_closed()
+		 */
+		source(
+			read_t read,
 			skip_t skip,
 			available_t available,
 			close_t close = DEFAULT_CLOSE,
-			is_closed_t is_closed = DEFAULT_IS_CLOSED);
+			is_closed_t is_closed = DEFAULT_IS_CLOSED
+		);
 
 		void read(void* buf, std::size_t len) override;
 

@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Adapter class to create an <em>inputstream</em> from function pointers.  
+ <a href="structdevfix_1_1base_1_1io_1_1source.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="source_8h_source.html">source.h</a>&gt;</code></p>
 <div class="dynheader">
 Inheritance diagram for devfix::base::io::source:</div>
@@ -84,6 +87,7 @@ Inheritance diagram for devfix::base::io::source:</div>
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:af8bef20f5b54153c3fd1fbc7daa263c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#af8bef20f5b54153c3fd1fbc7daa263c5">source</a> (<a class="el" href="namespacedevfix_1_1base_1_1io.html#ae311e0a7c5c8f064e222933e152aff64">read_t</a> <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a9fbd4d20aa150910ced44018e1b3156a">read</a>, <a class="el" href="namespacedevfix_1_1base_1_1io.html#aeb8f94d85cfeaa405f53a6967e609645">skip_t</a> <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a21cb579307589cbc6f9e02d64c66f4b2">skip</a>, <a class="el" href="namespacedevfix_1_1base_1_1io.html#a19c1195ab6a44e6d4f48b86062860a11">available_t</a> <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a911f4ba79499a623de30cf16d3d26d47">available</a>, <a class="el" href="namespacedevfix_1_1base_1_1io.html#ae3118387742e5f4d484a328a213d6a5d">close_t</a> <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#aa00a381c8a166cbbc5dbf6de4b56590e">close</a>=<a class="el" href="namespacedevfix_1_1base_1_1io.html#a14a286c17d4b93881d42b1d14beb2d0b">DEFAULT_CLOSE</a>, <a class="el" href="namespacedevfix_1_1base_1_1io.html#a14f89d4437ced6ede49c044ee8e71f17">is_closed_t</a> <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a406834cf6651d48949b96d0ef49cc6c1">is_closed</a>=<a class="el" href="namespacedevfix_1_1base_1_1io.html#ae04fec2a2a2db3482e624a59e59a2a14">DEFAULT_IS_CLOSED</a>)</td></tr>
+<tr class="memdesc:af8bef20f5b54153c3fd1fbc7daa263c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Create an <em>inputstream</em> from function pointers to the member the functions of the interface.  <a href="#af8bef20f5b54153c3fd1fbc7daa263c5">More...</a><br /></td></tr>
 <tr class="separator:af8bef20f5b54153c3fd1fbc7daa263c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9fbd4d20aa150910ced44018e1b3156a"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a9fbd4d20aa150910ced44018e1b3156a">read</a> (void *buf, std::size_t len) override</td></tr>
 <tr class="memdesc:a9fbd4d20aa150910ced44018e1b3156a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Reads bytes from the input stream and stores them into the buffer.  <a href="#a9fbd4d20aa150910ced44018e1b3156a">More...</a><br /></td></tr>
@@ -105,7 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memdesc:a1da9f4c189be9ee315caabd2b4fdc125 inherit pub_methods_structdevfix_1_1base_1_1io_1_1inputstream"><td class="mdescLeft">&#160;</td><td class="mdescRight">Default virtual destructor.  <a href="structdevfix_1_1base_1_1io_1_1inputstream.html#a1da9f4c189be9ee315caabd2b4fdc125">More...</a><br /></td></tr>
 <tr class="separator:a1da9f4c189be9ee315caabd2b4fdc125 inherit pub_methods_structdevfix_1_1base_1_1io_1_1inputstream"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Adapter class to create an <em>inputstream</em> from function pointers. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="af8bef20f5b54153c3fd1fbc7daa263c5"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#af8bef20f5b54153c3fd1fbc7daa263c5">&#9670;&nbsp;</a></span>source()</h2>
 
@@ -149,6 +155,18 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>Create an <em>inputstream</em> from function pointers to the member the functions of the interface. </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">read</td><td>function pointer to implementation of <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a9fbd4d20aa150910ced44018e1b3156a" title="Reads bytes from the input stream and stores them into the buffer. ">read()</a> </td></tr>
+    <tr><td class="paramname">skip</td><td>function pointer to implementation of <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a21cb579307589cbc6f9e02d64c66f4b2" title="Skips over and discards n bytes of data from this input stream. ">skip()</a> </td></tr>
+    <tr><td class="paramname">available</td><td>function pointer to implementation of <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a911f4ba79499a623de30cf16d3d26d47" title="Returns an estimate of the number of bytes that can be read (or skipped over) from this input stream ...">available()</a> </td></tr>
+    <tr><td class="paramname">close</td><td>function pointer to implementation of <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#aa00a381c8a166cbbc5dbf6de4b56590e" title="Closes this input stream and releases any system resources associated with the stream. ">close()</a> </td></tr>
+    <tr><td class="paramname">is_closed</td><td>function pointer to implementation of <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a406834cf6651d48949b96d0ef49cc6c1" title="Returns if the inputstream is closed or available for further calls of input operations. ">is_closed()</a> </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
