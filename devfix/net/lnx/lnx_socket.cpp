@@ -19,7 +19,6 @@
 #include <sys/socket.h>
 #include <linux/tcp.h>
 #include <netinet/in.h>
-#include <iostream>
 
 
 namespace devfix::net::lnx
@@ -55,7 +54,7 @@ namespace devfix::net::lnx
 		interrupted_ = interrupted;
 	}
 
-	bool lnx_socket::interrupted() const noexcept
+	bool lnx_socket::get_interrupted() const noexcept
 	{
 		return interrupted_;
 	}
@@ -93,7 +92,7 @@ namespace devfix::net::lnx
 		exception_guard(fd_ < 0, socketexception);
 
 		// connect socket to remote address
-		struct sockaddr_in sockaddr_remote = remote_address;
+		auto sockaddr_remote = static_cast<struct sockaddr_in>(remote_address);
 		int rc = ::connect(fd_, reinterpret_cast<struct sockaddr*>(&sockaddr_remote), sizeof(sockaddr_remote));
 		exception_guard(rc, socketexception);
 
@@ -154,7 +153,7 @@ namespace devfix::net::lnx
 		timeout_t time = 0;
 		while (len)
 		{
-			if (interrupted())
+			if (get_interrupted())
 			{
 				throw base::error::interruptedexception(SOURCE_LINE);
 			}

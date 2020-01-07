@@ -16,36 +16,34 @@
 #include "../../base/io/sink.h"
 
 
-// forward declaration for external builder
+// forward declaration for external netbuilder
 namespace devfix::net
 {
-	struct [[maybe_unused]] netbuilder;
+	struct [[maybe_unused]] netbuilder; //!< forward declaration for constructor call in netbuilder
 }
 
 namespace devfix::net::lnx
 {
-
-// forward declaration for accept() in lnx_serversocket
-	struct /*[[maybe_unused]]*/ lnx_serversocket;
+	struct lnx_serversocket; //!< forward declaration for accept() in lnx_serversocket
 
 	struct lnx_socket : public socket
 	{
-		friend struct net::netbuilder;
-		friend struct lnx_serversocket;
+		friend struct net::netbuilder; //!< friend declaration for constructor call in netbuilder
+		friend struct lnx_serversocket; //!< friend declaration for accept() in lnx_serversocket
 
-		~lnx_socket() override;
+		~lnx_socket() final;
 
-		[[nodiscard]] const inetaddress& get_local_address() const noexcept override;
-		[[nodiscard]] const inetaddress& get_remote_address() const noexcept override;
+		[[nodiscard]] const inetaddress& get_local_address() const noexcept final;
+		[[nodiscard]] const inetaddress& get_remote_address() const noexcept final;
 
-		[[nodiscard]] base::io::inputstream& get_inputstream() const noexcept override;
-		[[nodiscard]] base::io::outputstream& get_outputstream() const noexcept override;
+		[[nodiscard]] base::io::inputstream& get_inputstream() const noexcept final;
+		[[nodiscard]] base::io::outputstream& get_outputstream() const noexcept final;
 
-		void set_interrupted(bool interrupted) noexcept override;
-		[[nodiscard]] bool interrupted() const noexcept override;
+		void set_interrupted(bool interrupted) noexcept final;
+		[[nodiscard]] bool get_interrupted() const noexcept final;
 
-		void set_timeout(timeout_t timeout) noexcept override;
-		[[nodiscard]] timeout_t get_timeout() const noexcept override;
+		void set_timeout(timeout_t timeout) noexcept final;
+		[[nodiscard]] timeout_t get_timeout() const noexcept final;
 
 	private:
 		int fd_ = -1;

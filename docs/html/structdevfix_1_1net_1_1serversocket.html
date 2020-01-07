@@ -71,6 +71,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>This class implements server sockets.  
+ <a href="structdevfix_1_1net_1_1serversocket.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="serversocket_8h_source.html">serversocket.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
@@ -78,21 +81,31 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:afd9f315c4018808c790478710f52d8ab"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#afd9f315c4018808c790478710f52d8ab">~serversocket</a> ()=default</td></tr>
 <tr class="separator:afd9f315c4018808c790478710f52d8ab"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7b3ea6aad486060acdd1385a08f7db81"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="structdevfix_1_1net_1_1socket.html">socket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81">accept</a> ()=0</td></tr>
+<tr class="memdesc:a7b3ea6aad486060acdd1385a08f7db81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listens for a connection to be made to this socket and accepts it.  <a href="#a7b3ea6aad486060acdd1385a08f7db81">More...</a><br /></td></tr>
 <tr class="separator:a7b3ea6aad486060acdd1385a08f7db81"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a087a819b8173bfa101ea65ea8a17eb8c"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a087a819b8173bfa101ea65ea8a17eb8c">get_address</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a087a819b8173bfa101ea65ea8a17eb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <em>inetaddress</em> the server is listening on.  <a href="#a087a819b8173bfa101ea65ea8a17eb8c">More...</a><br /></td></tr>
 <tr class="separator:a087a819b8173bfa101ea65ea8a17eb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a7efdb1f57d0e482542fda50a2403230d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7efdb1f57d0e482542fda50a2403230d">get_reuse_address</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a7efdb1f57d0e482542fda50a2403230d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if binding to a port which remains in TIME_WAIT state is allowed.  <a href="#a7efdb1f57d0e482542fda50a2403230d">More...</a><br /></td></tr>
 <tr class="separator:a7efdb1f57d0e482542fda50a2403230d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#ae67a25cf26fe54ce7b10d07ff9219ce7">set_accept_timeout</a> (<a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a> timeout)=0</td></tr>
+<tr class="memdesc:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the accept timeout.  <a href="#ae67a25cf26fe54ce7b10d07ff9219ce7">More...</a><br /></td></tr>
 <tr class="separator:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:acde0979277bf9536f54bb0fb6a9cc881"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#acde0979277bf9536f54bb0fb6a9cc881">get_accept_timeout</a> () const noexcept=0</td></tr>
+<tr class="memdesc:acde0979277bf9536f54bb0fb6a9cc881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the accept timeout.  <a href="#acde0979277bf9536f54bb0fb6a9cc881">More...</a><br /></td></tr>
 <tr class="separator:acde0979277bf9536f54bb0fb6a9cc881"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#ab1762c3364c8298dbac6c3dd67a1e7aa">close</a> ()=0</td></tr>
+<tr class="memdesc:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes this <em>serversocket</em> and releases any system resources associated.  <a href="#ab1762c3364c8298dbac6c3dd67a1e7aa">More...</a><br /></td></tr>
 <tr class="separator:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a37cc4e3ecede2a0bc52f90e49fcbe4a9">is_closed</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the <em>serversocket</em> is closed or available for further calls of io operations like <a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81" title="Listens for a connection to be made to this socket and accepts it. ">accept()</a>.  <a href="#a37cc4e3ecede2a0bc52f90e49fcbe4a9">More...</a><br /></td></tr>
 <tr class="separator:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class implements server sockets. </p>
+<p>A server socket waits for requests to come in over the network. It performs some operation based on that request, and then possibly returns a result to the requester. </p>
+</div><h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
 <a id="afd9f315c4018808c790478710f52d8ab"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#afd9f315c4018808c790478710f52d8ab">&#9670;&nbsp;</a></span>~serversocket()</h2>
 
@@ -142,6 +155,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Listens for a connection to be made to this socket and accepts it. </p>
+<p>The method blocks until a connection is made. A new Socket s is created and returned. </p><dl class="section return"><dt>Returns</dt><dd>client socket </dd></dl>
+
 </div>
 </div>
 <a id="ab1762c3364c8298dbac6c3dd67a1e7aa"></a>
@@ -166,6 +182,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Closes this <em>serversocket</em> and releases any system resources associated. </p>
+<p>The general contract of close is that it closes the serversocket. A closed <em>serversocket</em> cannot perform io operations and cannot be reopened. </p>
 
 </div>
 </div>
@@ -192,6 +211,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get the accept timeout. </p>
+<p>If the timeout ist zero the feature is disabled. </p><dl class="section return"><dt>Returns</dt><dd>timeout </dd></dl>
+
 </div>
 </div>
 <a id="a087a819b8173bfa101ea65ea8a17eb8c"></a>
@@ -216,6 +238,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get the <em>inetaddress</em> the server is listening on. </p>
+<p>The ip address of the inetaddress can be used to restrict the access of clients to the server. </p><dl class="section return"><dt>Returns</dt><dd>bound inetaddress </dd></dl>
 
 </div>
 </div>
@@ -242,6 +267,9 @@ Public Member Functions</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get if binding to a port which remains in TIME_WAIT state is allowed. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if allowed </dd></dl>
+
 </div>
 </div>
 <a id="a37cc4e3ecede2a0bc52f90e49fcbe4a9"></a>
@@ -266,6 +294,9 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Returns if the <em>serversocket</em> is closed or available for further calls of io operations like <a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81" title="Listens for a connection to be made to this socket and accepts it. ">accept()</a>. </p>
+<dl class="section return"><dt>Returns</dt><dd>true if the <em>serversocket</em> got previously closed. </dd></dl>
 
 </div>
 </div>
@@ -292,6 +323,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Set the accept timeout. </p>
+<p>If a call of <a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81" title="Listens for a connection to be made to this socket and accepts it. ">accept()</a> take longer than this timeout, an timeoutexception is thrown. A timeout of zero disables this feature. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td></td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>

@@ -41,14 +41,14 @@ namespace devfix::net::lnx
 		return reuse_address_;
 	}
 
-	void lnx_serversocket::set_accept_timeout(socket::timeout_t timeout)
+	void lnx_serversocket::set_accept_timeout([[maybe_unused]] socket::timeout_t timeout)
 	{
-		accept_timeout_ = timeout;
+		exception_guard_m(true, socketexception, "This serversocket implementation does currently not support accept() with timeout.");
 	}
 
 	socket::timeout_t lnx_serversocket::get_accept_timeout() const noexcept
 	{
-		return accept_timeout_;
+		exception_guard_m(true, socketexception, "This serversocket implementation does currently not support accept() with timeout.");
 	}
 
 	void lnx_serversocket::close()
@@ -80,7 +80,7 @@ namespace devfix::net::lnx
 		int rc = setsockopt(fd_, SOL_SOCKET, SO_REUSEADDR, &flag, sizeof(flag));
 		exception_guard(rc, socketexception);
 
-		struct sockaddr_in address = local_address_;
+		auto address = static_cast<struct sockaddr_in>(local_address_);
 
 		rc = ::bind(fd_, reinterpret_cast<const sockaddr*>(&address), sizeof(address));
 		exception_guard(rc, socketexception);

@@ -39,7 +39,7 @@ namespace devfix::net
 		/**
 		 * \brief Creates a server socket and binds it to the supplied local address.
 		 * \param adr local address for access restriction and port to listen on
-		 * \param reuse_address if true allow bind to a port which remains in TIME_WAIT
+		 * \param reuse_address if true allow bind to a port which remains in TIME_WAIT state
 		 * \return socket in listen state with platform specific implementation
 		 */
 		static std::unique_ptr<serversocket> create_serversocket(inetaddress adr, bool reuse_address = false);

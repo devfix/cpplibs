@@ -72,26 +72,35 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>Class for management and conversion of internet addresses.  
+ <a href="structdevfix_1_1net_1_1inetaddress.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="inetaddress_8h_source.html">inetaddress.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a1c470962b4c9c675d475dba2344b50f4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4">family_t</a> : char { <a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4a40aa75f8e8cfdf7b660c5620e953229f">family_t::UNSUPPORTED</a> = 0, 
+<tr class="memitem:a1c470962b4c9c675d475dba2344b50f4"><td class="memItemLeft" align="right" valign="top">enum &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4">family_t</a> : char { <a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4a1c04cc3823d476c3017238679a0fdf52">family_t::UNSPECIFIED</a> = 0, 
 <a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4ae638ca944d27f97f46a5986a5aa53434">family_t::IPV4</a> = 1
- }</td></tr>
+ }<tr class="memdesc:a1c470962b4c9c675d475dba2344b50f4"><td class="mdescLeft">&#160;</td><td class="mdescRight">Supported underlying protocols.  <a href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4">More...</a><br /></td></tr>
+</td></tr>
 <tr class="separator:a1c470962b4c9c675d475dba2344b50f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2eb252de4b894131be8fcda68118bd77"><td class="memItemLeft" align="right" valign="top">typedef std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a2eb252de4b894131be8fcda68118bd77">address_t</a></td></tr>
+<tr class="memdesc:a2eb252de4b894131be8fcda68118bd77"><td class="mdescLeft">&#160;</td><td class="mdescRight">ipv4 internet address  <a href="#a2eb252de4b894131be8fcda68118bd77">More...</a><br /></td></tr>
 <tr class="separator:a2eb252de4b894131be8fcda68118bd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eaadc730f2b4625987cf948ea485410"><td class="memItemLeft" align="right" valign="top">typedef std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a3eaadc730f2b4625987cf948ea485410">port_t</a></td></tr>
+<tr class="memdesc:a3eaadc730f2b4625987cf948ea485410"><td class="mdescLeft">&#160;</td><td class="mdescRight">protocol port  <a href="#a3eaadc730f2b4625987cf948ea485410">More...</a><br /></td></tr>
 <tr class="separator:a3eaadc730f2b4625987cf948ea485410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
 <tr class="memitem:a823bec9f0bc7437854ec9270c610756a"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a823bec9f0bc7437854ec9270c610756a">inetaddress</a> ()=default</td></tr>
+<tr class="memdesc:a823bec9f0bc7437854ec9270c610756a"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates a default <em>inetaddress</em>, zeroed address, port and unspecified family.  <a href="#a823bec9f0bc7437854ec9270c610756a">More...</a><br /></td></tr>
 <tr class="separator:a823bec9f0bc7437854ec9270c610756a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a2b5fb7c7cb63230d6188c74d90e323dc"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a2b5fb7c7cb63230d6188c74d90e323dc">inetaddress</a> (const std::string &amp;host, <a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a3eaadc730f2b4625987cf948ea485410">port_t</a> port, <a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4">family_t</a> family=<a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4ae638ca944d27f97f46a5986a5aa53434">family_t::IPV4</a>)</td></tr>
+<tr class="memdesc:a2b5fb7c7cb63230d6188c74d90e323dc"><td class="mdescLeft">&#160;</td><td class="mdescRight">Creates an <em>inetaddress</em> by given hostname (dns or ip address).  <a href="#a2b5fb7c7cb63230d6188c74d90e323dc">More...</a><br /></td></tr>
 <tr class="separator:a2b5fb7c7cb63230d6188c74d90e323dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4524692fae7a767e38600012c6f8f3cf"><td class="memItemLeft" align="right" valign="top">std::string&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a4524692fae7a767e38600012c6f8f3cf">get_host</a> () const noexcept</td></tr>
+<tr class="memdesc:a4524692fae7a767e38600012c6f8f3cf"><td class="mdescLeft">&#160;</td><td class="mdescRight">Convert binary host address to string.  <a href="#a4524692fae7a767e38600012c6f8f3cf">More...</a><br /></td></tr>
 <tr class="separator:a4524692fae7a767e38600012c6f8f3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a8c606f2398a2d3c9436c4932d6c590b2"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a2eb252de4b894131be8fcda68118bd77">address_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a8c606f2398a2d3c9436c4932d6c590b2">get_address</a> () const</td></tr>
 <tr class="separator:a8c606f2398a2d3c9436c4932d6c590b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -100,7 +109,9 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a254e4950de6c6443a39196c6c7f58db4"><td class="memItemLeft" align="right" valign="top"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4">family_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a254e4950de6c6443a39196c6c7f58db4">get_family</a> () const</td></tr>
 <tr class="separator:a254e4950de6c6443a39196c6c7f58db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>Class for management and conversion of internet addresses. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a2eb252de4b894131be8fcda68118bd77"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a2eb252de4b894131be8fcda68118bd77">&#9670;&nbsp;</a></span>address_t</h2>
 
@@ -112,6 +123,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>ipv4 internet address </p>
 
 </div>
 </div>
@@ -126,6 +139,8 @@ Public Member Functions</h2></td></tr>
         </tr>
       </table>
 </div><div class="memdoc">
+
+<p>protocol port </p>
 
 </div>
 </div>
@@ -149,8 +164,10 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Supported underlying protocols. </p>
 <table class="fieldtable">
-<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1c470962b4c9c675d475dba2344b50f4a40aa75f8e8cfdf7b660c5620e953229f"></a>UNSUPPORTED&#160;</td><td class="fielddoc"></td></tr>
+<tr><th colspan="2">Enumerator</th></tr><tr><td class="fieldname"><a id="a1c470962b4c9c675d475dba2344b50f4a1c04cc3823d476c3017238679a0fdf52"></a>UNSPECIFIED&#160;</td><td class="fielddoc"></td></tr>
 <tr><td class="fieldname"><a id="a1c470962b4c9c675d475dba2344b50f4ae638ca944d27f97f46a5986a5aa53434"></a>IPV4&#160;</td><td class="fielddoc"></td></tr>
 </table>
 
@@ -179,12 +196,14 @@ Public Member Functions</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Creates a default <em>inetaddress</em>, zeroed address, port and unspecified family. </p>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structdevfix_1_1net_1_1inetaddress_a823bec9f0bc7437854ec9270c610756a_icgraph.png" border="0" usemap="#structdevfix_1_1net_1_1inetaddress_a823bec9f0bc7437854ec9270c610756a_icgraph" alt=""/></div>
 <map name="structdevfix_1_1net_1_1inetaddress_a823bec9f0bc7437854ec9270c610756a_icgraph" id="structdevfix_1_1net_1_1inetaddress_a823bec9f0bc7437854ec9270c610756a_icgraph">
-<area shape="rect" id="node2" href="structdevfix_1_1net_1_1inetaddress.html#a2b5fb7c7cb63230d6188c74d90e323dc" title="devfix::net::inetaddress\l::inetaddress" alt="" coords="212,5,371,47"/>
+<area shape="rect" id="node2" href="structdevfix_1_1net_1_1inetaddress.html#a2b5fb7c7cb63230d6188c74d90e323dc" title="Creates an inetaddress by given hostname (dns or ip address). " alt="" coords="212,5,371,47"/>
 </map>
 </div>
 
@@ -222,6 +241,16 @@ Here is the caller graph for this function:</div>
       </table>
 </div><div class="memdoc">
 
+<p>Creates an <em>inetaddress</em> by given hostname (dns or ip address). </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">host</td><td>hostname, gets converted to ipv4 </td></tr>
+    <tr><td class="paramname">port</td><td>protocol port </td></tr>
+    <tr><td class="paramname">family</td><td>underlying protocol </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
@@ -239,6 +268,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>binary address </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -264,6 +294,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>family of underlying protocol </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -297,6 +328,9 @@ Here is the caller graph for this function:</div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Convert binary host address to string. </p>
+<dl class="section return"><dt>Returns</dt><dd>address as string </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">
@@ -322,6 +356,7 @@ Here is the caller graph for this function:</div>
         </tr>
       </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>protocol port </dd></dl>
 <div class="dynheader">
 Here is the caller graph for this function:</div>
 <div class="dyncontent">

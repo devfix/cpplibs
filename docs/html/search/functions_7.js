@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['netbuilder',['netbuilder',['../structdevfix_1_1net_1_1netbuilder.html#a36946dc1bd85a68d5c38aaf8533dd401',1,'devfix::net::netbuilder']]]
+  ['read',['read',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a17e1a21881ae263650ebdaafaee2e71a',1,'devfix::base::io::inputstream::read()'],['../structdevfix_1_1base_1_1io_1_1source.html#a9fbd4d20aa150910ced44018e1b3156a',1,'devfix::base::io::source::read()']]]
 ];

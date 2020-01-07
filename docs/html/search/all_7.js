@@ -6,6 +6,7 @@ var searchData=
   ['get_5ffamily',['get_family',['../structdevfix_1_1net_1_1inetaddress.html#a254e4950de6c6443a39196c6c7f58db4',1,'devfix::net::inetaddress']]],
   ['get_5fhost',['get_host',['../structdevfix_1_1net_1_1inetaddress.html#a4524692fae7a767e38600012c6f8f3cf',1,'devfix::net::inetaddress']]],
   ['get_5finputstream',['get_inputstream',['../structdevfix_1_1net_1_1socket.html#a3a00115497ccb83e8497a7e33be06b03',1,'devfix::net::socket']]],
+  ['get_5finterrupted',['get_interrupted',['../structdevfix_1_1net_1_1socket.html#a61d5db2ef1bff2b54fc8d5d9d27a2bbc',1,'devfix::net::socket']]],
   ['get_5flocal_5faddress',['get_local_address',['../structdevfix_1_1net_1_1socket.html#a570b728ca81a3d47ca7733ff21063318',1,'devfix::net::socket']]],
   ['get_5foutputstream',['get_outputstream',['../structdevfix_1_1net_1_1socket.html#ac0320fa786f14778a3a1e2796d9dce57',1,'devfix::net::socket']]],
   ['get_5fport',['get_port',['../structdevfix_1_1net_1_1inetaddress.html#ad2c4af8ffc473aebc58bc1bbe0277e7d',1,'devfix::net::inetaddress']]],

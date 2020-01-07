@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['source_5fline',['SOURCE_LINE',['../platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36',1,'platform.h']]],
-  ['stringify',['STRINGIFY',['../CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'CMakeCXXCompilerId.cpp']]],
-  ['stringify_5fhelper',['STRINGIFY_HELPER',['../CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'CMakeCXXCompilerId.cpp']]]
+  ['platform_5fid',['PLATFORM_ID',['../CMakeCXXCompilerId_8cpp.html#adbc5372f40838899018fadbc89bd588b',1,'CMakeCXXCompilerId.cpp']]],
+  ['platform_5flinux',['PLATFORM_LINUX',['../platform_8h.html#affcc3790504b838f9ce56a008cce0950',1,'platform.h']]],
+  ['platform_5funsupported',['PLATFORM_UNSUPPORTED',['../platform_8h.html#a3e1c5996efecf35654d8d23b09d69cad',1,'platform.h']]]
 ];

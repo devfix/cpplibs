@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['test',['TEST',['../test__inetaddress_8cpp.html#a2d43dd3f1abda9845af757f2960f5c5e',1,'TEST(Inetaddress, CreateByHost):&#160;test_inetaddress.cpp'],['../test__socket_8cpp.html#aab99bc83145110194ea22d9e4c60303e',1,'TEST(Socket, Address):&#160;test_socket.cpp'],['../test__socket_8cpp.html#af906a479507e9caec5a5afc0d23afda1',1,'TEST(Socket, IO):&#160;test_socket.cpp']]],
-  ['timeoutexception',['timeoutexception',['../structdevfix_1_1base_1_1error_1_1timeoutexception.html#abb684b432a5367385d8f975898226c8d',1,'devfix::base::error::timeoutexception::timeoutexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1timeoutexception.html#a7096cca05d73ac6da75746d1737e1ec1',1,'devfix::base::error::timeoutexception::timeoutexception(const char *what_arg, int err=-1)']]]
+  ['what',['what',['../structdevfix_1_1base_1_1error_1_1baseexception.html#a16327152a55d65b1e537825231fbd452',1,'devfix::base::error::baseexception']]],
+  ['write',['write',['../structdevfix_1_1base_1_1io_1_1outputstream.html#ac7e5fcd6883c7c8f53356a4eb8284c00',1,'devfix::base::io::outputstream::write()'],['../structdevfix_1_1base_1_1io_1_1sink.html#ae0edc765741de5514b24ccc17457ec96',1,'devfix::base::io::sink::write()']]]
 ];

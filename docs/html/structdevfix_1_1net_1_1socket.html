@@ -73,6 +73,9 @@ $(function() {
 </div><!--header-->
 <div class="contents">
 
+<p>This class implements client sockets (also called just "sockets").  
+ <a href="structdevfix_1_1net_1_1socket.html#details">More...</a></p>
+
 <p><code>#include &lt;<a class="el" href="socket_8h_source.html">socket.h</a>&gt;</code></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
@@ -85,20 +88,27 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:ad9d4d9643894e213faefd4e37938f1fe"><td class="memItemLeft" align="right" valign="top">virtual&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#ad9d4d9643894e213faefd4e37938f1fe">~socket</a> ()=default</td></tr>
 <tr class="separator:ad9d4d9643894e213faefd4e37938f1fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a570b728ca81a3d47ca7733ff21063318"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a570b728ca81a3d47ca7733ff21063318">get_local_address</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a570b728ca81a3d47ca7733ff21063318"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get local address with local ip address and the tcp input port.  <a href="#a570b728ca81a3d47ca7733ff21063318">More...</a><br /></td></tr>
 <tr class="separator:a570b728ca81a3d47ca7733ff21063318"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afb69dcc8da66eb15a927d031f50a4ba2"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#afb69dcc8da66eb15a927d031f50a4ba2">get_remote_address</a> () const noexcept=0</td></tr>
+<tr class="memdesc:afb69dcc8da66eb15a927d031f50a4ba2"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get remote address with remote ip address and the tcp output stream.  <a href="#afb69dcc8da66eb15a927d031f50a4ba2">More...</a><br /></td></tr>
 <tr class="separator:afb69dcc8da66eb15a927d031f50a4ba2"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3a00115497ccb83e8497a7e33be06b03"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structdevfix_1_1base_1_1io_1_1inputstream.html">base::io::inputstream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a3a00115497ccb83e8497a7e33be06b03">get_inputstream</a> () const noexcept=0</td></tr>
+<tr class="memdesc:a3a00115497ccb83e8497a7e33be06b03"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance of the socket input stream, which refers to the socket file descriptor access.  <a href="#a3a00115497ccb83e8497a7e33be06b03">More...</a><br /></td></tr>
 <tr class="separator:a3a00115497ccb83e8497a7e33be06b03"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ac0320fa786f14778a3a1e2796d9dce57"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structdevfix_1_1base_1_1io_1_1outputstream.html">base::io::outputstream</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#ac0320fa786f14778a3a1e2796d9dce57">get_outputstream</a> () const noexcept=0</td></tr>
+<tr class="memdesc:ac0320fa786f14778a3a1e2796d9dce57"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the instance of the socket output stream, which refers to the socket file descriptor access.  <a href="#ac0320fa786f14778a3a1e2796d9dce57">More...</a><br /></td></tr>
 <tr class="separator:ac0320fa786f14778a3a1e2796d9dce57"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3fa8d7dcd44e7740b29ad6674005eb5d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d">set_interrupted</a> (bool <a class="el" href="structdevfix_1_1net_1_1socket.html#a7cfe151f1124d46fb19fad0c374c9352">interrupted</a>) noexcept=0</td></tr>
+<tr class="memitem:a3fa8d7dcd44e7740b29ad6674005eb5d"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d">set_interrupted</a> (bool interrupted) noexcept=0</td></tr>
+<tr class="memdesc:a3fa8d7dcd44e7740b29ad6674005eb5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the socket as interrupted.  <a href="#a3fa8d7dcd44e7740b29ad6674005eb5d">More...</a><br /></td></tr>
 <tr class="separator:a3fa8d7dcd44e7740b29ad6674005eb5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7cfe151f1124d46fb19fad0c374c9352"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a7cfe151f1124d46fb19fad0c374c9352">interrupted</a> () const noexcept=0</td></tr>
-<tr class="separator:a7cfe151f1124d46fb19fad0c374c9352"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a61d5db2ef1bff2b54fc8d5d9d27a2bbc"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a61d5db2ef1bff2b54fc8d5d9d27a2bbc">get_interrupted</a> () const noexcept=0</td></tr>
+<tr class="separator:a61d5db2ef1bff2b54fc8d5d9d27a2bbc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae1cf3b2c4f5d39225d6585c387f967d5"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#ae1cf3b2c4f5d39225d6585c387f967d5">set_timeout</a> (<a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">timeout_t</a> timeout) noexcept=0</td></tr>
+<tr class="memdesc:ae1cf3b2c4f5d39225d6585c387f967d5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the socket timeout.  <a href="#ae1cf3b2c4f5d39225d6585c387f967d5">More...</a><br /></td></tr>
 <tr class="separator:ae1cf3b2c4f5d39225d6585c387f967d5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:afac86b6ad30a758ce590e7a144764967"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">timeout_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#afac86b6ad30a758ce590e7a144764967">get_timeout</a> () const noexcept=0</td></tr>
+<tr class="memdesc:afac86b6ad30a758ce590e7a144764967"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the socket timeout.  <a href="#afac86b6ad30a758ce590e7a144764967">More...</a><br /></td></tr>
 <tr class="separator:afac86b6ad30a758ce590e7a144764967"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
@@ -107,10 +117,13 @@ Static Public Attributes</h2></td></tr>
 <tr class="memdesc:a1bd6468be497aed208ad6d5632683a5d"><td class="mdescLeft">&#160;</td><td class="mdescRight">default read timeout in milliseconds  <a href="#a1bd6468be497aed208ad6d5632683a5d">More...</a><br /></td></tr>
 <tr class="separator:a1bd6468be497aed208ad6d5632683a5d"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a77c3214eb436d06825a4cc2aafcc63ce"><td class="memItemLeft" align="right" valign="top">static constexpr <a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">timeout_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1socket.html#a77c3214eb436d06825a4cc2aafcc63ce">DEFAULT_READ_BLOCKING_TIME</a> = 100</td></tr>
-<tr class="memdesc:a77c3214eb436d06825a4cc2aafcc63ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">default read timeout until refresh in milliseconds  <a href="#a77c3214eb436d06825a4cc2aafcc63ce">More...</a><br /></td></tr>
+<tr class="memdesc:a77c3214eb436d06825a4cc2aafcc63ce"><td class="mdescLeft">&#160;</td><td class="mdescRight">default read time until refresh in milliseconds  <a href="#a77c3214eb436d06825a4cc2aafcc63ce">More...</a><br /></td></tr>
 <tr class="separator:a77c3214eb436d06825a4cc2aafcc63ce"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
-<h2 class="groupheader">Member Typedef Documentation</h2>
+<a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
+<div class="textblock"><p>This class implements client sockets (also called just "sockets"). </p>
+<p>A socket is an endpoint for communication between two machines. The actual work of the socket is performed by an instance of the platform specific implementation class. </p>
+</div><h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a80a3bf4cb7292bae31ea9c6575539c68"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a80a3bf4cb7292bae31ea9c6575539c68">&#9670;&nbsp;</a></span>timeout_t</h2>
 
@@ -175,6 +188,35 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get the instance of the socket input stream, which refers to the socket file descriptor access. </p>
+<dl class="section return"><dt>Returns</dt><dd>socket <em>inputstream</em> </dd></dl>
+
+</div>
+</div>
+<a id="a61d5db2ef1bff2b54fc8d5d9d27a2bbc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a61d5db2ef1bff2b54fc8d5d9d27a2bbc">&#9670;&nbsp;</a></span>get_interrupted()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">virtual bool devfix::net::socket::get_interrupted </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td> const</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>true if socket should get interrupted </dd></dl>
+
 </div>
 </div>
 <a id="a570b728ca81a3d47ca7733ff21063318"></a>
@@ -199,6 +241,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get local address with local ip address and the tcp input port. </p>
+<dl class="section return"><dt>Returns</dt><dd>local <em>inetaddress</em> </dd></dl>
 
 </div>
 </div>
@@ -225,6 +270,9 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Get the instance of the socket output stream, which refers to the socket file descriptor access. </p>
+<dl class="section return"><dt>Returns</dt><dd>socket <em>outputstream</em> </dd></dl>
+
 </div>
 </div>
 <a id="afb69dcc8da66eb15a927d031f50a4ba2"></a>
@@ -249,6 +297,9 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>Get remote address with remote ip address and the tcp output stream. </p>
+<dl class="section return"><dt>Returns</dt><dd>remote <em>inetaddress</em> </dd></dl>
 
 </div>
 </div>
@@ -275,31 +326,8 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-</div>
-</div>
-<a id="a7cfe151f1124d46fb19fad0c374c9352"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7cfe151f1124d46fb19fad0c374c9352">&#9670;&nbsp;</a></span>interrupted()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">virtual bool devfix::net::socket::interrupted </td>
-          <td>(</td>
-          <td class="paramname"></td><td>)</td>
-          <td> const</td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<dl class="section return"><dt>Returns</dt><dd>true if the socket is interrupted. </dd></dl>
+<p>Get the socket timeout. </p>
+<dl class="section return"><dt>Returns</dt><dd>timeout </dd></dl>
 
 </div>
 </div>
@@ -326,9 +354,11 @@ Static Public Attributes</h2></td></tr>
   </tr>
 </table>
 </div><div class="memdoc">
-<p>Set the socket as interrupted. </p><dl class="params"><dt>Parameters</dt><dd>
+
+<p>Set the socket as interrupted. </p>
+<p>If set to true, any read call returns after the read blocking time expired and throws an <em>interruptedexception</em>. The flag must be cleared (set to false) by hand. </p><dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">interrupted</td><td>If set true, any read call returns after the read blocking time expired and throws an error. </td></tr>
+    <tr><td class="paramname">interrupted</td><td>if true, socket should get interrupted </td></tr>
   </table>
   </dd>
 </dl>
@@ -359,6 +389,14 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
+<p>Set the socket timeout. </p>
+<p>If a call of read() on the <em>inputstream</em> takes longer than this timeout, an <em>timeoutexception</em> is thrown. </p><dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">timeout</td><td>for reading </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
 <h2 class="groupheader">Member Data Documentation</h2>
@@ -382,7 +420,7 @@ Static Public Attributes</h2></td></tr>
 </table>
 </div><div class="memdoc">
 
-<p>default read timeout until refresh in milliseconds </p>
+<p>default read time until refresh in milliseconds </p>
 
 </div>
 </div>

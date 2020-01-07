@@ -27,25 +27,23 @@ namespace devfix::net::lnx
 
 		~lnx_serversocket() override;
 
-		[[nodiscard]] std::unique_ptr<socket> accept() override;
+		[[nodiscard]] std::unique_ptr<socket> accept() final;
 
-		[[nodiscard]] const inetaddress& get_address() const noexcept override;
+		[[nodiscard]] const inetaddress& get_address() const noexcept final;
 
-		[[nodiscard]] bool get_reuse_address() const noexcept override;
+		[[nodiscard]] bool get_reuse_address() const noexcept final;
 
-		void set_accept_timeout(socket::timeout_t timeout) override;
-		[[nodiscard]] socket::timeout_t get_accept_timeout() const noexcept override;
+		void set_accept_timeout(socket::timeout_t timeout) final;
+		[[nodiscard]] socket::timeout_t get_accept_timeout() const noexcept final;
 
-		void close() override;
-		[[nodiscard]] bool is_closed() const noexcept override;
+		void close() final;
+		[[nodiscard]] bool is_closed() const noexcept final;
 
 	private:
 		static constexpr int MAX_QUEUED_REQUESTS = 5;
 		const inetaddress local_address_;
 		bool reuse_address_ = false;
 		int fd_ = -1;
-		socket::timeout_t accept_timeout_ = 0;
-		bool is_closed_ = false;
 
 		lnx_serversocket(inetaddress inetaddress, bool reuse_address);
 
