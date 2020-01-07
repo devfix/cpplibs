@@ -1,3 +1,6 @@
+# project specific
+/docs/latex
+
 ### C++ template
 # Prerequisites
 *.d
