@@ -25,4 +25,4 @@
 #define SOURCE_LINE std::string(__FILENAME__) + ":" + std::to_string(__LINE__) + ": in \"" + std::string(&__FUNCTION__[0]) + "\""
 
 // macro to mark return values statements as unused
-#define NOT_USED(x) (void)(x)
+#define NOT_USED(x) static_cast<void>(x)
