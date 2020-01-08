@@ -100,8 +100,9 @@ namespace devfix::net::lnx
 		inetaddress a;
 		inetaddress b(a);
 
-		// set socket read timeout to enable non blocking mode
-		_configure_read_blocking_time();
+		// set socket timeouts to implement non blocking mode
+		_configure_io_timeout(SO_RCVTIMEO, DEFAULT_READ_BLOCKING_TIME);
+		_configure_io_timeout(SO_SNDTIMEO, DEFAULT_WRITE_BLOCKING_TIME);
 	}
 
 	lnx_socket::lnx_socket(int fd, devfix::net::inetaddress remote_address)
@@ -123,8 +124,9 @@ namespace devfix::net::lnx
 			std::bind(&lnx_socket::_is_closed, this)
 		))
 	{
-		// set socket read timeout to enable non blocking mode
-		_configure_read_blocking_time();
+		// set socket timeouts to implement non blocking mode
+		_configure_io_timeout(SO_RCVTIMEO, DEFAULT_READ_BLOCKING_TIME);
+		_configure_io_timeout(SO_SNDTIMEO, DEFAULT_WRITE_BLOCKING_TIME);
 	}
 
 	inetaddress lnx_socket::_get_local_address() const
@@ -137,14 +139,14 @@ namespace devfix::net::lnx
 		return inetaddress(sockaddr_in);
 	}
 
-	void lnx_socket::_configure_read_blocking_time()
+	void lnx_socket::_configure_io_timeout(int optname, timeout_t timeout)
 	{
 		// https://stackoverflow.com/a/2939145/10574851
 		struct timeval tv{
-			DEFAULT_READ_BLOCKING_TIME / 1000,
-			(DEFAULT_READ_BLOCKING_TIME % 1000) * 1000
+			timeout / 1000,
+			(timeout % 1000) * 1000
 		};
-		int rc = ::setsockopt(fd_, SOL_SOCKET, SO_RCVTIMEO, reinterpret_cast<char*>(&tv), sizeof tv);
+		int rc = ::setsockopt(fd_, SOL_SOCKET, optname, reinterpret_cast<char*>(&tv), sizeof tv);
 		exception_guard(rc, socketexception);
 	}
 

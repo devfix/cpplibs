@@ -24,8 +24,8 @@ namespace devfix::net
 	{
 		typedef std::uint32_t timeout_t;
 		static constexpr timeout_t DEFAULT_TIMEOUT = 3000; //!< default read timeout in milliseconds
-		static constexpr timeout_t
-			DEFAULT_READ_BLOCKING_TIME = 100; //!< default read time until refresh in milliseconds
+		static constexpr timeout_t DEFAULT_READ_BLOCKING_TIME = 100; //!< default read time until refresh in milliseconds
+		static constexpr timeout_t DEFAULT_WRITE_BLOCKING_TIME = 100; //!< default write time until refresh in milliseconds
 
 		virtual ~socket() = default;
 

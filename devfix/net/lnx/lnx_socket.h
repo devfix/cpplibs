@@ -58,7 +58,7 @@ namespace devfix::net::lnx
 		lnx_socket(int fd, inetaddress remote_address);
 
 		[[nodiscard]] inetaddress _get_local_address() const;
-		void _configure_read_blocking_time();
+		void _configure_io_timeout(int optname, timeout_t timeout);
 		void _read(void* buf, std::size_t len);
 		void _write(const void* buf, std::size_t len);
 		void _skip(std::size_t n);
