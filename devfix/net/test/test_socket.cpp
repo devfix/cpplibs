@@ -8,6 +8,8 @@
 #include <unistd.h>
 #include <cstring>
 #include "../netbuilder.h"
+#include "../socketexception.h"
+#include "../../base/error/timeoutexception.h"
 
 using namespace devfix::net;
 using namespace devfix::base;
@@ -62,11 +64,9 @@ TEST(Socket, Address)
 TEST(Socket, IO)
 {
 	std::atomic_bool server_ready = false;
-	inetaddress server_local_address{};
-	inetaddress server_remote_address{};
 
 	std::thread server_thread(
-		[&server_ready, &server_local_address, &server_remote_address]()
+		[&server_ready]()
 		{
 			auto server = netbuilder::create_serversocket(
 				{ "0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4 },
@@ -120,5 +120,84 @@ TEST(Socket, IO)
 	is.close();
 	os.close();
 
+	server_thread.join();
+}
+
+TEST(Socket, ReadTimeout)
+{
+	std::atomic_bool server_active = false;
+
+	std::thread server_thread(
+		[&server_active]()
+		{
+			auto server = netbuilder::create_serversocket(
+				{ "0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4 },
+				true
+			);
+			server_active = true;
+			auto client = server->accept();
+
+			for (int k = 0; k < 3000 && server_active; k++)
+			{ std::this_thread::sleep_for(std::chrono::milliseconds(1)); }
+		});
+
+	while (!server_active);
+
+	auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
+	client->set_timeout(10);
+
+	auto& is = client->get_inputstream();
+
+	char uff;
+	ASSERT_THROW(is.read(&uff, sizeof(uff)), error::timeoutexception);
+
+	server_active = false;
+	server_thread.join();
+}
+
+TEST(Socket, WriteTimeout)
+{
+	std::atomic_bool server_active = false;
+
+	std::thread server_thread(
+		[&server_active]()
+		{
+			auto server = netbuilder::create_serversocket(
+				{ "0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4 },
+				true
+			);
+			server_active = true;
+			auto client = server->accept();
+
+			for (int k = 0; k < 3000 && server_active; k++)
+			{ std::this_thread::sleep_for(std::chrono::milliseconds(1)); }
+		});
+
+	while (!server_active);
+
+	auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
+	client->set_timeout(10);
+
+	auto& os = client->get_outputstream();
+
+	std::this_thread::sleep_for(std::chrono::milliseconds(100));
+
+	char data[8192];
+	bool timeout = false;
+	while (!timeout)
+	{
+		try
+		{
+			os.write(&data, sizeof(data));
+		}
+		catch (error::timeoutexception& timeoutexception)
+		{
+			timeout = true;
+		}
+	}
+
+	ASSERT_TRUE(timeout);
+
+	server_active = false;
 	server_thread.join();
 }

@@ -174,7 +174,7 @@ namespace devfix::net::lnx
 				}
 				else
 				{
-					exception_guard(rc, socketexception);
+					exception_guard(true, socketexception);
 				}
 			}
 			else
@@ -187,12 +187,36 @@ namespace devfix::net::lnx
 
 	void lnx_socket::_write(const void* buf, std::size_t len)
 	{
+		timeout_t time = 0;
 		while (len)
 		{
+			if (get_interrupted())
+			{
+				throw base::error::interruptedexception(SOURCE_LINE);
+			}
+
+			if (time > timeout_)
+			{
+				throw base::error::timeoutexception(SOURCE_LINE);
+			}
+
 			ssize_t rc = ::write(fd_, buf, len);
-			exception_guard(rc < 0, socketexception);
-			len -= static_cast<std::size_t>(rc);
-			buf = static_cast<const char*>(buf) + rc;
+			if (rc < 0)
+			{
+				if (errno == EAGAIN)
+				{
+					time += DEFAULT_WRITE_BLOCKING_TIME;
+				}
+				else
+				{
+					exception_guard(true, socketexception);
+				}
+			}
+			else
+			{
+				len -= static_cast<std::size_t>(rc);
+				buf = static_cast<const char*>(buf) + rc;
+			}
 		}
 	}
 
