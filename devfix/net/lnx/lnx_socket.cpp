@@ -166,21 +166,17 @@ namespace devfix::net::lnx
 			}
 
 			ssize_t rc = ::read(fd_, buf, len);
-			if (rc < 0)
-			{
-				if (errno == EAGAIN)
-				{
-					time += DEFAULT_READ_BLOCKING_TIME;
-				}
-				else
-				{
-					exception_guard(true, socketexception);
-				}
-			}
-			else
+			if (rc > 0)
 			{
 				len -= static_cast<std::size_t>(rc);
 				buf = static_cast<char*>(buf) + rc;
+			}
+			else if (rc == 0 || errno == EAGAIN)
+			{
+				time += DEFAULT_READ_BLOCKING_TIME;
+			} else
+			{
+				exception_guard(true, socketexception);
 			}
 		}
 	}
@@ -201,21 +197,17 @@ namespace devfix::net::lnx
 			}
 
 			ssize_t rc = ::write(fd_, buf, len);
-			if (rc < 0)
-			{
-				if (errno == EAGAIN)
-				{
-					time += DEFAULT_WRITE_BLOCKING_TIME;
-				}
-				else
-				{
-					exception_guard(true, socketexception);
-				}
-			}
-			else
+			if (rc > 0)
 			{
 				len -= static_cast<std::size_t>(rc);
 				buf = static_cast<const char*>(buf) + rc;
+			}
+			else if (rc == 0 || errno == EAGAIN)
+			{
+				time += DEFAULT_WRITE_BLOCKING_TIME;
+			} else
+			{
+				exception_guard(true, socketexception);
 			}
 		}
 	}
