@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['incifdiv',['incIfDiv',['../test__fold_8cpp.html#aec3704910dcbe5f0c9d98c487bb8e183',1,'test_fold.cpp']]],
   ['inetaddress',['inetaddress',['../structdevfix_1_1net_1_1inetaddress.html',1,'devfix::net::inetaddress'],['../structdevfix_1_1net_1_1inetaddress.html#a823bec9f0bc7437854ec9270c610756a',1,'devfix::net::inetaddress::inetaddress()=default'],['../structdevfix_1_1net_1_1inetaddress.html#a2b5fb7c7cb63230d6188c74d90e323dc',1,'devfix::net::inetaddress::inetaddress(const std::string &amp;host, port_t port, family_t family=family_t::IPV4)']]],
   ['inetaddress_2ecpp',['inetaddress.cpp',['../inetaddress_8cpp.html',1,'']]],
   ['inetaddress_2eh',['inetaddress.h',['../inetaddress_8h.html',1,'']]],

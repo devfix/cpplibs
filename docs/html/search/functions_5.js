@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['incifdiv',['incIfDiv',['../test__fold_8cpp.html#aec3704910dcbe5f0c9d98c487bb8e183',1,'test_fold.cpp']]],
   ['inetaddress',['inetaddress',['../structdevfix_1_1net_1_1inetaddress.html#a823bec9f0bc7437854ec9270c610756a',1,'devfix::net::inetaddress::inetaddress()=default'],['../structdevfix_1_1net_1_1inetaddress.html#a2b5fb7c7cb63230d6188c74d90e323dc',1,'devfix::net::inetaddress::inetaddress(const std::string &amp;host, port_t port, family_t family=family_t::IPV4)']]],
   ['interruptedexception',['interruptedexception',['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#a9b2d1244ef3e3029d231be8b84fa4c16',1,'devfix::base::error::interruptedexception::interruptedexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#a244a67233ab2b7be511706d8398ed860',1,'devfix::base::error::interruptedexception::interruptedexception(const char *what_arg, int err=-1)']]],
   ['ioexception',['ioexception',['../structdevfix_1_1base_1_1error_1_1ioexception.html#acaf6aa89dc63021cbf6241b897c570da',1,'devfix::base::error::ioexception::ioexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1ioexception.html#a93e7dfc50605b9f6a9c5cd78dac59a44',1,'devfix::base::error::ioexception::ioexception(const char *what_arg, int err=-1)']]],
