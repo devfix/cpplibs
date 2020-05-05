@@ -98,7 +98,6 @@ void test_random()
 
 void test_dsp()
 {
-
 	test_rectangle();
 	test_dirac();
 	test_periodic();

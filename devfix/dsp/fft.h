@@ -7,42 +7,74 @@
 #include <cstdint>
 #include <complex>
 
-template<std::size_t BITS>
-static size_t bit_reverse(size_t b)
-{
-	b = (b & 0b1010101010101010u) >> 1u | (b & 0b0101010101010101u) << 1u;
-	b = (b & 0b1100110011001100u) >> 2u | (b & 0b0011001100110011u) << 2u;
-	b = (b & 0b1111000011110000u) >> 4u | (b & 0b0000111100001111u) << 4u;
-	b = (b & 0b1111111100000000u) >> 8u | (b & 0b0000000011111111u) << 8u;
-	return b >> (16u - BITS);
-}
+/**
+ * \brief computes the bit-reversal index
+ * \tparam BITS number width
+ * \tparam I index which gets reversed
+ * \tparam K current bit (must be BITS at at beginning)
+ */
+template<std::size_t BITS, std::size_t I, std::size_t K>
+struct bit_reverse_k;
 
+template<std::size_t BITS, std::size_t I>
+struct bit_reverse_k<BITS, I, 0>
+{
+	template<std::size_t, std::size_t, std::size_t>
+	friend struct bit_reverse_k;
+private:
+	enum
+	{
+		value = 0
+	};
+};
+
+template<std::size_t BITS, std::size_t I, std::size_t K>
+struct bit_reverse_k
+{
+	template<std::size_t, std::size_t, std::size_t>
+	friend struct bit_reverse_k;
+	template<typename, std::size_t, std::size_t>
+	friend struct order_bit_reversed;
+private:
+	enum
+	{
+		value = (I & (1 << (BITS - K)) ? (1 << (K - 1)) : 0) + bit_reverse_k<BITS, I, K - 1>::value
+	};
+};
+
+
+/**
+ * \brief orders an array bit reversed
+ * \tparam T array type
+ * \tparam BITS number width
+ * \tparam K current index to swap with (must be N/2-1 at beginning)
+ */
 template<typename T, std::size_t BITS, std::size_t K>
-struct order_bit_reverse;
+struct order_bit_reversed;
 
 template<typename T, std::size_t BITS>
-struct order_bit_reverse<T, BITS, 0>
+struct order_bit_reversed<T, BITS, 0>
 {
 	template<typename, std::size_t, std::size_t> friend
-	class order_bit_reverse;
+	class order_bit_reversed;
 private:
-	order_bit_reverse(std::complex<T>* vect)
+	order_bit_reversed(T* vect)
 	{}
 };
 
 template<typename T, std::size_t BITS, std::size_t K>
-struct order_bit_reverse
+struct order_bit_reversed
 {
 	template<std::size_t, typename> friend
 	class FFT;
 	template<typename, std::size_t, std::size_t> friend
-	class order_bit_reverse;
+	class order_bit_reversed;
 private:
-	order_bit_reverse(std::complex<T>* vect)
+	order_bit_reversed(T* vect)
 	{
-		order_bit_reverse<T, BITS, K - 1>{ vect };
-		size_t b = bit_reverse<BITS>(K);
-		std::complex<T> tmp(vect[K]);
+		order_bit_reversed<T, BITS, K - 1>{ vect };
+		size_t b = bit_reverse_k<BITS, K, BITS>::value;
+		T tmp(vect[K]);
 		vect[K] = vect[b];
 		vect[b] = tmp;
 	}
@@ -83,7 +115,7 @@ private:
 				}
 			}
 
-			order_bit_reverse<T, BITS, N_2 - 1>{ vect };
+			order_bit_reversed<std::complex<T>, BITS, N_2 - 1>{ vect };
 		}
 
 	private:
