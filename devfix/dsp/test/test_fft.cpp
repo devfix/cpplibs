@@ -39,5 +39,6 @@ void test_dirac()
 void test_dsp()
 {
 	test_rectangle();
+	test_dirac();
 	std::cout << "all tests have passed successfully" << std::endl;
 }
