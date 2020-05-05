@@ -15,13 +15,13 @@ int main(int argc, char **argv)
 #pragma message ("Googletest is disabled.")
 
 #include <iostream>
-#include "devfix/net/inetaddress.h"
+
+void test_dsp();
 
 int main()
 {
 	std::cout << "testrunner stub: googletest is disabled." << std::endl;
-	devfix::net::inetaddress i;
-	std::string d = i.get_host();
+	test_dsp();
 }
 
 #endif

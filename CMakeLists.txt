@@ -76,9 +76,10 @@ if(DOXYGEN_FOUND)
 endif(DOXYGEN_FOUND)
 
 
-add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp)
+add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_fft.cpp)
 if(${ENABLE_GOOGLETEST})
-target_link_libraries(testrunner gtest devfixnet pthread)
+    target_link_libraries(testrunner gtest devfixnet devfixdsp pthread)
 endif()
 
-target_link_libraries(testrunner devfixnet)
+# test stuff during sinus
+target_link_libraries(testrunner devfixdsp)
