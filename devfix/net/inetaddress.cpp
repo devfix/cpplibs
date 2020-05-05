@@ -11,8 +11,6 @@
 #if PLATFORM_LINUX == 1
 #include <netdb.h>
 #include <arpa/inet.h>
-#else
-PLATFORM_UNSUPPORTED;
 #endif
 
 namespace devfix::net {
@@ -64,8 +62,10 @@ std::string inetaddress::get_host() const noexcept {
 
 #if PLATFORM_LINUX == 1
   return inet_ntoa(in_addr{address_});
+#else
+  #pragma message ("Platform not supported")
+  return "";
 #endif
-
 }
 
 inetaddress::address_t inetaddress::get_address() const {

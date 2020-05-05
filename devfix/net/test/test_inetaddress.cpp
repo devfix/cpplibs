@@ -2,6 +2,8 @@
 // Created by core on 12/29/19.
 //
 
+#if ENABLE_GOOGLETEST == 1
+
 #include <gtest/gtest.h>
 #include "../inetaddress.h"
 #include "../socketexception.h"
@@ -46,3 +48,5 @@ TEST(Inetaddress, CreateByHost)
     ASSERT_EQ(inetaddr.get_address(), 0x0100007F); // check for 127.0.0.1
     ASSERT_EQ(inetaddr.get_host(), "127.0.0.1");
 }
+
+#endif

@@ -10,9 +10,13 @@
 #if PLATFORM_LINUX == 1
 #include "lnx/lnx_socket.h"
 #include "lnx/lnx_serversocket.h"
+#elif PLATFORM_WINDOWS == 1
+#include "win/win_socket.h"
+#include "win/win_serversocket.h"
 #else
-PLATFORM_UNSUPPORTED;
+PLATPLATFORM_UNSUPPORTED;
 #endif
+
 
 namespace devfix::net
 {

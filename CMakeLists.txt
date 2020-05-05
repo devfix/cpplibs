@@ -1,9 +1,12 @@
 cmake_minimum_required(VERSION 3.0)
 project(cpplibs CXX)
 
-set(CMAKE_CXX_STANDARD 17)
+set(CMAKE_CXX_STANDARD 20)
+set(ENABLE_GOOGLETEST 0)
 
 find_package(Doxygen)
+
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D ENABLE_GOOGLETEST=${ENABLE_GOOGLETEST}")
 
 set(WARNINGS
         -pedantic
@@ -47,11 +50,7 @@ set(WARNINGS ${WARNINGS}
 
 add_subdirectory(devfix/base)
 add_subdirectory(devfix/net)
-
-
-add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp)
-target_link_libraries(testrunner gtest devfixnet pthread)
-
+add_subdirectory(devfix/dsp)
 
 if(DOXYGEN_FOUND)
 
@@ -75,3 +74,11 @@ if(DOXYGEN_FOUND)
             )
 
 endif(DOXYGEN_FOUND)
+
+
+add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp)
+if(${ENABLE_GOOGLETEST})
+target_link_libraries(testrunner gtest devfixnet pthread)
+endif()
+
+target_link_libraries(testrunner devfixnet)

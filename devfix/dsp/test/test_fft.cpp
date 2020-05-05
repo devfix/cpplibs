@@ -2,8 +2,6 @@
 // Created by core on 12/19/19.
 //
 
-#if ENABLE_GOOGLETEST == 1
-
 #include <gtest/gtest.h>
 #include <thread>
 #include <iostream>
@@ -119,5 +117,3 @@ TEST(Socket, IO) {
 
   server_thread.join();
 }
-
-#endif
