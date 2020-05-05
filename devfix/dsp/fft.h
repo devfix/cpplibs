@@ -7,6 +7,47 @@
 #include <cstdint>
 #include <complex>
 
+template<std::size_t BITS>
+static size_t bit_reverse(size_t b)
+{
+	b = (b & 0b1010101010101010u) >> 1u | (b & 0b0101010101010101u) << 1u;
+	b = (b & 0b1100110011001100u) >> 2u | (b & 0b0011001100110011u) << 2u;
+	b = (b & 0b1111000011110000u) >> 4u | (b & 0b0000111100001111u) << 4u;
+	b = (b & 0b1111111100000000u) >> 8u | (b & 0b0000000011111111u) << 8u;
+	return b >> (16u - BITS);
+}
+
+template<typename T, std::size_t BITS, std::size_t K>
+struct order_bit_reverse;
+
+template<typename T, std::size_t BITS>
+struct order_bit_reverse<T, BITS, 0>
+{
+	template<typename, std::size_t, std::size_t> friend
+	class order_bit_reverse;
+private:
+	order_bit_reverse(std::complex<T>* vect)
+	{}
+};
+
+template<typename T, std::size_t BITS, std::size_t K>
+struct order_bit_reverse
+{
+	template<std::size_t, typename> friend
+	class FFT;
+	template<typename, std::size_t, std::size_t> friend
+	class order_bit_reverse;
+private:
+	order_bit_reverse(std::complex<T>* vect)
+	{
+		order_bit_reverse<T, BITS, K - 1>{ vect };
+		size_t b = bit_reverse<BITS>(K);
+		std::complex<T> tmp(vect[K]);
+		vect[K] = vect[b];
+		vect[b] = tmp;
+	}
+};
+
 template<std::size_t BITS, typename T>
 struct FFT
 {
@@ -41,42 +82,12 @@ private:
 					t *= phi_t;
 				}
 			}
-			order_bit_reversed(vect);
 
-		}
-
-		static void magnitude(std::complex<T>* vect, T* mag)
-		{
-			for (size_t k = 0; k < N; k++)
-			{
-				T re = vect[k].real() / N_2;
-				T im = vect[k].imag() / N_2;
-				mag[k] = re * re + im * im; // skip sqrt of Pythagoras, save squared absolute values directly
-			}
+			order_bit_reverse<T, BITS, N_2 - 1>{ vect };
 		}
 
 	private:
 		static constexpr std::complex<T> PHI_T = { cos(M_PI / N), -sin(M_PI / N) };
-
-		static void order_bit_reversed(std::complex<T>* vect)
-		{
-			for (size_t a = 1; a < N_2; a++)
-			{
-				size_t b = bit_reverse(a);
-				std::complex<T> tmp(vect[a]);
-				vect[a] = vect[b];
-				vect[b] = tmp;
-			}
-		}
-
-		static size_t bit_reverse(size_t b)
-		{
-			b = (b & 0b1010101010101010u) >> 1u | (b & 0b0101010101010101u) << 1u;
-			b = (b & 0b1100110011001100u) >> 2u | (b & 0b0011001100110011u) << 2u;
-			b = (b & 0b1111000011110000u) >> 4u | (b & 0b0000111100001111u) << 4u;
-			b = (b & 0b1111111100000000u) >> 8u | (b & 0b0000000011111111u) << 8u;
-			return b >> (16u - BITS);
-		}
 	};
 
 public:

@@ -90,8 +90,15 @@ void test_random()
 	ASSERT_ARRAY_EQUAL(vect, expected);
 }
 
+
+#define T int
+
+
+
+
 void test_dsp()
 {
+
 	test_rectangle();
 	test_dirac();
 	test_periodic();
