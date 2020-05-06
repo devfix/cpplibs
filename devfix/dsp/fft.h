@@ -20,7 +20,8 @@ template<std::size_t BITS, std::size_t I>
 struct bit_reverse_k<BITS, I, 0>
 {
 	template<std::size_t, std::size_t, std::size_t>
-	friend struct bit_reverse_k;
+	friend
+	struct bit_reverse_k;
 private:
 	enum
 	{
@@ -32,16 +33,17 @@ template<std::size_t BITS, std::size_t I, std::size_t K>
 struct bit_reverse_k
 {
 	template<std::size_t, std::size_t, std::size_t>
-	friend struct bit_reverse_k;
+	friend
+	struct bit_reverse_k;
 	template<typename, std::size_t, std::size_t>
-	friend struct order_bit_reversed;
+	friend
+	struct order_bit_reversed;
 private:
 	enum
 	{
 		value = (I & (1 << (BITS - K)) ? (1 << (K - 1)) : 0) + bit_reverse_k<BITS, I, K - 1>::value
 	};
 };
-
 
 /**
  * \brief orders an array bit reversed
@@ -59,7 +61,7 @@ struct order_bit_reversed<T, BITS, 0>
 	class order_bit_reversed;
 private:
 	order_bit_reversed(T* vect)
-	{}
+	{};
 };
 
 template<typename T, std::size_t BITS, std::size_t K>
@@ -80,6 +82,38 @@ private:
 	}
 };
 
+template<std::size_t BITS, typename T, std::size_t K>
+struct fft_outer_loop;
+
+template<std::size_t BITS, typename T>
+struct fft_outer_loop<BITS, T, 0>
+{
+	fft_outer_loop(std::complex<T>* vect, std::complex<T>& phi_t)
+	{};
+};
+
+template<std::size_t BITS, typename T, std::size_t K>
+struct fft_outer_loop
+{
+	fft_outer_loop(std::complex<T>* vect, std::complex<T>& phi_t)
+	{
+		phi_t *= phi_t;
+		std::complex<T> t(1);
+		for (size_t l = 0; l < (K >> 1); l++)
+		{
+			for (size_t ka = l; ka < (1 << BITS); ka += K)
+			{
+				const size_t kb = ka + (K >> 1);
+				std::complex<T> diff = vect[ka] - vect[kb];
+				vect[ka] += vect[kb];
+				vect[kb] = diff * t;
+			}
+			t *= phi_t;
+		}
+		fft_outer_loop<BITS, T, (K >> 1)>{ vect, phi_t };
+	}
+};
+
 template<std::size_t BITS, typename T>
 struct FFT
 {
@@ -90,31 +124,8 @@ private:
 		static void transform_inplace(std::complex<T>* vect)
 		{
 
-			size_t k = N, n;
 			std::complex<T> phi_t(PHI_T);
-			std::complex<T> t;
-			while (k)
-			{
-				n = k;
-				k >>= 1u;
-
-				phi_t *= phi_t;
-
-				t.real(1);
-				t.imag(0);
-				for (size_t l = 0; l < k; l++)
-				{
-					for (size_t ka = l; ka < N; ka += n)
-					{
-						const size_t kb = ka + k;
-						std::complex<T> diff = vect[ka] - vect[kb];
-						vect[ka] += vect[kb];
-						vect[kb] = diff * t;
-					}
-					t *= phi_t;
-				}
-			}
-
+			fft_outer_loop<BITS, T, N>{ vect, phi_t };
 			order_bit_reversed<std::complex<T>, BITS, N_2 - 1>{ vect };
 		}
 
