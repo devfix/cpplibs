@@ -82,6 +82,47 @@ private:
 	}
 };
 
+
+/**
+ * \brief fft midloop
+ * \tparam BITS
+ * \tparam T
+ * \tparam K
+ * \tparam L
+ */
+template<std::size_t BITS, typename T, std::size_t K, std::size_t L>
+struct fft_mid_loop;
+
+template<std::size_t BITS, typename T, std::size_t K>
+struct fft_mid_loop<BITS, T, K, 0>
+{
+	fft_mid_loop(std::complex<T>* vect, std::complex<T>& phi_t, std::complex<T>& t)
+	{}
+};
+
+template<std::size_t BITS, typename T, std::size_t K, std::size_t L>
+struct fft_mid_loop
+{
+	fft_mid_loop(std::complex<T>* vect, std::complex<T>& phi_t, std::complex<T>& t)
+	{
+		fft_mid_loop<BITS, T, K, L-1>{ vect, phi_t, t};
+		for (size_t ka = (L-1); ka < (1 << BITS); ka += K)
+		{
+			const size_t kb = ka + (K >> 1);
+			std::complex<T> diff = vect[ka] - vect[kb];
+			vect[ka] += vect[kb];
+			vect[kb] = diff * t;
+		}
+		t *= phi_t;
+	}
+};
+
+/**
+ * \brief outer fft loop
+ * \tparam BITS
+ * \tparam T
+ * \tparam K
+ */
 template<std::size_t BITS, typename T, std::size_t K>
 struct fft_outer_loop;
 
@@ -99,20 +140,11 @@ struct fft_outer_loop
 	{
 		phi_t *= phi_t;
 		std::complex<T> t(1);
-		for (size_t l = 0; l < (K >> 1); l++)
-		{
-			for (size_t ka = l; ka < (1 << BITS); ka += K)
-			{
-				const size_t kb = ka + (K >> 1);
-				std::complex<T> diff = vect[ka] - vect[kb];
-				vect[ka] += vect[kb];
-				vect[kb] = diff * t;
-			}
-			t *= phi_t;
-		}
+		fft_mid_loop<BITS, T, K, (K >> 1)>{ vect, phi_t, t};
 		fft_outer_loop<BITS, T, (K >> 1)>{ vect, phi_t };
 	}
 };
+
 
 template<std::size_t BITS, typename T>
 struct FFT
