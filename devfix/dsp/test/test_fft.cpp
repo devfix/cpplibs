@@ -2,12 +2,19 @@
 // Created by core on 12/19/19.
 //
 
-
 #include <iostream>
+#include <fstream>
+#include <string>
+#include <locale>
+#include <iomanip>
+#include <codecvt>
 #include <vector>
 #include <array>
+#include <cstdint>
 #include "../../base/platform.h"
+#include "../../base/strutil.h"
 #include "../fft.h"
+#include "../window.h"
 
 //using namespace devfix::base;
 
@@ -90,10 +97,13 @@ void test_random()
 	ASSERT_ARRAY_EQUAL(vect, expected);
 }
 
-
-#define T int
-
-
+void test_hanning()
+{
+	for (std::size_t k = 0; k < 16; k++)
+	{
+		std::cout << window::hanning<16>(k) << std::endl;
+	}
+}
 
 
 void test_dsp()
@@ -102,5 +112,7 @@ void test_dsp()
 	test_dirac();
 	test_periodic();
 	test_random();
+	test_hanning();
+	test_utf();
 	std::cout << "all tests have passed successfully" << std::endl;
 }
