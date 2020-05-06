@@ -1,5 +1,5 @@
 //
-// Created by Praktikum on 06.05.2020.
+// Created by core on 06.05.2020.
 //
 
 #pragma once
@@ -16,7 +16,6 @@ namespace devfix::base
 			template<class ...Args>
 			deletable_facet(Args&& ...args) : Facet(std::forward<Args>(args)...)
 			{}
-
 			~deletable_facet()
 			{}
 		};

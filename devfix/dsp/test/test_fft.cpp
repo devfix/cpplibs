@@ -99,9 +99,9 @@ void test_random()
 
 void test_hanning()
 {
-	for (std::size_t k = 0; k < 16; k++)
+	for (std::size_t k = 0; k < 10; k++)
 	{
-		std::cout << window::hanning<16>(k) << std::endl;
+		std::cout << window::hanning<5>(k) << std::endl;
 	}
 }
 
@@ -113,6 +113,5 @@ void test_dsp()
 	test_periodic();
 	test_random();
 	test_hanning();
-	test_utf();
 	std::cout << "all tests have passed successfully" << std::endl;
 }
