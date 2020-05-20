@@ -76,7 +76,7 @@ if(DOXYGEN_FOUND)
 endif(DOXYGEN_FOUND)
 
 
-add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_fft.cpp)
+add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_fft.cpp devfix/dsp/test/rosettafft.h devfix/dsp/test/rosettafft.cpp)
 if(${ENABLE_GOOGLETEST})
     target_link_libraries(testrunner gtest devfixnet devfixdsp pthread)
 endif()
