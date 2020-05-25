@@ -64,64 +64,44 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
-<a href="#nested-classes">Classes</a> &#124;
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
-<a href="#pub-static-methods">Static Public Member Functions</a> &#124;
-<a href="#pub-attribs">Public Attributes</a> &#124;
 <a href="structdevfix_1_1net_1_1inetaddress-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">devfix::net::inetaddress Struct Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
-<div class="dynheader">
-Collaboration diagram for devfix::net::inetaddress:</div>
-<div class="dyncontent">
-<div class="center"><img src="structdevfix_1_1net_1_1inetaddress__coll__graph.png" border="0" usemap="#devfix_1_1net_1_1inetaddress_coll__map" alt="Collaboration graph"/></div>
-<!-- MAP 0 -->
-<center><span class="legend">[<a href="graph_legend.html">legend</a>]</span></center></div>
 <table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
-Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">union &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="uniondevfix_1_1net_1_1inetaddress_1_1address.html">address</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a31ec66f69260c75bfa5105d8e042ff06"><td class="memItemLeft" align="right" valign="top"><a id="a31ec66f69260c75bfa5105d8e042ff06"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>family_t</b> : char { <b>UNSUPPORTED</b> = 0,
+<tr class="memitem:a1c470962b4c9c675d475dba2344b50f4"><td class="memItemLeft" align="right" valign="top"><a id="a1c470962b4c9c675d475dba2344b50f4"></a>enum &#160;</td><td class="memItemRight" valign="bottom"><b>family_t</b> : char { <b>UNSUPPORTED</b> = 0, 
 <b>IPV4</b> = 1
  }</td></tr>
-<tr class="separator:a31ec66f69260c75bfa5105d8e042ff06"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="separator:a1c470962b4c9c675d475dba2344b50f4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2eb252de4b894131be8fcda68118bd77"><td class="memItemLeft" align="right" valign="top"><a id="a2eb252de4b894131be8fcda68118bd77"></a>
+typedef std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><b>address_t</b></td></tr>
+<tr class="separator:a2eb252de4b894131be8fcda68118bd77"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a3eaadc730f2b4625987cf948ea485410"><td class="memItemLeft" align="right" valign="top"><a id="a3eaadc730f2b4625987cf948ea485410"></a>
 typedef std::uint16_t&#160;</td><td class="memItemRight" valign="bottom"><b>port_t</b></td></tr>
 <tr class="separator:a3eaadc730f2b4625987cf948ea485410"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
+<tr class="memitem:a2b5fb7c7cb63230d6188c74d90e323dc"><td class="memItemLeft" align="right" valign="top"><a id="a2b5fb7c7cb63230d6188c74d90e323dc"></a>
+&#160;</td><td class="memItemRight" valign="bottom"><b>inetaddress</b> (const std::string &amp;host, port_t port, family_t family=family_t::IPV4)</td></tr>
+<tr class="separator:a2b5fb7c7cb63230d6188c74d90e323dc"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a4524692fae7a767e38600012c6f8f3cf"><td class="memItemLeft" align="right" valign="top"><a id="a4524692fae7a767e38600012c6f8f3cf"></a>
 std::string&#160;</td><td class="memItemRight" valign="bottom"><b>get_host</b> () const noexcept</td></tr>
 <tr class="separator:a4524692fae7a767e38600012c6f8f3cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
-Static Public Member Functions</h2></td></tr>
-<tr class="memitem:a1805a7f56b3c4313232293580b052c7c"><td class="memItemLeft" align="right" valign="top"><a id="a1805a7f56b3c4313232293580b052c7c"></a>
-static <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a>&#160;</td><td class="memItemRight" valign="bottom"><b>create_by_host</b> (const std::string &amp;host, port_t port, family_t family_t=family_t::IPV4)</td></tr>
-<tr class="separator:a1805a7f56b3c4313232293580b052c7c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-</table><table class="memberdecls">
-<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-attribs"></a>
-Public Attributes</h2></td></tr>
-<tr class="memitem:a3752ca3c3b6522ec4e1777287627cbe3"><td class="memItemLeft" align="right" valign="top"><a id="a3752ca3c3b6522ec4e1777287627cbe3"></a>
-enum devfix::net::inetaddress::family_t&#160;</td><td class="memItemRight" valign="bottom"><b>__attribute__</b></td></tr>
-<tr class="separator:a3752ca3c3b6522ec4e1777287627cbe3"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a902c9b8140f7c1fad452ef9de7f86561"><td class="memItemLeft" align="right" valign="top"><a id="a902c9b8140f7c1fad452ef9de7f86561"></a>
-<a class="el" href="uniondevfix_1_1net_1_1inetaddress_1_1address.html">address</a>&#160;</td><td class="memItemRight" valign="bottom"><b>address_</b> = {0}</td></tr>
-<tr class="separator:a902c9b8140f7c1fad452ef9de7f86561"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a3b666575020939365ebcec1d7aeb0f34"><td class="memItemLeft" align="right" valign="top"><a id="a3b666575020939365ebcec1d7aeb0f34"></a>
-port_t&#160;</td><td class="memItemRight" valign="bottom"><b>port_</b> = 0</td></tr>
-<tr class="separator:a3b666575020939365ebcec1d7aeb0f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:af025a2c8b37c28f5553f6f0c350d3765"><td class="memItemLeft" align="right" valign="top"><a id="af025a2c8b37c28f5553f6f0c350d3765"></a>
-family_t&#160;</td><td class="memItemRight" valign="bottom"><b>family_</b> = family_t::UNSUPPORTED</td></tr>
-<tr class="separator:af025a2c8b37c28f5553f6f0c350d3765"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8c606f2398a2d3c9436c4932d6c590b2"><td class="memItemLeft" align="right" valign="top"><a id="a8c606f2398a2d3c9436c4932d6c590b2"></a>
+address_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_address</b> () const</td></tr>
+<tr class="separator:a8c606f2398a2d3c9436c4932d6c590b2"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad2c4af8ffc473aebc58bc1bbe0277e7d"><td class="memItemLeft" align="right" valign="top"><a id="ad2c4af8ffc473aebc58bc1bbe0277e7d"></a>
+port_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_port</b> () const</td></tr>
+<tr class="separator:ad2c4af8ffc473aebc58bc1bbe0277e7d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a254e4950de6c6443a39196c6c7f58db4"><td class="memItemLeft" align="right" valign="top"><a id="a254e4950de6c6443a39196c6c7f58db4"></a>
+family_t&#160;</td><td class="memItemRight" valign="bottom"><b>get_family</b> () const</td></tr>
+<tr class="separator:a254e4950de6c6443a39196c6c7f58db4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <hr/>The documentation for this struct was generated from the following files:<ul>
 <li>devfix/net/<a class="el" href="inetaddress_8h_source.html">inetaddress.h</a></li>

@@ -1,5 +1,5 @@
 set(LIBRARY "devfixdsp")
-add_library(${LIBRARY} fft.h)
+add_library(${LIBRARY} fft.h window.h)
 set_target_properties(${LIBRARY} PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(${LIBRARY} devfixbase)
 target_compile_options(${LIBRARY} PRIVATE ${WARNINGS})

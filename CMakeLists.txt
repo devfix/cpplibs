@@ -2,7 +2,7 @@ cmake_minimum_required(VERSION 3.0)
 project(cpplibs CXX)
 
 set(CMAKE_CXX_STANDARD 20)
-set(ENABLE_GOOGLETEST 0)
+set(ENABLE_GOOGLETEST 1)
 
 find_package(Doxygen)
 
@@ -76,7 +76,7 @@ if(DOXYGEN_FOUND)
 endif(DOXYGEN_FOUND)
 
 
-add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_fft.cpp devfix/dsp/test/rosettafft.h devfix/dsp/test/rosettafft.cpp)
+add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_window.cpp devfix/dsp/test/test_fft.cpp devfix/dsp/test/rosettafft.h devfix/dsp/test/rosettafft.cpp)
 if(${ENABLE_GOOGLETEST})
     target_link_libraries(testrunner gtest devfixnet devfixdsp pthread)
 endif()

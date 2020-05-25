@@ -127,7 +127,7 @@ void test_hanning()
 {
 	for (std::size_t k = 0; k < 10; k++)
 	{
-		std::cout << window::hanning(5, k) << std::endl;
+		std::cout << devfix::dsp::window::hanning(5, k) << std::endl;
 	}
 }
 
@@ -136,7 +136,7 @@ void test_flattop()
 	std::vector<double> expected = { -0.000421051000000001, -0.0368407811549235, 0.0107037167161534, 0.78087391493877, 0.78087391493877, 0.0107037167161534, -0.0368407811549235, -0.000421051000000001 };
 	std::vector<double> win = { 0, 1, 2, 3, 4, 5, 6, 7 };
 	std::transform(win.begin(), win.end(), win.begin(),
-				   [&](double& d) { return window::FLATTOP_FACTOR * window::flattop(win.size(), (int) d); });
+				   [&](double& d) { return devfix::dsp::window::FLATTOP_FACTOR * devfix::dsp::window::flattop(win.size(), (int) d); });
 	assert_vector_equals(win.data(), expected.data(), expected.size());
 }
 

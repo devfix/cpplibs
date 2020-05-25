@@ -4,6 +4,7 @@
 
 #pragma once
 
+#include <vector>
 #include <complex>
 #include <valarray>
 

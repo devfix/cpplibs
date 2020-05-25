@@ -1,0 +1,40 @@
+\hypertarget{struct__fft_1_1bit__reverse__k}{}\section{\+\_\+fft\+:\+:bit\+\_\+reverse\+\_\+k$<$ B\+I\+TS, I, K $>$ Struct Template Reference}
+\label{struct__fft_1_1bit__reverse__k}\index{\+\_\+fft\+::bit\+\_\+reverse\+\_\+k$<$ B\+I\+T\+S, I, K $>$@{\+\_\+fft\+::bit\+\_\+reverse\+\_\+k$<$ B\+I\+T\+S, I, K $>$}}
+
+
+computes the bit-\/reversal index  
+
+
+
+
+{\ttfamily \#include $<$fft.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\Hypertarget{struct__fft_1_1bit__reverse__k_ae8528f4355d0cf8b88a628b6d2484fba}\label{struct__fft_1_1bit__reverse__k_ae8528f4355d0cf8b88a628b6d2484fba}} 
+enum \{ {\bfseries value} = (I \& (1 $<$$<$ (B\+I\+TS -\/ K)) ? (1 $<$$<$ (K -\/ 1)) \+: 0) + bit\+\_\+reverse\+\_\+k$<$B\+I\+TS, I, K -\/ 1$>$\+:\+:value
+ \}
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+\subsubsection*{template$<$std\+::size\+\_\+t B\+I\+TS, std\+::size\+\_\+t I, std\+::size\+\_\+t K$>$\newline
+struct \+\_\+fft\+::bit\+\_\+reverse\+\_\+k$<$ B\+I\+T\+S, I, K $>$}
+
+computes the bit-\/reversal index 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em B\+I\+TS} & number width \\
+\hline
+{\em I} & index which gets reversed \\
+\hline
+{\em K} & current bit (must be B\+I\+TS at at beginning) \\
+\hline
+\end{DoxyTemplParams}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/dsp/fft.\+h\end{DoxyCompactItemize}

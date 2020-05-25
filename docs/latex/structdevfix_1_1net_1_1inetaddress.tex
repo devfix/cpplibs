@@ -1,21 +1,15 @@
 \hypertarget{structdevfix_1_1net_1_1inetaddress}{}\section{devfix\+:\+:net\+:\+:inetaddress Struct Reference}
 \label{structdevfix_1_1net_1_1inetaddress}\index{devfix\+::net\+::inetaddress@{devfix\+::net\+::inetaddress}}
-
-
-Collaboration diagram for devfix\+:\+:net\+:\+:inetaddress\+:
-% FIG 0
-\subsection*{Classes}
-\begin{DoxyCompactItemize}
-\item 
-union \hyperlink{uniondevfix_1_1net_1_1inetaddress_1_1address}{address}
-\end{DoxyCompactItemize}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a31ec66f69260c75bfa5105d8e042ff06}\label{structdevfix_1_1net_1_1inetaddress_a31ec66f69260c75bfa5105d8e042ff06}} 
-enum {\bfseries family_t} \+: char \{ {\bfseries U\+N\+S\+U\+P\+P\+O\+R\+T\+ED} = 0,
+\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a1c470962b4c9c675d475dba2344b50f4}\label{structdevfix_1_1net_1_1inetaddress_a1c470962b4c9c675d475dba2344b50f4}} 
+enum {\bfseries family\+\_\+t} \+: char \{ {\bfseries U\+N\+S\+U\+P\+P\+O\+R\+T\+ED} = 0, 
 {\bfseries I\+P\+V4} = 1
  \}
+\item 
+\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a2eb252de4b894131be8fcda68118bd77}\label{structdevfix_1_1net_1_1inetaddress_a2eb252de4b894131be8fcda68118bd77}} 
+typedef std\+::uint32\+\_\+t {\bfseries address\+\_\+t}
 \item 
 \mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a3eaadc730f2b4625987cf948ea485410}\label{structdevfix_1_1net_1_1inetaddress_a3eaadc730f2b4625987cf948ea485410}} 
 typedef std\+::uint16\+\_\+t {\bfseries port\+\_\+t}
@@ -23,29 +17,20 @@ typedef std\+::uint16\+\_\+t {\bfseries port\+\_\+t}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a2b5fb7c7cb63230d6188c74d90e323dc}\label{structdevfix_1_1net_1_1inetaddress_a2b5fb7c7cb63230d6188c74d90e323dc}} 
+{\bfseries inetaddress} (const std\+::string \&host, port\+\_\+t port, family\+\_\+t family=family\+\_\+t\+::\+I\+P\+V4)
+\item 
 \mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a4524692fae7a767e38600012c6f8f3cf}\label{structdevfix_1_1net_1_1inetaddress_a4524692fae7a767e38600012c6f8f3cf}} 
 std\+::string {\bfseries get\+\_\+host} () const noexcept
-\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a1805a7f56b3c4313232293580b052c7c}\label{structdevfix_1_1net_1_1inetaddress_a1805a7f56b3c4313232293580b052c7c}} 
-static \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} {\bfseries create\+\_\+by\+\_\+host} (const std\+::string \&host, port\+\_\+t port, family_t family_t=family_t\+::\+I\+P\+V4)
-\end{DoxyCompactItemize}
-\subsection*{Public Attributes}
-\begin{DoxyCompactItemize}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a8c606f2398a2d3c9436c4932d6c590b2}\label{structdevfix_1_1net_1_1inetaddress_a8c606f2398a2d3c9436c4932d6c590b2}} 
+address\+\_\+t {\bfseries get\+\_\+address} () const
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a3752ca3c3b6522ec4e1777287627cbe3}\label{structdevfix_1_1net_1_1inetaddress_a3752ca3c3b6522ec4e1777287627cbe3}} 
-enum devfix\+::net\+::inetaddress\+::family_t {\bfseries \+\_\+\+\_\+attribute\+\_\+\+\_\+}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_ad2c4af8ffc473aebc58bc1bbe0277e7d}\label{structdevfix_1_1net_1_1inetaddress_ad2c4af8ffc473aebc58bc1bbe0277e7d}} 
+port\+\_\+t {\bfseries get\+\_\+port} () const
 \item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a902c9b8140f7c1fad452ef9de7f86561}\label{structdevfix_1_1net_1_1inetaddress_a902c9b8140f7c1fad452ef9de7f86561}} 
-\hyperlink{uniondevfix_1_1net_1_1inetaddress_1_1address}{address} {\bfseries address\+\_\+} = \{0\}
-\item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a3b666575020939365ebcec1d7aeb0f34}\label{structdevfix_1_1net_1_1inetaddress_a3b666575020939365ebcec1d7aeb0f34}} 
-port\+\_\+t {\bfseries port\+\_\+} = 0
-\item 
-\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_af025a2c8b37c28f5553f6f0c350d3765}\label{structdevfix_1_1net_1_1inetaddress_af025a2c8b37c28f5553f6f0c350d3765}} 
-family_t {\bfseries family_t\+\_\+} = family_t\+::\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED
+\mbox{\Hypertarget{structdevfix_1_1net_1_1inetaddress_a254e4950de6c6443a39196c6c7f58db4}\label{structdevfix_1_1net_1_1inetaddress_a254e4950de6c6443a39196c6c7f58db4}} 
+family\+\_\+t {\bfseries get\+\_\+family} () const
 \end{DoxyCompactItemize}
 
 
