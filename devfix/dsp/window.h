@@ -17,15 +17,15 @@ namespace devfix::dsp
 			return k < N ? .5 + .5 * std::cos(2 * M_PI * (double(k) - .5 * double(N - 1)) / (N - 1)) : 0;
 		}
 
-		static constexpr double FLATTOP_COEFFICIENT_A0 = 1;
+		static constexpr double FLATTOP_COEFFICIENT_A0 = 0.21557895;
 
-		static constexpr double FLATTOP_COEFFICIENT_A1 = 1.93261716879129;
+		static constexpr double FLATTOP_COEFFICIENT_A1 = 0.41663158;
 
-		static constexpr double FLATTOP_COEFFICIENT_A2 = 1.28613279728842;
+		static constexpr double FLATTOP_COEFFICIENT_A2 = 0.277263158;
 
-		static constexpr double FLATTOP_COEFFICIENT_A3 = 0.387695306058407;
+		static constexpr double FLATTOP_COEFFICIENT_A3 = 0.083578947;
 
-		static constexpr double FLATTOP_COEFFICIENT_A4 = 0.0322265601534844;
+		static constexpr double FLATTOP_COEFFICIENT_A4 = 0.006947368;
 
 		constexpr double FLATTOP_FACTOR = 1.
 			/ (FLATTOP_COEFFICIENT_A0 + FLATTOP_COEFFICIENT_A1 + FLATTOP_COEFFICIENT_A2 + FLATTOP_COEFFICIENT_A3
