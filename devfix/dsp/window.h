@@ -27,9 +27,7 @@ namespace devfix::dsp
 
 		static constexpr double FLATTOP_COEFFICIENT_A4 = 0.006947368;
 
-		constexpr double FLATTOP_FACTOR = 1.
-			/ (FLATTOP_COEFFICIENT_A0 + FLATTOP_COEFFICIENT_A1 + FLATTOP_COEFFICIENT_A2 + FLATTOP_COEFFICIENT_A3
-				+ FLATTOP_COEFFICIENT_A4);
+		constexpr double FLATTOP_FACTOR = 1. / FLATTOP_COEFFICIENT_A0;
 
 		static constexpr double flattop(std::size_t N, std::size_t k)
 		{

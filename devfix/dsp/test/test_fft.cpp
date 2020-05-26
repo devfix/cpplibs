@@ -7,7 +7,7 @@
 #include <vector>
 #include <cassert>
 #include "../../base/platform.h"
-#include "../fft.h"
+#include "../fft_old.h"
 #include "../window.h"
 #include "rosettafft.h"
 
