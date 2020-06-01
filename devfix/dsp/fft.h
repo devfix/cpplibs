@@ -9,6 +9,7 @@
 #include <complex>
 #include <cmath>
 #include "addr.h"
+#include "../base/meta/math.h"
 
 namespace devfix::dsp::fft
 {
@@ -21,7 +22,7 @@ namespace devfix::dsp::fft
 		void order_bit_reversed(c_t<T>* vec, std::size_t len)
 		{
 			std::size_t bits = std::log2(len);
-			for (std::size_t a = 0; a < len; a++)
+			for (std::size_t a = 1; a < len; a++)
 			{
 				std::size_t b = a;
 				// Reverse bits
@@ -54,13 +55,23 @@ namespace devfix::dsp::fft
 		Table<N, I+1> next;
 	} __attribute__ ((packed));
 
-	template<typename T>
+	template<std::size_t N, typename T>
 	void transform_inplace(c_t<T>* vec, std::size_t len)
 	{
-		_fft::order_bit_reversed(vec, len);
+		Table<N> t;
+		std::size_t* rev_table = reinterpret_cast<std::size_t*>(&t);
 
-		Table<8> t;
-		std::size_t* adr = reinterpret_cast<std::size_t*>(&t);
+		for (std::size_t a = 1; a < len; a++)
+		{
+			std::size_t b = rev_table[a];
+			if (b > a)
+			{
+				c_t<T> t = vec[a];
+				vec[a] = vec[b];
+				vec[b] = t;
+			}
+		}
+
 
 		for (std::size_t stage = 1; stage <= len; stage <<= 1)
 		{

@@ -21,7 +21,7 @@ TEST(FFT, Simple)
 			+ 4)) * 1e-6;
 	}
 
-	fft::transform_inplace(vec.data(), vec.size());
+	fft::transform_inplace<64>(vec.data(), vec.size());
 
 	for (auto& z : vec)
 	{
