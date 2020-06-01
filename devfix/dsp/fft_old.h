@@ -156,7 +156,7 @@ namespace _fft
 }
 
 template<std::size_t BITS, typename T>
-struct FFT
+struct FFT_OLD
 {
 	static void transform_inplace(std::complex<T>* vect)
 	{
