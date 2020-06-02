@@ -1,7 +1,0 @@
-<map id="devfix/base/memory.h" name="devfix/base/memory.h">
-<area shape="rect" id="node2" href="$socket_8h.html" title="devfix/net/socket.h" alt="" coords="198,80,331,107"/>
-<area shape="rect" id="node3" href="$netbuilder_8h.html" title="devfix/net/netbuilder.h" alt="" coords="97,155,248,181"/>
-<area shape="rect" id="node6" href="$serversocket_8h.html" title="devfix/net/serversocket.h" alt="" coords="272,155,441,181"/>
-<area shape="rect" id="node4" href="$netbuilder_8cpp.html" title="devfix/net/netbuilder.cpp" alt="" coords="5,237,169,263"/>
-<area shape="rect" id="node5" href="$test__socket_8cpp.html" title="devfix/net/test/test\l_socket.cpp" alt="" coords="194,229,325,271"/>
-</map>

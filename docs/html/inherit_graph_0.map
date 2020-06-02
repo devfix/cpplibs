@@ -1,7 +1,0 @@
-<map id="Graphical Class Hierarchy" name="Graphical Class Hierarchy">
-<area shape="rect" id="node2" href="$structdevfix_1_1base_1_1error_1_1baseexception.html" title="Abstract error base class. " alt="" coords="132,104,259,145"/>
-<area shape="rect" id="node3" href="$structdevfix_1_1base_1_1error_1_1interruptedexception.html" title="Thrown when an operation is interrupted, either before or during the activity. " alt="" coords="327,5,473,47"/>
-<area shape="rect" id="node4" href="$structdevfix_1_1base_1_1error_1_1ioexception.html" title="Signals that an I/O error of some sort has occurred. " alt="" coords="337,71,463,112"/>
-<area shape="rect" id="node5" href="$structdevfix_1_1base_1_1error_1_1timeoutexception.html" title="Exception thrown when a blocking operation times out. " alt="" coords="335,136,465,177"/>
-<area shape="rect" id="node6" href="$structdevfix_1_1net_1_1socketexception.html" title="Thrown to indicate that there is an error creating or accessing a Socket. " alt="" coords="307,202,493,229"/>
-</map>

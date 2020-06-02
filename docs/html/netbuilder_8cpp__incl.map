@@ -1,9 +1,0 @@
-<map id="devfix/net/netbuilder.cpp" name="devfix/net/netbuilder.cpp">
-<area shape="rect" id="node2" href="$netbuilder_8h.html" title="netbuilder.h" alt="" coords="247,80,336,107"/>
-<area shape="rect" id="node3" href="$socket_8h.html" title="socket.h" alt="" coords="255,155,327,181"/>
-<area shape="rect" id="node4" href="$inetaddress_8h.html" title="inetaddress.h" alt="" coords="105,229,205,256"/>
-<area shape="rect" id="node5" href="$platform_8h.html" title="../base/platform.h" alt="" coords="5,304,129,331"/>
-<area shape="rect" id="node7" href="$memory_8h.html" title="../base/memory.h" alt="" coords="229,229,353,256"/>
-<area shape="rect" id="node9" href="$inputstream_8h.html" title="../base/io/inputstream.h" alt="" coords="377,229,536,256"/>
-<area shape="rect" id="node11" href="$outputstream_8h.html" title="../base/io/outputstream.h" alt="" coords="560,229,727,256"/>
-</map>

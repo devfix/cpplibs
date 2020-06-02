@@ -1,7 +1,0 @@
-<map id="TEST" name="TEST">
-<area shape="rect" id="node2" href="$structdevfix_1_1net_1_1netbuilder.html#a9d685e1822c0be5d68fd6ba62876798b" title="devfix::net::netbuilder\l::create_serversocket" alt="" coords="115,5,263,47"/>
-<area shape="rect" id="node3" href="$structdevfix_1_1net_1_1netbuilder.html#a9d9eb6cb050ca920aa647baaf4692405" title="Creates a socket and connects it to the specified remote internet address. The Socket will also bind(..." alt="" coords="115,71,262,112"/>
-<area shape="rect" id="node4" href="$structdevfix_1_1net_1_1inetaddress.html#ad2c4af8ffc473aebc58bc1bbe0277e7d" title="devfix::net::inetaddress\l::get_port" alt="" coords="109,136,268,177"/>
-<area shape="rect" id="node5" href="$structdevfix_1_1net_1_1inetaddress.html#a8c606f2398a2d3c9436c4932d6c590b2" title="devfix::net::inetaddress\l::get_address" alt="" coords="109,201,268,243"/>
-<area shape="rect" id="node6" href="$structdevfix_1_1net_1_1inetaddress.html#a4524692fae7a767e38600012c6f8f3cf" title="devfix::net::inetaddress\l::get_host" alt="" coords="109,267,268,308"/>
-</map>

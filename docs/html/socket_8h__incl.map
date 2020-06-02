@@ -1,7 +1,0 @@
-<map id="devfix/net/socket.h" name="devfix/net/socket.h">
-<area shape="rect" id="node2" href="$inetaddress_8h.html" title="inetaddress.h" alt="" coords="105,80,205,107"/>
-<area shape="rect" id="node3" href="$platform_8h.html" title="../base/platform.h" alt="" coords="5,155,129,181"/>
-<area shape="rect" id="node5" href="$memory_8h.html" title="../base/memory.h" alt="" coords="229,80,353,107"/>
-<area shape="rect" id="node7" href="$inputstream_8h.html" title="../base/io/inputstream.h" alt="" coords="377,80,536,107"/>
-<area shape="rect" id="node9" href="$outputstream_8h.html" title="../base/io/outputstream.h" alt="" coords="560,80,727,107"/>
-</map>
