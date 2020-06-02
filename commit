@@ -1,0 +1,14 @@
+#!/bin/bash
+set -e  # exit on errors
+
+cd cmake-build-*
+make clean
+make testrunner
+./testrunner
+make documentation
+cd ..
+
+git add .
+printf '━%.0s' $(seq $(tput cols))
+echo "All tests run successful und documemtation updated."
+echo "Please use git commit now."

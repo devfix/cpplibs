@@ -35,12 +35,9 @@ namespace devfix::dsp::fft
 			}
 		}
 
-
-		devfix::base::math::Table<std::size_t, N, decltype(devfix::base::math::reverse_bits), std::size_t>
-			table(devfix::base::math::reverse_bits, devfix::base::math::log2<N>::value);
 		for (std::size_t a = 1; a < N; a++)
 		{
-			std::size_t b = table.values[a];
+			std::size_t b = devfix::base::math::reverse_bits(a, devfix::base::math::log2<N>::value);
 			if (b > a)
 			{
 				std::complex<T> t = vec[a];

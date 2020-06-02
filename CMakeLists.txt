@@ -1,11 +1,14 @@
 cmake_minimum_required(VERSION 3.0)
+
+find_program(CCACHE_PROGRAM ccache)
+if (CCACHE_PROGRAM)
+    set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
+endif ()
+
 project(cpplibs CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(ENABLE_GOOGLETEST 1)
-
-find_package(Doxygen)
-
 set(CMAKE_CXX_FLAGS "-O3 ${CMAKE_CXX_FLAGS} -D ENABLE_GOOGLETEST=${ENABLE_GOOGLETEST}")
 
 set(WARNINGS
@@ -52,6 +55,7 @@ add_subdirectory(devfix/base)
 add_subdirectory(devfix/net)
 add_subdirectory(devfix/dsp)
 
+find_package(Doxygen)
 if(DOXYGEN_FOUND)
 
     set(DOXYGEN_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
@@ -80,6 +84,3 @@ add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/
 if(${ENABLE_GOOGLETEST})
     target_link_libraries(testrunner gtest devfixnet devfixdsp pthread)
 endif()
-
-# test stuff during sinus
-target_link_libraries(testrunner devfixdsp)

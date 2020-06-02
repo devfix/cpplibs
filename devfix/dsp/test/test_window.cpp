@@ -24,7 +24,7 @@ TEST(Window, HanningSmall)
 	{ return std::round(v * 1e6); });
 
 	ASSERT_EQ(window.size(), expected.size());
-	EXPECT_EQ(window, expected);
+	ASSERT_EQ(window, expected);
 }
 
 TEST(Window, HanningLarge)

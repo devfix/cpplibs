@@ -6,46 +6,42 @@
 #if ENABLE_GOOGLETEST == 1
 
 #include <gtest/gtest.h>
-#include <chrono>
+#include <functional>
 #include "../fft.h"
 
 using namespace devfix::dsp;
 
-constexpr std::size_t LEN = 65536;
+constexpr std::size_t LEN = 1024;
 
-double perform_test(const std::vector<std::complex<double>>& vec)
-{
-	auto start = std::chrono::steady_clock::now();
-	auto copy(vec);
-	fft::transform_inplace<LEN>(copy.data());
-	/*for (auto& z : copy)
-	{
-		std::cout << std::round(std::abs(z) * 1e3) * 1e-3 << "\n";
-	}*/
-	auto stop = std::chrono::steady_clock::now();
-	double time = std::chrono::duration_cast<std::chrono::microseconds>(stop - start).count();
-	return time * 1e-6;
-}
-
-using namespace devfix::base::math;
-
-constexpr auto add = [](int a) { return 1 + a; };
+template<int digits, typename T>
+constexpr T round(T val) { return std::round(val * std::pow(10, digits)) * std::pow(10, -digits); }
 
 TEST(FFT, Simple)
 {
 	std::vector<std::complex<double>> vec(LEN);
 	for (std::size_t i = 0; i < vec.size(); i++)
 	{
-		vec[i] = std::round(1e6 * (sin(2 * M_PI * double(i) / double(vec.size()) * 4.)
+		vec[i] = (sin(2 * M_PI * double(i) / double(vec.size()) * 4.)
 			+ 0.5 * sin(2 * M_PI * double(i) / double(vec.size()) * 2.)
 			+ 0.25 * sin(2 * M_PI * double(i) / double(vec.size()) * 1.)
-			+ 4)) * 1e-6;
+			+ 4);
 	}
 
-	std::size_t n = 1024;
-	double min_time = INFINITY;
-	for (std::size_t k = 0; k < n; k++) { min_time = std::min(perform_test(vec), min_time); }
-	std::cout << "min: " << min_time << "s" << std::endl;
+	fft::transform_inplace<LEN>(vec.data());
+	std::vector<double> mag(vec.size());
+	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
+	std::transform(mag.begin(), mag.end(), mag.begin(), round<3, double>);
+
+	// symmetric test for fft result
+	for (std::size_t i = 1; i < LEN / 2; i++) { ASSERT_EQ(mag[i], mag[LEN-i]); }
+
+	// test expected amplitudes
+	ASSERT_EQ(mag[0], LEN * 4);
+	ASSERT_EQ(mag[1], LEN / 8);
+	ASSERT_EQ(mag[2], LEN / 4);
+	ASSERT_EQ(mag[3], 0);
+	ASSERT_EQ(mag[4], LEN / 2);
+	for (std::size_t i = 5; i < LEN / 2; i++) { ASSERT_EQ(mag[i], 0); }
 }
 
 #endif

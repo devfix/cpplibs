@@ -1,5 +1,7 @@
 var searchData=
 [
-  ['fft',['FFT',['../structFFT.html',1,'']]],
-  ['flush',['flush',['../structdevfix_1_1base_1_1io_1_1outputstream.html#a3fe3b34675a2d70331e6ca235388e0cc',1,'devfix::base::io::outputstream::flush()'],['../structdevfix_1_1base_1_1io_1_1sink.html#abf208747c9be8295972fbc4696ddc557',1,'devfix::base::io::sink::flush()']]]
+  ['default_5fread_5fblocking_5ftime',['DEFAULT_READ_BLOCKING_TIME',['../structdevfix_1_1net_1_1socket.html#a77c3214eb436d06825a4cc2aafcc63ce',1,'devfix::net::socket']]],
+  ['default_5ftimeout',['DEFAULT_TIMEOUT',['../structdevfix_1_1net_1_1socket.html#a1bd6468be497aed208ad6d5632683a5d',1,'devfix::net::socket']]],
+  ['error',['error',['../namespacedevfix_1_1base_1_1error.html',1,'devfix::base']]],
+  ['io',['io',['../namespacedevfix_1_1base_1_1io.html',1,'devfix::base']]]
 ];
