@@ -8,4 +8,5 @@
  * \brief Namespace for io tool, for instance streams.
  */
 namespace devfix::base::io
-{}
+{
+}

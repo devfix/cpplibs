@@ -58,6 +58,7 @@ add_subdirectory(devfix/dsp)
 find_package(Doxygen)
 if(DOXYGEN_FOUND)
 
+
     set(DOXYGEN_INPUT ${CMAKE_CURRENT_SOURCE_DIR}/Doxyfile)
     set(DOXYGEN_OUTPUT ${CMAKE_CURRENT_SOURCE_DIR}/docs)
 
@@ -70,12 +71,23 @@ if(DOXYGEN_FOUND)
             DEPENDS ${DOXYGEN_INPUT}
     )
 
-    add_custom_target(documentation
-            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API Documentation..."
+    add_custom_target(
+            documentation
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building API documentation... "
             COMMAND ${DOXYGEN_EXECUTABLE} ${DOXYGEN_INPUT}
             COMMAND ${CMAKE_COMMAND} -E echo "Done."
             WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}
-            )
+    )
+
+    add_custom_target(
+            documentation-latex
+            COMMAND ${CMAKE_COMMAND} -E echo_append "Building latex documentation... "
+            COMMAND make
+            COMMAND ${CMAKE_COMMAND} -E echo "Done."
+            WORKING_DIRECTORY ${CMAKE_CURRENT_SOURCE_DIR}/docs/latex
+    )
+
+    add_dependencies(documentation-latex documentation)
 
 endif(DOXYGEN_FOUND)
 
