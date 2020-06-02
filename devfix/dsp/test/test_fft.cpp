@@ -16,7 +16,7 @@ constexpr std::size_t LEN = 1024;
 template<int digits, typename T>
 constexpr T round(T val) { return std::round(val * std::pow(10, digits)) * std::pow(10, -digits); }
 
-TEST(FFT, Simple)
+TEST(FFT, MultipleFreqs)
 {
 	std::vector<std::complex<double>> vec(LEN);
 	for (std::size_t i = 0; i < vec.size(); i++)

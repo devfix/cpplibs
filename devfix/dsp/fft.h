@@ -4,11 +4,8 @@
 
 #pragma once
 
-#include <iostream>
-#include <vector>
 #include <complex>
 #include <cmath>
-#include "addr.h"
 #include "../base/math.h"
 
 namespace devfix::dsp::fft
