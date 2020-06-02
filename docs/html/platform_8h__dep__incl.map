@@ -1,0 +1,14 @@
+<map id="devfix/base/platform.h" name="devfix/base/platform.h">
+<area shape="rect" id="node2" href="$inetaddress_8cpp.html" title="devfix/net/inetaddress.cpp" alt="" coords="5,169,180,196"/>
+<area shape="rect" id="node3" href="$inetaddress_8h.html" title="devfix/net/inetaddress.h" alt="" coords="101,87,263,114"/>
+<area shape="rect" id="node4" href="$socket_8h.html" title="devfix/net/socket.h" alt="" coords="219,169,353,196"/>
+<area shape="rect" id="node8" href="$lnx__serversocket_8cpp.html" title="devfix/net/lnx/lnx\l_serversocket.cpp" alt="" coords="339,80,468,121"/>
+<area shape="rect" id="node9" href="$lnx__serversocket_8h.html" title="devfix/net/lnx/lnx\l_serversocket.h" alt="" coords="492,80,613,121"/>
+<area shape="rect" id="node10" href="$lnx__socket_8cpp.html" title="devfix/net/lnx/lnx\l_socket.cpp" alt="" coords="637,80,759,121"/>
+<area shape="rect" id="node11" href="$lnx__socket_8h.html" title="devfix/net/lnx/lnx\l_socket.h" alt="" coords="783,80,904,121"/>
+<area shape="rect" id="node12" href="$win__serversocket_8h.html" title="devfix/net/win/win\l_serversocket.h" alt="" coords="928,80,1055,121"/>
+<area shape="rect" id="node13" href="$win__socket_8h.html" title="devfix/net/win/win\l_socket.h" alt="" coords="1079,80,1205,121"/>
+<area shape="rect" id="node5" href="$netbuilder_8h.html" title="devfix/net/netbuilder.h" alt="" coords="119,244,269,271"/>
+<area shape="rect" id="node7" href="$serversocket_8h.html" title="devfix/net/serversocket.h" alt="" coords="293,244,463,271"/>
+<area shape="rect" id="node6" href="$netbuilder_8cpp.html" title="devfix/net/netbuilder.cpp" alt="" coords="112,319,276,345"/>
+</map>
