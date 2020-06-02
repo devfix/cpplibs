@@ -15,3 +15,4 @@ git add .
 printf '━%.0s' $(seq $(tput cols))
 echo "All tests run successful und documemtation updated."
 echo "Please use git commit now."
+com
