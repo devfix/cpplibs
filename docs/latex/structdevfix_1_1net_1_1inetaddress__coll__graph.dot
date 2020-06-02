@@ -1,8 +1,0 @@
-digraph "devfix::net::inetaddress"
-{
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="devfix::net::inetaddress",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled", fontcolor="black"];
-  Node2 -> Node1 [dir="back",color="darkorchid3",fontsize="10",style="dashed",label=" address_" ];
-  Node2 [label="devfix::net::inetaddress\l::address",height=0.2,width=0.4,color="black", fillcolor="white", style="filled",URL="$uniondevfix_1_1net_1_1inetaddress_1_1address.html"];
-}
