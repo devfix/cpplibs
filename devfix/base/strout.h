@@ -17,11 +17,7 @@ namespace devfix::base
 	>
 	struct strout : public std::basic_stringbuf<CharT, Traits, Allocator>
 	{
-	protected:
-		using int_type = typename std::basic_stringbuf<CharT, Traits, Allocator>::int_type;
-
-	public:
-		explicit strout(std::ostream& output_stream) : output_stream_(output_stream) {}
+		explicit strout(std::basic_ostream<CharT>& output_stream) : output_stream_(output_stream) {}
 
 		~strout()
 		{
@@ -31,12 +27,15 @@ namespace devfix::base
 			}
 		}
 
+	protected:
+		using int_type = typename std::basic_stringbuf<CharT, Traits, Allocator>::int_type;
+
 		int sync() override
 		{
 			if (enabled_ && (!prefixed_ || buffer_.str().length() != prefix_.length()))
 			{
 				output_stream_ << buffer_.str() << std::flush;
-				buffer_ = std::stringstream();
+				buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
 				prefixed_ = false;
 			}
 			return 0; // always successful
@@ -46,20 +45,19 @@ namespace devfix::base
 		{
 			if (enabled_)
 			{
-
 				buffer_ << static_cast<CharT>(c);
 
 				if (c == static_cast<CharT>('\n'))
 				{
 					output_stream_ << buffer_.str();
-					buffer_ = std::stringstream();
+					buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
 					buffer_ << prefix_;
 					prefixed_ = true;
 				}
 				else if (c == STX)
 				{
 					output_stream_ << CLEAR_LINE;
-					buffer_ = std::stringstream();
+					buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
 					buffer_ << prefix_;
 					prefixed_ = true;
 				}
@@ -67,6 +65,7 @@ namespace devfix::base
 			return 0; // always successful
 		}
 
+	public:
 		void set_enabled(bool enabled)
 		{
 			enabled_ = enabled;
@@ -77,30 +76,29 @@ namespace devfix::base
 			return enabled_;
 		}
 
-		void set_prefix(const std::string& prefix)
+		void set_prefix(const std::basic_string<CharT>& prefix)
 		{
-			std::string prefix_old = prefix_;
-			prefix_ = prefix;
-			if (prefixed_ && (buffer_.str().length() == prefix_old.length()))
+			if (prefixed_ && (buffer_.str().length() == prefix_.length()))
 			{
-				buffer_ = std::stringstream();
+				buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
 				buffer_ << prefix;
 				prefixed_ = true;
 			}
+			prefix_ = prefix;
 		}
 
-		std::string get_prefix()
+		const std::basic_string<CharT>& get_prefix() const
 		{
 			return prefix_;
 		}
 
-		static constexpr CharT STX = MULTICHAR(CharT, '\x02'); //!< Start of Text, clear whole line before new text gets displayed
+		static constexpr CharT STX = static_cast<CharT>('\x02'); //!< Start of Text, clear whole line before new text gets displayed
 
 	protected:
 		bool enabled_ = true;
-		std::string prefix_;
-		std::stringstream buffer_;
-		std::ostream& output_stream_;
+		std::basic_string<CharT> prefix_;
+		std::basic_stringstream<CharT> buffer_;
+		std::basic_ostream<CharT>& output_stream_;
 		bool prefixed_ = true;
 
 		static constexpr std::basic_string_view<CharT> CLEAR_LINE = MULTISTRING(CharT, "\033[2K\r");
