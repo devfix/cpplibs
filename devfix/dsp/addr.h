@@ -4,7 +4,7 @@
 
 #pragma once
 
-#include "../base/meta/math.h"
+#include "../base/math.h"
 
 namespace devfix::dsp
 {
@@ -20,7 +20,7 @@ namespace devfix::dsp
 	template<std::size_t N, std::size_t I>
 	struct bit_reversed
 	{
-		enum { value = _bit_reverse<devfix::base::meta::math::log2<N>::value, I, devfix::base::meta::math::log2<N>::value>::value };
+		enum { value = _bit_reverse<devfix::base::math::log2<N>::value, I, devfix::base::math::log2<N>::value>::value };
 	};
 
 }

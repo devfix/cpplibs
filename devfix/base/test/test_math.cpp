@@ -7,7 +7,7 @@
 #include <gtest/gtest.h>
 #include "../math.h"
 
-using namespace devfix::base::meta;
+using namespace devfix::base;
 
 TEST(Math, Log2)
 {
