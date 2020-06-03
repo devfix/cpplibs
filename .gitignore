@@ -1,5 +1,6 @@
 # project specific
 /docs/latex
+COMPILE_DEBUG
 
 ### C++ template
 # Prerequisites
