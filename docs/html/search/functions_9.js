@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['popcount',['popcount',['../structdevfix_1_1base_1_1math.html#a43815037f45e01d90a6c0cb0e1d8ef11',1,'devfix::base::math']]]
+  ['overflow',['overflow',['../structdevfix_1_1base_1_1strout.html#a1d8ba6e5c7c0c2d5558095d957cc4273',1,'devfix::base::strout']]]
 ];

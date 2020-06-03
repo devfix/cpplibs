@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['platform_2eh',['platform.h',['../platform_8h.html',1,'']]]
+  ['outputstream_2eh',['outputstream.h',['../outputstream_8h.html',1,'']]]
 ];

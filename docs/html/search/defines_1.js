@@ -1,6 +1,4 @@
 var searchData=
 [
-  ['error_5fplatform_5funsupported',['ERROR_PLATFORM_UNSUPPORTED',['../platform_8h.html#a0bba118331fd3ff9e1ad80b92a75b345',1,'platform.h']]],
-  ['exception_5fguard',['exception_guard',['../baseexception_8h.html#a0c2a0196acc0ae3484a38b3a3172b016',1,'baseexception.h']]],
-  ['exception_5fguard_5fm',['exception_guard_m',['../baseexception_8h.html#ad012bfdf381fa2c9100432def38f62ba',1,'baseexception.h']]]
+  ['architecture_5fid',['ARCHITECTURE_ID',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCCompilerId.c'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#aba35d0d200deaeb06aee95ca297acb28',1,'ARCHITECTURE_ID():&#160;CMakeCXXCompilerId.cpp']]]
 ];

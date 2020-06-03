@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['platform_5flinux',['PLATFORM_LINUX',['../platform_8h.html#affcc3790504b838f9ce56a008cce0950',1,'platform.h']]],
-  ['platform_5fwindows',['PLATFORM_WINDOWS',['../platform_8h.html#a20cd3c4775f1897fb5658d2dc61382c3',1,'platform.h']]]
+  ['error_5fplatform_5funsupported',['ERROR_PLATFORM_UNSUPPORTED',['../platform_8h.html#a0bba118331fd3ff9e1ad80b92a75b345',1,'platform.h']]],
+  ['exception_5fguard',['exception_guard',['../baseexception_8h.html#a0c2a0196acc0ae3484a38b3a3172b016',1,'baseexception.h']]],
+  ['exception_5fguard_5fm',['exception_guard_m',['../baseexception_8h.html#ad012bfdf381fa2c9100432def38f62ba',1,'baseexception.h']]]
 ];
