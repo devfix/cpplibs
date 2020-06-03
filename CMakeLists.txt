@@ -7,18 +7,17 @@ endif ()
 
 project(cpplibs CXX)
 
-set(CMAKE_CXX_STANDARD 20)
 set(ENABLE_GOOGLETEST 1)
+set(CMAKE_VERBOSE_MAKEFILE false)
+set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D ENABLE_GOOGLETEST=${ENABLE_GOOGLETEST}")
 
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/COMPILE_DEBUG")
-    message("Note: debug compilation mode")
     set(CMAKE_BUILD_TYPE Debug)
-    set(CMAKE_CXX_FLAGS "-O0")
 else()
     set(CMAKE_BUILD_TYPE Release)
-    set(CMAKE_CXX_FLAGS "-O3")
 endif()
+message("cmake build type: ${CMAKE_BUILD_TYPE}")
 
 set(WARNINGS
         -pedantic
