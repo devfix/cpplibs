@@ -5,45 +5,47 @@
 #pragma once
 #include <cstdint>
 
-namespace devfix::base::math
+namespace devfix::base
 {
-	constexpr std::uint32_t reverse_bits(std::uint32_t val, std::size_t bits)
+
+	namespace _math
 	{
-		val = (((val & 0xaaaaaaaau) >> 1u) | ((val & 0x55555555) << 1u));
-		val = (((val & 0xcccccccc) >> 2u) | ((val & 0x33333333) << 2u));
-		val = (((val & 0xf0f0f0f0) >> 4u) | ((val & 0x0f0f0f0f) << 4u));
-		val = (((val & 0xff00ff00) >> 8u) | ((val & 0x00ff00ff) << 8u));
-		return ((val >> 16) | (val << 16)) >> (32 - bits);
+		template<typename T, std::size_t N, typename G, typename ...Args>
+		struct Table
+		{
+			constexpr Table(G gen, Args ... args) : values()
+			{
+				for (std::size_t i = 0; i < N; ++i)
+				{
+					values[i] = gen(i, args...);
+				}
+			}
+
+			T values[N];
+		};
 	}
 
-	template<std::size_t P>
-	struct _log2;
-
-	template<>
-	struct _log2<1> { enum { value = 0 }; };
-
-	template<std::size_t P>
-	struct _log2 { enum { value = 1 + _log2<(P >> 1u)>::value }; };
-
-	template<std::size_t P>
-	struct log2
+	struct math
 	{
-		enum { value = _log2<P>::value };
-		static_assert(1u << value == P, "number is not a power of 2");
-	};
-
-	template<typename T, std::size_t N, typename G, typename ...Args>
-	struct Table
-	{
-		constexpr Table(G gen, Args ... args) : values()
+		static constexpr std::uint32_t reverse_bits(std::uint32_t val, std::size_t bits)
 		{
-			for (std::size_t i = 0; i < N; ++i)
-			{
-				values[i] = gen(i, args...);
-			}
+			val = (((val & 0xaaaaaaaau) >> 1u) | ((val & 0x55555555) << 1u));
+			val = (((val & 0xcccccccc) >> 2u) | ((val & 0x33333333) << 2u));
+			val = (((val & 0xf0f0f0f0) >> 4u) | ((val & 0x0f0f0f0f) << 4u));
+			val = (((val & 0xff00ff00) >> 8u) | ((val & 0x00ff00ff) << 8u));
+			return ((val >> 16) | (val << 16)) >> (32 - bits);
 		}
 
-		T values[N];
+		template<typename T, class = typename std::enable_if<std::is_unsigned<T>::value>::type>
+		static constexpr T popcount(T val)
+		{
+			T count = 0;
+			while (val >>= 1) { count++; }
+			return count;
+		}
+
+		template<typename T, std::size_t N, typename G, typename ...Args>
+		using Table = _math::Table<T, N, G, Args...>;
 	};
 
 }

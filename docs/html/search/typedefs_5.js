@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['read_5ft',['read_t',['../namespacedevfix_1_1base_1_1io.html#ae311e0a7c5c8f064e222933e152aff64',1,'devfix::base::io']]]
+  ['port_5ft',['port_t',['../structdevfix_1_1net_1_1inetaddress.html#a3eaadc730f2b4625987cf948ea485410',1,'devfix::net::inetaddress']]]
 ];

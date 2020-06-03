@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['write_5ft',['write_t',['../namespacedevfix_1_1base_1_1io.html#aaa3124cddb420001b0296561c60f8fcd',1,'devfix::base::io']]]
+  ['up',['up',['../namespacedevfix_1_1base.html#a18dfbd492717795cee1cfa6f14a8f724',1,'devfix::base']]]
 ];

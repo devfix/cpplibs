@@ -11,14 +11,14 @@ using namespace devfix::base;
 
 TEST(Math, Log2)
 {
-	ASSERT_EQ(math::log2<1>::value, 0);
-	ASSERT_EQ(math::log2<2>::value, 1);
-	ASSERT_EQ(math::log2<4>::value, 2);
-	ASSERT_EQ(math::log2<8>::value, 3);
-	ASSERT_EQ(math::log2<16>::value, 4);
-	ASSERT_EQ(math::log2<32>::value, 5);
-	ASSERT_EQ(math::log2<64>::value, 6);
-	ASSERT_EQ(math::log2<128>::value, 7);
+	ASSERT_EQ(math::popcount(1u), 0);
+	ASSERT_EQ(math::popcount(2u), 1);
+	ASSERT_EQ(math::popcount(4u), 2);
+	ASSERT_EQ(math::popcount(8u), 3);
+	ASSERT_EQ(math::popcount(16u), 4);
+	ASSERT_EQ(math::popcount(32u), 5);
+	ASSERT_EQ(math::popcount(64u), 6);
+	ASSERT_EQ(math::popcount(128u), 7);
 }
 
 TEST(Math, ReverseBitsSimpple)

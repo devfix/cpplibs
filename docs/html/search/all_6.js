@@ -1,6 +1,7 @@
 var searchData=
 [
   ['family_5ft',['family_t',['../structdevfix_1_1net_1_1inetaddress.html#a1c470962b4c9c675d475dba2344b50f4',1,'devfix::net::inetaddress']]],
+  ['fft',['fft',['../structdevfix_1_1dsp_1_1fft.html',1,'devfix::dsp']]],
   ['fft_2eh',['fft.h',['../fft_8h.html',1,'']]],
   ['flattop',['flattop',['../namespacedevfix_1_1dsp_1_1window.html#a66e83642c52d214a8e93c55b44f301b7',1,'devfix::dsp::window']]],
   ['flattop_5fcoefficient_5fa0',['FLATTOP_COEFFICIENT_A0',['../namespacedevfix_1_1dsp_1_1window.html#a56cc9b2072418de1930eca41a7adcc46',1,'devfix::dsp::window']]],
