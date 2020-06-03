@@ -27,7 +27,7 @@ TEST(FFT, MultipleFreqs)
 			+ 4);
 	}
 
-	fft::transform_inplace<LEN>(vec.data());
+	fft::basic_transform_inplace(vec.data(), vec.size());
 	std::vector<double> mag(vec.size());
 	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
 	std::transform(mag.begin(), mag.end(), mag.begin(), round<3, double>);

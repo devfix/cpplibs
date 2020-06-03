@@ -10,18 +10,18 @@
 
 namespace devfix::dsp::fft
 {
-	template<std::size_t N, typename T>
-	void transform_inplace(std::complex<T>* vec)
+	template<typename T>
+	void basic_transform_inplace(std::complex<T>* vec, std::size_t len)
 	{
-		double theta = M_PI / N;
+		double theta = M_PI / len;
 		std::complex<T> phi = std::complex<T>(cos(theta), -sin(theta)), w;
-		for (std::size_t stage = N; stage > 1; stage >>= 1)
+		for (std::size_t stage = len; stage > 1; stage >>= 1)
 		{
 			phi *= phi;
 			w = 1;
 			for (std::size_t pair = 0; pair < stage / 2; pair++)
 			{
-				for (std::size_t a = pair; a < N; a += stage)
+				for (std::size_t a = pair; a < len; a += stage)
 				{
 					std::size_t b = a + stage / 2;
 					std::complex<T> t = vec[a] - vec[b];
@@ -32,9 +32,9 @@ namespace devfix::dsp::fft
 			}
 		}
 
-		for (std::size_t a = 1; a < N; a++)
+		for (std::size_t a = 1; a < len; a++)
 		{
-			std::size_t b = devfix::base::math::reverse_bits(a, devfix::base::math::log2<N>::value);
+			std::size_t b = devfix::base::math::reverse_bits(a, std::log2(len));
 			if (b > a)
 			{
 				std::complex<T> t = vec[a];
