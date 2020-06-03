@@ -1,5 +1,6 @@
+cmake_minimum_required(VERSION 3.0)
 set(LIBRARY "devfixdsp")
-add_library(${LIBRARY} window.h fft.h)
+add_library(${LIBRARY} window.h fft.h spectrogram.h)
 set_target_properties(${LIBRARY} PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(${LIBRARY} devfixbase)
 target_compile_options(${LIBRARY} PRIVATE ${WARNINGS})

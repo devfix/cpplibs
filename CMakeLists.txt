@@ -9,7 +9,14 @@ project(cpplibs CXX)
 
 set(CMAKE_CXX_STANDARD 20)
 set(ENABLE_GOOGLETEST 1)
-set(CMAKE_CXX_FLAGS "-O3 ${CMAKE_CXX_FLAGS} -D ENABLE_GOOGLETEST=${ENABLE_GOOGLETEST}")
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D ENABLE_GOOGLETEST=${ENABLE_GOOGLETEST}")
+
+if(DEFINED $ENV{DEVFIX_CPPLIBS_DEBUG})
+    message("Debug mode enabled!")
+    set(CMAKE_CXX_FLAGS "-O0")
+else()
+    set(CMAKE_CXX_FLAGS "-O3")
+endif()
 
 set(WARNINGS
         -pedantic
@@ -92,7 +99,8 @@ if(DOXYGEN_FOUND)
 endif(DOXYGEN_FOUND)
 
 
-add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_window.cpp devfix/base/test/test_math.cpp devfix/dsp/test/test_fft.cpp devfix/base/test/test_strout.cpp)
+add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_window.cpp devfix/base/test/test_math.cpp devfix/dsp/test/test_fft.cpp devfix/base/test/test_strout.cpp devfix/dsp/test/test_spectrogram.cpp)
+
 if(${ENABLE_GOOGLETEST})
     target_link_libraries(testrunner gtest devfixnet devfixdsp pthread)
 endif()
