@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['output_5fstream_5f',['output_stream_',['../structdevfix_1_1base_1_1strout.html#ad32a760314bc83b98b4564ae38d5a07e',1,'devfix::base::strout']]]
+  ['stx',['STX',['../structdevfix_1_1base_1_1strout.html#a76183010a1d8e9360e34b9cd9ab33f7d',1,'devfix::base::strout']]]
 ];

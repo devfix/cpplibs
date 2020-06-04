@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hanning',['hanning',['../namespacedevfix_1_1dsp_1_1window.html#a12fbb24522441fc514d5b91aa87700d9',1,'devfix::dsp::window']]]
+  ['hanning',['hanning',['../structdevfix_1_1dsp_1_1window.html#add23aaf0f9936857ad02a9d19b785849',1,'devfix::dsp::window']]]
 ];

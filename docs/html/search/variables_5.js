@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['hanning_5ffactor',['HANNING_FACTOR',['../namespacedevfix_1_1dsp_1_1window.html#afefd5e205b1e680a11d151636bd8d7d6',1,'devfix::dsp::window']]]
+  ['output_5fstream_5f',['output_stream_',['../structdevfix_1_1base_1_1strout.html#ad32a760314bc83b98b4564ae38d5a07e',1,'devfix::base::strout']]]
 ];

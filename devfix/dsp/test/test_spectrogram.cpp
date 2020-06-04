@@ -9,7 +9,7 @@
 
 using namespace devfix::dsp;
 
-auto rect_win = [](std::size_t k) -> double { return 1; };
+auto rect_win = [](std::size_t n, std::size_t k) -> double { return 1; };
 
 constexpr std::size_t FFT_LEN = 8;
 
