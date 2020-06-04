@@ -26,7 +26,7 @@ namespace devfix::dsp
 		explicit spectrogram(std::size_t window_distance) :
 			window_distance_(window_distance)
 		{
-
+			if (!window_distance) { throw std::invalid_argument("window distance cannot be zero"); }
 		}
 
 		void add(const complex_t* data, std::size_t len)
@@ -69,8 +69,8 @@ namespace devfix::dsp
 		void update()
 		{
 			// calc count of new calculatetable ffts
-			std::size_t n = std::floor(double(temp_data_.size() - N + 1) / window_distance_);
-			if (n)
+			std::int32_t n = std::floor((double(temp_data_.size()) - N + 1.) / window_distance_);
+			if (n > 0)
 			{
 				auto ptr = temp_data_.data();
 				for (std::size_t k = 0; k++ < n; ptr += window_distance_) { append_fft(ptr); }

@@ -50,6 +50,9 @@ namespace devfix::dsp
 					+ FloatT(FLATTOP_COEFFICIENT_A4) * std::cos(FloatT(8.) * M_PI * k / (n - 1))
 			) : 0;
 		}
+
+		template<typename FloatT>
+		static constexpr FloatT rectangle(std::size_t n, std::size_t k) { return k < n ? 1 : 0; }
 	};
 
 }
