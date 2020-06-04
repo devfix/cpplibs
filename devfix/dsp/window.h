@@ -53,6 +53,13 @@ namespace devfix::dsp
 
 		template<typename FloatT>
 		static constexpr FloatT rectangle(std::size_t n, std::size_t k) { return k < n ? 1 : 0; }
+
+		// linear window, only for testing purposes
+		template<typename FloatT>
+		static constexpr FloatT linear(std::size_t n, std::size_t k)
+		{
+			return k < n ? double(k) / double(n - 1) : 0;
+		}
 	};
 
 }

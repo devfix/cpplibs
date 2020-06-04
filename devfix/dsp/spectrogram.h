@@ -84,9 +84,7 @@ namespace devfix::dsp
 		{
 			auto& window = data_.emplace_back();
 			std::memcpy(window.data(), field, sizeof(complex_t) * N);
-			std::size_t index = 0;
-			auto win_fun_adapt = [&index](const complex_t& complex) { return complex * window::get_window<FloatT, win_fun>(N, index++); };
-			std::transform(window.begin(), window.end(), window.begin(), win_fun_adapt);
+			fft::apply_window<FloatT, win_fun, N>(window);
 			fft::transform_inplace<FloatT>(window.data(), N);
 		}
 	};

@@ -7,6 +7,7 @@
 #include <complex>
 #include <cmath>
 #include "../base/math.h"
+#include "window.h"
 
 namespace devfix::dsp
 {
@@ -59,6 +60,26 @@ namespace devfix::dsp
 		{
 			static_assert(N == 1 << math::popcount(N), "length is not a power of 2");  // assert N is power of 2
 			transform_inplace<FloatT>(arr.data(), arr.size());
+		}
+
+		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t), std::size_t N>
+		static void apply_window(std::complex<FloatT>* field)
+		{
+			for (std::size_t i = 0; i < N; i++) { field[i] *= window::get_window<FloatT, win_fun>(N, i); }
+		}
+
+		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t), std::size_t N>
+		static void apply_window(std::vector<std::complex<FloatT>>& vec)
+		{
+			if(vec.size() != N)
+			{throw std::invalid_argument("invalid vector size");}
+			apply_window<FloatT, win_fun, N>(vec.data());
+		}
+
+		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t), std::size_t N>
+		static void apply_window(std::array<std::complex<FloatT>, N>& arr)
+		{
+			apply_window<FloatT, win_fun, N>(arr.data());
 		}
 	};
 }
