@@ -44,6 +44,17 @@ TEST(Interpolation, Coeffs)
 {
 	{
 		std::vector<std::pair<double, double >> points = {
+			{ -2, 4, }, { -1, 1 }, { 0, 0 }, { 1, 1 }, { 2, 4 }
+		};
+		auto coeffs = interpolation<double>::calc_coeffs(points);
+		for (auto&[x, y] : points)
+		{
+			ASSERT_DOUBLE_EQ(interpolation<double>::eval(points, coeffs, x), y);
+		}
+	}
+
+	{
+		std::vector<std::pair<double, double >> points = {
 			{ -9, 3 }, { -5, 8 }, { 0, 0 }, { 1, 1 }, { 2, 0 }
 		};
 		auto coeffs = interpolation<double>::calc_coeffs(points);
@@ -52,12 +63,26 @@ TEST(Interpolation, Coeffs)
 			ASSERT_NEAR(interpolation<double>::eval(points, coeffs, x), y, ABS_ERROR);
 		}
 	}
+
 	{
 		std::vector<std::pair<double, double >> points(64);
 		for (int i = 0; i < points.size(); i++)
 		{
-			double x = 2. * M_PI * (i - int(points.size() / 2)) / points.size();
+			double x = M_PI * (i - int(points.size() / 2)) / points.size();
 			points[i] = { x, std::sin(x) };
+		}
+		auto coeffs = interpolation<double>::calc_coeffs(points);
+		for (auto&[x, y] : points)
+		{
+			ASSERT_NEAR(interpolation<double>::eval(points, coeffs, x), y, ABS_ERROR);
+		}
+	}
+
+	{
+		std::vector<std::pair<double, double >> points(16);
+		for (int i = 0; i < points.size(); i++)
+		{
+			points[i] = { i, std::sin(i) };
 		}
 		auto coeffs = interpolation<double>::calc_coeffs(points);
 		for (auto&[x, y] : points)
