@@ -13,25 +13,15 @@ namespace devfix::base
 		static std::vector<FloatT> calc_coeffs(const std::vector<std::pair<FloatT, FloatT>>& points)
 		{
 			if (points.empty()) { throw std::invalid_argument("points vector cannot be empty"); }
-			std::vector<FloatT> coeffs;
-			coeffs.reserve(points.size());
+			std::vector<FloatT> coeffs(points.size());
 			std::vector<FloatT> last_row;
+			std::vector<FloatT> row(points.size());
 			for (std::size_t j = 0; j < points.size(); j++)
 			{
-				std::vector<FloatT> row(points.size());
 				row[0] = points[j].second;
-				//std::cout << "[" << j << ";" << j<< "] ";
-				//std::cout << row[0] << " ";
-				for (std::size_t k = 1; k <= j; k++)
-				{
-					std::size_t i = j - k;
-					//std::cout << "[" << i << ";" << j<< "] ";
-					row[k] = (row[k - 1] - last_row[k - 1]) / (points[j].first - points[i].first);
-					//std::cout << row[k] << " ";
-				}
-				//std::cout << "\n";
+				for (std::size_t k = 1; k <= j; k++) { row[k] = (row[k - 1] - last_row[k - 1]) / (points[j].first - points[j - k].first); }
+				coeffs[j] = row[j];
 				last_row = row;
-				coeffs.push_back(row[j]);
 			}
 			return coeffs;
 		}

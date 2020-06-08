@@ -9,7 +9,7 @@
 
 using namespace devfix::dsp;
 
-constexpr double ABS_DOUBLE_ERROR = 1e-12;
+constexpr double ABS_ERROR = 1e-12;
 constexpr double ABS_COARSE_ERROR = 1e-3;
 
 template<int digits, typename T>
@@ -47,7 +47,7 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949, 2, 1, 0, 0.4142135623730949, 0, 1, 2 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -55,7 +55,7 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949, 2, 1, 0, 0.4142135623730947, 0, 1, 2 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -64,7 +64,7 @@ TEST(Spectrogram, RectangleWindow)
 			{ 1.7071067811865479, 2.5495097567963922, 1.2247448713915889, 0.70710678118654768, 0.29289321881345265, 0.70710678118654746,
 			  1.2247448713915889, 2.5495097567963922 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -73,7 +73,7 @@ TEST(Spectrogram, RectangleWindow)
 			{ 0.7071067811865479, 3.5355339059327378, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479,
 			  0.7071067811865479, 3.5355339059327378 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -81,7 +81,7 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 0, 4, 0, 0, 0, 0, 0, 4 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -89,7 +89,7 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 0, 4, 0, 0, 0, 0, 0, 4 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -98,7 +98,7 @@ TEST(Spectrogram, RectangleWindow)
 			{ 0.7071067811865479, 3.5355339059327378, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479,
 			  0.7071067811865479, 3.5355339059327378 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -107,7 +107,7 @@ TEST(Spectrogram, RectangleWindow)
 			{ 1.7071067811865479, 2.5495097567963922, 1.2247448713915889, 0.70710678118654768, 0.29289321881345265, 0.70710678118654746,
 			  1.2247448713915889, 2.5495097567963922 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 	{
 		auto win = spec.pop();
@@ -115,7 +115,7 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949, 2, 1, 0, 0.4142135623730949, 0, 1, 2 };
 		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
 
 	ASSERT_ANY_THROW(spec.pop());

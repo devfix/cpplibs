@@ -11,7 +11,7 @@
 
 using namespace devfix::dsp;
 
-constexpr double ABS_DOUBLE_ERROR = 1e-12;
+constexpr double ABS_ERROR = 1e-12;
 constexpr double ABS_COARSE_ERROR = 1e-3;
 
 constexpr std::size_t LEN = 1024;
@@ -57,7 +57,7 @@ TEST(FFT, ApplyWindowPointer)
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 }
 
 TEST(FFT, ApplyWindowVector)
@@ -70,7 +70,7 @@ TEST(FFT, ApplyWindowVector)
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 }
 
 TEST(FFT, ApplyWindowArray)
@@ -83,7 +83,7 @@ TEST(FFT, ApplyWindowArray)
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 }
 
 TEST(FFT, AmplitudeNormalization)
@@ -104,7 +104,7 @@ TEST(FFT, AmplitudeNormalization)
 		{ 4, 0.25, 0.5, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
 	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 }
 
 TEST(FFT, AmplitudeNormalizationWithFlatTop)

@@ -11,7 +11,7 @@
 
 using namespace devfix::dsp;
 
-constexpr double ABS_DOUBLE_ERROR = 1e-12;
+constexpr double ABS_ERROR = 1e-12;
 constexpr double ABS_FLOAT_ERROR = 1e-6;
 
 template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
@@ -27,22 +27,22 @@ TEST(Window, HanningGain)
 	{
 		auto gain = window::calc_amplitude_gain<double, window::hanning<double>>(8);
 		double gain_expected = 2.285714285714286;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 	{
 		auto gain = window::calc_amplitude_gain<double, window::hanning<double>>(128);
 		double gain_expected = 2.015748031496062;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 	{
 		auto gain = window::calc_amplitude_gain<double, window::hanning<double>>(512);
 		double gain_expected = 2.003913894324854;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 	{
 		auto gain = window::calc_amplitude_gain<double, window::hanning<double>>(16384);
 		double gain_expected = 2.000122077763540;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 }
 
@@ -69,7 +69,7 @@ TEST(Window, HanningDoubleSmall)
 	};
 
 	ASSERT_EQ(win.size(), expected.size());
-	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_ERROR); }
 }
 
 TEST(Window, HanningDoubleLarge)
@@ -118,7 +118,7 @@ TEST(Window, HanningDoubleLarge)
 	};
 
 	ASSERT_EQ(win.size(), expected.size());
-	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_ERROR); }
 }
 
 TEST(Window, FlatTopGain)
@@ -126,22 +126,22 @@ TEST(Window, FlatTopGain)
 	{
 		auto gain = window::calc_amplitude_gain<double, window::flattop<double>>(8);
 		double gain_expected = 5.302818796386621;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 	{
 		auto gain = window::calc_amplitude_gain<double, window::flattop<double>>(128);
 		double gain_expected = 4.675268693706673;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 	{
 		auto gain = window::calc_amplitude_gain<double, window::flattop<double>>(512);
 		double gain_expected = 4.647767218480163;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 	{
 		auto gain = window::calc_amplitude_gain<double, window::flattop<double>>(16384);
 		double gain_expected = 4.638955510754467;
-		ASSERT_NEAR(gain, gain_expected, ABS_DOUBLE_ERROR);
+		ASSERT_NEAR(gain, gain_expected, ABS_ERROR);
 	}
 }
 
@@ -170,7 +170,7 @@ TEST(Window, FlatTopDoubleSmall)
 	};
 
 	ASSERT_EQ(win.size(), expected.size());
-	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_ERROR); }
 }
 
 TEST(Window, FlatTopDoubleLarge)
@@ -238,7 +238,7 @@ TEST(Window, FlatTopDoubleLarge)
 	};
 
 	ASSERT_EQ(win.size(), expected.size());
-	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_DOUBLE_ERROR); }
+	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_ERROR); }
 }
 
 #endif
