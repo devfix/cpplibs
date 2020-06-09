@@ -92,4 +92,29 @@ TEST(Interpolation, Coeffs)
 	}
 }
 
+TEST(Interpolation, BiSecReg)
+{
+	constexpr double abs_error = 1e-10;
+	{
+		std::vector<std::pair<double, double >> points = {
+			{ -2, 4, }, { -1, 1 }, { 0, 0 }, { 1, 1 }, { 2, 4 }
+		};
+		auto coeffs = interpolation<double>::calc_coeffs(points);
+
+		double x1 = interpolation<double>::bisecreg(points, coeffs, points.begin()->first, 0, 0.25, abs_error);
+		ASSERT_NEAR(x1, -0.5, abs_error);
+		double x2 = interpolation<double>::bisecreg(points, coeffs, 0, (--points.end())->first, 0.25, abs_error);
+		ASSERT_NEAR(x2, 0.5, abs_error);
+
+		double x3 = interpolation<double>::bisecreg(points, coeffs, points.begin()->first, 0, 2.25, abs_error);
+		ASSERT_NEAR(x3, -1.5, abs_error);
+		double x4 = interpolation<double>::bisecreg(points, coeffs, 0, (--points.end())->first, 2.25, abs_error);
+		ASSERT_NEAR(x4, 1.5, abs_error);
+
+		double x5 = interpolation<double>::bisecreg(points, coeffs, 0, 1, 1e-8, abs_error);
+		ASSERT_NEAR(x5, 0.00010013580322265625, abs_error);
+	}
+}
+
+
 #endif
