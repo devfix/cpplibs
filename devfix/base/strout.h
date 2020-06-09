@@ -26,7 +26,8 @@ namespace devfix::base
 
 		explicit strout(stream_t& output_stream) : pipe_{ &output_stream } {}
 
-		explicit strout(pipe_fun_t pipe_fun, flush_fun_t flush_fun) : pipe_{ pipe_fun, flush_fun } {}
+		explicit strout(pipe_fun_t pipe_fun, flush_fun_t flush_fun) :
+			pipe_(std::make_pair<pipe_fun_t, flush_fun_t>(std::move(pipe_fun), std::move(flush_fun))) {}
 
 		~strout()
 		{
