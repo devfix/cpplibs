@@ -6,6 +6,7 @@
 
 #include <sstream>
 #include <functional>
+#include <utility>
 
 namespace devfix::base
 {
@@ -17,15 +18,20 @@ namespace devfix::base
 	struct strpipe : public std::basic_stringbuf<CharT, Traits, Allocator>
 	{
 		using pipe_fun_t = std::function<void(CharT)>;
+		using flush_fun_t = std::function<void()>;
 
-		strpipe(pipe_fun_t pipe_fun) : pipe_fun_(pipe_fun) {}
+		strpipe(pipe_fun_t pipe_fun, flush_fun_t flush_fun) : pipe_fun_(std::move(pipe_fun)), flush_fun_(std::move(flush_fun)) {}
 
 		~strpipe() = default;
 
 	protected:
 		using int_type = typename std::basic_stringbuf<CharT, Traits, Allocator>::int_type;
 
-		int sync() override { return 0; }
+		int sync() override
+		{
+			flush_fun_();
+			return 0; // always successful
+		}
 
 		int_type overflow(int_type c) override
 		{
@@ -35,6 +41,7 @@ namespace devfix::base
 
 	protected:
 		pipe_fun_t pipe_fun_;
+		flush_fun_t flush_fun_;
 	};
 
 }
