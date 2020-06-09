@@ -10,6 +10,11 @@ namespace devfix::base
 	template<typename FloatT>
 	struct interpolation
 	{
+		/**
+		 * \brief Calculates the coefficients of an Newton polynomial interpolation
+		 * \param points the
+		 * \return coefficients
+		 */
 		static std::vector<FloatT> calc_coeffs(const std::vector<std::pair<FloatT, FloatT>>& points)
 		{
 			if (points.empty()) { throw std::invalid_argument("points vector cannot be empty"); }
@@ -26,6 +31,13 @@ namespace devfix::base
 			return coeffs;
 		}
 
+		/**
+		 * \brief evaluates the polynomial by an argument
+		 * \param points of interpolation
+		 * \param coeffs of interpolation
+		 * \param x argument for evaluation
+		 * \return value of polynomial at x
+		 */
 		static FloatT eval(const std::vector<std::pair<FloatT, FloatT>>& points, const std::vector<FloatT>& coeffs, FloatT x)
 		{
 			if (coeffs.empty()) { throw std::invalid_argument("coefficients vector cannot be empty"); }
@@ -35,7 +47,57 @@ namespace devfix::base
 			return y + coeffs[0];
 		}
 
-		static FloatT bisecreg(const std::vector<std::pair<FloatT, FloatT>>& points, const std::vector<FloatT>& coeffs,
+		/**
+		 * \brief evaluates the polynomial by an argument
+		 * \param xs x values of interpolation
+		 * \param coeffs of interpolation
+		 * \param x argument for evaluation
+		 * \return value of polynomial at x
+		 */
+		static FloatT eval(const std::vector<FloatT>& xs, const std::vector<FloatT>& coeffs, FloatT x)
+		{
+			if (coeffs.empty()) { throw std::invalid_argument("coefficients vector cannot be empty"); }
+			if (coeffs.size() != xs.size()) { throw std::invalid_argument("mismatch in vector lengths"); }
+			FloatT y = 0;
+			for (std::size_t i = coeffs.size() - 1; i > 0; i--) { y = (y + coeffs[i]) * (x - xs[i - 1]); }
+			return y + coeffs[0];
+		}
+
+		/**
+		 * \brief Finds the argument for a given value y
+		 * \param points of interpolation
+		 * \param coeffs of interpolation
+		 * \param x_low start of search boundary
+		 * \param x_up end of search boundary
+		 * \param y value to search argument for
+		 * \param abs_error
+		 * \return found x argument
+		 */
+		static FloatT bisec(const std::vector<std::pair<FloatT, FloatT>>& points, const std::vector<FloatT>& coeffs,
+			FloatT x_low, FloatT x_up, FloatT y, FloatT abs_error)
+		{
+			return basic_bisec<decltype(points)>(points, coeffs, x_low, x_up, y, abs_error);
+		}
+
+		/**
+		 * \brief Finds the argument for a given value y
+		 * \param xs x values of interpolation
+		 * \param coeffs of interpolation
+		 * \param x_low start of search boundary
+		 * \param x_up end of search boundary
+		 * \param y value to search argument for
+		 * \param abs_error desired precision for x
+		 * \return found x argument
+		 */
+		static FloatT bisec(const std::vector<FloatT>& xs, const std::vector<FloatT>& coeffs,
+			FloatT x_low, FloatT x_up, FloatT y, FloatT abs_error)
+		{
+			return basic_bisec<decltype(xs)>(xs, coeffs, x_low, x_up, y, abs_error);
+		}
+
+	private:
+		template<typename PointsT>
+		static FloatT basic_bisec(const PointsT& points, const std::vector<FloatT>& coeffs,
 			FloatT x_low, FloatT x_up, FloatT y, FloatT abs_error)
 		{
 			FloatT y_low = eval(points, coeffs, x_low) - y;

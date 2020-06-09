@@ -35,9 +35,9 @@ TEST(Interpolation, Eval)
 		ASSERT_DOUBLE_EQ(interpolation<double>::eval(points, coeffs, 2), 3);
 	}
 
-	ASSERT_ANY_THROW(interpolation<double>::eval({}, {}, 0));  // throws empty coefficients exception
+	ASSERT_ANY_THROW(interpolation<double>::eval(std::vector<std::pair<double, double >>{}, {}, 0));  // throws empty coefficients exception
 
-	ASSERT_ANY_THROW(interpolation<double>::eval({}, { 5 }, 0));  // throws length mismatch exception
+	ASSERT_ANY_THROW(interpolation<double>::eval(std::vector<std::pair<double, double >>{}, { 5 }, 0));  // throws length mismatch exception
 }
 
 TEST(Interpolation, Coeffs)
@@ -101,17 +101,17 @@ TEST(Interpolation, BiSecReg)
 		};
 		auto coeffs = interpolation<double>::calc_coeffs(points);
 
-		double x1 = interpolation<double>::bisecreg(points, coeffs, points.begin()->first, 0, 0.25, abs_error);
+		double x1 = interpolation<double>::bisec(points, coeffs, points.begin()->first, 0, 0.25, abs_error);
 		ASSERT_NEAR(x1, -0.5, abs_error);
-		double x2 = interpolation<double>::bisecreg(points, coeffs, 0, (--points.end())->first, 0.25, abs_error);
+		double x2 = interpolation<double>::bisec(points, coeffs, 0, (--points.end())->first, 0.25, abs_error);
 		ASSERT_NEAR(x2, 0.5, abs_error);
 
-		double x3 = interpolation<double>::bisecreg(points, coeffs, points.begin()->first, 0, 2.25, abs_error);
+		double x3 = interpolation<double>::bisec(points, coeffs, points.begin()->first, 0, 2.25, abs_error);
 		ASSERT_NEAR(x3, -1.5, abs_error);
-		double x4 = interpolation<double>::bisecreg(points, coeffs, 0, (--points.end())->first, 2.25, abs_error);
+		double x4 = interpolation<double>::bisec(points, coeffs, 0, (--points.end())->first, 2.25, abs_error);
 		ASSERT_NEAR(x4, 1.5, abs_error);
 
-		double x5 = interpolation<double>::bisecreg(points, coeffs, 0, 1, 1e-8, abs_error);
+		double x5 = interpolation<double>::bisec(points, coeffs, 0, 1, 1e-8, abs_error);
 		ASSERT_NEAR(x5, 0.00010013580322265625, abs_error);
 	}
 }
