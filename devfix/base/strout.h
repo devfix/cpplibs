@@ -5,6 +5,8 @@
 #pragma once
 
 #include <sstream>
+#include <variant>
+#include <functional>
 #include "strutil.h"
 
 namespace devfix::base
@@ -17,14 +19,18 @@ namespace devfix::base
 	>
 	struct strout : public std::basic_stringbuf<CharT, Traits, Allocator>
 	{
-		explicit strout(std::basic_ostream<CharT>& output_stream) : output_stream_(output_stream) {}
+		using pipe_fun_t = std::function<void(const std::basic_string<CharT>&)>;
+		using flush_fun_t = std::function<void()>;
+		using pair_t = std::pair<pipe_fun_t, flush_fun_t>;
+		using stream_t = std::basic_ostream<CharT>;
+
+		explicit strout(stream_t& output_stream) : pipe_{ &output_stream } {}
+
+		explicit strout(pipe_fun_t pipe_fun, flush_fun_t flush_fun) : pipe_{ pipe_fun, flush_fun } {}
 
 		~strout()
 		{
-			if (enabled_ && (!prefixed_ || buffer_.str().length() != prefix_.length()))
-			{
-				output_stream_ << buffer_.str() << std::flush;
-			}
+			if (enabled_ && (!prefixed_ || buffer_.str().length() != prefix_.length())) { sync(); }
 		}
 
 	protected:
@@ -34,7 +40,15 @@ namespace devfix::base
 		{
 			if (enabled_ && (!prefixed_ || buffer_.str().length() != prefix_.length()))
 			{
-				output_stream_ << buffer_.str() << std::flush;
+				if (std::holds_alternative<stream_t*>(pipe_))
+				{
+					(*std::get<stream_t*>(pipe_)) << buffer_.str() << std::flush;
+				}
+				else
+				{
+					std::get<pair_t>(pipe_).first(buffer_.str());
+					std::get<pair_t>(pipe_).second();
+				}
 				buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
 				prefixed_ = false;
 			}
@@ -49,14 +63,16 @@ namespace devfix::base
 
 				if (c == static_cast<CharT>('\n'))
 				{
-					output_stream_ << buffer_.str();
+					if (std::holds_alternative<stream_t*>(pipe_)) { (*std::get<stream_t*>(pipe_)) << buffer_.str(); }
+					else { std::get<pair_t>(pipe_).first(buffer_.str()); }
 					buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
 					buffer_ << prefix_;
 					prefixed_ = true;
 				}
 				else if (c == STX)
 				{
-					output_stream_ << CLEAR_LINE;
+					if (std::holds_alternative<stream_t*>(pipe_)) { (*std::get<stream_t*>(pipe_)) << CLEAR_LINE; }
+					else { std::get<pair_t>(pipe_).first(CLEAR_LINE.data()); }
 					buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
 					buffer_ << prefix_;
 					prefixed_ = true;
@@ -98,7 +114,7 @@ namespace devfix::base
 		bool enabled_ = true;
 		std::basic_string<CharT> prefix_;
 		std::basic_stringstream<CharT> buffer_;
-		std::basic_ostream<CharT>& output_stream_;
+		std::variant<stream_t*, pair_t> pipe_;
 		bool prefixed_ = true;
 
 		static constexpr std::basic_string_view<CharT> CLEAR_LINE = MULTISTRING(CharT, "\033[2K\r");
