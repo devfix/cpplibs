@@ -34,25 +34,33 @@ namespace devfix::base
 			if (enabled_ && (!prefixed_ || buffer_.str().length() != prefix_.length())) { sync(); }
 		}
 
+	private:
+		void write_buffer()
+		{
+			if (std::holds_alternative<stream_t*>(pipe_)) { (*std::get<stream_t*>(pipe_)) << buffer_.str(); }
+			else { std::get<pair_t>(pipe_).first(buffer_.str()); }
+		}
+
+		void clear_buffer() { buffer_.str(MULTISTRING(CharT, "")); }
+
 	protected:
 		using int_type = typename std::basic_stringbuf<CharT, Traits, Allocator>::int_type;
 
 		int sync() override
 		{
-			if (enabled_ && (!prefixed_ || buffer_.str().length() != prefix_.length()))
+			std::basic_string<CharT> str = buffer_.str();
+			if (enabled_ && (!prefixed_ || str.length() != prefix_.length()))
 			{
-				if (std::holds_alternative<stream_t*>(pipe_))
-				{
-					(*std::get<stream_t*>(pipe_)) << buffer_.str() << std::flush;
-				}
-				else
-				{
-					std::get<pair_t>(pipe_).first(buffer_.str());
-					std::get<pair_t>(pipe_).second();
-				}
-				buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
+				write_buffer();
+				clear_buffer();
 				prefixed_ = false;
 			}
+
+			// always flush streams
+			std::cout.flush();
+			if (std::holds_alternative<stream_t*>(pipe_)) { std::get<stream_t*>(pipe_)->flush(); }
+			else { std::get<pair_t>(pipe_).second(); }
+
 			return 0; // always successful
 		}
 
@@ -64,17 +72,17 @@ namespace devfix::base
 
 				if (c == static_cast<CharT>('\n'))
 				{
-					if (std::holds_alternative<stream_t*>(pipe_)) { (*std::get<stream_t*>(pipe_)) << buffer_.str(); }
-					else { std::get<pair_t>(pipe_).first(buffer_.str()); }
-					buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
+					write_buffer();
+					clear_buffer();
 					buffer_ << prefix_;
 					prefixed_ = true;
 				}
 				else if (c == STX)
 				{
-					if (std::holds_alternative<stream_t*>(pipe_)) { (*std::get<stream_t*>(pipe_)) << CLEAR_LINE; }
-					else { std::get<pair_t>(pipe_).first(CLEAR_LINE.data()); }
-					buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
+					buffer_.str(CLEAR_LINE.data());  // set buffer
+
+					write_buffer();
+					clear_buffer();
 					buffer_ << prefix_;
 					prefixed_ = true;
 				}
@@ -83,15 +91,9 @@ namespace devfix::base
 		}
 
 	public:
-		void set_enabled(bool enabled)
-		{
-			enabled_ = enabled;
-		}
+		void set_enabled(bool enabled) { enabled_ = enabled; }
 
-		bool is_enabled() const
-		{
-			return enabled_;
-		}
+		bool is_enabled() const { return enabled_; }
 
 		void set_prefix(const std::basic_string<CharT>& prefix)
 		{
@@ -104,10 +106,7 @@ namespace devfix::base
 			prefix_ = prefix;
 		}
 
-		const std::basic_string<CharT>& get_prefix() const
-		{
-			return prefix_;
-		}
+		const std::basic_string<CharT>& get_prefix() const { return prefix_; }
 
 		static constexpr CharT STX = static_cast<CharT>('\x02'); //!< Start of Text, clear whole line before new text gets displayed
 
