@@ -27,6 +27,10 @@ namespace devfix::base
 
 		explicit strout(pipes_t pipes) : pipes_(std::move(pipes)) {}
 
+		explicit strout(stream_t* stream) : pipes_(pipes_t{ stream }) {}
+
+		explicit strout(pair_t pair) : pipes_(pipes_t{ std::move(pair) }) {}
+
 		~strout()
 		{
 			if (enabled_ && (!prefixed_ || buffer_.str().length() != prefix_.length())) { sync(); }
