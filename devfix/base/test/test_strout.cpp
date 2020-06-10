@@ -13,7 +13,7 @@ TEST(TestStrOut, BufferBehavior)
 {
 	// prolog
 	std::stringstream buf;
-	strout<char> str_out(buf);
+	strout<char> str_out(strout<char>::pipes_t{{ &buf }});
 	std::ostream os(&str_out);
 	str_out.set_prefix("[prefix] ");
 
@@ -38,7 +38,7 @@ TEST(TestStrOut, BufferBehaviorWchar)
 {
 	// prolog
 	std::wstringstream buf;
-	strout<wchar_t> str_out(buf);
+	strout<wchar_t> str_out(strout<wchar_t>::pipes_t{{ &buf }});
 	std::wostream os(&str_out);
 	str_out.set_prefix(L"[prefix] ");
 
@@ -63,7 +63,7 @@ TEST(TestStrOut, EnableDisable)
 {
 	// prolog
 	std::stringstream buf;
-	strout<char> str_out(buf);
+	strout<char> str_out(strout<char>::pipes_t{{ &buf }});
 	std::ostream os(&str_out);
 	str_out.set_enabled(false);
 
@@ -83,7 +83,7 @@ TEST(TestStrOut, EnableDisableWchar)
 {
 	// prolog
 	std::wstringstream buf;
-	strout<wchar_t> str_out(buf);
+	strout<wchar_t> str_out(strout<wchar_t>::pipes_t{{ &buf }});
 	std::wostream os(&str_out);
 	str_out.set_enabled(false);
 
@@ -103,7 +103,7 @@ TEST(TestStrOut, StartOfText)
 {
 	// prolog
 	std::stringstream buf;
-	strout<char> str_out(buf);
+	strout<char> str_out(strout<char>::pipes_t{{ &buf }});
 	std::ostream os(&str_out);
 
 	os << "first";
@@ -123,7 +123,7 @@ TEST(TestStrOut, StartOfTextWchar)
 {
 	// prolog
 	std::wstringstream buf;
-	strout<wchar_t> str_out(buf);
+	strout<wchar_t> str_out(strout<wchar_t>::pipes_t{{ &buf }});
 	std::wostream os(&str_out);
 
 	os << L"first";

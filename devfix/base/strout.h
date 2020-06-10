@@ -23,11 +23,9 @@ namespace devfix::base
 		using flush_fun_t = std::function<void()>;
 		using pair_t = std::pair<pipe_fun_t, flush_fun_t>;
 		using stream_t = std::basic_ostream<CharT>;
+		using pipes_t = std::vector<std::variant<stream_t*, pair_t>>;
 
-		explicit strout(stream_t& output_stream) : pipe_{ &output_stream } {}
-
-		explicit strout(pipe_fun_t pipe_fun, flush_fun_t flush_fun) :
-			pipe_(std::make_pair<pipe_fun_t, flush_fun_t>(std::move(pipe_fun), std::move(flush_fun))) {}
+		explicit strout(pipes_t pipes) : pipes_(std::move(pipes)) {}
 
 		~strout()
 		{
@@ -37,11 +35,23 @@ namespace devfix::base
 	private:
 		void write_buffer()
 		{
-			if (std::holds_alternative<stream_t*>(pipe_)) { (*std::get<stream_t*>(pipe_)) << buffer_.str(); }
-			else { std::get<pair_t>(pipe_).first(buffer_.str()); }
+			for (auto& pipe : pipes_)
+			{
+				if (std::holds_alternative<stream_t*>(pipe)) { (*std::get<stream_t*>(pipe)) << buffer_.str(); }
+				else { std::get<pair_t>(pipe).first(buffer_.str()); }
+			}
 		}
 
 		void clear_buffer() { buffer_.str(MULTISTRING(CharT, "")); }
+
+		void flush()
+		{
+			for (auto& pipe: pipes_)
+			{
+				if (std::holds_alternative<stream_t*>(pipe)) { std::get<stream_t*>(pipe)->flush(); }
+				else { std::get<pair_t>(pipe).second(); }
+			}
+		}
 
 	protected:
 		using int_type = typename std::basic_stringbuf<CharT, Traits, Allocator>::int_type;
@@ -57,9 +67,7 @@ namespace devfix::base
 			}
 
 			// always flush streams
-			std::cout.flush();
-			if (std::holds_alternative<stream_t*>(pipe_)) { std::get<stream_t*>(pipe_)->flush(); }
-			else { std::get<pair_t>(pipe_).second(); }
+			flush();
 
 			return 0; // always successful
 		}
@@ -99,7 +107,7 @@ namespace devfix::base
 		{
 			if (prefixed_ && (buffer_.str().length() == prefix_.length()))
 			{
-				buffer_.str(MULTISTRING(CharT, ""));  // clear buffer
+				clear_buffer();
 				buffer_ << prefix;
 				prefixed_ = true;
 			}
@@ -114,7 +122,7 @@ namespace devfix::base
 		bool enabled_ = true;
 		std::basic_string<CharT> prefix_;
 		std::basic_stringstream<CharT> buffer_;
-		std::variant<stream_t*, pair_t> pipe_;
+		std::vector<std::variant<stream_t*, pair_t>> pipes_;
 		bool prefixed_ = true;
 
 		static constexpr std::basic_string_view<CharT> CLEAR_LINE = MULTISTRING(CharT, "\033[2K\r");
