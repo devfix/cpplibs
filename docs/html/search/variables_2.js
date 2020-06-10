@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['day',['day',['../structdevfix_1_1base_1_1time.html#ae5a080003e7020960c31e47cf30a21ba',1,'devfix::base::time']]],
   ['default_5fclose',['DEFAULT_CLOSE',['../namespacedevfix_1_1base_1_1io.html#a14a286c17d4b93881d42b1d14beb2d0b',1,'devfix::base::io']]],
   ['default_5fis_5fclosed',['DEFAULT_IS_CLOSED',['../namespacedevfix_1_1base_1_1io.html#ae04fec2a2a2db3482e624a59e59a2a14',1,'devfix::base::io']]],
   ['default_5fread_5fblocking_5ftime',['DEFAULT_READ_BLOCKING_TIME',['../structdevfix_1_1net_1_1socket.html#a77c3214eb436d06825a4cc2aafcc63ce',1,'devfix::net::socket']]],

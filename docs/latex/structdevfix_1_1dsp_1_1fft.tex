@@ -1,0 +1,119 @@
+\hypertarget{structdevfix_1_1dsp_1_1fft}{}\section{devfix\+:\+:dsp\+:\+:fft Struct Reference}
+\label{structdevfix_1_1dsp_1_1fft}\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+
+
+{\ttfamily \#include $<$fft.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}{math} = \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
+\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f}{transform\+\_\+inplace} (std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_ae3d7d5529ffad8aa929c5353252df7f5}{transform\+\_\+inplace} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a56cf2ee0f12d0a4c4bdcded3db38e088}{transform\+\_\+inplace} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun, std\+::size\+\_\+t N$>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a6ffabd9d450ce2702b0ec825c6758e81}{apply\+\_\+window} (std\+::complex$<$ FloatT $>$ $\ast$win)
+\item 
+{\footnotesize template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun, std\+::size\+\_\+t N$>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a14705eb963394aa042eec5f76696e3b2}{apply\+\_\+window} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun, std\+::size\+\_\+t N$>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a57f8a79e855a66b88eb3281b6e0797ac}{apply\+\_\+window} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_acf63d1a93180fd7669ae52353e1beb1f}{normalize\+\_\+amplitude} (const std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t len, FloatT $\ast$mag)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static std\+::vector$<$ FloatT $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a3239f4400b0e1c98d5f912b129f199e8}{normalize\+\_\+amplitude} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static std\+::array$<$ FloatT, N $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a1256d8b92604d120406a32fb13be7501}{normalize\+\_\+amplitude} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}\label{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!math@{math}}
+\index{math@{math}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{math}{math}}
+{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}{devfix\+::dsp\+::fft\+::math} =  \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a6ffabd9d450ce2702b0ec825c6758e81}\label{structdevfix_1_1dsp_1_1fft_a6ffabd9d450ce2702b0ec825c6758e81}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun, std\+::size\+\_\+t N$>$ \\
+static void devfix\+::dsp\+::fft\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a14705eb963394aa042eec5f76696e3b2}\label{structdevfix_1_1dsp_1_1fft_a14705eb963394aa042eec5f76696e3b2}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun, std\+::size\+\_\+t N$>$ \\
+static void devfix\+::dsp\+::fft\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a57f8a79e855a66b88eb3281b6e0797ac}\label{structdevfix_1_1dsp_1_1fft_a57f8a79e855a66b88eb3281b6e0797ac}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun, std\+::size\+\_\+t N$>$ \\
+static void devfix\+::dsp\+::fft\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_acf63d1a93180fd7669ae52353e1beb1f}\label{structdevfix_1_1dsp_1_1fft_acf63d1a93180fd7669ae52353e1beb1f}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!normalize\+\_\+amplitude@{normalize\+\_\+amplitude}}
+\index{normalize\+\_\+amplitude@{normalize\+\_\+amplitude}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{normalize\+\_\+amplitude()}{normalize\_amplitude()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::fft\+::normalize\+\_\+amplitude (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{FloatT $\ast$}]{mag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdevfix_1_1dsp_1_1fft_acf63d1a93180fd7669ae52353e1beb1f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a3239f4400b0e1c98d5f912b129f199e8}\label{structdevfix_1_1dsp_1_1fft_a3239f4400b0e1c98d5f912b129f199e8}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!normalize\+\_\+amplitude@{normalize\+\_\+amplitude}}
+\index{normalize\+\_\+amplitude@{normalize\+\_\+amplitude}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{normalize\+\_\+amplitude()}{normalize\_amplitude()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static std\+::vector$<$FloatT$>$ devfix\+::dsp\+::fft\+::normalize\+\_\+amplitude (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a1256d8b92604d120406a32fb13be7501}\label{structdevfix_1_1dsp_1_1fft_a1256d8b92604d120406a32fb13be7501}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!normalize\+\_\+amplitude@{normalize\+\_\+amplitude}}
+\index{normalize\+\_\+amplitude@{normalize\+\_\+amplitude}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{normalize\+\_\+amplitude()}{normalize\_amplitude()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+static std\+::array$<$FloatT, N$>$ devfix\+::dsp\+::fft\+::normalize\+\_\+amplitude (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f}\label{structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!transform\+\_\+inplace@{transform\+\_\+inplace}}
+\index{transform\+\_\+inplace@{transform\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{transform\+\_\+inplace()}{transform\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_ae3d7d5529ffad8aa929c5353252df7f5}\label{structdevfix_1_1dsp_1_1fft_ae3d7d5529ffad8aa929c5353252df7f5}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!transform\+\_\+inplace@{transform\+\_\+inplace}}
+\index{transform\+\_\+inplace@{transform\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{transform\+\_\+inplace()}{transform\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a56cf2ee0f12d0a4c4bdcded3db38e088}\label{structdevfix_1_1dsp_1_1fft_a56cf2ee0f12d0a4c4bdcded3db38e088}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!transform\+\_\+inplace@{transform\+\_\+inplace}}
+\index{transform\+\_\+inplace@{transform\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{transform\+\_\+inplace()}{transform\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/dsp/\hyperlink{fft_8h}{fft.\+h}\end{DoxyCompactItemize}

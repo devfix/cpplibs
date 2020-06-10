@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['pop',['pop',['../structdevfix_1_1dsp_1_1spectrogram.html#acdc5a2253a62ae50ae24607cd4f3b555',1,'devfix::dsp::spectrogram']]],
-  ['popcount',['popcount',['../structdevfix_1_1base_1_1math.html#a43815037f45e01d90a6c0cb0e1d8ef11',1,'devfix::base::math']]]
+  ['netbuilder',['netbuilder',['../structdevfix_1_1net_1_1netbuilder.html#a36946dc1bd85a68d5c38aaf8533dd401',1,'devfix::net::netbuilder']]],
+  ['normalize_5famplitude',['normalize_amplitude',['../structdevfix_1_1dsp_1_1fft.html#acf63d1a93180fd7669ae52353e1beb1f',1,'devfix::dsp::fft::normalize_amplitude(const std::complex&lt; FloatT &gt; *win, std::size_t len, FloatT *mag)'],['../structdevfix_1_1dsp_1_1fft.html#a3239f4400b0e1c98d5f912b129f199e8',1,'devfix::dsp::fft::normalize_amplitude(const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win)'],['../structdevfix_1_1dsp_1_1fft.html#a1256d8b92604d120406a32fb13be7501',1,'devfix::dsp::fft::normalize_amplitude(const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win)']]]
 ];

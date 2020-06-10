@@ -1,0 +1,88 @@
+\hypertarget{structdevfix_1_1net_1_1netbuilder}{}\section{devfix\+:\+:net\+:\+:netbuilder Struct Reference}
+\label{structdevfix_1_1net_1_1netbuilder}\index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
+
+
+Builder class for platform independent instantiation.  
+
+
+
+
+{\ttfamily \#include $<$netbuilder.\+h$>$}
+
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdevfix_1_1net_1_1netbuilder_a36946dc1bd85a68d5c38aaf8533dd401}{netbuilder} ()=delete
+\begin{DoxyCompactList}\small\item\em Allow no instances of builder class. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1socket}{socket} $>$ \hyperlink{structdevfix_1_1net_1_1netbuilder_a9d9eb6cb050ca920aa647baaf4692405}{create\+\_\+socket} (\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} adr)
+\begin{DoxyCompactList}\small\item\em Creates a socket and connects it to the specified remote internet address. \end{DoxyCompactList}\item 
+static std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1serversocket}{serversocket} $>$ \hyperlink{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}{create\+\_\+serversocket} (\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} adr, bool reuse\+\_\+address=false)
+\begin{DoxyCompactList}\small\item\em Creates a server socket and binds it to the supplied local address. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Builder class for platform independent instantiation. 
+
+This class is the only one which has access to the constructors of network classes. 
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1netbuilder_a36946dc1bd85a68d5c38aaf8533dd401}\label{structdevfix_1_1net_1_1netbuilder_a36946dc1bd85a68d5c38aaf8533dd401}} 
+\index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}!netbuilder@{netbuilder}}
+\index{netbuilder@{netbuilder}!devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
+\subsubsection{\texorpdfstring{netbuilder()}{netbuilder()}}
+{\footnotesize\ttfamily devfix\+::net\+::netbuilder\+::netbuilder (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+Allow no instances of builder class. 
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}\label{structdevfix_1_1net_1_1netbuilder_a9d685e1822c0be5d68fd6ba62876798b}} 
+\index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}!create\+\_\+serversocket@{create\+\_\+serversocket}}
+\index{create\+\_\+serversocket@{create\+\_\+serversocket}!devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
+\subsubsection{\texorpdfstring{create\+\_\+serversocket()}{create\_serversocket()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1serversocket}{serversocket} $>$ devfix\+::net\+::netbuilder\+::create\+\_\+serversocket (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress}}]{adr,  }\item[{bool}]{reuse\+\_\+address = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a server socket and binds it to the supplied local address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adr} & local address for access restriction and port to listen on \\
+\hline
+{\em reuse\+\_\+address} & if true allow bind to a port which remains in T\+I\+M\+E\+\_\+\+W\+A\+IT state \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+socket in listen state with platform specific implementation 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1net_1_1netbuilder_a9d9eb6cb050ca920aa647baaf4692405}\label{structdevfix_1_1net_1_1netbuilder_a9d9eb6cb050ca920aa647baaf4692405}} 
+\index{devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}!create\+\_\+socket@{create\+\_\+socket}}
+\index{create\+\_\+socket@{create\+\_\+socket}!devfix\+::net\+::netbuilder@{devfix\+::net\+::netbuilder}}
+\subsubsection{\texorpdfstring{create\+\_\+socket()}{create\_socket()}}
+{\footnotesize\ttfamily std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1socket}{socket} $>$ devfix\+::net\+::netbuilder\+::create\+\_\+socket (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress}}]{adr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+Creates a socket and connects it to the specified remote internet address. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em adr} & remote address \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+connected socket with platform specific implementation 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+devfix/net/\hyperlink{netbuilder_8h}{netbuilder.\+h}\item 
+devfix/net/\hyperlink{netbuilder_8cpp}{netbuilder.\+cpp}\end{DoxyCompactItemize}

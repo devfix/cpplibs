@@ -2,6 +2,11 @@
 /docs/latex
 COMPILE_DEBUG
 
+# gets added using force by script
+docs
+
+
+
 ### C++ template
 # Prerequisites
 *.d

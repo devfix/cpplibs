@@ -1,0 +1,157 @@
+\hypertarget{structdevfix_1_1base_1_1interpolation}{}\section{devfix\+:\+:base\+:\+:interpolation$<$ FloatT $>$ Struct Template Reference}
+\label{structdevfix_1_1base_1_1interpolation}\index{devfix\+::base\+::interpolation$<$ Float\+T $>$@{devfix\+::base\+::interpolation$<$ Float\+T $>$}}
+
+
+{\ttfamily \#include $<$interpolation.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::vector$<$ FloatT $>$ \hyperlink{structdevfix_1_1base_1_1interpolation_a785dcc23e3504edbd7240492a4b1b028}{calc\+\_\+coeffs} (const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&points)
+\begin{DoxyCompactList}\small\item\em Calculates the coefficients of an Newton polynomial interpolation. \end{DoxyCompactList}\item 
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101}{eval} (const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&points, const std\+::vector$<$ FloatT $>$ \&coeffs, FloatT x)
+\begin{DoxyCompactList}\small\item\em evaluates the polynomial by an argument \end{DoxyCompactList}\item 
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation_a327edb7c780e1020721e3f45b4760f44}{eval} (const std\+::vector$<$ FloatT $>$ \&xs, const std\+::vector$<$ FloatT $>$ \&coeffs, FloatT x)
+\begin{DoxyCompactList}\small\item\em evaluates the polynomial by an argument \end{DoxyCompactList}\item 
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation_abd881b1363ade2c258fc8b7acf093648}{bisec} (const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&points, const std\+::vector$<$ FloatT $>$ \&coeffs, FloatT x\+\_\+low, FloatT x\+\_\+up, FloatT y, FloatT abs\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Finds the argument for a given value y. \end{DoxyCompactList}\item 
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation_ae25fe895dbd5dc7e815655f16b6debe0}{bisec} (const std\+::vector$<$ FloatT $>$ \&xs, const std\+::vector$<$ FloatT $>$ \&coeffs, FloatT x\+\_\+low, FloatT x\+\_\+up, FloatT y, FloatT abs\+\_\+error)
+\begin{DoxyCompactList}\small\item\em Finds the argument for a given value y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1interpolation_abd881b1363ade2c258fc8b7acf093648}\label{structdevfix_1_1base_1_1interpolation_abd881b1363ade2c258fc8b7acf093648}} 
+\index{devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}!bisec@{bisec}}
+\index{bisec@{bisec}!devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}}
+\subsubsection{\texorpdfstring{bisec()}{bisec()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation}{devfix\+::base\+::interpolation}$<$ FloatT $>$\+::bisec (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&}]{points,  }\item[{const std\+::vector$<$ FloatT $>$ \&}]{coeffs,  }\item[{FloatT}]{x\+\_\+low,  }\item[{FloatT}]{x\+\_\+up,  }\item[{FloatT}]{y,  }\item[{FloatT}]{abs\+\_\+error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Finds the argument for a given value y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & of interpolation \\
+\hline
+{\em coeffs} & of interpolation \\
+\hline
+{\em x\+\_\+low} & start of search boundary \\
+\hline
+{\em x\+\_\+up} & end of search boundary \\
+\hline
+{\em y} & value to search argument for \\
+\hline
+{\em abs\+\_\+error} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+found x argument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1interpolation_ae25fe895dbd5dc7e815655f16b6debe0}\label{structdevfix_1_1base_1_1interpolation_ae25fe895dbd5dc7e815655f16b6debe0}} 
+\index{devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}!bisec@{bisec}}
+\index{bisec@{bisec}!devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}}
+\subsubsection{\texorpdfstring{bisec()}{bisec()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation}{devfix\+::base\+::interpolation}$<$ FloatT $>$\+::bisec (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ FloatT $>$ \&}]{xs,  }\item[{const std\+::vector$<$ FloatT $>$ \&}]{coeffs,  }\item[{FloatT}]{x\+\_\+low,  }\item[{FloatT}]{x\+\_\+up,  }\item[{FloatT}]{y,  }\item[{FloatT}]{abs\+\_\+error }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Finds the argument for a given value y. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xs} & x values of interpolation \\
+\hline
+{\em coeffs} & of interpolation \\
+\hline
+{\em x\+\_\+low} & start of search boundary \\
+\hline
+{\em x\+\_\+up} & end of search boundary \\
+\hline
+{\em y} & value to search argument for \\
+\hline
+{\em abs\+\_\+error} & desired precision for x \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+found x argument 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1interpolation_a785dcc23e3504edbd7240492a4b1b028}\label{structdevfix_1_1base_1_1interpolation_a785dcc23e3504edbd7240492a4b1b028}} 
+\index{devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}!calc\+\_\+coeffs@{calc\+\_\+coeffs}}
+\index{calc\+\_\+coeffs@{calc\+\_\+coeffs}!devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}}
+\subsubsection{\texorpdfstring{calc\+\_\+coeffs()}{calc\_coeffs()}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+static std\+::vector$<$FloatT$>$ \hyperlink{structdevfix_1_1base_1_1interpolation}{devfix\+::base\+::interpolation}$<$ FloatT $>$\+::calc\+\_\+coeffs (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&}]{points }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+Calculates the coefficients of an Newton polynomial interpolation. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & the \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+coefficients 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101}\label{structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101}} 
+\index{devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}!eval@{eval}}
+\index{eval@{eval}!devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}}
+\subsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation}{devfix\+::base\+::interpolation}$<$ FloatT $>$\+::eval (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&}]{points,  }\item[{const std\+::vector$<$ FloatT $>$ \&}]{coeffs,  }\item[{FloatT}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+evaluates the polynomial by an argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em points} & of interpolation \\
+\hline
+{\em coeffs} & of interpolation \\
+\hline
+{\em x} & argument for evaluation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of polynomial at x 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1interpolation_a327edb7c780e1020721e3f45b4760f44}\label{structdevfix_1_1base_1_1interpolation_a327edb7c780e1020721e3f45b4760f44}} 
+\index{devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}!eval@{eval}}
+\index{eval@{eval}!devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}}
+\subsubsection{\texorpdfstring{eval()}{eval()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation}{devfix\+::base\+::interpolation}$<$ FloatT $>$\+::eval (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ FloatT $>$ \&}]{xs,  }\item[{const std\+::vector$<$ FloatT $>$ \&}]{coeffs,  }\item[{FloatT}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+evaluates the polynomial by an argument 
+
+
+\begin{DoxyParams}{Parameters}
+{\em xs} & x values of interpolation \\
+\hline
+{\em coeffs} & of interpolation \\
+\hline
+{\em x} & argument for evaluation \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+value of polynomial at x 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/\hyperlink{interpolation_8h}{interpolation.\+h}\end{DoxyCompactItemize}

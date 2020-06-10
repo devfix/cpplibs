@@ -1,0 +1,74 @@
+\hypertarget{foldt_8h}{}\section{devfix/base/foldt.h File Reference}
+\label{foldt_8h}\index{devfix/base/foldt.\+h@{devfix/base/foldt.\+h}}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=186pt]{foldt_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename Y , typename F , typename , typename ... Xs$>$ }\\Y \hyperlink{foldt_8h_a0663368800f70a8be80c4218d480fab7}{foldt} (Y n, F f, Xs... xs)
+\begin{DoxyCompactList}\small\item\em Uses a given combining operation, recombines the results of recursively processing its constituent parts, building up a return value. \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename Y , typename F $>$ }\\Y \hyperlink{foldt_8h_aec2302afd6b7c1f2b8b829b0d69888b6}{foldt} (Y n, F)
+\item 
+{\footnotesize template$<$typename Y , typename F , typename X , typename ... Xs$>$ }\\Y \hyperlink{foldt_8h_a2ed7c654c955614467c1390d46942ea0}{foldt} (Y n, F f, X x, Xs... xs)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{foldt_8h_a0663368800f70a8be80c4218d480fab7}\label{foldt_8h_a0663368800f70a8be80c4218d480fab7}} 
+\index{foldt.\+h@{foldt.\+h}!foldt@{foldt}}
+\index{foldt@{foldt}!foldt.\+h@{foldt.\+h}}
+\subsubsection{\texorpdfstring{foldt()}{foldt()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename Y , typename F , typename , typename ... Xs$>$ \\
+Y foldt (\begin{DoxyParamCaption}\item[{Y}]{n,  }\item[{F}]{f,  }\item[{Xs...}]{xs }\end{DoxyParamCaption})}
+
+
+
+Uses a given combining operation, recombines the results of recursively processing its constituent parts, building up a return value. 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em Y} & return type \\
+\hline
+{\em F} & type of combining function \\
+\hline
+{\em Xs} & type argument parameter pack \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em n} & neutral element \\
+\hline
+{\em f} & combining function \\
+\hline
+{\em xs} & argument parameter pack \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+result 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=193pt]{foldt_8h_a0663368800f70a8be80c4218d480fab7_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{foldt_8h_aec2302afd6b7c1f2b8b829b0d69888b6}\label{foldt_8h_aec2302afd6b7c1f2b8b829b0d69888b6}} 
+\index{foldt.\+h@{foldt.\+h}!foldt@{foldt}}
+\index{foldt@{foldt}!foldt.\+h@{foldt.\+h}}
+\subsubsection{\texorpdfstring{foldt()}{foldt()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename Y , typename F $>$ \\
+Y foldt (\begin{DoxyParamCaption}\item[{Y}]{n,  }\item[{F}]{ }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{foldt_8h_a2ed7c654c955614467c1390d46942ea0}\label{foldt_8h_a2ed7c654c955614467c1390d46942ea0}} 
+\index{foldt.\+h@{foldt.\+h}!foldt@{foldt}}
+\index{foldt@{foldt}!foldt.\+h@{foldt.\+h}}
+\subsubsection{\texorpdfstring{foldt()}{foldt()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename Y , typename F , typename X , typename ... Xs$>$ \\
+Y foldt (\begin{DoxyParamCaption}\item[{Y}]{n,  }\item[{F}]{f,  }\item[{X}]{x,  }\item[{Xs...}]{xs }\end{DoxyParamCaption})}
+

@@ -1,6 +1,5 @@
 var searchData=
 [
-  ['platplatform_5funsupported',['PLATPLATFORM_UNSUPPORTED',['../netbuilder_8h.html#a38d7e898d71e6854cea66709e389b190',1,'netbuilder.h']]],
-  ['prefix_5f',['prefix_',['../structdevfix_1_1base_1_1strout.html#a664c76563ab0f7f0625779aaf0c56395',1,'devfix::base::strout']]],
-  ['prefixed_5f',['prefixed_',['../structdevfix_1_1base_1_1strout.html#a1e56005b02772de34fddd5e4f44741c3',1,'devfix::base::strout']]]
+  ['minute',['minute',['../structdevfix_1_1base_1_1time.html#a2e36d9cbccf1144093e09674d4d9db24',1,'devfix::base::time']]],
+  ['month',['month',['../structdevfix_1_1base_1_1time.html#a781a7e9d96a916305e1a9e2c261c1a0f',1,'devfix::base::time']]]
 ];

@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['second',['second',['../structdevfix_1_1base_1_1time.html#a7a39795f67f0e3f1bea48cc790ef0bdb',1,'devfix::base::time']]],
   ['serversocket',['serversocket',['../structdevfix_1_1net_1_1serversocket.html',1,'devfix::net']]],
   ['serversocket_2eh',['serversocket.h',['../serversocket_8h.html',1,'']]],
   ['set_5faccept_5ftimeout',['set_accept_timeout',['../structdevfix_1_1net_1_1serversocket.html#ae67a25cf26fe54ce7b10d07ff9219ce7',1,'devfix::net::serversocket']]],
@@ -24,9 +25,10 @@ var searchData=
   ['sp',['sp',['../namespacedevfix_1_1base.html#ad239a07977b9e77ffabaf558636d0b8b',1,'devfix::base']]],
   ['spectrogram',['spectrogram',['../structdevfix_1_1dsp_1_1spectrogram.html',1,'devfix::dsp::spectrogram&lt; FloatT, N, win_fun &gt;'],['../structdevfix_1_1dsp_1_1spectrogram.html#ad1d11586447533319ec37e5e9de6e6e9',1,'devfix::dsp::spectrogram::spectrogram()']]],
   ['spectrogram_2eh',['spectrogram.h',['../spectrogram_8h.html',1,'']]],
+  ['stream_5ft',['stream_t',['../structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3',1,'devfix::base::strout']]],
   ['stringify',['STRINGIFY',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCCompilerId.c'],['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCXXCompilerId.cpp'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCCompilerId.c'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a43e1cad902b6477bec893cb6430bd6c8',1,'STRINGIFY():&#160;CMakeCXXCompilerId.cpp']]],
   ['stringify_5fhelper',['STRINGIFY_HELPER',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCCompilerId.c'],['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCXXCompilerId.cpp'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCCompilerId.c'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a2ae9b72bb13abaabfcf2ee0ba7d3fa1d',1,'STRINGIFY_HELPER():&#160;CMakeCXXCompilerId.cpp']]],
-  ['strout',['strout',['../structdevfix_1_1base_1_1strout.html',1,'devfix::base::strout&lt; CharT, Traits, Allocator &gt;'],['../structdevfix_1_1base_1_1strout.html#ac6eae69f760b4b5d134043a0b95d1613',1,'devfix::base::strout::strout()']]],
+  ['strout',['strout',['../structdevfix_1_1base_1_1strout.html',1,'devfix::base::strout&lt; CharT, Traits, Allocator &gt;'],['../structdevfix_1_1base_1_1strout.html#a7711671b7f3457ed5cc509f7d7c7239f',1,'devfix::base::strout::strout(pipes_t pipes)'],['../structdevfix_1_1base_1_1strout.html#a87b4c01cbcd87414d2c3a639713fcd08',1,'devfix::base::strout::strout(stream_t *stream)'],['../structdevfix_1_1base_1_1strout.html#a83d80540c9614d8d825a45acede871c5',1,'devfix::base::strout::strout(pair_t pair)']]],
   ['strout_2eh',['strout.h',['../strout_8h.html',1,'']]],
   ['strutil',['strutil',['../structdevfix_1_1base_1_1strutil.html',1,'devfix::base']]],
   ['strutil_2eh',['strutil.h',['../strutil_8h.html',1,'']]],

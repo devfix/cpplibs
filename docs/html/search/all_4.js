@@ -2,6 +2,7 @@ var searchData=
 [
   ['_5fmath',['_math',['../namespacedevfix_1_1base_1_1__math.html',1,'devfix::base']]],
   ['base',['base',['../namespacedevfix_1_1base.html',1,'devfix']]],
+  ['day',['day',['../structdevfix_1_1base_1_1time.html#ae5a080003e7020960c31e47cf30a21ba',1,'devfix::base::time']]],
   ['dec',['DEC',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC():&#160;CMakeCCompilerId.c'],['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC():&#160;CMakeCXXCompilerId.cpp'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC():&#160;CMakeCCompilerId.c'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#ad1280362da42492bbc11aa78cbf776ad',1,'DEC():&#160;CMakeCXXCompilerId.cpp']]],
   ['default_5fclose',['DEFAULT_CLOSE',['../namespacedevfix_1_1base_1_1io.html#a14a286c17d4b93881d42b1d14beb2d0b',1,'devfix::base::io']]],
   ['default_5fis_5fclosed',['DEFAULT_IS_CLOSED',['../namespacedevfix_1_1base_1_1io.html#ae04fec2a2a2db3482e624a59e59a2a14',1,'devfix::base::io']]],

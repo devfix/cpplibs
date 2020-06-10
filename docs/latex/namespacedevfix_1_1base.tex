@@ -1,0 +1,99 @@
+\hypertarget{namespacedevfix_1_1base}{}\section{devfix\+:\+:base Namespace Reference}
+\label{namespacedevfix_1_1base}\index{devfix\+::base@{devfix\+::base}}
+
+
+Root namespace of devfix base library.  
+
+
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedevfix_1_1base_1_1__math}{\+\_\+math}
+\item 
+ \hyperlink{namespacedevfix_1_1base_1_1error}{error}
+\begin{DoxyCompactList}\small\item\em Namespace for general errors like timeouts or io failures. \end{DoxyCompactList}\item 
+ \hyperlink{namespacedevfix_1_1base_1_1io}{io}
+\begin{DoxyCompactList}\small\item\em Namespace for io tool, for instance streams. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1interpolation}{interpolation}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1math}{math}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1strout}{strout}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1strutil}{strutil}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1time}{time}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$class T $>$ }\\using \hyperlink{namespacedevfix_1_1base_a18dfbd492717795cee1cfa6f14a8f724}{up} = std\+::unique\+\_\+ptr$<$ T $>$
+\begin{DoxyCompactList}\small\item\em Alias for std\+::unique\+\_\+ptr. \end{DoxyCompactList}\item 
+{\footnotesize template$<$class T $>$ }\\using \hyperlink{namespacedevfix_1_1base_ad239a07977b9e77ffabaf558636d0b8b}{sp} = std\+::shared\+\_\+ptr$<$ T $>$
+\begin{DoxyCompactList}\small\item\em Alias for std\+::shared\+\_\+ptr. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename T $>$ }\\constexpr const T $\ast$ \hyperlink{namespacedevfix_1_1base_a84282bc5458412dfed5ce8b039a70519}{get\+\_\+from\+\_\+multistring} (const char $\ast$str, const wchar\+\_\+t $\ast$wstr)
+\item 
+{\footnotesize template$<$$>$ }\\constexpr const char $\ast$ \hyperlink{namespacedevfix_1_1base_a1d6f6a1a767fa54cd6ff94ae14b43e90}{get\+\_\+from\+\_\+multistring$<$ char $>$} (const char $\ast$str, const wchar\+\_\+t $\ast$wstr)
+\item 
+{\footnotesize template$<$$>$ }\\constexpr const wchar\+\_\+t $\ast$ \hyperlink{namespacedevfix_1_1base_a100ea64654a747f262206d9e4b31e6f2}{get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$} (const char $\ast$str, const wchar\+\_\+t $\ast$wstr)
+\end{DoxyCompactItemize}
+
+
+\subsection{Detailed Description}
+Root namespace of devfix base library. 
+
+This namespace provide classes for network communication and address conversion. 
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacedevfix_1_1base_ad239a07977b9e77ffabaf558636d0b8b}\label{namespacedevfix_1_1base_ad239a07977b9e77ffabaf558636d0b8b}} 
+\index{devfix\+::base@{devfix\+::base}!sp@{sp}}
+\index{sp@{sp}!devfix\+::base@{devfix\+::base}}
+\subsubsection{\texorpdfstring{sp}{sp}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \hyperlink{namespacedevfix_1_1base_ad239a07977b9e77ffabaf558636d0b8b}{devfix\+::base\+::sp} = typedef std\+::shared\+\_\+ptr$<$T$>$}
+
+
+
+Alias for std\+::shared\+\_\+ptr. 
+
+\mbox{\Hypertarget{namespacedevfix_1_1base_a18dfbd492717795cee1cfa6f14a8f724}\label{namespacedevfix_1_1base_a18dfbd492717795cee1cfa6f14a8f724}} 
+\index{devfix\+::base@{devfix\+::base}!up@{up}}
+\index{up@{up}!devfix\+::base@{devfix\+::base}}
+\subsubsection{\texorpdfstring{up}{up}}
+{\footnotesize\ttfamily template$<$class T $>$ \\
+using \hyperlink{namespacedevfix_1_1base_a18dfbd492717795cee1cfa6f14a8f724}{devfix\+::base\+::up} = typedef std\+::unique\+\_\+ptr$<$T$>$}
+
+
+
+Alias for std\+::unique\+\_\+ptr. 
+
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacedevfix_1_1base_a84282bc5458412dfed5ce8b039a70519}\label{namespacedevfix_1_1base_a84282bc5458412dfed5ce8b039a70519}} 
+\index{devfix\+::base@{devfix\+::base}!get\+\_\+from\+\_\+multistring@{get\+\_\+from\+\_\+multistring}}
+\index{get\+\_\+from\+\_\+multistring@{get\+\_\+from\+\_\+multistring}!devfix\+::base@{devfix\+::base}}
+\subsubsection{\texorpdfstring{get\+\_\+from\+\_\+multistring()}{get\_from\_multistring()}}
+{\footnotesize\ttfamily template$<$typename T $>$ \\
+constexpr const T$\ast$ devfix\+::base\+::get\+\_\+from\+\_\+multistring (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{const wchar\+\_\+t $\ast$}]{wstr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1base_a1d6f6a1a767fa54cd6ff94ae14b43e90}\label{namespacedevfix_1_1base_a1d6f6a1a767fa54cd6ff94ae14b43e90}} 
+\index{devfix\+::base@{devfix\+::base}!get\+\_\+from\+\_\+multistring$<$ char $>$@{get\+\_\+from\+\_\+multistring$<$ char $>$}}
+\index{get\+\_\+from\+\_\+multistring$<$ char $>$@{get\+\_\+from\+\_\+multistring$<$ char $>$}!devfix\+::base@{devfix\+::base}}
+\subsubsection{\texorpdfstring{get\+\_\+from\+\_\+multistring$<$ char $>$()}{get\_from\_multistring< char >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+constexpr const char$\ast$ \hyperlink{namespacedevfix_1_1base_a84282bc5458412dfed5ce8b039a70519}{devfix\+::base\+::get\+\_\+from\+\_\+multistring}$<$ char $>$ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{const wchar\+\_\+t $\ast$}]{wstr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1base_a100ea64654a747f262206d9e4b31e6f2}\label{namespacedevfix_1_1base_a100ea64654a747f262206d9e4b31e6f2}} 
+\index{devfix\+::base@{devfix\+::base}!get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$@{get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$}}
+\index{get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$@{get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$}!devfix\+::base@{devfix\+::base}}
+\subsubsection{\texorpdfstring{get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$()}{get\_from\_multistring< wchar\_t >()}}
+{\footnotesize\ttfamily template$<$$>$ \\
+constexpr const wchar\+\_\+t$\ast$ \hyperlink{namespacedevfix_1_1base_a84282bc5458412dfed5ce8b039a70519}{devfix\+::base\+::get\+\_\+from\+\_\+multistring}$<$ wchar\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{const wchar\+\_\+t $\ast$}]{wstr }\end{DoxyParamCaption})}
+

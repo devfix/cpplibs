@@ -64,6 +64,7 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="#pro-types">Protected Types</a> &#124;
@@ -83,10 +84,27 @@ Inheritance diagram for devfix::base::strout&lt; CharT, Traits, Allocator &gt;:<
 <div class="center"><img src="structdevfix_1_1base_1_1strout__inherit__graph.png" border="0" usemap="#devfix_1_1base_1_1strout_3_01CharT_00_01Traits_00_01Allocator_01_4_inherit__map" alt="Inheritance graph"/></div>
 </div>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:a89bb8340fe2e43bb14c829a1d427d9c0"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a89bb8340fe2e43bb14c829a1d427d9c0">pipe_fun_t</a> = std::function&lt; void(const std::basic_string&lt; CharT &gt; &amp;)&gt;</td></tr>
+<tr class="separator:a89bb8340fe2e43bb14c829a1d427d9c0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad6cf2897069f246b884fa8d526f8bab1"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#ad6cf2897069f246b884fa8d526f8bab1">flush_fun_t</a> = std::function&lt; void()&gt;</td></tr>
+<tr class="separator:ad6cf2897069f246b884fa8d526f8bab1"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2212cb8a99abec10490e891cc67820bb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a> = std::pair&lt; <a class="el" href="structdevfix_1_1base_1_1strout.html#a89bb8340fe2e43bb14c829a1d427d9c0">pipe_fun_t</a>, <a class="el" href="structdevfix_1_1base_1_1strout.html#ad6cf2897069f246b884fa8d526f8bab1">flush_fun_t</a> &gt;</td></tr>
+<tr class="separator:a2212cb8a99abec10490e891cc67820bb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a158aadfad348eeac7c56a8b43699a4d3"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a> = std::basic_ostream&lt; CharT &gt;</td></tr>
+<tr class="separator:a158aadfad348eeac7c56a8b43699a4d3"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf852ff3e37e6d10e2cf0332df2b8e2d"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#acf852ff3e37e6d10e2cf0332df2b8e2d">pipes_t</a> = std::vector&lt; std::variant&lt; <a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a> *, <a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a> &gt; &gt;</td></tr>
+<tr class="separator:acf852ff3e37e6d10e2cf0332df2b8e2d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ac6eae69f760b4b5d134043a0b95d1613"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#ac6eae69f760b4b5d134043a0b95d1613">strout</a> (std::basic_ostream&lt; CharT &gt; &amp;output_stream)</td></tr>
-<tr class="separator:ac6eae69f760b4b5d134043a0b95d1613"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7711671b7f3457ed5cc509f7d7c7239f"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a7711671b7f3457ed5cc509f7d7c7239f">strout</a> (<a class="el" href="structdevfix_1_1base_1_1strout.html#acf852ff3e37e6d10e2cf0332df2b8e2d">pipes_t</a> pipes)</td></tr>
+<tr class="separator:a7711671b7f3457ed5cc509f7d7c7239f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a87b4c01cbcd87414d2c3a639713fcd08"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a87b4c01cbcd87414d2c3a639713fcd08">strout</a> (<a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a> *stream)</td></tr>
+<tr class="separator:a87b4c01cbcd87414d2c3a639713fcd08"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a83d80540c9614d8d825a45acede871c5"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a83d80540c9614d8d825a45acede871c5">strout</a> (<a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a> pair)</td></tr>
+<tr class="separator:a83d80540c9614d8d825a45acede871c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:aeffa562814f23e6e74f5d8404d673ea7"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#aeffa562814f23e6e74f5d8404d673ea7">~strout</a> ()</td></tr>
 <tr class="separator:aeffa562814f23e6e74f5d8404d673ea7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a49000248c873a593348082f151ccab9b"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a49000248c873a593348082f151ccab9b">set_enabled</a> (bool enabled)</td></tr>
@@ -124,8 +142,8 @@ Protected Attributes</h2></td></tr>
 <tr class="separator:a664c76563ab0f7f0625779aaf0c56395"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0625f5cbd10441a4613bf3aae5ab15a1"><td class="memItemLeft" align="right" valign="top">std::basic_stringstream&lt; CharT &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a0625f5cbd10441a4613bf3aae5ab15a1">buffer_</a></td></tr>
 <tr class="separator:a0625f5cbd10441a4613bf3aae5ab15a1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ad32a760314bc83b98b4564ae38d5a07e"><td class="memItemLeft" align="right" valign="top">std::basic_ostream&lt; CharT &gt; &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#ad32a760314bc83b98b4564ae38d5a07e">output_stream_</a></td></tr>
-<tr class="separator:ad32a760314bc83b98b4564ae38d5a07e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa92f98e253e448a0ea897760764486e7"><td class="memItemLeft" align="right" valign="top">std::vector&lt; std::variant&lt; <a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a> *, <a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a> &gt; &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#aa92f98e253e448a0ea897760764486e7">pipes_</a></td></tr>
+<tr class="separator:aa92f98e253e448a0ea897760764486e7"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a1e56005b02772de34fddd5e4f44741c3"><td class="memItemLeft" align="right" valign="top">bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1strout.html#a1e56005b02772de34fddd5e4f44741c3">prefixed_</a> = true</td></tr>
 <tr class="separator:a1e56005b02772de34fddd5e4f44741c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
@@ -135,6 +153,22 @@ Static Protected Attributes</h2></td></tr>
 <tr class="separator:afe9d2f4264b508fd02be4af24dba6bb1"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ad6cf2897069f246b884fa8d526f8bab1"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad6cf2897069f246b884fa8d526f8bab1">&#9670;&nbsp;</a></span>flush_fun_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class Allocator = std::allocator&lt;CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html#ad6cf2897069f246b884fa8d526f8bab1">flush_fun_t</a> =  std::function&lt;void()&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <a id="ac08d70e3105ac2175c26e34818624826"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#ac08d70e3105ac2175c26e34818624826">&#9670;&nbsp;</a></span>int_type</h2>
 
@@ -159,9 +193,73 @@ template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class All
 
 </div>
 </div>
+<a id="a2212cb8a99abec10490e891cc67820bb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2212cb8a99abec10490e891cc67820bb">&#9670;&nbsp;</a></span>pair_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class Allocator = std::allocator&lt;CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a> =  std::pair&lt;<a class="el" href="structdevfix_1_1base_1_1strout.html#a89bb8340fe2e43bb14c829a1d427d9c0">pipe_fun_t</a>, <a class="el" href="structdevfix_1_1base_1_1strout.html#ad6cf2897069f246b884fa8d526f8bab1">flush_fun_t</a>&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a89bb8340fe2e43bb14c829a1d427d9c0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a89bb8340fe2e43bb14c829a1d427d9c0">&#9670;&nbsp;</a></span>pipe_fun_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class Allocator = std::allocator&lt;CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html#a89bb8340fe2e43bb14c829a1d427d9c0">pipe_fun_t</a> =  std::function&lt;void(const std::basic_string&lt;CharT&gt;&amp;)&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="acf852ff3e37e6d10e2cf0332df2b8e2d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acf852ff3e37e6d10e2cf0332df2b8e2d">&#9670;&nbsp;</a></span>pipes_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class Allocator = std::allocator&lt;CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html#acf852ff3e37e6d10e2cf0332df2b8e2d">pipes_t</a> =  std::vector&lt;std::variant&lt;<a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a>*, <a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a>&gt; &gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a158aadfad348eeac7c56a8b43699a4d3"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a158aadfad348eeac7c56a8b43699a4d3">&#9670;&nbsp;</a></span>stream_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class Allocator = std::allocator&lt;CharT&gt;&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a> =  std::basic_ostream&lt;CharT&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ac6eae69f760b4b5d134043a0b95d1613"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac6eae69f760b4b5d134043a0b95d1613">&#9670;&nbsp;</a></span>strout()</h2>
+<a id="a7711671b7f3457ed5cc509f7d7c7239f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7711671b7f3457ed5cc509f7d7c7239f">&#9670;&nbsp;</a></span>strout() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -174,8 +272,64 @@ template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class All
         <tr>
           <td class="memname"><a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html">strout</a> </td>
           <td>(</td>
-          <td class="paramtype">std::basic_ostream&lt; CharT &gt; &amp;&#160;</td>
-          <td class="paramname"><em>output_stream</em></td><td>)</td>
+          <td class="paramtype"><a class="el" href="structdevfix_1_1base_1_1strout.html#acf852ff3e37e6d10e2cf0332df2b8e2d">pipes_t</a>&#160;</td>
+          <td class="paramname"><em>pipes</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a87b4c01cbcd87414d2c3a639713fcd08"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a87b4c01cbcd87414d2c3a639713fcd08">&#9670;&nbsp;</a></span>strout() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class Allocator = std::allocator&lt;CharT&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html">strout</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a> *&#160;</td>
+          <td class="paramname"><em>stream</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a83d80540c9614d8d825a45acede871c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a83d80540c9614d8d825a45acede871c5">&#9670;&nbsp;</a></span>strout() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class Allocator = std::allocator&lt;CharT&gt;&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname"><a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::<a class="el" href="structdevfix_1_1base_1_1strout.html">strout</a> </td>
+          <td>(</td>
+          <td class="paramtype"><a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a>&#160;</td>
+          <td class="paramname"><em>pair</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -378,6 +532,14 @@ template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class All
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structdevfix_1_1base_1_1strout_a50b305dcf9905bfe75fa1bba42718169_icgraph.png" border="0" usemap="#structdevfix_1_1base_1_1strout_a50b305dcf9905bfe75fa1bba42718169_icgraph" alt=""/></div>
+<map name="structdevfix_1_1base_1_1strout_a50b305dcf9905bfe75fa1bba42718169_icgraph" id="structdevfix_1_1base_1_1strout_a50b305dcf9905bfe75fa1bba42718169_icgraph">
+<area shape="rect" id="node2" href="structdevfix_1_1base_1_1strout.html#aeffa562814f23e6e74f5d8404d673ea7" title="devfix::base::strout\l::~strout" alt="" coords="188,5,323,47"/>
+</map>
+</div>
 
 </div>
 </div>
@@ -454,8 +616,8 @@ template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class All
 
 </div>
 </div>
-<a id="ad32a760314bc83b98b4564ae38d5a07e"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad32a760314bc83b98b4564ae38d5a07e">&#9670;&nbsp;</a></span>output_stream_</h2>
+<a id="aa92f98e253e448a0ea897760764486e7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa92f98e253e448a0ea897760764486e7">&#9670;&nbsp;</a></span>pipes_</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -466,7 +628,7 @@ template&lt;class CharT, class Traits = std::char_traits&lt;CharT&gt;, class All
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::basic_ostream&lt;CharT&gt;&amp; <a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::output_stream_</td>
+          <td class="memname">std::vector&lt;std::variant&lt;<a class="el" href="structdevfix_1_1base_1_1strout.html#a158aadfad348eeac7c56a8b43699a4d3">stream_t</a>*, <a class="el" href="structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb">pair_t</a>&gt; &gt; <a class="el" href="structdevfix_1_1base_1_1strout.html">devfix::base::strout</a>&lt; CharT, Traits, Allocator &gt;::pipes_</td>
         </tr>
       </table>
   </td>

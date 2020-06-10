@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['read',['read',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a17e1a21881ae263650ebdaafaee2e71a',1,'devfix::base::io::inputstream::read()'],['../structdevfix_1_1base_1_1io_1_1source.html#a9fbd4d20aa150910ced44018e1b3156a',1,'devfix::base::io::source::read()']]],
-  ['reverse_5fbits',['reverse_bits',['../structdevfix_1_1base_1_1math.html#af3260ac1a62b3e9f6feb0f212aa8f796',1,'devfix::base::math']]]
+  ['overflow',['overflow',['../structdevfix_1_1base_1_1strout.html#a1d8ba6e5c7c0c2d5558095d957cc4273',1,'devfix::base::strout']]]
 ];

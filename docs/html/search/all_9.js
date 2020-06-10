@@ -11,6 +11,8 @@ var searchData=
   ['inputstream',['inputstream',['../structdevfix_1_1base_1_1io_1_1inputstream.html',1,'devfix::base::io']]],
   ['inputstream_2eh',['inputstream.h',['../inputstream_8h.html',1,'']]],
   ['int_5ftype',['int_type',['../structdevfix_1_1base_1_1strout.html#ac08d70e3105ac2175c26e34818624826',1,'devfix::base::strout']]],
+  ['interpolation',['interpolation',['../structdevfix_1_1base_1_1interpolation.html',1,'devfix::base']]],
+  ['interpolation_2eh',['interpolation.h',['../interpolation_8h.html',1,'']]],
   ['interruptedexception',['interruptedexception',['../structdevfix_1_1base_1_1error_1_1interruptedexception.html',1,'devfix::base::error::interruptedexception'],['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#a9b2d1244ef3e3029d231be8b84fa4c16',1,'devfix::base::error::interruptedexception::interruptedexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#a244a67233ab2b7be511706d8398ed860',1,'devfix::base::error::interruptedexception::interruptedexception(const char *what_arg, int err=-1)']]],
   ['interruptedexception_2eh',['interruptedexception.h',['../interruptedexception_8h.html',1,'']]],
   ['ioexception',['ioexception',['../structdevfix_1_1base_1_1error_1_1ioexception.html',1,'devfix::base::error::ioexception'],['../structdevfix_1_1base_1_1error_1_1ioexception.html#acaf6aa89dc63021cbf6241b897c570da',1,'devfix::base::error::ioexception::ioexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1base_1_1error_1_1ioexception.html#a93e7dfc50605b9f6a9c5cd78dac59a44',1,'devfix::base::error::ioexception::ioexception(const char *what_arg, int err=-1)']]],

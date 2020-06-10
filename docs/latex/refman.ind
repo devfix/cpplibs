@@ -1,0 +1,706 @@
+\begin{theindex}
+
+  \item {\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}
+    \subitem {platform.\+h}, \hyperpage{78}
+  \item {$\sim$baseexception}
+    \subitem {devfix\+::base\+::error\+::baseexception}, \hyperpage{16}
+  \item {$\sim$inputstream}
+    \subitem {devfix\+::base\+::io\+::inputstream}, \hyperpage{24}
+  \item {$\sim$outputstream}
+    \subitem {devfix\+::base\+::io\+::outputstream}, \hyperpage{34}
+  \item {$\sim$serversocket}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{36}
+  \item {$\sim$socket}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{42}
+  \item {$\sim$strout}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{55}
+
+  \indexspace
+
+  \item {A\+R\+C\+H\+I\+T\+E\+C\+T\+U\+R\+E\+\_\+\+ID}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{83}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{89}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{86}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{92}
+  \item {accept}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{36}
+  \item {add}
+    \subitem {devfix\+::dsp\+::spectrogram}, \hyperpage{52}
+    \subitem {test\+\_\+fold.\+cpp}, \hyperpage{82}
+  \item {address\+\_\+t}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{19}
+  \item {available}
+    \subitem {devfix\+::base\+::io\+::inputstream}, \hyperpage{24}
+    \subitem {devfix\+::base\+::io\+::source}, \hyperpage{49}
+  \item {available\+\_\+t}
+    \subitem {devfix\+::base\+::io}, \hyperpage{12}
+
+  \indexspace
+
+  \item {baseexception}
+    \subitem {devfix\+::base\+::error\+::baseexception}, \hyperpage{16}
+  \item {baseexception.\+h}
+    \subitem {exception\+\_\+guard}, \hyperpage{64}
+    \subitem {exception\+\_\+guard\+\_\+m}, \hyperpage{64}
+  \item {buffer\+\_\+}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{56}
+
+  \indexspace
+
+  \item {C\+\_\+\+D\+I\+A\+L\+E\+CT}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{83}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{86}
+  \item {C\+L\+E\+A\+R\+\_\+\+L\+I\+NE}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{56}
+  \item {C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+ID}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{83}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{89}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{86}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{92}
+  \item {C\+X\+X\+\_\+\+S\+TD}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{89}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{92}
+  \item {calc\+\_\+amplitude\+\_\+gain}
+    \subitem {devfix\+::dsp\+::window}, \hyperpage{61}
+  \item {close}
+    \subitem {devfix\+::base\+::io\+::inputstream}, \hyperpage{24}
+    \subitem {devfix\+::base\+::io\+::outputstream}, \hyperpage{34}
+    \subitem {devfix\+::base\+::io\+::sink}, \hyperpage{40}
+    \subitem {devfix\+::base\+::io\+::source}, \hyperpage{49}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{36}
+  \item {close\+\_\+t}
+    \subitem {devfix\+::base\+::io}, \hyperpage{13}
+  \item {complex\+\_\+t}
+    \subitem {devfix\+::dsp\+::spectrogram}, \hyperpage{51}
+  \item {create\+\_\+serversocket}
+    \subitem {devfix\+::net\+::netbuilder}, \hyperpage{32}
+  \item {create\+\_\+socket}
+    \subitem {devfix\+::net\+::netbuilder}, \hyperpage{32}
+
+  \indexspace
+
+  \item {D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+O\+SE}
+    \subitem {devfix\+::base\+::io}, \hyperpage{13}
+  \item {D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+S\+\_\+\+C\+L\+O\+S\+ED}
+    \subitem {devfix\+::base\+::io}, \hyperpage{14}
+  \item {D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{45}
+  \item {D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{45}
+  \item {D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{45}
+  \item {D\+EC}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{83}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{89}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{86}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{92}
+  \item {devfix}, \hyperpage{9}
+  \item {devfix/base/error/baseexception.\+h}, \hyperpage{63}
+  \item {devfix/base/error/interruptedexception.\+h}, \hyperpage{64}
+  \item {devfix/base/error/ioexception.\+h}, \hyperpage{65}
+  \item {devfix/base/error/namespace.\+h}, \hyperpage{65}
+  \item {devfix/base/error/timeoutexception.\+h}, \hyperpage{66}
+  \item {devfix/base/foldt.\+h}, \hyperpage{67}
+  \item {devfix/base/io/inputstream.\+h}, \hyperpage{69}
+  \item {devfix/base/io/iotypes.\+h}, \hyperpage{70}
+  \item {devfix/base/io/namespace.\+h}, \hyperpage{66}
+  \item {devfix/base/io/outputstream.\+h}, \hyperpage{71}
+  \item {devfix/base/io/sink.\+cpp}, \hyperpage{72}
+  \item {devfix/base/io/sink.\+h}, \hyperpage{72}
+  \item {devfix/base/io/source.\+cpp}, \hyperpage{74}
+  \item {devfix/base/io/source.\+h}, \hyperpage{74}
+  \item {devfix/base/math.\+h}, \hyperpage{76}
+  \item {devfix/base/memory.\+h}, \hyperpage{77}
+  \item {devfix/base/namespace.\+h}, \hyperpage{66}
+  \item {devfix/base/platform.\+h}, \hyperpage{78}
+  \item {devfix/base/strout.\+h}, \hyperpage{79}
+  \item {devfix/base/strutil.\+h}, \hyperpage{80}
+  \item {devfix/base/test/test\+\_\+fold.\+cpp}, \hyperpage{81}
+  \item {devfix/base/test/test\+\_\+math.\+cpp}, \hyperpage{82}
+  \item {devfix/base/test/test\+\_\+strout.\+cpp}, \hyperpage{82}
+  \item {devfix/dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{82}
+  \item {devfix/dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{88}
+  \item {devfix/dsp/fft.\+h}, \hyperpage{94}
+  \item {devfix/dsp/spectrogram.\+h}, \hyperpage{95}
+  \item {devfix/dsp/test/test\+\_\+fft.\+cpp}, \hyperpage{96}
+  \item {devfix/dsp/test/test\+\_\+spectrogram.\+cpp}, \hyperpage{96}
+  \item {devfix/dsp/test/test\+\_\+window.\+cpp}, \hyperpage{96}
+  \item {devfix/dsp/window.\+h}, \hyperpage{96}
+  \item {devfix/net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{85}
+  \item {devfix/net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{91}
+  \item {devfix/net/inetaddress.\+cpp}, \hyperpage{97}
+  \item {devfix/net/inetaddress.\+h}, \hyperpage{98}
+  \item {devfix/net/lnx/lnx\+\_\+serversocket.\+cpp}, \hyperpage{99}
+  \item {devfix/net/lnx/lnx\+\_\+serversocket.\+h}, \hyperpage{99}
+  \item {devfix/net/lnx/lnx\+\_\+socket.\+cpp}, \hyperpage{100}
+  \item {devfix/net/lnx/lnx\+\_\+socket.\+h}, \hyperpage{100}
+  \item {devfix/net/namespace.\+h}, \hyperpage{66}
+  \item {devfix/net/netbuilder.\+cpp}, \hyperpage{100}
+  \item {devfix/net/netbuilder.\+h}, \hyperpage{101}
+  \item {devfix/net/serversocket.\+h}, \hyperpage{103}
+  \item {devfix/net/socket.\+h}, \hyperpage{103}
+  \item {devfix/net/socketexception.\+h}, \hyperpage{104}
+  \item {devfix/net/test/test\+\_\+inetaddress.\+cpp}, \hyperpage{105}
+  \item {devfix/net/test/test\+\_\+socket.\+cpp}, \hyperpage{105}
+  \item {devfix/net/win/win\+\_\+serversocket.\+h}, \hyperpage{105}
+  \item {devfix/net/win/win\+\_\+socket.\+h}, \hyperpage{106}
+  \item {devfix\+::base}, \hyperpage{9}
+    \subitem {get\+\_\+from\+\_\+multistring}, \hyperpage{10}
+    \subitem {get\+\_\+from\+\_\+multistring$<$ char $>$}, 
+		\hyperpage{11}
+    \subitem {get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$}, 
+		\hyperpage{11}
+    \subitem {sp}, \hyperpage{10}
+    \subitem {up}, \hyperpage{10}
+  \item {devfix\+::base\+::\+\_\+math}, \hyperpage{11}
+  \item {devfix\+::base\+::\+\_\+math\+::\+Table}
+    \subitem {Table}, \hyperpage{58}
+    \subitem {values}, \hyperpage{58}
+  \item {devfix\+::base\+::\+\_\+math\+::\+Table$<$ T, N, G, Args $>$}, 
+		\hyperpage{58}
+  \item {devfix\+::base\+::error}, \hyperpage{11}
+  \item {devfix\+::base\+::error\+::baseexception}, \hyperpage{15}
+    \subitem {$\sim$baseexception}, \hyperpage{16}
+    \subitem {baseexception}, \hyperpage{16}
+    \subitem {err\+\_\+}, \hyperpage{17}
+    \subitem {get\+\_\+errno}, \hyperpage{17}
+    \subitem {what}, \hyperpage{17}
+    \subitem {what\+\_\+arg\+\_\+}, \hyperpage{17}
+  \item {devfix\+::base\+::error\+::interruptedexception}, 
+		\hyperpage{26}
+    \subitem {interruptedexception}, \hyperpage{27}
+  \item {devfix\+::base\+::error\+::ioexception}, \hyperpage{28}
+    \subitem {ioexception}, \hyperpage{29}
+  \item {devfix\+::base\+::error\+::timeoutexception}, \hyperpage{59}
+    \subitem {timeoutexception}, \hyperpage{60}
+  \item {devfix\+::base\+::io}, \hyperpage{12}
+    \subitem {available\+\_\+t}, \hyperpage{12}
+    \subitem {close\+\_\+t}, \hyperpage{13}
+    \subitem {D\+E\+F\+A\+U\+L\+T\+\_\+\+C\+L\+O\+SE}, \hyperpage{13}
+    \subitem {D\+E\+F\+A\+U\+L\+T\+\_\+\+I\+S\+\_\+\+C\+L\+O\+S\+ED}, 
+		\hyperpage{14}
+    \subitem {flush\+\_\+t}, \hyperpage{13}
+    \subitem {is\+\_\+closed\+\_\+t}, \hyperpage{13}
+    \subitem {read\+\_\+t}, \hyperpage{13}
+    \subitem {skip\+\_\+t}, \hyperpage{13}
+    \subitem {write\+\_\+t}, \hyperpage{13}
+  \item {devfix\+::base\+::io\+::inputstream}, \hyperpage{22}
+    \subitem {$\sim$inputstream}, \hyperpage{24}
+    \subitem {available}, \hyperpage{24}
+    \subitem {close}, \hyperpage{24}
+    \subitem {is\+\_\+closed}, \hyperpage{24}
+    \subitem {read}, \hyperpage{25}
+    \subitem {skip}, \hyperpage{25}
+  \item {devfix\+::base\+::io\+::outputstream}, \hyperpage{33}
+    \subitem {$\sim$outputstream}, \hyperpage{34}
+    \subitem {close}, \hyperpage{34}
+    \subitem {flush}, \hyperpage{34}
+    \subitem {is\+\_\+closed}, \hyperpage{34}
+    \subitem {write}, \hyperpage{35}
+  \item {devfix\+::base\+::io\+::sink}, \hyperpage{38}
+    \subitem {close}, \hyperpage{40}
+    \subitem {flush}, \hyperpage{40}
+    \subitem {is\+\_\+closed}, \hyperpage{40}
+    \subitem {sink}, \hyperpage{39}
+    \subitem {write}, \hyperpage{41}
+  \item {devfix\+::base\+::io\+::source}, \hyperpage{47}
+    \subitem {available}, \hyperpage{49}
+    \subitem {close}, \hyperpage{49}
+    \subitem {is\+\_\+closed}, \hyperpage{50}
+    \subitem {read}, \hyperpage{50}
+    \subitem {skip}, \hyperpage{50}
+    \subitem {source}, \hyperpage{49}
+  \item {devfix\+::base\+::math}, \hyperpage{29}
+    \subitem {popcount}, \hyperpage{30}
+    \subitem {reverse\+\_\+bits}, \hyperpage{30}
+    \subitem {Table}, \hyperpage{30}
+  \item {devfix\+::base\+::strout}
+    \subitem {$\sim$strout}, \hyperpage{55}
+    \subitem {buffer\+\_\+}, \hyperpage{56}
+    \subitem {C\+L\+E\+A\+R\+\_\+\+L\+I\+NE}, \hyperpage{56}
+    \subitem {enabled\+\_\+}, \hyperpage{56}
+    \subitem {get\+\_\+prefix}, \hyperpage{55}
+    \subitem {int\+\_\+type}, \hyperpage{54}
+    \subitem {is\+\_\+enabled}, \hyperpage{55}
+    \subitem {output\+\_\+stream\+\_\+}, \hyperpage{57}
+    \subitem {overflow}, \hyperpage{55}
+    \subitem {prefix\+\_\+}, \hyperpage{57}
+    \subitem {prefixed\+\_\+}, \hyperpage{57}
+    \subitem {S\+TX}, \hyperpage{57}
+    \subitem {set\+\_\+enabled}, \hyperpage{55}
+    \subitem {set\+\_\+prefix}, \hyperpage{56}
+    \subitem {strout}, \hyperpage{55}
+    \subitem {sync}, \hyperpage{56}
+  \item {devfix\+::base\+::strout$<$ Char\+T, Traits, Allocator $>$}, 
+		\hyperpage{53}
+  \item {devfix\+::base\+::strutil}, \hyperpage{58}
+  \item {devfix\+::dsp}, \hyperpage{14}
+  \item {devfix\+::dsp\+::fft}, \hyperpage{18}
+    \subitem {math}, \hyperpage{18}
+    \subitem {transform\+\_\+inplace}, \hyperpage{18}
+  \item {devfix\+::dsp\+::spectrogram}
+    \subitem {add}, \hyperpage{52}
+    \subitem {complex\+\_\+t}, \hyperpage{51}
+    \subitem {pop}, \hyperpage{52}
+    \subitem {size}, \hyperpage{53}
+    \subitem {spectrogram}, \hyperpage{52}
+  \item {devfix\+::dsp\+::spectrogram$<$ Float\+T, N, win\+\_\+fun $>$}, 
+		\hyperpage{51}
+  \item {devfix\+::dsp\+::window}, \hyperpage{60}
+    \subitem {calc\+\_\+amplitude\+\_\+gain}, \hyperpage{61}
+    \subitem {flattop}, \hyperpage{61}
+    \subitem {hanning}, \hyperpage{61}
+  \item {devfix\+::net}, \hyperpage{14}
+  \item {devfix\+::net\+::inetaddress}, \hyperpage{19}
+    \subitem {address\+\_\+t}, \hyperpage{19}
+    \subitem {family\+\_\+t}, \hyperpage{20}
+    \subitem {get\+\_\+address}, \hyperpage{21}
+    \subitem {get\+\_\+family}, \hyperpage{21}
+    \subitem {get\+\_\+host}, \hyperpage{21}
+    \subitem {get\+\_\+port}, \hyperpage{22}
+    \subitem {inetaddress}, \hyperpage{20, 21}
+    \subitem {port\+\_\+t}, \hyperpage{20}
+  \item {devfix\+::net\+::netbuilder}, \hyperpage{31}
+    \subitem {create\+\_\+serversocket}, \hyperpage{32}
+    \subitem {create\+\_\+socket}, \hyperpage{32}
+    \subitem {netbuilder}, \hyperpage{32}
+  \item {devfix\+::net\+::serversocket}, \hyperpage{35}
+    \subitem {$\sim$serversocket}, \hyperpage{36}
+    \subitem {accept}, \hyperpage{36}
+    \subitem {close}, \hyperpage{36}
+    \subitem {get\+\_\+accept\+\_\+timeout}, \hyperpage{37}
+    \subitem {get\+\_\+address}, \hyperpage{37}
+    \subitem {get\+\_\+reuse\+\_\+address}, \hyperpage{37}
+    \subitem {is\+\_\+closed}, \hyperpage{37}
+    \subitem {set\+\_\+accept\+\_\+timeout}, \hyperpage{38}
+  \item {devfix\+::net\+::socket}, \hyperpage{41}
+    \subitem {$\sim$socket}, \hyperpage{42}
+    \subitem {D\+E\+F\+A\+U\+L\+T\+\_\+\+R\+E\+A\+D\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME}, 
+		\hyperpage{45}
+    \subitem {D\+E\+F\+A\+U\+L\+T\+\_\+\+T\+I\+M\+E\+O\+UT}, 
+		\hyperpage{45}
+    \subitem {D\+E\+F\+A\+U\+L\+T\+\_\+\+W\+R\+I\+T\+E\+\_\+\+B\+L\+O\+C\+K\+I\+N\+G\+\_\+\+T\+I\+ME}, 
+		\hyperpage{45}
+    \subitem {get\+\_\+inputstream}, \hyperpage{43}
+    \subitem {get\+\_\+interrupted}, \hyperpage{43}
+    \subitem {get\+\_\+local\+\_\+address}, \hyperpage{43}
+    \subitem {get\+\_\+outputstream}, \hyperpage{43}
+    \subitem {get\+\_\+remote\+\_\+address}, \hyperpage{44}
+    \subitem {get\+\_\+timeout}, \hyperpage{44}
+    \subitem {set\+\_\+interrupted}, \hyperpage{44}
+    \subitem {set\+\_\+timeout}, \hyperpage{45}
+    \subitem {timeout\+\_\+t}, \hyperpage{42}
+  \item {devfix\+::net\+::socketexception}, \hyperpage{46}
+    \subitem {socketexception}, \hyperpage{47}
+  \item {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}
+    \subitem {A\+R\+C\+H\+I\+T\+E\+C\+T\+U\+R\+E\+\_\+\+ID}, 
+		\hyperpage{83}
+    \subitem {C\+\_\+\+D\+I\+A\+L\+E\+CT}, \hyperpage{83}
+    \subitem {C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+ID}, \hyperpage{83}
+    \subitem {D\+EC}, \hyperpage{83}
+    \subitem {H\+EX}, \hyperpage{83}
+    \subitem {info\+\_\+arch}, \hyperpage{84}
+    \subitem {info\+\_\+compiler}, \hyperpage{85}
+    \subitem {info\+\_\+language\+\_\+dialect\+\_\+default}, 
+		\hyperpage{85}
+    \subitem {info\+\_\+platform}, \hyperpage{85}
+    \subitem {main}, \hyperpage{84}
+    \subitem {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+ID}, \hyperpage{84}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}, 
+		\hyperpage{84}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+FY}, \hyperpage{84}
+  \item {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}
+    \subitem {A\+R\+C\+H\+I\+T\+E\+C\+T\+U\+R\+E\+\_\+\+ID}, 
+		\hyperpage{89}
+    \subitem {C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+ID}, \hyperpage{89}
+    \subitem {C\+X\+X\+\_\+\+S\+TD}, \hyperpage{89}
+    \subitem {D\+EC}, \hyperpage{89}
+    \subitem {H\+EX}, \hyperpage{89}
+    \subitem {info\+\_\+arch}, \hyperpage{90}
+    \subitem {info\+\_\+compiler}, \hyperpage{91}
+    \subitem {info\+\_\+language\+\_\+dialect\+\_\+default}, 
+		\hyperpage{91}
+    \subitem {info\+\_\+platform}, \hyperpage{91}
+    \subitem {main}, \hyperpage{90}
+    \subitem {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+ID}, \hyperpage{90}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}, 
+		\hyperpage{90}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+FY}, \hyperpage{90}
+
+  \indexspace
+
+  \item {E\+R\+R\+O\+R\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED}
+    \subitem {platform.\+h}, \hyperpage{78}
+  \item {enabled\+\_\+}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{56}
+  \item {err\+\_\+}
+    \subitem {devfix\+::base\+::error\+::baseexception}, \hyperpage{17}
+  \item {exception\+\_\+guard}
+    \subitem {baseexception.\+h}, \hyperpage{64}
+  \item {exception\+\_\+guard\+\_\+m}
+    \subitem {baseexception.\+h}, \hyperpage{64}
+
+  \indexspace
+
+  \item {family\+\_\+t}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{20}
+  \item {flattop}
+    \subitem {devfix\+::dsp\+::window}, \hyperpage{61}
+  \item {flush}
+    \subitem {devfix\+::base\+::io\+::outputstream}, \hyperpage{34}
+    \subitem {devfix\+::base\+::io\+::sink}, \hyperpage{40}
+  \item {flush\+\_\+t}
+    \subitem {devfix\+::base\+::io}, \hyperpage{13}
+  \item {foldt}
+    \subitem {foldt.\+h}, \hyperpage{67, 68}
+  \item {foldt.\+h}
+    \subitem {foldt}, \hyperpage{67, 68}
+
+  \indexspace
+
+  \item {get\+\_\+accept\+\_\+timeout}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{37}
+  \item {get\+\_\+address}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{21}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{37}
+  \item {get\+\_\+errno}
+    \subitem {devfix\+::base\+::error\+::baseexception}, \hyperpage{17}
+  \item {get\+\_\+family}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{21}
+  \item {get\+\_\+from\+\_\+multistring}
+    \subitem {devfix\+::base}, \hyperpage{10}
+  \item {get\+\_\+from\+\_\+multistring$<$ char $>$}
+    \subitem {devfix\+::base}, \hyperpage{11}
+  \item {get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$}
+    \subitem {devfix\+::base}, \hyperpage{11}
+  \item {get\+\_\+host}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{21}
+  \item {get\+\_\+inputstream}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{43}
+  \item {get\+\_\+interrupted}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{43}
+  \item {get\+\_\+local\+\_\+address}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{43}
+  \item {get\+\_\+outputstream}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{43}
+  \item {get\+\_\+port}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{22}
+  \item {get\+\_\+prefix}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{55}
+  \item {get\+\_\+remote\+\_\+address}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{44}
+  \item {get\+\_\+reuse\+\_\+address}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{37}
+  \item {get\+\_\+timeout}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{44}
+
+  \indexspace
+
+  \item {H\+EX}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{83}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{89}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{86}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{92}
+  \item {hanning}
+    \subitem {devfix\+::dsp\+::window}, \hyperpage{61}
+
+  \indexspace
+
+  \item {inc\+If\+Div}
+    \subitem {test\+\_\+fold.\+cpp}, \hyperpage{82}
+  \item {inetaddress}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{20, 21}
+  \item {info\+\_\+arch}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{84}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{90}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{87}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{93}
+  \item {info\+\_\+compiler}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{85}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{91}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{88}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{94}
+  \item {info\+\_\+language\+\_\+dialect\+\_\+default}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{85}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{91}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{88}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{94}
+  \item {info\+\_\+platform}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{85}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{91}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{88}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{94}
+  \item {int\+\_\+type}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{54}
+  \item {interruptedexception}
+    \subitem {devfix\+::base\+::error\+::interruptedexception}, 
+		\hyperpage{27}
+  \item {ioexception}
+    \subitem {devfix\+::base\+::error\+::ioexception}, \hyperpage{29}
+  \item {is\+\_\+closed}
+    \subitem {devfix\+::base\+::io\+::inputstream}, \hyperpage{24}
+    \subitem {devfix\+::base\+::io\+::outputstream}, \hyperpage{34}
+    \subitem {devfix\+::base\+::io\+::sink}, \hyperpage{40}
+    \subitem {devfix\+::base\+::io\+::source}, \hyperpage{50}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{37}
+  \item {is\+\_\+closed\+\_\+t}
+    \subitem {devfix\+::base\+::io}, \hyperpage{13}
+  \item {is\+\_\+enabled}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{55}
+
+  \indexspace
+
+  \item {M\+U\+L\+T\+I\+S\+T\+R\+I\+NG}
+    \subitem {strutil.\+h}, \hyperpage{81}
+  \item {main}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{84}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{90}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{87}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{93}
+  \item {math}
+    \subitem {devfix\+::dsp\+::fft}, \hyperpage{18}
+
+  \indexspace
+
+  \item {N\+O\+T\+\_\+\+U\+S\+ED}
+    \subitem {platform.\+h}, \hyperpage{78}
+  \item {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}
+    \subitem {A\+R\+C\+H\+I\+T\+E\+C\+T\+U\+R\+E\+\_\+\+ID}, 
+		\hyperpage{86}
+    \subitem {C\+\_\+\+D\+I\+A\+L\+E\+CT}, \hyperpage{86}
+    \subitem {C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+ID}, \hyperpage{86}
+    \subitem {D\+EC}, \hyperpage{86}
+    \subitem {H\+EX}, \hyperpage{86}
+    \subitem {info\+\_\+arch}, \hyperpage{87}
+    \subitem {info\+\_\+compiler}, \hyperpage{88}
+    \subitem {info\+\_\+language\+\_\+dialect\+\_\+default}, 
+		\hyperpage{88}
+    \subitem {info\+\_\+platform}, \hyperpage{88}
+    \subitem {main}, \hyperpage{87}
+    \subitem {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+ID}, \hyperpage{87}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}, 
+		\hyperpage{87}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+FY}, \hyperpage{87}
+  \item {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}
+    \subitem {A\+R\+C\+H\+I\+T\+E\+C\+T\+U\+R\+E\+\_\+\+ID}, 
+		\hyperpage{92}
+    \subitem {C\+O\+M\+P\+I\+L\+E\+R\+\_\+\+ID}, \hyperpage{92}
+    \subitem {C\+X\+X\+\_\+\+S\+TD}, \hyperpage{92}
+    \subitem {D\+EC}, \hyperpage{92}
+    \subitem {H\+EX}, \hyperpage{92}
+    \subitem {info\+\_\+arch}, \hyperpage{93}
+    \subitem {info\+\_\+compiler}, \hyperpage{94}
+    \subitem {info\+\_\+language\+\_\+dialect\+\_\+default}, 
+		\hyperpage{94}
+    \subitem {info\+\_\+platform}, \hyperpage{94}
+    \subitem {main}, \hyperpage{93}
+    \subitem {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+ID}, \hyperpage{93}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}, 
+		\hyperpage{93}
+    \subitem {S\+T\+R\+I\+N\+G\+I\+FY}, \hyperpage{93}
+  \item {netbuilder}
+    \subitem {devfix\+::net\+::netbuilder}, \hyperpage{32}
+  \item {netbuilder.\+h}
+    \subitem {P\+L\+A\+T\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED}, 
+		\hyperpage{102}
+
+  \indexspace
+
+  \item {output\+\_\+stream\+\_\+}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{57}
+  \item {overflow}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{55}
+
+  \indexspace
+
+  \item {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+ID}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{84}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{90}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{87}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{93}
+  \item {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+I\+N\+UX}
+    \subitem {platform.\+h}, \hyperpage{79}
+  \item {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+W\+I\+N\+D\+O\+WS}
+    \subitem {platform.\+h}, \hyperpage{79}
+  \item {P\+L\+A\+T\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED}
+    \subitem {netbuilder.\+h}, \hyperpage{102}
+  \item {platform.\+h}
+    \subitem {\+\_\+\+\_\+\+F\+I\+L\+E\+N\+A\+M\+E\+\_\+\+\_\+}, 
+		\hyperpage{78}
+    \subitem {E\+R\+R\+O\+R\+\_\+\+P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+U\+N\+S\+U\+P\+P\+O\+R\+T\+ED}, 
+		\hyperpage{78}
+    \subitem {N\+O\+T\+\_\+\+U\+S\+ED}, \hyperpage{78}
+    \subitem {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+L\+I\+N\+UX}, 
+		\hyperpage{79}
+    \subitem {P\+L\+A\+T\+F\+O\+R\+M\+\_\+\+W\+I\+N\+D\+O\+WS}, 
+		\hyperpage{79}
+    \subitem {S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}, \hyperpage{79}
+  \item {pop}
+    \subitem {devfix\+::dsp\+::spectrogram}, \hyperpage{52}
+  \item {popcount}
+    \subitem {devfix\+::base\+::math}, \hyperpage{30}
+  \item {port\+\_\+t}
+    \subitem {devfix\+::net\+::inetaddress}, \hyperpage{20}
+  \item {prefix\+\_\+}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{57}
+  \item {prefixed\+\_\+}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{57}
+
+  \indexspace
+
+  \item {read}
+    \subitem {devfix\+::base\+::io\+::inputstream}, \hyperpage{25}
+    \subitem {devfix\+::base\+::io\+::source}, \hyperpage{50}
+  \item {read\+\_\+t}
+    \subitem {devfix\+::base\+::io}, \hyperpage{13}
+  \item {reverse\+\_\+bits}
+    \subitem {devfix\+::base\+::math}, \hyperpage{30}
+
+  \indexspace
+
+  \item {S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}
+    \subitem {platform.\+h}, \hyperpage{79}
+  \item {S\+T\+R\+I\+N\+G\+I\+F\+Y\+\_\+\+H\+E\+L\+P\+ER}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{84}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{90}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{87}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{93}
+  \item {S\+T\+R\+I\+N\+G\+I\+FY}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{84}
+    \subitem {dsp/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{90}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C/\+C\+Make\+C\+Compiler\+Id.\+c}, 
+		\hyperpage{87}
+    \subitem {net/cmake-\/build-\/debug/\+C\+Make\+Files/3.\+15.\+3/\+Compiler\+Id\+C\+X\+X/\+C\+Make\+C\+X\+X\+Compiler\+Id.\+cpp}, 
+		\hyperpage{93}
+  \item {S\+TX}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{57}
+  \item {set\+\_\+accept\+\_\+timeout}
+    \subitem {devfix\+::net\+::serversocket}, \hyperpage{38}
+  \item {set\+\_\+enabled}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{55}
+  \item {set\+\_\+interrupted}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{44}
+  \item {set\+\_\+prefix}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{56}
+  \item {set\+\_\+timeout}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{45}
+  \item {sink}
+    \subitem {devfix\+::base\+::io\+::sink}, \hyperpage{39}
+  \item {size}
+    \subitem {devfix\+::dsp\+::spectrogram}, \hyperpage{53}
+  \item {skip}
+    \subitem {devfix\+::base\+::io\+::inputstream}, \hyperpage{25}
+    \subitem {devfix\+::base\+::io\+::source}, \hyperpage{50}
+  \item {skip\+\_\+t}
+    \subitem {devfix\+::base\+::io}, \hyperpage{13}
+  \item {socketexception}
+    \subitem {devfix\+::net\+::socketexception}, \hyperpage{47}
+  \item {source}
+    \subitem {devfix\+::base\+::io\+::source}, \hyperpage{49}
+  \item {sp}
+    \subitem {devfix\+::base}, \hyperpage{10}
+  \item {spectrogram}
+    \subitem {devfix\+::dsp\+::spectrogram}, \hyperpage{52}
+  \item {strout}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{55}
+  \item {strutil.\+h}
+    \subitem {M\+U\+L\+T\+I\+S\+T\+R\+I\+NG}, \hyperpage{81}
+  \item {sync}
+    \subitem {devfix\+::base\+::strout}, \hyperpage{56}
+
+  \indexspace
+
+  \item {T\+E\+ST}
+    \subitem {test\+\_\+fold.\+cpp}, \hyperpage{82}
+  \item {Table}
+    \subitem {devfix\+::base\+::\+\_\+math\+::\+Table}, \hyperpage{58}
+    \subitem {devfix\+::base\+::math}, \hyperpage{30}
+  \item {test\+\_\+fold.\+cpp}
+    \subitem {add}, \hyperpage{82}
+    \subitem {inc\+If\+Div}, \hyperpage{82}
+    \subitem {T\+E\+ST}, \hyperpage{82}
+  \item {timeout\+\_\+t}
+    \subitem {devfix\+::net\+::socket}, \hyperpage{42}
+  \item {timeoutexception}
+    \subitem {devfix\+::base\+::error\+::timeoutexception}, 
+		\hyperpage{60}
+  \item {transform\+\_\+inplace}
+    \subitem {devfix\+::dsp\+::fft}, \hyperpage{18}
+
+  \indexspace
+
+  \item {up}
+    \subitem {devfix\+::base}, \hyperpage{10}
+
+  \indexspace
+
+  \item {values}
+    \subitem {devfix\+::base\+::\+\_\+math\+::\+Table}, \hyperpage{58}
+
+  \indexspace
+
+  \item {what}
+    \subitem {devfix\+::base\+::error\+::baseexception}, \hyperpage{17}
+  \item {what\+\_\+arg\+\_\+}
+    \subitem {devfix\+::base\+::error\+::baseexception}, \hyperpage{17}
+  \item {write}
+    \subitem {devfix\+::base\+::io\+::outputstream}, \hyperpage{35}
+    \subitem {devfix\+::base\+::io\+::sink}, \hyperpage{41}
+  \item {write\+\_\+t}
+    \subitem {devfix\+::base\+::io}, \hyperpage{13}
+
+\end{theindex}

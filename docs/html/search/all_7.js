@@ -16,5 +16,7 @@ var searchData=
   ['get_5fprefix',['get_prefix',['../structdevfix_1_1base_1_1strout.html#afb40810ea1e7384f08e1f837e34ff1c2',1,'devfix::base::strout']]],
   ['get_5fremote_5faddress',['get_remote_address',['../structdevfix_1_1net_1_1socket.html#afb69dcc8da66eb15a927d031f50a4ba2',1,'devfix::net::socket']]],
   ['get_5freuse_5faddress',['get_reuse_address',['../structdevfix_1_1net_1_1serversocket.html#a7efdb1f57d0e482542fda50a2403230d',1,'devfix::net::serversocket']]],
-  ['get_5ftimeout',['get_timeout',['../structdevfix_1_1net_1_1socket.html#afac86b6ad30a758ce590e7a144764967',1,'devfix::net::socket']]]
+  ['get_5ftimeout',['get_timeout',['../structdevfix_1_1net_1_1socket.html#afac86b6ad30a758ce590e7a144764967',1,'devfix::net::socket']]],
+  ['get_5ftm',['get_tm',['../structdevfix_1_1base_1_1time.html#a14d0b48fe09bf355aa64f3a5e2c60418',1,'devfix::base::time']]],
+  ['get_5fwindow',['get_window',['../structdevfix_1_1dsp_1_1window.html#aadef5782f4803866a74a6b9678c228c7',1,'devfix::dsp::window']]]
 ];
