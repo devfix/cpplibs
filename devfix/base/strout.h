@@ -37,16 +37,14 @@ namespace devfix::base
 		}
 
 	private:
-		void write_buffer()
+		void write(const std::basic_string<CharT>& str)
 		{
 			for (auto& pipe : pipes_)
 			{
-				if (std::holds_alternative<stream_t*>(pipe)) { (*std::get<stream_t*>(pipe)) << buffer_.str(); }
-				else { std::get<pair_t>(pipe).first(buffer_.str()); }
+				if (std::holds_alternative<stream_t*>(pipe)) { std::get<stream_t*>(pipe)->write(str.data(), str.length()); }
+				else { std::get<pair_t>(pipe).first(str); }
 			}
 		}
-
-		void clear_buffer() { buffer_.str(MULTISTRING(CharT, "")); }
 
 		void flush()
 		{
@@ -57,6 +55,8 @@ namespace devfix::base
 			}
 		}
 
+		void clear() { buffer_.str(MULTISTRING(CharT, "")); }
+
 	protected:
 		using int_type = typename std::basic_stringbuf<CharT, Traits, Allocator>::int_type;
 
@@ -65,8 +65,8 @@ namespace devfix::base
 			std::basic_string<CharT> str = buffer_.str();
 			if (enabled_ && (!prefixed_ || str.length() != prefix_.length()))
 			{
-				write_buffer();
-				clear_buffer();
+				write(buffer_.str());
+				clear();
 				prefixed_ = false;
 			}
 
@@ -84,17 +84,15 @@ namespace devfix::base
 
 				if (c == static_cast<CharT>('\n'))
 				{
-					write_buffer();
-					clear_buffer();
+					write(buffer_.str());
+					clear();
 					buffer_ << prefix_;
 					prefixed_ = true;
 				}
 				else if (c == STX)
 				{
-					buffer_.str(CLEAR_LINE.data());  // set buffer
-
-					write_buffer();
-					clear_buffer();
+					write(CLEAR_LINE.data());
+					clear();
 					buffer_ << prefix_;
 					prefixed_ = true;
 				}
@@ -111,7 +109,7 @@ namespace devfix::base
 		{
 			if (prefixed_ && (buffer_.str().length() == prefix_.length()))
 			{
-				clear_buffer();
+				clear();
 				buffer_ << prefix;
 				prefixed_ = true;
 			}
