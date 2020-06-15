@@ -4,6 +4,9 @@
 
 #pragma once
 
+namespace devfix::base
+{
+
 // set linux specific definitions
 #ifdef __linux__
 #define PLATFORM_LINUX 1
@@ -19,15 +22,30 @@
 
 #define ERROR_PLATFORM_UNSUPPORTED static_assert ( false, "Platform not supported" )
 
-// __FILENAME__ gets supplied via compiler options
-// check if cmake is configured properly
-#ifndef __FILENAME__
-#pragma "__FILENAME__ not defined, build script broken? Falling back to __FILE__"
-#define __FILENAME__ &__FILE__[0]
-#endif
-
-// macro to get current source line and attributes
-#define SOURCE_LINE std::string(__FILENAME__) + ":" + std::to_string(__LINE__) + ": in \"" + std::string(&__FUNCTION__[0]) + "\""
 
 // macro to mark return values statements as unused
 #define NOT_USED(x) static_cast<void>(x)
+
+struct platform
+{
+	static constexpr const char * get_filename(const char *fname)
+	{
+		const char* f = nullptr;
+		const char* p = fname;
+		for(; *p; p++)
+		{
+			if(*p == '/' || *p == '\\')
+			{ f = ++p; }
+		}
+		return f ? f : fname;
+	}
+};
+
+// macro to get current source line and attributes
+#ifdef NDEBUG
+#define SOURCE_LINE std::string(devfix::base::platform::get_filename(__FILENAME__)) + ":" + std::to_string(__LINE__) + ": in \"" + std::string(&__FUNCTION__[0]) + "\""
+#else
+#define SOURCE_LINE std::string(&__FILE__[0]) + ":" + std::to_string(__LINE__) + ": in \"" + std::string(&__FUNCTION__[0]) + "\""
+#endif
+
+}
