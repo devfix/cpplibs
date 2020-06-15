@@ -43,9 +43,9 @@ struct platform
 
 // macro to get current source line and attributes
 #ifdef NDEBUG
-#define SOURCE_LINE std::string(devfix::base::platform::get_filename(__FILENAME__)) + ":" + std::to_string(__LINE__) + ": in \"" + std::string(&__FUNCTION__[0]) + "\""
+#define SOURCE_LINE std::string(devfix::base::platform::get_filename(__FILE__)) + ":" + std::to_string(__LINE__) + ": in \"" + &__FUNCTION__[0] + "\""
 #else
-#define SOURCE_LINE std::string(&__FILE__[0]) + ":" + std::to_string(__LINE__) + ": in \"" + std::string(&__FUNCTION__[0]) + "\""
+#define SOURCE_LINE std::string(__FILE__) + ":" + std::to_string(__LINE__) + ": in \"" + &__FUNCTION__[0] + "\""
 #endif
 
 }
