@@ -12,12 +12,11 @@ set(CMAKE_VERBOSE_MAKEFILE false)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D ENABLE_GOOGLETEST=${ENABLE_GOOGLETEST}")
 
+set(CMAKE_BUILD_TYPE Release)
 if(EXISTS "${CMAKE_CURRENT_SOURCE_DIR}/COMPILE_DEBUG")
     set(CMAKE_BUILD_TYPE Debug)
-else()
-    set(CMAKE_BUILD_TYPE Release)
 endif()
-message("cmake build type: ${CMAKE_BUILD_TYPE}")
+message(STATUS "cmake build type: ${CMAKE_BUILD_TYPE}")
 
 set(WARNINGS
         -pedantic
