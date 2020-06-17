@@ -7,6 +7,7 @@
 #include <complex>
 #include <cmath>
 #include <vector>
+#include <array>
 #include <cstring>
 #include "../base/math.h"
 #include "window.h"
