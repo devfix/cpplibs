@@ -72,7 +72,8 @@ namespace devfix::dsp
 		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
 		static void apply_window(std::complex<FloatT>* win, std::size_t n)
 		{
-			for (std::size_t i = 0; i < n; i++) { win[i] *= window::get_window<FloatT, win_fun>(n, i); }
+			FloatT gain = window::calc_amplitude_gain<FloatT, win_fun>(n);
+			for (std::size_t i = 0; i < n; i++) { win[i] *= gain * win_fun(n, i); }
 		}
 
 		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>

@@ -26,13 +26,6 @@ namespace devfix::dsp
 			return FloatT(n) / sum;
 		}
 
-		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
-		static constexpr FloatT get_window(std::size_t n, std::size_t k)
-		{
-			auto gain = calc_amplitude_gain<FloatT, win_fun>(n);
-			return win_fun(n, k) * gain;
-		}
-
 		template<typename FloatT>
 		static constexpr FloatT hanning(std::size_t N, std::size_t k)
 		{
