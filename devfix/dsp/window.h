@@ -3,8 +3,10 @@
 //
 
 #pragma once
+
 #include <cmath>
 #include <numeric>
+#include <map>
 
 namespace devfix::dsp
 {
