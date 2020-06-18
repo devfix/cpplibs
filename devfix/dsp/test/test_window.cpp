@@ -241,4 +241,40 @@ TEST(Window, FlatTopDoubleLarge)
 	for (std::size_t i = 0; i < win.size(); i++) { ASSERT_NEAR(win[i], expected[i], ABS_ERROR); }
 }
 
+TEST(Window, Buffer)
+{
+	const std::vector<double> expected_8 = {
+		0, 1. / 3.5, 2. / 3.5, 3. / 3.5, 4. / 3.5, 5. / 3.5, 6. / 3.5, 7. / 3.5
+	};
+	const std::vector<double> expected_16 = {
+		0, 1. / 7.5, 2. / 7.5, 3. / 7.5, 4. / 7.5, 5. / 7.5, 6. / 7.5, 7. / 7.5, 8. / 7.5, 9. / 7.5, 10. / 7.5, 11. / 7.5, 12. / 7.5,
+		13. / 7.5, 14. / 7.5, 15. / 7.5
+	};
+
+	using buffer = window::buffer<double, window::linear>;
+	ASSERT_EQ(buffer::size(), 0);
+
+	buffer::prepare(expected_8.size());
+	ASSERT_EQ(buffer::size(), 8);
+
+	buffer::prepare(expected_8.size());  // test seconds time
+	ASSERT_EQ(buffer::size(), 8);
+
+	buffer::prepare(expected_16.size());
+	ASSERT_EQ(buffer::size(), 24);
+
+	for (std::size_t k = 0; k < expected_8.size(); k++)
+	{
+		ASSERT_EQ(buffer::get_window(expected_8.size(), k), expected_8[k]);
+	}
+
+	for (std::size_t k = 0; k < expected_16.size(); k++)
+	{
+		ASSERT_EQ(buffer::get_window(expected_16.size(), k), expected_16[k]);
+	}
+
+	buffer::clear();
+	ASSERT_EQ(buffer::size(), 0);
+}
+
 #endif

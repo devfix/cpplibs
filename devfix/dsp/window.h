@@ -4,6 +4,7 @@
 
 #pragma once
 #include <cmath>
+#include <numeric>
 
 namespace devfix::dsp
 {
@@ -18,8 +19,43 @@ namespace devfix::dsp
 		static constexpr double FLATTOP_COEFFICIENT_A4 = 0.006947368;
 
 	public:
-		template <typename FloatT>
+		template<typename FloatT>
 		using win_fun_t = FloatT(*)(std::size_t, std::size_t);
+
+		template<typename FloatT, win_fun_t<FloatT> win_fun>
+		struct buffer
+		{
+		private:
+			static inline std::map<std::size_t, std::vector<FloatT>> _coeffs_buffer;
+
+		public:
+			static const std::vector<FloatT>& prepare(std::size_t n)
+			{
+				// check if coefficients for window of size n are not already calculated
+				if (auto it = _coeffs_buffer.find(n); it != _coeffs_buffer.end())
+				{
+					return it->second;
+				}
+				else
+				{
+					FloatT gain = calc_amplitude_gain<FloatT, win_fun>(n);
+					auto& vec = _coeffs_buffer.emplace(n, n).first->second;
+					for (std::size_t k = 0; k < n; k++) { vec[k] = gain * win_fun(n, k); }
+					return vec;
+				}
+			}
+
+			static void clear() { _coeffs_buffer.clear(); }
+
+			static std::size_t size()
+			{
+				return std::accumulate(_coeffs_buffer.begin(), _coeffs_buffer.end(), 0l,
+									   [](const std::size_t prev, const auto& pair) { return prev + pair.second.size(); });
+			}
+
+			static FloatT get_window(std::size_t n, std::size_t k) { return prepare(n)[k]; }
+
+		};
 
 		template<typename FloatT, win_fun_t<FloatT> win_fun>
 		static constexpr FloatT calc_amplitude_gain(std::size_t n)
@@ -30,9 +66,9 @@ namespace devfix::dsp
 		}
 
 		template<typename FloatT>
-		static constexpr FloatT hanning(std::size_t N, std::size_t k)
+		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
-			return k < N ? (FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * M_PI * (FloatT(k) - FloatT(.5) * FloatT(N - 1)) / (N - 1))) : 0;
+			return k < n ? (FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * M_PI * (FloatT(k) - FloatT(.5) * FloatT(n - 1)) / (n - 1))) : 0;
 		}
 
 		template<typename FloatT>
