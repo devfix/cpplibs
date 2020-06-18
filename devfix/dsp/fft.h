@@ -50,6 +50,10 @@ namespace devfix::dsp
 					win[b] = t;
 				}
 			}
+
+			// normalize fft
+			FloatT inv_len = FloatT(1) / len;
+			for (std::size_t i = 0; i < len; i++) { win[i] *= inv_len; }
 		}
 
 		template<typename FloatT>
@@ -85,27 +89,82 @@ namespace devfix::dsp
 		}
 
 		template<typename FloatT>
-		static void normalize_amplitude(const std::complex<FloatT>* win, std::size_t len, FloatT* mag)
+		static void convert_to_onesided(const std::complex<FloatT>* win, std::size_t len, std::complex<FloatT>* positive)
 		{
-			mag[0] = std::abs<FloatT>(win[0] * (1. / len));
-			for (std::size_t i = 1; i < len / 2; i++) { mag[i] = std::abs<FloatT>(win[i] * (2. / len)); }
-			mag[len / 2] = std::abs<FloatT>(win[len / 2] * (1. / len));
+			positive[0] = win[0];
+			for (std::size_t i = 1; i < len / 2; i++) { positive[i] = FloatT(2) * win[i]; }
 		}
 
 		template<typename FloatT>
-		static std::vector<FloatT> normalize_amplitude(const std::vector<std::complex<FloatT>>& win)
+		static std::vector<std::complex<FloatT>> convert_to_onesided(const std::vector<std::complex<FloatT>>& win)
 		{
-			std::vector<FloatT> mag(win.size() / 2 + 1);
-			normalize_amplitude(win.data(), win.size(), mag.data());
-			return mag;
+			std::vector<std::complex<FloatT>> positive(win.size() / 2);
+			convert_to_onesided(win.data(), win.size(), positive.data());
+			return positive;
 		}
 
 		template<typename FloatT, std::size_t N>
-		static std::array<FloatT, N> normalize_amplitude(const std::array<std::complex<FloatT>, N>& win)
+		static std::array<std::complex<FloatT>, N / 2> convert_to_onesided(const std::array<std::complex<FloatT>, N>& win)
 		{
-			std::array<FloatT, N> mag(win.size() / 2 + 1);
-			normalize_amplitude(win.data(), win.size(), mag.data());
-			return mag;
+			std::array<std::complex<FloatT>, N / 2> positive;
+			convert_to_onesided(win.data(), win.size(), positive.data());
+			return positive;
+		}
+
+		/**
+		 * \brief calculates the angles (phase) in radians for each complex number
+		 * \tparam FloatT floating point type
+		 * \param win field of complex numbers to extract the angles from
+		 * \param len length of field
+		 * \param angles target field to store the angles in, should have at least same size as win
+		 * \param threshold if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold
+		 */
+		template<typename FloatT>
+		static void extract_angles(const std::complex<FloatT>* win, std::size_t len, FloatT* angles, FloatT threshold = -1)
+		{
+			if (threshold < 0)
+			{
+				for (std::size_t i = 1; i < len; i++) { angles[i] = std::atan2<FloatT>(win[i].imag(), win[i].real()); }
+			}
+			else
+			{
+				for (std::size_t i = 1; i < len; i++)
+				{
+					if (std::abs(win[i]) > threshold) { angles[i] = std::atan2<FloatT>(win[i].imag(), win[i].real()); }
+					else angles[i] = 0;
+				}
+			}
+		}
+
+		/**
+		 * \brief calculates the angles (phase) in radians for each complex number
+		 * \tparam FloatT floating point type
+		 * \param win vector of complex numbers to extract the angles from
+		 * \param threshold if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold
+		 * \return vector of extracted angles, same length as win
+		 */
+		template<typename FloatT>
+		static std::vector<FloatT> extract_angles(const std::vector<std::complex<FloatT>>& win, FloatT threshold = -1)
+		{
+			std::vector<FloatT> angles(win.size());
+			extract_angles(win.data(), win.size(), angles.data(), threshold);
+			return angles;
+		}
+
+		/**
+		 * \brief calculates the angles (phase) in radians for each complex number
+		 * \tparam FloatT floating point type
+		 * \tparam N length of array
+		 * \param win array of complex numbers to extract the angles from
+		 * \param threshold if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold
+		 * \return array of extracted angles, same length as win
+		 */
+		template<typename FloatT, std::size_t N>
+		static std::array<FloatT, N> extract_angles(const std::array<std::complex<FloatT>, N>& win, FloatT threshold = -1)
+		{
+			std::array<FloatT, N> angles(win.size());
+			extract_angles(win.data(), win.size(), angles.data(), threshold);
+			return angles;
 		}
 	};
 }

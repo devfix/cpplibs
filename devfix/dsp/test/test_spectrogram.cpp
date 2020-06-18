@@ -45,7 +45,7 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 2.4142135623730949, 2, 1, 0, 0.4142135623730949, 0, 1, 2 };
+			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730949 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -53,7 +53,7 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 2.4142135623730949, 2, 1, 0, 0.4142135623730947, 0, 1, 2 };
+			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730947 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -61,8 +61,8 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 1.7071067811865479, 2.5495097567963922, 1.2247448713915889, 0.70710678118654768, 0.29289321881345265, 0.70710678118654746,
-			  1.2247448713915889, 2.5495097567963922 };
+			{ 1.7071067811865479 / FFT_LEN, 2.5495097567963922 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 0.70710678118654768 / FFT_LEN,
+			  0.29289321881345265 / FFT_LEN, 0.70710678118654746 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 2.5495097567963922 / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -70,8 +70,8 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 0.7071067811865479, 3.5355339059327378, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479,
-			  0.7071067811865479, 3.5355339059327378 };
+			{ 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN,
+			  0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -79,7 +79,7 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 0, 4, 0, 0, 0, 0, 0, 4 };
+			{ 0, 4. / FFT_LEN, 0, 0, 0, 0, 0, 4. / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -87,7 +87,7 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 0, 4, 0, 0, 0, 0, 0, 4 };
+			{ 0, 4. / FFT_LEN, 0, 0, 0, 0, 0, 4. / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -95,8 +95,8 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 0.7071067811865479, 3.5355339059327378, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479, 0.7071067811865479,
-			  0.7071067811865479, 3.5355339059327378 };
+			{ 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN,
+			  0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -104,8 +104,8 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 1.7071067811865479, 2.5495097567963922, 1.2247448713915889, 0.70710678118654768, 0.29289321881345265, 0.70710678118654746,
-			  1.2247448713915889, 2.5495097567963922 };
+			{ 1.7071067811865479 / FFT_LEN, 2.5495097567963922 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 0.70710678118654768 / FFT_LEN,
+			  0.29289321881345265 / FFT_LEN, 0.70710678118654746 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 2.5495097567963922 / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -113,7 +113,7 @@ TEST(Spectrogram, RectangleWindow)
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
-			{ 2.4142135623730949, 2, 1, 0, 0.4142135623730949, 0, 1, 2 };
+			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730949 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
 		ASSERT_EQ(mag.size(), expected.size());
 		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 	}
@@ -182,6 +182,7 @@ TEST(Spectrogram, FlattopWindow)
 		0.000027986500809, 0.000030423717498, 0.000034736925810, 0.000038424830829, 0.000039534441087, 0.000033678236519, 0.000061689156986,
 		0.068008341276636, 0.791185219869575, 2.587170583638193, 3.867385376577055
 	};
+	for (auto& v: expected) { v /= FFT_LEN; }  // fft implementation changed, correction now already happens in fft_transform
 
 	ASSERT_EQ(mag.size(), expected.size());
 	for (std::size_t i = 0; i < win.size(); i++)

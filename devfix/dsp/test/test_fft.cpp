@@ -39,12 +39,12 @@ TEST(FFT, MultipleFreqs)
 	for (std::size_t i = 1; i < LEN / 2; i++) { ASSERT_EQ(mag[i], mag[LEN - i]); }
 
 	// test expected amplitudes
-	ASSERT_EQ(mag[0], LEN * 4);
-	ASSERT_EQ(mag[1], LEN / 8);
-	ASSERT_EQ(mag[2], LEN / 4);
-	ASSERT_EQ(mag[3], 0);
-	ASSERT_EQ(mag[4], LEN / 2);
-	for (std::size_t i = 5; i < LEN / 2; i++) { ASSERT_EQ(mag[i], 0); }
+	ASSERT_NEAR(mag[0], 1. * 4, ABS_ERROR);
+	ASSERT_NEAR(mag[1], 1. / 8, ABS_ERROR);
+	ASSERT_NEAR(mag[2], 1. / 4, ABS_ERROR);
+	ASSERT_NEAR(mag[3], 0, ABS_ERROR);
+	ASSERT_NEAR(mag[4], 1. / 2, ABS_ERROR);
+	for (std::size_t i = 5; i < LEN / 2; i++) { ASSERT_NEAR(mag[i], 0, ABS_ERROR); }
 }
 
 TEST(FFT, ApplyWindowPointer)
@@ -98,13 +98,15 @@ TEST(FFT, AmplitudeNormalization)
 	}
 
 	fft::transform_inplace(vec);
-	auto mag = fft::normalize_amplitude(vec);
+	auto positive = fft::convert_to_onesided(vec);
+	std::vector<double> mag(positive.size());
+	std::transform(positive.begin(), positive.end(), mag.begin(), std::abs<double>);
 
 	std::vector<double> expected =
 		{ 4, 0.25, 0.5, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
-		  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
-	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
+	ASSERT_EQ(positive.size(), expected.size());
+	for (std::size_t i = 0; i < positive.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
 }
 
 TEST(FFT, AmplitudeNormalizationWithFlatTop)
@@ -120,7 +122,9 @@ TEST(FFT, AmplitudeNormalizationWithFlatTop)
 
 	fft::apply_window<double, window::flattop, FFT_LEN>(vec);
 	fft::transform_inplace(vec);
-	auto mag = fft::normalize_amplitude(vec);
+	auto positive = fft::convert_to_onesided(vec);
+	std::vector<double> mag(positive.size());
+	std::transform(positive.begin(), positive.end(), mag.begin(), std::abs<double>);
 
 	std::vector<double> expected =
 		{ 0.00175583, 0.201761, 0.650524, 0.967362, 1.00001, 0.967367, 0.650518, 0.201786, 0.0179323, 3.18503e-05, 1.60198e-05, 2.79171e-05,
@@ -128,10 +132,36 @@ TEST(FFT, AmplitudeNormalizationWithFlatTop)
 		  1.56228e-05, 1.46173e-05, 1.26949e-05, 1.55266e-05, 0.00447605, 0.0504534, 0.162622, 0.241849, 0.249996, 0.241848, 0.162624,
 		  0.0504507, 0.00447977, 1.04789e-05, 6.275e-06, 6.82469e-06, 6.52186e-06, 5.91506e-06, 5.27451e-06, 4.68813e-06, 4.17657e-06,
 		  3.73776e-06, 3.36303e-06, 3.04274e-06, 2.76813e-06, 2.53178e-06, 2.32763e-06, 2.15073e-06, 1.99712e-06, 1.86362e-06, 1.74766e-06,
-		  1.64719e-06, 1.56058e-06, 1.48654e-06, 1.42403e-06, 1.37227e-06, 1.33064e-06, 1.29868e-06, 1.27607e-06, 1.26258e-06, 6.29052e-07,
+		  1.64719e-06, 1.56058e-06, 1.48654e-06, 1.42403e-06, 1.37227e-06, 1.33064e-06, 1.29868e-06, 1.27607e-06, 1.26258e-06,
 		};
 	ASSERT_EQ(mag.size(), expected.size());
 	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_COARSE_ERROR); }
+}
+
+TEST(FFT, PhaseExtraction)
+{
+	constexpr std::size_t FFT_LEN = 128;
+	std::vector<std::complex<double>> vec(FFT_LEN);
+	for (std::size_t i = 0; i < vec.size(); i++)
+	{
+		vec[i] = std::cos(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 32 + M_PI)
+			+ 0.5 * std::cos(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 8 + M_PI / 2)
+			+ 0.25 * std::cos(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 4 + M_PI / 4);
+	}
+
+	fft::apply_window<double, window::rectangle, FFT_LEN>(vec);
+	fft::transform_inplace(vec);
+	auto positive = fft::convert_to_onesided(vec);
+	auto angles = fft::extract_angles(positive, 0.1);
+
+	std::size_t line_a = FFT_LEN / 32, line_b = FFT_LEN / 8, line_c = FFT_LEN / 4;
+	ASSERT_NEAR(angles[line_a], M_PI, ABS_COARSE_ERROR);
+	ASSERT_NEAR(angles[line_b], M_PI / 2, ABS_COARSE_ERROR);
+	ASSERT_NEAR(angles[line_c], M_PI / 4, ABS_COARSE_ERROR);
+	for (std::size_t i = 0; i < angles.size(); i++)
+	{
+		if (i != line_a && i != line_b && i != line_c) { ASSERT_NEAR(angles[i], 0, ABS_ERROR); }
+	}
 }
 
 #endif
