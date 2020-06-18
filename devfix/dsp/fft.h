@@ -69,23 +69,22 @@ namespace devfix::dsp
 			transform_inplace<FloatT>(win.data(), win.size());
 		}
 
-		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t), std::size_t N>
-		static void apply_window(std::complex<FloatT>* win)
+		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
+		static void apply_window(std::complex<FloatT>* win, std::size_t n)
 		{
-			for (std::size_t i = 0; i < N; i++) { win[i] *= window::get_window<FloatT, win_fun>(N, i); }
+			for (std::size_t i = 0; i < n; i++) { win[i] *= window::get_window<FloatT, win_fun>(n, i); }
 		}
 
-		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t), std::size_t N>
+		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
 		static void apply_window(std::vector<std::complex<FloatT>>& win)
 		{
-			if (win.size() != N) { throw std::invalid_argument("invalid vector size"); }
-			apply_window<FloatT, win_fun, N>(win.data());
+			apply_window<FloatT, win_fun>(win.data(), win.size());
 		}
 
 		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t), std::size_t N>
 		static void apply_window(std::array<std::complex<FloatT>, N>& win)
 		{
-			apply_window<FloatT, win_fun, N>(win.data());
+			apply_window<FloatT, win_fun>(win.data(), win.size());
 		}
 
 		template<typename FloatT>

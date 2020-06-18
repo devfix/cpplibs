@@ -50,7 +50,7 @@ TEST(FFT, MultipleFreqs)
 TEST(FFT, ApplyWindowPointer)
 {
 	std::vector<std::complex<double>> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
-	fft::apply_window<double, window::linear, 8>(vec.data());
+	fft::apply_window<double, window::linear>(vec.data(), vec.size());
 	std::vector<double> mag(vec.size());
 	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
 	std::vector<double> expected = {
@@ -63,7 +63,7 @@ TEST(FFT, ApplyWindowPointer)
 TEST(FFT, ApplyWindowVector)
 {
 	std::vector<std::complex<double>> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
-	fft::apply_window<double, window::linear, 8>(vec);
+	fft::apply_window<double, window::linear>(vec);
 	std::vector<double> mag(vec.size());
 	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
 	std::vector<double> expected = {
@@ -76,7 +76,7 @@ TEST(FFT, ApplyWindowVector)
 TEST(FFT, ApplyWindowArray)
 {
 	std::array<std::complex<double>, 8> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
-	fft::apply_window<double, window::linear, vec.size()>(vec);
+	fft::apply_window<double, window::linear>(vec);
 	std::vector<double> mag(vec.size());
 	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
 	std::vector<double> expected = {
@@ -120,7 +120,7 @@ TEST(FFT, AmplitudeNormalizationWithFlatTop)
 			+ 0.25 * std::sin(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 4);
 	}
 
-	fft::apply_window<double, window::flattop, FFT_LEN>(vec);
+	fft::apply_window<double, window::flattop>(vec);
 	fft::transform_inplace(vec);
 	auto positive = fft::convert_to_onesided(vec);
 	std::vector<double> mag(positive.size());
@@ -149,7 +149,7 @@ TEST(FFT, PhaseExtraction)
 			+ 0.25 * std::cos(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 4 + M_PI / 4);
 	}
 
-	fft::apply_window<double, window::rectangle, FFT_LEN>(vec);
+	fft::apply_window<double, window::rectangle>(vec);
 	fft::transform_inplace(vec);
 	auto positive = fft::convert_to_onesided(vec);
 	auto angles = fft::extract_angles(positive, 0.1);
