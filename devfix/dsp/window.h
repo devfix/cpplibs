@@ -18,7 +18,10 @@ namespace devfix::dsp
 		static constexpr double FLATTOP_COEFFICIENT_A4 = 0.006947368;
 
 	public:
-		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
+		template <typename FloatT>
+		using win_fun_t = FloatT(*)(std::size_t, std::size_t);
+
+		template<typename FloatT, win_fun_t<FloatT> win_fun>
 		static constexpr FloatT calc_amplitude_gain(std::size_t n)
 		{
 			FloatT sum = 0;

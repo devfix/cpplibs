@@ -69,23 +69,41 @@ namespace devfix::dsp
 			transform_inplace<FloatT>(win.data(), win.size());
 		}
 
-		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
+		template<typename FloatT, window::win_fun_t<FloatT> win_fun>
 		static void apply_window(std::complex<FloatT>* win, std::size_t n)
 		{
 			FloatT gain = window::calc_amplitude_gain<FloatT, win_fun>(n);
 			for (std::size_t i = 0; i < n; i++) { win[i] *= gain * win_fun(n, i); }
 		}
 
-		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t)>
+		template<typename FloatT, window::win_fun_t<FloatT> win_fun>
 		static void apply_window(std::vector<std::complex<FloatT>>& win)
 		{
 			apply_window<FloatT, win_fun>(win.data(), win.size());
 		}
 
-		template<typename FloatT, FloatT(* win_fun)(std::size_t, std::size_t), std::size_t N>
+		template<typename FloatT, window::win_fun_t<FloatT> win_fun, std::size_t N>
 		static void apply_window(std::array<std::complex<FloatT>, N>& win)
 		{
 			apply_window<FloatT, win_fun>(win.data(), win.size());
+		}
+
+		template<typename FloatT>
+		static void apply_window(std::complex<FloatT>* win, window::win_fun_t<FloatT> win_fun, std::size_t n)
+		{
+			for (std::size_t i = 0; i < n; i++) { win[i] *= win_fun(n, i); }
+		}
+
+		template<typename FloatT>
+		static void apply_window(std::vector<std::complex<FloatT>>& win, window::win_fun_t<FloatT> win_fun)
+		{
+			apply_window<FloatT>(win.data(), win_fun, win.size());
+		}
+
+		template<typename FloatT, std::size_t N>
+		static void apply_window(std::array<std::complex<FloatT>, N>& win, window::win_fun_t<FloatT> win_fun)
+		{
+			apply_window<FloatT>(win.data(), win_fun, win.size());
 		}
 
 		template<typename FloatT>
@@ -131,7 +149,7 @@ namespace devfix::dsp
 				for (std::size_t i = 1; i < len; i++)
 				{
 					if (std::abs(win[i]) > threshold) { angles[i] = std::atan2<FloatT>(win[i].imag(), win[i].real()); }
-					else angles[i] = 0;
+					else { angles[i] = 0; }
 				}
 			}
 		}
