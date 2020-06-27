@@ -3,7 +3,7 @@ set -e  # exit on errors
 
 echo "update local repo"
 git pull
-git diff --no-pager --check
+git --no-pager diff --check
 
 echo "rebuild project"
 rm -rf cmake-build-*
