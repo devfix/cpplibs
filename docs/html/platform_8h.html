@@ -64,6 +64,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#namespaces">Namespaces</a> &#124;
 <a href="#define-members">Macros</a>  </div>
   <div class="headertitle">
 <div class="title">platform.h File Reference</div>  </div>
@@ -91,6 +93,17 @@ This graph shows which files directly or indirectly include this file:</div>
 </div>
 <p><a href="platform_8h_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1platform.html">devfix::base::platform</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="namespaces"></a>
+Namespaces</h2></td></tr>
+<tr class="memitem:namespacedevfix_1_1base"><td class="memItemLeft" align="right" valign="top"> &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1base.html">devfix::base</a></td></tr>
+<tr class="memdesc:namespacedevfix_1_1base"><td class="mdescLeft">&#160;</td><td class="mdescRight">Root namespace of devfix base library. <br /></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
 <tr class="memitem:affcc3790504b838f9ce56a008cce0950"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="platform_8h.html#affcc3790504b838f9ce56a008cce0950">PLATFORM_LINUX</a>&#160;&#160;&#160;0</td></tr>
@@ -99,28 +112,12 @@ Macros</h2></td></tr>
 <tr class="separator:a20cd3c4775f1897fb5658d2dc61382c3"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a0bba118331fd3ff9e1ad80b92a75b345"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="platform_8h.html#a0bba118331fd3ff9e1ad80b92a75b345">ERROR_PLATFORM_UNSUPPORTED</a>&#160;&#160;&#160;static_assert ( false, &quot;Platform not supported&quot; )</td></tr>
 <tr class="separator:a0bba118331fd3ff9e1ad80b92a75b345"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a5fccb4fc71e44089a1b1a77fc76c0b68"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="platform_8h.html#a5fccb4fc71e44089a1b1a77fc76c0b68">__FILENAME__</a>&#160;&#160;&#160;&amp;__FILE__[0]</td></tr>
-<tr class="separator:a5fccb4fc71e44089a1b1a77fc76c0b68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acf16e3e245e0e3b5d45b2a11075d4d36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>&#160;&#160;&#160;std::string(<a class="el" href="platform_8h.html#a5fccb4fc71e44089a1b1a77fc76c0b68">__FILENAME__</a>) + &quot;:&quot; + std::to_string(__LINE__) + &quot;: in \&quot;&quot; + std::string(&amp;__FUNCTION__[0]) + &quot;\&quot;&quot;</td></tr>
-<tr class="separator:acf16e3e245e0e3b5d45b2a11075d4d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a05a7b30aaf65db56c27346272aa681e5"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="platform_8h.html#a05a7b30aaf65db56c27346272aa681e5">NOT_USED</a>(x)&#160;&#160;&#160;static_cast&lt;void&gt;(x)</td></tr>
 <tr class="separator:a05a7b30aaf65db56c27346272aa681e5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acf16e3e245e0e3b5d45b2a11075d4d36"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>&#160;&#160;&#160;std::string(__FILE__) + &quot;:&quot; + std::to_string(__LINE__) + &quot;: in \&quot;&quot; + &amp;__FUNCTION__[0] + &quot;\&quot;&quot;</td></tr>
+<tr class="separator:acf16e3e245e0e3b5d45b2a11075d4d36"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a5fccb4fc71e44089a1b1a77fc76c0b68"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a5fccb4fc71e44089a1b1a77fc76c0b68">&#9670;&nbsp;</a></span>__FILENAME__</h2>
-
-<div class="memitem">
-<div class="memproto">
-      <table class="memname">
-        <tr>
-          <td class="memname">#define __FILENAME__&#160;&#160;&#160;&amp;__FILE__[0]</td>
-        </tr>
-      </table>
-</div><div class="memdoc">
-
-</div>
-</div>
 <a id="a0bba118331fd3ff9e1ad80b92a75b345"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a0bba118331fd3ff9e1ad80b92a75b345">&#9670;&nbsp;</a></span>ERROR_PLATFORM_UNSUPPORTED</h2>
 
@@ -188,7 +185,7 @@ Macros</h2></td></tr>
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define SOURCE_LINE&#160;&#160;&#160;std::string(<a class="el" href="platform_8h.html#a5fccb4fc71e44089a1b1a77fc76c0b68">__FILENAME__</a>) + &quot;:&quot; + std::to_string(__LINE__) + &quot;: in \&quot;&quot; + std::string(&amp;__FUNCTION__[0]) + &quot;\&quot;&quot;</td>
+          <td class="memname">#define SOURCE_LINE&#160;&#160;&#160;std::string(__FILE__) + &quot;:&quot; + std::to_string(__LINE__) + &quot;: in \&quot;&quot; + &amp;__FUNCTION__[0] + &quot;\&quot;&quot;</td>
         </tr>
       </table>
 </div><div class="memdoc">

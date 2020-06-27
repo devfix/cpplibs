@@ -1,16 +1,19 @@
 #!/bin/bash
 set -e  # exit on errors
 
+echo "update local repo"
 git pull
-git diff --check
+git diff --no-pager --check
 
-cd cmake-build-*
-make clean
-make testrunner
-./testrunner
-make documentation
-cd ..
+echo "rebuild project"
+rm -rf cmake-build-*
+cmake . -B cmake-build-release -DCMAKE_BUILD_TYPE=Release
+cmake --build cmake-build-release --parallel 4 --target testrunner --config Release
 
+echo "update documentation"
+doxygen Doxyfile
+
+echo "commit to git"
 git add .
 git add -f docs
 printf '━%.0s' $(seq $(tput cols))

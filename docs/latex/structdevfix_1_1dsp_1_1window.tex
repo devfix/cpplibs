@@ -4,14 +4,22 @@
 
 {\ttfamily \#include $<$window.\+h$>$}
 
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdevfix_1_1dsp_1_1window_1_1buffer}{buffer}
+\end{DoxyCompactItemize}
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\using \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{win\+\_\+fun\+\_\+t} = FloatT($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t)
+\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}{calc\+\_\+amplitude\+\_\+gain} (std\+::size\+\_\+t n)
+{\footnotesize template$<$typename FloatT , win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}{calc\+\_\+amplitude\+\_\+gain} (std\+::size\+\_\+t n)
 \item 
-{\footnotesize template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_aadef5782f4803866a74a6b9678c228c7}{get\+\_\+window} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_add23aaf0f9936857ad02a9d19b785849}{hanning} (std\+::size\+\_\+t N, std\+::size\+\_\+t k)
+{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}{hanning} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
 \item 
 {\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a43beeead6e8922f5be05b6e17f7f2664}{flattop} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
 \item 
@@ -21,12 +29,22 @@
 \end{DoxyCompactItemize}
 
 
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}\label{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!win\+\_\+fun\+\_\+t@{win\+\_\+fun\+\_\+t}}
+\index{win\+\_\+fun\+\_\+t@{win\+\_\+fun\+\_\+t}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{win\+\_\+fun\+\_\+t}{win\_fun\_t}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+using \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{devfix\+::dsp\+::window\+::win\+\_\+fun\+\_\+t} =  FloatT($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t)}
+
+
+
 \subsection{Member Function Documentation}
 \mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}\label{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}} 
 \index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!calc\+\_\+amplitude\+\_\+gain@{calc\+\_\+amplitude\+\_\+gain}}
 \index{calc\+\_\+amplitude\+\_\+gain@{calc\+\_\+amplitude\+\_\+gain}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
 \subsubsection{\texorpdfstring{calc\+\_\+amplitude\+\_\+gain()}{calc\_amplitude\_gain()}}
-{\footnotesize\ttfamily template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
+{\footnotesize\ttfamily template$<$typename FloatT , win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ \\
 static constexpr FloatT devfix\+::dsp\+::window\+::calc\+\_\+amplitude\+\_\+gain (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a43beeead6e8922f5be05b6e17f7f2664}\label{structdevfix_1_1dsp_1_1window_a43beeead6e8922f5be05b6e17f7f2664}} 
@@ -36,19 +54,12 @@ static constexpr FloatT devfix\+::dsp\+::window\+::calc\+\_\+amplitude\+\_\+gain
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
 static constexpr FloatT devfix\+::dsp\+::window\+::flattop (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_aadef5782f4803866a74a6b9678c228c7}\label{structdevfix_1_1dsp_1_1window_aadef5782f4803866a74a6b9678c228c7}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!get\+\_\+window@{get\+\_\+window}}
-\index{get\+\_\+window@{get\+\_\+window}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{get\+\_\+window()}{get\_window()}}
-{\footnotesize\ttfamily template$<$typename FloatT , Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::get\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_add23aaf0f9936857ad02a9d19b785849}\label{structdevfix_1_1dsp_1_1window_add23aaf0f9936857ad02a9d19b785849}} 
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}\label{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}} 
 \index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!hanning@{hanning}}
 \index{hanning@{hanning}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
 \subsubsection{\texorpdfstring{hanning()}{hanning()}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::hanning (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{N,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static constexpr FloatT devfix\+::dsp\+::window\+::hanning (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a334a42b01504381fb13459f566aa2025}\label{structdevfix_1_1dsp_1_1window_a334a42b01504381fb13459f566aa2025}} 
 \index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!linear@{linear}}

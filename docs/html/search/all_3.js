@@ -1,16 +1,16 @@
 var searchData=
 [
-  ['c_5fdialect',['C_DIALECT',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a07f8e5783674099cd7f5110e22a78cdb',1,'C_DIALECT():&#160;CMakeCCompilerId.c'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a07f8e5783674099cd7f5110e22a78cdb',1,'C_DIALECT():&#160;CMakeCCompilerId.c']]],
-  ['calc_5famplitude_5fgain',['calc_amplitude_gain',['../structdevfix_1_1dsp_1_1window.html#aeba7905479c64bca5ac2fce0c6dbbf0b',1,'devfix::dsp::window']]],
-  ['calc_5fcoeffs',['calc_coeffs',['../structdevfix_1_1base_1_1interpolation.html#a785dcc23e3504edbd7240492a4b1b028',1,'devfix::base::interpolation']]],
-  ['clear_5fline',['CLEAR_LINE',['../structdevfix_1_1base_1_1strout.html#afe9d2f4264b508fd02be4af24dba6bb1',1,'devfix::base::strout']]],
-  ['close',['close',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a1188eff97757eb9625be91dfeca17af7',1,'devfix::base::io::inputstream::close()'],['../structdevfix_1_1base_1_1io_1_1outputstream.html#a060c2e7040e6bb831b8150f64bd8abf7',1,'devfix::base::io::outputstream::close()'],['../structdevfix_1_1base_1_1io_1_1sink.html#a2b13891b8bb50f6d1a01c52d58154bc5',1,'devfix::base::io::sink::close()'],['../structdevfix_1_1base_1_1io_1_1source.html#aa00a381c8a166cbbc5dbf6de4b56590e',1,'devfix::base::io::source::close()'],['../structdevfix_1_1net_1_1serversocket.html#ab1762c3364c8298dbac6c3dd67a1e7aa',1,'devfix::net::serversocket::close()']]],
-  ['close_5ft',['close_t',['../namespacedevfix_1_1base_1_1io.html#ae3118387742e5f4d484a328a213d6a5d',1,'devfix::base::io']]],
-  ['cmakeccompilerid_2ec',['CMakeCCompilerId.c',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html',1,'(Global Namespace)'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html',1,'(Global Namespace)']]],
-  ['cmakecxxcompilerid_2ecpp',['CMakeCXXCompilerId.cpp',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html',1,'(Global Namespace)'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html',1,'(Global Namespace)']]],
-  ['compiler_5fid',['COMPILER_ID',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCCompilerId.c'],['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCXXCompilerId.cpp'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdC_2CMakeCCompilerId_8c.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCCompilerId.c'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a81dee0709ded976b2e0319239f72d174',1,'COMPILER_ID():&#160;CMakeCXXCompilerId.cpp']]],
-  ['complex_5ft',['complex_t',['../structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb',1,'devfix::dsp::spectrogram']]],
-  ['create_5fserversocket',['create_serversocket',['../structdevfix_1_1net_1_1netbuilder.html#a9d685e1822c0be5d68fd6ba62876798b',1,'devfix::net::netbuilder']]],
-  ['create_5fsocket',['create_socket',['../structdevfix_1_1net_1_1netbuilder.html#a9d9eb6cb050ca920aa647baaf4692405',1,'devfix::net::netbuilder']]],
-  ['cxx_5fstd',['CXX_STD',['../dsp_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a34cc889e576a1ae6c84ae9e0a851ba21',1,'CXX_STD():&#160;CMakeCXXCompilerId.cpp'],['../net_2cmake-build-debug_2CMakeFiles_23_815_83_2CompilerIdCXX_2CMakeCXXCompilerId_8cpp.html#a34cc889e576a1ae6c84ae9e0a851ba21',1,'CXX_STD():&#160;CMakeCXXCompilerId.cpp']]]
+  ['_5fmath',['_math',['../namespacedevfix_1_1base_1_1__math.html',1,'devfix::base']]],
+  ['base',['base',['../namespacedevfix_1_1base.html',1,'devfix']]],
+  ['day',['day',['../structdevfix_1_1base_1_1time.html#ae5a080003e7020960c31e47cf30a21ba',1,'devfix::base::time']]],
+  ['default_5fclose',['DEFAULT_CLOSE',['../namespacedevfix_1_1base_1_1io.html#a14a286c17d4b93881d42b1d14beb2d0b',1,'devfix::base::io']]],
+  ['default_5fis_5fclosed',['DEFAULT_IS_CLOSED',['../namespacedevfix_1_1base_1_1io.html#ae04fec2a2a2db3482e624a59e59a2a14',1,'devfix::base::io']]],
+  ['default_5fread_5fblocking_5ftime',['DEFAULT_READ_BLOCKING_TIME',['../structdevfix_1_1net_1_1socket.html#a77c3214eb436d06825a4cc2aafcc63ce',1,'devfix::net::socket']]],
+  ['default_5ftimeout',['DEFAULT_TIMEOUT',['../structdevfix_1_1net_1_1socket.html#a1bd6468be497aed208ad6d5632683a5d',1,'devfix::net::socket']]],
+  ['default_5fwrite_5fblocking_5ftime',['DEFAULT_WRITE_BLOCKING_TIME',['../structdevfix_1_1net_1_1socket.html#a57ab1333bbc83d51468d33e11042f107',1,'devfix::net::socket']]],
+  ['devfix',['devfix',['../namespacedevfix.html',1,'']]],
+  ['dsp',['dsp',['../namespacedevfix_1_1dsp.html',1,'devfix']]],
+  ['error',['error',['../namespacedevfix_1_1base_1_1error.html',1,'devfix::base']]],
+  ['io',['io',['../namespacedevfix_1_1base_1_1io.html',1,'devfix::base']]],
+  ['net',['net',['../namespacedevfix_1_1net.html',1,'devfix']]]
 ];

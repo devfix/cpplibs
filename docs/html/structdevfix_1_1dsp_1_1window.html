@@ -64,6 +64,8 @@ $(function() {
 </div><!-- top -->
 <div class="header">
   <div class="summary">
+<a href="#nested-classes">Classes</a> &#124;
+<a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
 <a href="structdevfix_1_1dsp_1_1window-members.html">List of all members</a>  </div>
   <div class="headertitle">
@@ -73,17 +75,25 @@ $(function() {
 
 <p><code>#include &lt;<a class="el" href="window_8h_source.html">window.h</a>&gt;</code></p>
 <table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
+Classes</h2></td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window_1_1buffer.html">buffer</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
+Public Types</h2></td></tr>
+<tr class="memitem:ab2d2c0c5f5fca6dbcf91895115b69eac"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:ab2d2c0c5f5fca6dbcf91895115b69eac"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">win_fun_t</a> = FloatT(*)(std::size_t, std::size_t)</td></tr>
+<tr class="separator:ab2d2c0c5f5fca6dbcf91895115b69eac"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:aeba7905479c64bca5ac2fce0c6dbbf0b"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , FloatT(*)(std::size_t, std::size_t) win_fun&gt; </td></tr>
+<tr class="memitem:aeba7905479c64bca5ac2fce0c6dbbf0b"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , win_fun_t&lt; FloatT &gt; win_fun&gt; </td></tr>
 <tr class="memitem:aeba7905479c64bca5ac2fce0c6dbbf0b"><td class="memTemplItemLeft" align="right" valign="top">static constexpr FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html#aeba7905479c64bca5ac2fce0c6dbbf0b">calc_amplitude_gain</a> (std::size_t n)</td></tr>
 <tr class="separator:aeba7905479c64bca5ac2fce0c6dbbf0b"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aadef5782f4803866a74a6b9678c228c7"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , FloatT(*)(std::size_t, std::size_t) win_fun&gt; </td></tr>
-<tr class="memitem:aadef5782f4803866a74a6b9678c228c7"><td class="memTemplItemLeft" align="right" valign="top">static constexpr FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html#aadef5782f4803866a74a6b9678c228c7">get_window</a> (std::size_t n, std::size_t k)</td></tr>
-<tr class="separator:aadef5782f4803866a74a6b9678c228c7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:add23aaf0f9936857ad02a9d19b785849"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:add23aaf0f9936857ad02a9d19b785849"><td class="memTemplItemLeft" align="right" valign="top">static constexpr FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html#add23aaf0f9936857ad02a9d19b785849">hanning</a> (std::size_t N, std::size_t k)</td></tr>
-<tr class="separator:add23aaf0f9936857ad02a9d19b785849"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a94b16d1da4a560e625ae93284ed6f1a4"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a94b16d1da4a560e625ae93284ed6f1a4"><td class="memTemplItemLeft" align="right" valign="top">static constexpr FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html#a94b16d1da4a560e625ae93284ed6f1a4">hanning</a> (std::size_t n, std::size_t k)</td></tr>
+<tr class="separator:a94b16d1da4a560e625ae93284ed6f1a4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43beeead6e8922f5be05b6e17f7f2664"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
 <tr class="memitem:a43beeead6e8922f5be05b6e17f7f2664"><td class="memTemplItemLeft" align="right" valign="top">static constexpr FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html#a43beeead6e8922f5be05b6e17f7f2664">flattop</a> (std::size_t n, std::size_t k)</td></tr>
 <tr class="separator:a43beeead6e8922f5be05b6e17f7f2664"><td class="memSeparator" colspan="2">&#160;</td></tr>
@@ -94,6 +104,23 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:a334a42b01504381fb13459f566aa2025"><td class="memTemplItemLeft" align="right" valign="top">static constexpr FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html#a334a42b01504381fb13459f566aa2025">linear</a> (std::size_t n, std::size_t k)</td></tr>
 <tr class="separator:a334a42b01504381fb13459f566aa2025"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Member Typedef Documentation</h2>
+<a id="ab2d2c0c5f5fca6dbcf91895115b69eac"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab2d2c0c5f5fca6dbcf91895115b69eac">&#9670;&nbsp;</a></span>win_fun_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">devfix::dsp::window::win_fun_t</a> =  FloatT(*)(std::size_t, std::size_t)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="aeba7905479c64bca5ac2fce0c6dbbf0b"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#aeba7905479c64bca5ac2fce0c6dbbf0b">&#9670;&nbsp;</a></span>calc_amplitude_gain()</h2>
@@ -101,7 +128,7 @@ Static Public Member Functions</h2></td></tr>
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT , win_fun_t&lt; FloatT &gt; win_fun&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
@@ -161,46 +188,8 @@ template&lt;typename FloatT &gt; </div>
 
 </div>
 </div>
-<a id="aadef5782f4803866a74a6b9678c228c7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aadef5782f4803866a74a6b9678c228c7">&#9670;&nbsp;</a></span>get_window()</h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatT , FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static constexpr FloatT devfix::dsp::window::get_window </td>
-          <td>(</td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>n</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>k</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="add23aaf0f9936857ad02a9d19b785849"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#add23aaf0f9936857ad02a9d19b785849">&#9670;&nbsp;</a></span>hanning()</h2>
+<a id="a94b16d1da4a560e625ae93284ed6f1a4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a94b16d1da4a560e625ae93284ed6f1a4">&#9670;&nbsp;</a></span>hanning()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -214,7 +203,7 @@ template&lt;typename FloatT &gt; </div>
           <td class="memname">static constexpr FloatT devfix::dsp::window::hanning </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>N</em>, </td>
+          <td class="paramname"><em>n</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>

@@ -69,7 +69,7 @@ $(function() {
 : <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a9204dfb17067382f9e01295bc349d4f1">devfix::dsp::spectrogram&lt; FloatT, N, win_fun &gt;</a>
 </li>
 <li>apply_window()
-: <a class="el" href="structdevfix_1_1dsp_1_1fft.html#a14705eb963394aa042eec5f76696e3b2">devfix::dsp::fft</a>
+: <a class="el" href="structdevfix_1_1dsp_1_1fft.html#a715dd18ec8a7c196a2b1879c072b7094">devfix::dsp::fft</a>
 </li>
 <li>available()
 : <a class="el" href="structdevfix_1_1base_1_1io_1_1inputstream.html#ace04813af676b6c81fa452eb4d81a796">devfix::base::io::inputstream</a>
@@ -95,12 +95,18 @@ $(function() {
 <li>calc_coeffs()
 : <a class="el" href="structdevfix_1_1base_1_1interpolation.html#a785dcc23e3504edbd7240492a4b1b028">devfix::base::interpolation&lt; FloatT &gt;</a>
 </li>
+<li>clear()
+: <a class="el" href="structdevfix_1_1dsp_1_1window_1_1buffer.html#a525423f47082a367abe172a6ac61e65d">devfix::dsp::window::buffer&lt; FloatT, win_fun &gt;</a>
+</li>
 <li>close()
 : <a class="el" href="structdevfix_1_1base_1_1io_1_1inputstream.html#a1188eff97757eb9625be91dfeca17af7">devfix::base::io::inputstream</a>
 , <a class="el" href="structdevfix_1_1base_1_1io_1_1outputstream.html#a060c2e7040e6bb831b8150f64bd8abf7">devfix::base::io::outputstream</a>
 , <a class="el" href="structdevfix_1_1base_1_1io_1_1sink.html#a2b13891b8bb50f6d1a01c52d58154bc5">devfix::base::io::sink</a>
 , <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#aa00a381c8a166cbbc5dbf6de4b56590e">devfix::base::io::source</a>
 , <a class="el" href="structdevfix_1_1net_1_1serversocket.html#ab1762c3364c8298dbac6c3dd67a1e7aa">devfix::net::serversocket</a>
+</li>
+<li>convert_to_onesided()
+: <a class="el" href="structdevfix_1_1dsp_1_1fft.html#a7529cbbcd074fe451c13791acfb77fb0">devfix::dsp::fft</a>
 </li>
 <li>create_serversocket()
 : <a class="el" href="structdevfix_1_1net_1_1netbuilder.html#a9d685e1822c0be5d68fd6ba62876798b">devfix::net::netbuilder</a>
@@ -114,6 +120,9 @@ $(function() {
 <h3><a id="index_e"></a>- e -</h3><ul>
 <li>eval()
 : <a class="el" href="structdevfix_1_1base_1_1interpolation.html#ab769ce14a1e3bb758fa7b8b8db812101">devfix::base::interpolation&lt; FloatT &gt;</a>
+</li>
+<li>extract_angles()
+: <a class="el" href="structdevfix_1_1dsp_1_1fft.html#a7f34943ae3b66b6cf77b397f1a1c2386">devfix::dsp::fft</a>
 </li>
 </ul>
 
@@ -142,6 +151,9 @@ $(function() {
 </li>
 <li>get_family()
 : <a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a254e4950de6c6443a39196c6c7f58db4">devfix::net::inetaddress</a>
+</li>
+<li>get_filename()
+: <a class="el" href="structdevfix_1_1base_1_1platform.html#a5d491c9eadd0e09eafda6263852d37e4">devfix::base::platform</a>
 </li>
 <li>get_host()
 : <a class="el" href="structdevfix_1_1net_1_1inetaddress.html#a4524692fae7a767e38600012c6f8f3cf">devfix::net::inetaddress</a>
@@ -177,14 +189,14 @@ $(function() {
 : <a class="el" href="structdevfix_1_1base_1_1time.html#a14d0b48fe09bf355aa64f3a5e2c60418">devfix::base::time</a>
 </li>
 <li>get_window()
-: <a class="el" href="structdevfix_1_1dsp_1_1window.html#aadef5782f4803866a74a6b9678c228c7">devfix::dsp::window</a>
+: <a class="el" href="structdevfix_1_1dsp_1_1window_1_1buffer.html#a877f872e06b4709189e15c38f247445f">devfix::dsp::window::buffer&lt; FloatT, win_fun &gt;</a>
 </li>
 </ul>
 
 
 <h3><a id="index_h"></a>- h -</h3><ul>
 <li>hanning()
-: <a class="el" href="structdevfix_1_1dsp_1_1window.html#add23aaf0f9936857ad02a9d19b785849">devfix::dsp::window</a>
+: <a class="el" href="structdevfix_1_1dsp_1_1window.html#a94b16d1da4a560e625ae93284ed6f1a4">devfix::dsp::window</a>
 </li>
 </ul>
 
@@ -223,9 +235,6 @@ $(function() {
 <li>netbuilder()
 : <a class="el" href="structdevfix_1_1net_1_1netbuilder.html#a36946dc1bd85a68d5c38aaf8533dd401">devfix::net::netbuilder</a>
 </li>
-<li>normalize_amplitude()
-: <a class="el" href="structdevfix_1_1dsp_1_1fft.html#a1256d8b92604d120406a32fb13be7501">devfix::dsp::fft</a>
-</li>
 </ul>
 
 
@@ -242,6 +251,9 @@ $(function() {
 </li>
 <li>popcount()
 : <a class="el" href="structdevfix_1_1base_1_1math.html#a43815037f45e01d90a6c0cb0e1d8ef11">devfix::base::math</a>
+</li>
+<li>prepare()
+: <a class="el" href="structdevfix_1_1dsp_1_1window_1_1buffer.html#a3ace062676326a9981118d53b8ba5900">devfix::dsp::window::buffer&lt; FloatT, win_fun &gt;</a>
 </li>
 </ul>
 
@@ -281,13 +293,14 @@ $(function() {
 </li>
 <li>size()
 : <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a6dc48452751bc4b4f4e14088998ddbb7">devfix::dsp::spectrogram&lt; FloatT, N, win_fun &gt;</a>
+, <a class="el" href="structdevfix_1_1dsp_1_1window_1_1buffer.html#af1215d236069b0848e7211e5f697b3fa">devfix::dsp::window::buffer&lt; FloatT, win_fun &gt;</a>
 </li>
 <li>skip()
 : <a class="el" href="structdevfix_1_1base_1_1io_1_1inputstream.html#a1868a733fd646b29daae6874e07e4e03">devfix::base::io::inputstream</a>
 , <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#a21cb579307589cbc6f9e02d64c66f4b2">devfix::base::io::source</a>
 </li>
 <li>socketexception()
-: <a class="el" href="structdevfix_1_1net_1_1socketexception.html#a6da69f635eb11f932a0e960545d023bd">devfix::net::socketexception</a>
+: <a class="el" href="structdevfix_1_1net_1_1socketexception.html#aeab5d004d494103b37156a5f23a5296a">devfix::net::socketexception</a>
 </li>
 <li>source()
 : <a class="el" href="structdevfix_1_1base_1_1io_1_1source.html#af8bef20f5b54153c3fd1fbc7daa263c5">devfix::base::io::source</a>

@@ -1,6 +1,11 @@
 var searchData=
 [
-  ['table',['Table',['../structdevfix_1_1base_1_1__math_1_1Table.html',1,'devfix::base::_math']]],
-  ['time',['time',['../structdevfix_1_1base_1_1time.html',1,'devfix::base']]],
-  ['timeoutexception',['timeoutexception',['../structdevfix_1_1base_1_1error_1_1timeoutexception.html',1,'devfix::base::error']]]
+  ['serversocket',['serversocket',['../structdevfix_1_1net_1_1serversocket.html',1,'devfix::net']]],
+  ['sink',['sink',['../structdevfix_1_1base_1_1io_1_1sink.html',1,'devfix::base::io']]],
+  ['socket',['socket',['../structdevfix_1_1net_1_1socket.html',1,'devfix::net']]],
+  ['socketexception',['socketexception',['../structdevfix_1_1net_1_1socketexception.html',1,'devfix::net']]],
+  ['source',['source',['../structdevfix_1_1base_1_1io_1_1source.html',1,'devfix::base::io']]],
+  ['spectrogram',['spectrogram',['../structdevfix_1_1dsp_1_1spectrogram.html',1,'devfix::dsp']]],
+  ['strout',['strout',['../structdevfix_1_1base_1_1strout.html',1,'devfix::base']]],
+  ['strutil',['strutil',['../structdevfix_1_1base_1_1strutil.html',1,'devfix::base']]]
 ];

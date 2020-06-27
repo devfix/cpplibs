@@ -1,8 +1,9 @@
 var searchData=
 [
-  ['linear',['linear',['../structdevfix_1_1dsp_1_1window.html#a334a42b01504381fb13459f566aa2025',1,'devfix::dsp::window']]],
-  ['lnx_5fserversocket_2ecpp',['lnx_serversocket.cpp',['../lnx__serversocket_8cpp.html',1,'']]],
-  ['lnx_5fserversocket_2eh',['lnx_serversocket.h',['../lnx__serversocket_8h.html',1,'']]],
-  ['lnx_5fsocket_2ecpp',['lnx_socket.cpp',['../lnx__socket_8cpp.html',1,'']]],
-  ['lnx_5fsocket_2eh',['lnx_socket.h',['../lnx__socket_8h.html',1,'']]]
+  ['math',['math',['../structdevfix_1_1base_1_1math.html',1,'devfix::base::math'],['../structdevfix_1_1dsp_1_1fft.html#a466499f45d4ae1240f5ba7e8c44a4691',1,'devfix::dsp::fft::math()']]],
+  ['math_2eh',['math.h',['../math_8h.html',1,'']]],
+  ['memory_2eh',['memory.h',['../memory_8h.html',1,'']]],
+  ['minute',['minute',['../structdevfix_1_1base_1_1time.html#a2e36d9cbccf1144093e09674d4d9db24',1,'devfix::base::time']]],
+  ['month',['month',['../structdevfix_1_1base_1_1time.html#a781a7e9d96a916305e1a9e2c261c1a0f',1,'devfix::base::time']]],
+  ['multistring',['MULTISTRING',['../strutil_8h.html#a72f64e8a28f366adf3cad6c109082271',1,'strutil.h']]]
 ];
