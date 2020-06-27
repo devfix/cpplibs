@@ -4,9 +4,12 @@ add_library(${LIBRARY} error/baseexception.h error/interruptedexception.h memory
 set_target_properties(${LIBRARY} PROPERTIES LINKER_LANGUAGE CXX)
 target_compile_options(${LIBRARY} PRIVATE ${WARNINGS})
 
-if(NOT "${CMAKE_BUILD_TYPE}" STREQUAL "Release")
-    add_custom_target(PrintBuildType ALL
-        ${CMAKE_COMMAND} -E cmake_echo_color --red "### cmake build type: ${CMAKE_BUILD_TYPE} ###"
-        COMMENT "Library Build Type" )
-    add_dependencies(${LIBRARY} PrintBuildType )
-endif()
+if (NOT "${CMAKE_BUILD_TYPE}" STREQUAL "Release")
+    if (WIN32)
+        add_custom_target(warndebug ALL ${CMAKE_COMMAND} -E cmake_echo_color "" COMMENT "cmake build type is ${CMAKE_BUILD_TYPE}")
+    else ()
+        string(ASCII 27 esc)
+        add_custom_target(warndebug ALL ${CMAKE_COMMAND} -E cmake_echo_color "" COMMENT "${esc}[0;31mcmake build type is ${CMAKE_BUILD_TYPE}")
+    endif ()
+    add_dependencies(${LIBRARY} warndebug)
+endif ()
