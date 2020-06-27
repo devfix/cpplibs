@@ -33,8 +33,8 @@ TEST(FileSystem, Directories)
 	const std::string dir = tmp_dir + filesystem::SEPARATOR + "dir";
 
 	ASSERT_FALSE(filesystem::exists(dir));
-	ASSERT_ANY_THROW(filesystem::isdir(dir));
-	ASSERT_ANY_THROW(filesystem::isfile(dir));
+	ASSERT_ANY_THROW(static_cast<void>(filesystem::isdir(dir)));
+	ASSERT_ANY_THROW(static_cast<void>(filesystem::isfile(dir)));
 	ASSERT_NO_THROW(filesystem::mkdir(dir));
 	ASSERT_TRUE(filesystem::exists(dir));
 	ASSERT_TRUE(filesystem::isdir(dir));
