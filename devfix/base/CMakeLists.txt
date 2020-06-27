@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 set(LIBRARY "devfixbase")
-add_library(${LIBRARY} error/baseexception.h error/interruptedexception.h memory.h platform.h error/timeoutexception.h io/inputstream.h io/source.cpp io/source.h io/sink.cpp io/sink.h io/iotypes.h error/namespace.h strout.h interpolation.h time.h)
+
+file(GLOB_RECURSE src ${CMAKE_CURRENT_SOURCE_DIR} *.h *.hpp *.c *.cpp)
+list(FILTER src EXCLUDE REGEX "(test_[a-zA-Z_]+..*$)")  # test-cases are not part of the library
+add_library(${LIBRARY} "${src}")
+
 set_target_properties(${LIBRARY} PROPERTIES LINKER_LANGUAGE CXX)
 target_compile_options(${LIBRARY} PRIVATE ${WARNINGS})
 

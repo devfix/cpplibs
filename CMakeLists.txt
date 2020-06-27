@@ -92,7 +92,8 @@ if(DOXYGEN_FOUND)
 endif(DOXYGEN_FOUND)
 
 
-add_executable(testrunner devfix/net/test/test_socket.cpp testrunner.cpp devfix/net/test/test_inetaddress.cpp devfix/dsp/test/test_window.cpp devfix/base/test/test_math.cpp devfix/dsp/test/test_fft.cpp devfix/base/test/test_strout.cpp devfix/dsp/test/test_spectrogram.cpp devfix/base/test/test_interpolation.cpp)
+file(GLOB_RECURSE src_tests ${CMAKE_CURRENT_SOURCE_DIR} "test_*.cpp")
+add_executable(testrunner testrunner.cpp "${src_tests}")
 
 if(${ENABLE_GOOGLETEST})
     target_link_libraries(testrunner gtest devfixnet devfixdsp pthread)

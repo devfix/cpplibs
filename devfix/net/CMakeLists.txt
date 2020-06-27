@@ -1,6 +1,10 @@
 cmake_minimum_required(VERSION 3.0)
 set(LIBRARY "devfixnet")
-add_library(${LIBRARY} inetaddress.h inetaddress.cpp netbuilder.cpp netbuilder.h serversocket.h socketexception.h lnx/lnx_serversocket.cpp lnx/lnx_serversocket.h lnx/lnx_socket.h lnx/lnx_socket.cpp)
+
+file(GLOB_RECURSE src ${CMAKE_CURRENT_SOURCE_DIR} *.h *.hpp *.c *.cpp)
+list(FILTER src EXCLUDE REGEX "(test_[a-zA-Z_]+..*$)")  # test-cases are not part of the library
+add_library(${LIBRARY} "${src}")
+
 set_target_properties(${LIBRARY} PROPERTIES LINKER_LANGUAGE CXX)
 target_link_libraries(${LIBRARY} devfixbase)
 target_compile_options(${LIBRARY} PRIVATE ${WARNINGS})
