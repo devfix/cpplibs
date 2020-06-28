@@ -14,6 +14,7 @@
 #include <fcntl.h>
 #include <stdexcept>
 #include "../filesystem.h"
+#include "../error/ioexception.h"
 
 namespace devfix::base
 {
@@ -29,56 +30,52 @@ namespace devfix::base
 	bool filesystem::isfile(const std::string& filepath)
 	{
 		struct stat file_stat{};
-		if (::stat(filepath.c_str(), &file_stat)) { throw std::runtime_error(std::strerror(errno)); }
+		EXCEPTION_GUARD_ERRNO(::stat(filepath.c_str(), &file_stat), devfix::base::error::ioexception);
 		return S_ISREG(file_stat.st_mode);
 	}
 
 	void filesystem::touch(const std::string& filepath)
 	{
 		int file = ::open(filepath.c_str(), O_RDWR | O_CREAT, DEFFILEMODE);
-		if (file < 0) { throw std::runtime_error(std::strerror(errno)); }
-		if (::close(file)) { throw std::runtime_error(std::strerror(errno)); }
+		EXCEPTION_GUARD_ERRNO (file < 0, devfix::base::error::ioexception);
+		EXCEPTION_GUARD_ERRNO (::close(file), devfix::base::error::ioexception);
 	}
 
 	void filesystem::rm(const std::string& filepath)
 	{
-		if (std::remove(filepath.c_str())) { throw std::runtime_error(std::strerror(errno)); }
+		EXCEPTION_GUARD_ERRNO(std::remove(filepath.c_str()), devfix::base::error::ioexception);
 	}
 
 	bool filesystem::isdir(const std::string& filepath)
 	{
 		struct stat file_stat{};
-		if (::stat(filepath.c_str(), &file_stat)) { throw std::runtime_error(std::strerror(errno)); }
+		EXCEPTION_GUARD_ERRNO(::stat(filepath.c_str(), &file_stat), devfix::base::error::ioexception);
 		return S_ISDIR(file_stat.st_mode);
 	}
 
 	void filesystem::mkdir(const std::string& filepath)
 	{
-		if (::mkdir(filepath.c_str(), DEFAULT_LINUX_FILEMODE)) { throw std::runtime_error(std::strerror(errno)); }
+		EXCEPTION_GUARD_ERRNO(::mkdir(filepath.c_str(), DEFAULT_LINUX_FILEMODE), devfix::base::error::ioexception);
 	}
 
 	std::list<std::string> filesystem::lstdir(const std::string& filepath)
 	{
-		if (!exists(filepath)) { throw std::invalid_argument("filepath not found"); }
-		if (!isdir(filepath)) { throw std::invalid_argument("filepath is not directory"); }
+		EXCEPTION_GUARD_MSG (!exists(filepath), devfix::base::error::ioexception, "filepath not found");
+		EXCEPTION_GUARD_MSG(!isdir(filepath), devfix::base::error::ioexception, "filepath is not directory");
 
 		std::list<std::string> entries;
 		DIR* dir = nullptr;
 		struct dirent* entry;
-		dir = ::opendir(filepath.c_str());
-		if (dir)
+		EXCEPTION_GUARD_ERRNO(!(dir = ::opendir(filepath.c_str())), devfix::base::error::ioexception);
+		while ((entry = ::readdir(dir)))
 		{
-			while ((entry = ::readdir(dir)))
-			{
-				const char* name = entry->d_name;
-				std::size_t len = std::strlen(name);
+			const char* name = entry->d_name;
+			std::size_t len = std::strlen(name);
 
-				// only add real file name who are not "." or ".."
-				if ((len != 1 || name[0] != '.') && (len != 2 || name[0] != '.' || name[1] != '.')) { entries.emplace_back(name); }
-			}
-			::closedir(dir);
+			// only add real file name who are not "." or ".."
+			if ((len != 1 || name[0] != '.') && (len != 2 || name[0] != '.' || name[1] != '.')) { entries.emplace_back(name); }
 		}
-		else { throw std::runtime_error(std::strerror(errno)); }
+		EXCEPTION_GUARD_ERRNO(::closedir(dir), devfix::base::error::ioexception);
 		return entries;
 	}
 
@@ -97,10 +94,7 @@ namespace devfix::base
 			}
 			rmdir(filepath, false);
 		}
-		else
-		{
-			if (::rmdir(filepath.c_str())) { throw std::runtime_error(std::strerror(errno)); }
-		}
+		else { EXCEPTION_GUARD_ERRNO(::rmdir(filepath.c_str()), devfix::base::error::ioexception); }
 	}
 
 	std::string filesystem::get_temp_dir()
