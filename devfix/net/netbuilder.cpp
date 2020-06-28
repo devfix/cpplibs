@@ -11,7 +11,7 @@ namespace devfix::net
 	std::unique_ptr<socket> netbuilder::create_socket([[maybe_unused]] inetaddress adr)
 	{
 #if PLATFORM_LINUX == 1
-		return std::unique_ptr<lnx::lnx_socket>(new lnx::lnx_socket(adr));
+		return std::unique_ptr<lnx::socket>(new lnx::socket(adr));
 #else
 #pragma message ("Platform not supported")
 		return {};
@@ -22,7 +22,7 @@ namespace devfix::net
 		[[maybe_unused]] bool reuse_address)
 	{
 #if PLATFORM_LINUX == 1
-		return std::unique_ptr<lnx::lnx_serversocket>(new lnx::lnx_serversocket(adr, reuse_address));
+		return std::unique_ptr<lnx::serversocket>(new lnx::serversocket(adr, reuse_address));
 #else
 #pragma message ("Platform not supported")
 		return {};

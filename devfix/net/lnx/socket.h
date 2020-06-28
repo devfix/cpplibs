@@ -16,22 +16,19 @@
 #include "../../base/io/sink.h"
 
 
-// forward declaration for external netbuilder
-namespace devfix::net
-{
-	struct [[maybe_unused]] netbuilder; //!< forward declaration for constructor call in netbuilder
-}
+// forward declaration for constructor call in netbuilder
+namespace devfix::net {  struct [[maybe_unused]] netbuilder; }
 
 namespace devfix::net::lnx
 {
-	struct lnx_serversocket; //!< forward declaration for accept() in lnx_serversocket
+	struct serversocket; //!< forward declaration for accept() in lnx_serversocket
 
-	struct lnx_socket : public socket
+	struct socket : public devfix::net::socket
 	{
-		friend struct net::netbuilder; //!< friend declaration for constructor call in netbuilder
-		friend struct lnx_serversocket; //!< friend declaration for accept() in lnx_serversocket
+		friend struct devfix::net::netbuilder; //!< friend declaration for constructor call in netbuilder
+		friend struct devfix::net::lnx::serversocket; //!< friend declaration for accept() in lnx_serversocket
 
-		~lnx_socket() final;
+		~socket() final;
 
 		[[nodiscard]] const inetaddress& get_local_address() const noexcept final;
 		[[nodiscard]] const inetaddress& get_remote_address() const noexcept final;
@@ -54,8 +51,8 @@ namespace devfix::net::lnx
 		std::unique_ptr<base::io::source> source_;
 		std::unique_ptr<base::io::sink> sink_;
 
-		explicit lnx_socket(inetaddress remote_address);
-		lnx_socket(int fd, inetaddress remote_address);
+		explicit socket(inetaddress remote_address);
+		socket(int fd, inetaddress remote_address);
 
 		[[nodiscard]] inetaddress _get_local_address() const;
 		void _configure_io_timeout(int optname, timeout_t timeout);

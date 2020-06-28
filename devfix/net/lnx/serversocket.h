@@ -21,20 +21,20 @@ namespace devfix::net
 namespace devfix::net::lnx
 {
 
-	struct lnx_serversocket : public serversocket
+struct serversocket : public devfix::net::serversocket
 	{
 		friend struct net::netbuilder;
 
-		~lnx_serversocket() override;
+		~serversocket() override;
 
-		[[nodiscard]] std::unique_ptr<socket> accept() final;
+		[[nodiscard]] std::unique_ptr<devfix::net::socket> accept() final;
 
 		[[nodiscard]] const inetaddress& get_address() const final;
 
 		[[nodiscard]] bool get_reuse_address() const final;
 
-		void set_accept_timeout(socket::timeout_t timeout) final;
-		[[nodiscard]] socket::timeout_t get_accept_timeout() const final;
+		void set_accept_timeout(devfix::net::socket::timeout_t timeout) final;
+		[[nodiscard]] devfix::net::socket::timeout_t get_accept_timeout() const final;
 
 		void close() final;
 		[[nodiscard]] bool is_closed() const final;
@@ -45,7 +45,7 @@ namespace devfix::net::lnx
 		bool reuse_address_ = false;
 		int fd_ = -1;
 
-		lnx_serversocket(inetaddress inetaddress, bool reuse_address);
+		serversocket(inetaddress inetaddress, bool reuse_address);
 
 	};
 

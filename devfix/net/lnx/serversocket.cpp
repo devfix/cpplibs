@@ -7,20 +7,20 @@
 #if PLATFORM_LINUX == 1
 
 #include <unistd.h>
-#include "lnx_serversocket.h"
+#include "serversocket.h"
 #include "../../base/error/baseexception.h"
 #include "../socketexception.h"
-#include "lnx_socket.h"
+#include "socket.h"
 
 namespace devfix::net::lnx
 {
 
-	lnx_serversocket::~lnx_serversocket()
+	serversocket::~serversocket()
 	{
 		close();
 	}
 
-	std::unique_ptr<socket> lnx_serversocket::accept()
+	std::unique_ptr<devfix::net::socket> serversocket::accept()
 	{
 		struct sockaddr_in sockaddr_in{};
 		socklen_t socklen = sizeof(sockaddr_in);
@@ -28,30 +28,30 @@ namespace devfix::net::lnx
 		EXCEPTION_GUARD_ERRNO(fd < 0, socketexception);
 
 		inetaddress remote_address(sockaddr_in);
-		return std::unique_ptr<socket>(new lnx_socket(fd, remote_address));
+		return std::unique_ptr<socket>(new socket(fd, remote_address));
 	}
 
-	const inetaddress& lnx_serversocket::get_address() const
+	const inetaddress& serversocket::get_address() const
 	{
 		return local_address_;
 	}
 
-	bool lnx_serversocket::get_reuse_address() const
+	bool serversocket::get_reuse_address() const
 	{
 		return reuse_address_;
 	}
 
-	void lnx_serversocket::set_accept_timeout([[maybe_unused]] socket::timeout_t timeout)
+	void serversocket::set_accept_timeout([[maybe_unused]] socket::timeout_t timeout)
 	{
 		EXCEPTION_GUARD_MSG(true, socketexception, "This serversocket implementation does currently not support accept() with timeout.");
 	}
 
-	socket::timeout_t lnx_serversocket::get_accept_timeout() const
+	socket::timeout_t serversocket::get_accept_timeout() const
 	{
 		EXCEPTION_GUARD_MSG(true, socketexception, "This serversocket implementation does currently not support accept() with timeout.");
 	}
 
-	void lnx_serversocket::close()
+	void serversocket::close()
 	{
 		if (is_closed())
 		{
@@ -63,12 +63,12 @@ namespace devfix::net::lnx
 		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 	}
 
-	bool lnx_serversocket::is_closed() const
+	bool serversocket::is_closed() const
 	{
 		return fd_ < 0;
 	}
 
-	lnx_serversocket::lnx_serversocket(inetaddress inetaddress, bool reuse_address)
+	serversocket::serversocket(inetaddress inetaddress, bool reuse_address)
 		:
 		local_address_(inetaddress),
 		reuse_address_(reuse_address)
