@@ -2,15 +2,12 @@
 // Created by core on 6/3/20.
 //
 
-#if ENABLE_GOOGLETEST == 1
+#if CPPLIBS_ENABLE_TESTS == 1
 
-#include <gtest/gtest.h>
+#include <catch/catch.hpp>
 #include "../spectrogram.h"
 
 using namespace devfix::dsp;
-
-constexpr double ABS_ERROR = 1e-12;
-constexpr double ABS_COARSE_ERROR = 1e-3;
 
 template<int digits, typename T>
 constexpr T round(T val) { return std::round(val * std::pow(10, digits)) * std::pow(10, -digits); }
@@ -23,7 +20,7 @@ std::array<double, FFT_LEN> get_magnitudes(const std::array<std::complex<double>
 	return mag;
 }
 
-TEST(Spectrogram, RectangleWindow)
+TEST_CASE("Spectrogram - RectangleWindow")
 {
 	// generate test data
 	constexpr std::size_t FFT_LEN = 8;
@@ -46,16 +43,16 @@ TEST(Spectrogram, RectangleWindow)
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730949 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730947 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
@@ -63,8 +60,8 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 1.7071067811865479 / FFT_LEN, 2.5495097567963922 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 0.70710678118654768 / FFT_LEN,
 			  0.29289321881345265 / FFT_LEN, 0.70710678118654746 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 2.5495097567963922 / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
@@ -72,24 +69,24 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN,
 			  0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
 			{ 0, 4. / FFT_LEN, 0, 0, 0, 0, 0, 4. / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
 			{ 0, 4. / FFT_LEN, 0, 0, 0, 0, 0, 4. / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
@@ -97,8 +94,8 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN,
 			  0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
@@ -106,22 +103,22 @@ TEST(Spectrogram, RectangleWindow)
 		std::array<double, FFT_LEN> expected =
 			{ 1.7071067811865479 / FFT_LEN, 2.5495097567963922 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 0.70710678118654768 / FFT_LEN,
 			  0.29289321881345265 / FFT_LEN, 0.70710678118654746 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 2.5495097567963922 / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 	{
 		auto win = spec.pop();
 		auto mag = get_magnitudes<FFT_LEN>(win);
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730949 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
-		ASSERT_EQ(mag.size(), expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+		REQUIRE(mag.size() == expected.size());
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 	}
 
-	ASSERT_ANY_THROW(spec.pop());
+	REQUIRE_THROWS(spec.pop());
 }
 
-TEST(Spectrogram, FlattopWindow)
+TEST_CASE("Spectrogram - FlattopWindow")
 {
 	// generate test data
 	constexpr std::size_t FFT_LEN = 256;
@@ -184,13 +181,13 @@ TEST(Spectrogram, FlattopWindow)
 	};
 	for (auto& v: expected) { v /= FFT_LEN; }  // fft implementation changed, correction now already happens in fft_transform
 
-	ASSERT_EQ(mag.size(), expected.size());
+	REQUIRE(mag.size() == expected.size());
 	for (std::size_t i = 0; i < win.size(); i++)
 	{
-		ASSERT_NEAR(mag[i], expected[i], ABS_COARSE_ERROR); // ABS_DOUBLE_ERROR is too precise here
+		REQUIRE(mag[i] == Approx(expected[i])); // ABS_DOUBLE_ERROR is too precise here
 	}
 
-	ASSERT_ANY_THROW(spec.pop());
+	REQUIRE_THROWS(spec.pop());
 }
 
 #endif

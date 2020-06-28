@@ -3,9 +3,9 @@
 //
 
 
-#if ENABLE_GOOGLETEST == 1
+#if CPPLIBS_ENABLE_TESTS == 1
 
-#include <gtest/gtest.h>
+#include <catch/catch.hpp>
 #include <functional>
 #include "../fft.h"
 
@@ -19,7 +19,7 @@ constexpr std::size_t LEN = 1024;
 template<int digits, typename T>
 constexpr T round(T val) { return std::round(val * std::pow(10, digits)) * std::pow(10, -digits); }
 
-TEST(FFT, MultipleFreqs)
+TEST_CASE("FFT - MultipleFreqs")
 {
 	std::vector<std::complex<double>> vec(LEN);
 	for (std::size_t i = 0; i < vec.size(); i++)
@@ -36,18 +36,18 @@ TEST(FFT, MultipleFreqs)
 	std::transform(mag.begin(), mag.end(), mag.begin(), round<3, double>);
 
 	// symmetric test for fft result
-	for (std::size_t i = 1; i < LEN / 2; i++) { ASSERT_EQ(mag[i], mag[LEN - i]); }
+	for (std::size_t i = 1; i < LEN / 2; i++) { REQUIRE(mag[i] == mag[LEN - i]); }
 
 	// test expected amplitudes
-	ASSERT_NEAR(mag[0], 1. * 4, ABS_ERROR);
-	ASSERT_NEAR(mag[1], 1. / 8, ABS_ERROR);
-	ASSERT_NEAR(mag[2], 1. / 4, ABS_ERROR);
-	ASSERT_NEAR(mag[3], 0, ABS_ERROR);
-	ASSERT_NEAR(mag[4], 1. / 2, ABS_ERROR);
-	for (std::size_t i = 5; i < LEN / 2; i++) { ASSERT_NEAR(mag[i], 0, ABS_ERROR); }
+	REQUIRE(mag[0] == Approx(1. * 4));
+	REQUIRE(mag[1] == Approx(1. / 8));
+	REQUIRE(mag[2] == Approx(1. / 4));
+	REQUIRE(mag[3] == Approx(0));
+	REQUIRE(mag[4] == Approx(1. / 2));
+	for (std::size_t i = 5; i < LEN / 2; i++) { REQUIRE(mag[i] == Approx(0)); }
 }
 
-TEST(FFT, ApplyWindowPointer)
+TEST_CASE("FFT - ApplyWindowPointer")
 {
 	std::vector<std::complex<double>> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
 	fft::apply_window<double, window::linear>(vec.data(), vec.size());
@@ -56,11 +56,11 @@ TEST(FFT, ApplyWindowPointer)
 	std::vector<double> expected = {
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
-	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+	REQUIRE(mag.size() == expected.size());
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 }
 
-TEST(FFT, ApplyWindowVector)
+TEST_CASE("FFT - ApplyWindowVector")
 {
 	std::vector<std::complex<double>> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
 	fft::apply_window<double, window::linear>(vec);
@@ -69,11 +69,11 @@ TEST(FFT, ApplyWindowVector)
 	std::vector<double> expected = {
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
-	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+	REQUIRE(mag.size() == expected.size());
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 }
 
-TEST(FFT, ApplyWindowArray)
+TEST_CASE("FFT - ApplyWindowArray")
 {
 	std::array<std::complex<double>, 8> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
 	fft::apply_window<double, window::linear>(vec);
@@ -82,11 +82,11 @@ TEST(FFT, ApplyWindowArray)
 	std::vector<double> expected = {
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
-	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+	REQUIRE(mag.size() == expected.size());
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 }
 
-TEST(FFT, AmplitudeNormalization)
+TEST_CASE("FFT - AmplitudeNormalization")
 {
 	std::vector<std::complex<double>> vec(128);
 	for (std::size_t i = 0; i < vec.size(); i++)
@@ -105,11 +105,11 @@ TEST(FFT, AmplitudeNormalization)
 	std::vector<double> expected =
 		{ 4, 0.25, 0.5, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
-	ASSERT_EQ(positive.size(), expected.size());
-	for (std::size_t i = 0; i < positive.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_ERROR); }
+	REQUIRE(positive.size() == expected.size());
+	for (std::size_t i = 0; i < positive.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 }
 
-TEST(FFT, AmplitudeNormalizationWithFlatTop)
+TEST_CASE("FFT - AmplitudeNormalizationWithFlatTop")
 {
 	constexpr std::size_t FFT_LEN = 128;
 	std::vector<std::complex<double>> vec(FFT_LEN);
@@ -134,11 +134,11 @@ TEST(FFT, AmplitudeNormalizationWithFlatTop)
 		  3.73776e-06, 3.36303e-06, 3.04274e-06, 2.76813e-06, 2.53178e-06, 2.32763e-06, 2.15073e-06, 1.99712e-06, 1.86362e-06, 1.74766e-06,
 		  1.64719e-06, 1.56058e-06, 1.48654e-06, 1.42403e-06, 1.37227e-06, 1.33064e-06, 1.29868e-06, 1.27607e-06, 1.26258e-06,
 		};
-	ASSERT_EQ(mag.size(), expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { ASSERT_NEAR(mag[i], expected[i], ABS_COARSE_ERROR); }
+	REQUIRE(mag.size() == expected.size());
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
 }
 
-TEST(FFT, PhaseExtraction)
+TEST_CASE("FFT - PhaseExtraction")
 {
 	constexpr std::size_t FFT_LEN = 128;
 	std::vector<std::complex<double>> vec(FFT_LEN);
@@ -155,12 +155,12 @@ TEST(FFT, PhaseExtraction)
 	auto angles = fft::extract_angles(positive, 0.1);
 
 	std::size_t line_a = FFT_LEN / 32, line_b = FFT_LEN / 8, line_c = FFT_LEN / 4;
-	ASSERT_NEAR(angles[line_a], M_PI, ABS_COARSE_ERROR);
-	ASSERT_NEAR(angles[line_b], M_PI / 2, ABS_COARSE_ERROR);
-	ASSERT_NEAR(angles[line_c], M_PI / 4, ABS_COARSE_ERROR);
+	REQUIRE(angles[line_a] == Approx(M_PI));
+	REQUIRE(angles[line_b] == Approx(M_PI / 2));
+	REQUIRE(angles[line_c] == Approx(M_PI / 4));
 	for (std::size_t i = 0; i < angles.size(); i++)
 	{
-		if (i != line_a && i != line_b && i != line_c) { ASSERT_NEAR(angles[i], 0, ABS_ERROR); }
+		if (i != line_a && i != line_b && i != line_c) { REQUIRE(angles[i] == Approx(0)); }
 	}
 }
 
