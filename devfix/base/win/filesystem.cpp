@@ -6,6 +6,8 @@
 
 #if PLATFORM_WINDOWS == 1
 
+#include <stdexcept>
+
 #include "../filesystem.h"
 
 namespace devfix::base

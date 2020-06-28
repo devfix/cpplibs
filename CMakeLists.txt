@@ -67,6 +67,8 @@ endif()
 
 
 ########
+set(gtest_disable_pthreads ON)
+set(CMAKE_CXX_EXTENSIONS ON)
 # Download and unpack googletest at configure time
 configure_file(CMakeLists.txt.in googletest-download/CMakeLists.txt)
 execute_process(COMMAND ${CMAKE_COMMAND} -G "${CMAKE_GENERATOR}" .
