@@ -29,15 +29,15 @@ namespace devfix::net::lnx
 
 		[[nodiscard]] std::unique_ptr<socket> accept() final;
 
-		[[nodiscard]] const inetaddress& get_address() const noexcept final;
+		[[nodiscard]] const inetaddress& get_address() const final;
 
-		[[nodiscard]] bool get_reuse_address() const noexcept final;
+		[[nodiscard]] bool get_reuse_address() const final;
 
 		void set_accept_timeout(socket::timeout_t timeout) final;
-		[[nodiscard]] socket::timeout_t get_accept_timeout() const noexcept final;
+		[[nodiscard]] socket::timeout_t get_accept_timeout() const final;
 
 		void close() final;
-		[[nodiscard]] bool is_closed() const noexcept final;
+		[[nodiscard]] bool is_closed() const final;
 
 	private:
 		static constexpr int MAX_QUEUED_REQUESTS = 5;

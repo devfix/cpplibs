@@ -26,7 +26,7 @@ namespace devfix::net
 #if PLATFORM_LINUX == 1
 		// hostent may points to static data, no free() required
 		struct hostent* hostent = ::gethostbyname(host.data());
-		exception_guard(!hostent, socketexception);
+		EXCEPTION_GUARD_ERRNO(!hostent, socketexception);
 		address_ = *reinterpret_cast<address_t*>(hostent->h_addr);
 #endif
 
@@ -61,7 +61,7 @@ namespace devfix::net
 				break;
 			case family_t::UNSPECIFIED:
 			default:
-				exception_guard_m(true, socketexception, "unspecified or unsupported address family");
+				EXCEPTION_GUARD_MSG(true, socketexception, "unspecified or unsupported address family");
 		}
 		return address_family;
 	}
@@ -74,7 +74,7 @@ namespace devfix::net
 				family_ = family_t::IPV4;
 				break;
 			default:
-				exception_guard_m(true, socketexception, "unspecified or unsupported address family");
+				EXCEPTION_GUARD_MSG(true, socketexception, "unspecified or unsupported address family");
 		}
 	}
 

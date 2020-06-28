@@ -18,7 +18,7 @@ namespace devfix::base::error
 		 * @param what_arg explanatory std::string
 		 * @param err c error code (errno)
 		 */
-		explicit ioexception(const std::string& what_arg, int err = -1)
+		explicit ioexception(const std::string& what_arg, int err = 0)
 			: baseexception(what_arg, err)
 		{
 		}
@@ -28,7 +28,7 @@ namespace devfix::base::error
 		 * @param what_arg explanatory c-string
 		 * @param err c error code (errno)
 		 */
-		explicit ioexception(const char* what_arg, int err = -1)
+		explicit ioexception(const char* what_arg, int err = 0)
 			: baseexception(what_arg, err)
 		{
 		}

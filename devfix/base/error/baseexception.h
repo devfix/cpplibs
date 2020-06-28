@@ -8,6 +8,17 @@
 #include <string>
 #include <cstring>
 
+
+#define EXCEPTION_GUARD_ERRNO(err, exception_class) \
+  if (err) throw exception_class(std::string(std::strerror(errno)) + " @ " + SOURCE_LINE, errno)
+
+#define EXCEPTION_GUARD_MSG(err, exception_class, message) \
+  if (err) throw exception_class(std::string(message) + " @ " + SOURCE_LINE, errno)
+
+#define EXCEPTION_GUARD(err, exception_class) \
+  if (err) throw exception_class(std::string(message) + " @ " + SOURCE_LINE, 0)
+
+
 namespace devfix::base::error
 {
 
@@ -27,12 +38,9 @@ namespace devfix::base::error
 		/**
 		 * Constructs the error object with what_arg as explanatory std::string that can be accessed through what().
 		 * @param what_arg failure description
-		 * @param err c error code (errno)
+		 * @param err platform error code (errno)
 		 */
-		explicit baseexception(std::string what_arg, int err = -1)
-			: what_arg_(std::move(what_arg)), err_(err)
-		{
-		}
+		explicit baseexception(const std::string& what_arg, int err = 0) : what_arg_(what_arg), err_(err) {}
 
 		/**
 		 * Virtual constructor to make class abstract.
@@ -43,26 +51,18 @@ namespace devfix::base::error
 		 * Returns a C-style character string describing the general cause of the current error.
 		 * @return explanatory string
 		 */
-		[[nodiscard]] const char* what() const noexcept final
-		{
-			return what_arg_.data();
-		}
+		[[nodiscard]] const char* what() const noexcept final { return what_arg_.data(); }
 
-		[[nodiscard]] int get_errno() const noexcept
-		{
-			return err_;
-		}
+		/**
+		 * \brief Returns a platform specific error code which corresponds with the exception cause.
+		 * A value of '0' means unspecified error code.
+		 * \return error code
+		 */
+		[[nodiscard]] int get_code() const noexcept { return err_; }
 
 	protected:
 		std::string what_arg_; //!< failure description
-		int err_;
+		int err_; //!< platform specific error code
 	};
-
-#define exception_guard_m(err, exception_class, message) \
-  if (err) \
-    throw exception_class(message + std::string(" @ ") + SOURCE_LINE, errno)
-
-#define exception_guard(err, exception_class) \
-  exception_guard_m(err, exception_class, std::strerror(errno))
 
 } // namespace devfix::base::error

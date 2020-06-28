@@ -34,13 +34,13 @@ namespace devfix::net
 		 * The ip address of the inetaddress can be used to restrict the access of clients to the server.
 		 * \return bound inetaddress
 		 */
-		[[nodiscard]] virtual const inetaddress& get_address() const noexcept = 0;
+		[[nodiscard]] virtual const inetaddress& get_address() const = 0;
 
 		/**
 		 * \brief Get if binding to a port which remains in TIME_WAIT state is allowed.
 		 * \return true if allowed
 		 */
-		[[nodiscard]] virtual bool get_reuse_address() const noexcept = 0;
+		[[nodiscard]] virtual bool get_reuse_address() const = 0;
 
 		/**
 		 * \brief Set the accept timeout.
@@ -57,7 +57,7 @@ namespace devfix::net
 		 * If the timeout ist zero the feature is disabled.
 		 * \return timeout
 		 */
-		[[nodiscard]] virtual socket::timeout_t get_accept_timeout() const noexcept = 0;
+		[[nodiscard]] virtual socket::timeout_t get_accept_timeout() const = 0;
 
 		/**
 		 * \brief Closes this <i>serversocket</i> and releases any system resources associated.
@@ -72,7 +72,7 @@ namespace devfix::net
 		 *
 		 * @return true if the <i>serversocket</i> got previously closed.
 		 */
-		[[nodiscard]] virtual bool is_closed() const noexcept = 0;
+		[[nodiscard]] virtual bool is_closed() const = 0;
 	};
 
 } // namespace devfix::net

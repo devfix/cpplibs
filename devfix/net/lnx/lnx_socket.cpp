@@ -89,12 +89,12 @@ namespace devfix::net::lnx
 	{
 		// create socket
 		fd_ = ::socket(remote_address_.get_linux_family(), SOCK_STREAM, 0);
-		exception_guard(fd_ < 0, socketexception);
+		EXCEPTION_GUARD_ERRNO(fd_ < 0, socketexception);
 
 		// connect socket to remote address
 		auto sockaddr_remote = static_cast<struct sockaddr_in>(remote_address);
 		int rc = ::connect(fd_, reinterpret_cast<struct sockaddr*>(&sockaddr_remote), sizeof(sockaddr_remote));
-		exception_guard(rc, socketexception);
+		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 
 		local_address_ = _get_local_address();
 		inetaddress a;
@@ -135,7 +135,7 @@ namespace devfix::net::lnx
 		struct sockaddr_in sockaddr_in{};
 		socklen_t socklen = sizeof(sockaddr_in);
 		rc = getsockname(fd_, reinterpret_cast<struct sockaddr*>(&sockaddr_in), &socklen);
-		exception_guard(rc, socketexception);
+		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 		return inetaddress(sockaddr_in);
 	}
 
@@ -147,7 +147,7 @@ namespace devfix::net::lnx
 			(timeout % 1000) * 1000
 		};
 		int rc = ::setsockopt(fd_, SOL_SOCKET, optname, reinterpret_cast<char*>(&tv), sizeof tv);
-		exception_guard(rc, socketexception);
+		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 	}
 
 	void lnx_socket::_read(void* buf, std::size_t len)
@@ -176,7 +176,7 @@ namespace devfix::net::lnx
 				time += DEFAULT_READ_BLOCKING_TIME;
 			} else
 			{
-				exception_guard(true, socketexception);
+				EXCEPTION_GUARD_ERRNO(true, socketexception);
 			}
 		}
 	}
@@ -207,14 +207,14 @@ namespace devfix::net::lnx
 				time += DEFAULT_WRITE_BLOCKING_TIME;
 			} else
 			{
-				exception_guard(true, socketexception);
+				EXCEPTION_GUARD_ERRNO(true, socketexception);
 			}
 		}
 	}
 
 	void lnx_socket::_skip(std::size_t n)
 	{
-		exception_guard(::lseek(fd_, static_cast<long>(n), SEEK_CUR), socketexception);
+		EXCEPTION_GUARD_ERRNO(::lseek(fd_, static_cast<long>(n), SEEK_CUR), socketexception);
 	}
 
 	void lnx::lnx_socket::_flush()
@@ -222,17 +222,17 @@ namespace devfix::net::lnx
 		// disable Nagle algorithm and re-enable it
 		int flag = 1;
 		int rc = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
-		exception_guard(rc, socketexception);
+		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 
 		flag = 0;
 		rc = setsockopt(fd_, IPPROTO_TCP, TCP_NODELAY, &flag, sizeof(flag));
-		exception_guard(rc, socketexception);
+		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 	}
 
 	std::size_t lnx_socket::_available()
 	{
 		int n;
-		exception_guard(::ioctl(fd_, FIONREAD, &n), socketexception);
+		EXCEPTION_GUARD_ERRNO(::ioctl(fd_, FIONREAD, &n), socketexception);
 		return static_cast<std::size_t>(n);
 	}
 
@@ -245,7 +245,7 @@ namespace devfix::net::lnx
 
 		int rc = ::close(fd_);
 		fd_ = -1;
-		exception_guard(rc, socketexception);
+		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 	}
 
 	bool lnx_socket::_is_closed()
