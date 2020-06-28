@@ -1,32 +1,11 @@
 //
-// Created by core on 12/29/19.
+// Created by core on 06/28/20.
 //
 
-#define CATCH_CONFIG_MAIN
-#include <catch/catch.hpp>
+#define CATCH_CONFIG_RUNNER
+#include "catch.hpp"
 
-/*
-#if ENABLE_GOOGLETEST == 1
-#include <gtest/gtest.h>
-
-int main(int argc, char** argv)
+int main(int argc, char* argv[])
 {
-	testing::InitGoogleTest(&argc, argv);
-	return RUN_ALL_TESTS();
+	return Catch::Session().run(argc, argv);
 }
-#else
-
-#pragma message ("Googletest is disabled.")
-
-#include <iostream>
-
-void test_dsp();
-
-int main()
-{
-	std::cout << "testrunner stub: googletest is disabled." << std::endl;
-	test_dsp();
-}
-
-#endif*/
-////

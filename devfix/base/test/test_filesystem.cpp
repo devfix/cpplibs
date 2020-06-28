@@ -2,9 +2,9 @@
 // Created by core on 5/25/20.
 //
 
-#if ENABLE_GOOGLETEST == 1
+#if CPPLIBS_ENABLE_TESTS == 1
 
-#include <gtest/gtest.h>
+#include <catch/catch.hpp>
 #include "../filesystem.h"
 
 using namespace devfix::base;
@@ -24,41 +24,41 @@ void epilog()
 	if (filesystem::exists(tmp_dir)) { filesystem::rmdir(tmp_dir, true); }
 }
 
-TEST(FileSystem, Directories)
+TEST_CASE("FileSystem - Directories")
 {
 #if PLATFORM_LINUX == 1
-	ASSERT_ANY_THROW(filesystem::mkdir("/bad-permission-test"));
+	REQUIRE_THROWS(filesystem::mkdir("/bad-permission-test"));
 #endif
 	prolog();
 	const std::string dir = tmp_dir + filesystem::SEPARATOR + "dir";
 
-	ASSERT_FALSE(filesystem::exists(dir));
-	ASSERT_ANY_THROW(static_cast<void>(filesystem::isdir(dir)));
-	ASSERT_ANY_THROW(static_cast<void>(filesystem::isfile(dir)));
-	ASSERT_NO_THROW(filesystem::mkdir(dir));
-	ASSERT_TRUE(filesystem::exists(dir));
-	ASSERT_TRUE(filesystem::isdir(dir));
-	ASSERT_FALSE(filesystem::isfile(dir));
-	ASSERT_NO_THROW(filesystem::rmdir(dir));
-	ASSERT_FALSE(filesystem::exists(dir));
-	ASSERT_ANY_THROW(filesystem::rmdir(dir));
+	REQUIRE_FALSE(filesystem::exists(dir));
+	REQUIRE_THROWS(static_cast<void>(filesystem::isdir(dir)));
+	REQUIRE_THROWS(static_cast<void>(filesystem::isfile(dir)));
+	REQUIRE_NOTHROW(filesystem::mkdir(dir));
+	REQUIRE(filesystem::exists(dir));
+	REQUIRE(filesystem::isdir(dir));
+	REQUIRE_FALSE(filesystem::isfile(dir));
+	REQUIRE_NOTHROW(filesystem::rmdir(dir));
+	REQUIRE_FALSE(filesystem::exists(dir));
+	REQUIRE_THROWS(filesystem::rmdir(dir));
 
 	epilog();
 }
 
-TEST(FileSystem, List)
+TEST_CASE("FileSystem - List")
 {
 	prolog();
 	auto list = filesystem::lstdir(tmp_dir);
-	ASSERT_EQ(list.size(), 3);
-	ASSERT_TRUE(std::find(list.begin(), list.end(), "z") == list.end());
-	ASSERT_FALSE(std::find(list.begin(), list.end(), "a") == list.end());
-	ASSERT_FALSE(std::find(list.begin(), list.end(), "b") == list.end());
-	ASSERT_FALSE(std::find(list.begin(), list.end(), "c") == list.end());
+	REQUIRE(list.size() == 3);
+	REQUIRE(std::find(list.begin(), list.end(), "z") == list.end());
+	REQUIRE_FALSE(std::find(list.begin(), list.end(), "a") == list.end());
+	REQUIRE_FALSE(std::find(list.begin(), list.end(), "b") == list.end());
+	REQUIRE_FALSE(std::find(list.begin(), list.end(), "c") == list.end());
 	epilog();
 }
 
-TEST(FileSystem, RecursiveDelete)
+TEST_CASE("FileSystem - RecursiveDelete")
 {
 	prolog();
 	filesystem::mkdir(tmp_dir + filesystem::SEPARATOR + "d");
@@ -69,12 +69,12 @@ TEST(FileSystem, RecursiveDelete)
 	filesystem::touch(tmp_dir + filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "f");
 	filesystem::touch(tmp_dir +
 		filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "f");
-	ASSERT_TRUE(filesystem::exists(
+	REQUIRE(filesystem::exists(
 		tmp_dir + filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "d" + filesystem::SEPARATOR + "f"));
 
 	filesystem::rmdir(tmp_dir, true);
 
-	ASSERT_FALSE(filesystem::exists(tmp_dir));
+	REQUIRE_FALSE(filesystem::exists(tmp_dir));
 	epilog();
 }
 

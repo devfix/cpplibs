@@ -2,14 +2,14 @@
 // Created by core on 6/2/20.
 //
 
-#if ENABLE_GOOGLETEST == 1
+#if CPPLIBS_ENABLE_TESTS == 1
 
-#include <gtest/gtest.h>
+#include <catch/catch.hpp>
 #include "../strout.h"
 
 using namespace devfix::base;
 
-TEST(TestStrOut, BufferBehavior)
+TEST_CASE("StrOut - BufferBehavior")
 {
 	// prolog
 	std::stringstream buf;
@@ -19,22 +19,22 @@ TEST(TestStrOut, BufferBehavior)
 
 	os << "test message.";
 	buf.flush();
-	ASSERT_STREQ(buf.str().c_str(), "");
+	REQUIRE(buf.str().empty());
 
 	os << std::flush;
 	buf.flush();
-	ASSERT_STREQ(buf.str().c_str(), "[prefix] test message.");
+	REQUIRE(buf.str() == "[prefix] test message.");
 
 	buf.str(""); // clear buffer
 	os << " more content, without prefix now and newline" << std::endl;
-	ASSERT_STREQ(buf.str().c_str(), " more content, without prefix now and newline\n");
+	REQUIRE(buf.str() == " more content, without prefix now and newline\n");
 
 	buf.str(""); // clear buffer
 	os << "oneline message with differend newline\n";
-	ASSERT_STREQ(buf.str().c_str(), "[prefix] oneline message with differend newline\n");
+	REQUIRE(buf.str() == "[prefix] oneline message with differend newline\n");
 }
 
-TEST(TestStrOut, BufferBehaviorWchar)
+TEST_CASE("StrOut - BufferBehaviorWchar")
 {
 	// prolog
 	std::wstringstream buf;
@@ -44,22 +44,22 @@ TEST(TestStrOut, BufferBehaviorWchar)
 
 	os << L"test message.";
 	buf.flush();
-	ASSERT_STREQ(buf.str().c_str(), L"");
+	REQUIRE(buf.str().empty());
 
 	os << std::flush;
 	buf.flush();
-	ASSERT_STREQ(buf.str().c_str(), L"[prefix] test message.");
+	REQUIRE(buf.str() == L"[prefix] test message.");
 
 	buf.str(L""); // clear buffer
 	os << " more content, without prefix now and newline" << std::endl;
-	ASSERT_STREQ(buf.str().c_str(), L" more content, without prefix now and newline\n");
+	REQUIRE(buf.str() == L" more content, without prefix now and newline\n");
 
 	buf.str(L""); // clear buffer
 	os << L"oneline message with differend newline\n";
-	ASSERT_STREQ(buf.str().c_str(), L"[prefix] oneline message with differend newline\n");
+	REQUIRE(buf.str() == L"[prefix] oneline message with differend newline\n");
 }
 
-TEST(TestStrOut, EnableDisable)
+TEST_CASE("StrOut - EnableDisable")
 {
 	// prolog
 	std::stringstream buf;
@@ -71,15 +71,15 @@ TEST(TestStrOut, EnableDisable)
 	os << std::flush;
 	os << " more content, without prefix now and newline" << std::endl;
 	os << "oneline message with differend newline\n";
-	ASSERT_STREQ(buf.str().c_str(), ""); // should be empty since disabled
+	REQUIRE(buf.str().empty()); // should be empty since disabled
 
 
 	str_out.set_enabled(true);
 	os << "new content, now enabled" << std::flush;
-	ASSERT_STREQ(buf.str().c_str(), "new content, now enabled"); // now new content
+	REQUIRE(buf.str() == "new content, now enabled"); // now new content
 }
 
-TEST(TestStrOut, EnableDisableWchar)
+TEST_CASE("StrOut - EnableDisableWchar")
 {
 	// prolog
 	std::wstringstream buf;
@@ -91,15 +91,15 @@ TEST(TestStrOut, EnableDisableWchar)
 	os << std::flush;
 	os << L" more content, without prefix now and newline" << std::endl;
 	os << L"oneline message with differend newline\n";
-	ASSERT_STREQ(buf.str().c_str(), L""); // should be empty since disabled
+	REQUIRE(buf.str().empty()); // should be empty since disabled
 
 
 	str_out.set_enabled(true);
 	os << L"new content, now enabled" << std::flush;
-	ASSERT_STREQ(buf.str().c_str(), L"new content, now enabled"); // now new content
+	REQUIRE(buf.str() == L"new content, now enabled"); // now new content
 }
 
-TEST(TestStrOut, StartOfText)
+TEST_CASE("StrOut - StartOfText")
 {
 	// prolog
 	std::stringstream buf;
@@ -109,17 +109,17 @@ TEST(TestStrOut, StartOfText)
 	os << "first";
 	os << decltype(str_out)::STX << "second";
 	os << std::flush;
-	ASSERT_STREQ(buf.str().c_str(), "\033[2K\rsecond"); // first message got dropped
+	REQUIRE(buf.str() == "\033[2K\rsecond"); // first message got dropped
 
 	buf.str(""); // clear buffer
 	os << "first";
 	os << std::flush;
 	os << decltype(str_out)::STX << "second";
 	os << std::flush;
-	ASSERT_STREQ(buf.str().c_str(), "first\033[2K\rsecond"); // first message gets clear by escape sequences
+	REQUIRE(buf.str() == "first\033[2K\rsecond"); // first message gets clear by escape sequences
 }
 
-TEST(TestStrOut, StartOfTextWchar)
+TEST_CASE("StrOut - StartOfTextWchar")
 {
 	// prolog
 	std::wstringstream buf;
@@ -129,14 +129,14 @@ TEST(TestStrOut, StartOfTextWchar)
 	os << L"first";
 	os << decltype(str_out)::STX << L"second";
 	os << std::flush;
-	ASSERT_STREQ(buf.str().c_str(), L"\033[2K\rsecond"); // first message got dropped
+	REQUIRE(buf.str() == L"\033[2K\rsecond"); // first message got dropped
 
 	buf.str(L""); // clear buffer
 	os << L"first";
 	os << std::flush;
 	os << decltype(str_out)::STX << L"second";
 	os << std::flush;
-	ASSERT_STREQ(buf.str().c_str(), L"first\033[2K\rsecond"); // first message gets clear by escape sequences
+	REQUIRE(buf.str() == L"first\033[2K\rsecond"); // first message gets clear by escape sequences
 }
 
 
