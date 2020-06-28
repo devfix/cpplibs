@@ -2,11 +2,10 @@
 // Created by core on 12/19/19.
 //
 
-#if ENABLE_GOOGLETEST == 1
+#if CPPLIBS_ENABLE_TESTS == 1
 
-#include <gtest/gtest.h>
+#include <catch/catch.hpp>
 #include <thread>
-#include <iostream>
 #include <unistd.h>
 #include <cstring>
 #include "../netbuilder.h"
@@ -26,7 +25,7 @@ constexpr double TEST_DOUBLE = 1.4142;
 
 constexpr std::array<float, 4> TEST_ARRAY = { 1.0, 1.1, 1.2, 1.3 };
 
-TEST(Socket, Address)
+TEST_CASE("Socket - Address")
 {
 	std::atomic_bool server_ready = false;
 	inetaddress server_local_address{};
@@ -38,7 +37,7 @@ TEST(Socket, Address)
 			auto server = netbuilder::create_serversocket(
 				{ "0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4 },
 				true
-			);
+														 );
 			server_ready = true;
 
 			auto client = server->accept();
@@ -46,7 +45,7 @@ TEST(Socket, Address)
 			server_remote_address = client->get_remote_address();
 		});
 
-	while (!server_ready);
+	while (!server_ready) {}
 
 	auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
 
@@ -55,15 +54,15 @@ TEST(Socket, Address)
 
 	server_thread.join();
 
-	ASSERT_EQ(local_address.get_port(), server_remote_address.get_port());
-	ASSERT_EQ(remote_address.get_port(), server_local_address.get_port());
-	ASSERT_EQ(local_address.get_address(), server_remote_address.get_address());
-	ASSERT_EQ(remote_address.get_address(), server_local_address.get_address());
-	ASSERT_EQ(local_address.get_host(), server_remote_address.get_host());
-	ASSERT_EQ(remote_address.get_host(), server_local_address.get_host());
+	REQUIRE(local_address.get_port() == server_remote_address.get_port());
+	REQUIRE(remote_address.get_port() == server_local_address.get_port());
+	REQUIRE(local_address.get_address() == server_remote_address.get_address());
+	REQUIRE(remote_address.get_address() == server_local_address.get_address());
+	REQUIRE(local_address.get_host() == server_remote_address.get_host());
+	REQUIRE(remote_address.get_host() == server_local_address.get_host());
 }
 
-TEST(Socket, IO)
+TEST_CASE("Socket - IO")
 {
 	std::atomic_bool server_ready = false;
 
@@ -73,7 +72,7 @@ TEST(Socket, IO)
 			auto server = netbuilder::create_serversocket(
 				{ "0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4 },
 				true
-			);
+														 );
 			server_ready = true;
 
 			auto client = server->accept();
@@ -82,14 +81,14 @@ TEST(Socket, IO)
 
 			long l;
 			is.read(&l, sizeof(l));
-			ASSERT_EQ(l, TEST_LONG);
+			REQUIRE(l == TEST_LONG);
 
 			float f = TEST_FLOAT;
 			os.write(&f, sizeof(f));
 
 			double d;
 			is.read(&d, sizeof(d));
-			ASSERT_EQ(d, TEST_DOUBLE);
+			REQUIRE(d == TEST_DOUBLE);
 
 			os.write(&TEST_ARRAY, sizeof(TEST_ARRAY));
 
@@ -98,7 +97,7 @@ TEST(Socket, IO)
 			os.close();
 		});
 
-	while (!server_ready);
+	while (!server_ready) {}
 
 	auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
 	auto& is = client->get_inputstream();
@@ -109,14 +108,14 @@ TEST(Socket, IO)
 
 	float f;
 	is.read(&f, sizeof(f));
-	ASSERT_EQ(f, TEST_FLOAT);
+	REQUIRE(f == TEST_FLOAT);
 
 	double d = TEST_DOUBLE;
 	os.write(&d, sizeof(d));
 
 	char vector[sizeof(TEST_ARRAY)] = { 0 };
 	is.read(vector, sizeof(TEST_ARRAY));
-	ASSERT_EQ(std::memcmp(vector, &TEST_ARRAY, sizeof(TEST_ARRAY)), 0);
+	REQUIRE(std::memcmp(vector, &TEST_ARRAY, sizeof(TEST_ARRAY)) == 0);
 
 	// test stream close
 	is.close();
@@ -125,7 +124,7 @@ TEST(Socket, IO)
 	server_thread.join();
 }
 
-TEST(Socket, ReadTimeout)
+TEST_CASE("Socket - ReadTimeout")
 {
 	std::atomic_bool server_active = false;
 
@@ -134,16 +133,14 @@ TEST(Socket, ReadTimeout)
 		{
 			auto server = netbuilder::create_serversocket(
 				{ "0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4 },
-				true
-			);
+				true);
 			server_active = true;
 			auto client = server->accept();
 
-			for (int k = 0; k < 3000 && server_active; k++)
-			{ std::this_thread::sleep_for(std::chrono::milliseconds(1)); }
+			for (int k = 0; k < 3000 && server_active; k++) { std::this_thread::sleep_for(std::chrono::milliseconds(1)); }
 		});
 
-	while (!server_active);
+	while (!server_active) {}
 
 	auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
 	client->set_timeout(10);
@@ -151,13 +148,13 @@ TEST(Socket, ReadTimeout)
 	auto& is = client->get_inputstream();
 
 	char uff;
-	ASSERT_THROW(is.read(&uff, sizeof(uff)), error::timeoutexception);
+	REQUIRE_THROWS(is.read(&uff, sizeof(uff)));
 
 	server_active = false;
 	server_thread.join();
 }
 
-TEST(Socket, WriteTimeout)
+TEST_CASE("Socket - WriteTimeout")
 {
 	std::atomic_bool server_active = false;
 
@@ -166,16 +163,14 @@ TEST(Socket, WriteTimeout)
 		{
 			auto server = netbuilder::create_serversocket(
 				{ "0.0.0.0", TEST_PORT, inetaddress::family_t::IPV4 },
-				true
-			);
+				true);
 			server_active = true;
 			auto client = server->accept();
 
-			for (int k = 0; k < 3000 && server_active; k++)
-			{ std::this_thread::sleep_for(std::chrono::milliseconds(1)); }
+			for (int k = 0; k < 3000 && server_active; k++) { std::this_thread::sleep_for(std::chrono::milliseconds(1)); }
 		});
 
-	while (!server_active);
+	while (!server_active) {}
 
 	auto client = netbuilder::create_socket(inetaddress("localhost", TEST_PORT));
 	client->set_timeout(10);
@@ -188,17 +183,11 @@ TEST(Socket, WriteTimeout)
 	bool timeout = false;
 	while (!timeout)
 	{
-		try
-		{
-			os.write(&data, sizeof(data));
-		}
-		catch (error::timeoutexception& timeoutexception)
-		{
-			timeout = true;
-		}
+		try { os.write(&data, sizeof(data)); }
+		catch (error::timeoutexception& timeoutexception) { timeout = true; }
 	}
 
-	ASSERT_TRUE(timeout);
+	REQUIRE(timeout);
 
 	server_active = false;
 	server_thread.join();
