@@ -6,7 +6,7 @@
 
 #include "../../base/platform.h"
 
-#if PLATFORM_WINDOWS == 0
+#if PLATFORM_WINDOWS == 1
 
 #include <atomic>
 #include "../socket.h"

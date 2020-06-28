@@ -13,17 +13,14 @@
 
 
 // forward declaration for external builder
-namespace devfix::net
-{
-	struct [[maybe_unused]] netbuilder;
-}
+namespace devfix::net { struct [[maybe_unused]] netbuilder; }
 
 namespace devfix::net::lnx
 {
 
-struct serversocket : public devfix::net::serversocket
+	struct serversocket : public devfix::net::serversocket
 	{
-		friend struct net::netbuilder;
+		friend struct devfix::net::netbuilder;
 
 		~serversocket() override;
 
