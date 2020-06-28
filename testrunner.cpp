@@ -2,6 +2,10 @@
 // Created by core on 12/29/19.
 //
 
+#define CATCH_CONFIG_MAIN
+#include <catch/catch.hpp>
+
+/*
 #if ENABLE_GOOGLETEST == 1
 #include <gtest/gtest.h>
 
@@ -24,5 +28,5 @@ int main()
 	test_dsp();
 }
 
-#endif
+#endif*/
 ////
