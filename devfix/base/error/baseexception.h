@@ -16,7 +16,7 @@
   if (err) throw exception_class(std::string(message) + " @ " + SOURCE_LINE, errno)
 
 #define EXCEPTION_GUARD(err, exception_class) \
-  if (err) throw exception_class(std::string(message) + " @ " + SOURCE_LINE, 0)
+  if (err) throw exception_class(SOURCE_LINE, 0)
 
 
 namespace devfix::base::error

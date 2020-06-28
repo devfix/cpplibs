@@ -24,68 +24,39 @@
 namespace devfix::net::lnx
 {
 
-	socket::~socket()
-	{
-		_close();
-	}
+	socket::~socket() { _close(); }
 
-	const inetaddress& socket::get_local_address() const noexcept
-	{
-		return local_address_;
-	}
+	const inetaddress& socket::get_local_address() const noexcept { return local_address_; }
 
-	const inetaddress& socket::get_remote_address() const noexcept
-	{
-		return remote_address_;
-	}
+	const inetaddress& socket::get_remote_address() const noexcept { return remote_address_; }
 
-	base::io::inputstream& socket::get_inputstream() const noexcept
-	{
-		return *source_;
-	}
+	base::io::inputstream& socket::get_inputstream() const noexcept { return *source_; }
 
-	base::io::outputstream& socket::get_outputstream() const noexcept
-	{
-		return *sink_;
-	}
+	base::io::outputstream& socket::get_outputstream() const noexcept { return *sink_; }
 
-	void socket::set_interrupted(bool interrupted) noexcept
-	{
-		interrupted_ = interrupted;
-	}
+	void socket::set_interrupted(bool interrupted) noexcept { interrupted_ = interrupted; }
 
-	bool socket::get_interrupted() const noexcept
-	{
-		return interrupted_;
-	}
+	bool socket::get_interrupted() const noexcept { return interrupted_; }
 
-	void socket::set_timeout(devfix::net::socket::timeout_t timeout) noexcept
-	{
-		timeout_ = timeout;
-	}
+	void socket::set_timeout(devfix::net::socket::timeout_t timeout) noexcept { timeout_ = timeout; }
 
-	socket::timeout_t socket::get_timeout() const noexcept
-	{
-		return timeout_;
-	}
+	socket::timeout_t socket::get_timeout() const noexcept { return timeout_; }
 
 	socket::socket(inetaddress remote_address)
 		:
 		remote_address_(remote_address),
 		local_address_(),
 		source_(std::make_unique<base::io::source>(
-			std::bind(&socket::_read, this, std::placeholders::_1, std::placeholders::_2),
-			std::bind(&socket::_skip, this, std::placeholders::_1),
-			std::bind(&socket::_available, this),
-			std::bind(&socket::_close, this),
-			std::bind(&socket::_is_closed, this)
-		)),
+			[&](void* buf, std::size_t len) { return _read(buf, len); },
+			[&](std::size_t n) { return _skip(n); },
+			[&] { return _available(); },
+			[&] { return _close(); },
+			[&] { return _is_closed(); })),
 		sink_(std::make_unique<base::io::sink>(
-			std::bind(&socket::_write, this, std::placeholders::_1, std::placeholders::_2),
-			std::bind(&socket::_flush, this),
-			std::bind(&socket::_close, this),
-			std::bind(&socket::_is_closed, this)
-		))
+			[&](const void* buf, std::size_t len) { _write(buf, len); },
+			[&] { return _flush(); },
+			[&] { return _close(); },
+			[&] { return _is_closed(); }))
 	{
 		// create socket
 		fd_ = ::socket(remote_address_.get_linux_family(), SOCK_STREAM, 0);
@@ -111,18 +82,16 @@ namespace devfix::net::lnx
 		remote_address_(remote_address),
 		local_address_(_get_local_address()),
 		source_(std::make_unique<base::io::source>(
-			std::bind(&socket::_read, this, std::placeholders::_1, std::placeholders::_2),
-			std::bind(&socket::_skip, this, std::placeholders::_1),
-			std::bind(&socket::_available, this),
-			std::bind(&socket::_close, this),
-			std::bind(&socket::_is_closed, this)
-		)),
+			[&](void* buf, std::size_t len) { return _read(buf, len); },
+			[&](std::size_t n) { return _skip(n); },
+			[&] { return _available(); },
+			[&] { return _close(); },
+			[&] { return _is_closed(); })),
 		sink_(std::make_unique<base::io::sink>(
-			std::bind(&socket::_write, this, std::placeholders::_1, std::placeholders::_2),
-			std::bind(&socket::_flush, this),
-			std::bind(&socket::_close, this),
-			std::bind(&socket::_is_closed, this)
-		))
+			[&](const void* buf, std::size_t len) { _write(buf, len); },
+			[&] { return _flush(); },
+			[&] { return _close(); },
+			[&] { return _is_closed(); }))
 	{
 		// set socket timeouts to implement non blocking mode
 		_configure_io_timeout(SO_RCVTIMEO, DEFAULT_READ_BLOCKING_TIME);
@@ -155,15 +124,8 @@ namespace devfix::net::lnx
 		timeout_t time = 0;
 		while (len)
 		{
-			if (get_interrupted())
-			{
-				throw base::error::interruptedexception(SOURCE_LINE);
-			}
-
-			if (time > timeout_)
-			{
-				throw base::error::timeoutexception(SOURCE_LINE);
-			}
+			EXCEPTION_GUARD (get_interrupted(), ::devfix::base::error::interruptedexception);
+			EXCEPTION_GUARD (time > timeout_, ::devfix::base::error::timeoutexception);
 
 			ssize_t rc = ::read(fd_, buf, len);
 			if (rc > 0)
@@ -171,13 +133,8 @@ namespace devfix::net::lnx
 				len -= static_cast<std::size_t>(rc);
 				buf = static_cast<char*>(buf) + rc;
 			}
-			else if (rc == 0 || errno == EAGAIN)
-			{
-				time += DEFAULT_READ_BLOCKING_TIME;
-			} else
-			{
-				EXCEPTION_GUARD_ERRNO(true, socketexception);
-			}
+			else if (rc == 0 || errno == EAGAIN) { time += DEFAULT_READ_BLOCKING_TIME; }
+			else { EXCEPTION_GUARD_ERRNO(true, socketexception); }
 		}
 	}
 
@@ -186,15 +143,8 @@ namespace devfix::net::lnx
 		timeout_t time = 0;
 		while (len)
 		{
-			if (get_interrupted())
-			{
-				throw base::error::interruptedexception(SOURCE_LINE);
-			}
-
-			if (time > timeout_)
-			{
-				throw base::error::timeoutexception(SOURCE_LINE);
-			}
+			EXCEPTION_GUARD(get_interrupted(), ::devfix::base::error::interruptedexception);
+			EXCEPTION_GUARD (time > timeout_, ::devfix::base::error::timeoutexception);
 
 			ssize_t rc = ::write(fd_, buf, len);
 			if (rc > 0)
@@ -202,13 +152,8 @@ namespace devfix::net::lnx
 				len -= static_cast<std::size_t>(rc);
 				buf = static_cast<const char*>(buf) + rc;
 			}
-			else if (rc == 0 || errno == EAGAIN)
-			{
-				time += DEFAULT_WRITE_BLOCKING_TIME;
-			} else
-			{
-				EXCEPTION_GUARD_ERRNO(true, socketexception);
-			}
+			else if (rc == 0 || errno == EAGAIN) { time += DEFAULT_WRITE_BLOCKING_TIME; }
+			else { EXCEPTION_GUARD_ERRNO(true, socketexception); }
 		}
 	}
 
@@ -238,20 +183,14 @@ namespace devfix::net::lnx
 
 	void socket::_close()
 	{
-		if (_is_closed())
-		{
-			return;
-		}
+		if (_is_closed()) { return; }
 
 		int rc = ::close(fd_);
 		fd_ = -1;
 		EXCEPTION_GUARD_ERRNO(rc, socketexception);
 	}
 
-	bool socket::_is_closed()
-	{
-		return fd_ < 0;
-	}
+	bool socket::_is_closed() { return fd_ < 0; }
 
 } // namespace devfix::net::lnx
 
