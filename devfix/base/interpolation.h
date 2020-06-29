@@ -3,6 +3,7 @@
 //
 
 #include <vector>
+#include <stdexcept>
 
 namespace devfix::base
 {
