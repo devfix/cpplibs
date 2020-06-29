@@ -96,6 +96,12 @@ namespace devfix::base
 			return basic_bisec<decltype(xs)>(xs, coeffs, x_low, x_up, y, abs_error);
 		}
 
+		static std::pair<double, double> find_max(const std::vector<std::pair<FloatT, FloatT>>& points, const std::vector<FloatT>& coeffs,
+			FloatT x_low, FloatT x_up, FloatT step_width)
+		{
+			return basic_find_max<decltype(points)>(points, coeffs, x_low, x_up, step_width);
+		}
+
 	private:
 		template<typename PointsT>
 		static FloatT basic_bisec(const PointsT& points, const std::vector<FloatT>& coeffs,
@@ -133,6 +139,22 @@ namespace devfix::base
 				} while (std::abs(y_mid - y) > abs_error);
 			}
 			return x_mid;
+		}
+
+		template<typename PointsT>
+		static std::pair<double, double> basic_find_max(const PointsT& points, const std::vector<FloatT>& coeffs,
+			FloatT x_low, FloatT x_up, FloatT step_width)
+		{
+			FloatT max = eval(points, coeffs, x_low);
+			while (x_low < x_up)
+			{
+				FloatT next_x = x_low + step_width;
+				FloatT next_y = eval(points, coeffs, next_x);
+				if (next_y < max) { break; }
+				max = next_y;
+				x_low = next_x;
+			}
+			return { x_low, max };
 		}
 	};
 }
