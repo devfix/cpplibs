@@ -7,6 +7,8 @@
 #include <catch/catch.hpp>
 #include "../spectrogram.h"
 
+static constexpr double PRECISION_FINE = 1e-6;
+
 using namespace devfix::dsp;
 
 template<int digits, typename T>
@@ -44,7 +46,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730949 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 	{
 		auto win = spec.pop();
@@ -52,7 +54,10 @@ TEST_CASE("Spectrogram - RectangleWindow")
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730947 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++)
+		{
+			REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE));
+		}
 	}
 	{
 		auto win = spec.pop();
@@ -61,7 +66,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 			{ 1.7071067811865479 / FFT_LEN, 2.5495097567963922 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 0.70710678118654768 / FFT_LEN,
 			  0.29289321881345265 / FFT_LEN, 0.70710678118654746 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 2.5495097567963922 / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 	{
 		auto win = spec.pop();
@@ -70,7 +75,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 			{ 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN,
 			  0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 	{
 		auto win = spec.pop();
@@ -78,7 +83,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 		std::array<double, FFT_LEN> expected =
 			{ 0, 4. / FFT_LEN, 0, 0, 0, 0, 0, 4. / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 	{
 		auto win = spec.pop();
@@ -86,7 +91,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 		std::array<double, FFT_LEN> expected =
 			{ 0, 4. / FFT_LEN, 0, 0, 0, 0, 0, 4. / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 	{
 		auto win = spec.pop();
@@ -95,7 +100,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 			{ 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN,
 			  0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 0.7071067811865479 / FFT_LEN, 3.5355339059327378 / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 	{
 		auto win = spec.pop();
@@ -104,7 +109,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 			{ 1.7071067811865479 / FFT_LEN, 2.5495097567963922 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 0.70710678118654768 / FFT_LEN,
 			  0.29289321881345265 / FFT_LEN, 0.70710678118654746 / FFT_LEN, 1.2247448713915889 / FFT_LEN, 2.5495097567963922 / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 	{
 		auto win = spec.pop();
@@ -112,7 +117,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 		std::array<double, FFT_LEN> expected =
 			{ 2.4142135623730949 / FFT_LEN, 2. / FFT_LEN, 1. / FFT_LEN, 0, 0.4142135623730949 / FFT_LEN, 0, 1. / FFT_LEN, 2. / FFT_LEN };
 		REQUIRE(mag.size() == expected.size());
-		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+		for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 	}
 
 	REQUIRE_THROWS(spec.pop());
@@ -182,10 +187,7 @@ TEST_CASE("Spectrogram - FlattopWindow")
 	for (auto& v: expected) { v /= FFT_LEN; }  // fft implementation changed, correction now already happens in fft_transform
 
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < win.size(); i++)
-	{
-		REQUIRE(mag[i] == Approx(expected[i])); // ABS_DOUBLE_ERROR is too precise here
-	}
+	for (std::size_t i = 0; i < win.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 
 	REQUIRE_THROWS(spec.pop());
 }

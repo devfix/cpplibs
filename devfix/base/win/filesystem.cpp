@@ -7,10 +7,11 @@
 #if PLATFORM_WINDOWS == 1
 
 #include <cstring>
+#include <cstdlib>
 #include <fcntl.h>
 #include <io.h>
-#include <stdlib.h>
 #include <sys/stat.h>
+#include <windows.h>
 #include "../filesystem.h"
 #include "../error/ioexception.h"
 
@@ -26,10 +27,21 @@ namespace devfix::base
 		return false;
 	}
 
+	bool filesystem::is_abs_path(const std::string& filepath)
+	{
+		// empty path is illegal
+		EXCEPTION_GUARD_MSG(filepath.empty(), devfix::base::error::ioexception, "empty filepath");
+
+		return filepath.length() >= 3 && filepath[1] == ':' && filepath[2] == SEPARATOR;
+	}
+
 	bool filesystem::isfile(const std::string& filepath)
 	{
+		std::string fp(filepath);
+		while (!fp.empty() && *fp.rbegin() == SEPARATOR) { fp.pop_back(); }  // remove trailing '\'
+
 		struct _stat file_stat{};
-		EXCEPTION_GUARD_ERRNO(::_stat(filepath.c_str(), &file_stat), devfix::base::error::ioexception);
+		EXCEPTION_GUARD_ERRNO(::_stat(fp.c_str(), &file_stat), devfix::base::error::ioexception);
 		return S_ISREG(file_stat.st_mode);
 	}
 
@@ -47,13 +59,21 @@ namespace devfix::base
 
 	bool filesystem::isdir(const std::string& filepath)
 	{
+		std::string fp(filepath);
+		while (!fp.empty() && *fp.rbegin() == SEPARATOR) { fp.pop_back(); }  // remove trailing '\'
+
 		struct _stat file_stat{};
-		EXCEPTION_GUARD_ERRNO(::_stat(filepath.c_str(), &file_stat), devfix::base::error::ioexception);
+		EXCEPTION_GUARD_ERRNO(::_stat(fp.c_str(), &file_stat), devfix::base::error::ioexception);
 		return S_ISDIR(file_stat.st_mode);
 	}
 
 	void filesystem::mkdir(const std::string& filepath, bool parents)
 	{
+		if (parents)
+		{
+			std::string dir = dirname(filepath);
+			if (!exists(dir)) { mkdir(dir, true); }
+		}
 		EXCEPTION_GUARD_ERRNO(::_mkdir(filepath.c_str()), devfix::base::error::ioexception);
 	}
 
@@ -88,40 +108,62 @@ namespace devfix::base
 
 		if (fp.empty()) { return SEPARATOR_SV.data(); }  // if path is now empty string, it consisted only of backslashes
 		if (fp == "." || fp == "..") { return "."; }
+		//if (!is_abs_path(fp)) { fp = std::string(".") + fp; }
 
 		char drive[_MAX_DRIVE];
 		char dir[_MAX_DIR];
 		[[maybe_unused]] char fname[_MAX_FNAME];
 		[[maybe_unused]] char ext[_MAX_EXT];
 		::_splitpath(fp.c_str(), drive, dir, fname, ext);
-		if (std::size_t p = std::strlen(dir); p) { dir[p-1] = '\0'; }  // remove last '\'
-		return std::string(drive) + dir;
+		std::string dname(drive);
+		dname += dir;
+
+		if (dname.empty()) { return "."; }
+		if (dname.length() >= 2 && *dname.rbegin() == SEPARATOR) { dname.pop_back(); }  // remove last '\'
+		return dname;
 	}
 
 	std::list<std::string> filesystem::lstdir(const std::string& filepath)
 	{
-		/*EXCEPTION_GUARD_MSG (!exists(filepath), devfix::base::error::ioexception, "filepath not found");
+		EXCEPTION_GUARD_MSG (!exists(filepath), devfix::base::error::ioexception, "filepath not found");
 		EXCEPTION_GUARD_MSG(!isdir(filepath), devfix::base::error::ioexception, "filepath is not directory");
 
+
+		std::string searchpath = filepath + SEPARATOR + "*.*";
+		WIN32_FIND_DATA fd_file;
+		HANDLE handle = ::FindFirstFile(searchpath.c_str(), &fd_file);
+		EXCEPTION_GUARD_MSG(handle == INVALID_HANDLE_VALUE, devfix::base::error::ioexception, "filepath not found");
+
 		std::list<std::string> entries;
-		DIR* dir = nullptr;
-		struct dirent* entry;
-		EXCEPTION_GUARD_ERRNO(!(dir = ::opendir(filepath.c_str())), devfix::base::error::ioexception);
-		while ((entry = ::readdir(dir)))
+		do
 		{
-			const char* name = entry->d_name;
+			const char* name = fd_file.cFileName;
 			std::size_t len = std::strlen(name);
 
 			// only add real file name who are not "." or ".."
 			if ((len != 1 || name[0] != '.') && (len != 2 || name[0] != '.' || name[1] != '.')) { entries.emplace_back(name); }
-		}
-		EXCEPTION_GUARD_ERRNO(::closedir(dir), devfix::base::error::ioexception);
-		return entries;*/
+		} while (::FindNextFile(handle, &fd_file));
+
+		::FindClose(handle);
+		return entries;
 	}
 
 	void filesystem::rmdir(const std::string& filepath, bool recursive)
 	{
-		throw devfix::base::error::ioexception("not implemented 8");
+		if (recursive)
+		{
+			const auto list = lstdir(filepath);
+			for (const auto& entry : list)
+			{
+				std::string entrypath = filepath;
+				entrypath += SEPARATOR;
+				entrypath += entry;
+				if (isdir(entrypath)) { rmdir(entrypath, true); }
+				else { rm(entrypath); }
+			}
+			rmdir(filepath, false);
+		}
+		else { EXCEPTION_GUARD_ERRNO(::_rmdir(filepath.c_str()), devfix::base::error::ioexception); }
 	}
 
 	std::string filesystem::get_temp_dir()

@@ -11,7 +11,9 @@
 
 using namespace devfix::dsp;
 
-constexpr std::size_t LEN = 1024;
+static constexpr double PRECISION_FINE = 1e-6;
+static constexpr double PRECISION_COARSE = 1e-3;
+static constexpr std::size_t LEN = 1024;
 
 template<int digits, typename T>
 constexpr T round(T val) { return std::round(val * std::pow(10, digits)) * std::pow(10, -digits); }
@@ -36,12 +38,12 @@ TEST_CASE("FFT - MultipleFreqs")
 	for (std::size_t i = 1; i < LEN / 2; i++) { REQUIRE(mag[i] == mag[LEN - i]); }
 
 	// test expected amplitudes
-	REQUIRE(mag[0] == Approx(1. * 4));
-	REQUIRE(mag[1] == Approx(1. / 8));
-	REQUIRE(mag[2] == Approx(1. / 4));
-	REQUIRE(mag[3] == Approx(0));
-	REQUIRE(mag[4] == Approx(1. / 2));
-	for (std::size_t i = 5; i < LEN / 2; i++) { REQUIRE(mag[i] == Approx(0)); }
+	REQUIRE(mag[0] == Approx(1. * 4).epsilon(PRECISION_FINE));
+	REQUIRE(mag[1] == Approx(1. / 8).epsilon(PRECISION_FINE));
+	REQUIRE(mag[2] == Approx(1. / 4).epsilon(PRECISION_FINE));
+	REQUIRE(mag[3] == Approx(0).margin(PRECISION_FINE));
+	REQUIRE(mag[4] == Approx(1. / 2).epsilon(PRECISION_FINE));
+	for (std::size_t i = 5; i < LEN / 2; i++) { REQUIRE(mag[i] == Approx(0).margin(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - ApplyWindowPointer")
@@ -54,7 +56,7 @@ TEST_CASE("FFT - ApplyWindowPointer")
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - ApplyWindowVector")
@@ -67,7 +69,7 @@ TEST_CASE("FFT - ApplyWindowVector")
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - ApplyWindowArray")
@@ -80,7 +82,7 @@ TEST_CASE("FFT - ApplyWindowArray")
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - AmplitudeNormalization")
@@ -103,7 +105,7 @@ TEST_CASE("FFT - AmplitudeNormalization")
 		{ 4, 0.25, 0.5, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
 	REQUIRE(positive.size() == expected.size());
-	for (std::size_t i = 0; i < positive.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+	for (std::size_t i = 0; i < positive.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - AmplitudeNormalizationWithFlatTop")
@@ -132,7 +134,7 @@ TEST_CASE("FFT - AmplitudeNormalizationWithFlatTop")
 		  1.64719e-06, 1.56058e-06, 1.48654e-06, 1.42403e-06, 1.37227e-06, 1.33064e-06, 1.29868e-06, 1.27607e-06, 1.26258e-06,
 		};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i])); }
+	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_COARSE)); }
 }
 
 TEST_CASE("FFT - PhaseExtraction")
@@ -157,7 +159,7 @@ TEST_CASE("FFT - PhaseExtraction")
 	REQUIRE(angles[line_c] == Approx(M_PI / 4));
 	for (std::size_t i = 0; i < angles.size(); i++)
 	{
-		if (i != line_a && i != line_b && i != line_c) { REQUIRE(angles[i] == Approx(0)); }
+		if (i != line_a && i != line_b && i != line_c) { REQUIRE(angles[i] == Approx(0).margin(PRECISION_FINE)); }
 	}
 }
 
