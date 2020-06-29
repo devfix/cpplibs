@@ -16,17 +16,17 @@ virtual \hyperlink{structdevfix_1_1net_1_1serversocket_afd9f315c4018808c79047871
 \item 
 virtual std\+::unique\+\_\+ptr$<$ \hyperlink{structdevfix_1_1net_1_1socket}{socket} $>$ \hyperlink{structdevfix_1_1net_1_1serversocket_a7b3ea6aad486060acdd1385a08f7db81}{accept} ()=0
 \begin{DoxyCompactList}\small\item\em Listens for a connection to be made to this socket and accepts it. \end{DoxyCompactList}\item 
-virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} \& \hyperlink{structdevfix_1_1net_1_1serversocket_a087a819b8173bfa101ea65ea8a17eb8c}{get\+\_\+address} () const noexcept=0
+virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress} \& \hyperlink{structdevfix_1_1net_1_1serversocket_a28fc78cccaa3a40441399ac3b32abec8}{get\+\_\+address} () const =0
 \begin{DoxyCompactList}\small\item\em Get the {\itshape inetaddress} the server is listening on. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{structdevfix_1_1net_1_1serversocket_a7efdb1f57d0e482542fda50a2403230d}{get\+\_\+reuse\+\_\+address} () const noexcept=0
+virtual bool \hyperlink{structdevfix_1_1net_1_1serversocket_afb5435c5f70649e8e66c35b3cf907e25}{get\+\_\+reuse\+\_\+address} () const =0
 \begin{DoxyCompactList}\small\item\em Get if binding to a port which remains in T\+I\+M\+E\+\_\+\+W\+A\+IT state is allowed. \end{DoxyCompactList}\item 
 virtual void \hyperlink{structdevfix_1_1net_1_1serversocket_ae67a25cf26fe54ce7b10d07ff9219ce7}{set\+\_\+accept\+\_\+timeout} (\hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{socket\+::timeout\+\_\+t} timeout)=0
 \begin{DoxyCompactList}\small\item\em Set the accept timeout. \end{DoxyCompactList}\item 
-virtual \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{socket\+::timeout\+\_\+t} \hyperlink{structdevfix_1_1net_1_1serversocket_acde0979277bf9536f54bb0fb6a9cc881}{get\+\_\+accept\+\_\+timeout} () const noexcept=0
+virtual \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{socket\+::timeout\+\_\+t} \hyperlink{structdevfix_1_1net_1_1serversocket_a9c27c5bcd0adb034fe069ae67e0114c5}{get\+\_\+accept\+\_\+timeout} () const =0
 \begin{DoxyCompactList}\small\item\em Get the accept timeout. \end{DoxyCompactList}\item 
 virtual void \hyperlink{structdevfix_1_1net_1_1serversocket_ab1762c3364c8298dbac6c3dd67a1e7aa}{close} ()=0
 \begin{DoxyCompactList}\small\item\em Closes this {\itshape serversocket} and releases any system resources associated. \end{DoxyCompactList}\item 
-virtual bool \hyperlink{structdevfix_1_1net_1_1serversocket_a37cc4e3ecede2a0bc52f90e49fcbe4a9}{is\+\_\+closed} () const noexcept=0
+virtual bool \hyperlink{structdevfix_1_1net_1_1serversocket_a852c0aa25c375834487ffc0e8d818221}{is\+\_\+closed} () const =0
 \begin{DoxyCompactList}\small\item\em Returns if the {\itshape serversocket} is closed or available for further calls of io operations like \hyperlink{structdevfix_1_1net_1_1serversocket_a7b3ea6aad486060acdd1385a08f7db81}{accept()}. \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
@@ -68,11 +68,11 @@ client socket
 
 Closes this {\itshape serversocket} and releases any system resources associated. 
 
-The general contract of close is that it closes the serversocket. A closed {\itshape serversocket} cannot perform io operations and cannot be reopened. \mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_acde0979277bf9536f54bb0fb6a9cc881}\label{structdevfix_1_1net_1_1serversocket_acde0979277bf9536f54bb0fb6a9cc881}} 
+The general contract of close is that it closes the serversocket. A closed {\itshape serversocket} cannot perform io operations and cannot be reopened. \mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_a9c27c5bcd0adb034fe069ae67e0114c5}\label{structdevfix_1_1net_1_1serversocket_a9c27c5bcd0adb034fe069ae67e0114c5}} 
 \index{devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}!get\+\_\+accept\+\_\+timeout@{get\+\_\+accept\+\_\+timeout}}
 \index{get\+\_\+accept\+\_\+timeout@{get\+\_\+accept\+\_\+timeout}!devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}}
 \subsubsection{\texorpdfstring{get\+\_\+accept\+\_\+timeout()}{get\_accept\_timeout()}}
-{\footnotesize\ttfamily virtual \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{socket\+::timeout\+\_\+t} devfix\+::net\+::serversocket\+::get\+\_\+accept\+\_\+timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily virtual \hyperlink{structdevfix_1_1net_1_1socket_a80a3bf4cb7292bae31ea9c6575539c68}{socket\+::timeout\+\_\+t} devfix\+::net\+::serversocket\+::get\+\_\+accept\+\_\+timeout (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -81,11 +81,11 @@ Get the accept timeout.
 If the timeout ist zero the feature is disabled. \begin{DoxyReturn}{Returns}
 timeout 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_a087a819b8173bfa101ea65ea8a17eb8c}\label{structdevfix_1_1net_1_1serversocket_a087a819b8173bfa101ea65ea8a17eb8c}} 
+\mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_a28fc78cccaa3a40441399ac3b32abec8}\label{structdevfix_1_1net_1_1serversocket_a28fc78cccaa3a40441399ac3b32abec8}} 
 \index{devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}!get\+\_\+address@{get\+\_\+address}}
 \index{get\+\_\+address@{get\+\_\+address}!devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}}
 \subsubsection{\texorpdfstring{get\+\_\+address()}{get\_address()}}
-{\footnotesize\ttfamily virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress}\& devfix\+::net\+::serversocket\+::get\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily virtual const \hyperlink{structdevfix_1_1net_1_1inetaddress}{inetaddress}\& devfix\+::net\+::serversocket\+::get\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -94,11 +94,11 @@ Get the {\itshape inetaddress} the server is listening on.
 The ip address of the inetaddress can be used to restrict the access of clients to the server. \begin{DoxyReturn}{Returns}
 bound inetaddress 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_a7efdb1f57d0e482542fda50a2403230d}\label{structdevfix_1_1net_1_1serversocket_a7efdb1f57d0e482542fda50a2403230d}} 
+\mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_afb5435c5f70649e8e66c35b3cf907e25}\label{structdevfix_1_1net_1_1serversocket_afb5435c5f70649e8e66c35b3cf907e25}} 
 \index{devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}!get\+\_\+reuse\+\_\+address@{get\+\_\+reuse\+\_\+address}}
 \index{get\+\_\+reuse\+\_\+address@{get\+\_\+reuse\+\_\+address}!devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}}
 \subsubsection{\texorpdfstring{get\+\_\+reuse\+\_\+address()}{get\_reuse\_address()}}
-{\footnotesize\ttfamily virtual bool devfix\+::net\+::serversocket\+::get\+\_\+reuse\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily virtual bool devfix\+::net\+::serversocket\+::get\+\_\+reuse\+\_\+address (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 
@@ -107,11 +107,11 @@ Get if binding to a port which remains in T\+I\+M\+E\+\_\+\+W\+A\+IT state is al
 \begin{DoxyReturn}{Returns}
 true if allowed 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_a37cc4e3ecede2a0bc52f90e49fcbe4a9}\label{structdevfix_1_1net_1_1serversocket_a37cc4e3ecede2a0bc52f90e49fcbe4a9}} 
+\mbox{\Hypertarget{structdevfix_1_1net_1_1serversocket_a852c0aa25c375834487ffc0e8d818221}\label{structdevfix_1_1net_1_1serversocket_a852c0aa25c375834487ffc0e8d818221}} 
 \index{devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}!is\+\_\+closed@{is\+\_\+closed}}
 \index{is\+\_\+closed@{is\+\_\+closed}!devfix\+::net\+::serversocket@{devfix\+::net\+::serversocket}}
 \subsubsection{\texorpdfstring{is\+\_\+closed()}{is\_closed()}}
-{\footnotesize\ttfamily virtual bool devfix\+::net\+::serversocket\+::is\+\_\+closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}, {\ttfamily [noexcept]}}
+{\footnotesize\ttfamily virtual bool devfix\+::net\+::serversocket\+::is\+\_\+closed (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
 
 
 

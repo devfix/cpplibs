@@ -83,24 +83,24 @@ Public Member Functions</h2></td></tr>
 <tr class="memitem:a7b3ea6aad486060acdd1385a08f7db81"><td class="memItemLeft" align="right" valign="top">virtual std::unique_ptr&lt; <a class="el" href="structdevfix_1_1net_1_1socket.html">socket</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81">accept</a> ()=0</td></tr>
 <tr class="memdesc:a7b3ea6aad486060acdd1385a08f7db81"><td class="mdescLeft">&#160;</td><td class="mdescRight">Listens for a connection to be made to this socket and accepts it.  <a href="#a7b3ea6aad486060acdd1385a08f7db81">More...</a><br /></td></tr>
 <tr class="separator:a7b3ea6aad486060acdd1385a08f7db81"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a087a819b8173bfa101ea65ea8a17eb8c"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a087a819b8173bfa101ea65ea8a17eb8c">get_address</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a087a819b8173bfa101ea65ea8a17eb8c"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <em>inetaddress</em> the server is listening on.  <a href="#a087a819b8173bfa101ea65ea8a17eb8c">More...</a><br /></td></tr>
-<tr class="separator:a087a819b8173bfa101ea65ea8a17eb8c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7efdb1f57d0e482542fda50a2403230d"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7efdb1f57d0e482542fda50a2403230d">get_reuse_address</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a7efdb1f57d0e482542fda50a2403230d"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if binding to a port which remains in TIME_WAIT state is allowed.  <a href="#a7efdb1f57d0e482542fda50a2403230d">More...</a><br /></td></tr>
-<tr class="separator:a7efdb1f57d0e482542fda50a2403230d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a28fc78cccaa3a40441399ac3b32abec8"><td class="memItemLeft" align="right" valign="top">virtual const <a class="el" href="structdevfix_1_1net_1_1inetaddress.html">inetaddress</a> &amp;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a28fc78cccaa3a40441399ac3b32abec8">get_address</a> () const =0</td></tr>
+<tr class="memdesc:a28fc78cccaa3a40441399ac3b32abec8"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the <em>inetaddress</em> the server is listening on.  <a href="#a28fc78cccaa3a40441399ac3b32abec8">More...</a><br /></td></tr>
+<tr class="separator:a28fc78cccaa3a40441399ac3b32abec8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afb5435c5f70649e8e66c35b3cf907e25"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#afb5435c5f70649e8e66c35b3cf907e25">get_reuse_address</a> () const =0</td></tr>
+<tr class="memdesc:afb5435c5f70649e8e66c35b3cf907e25"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get if binding to a port which remains in TIME_WAIT state is allowed.  <a href="#afb5435c5f70649e8e66c35b3cf907e25">More...</a><br /></td></tr>
+<tr class="separator:afb5435c5f70649e8e66c35b3cf907e25"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#ae67a25cf26fe54ce7b10d07ff9219ce7">set_accept_timeout</a> (<a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a> timeout)=0</td></tr>
 <tr class="memdesc:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="mdescLeft">&#160;</td><td class="mdescRight">Set the accept timeout.  <a href="#ae67a25cf26fe54ce7b10d07ff9219ce7">More...</a><br /></td></tr>
 <tr class="separator:ae67a25cf26fe54ce7b10d07ff9219ce7"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acde0979277bf9536f54bb0fb6a9cc881"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#acde0979277bf9536f54bb0fb6a9cc881">get_accept_timeout</a> () const noexcept=0</td></tr>
-<tr class="memdesc:acde0979277bf9536f54bb0fb6a9cc881"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the accept timeout.  <a href="#acde0979277bf9536f54bb0fb6a9cc881">More...</a><br /></td></tr>
-<tr class="separator:acde0979277bf9536f54bb0fb6a9cc881"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c27c5bcd0adb034fe069ae67e0114c5"><td class="memItemLeft" align="right" valign="top">virtual <a class="el" href="structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68">socket::timeout_t</a>&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a9c27c5bcd0adb034fe069ae67e0114c5">get_accept_timeout</a> () const =0</td></tr>
+<tr class="memdesc:a9c27c5bcd0adb034fe069ae67e0114c5"><td class="mdescLeft">&#160;</td><td class="mdescRight">Get the accept timeout.  <a href="#a9c27c5bcd0adb034fe069ae67e0114c5">More...</a><br /></td></tr>
+<tr class="separator:a9c27c5bcd0adb034fe069ae67e0114c5"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="memItemLeft" align="right" valign="top">virtual void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#ab1762c3364c8298dbac6c3dd67a1e7aa">close</a> ()=0</td></tr>
 <tr class="memdesc:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="mdescLeft">&#160;</td><td class="mdescRight">Closes this <em>serversocket</em> and releases any system resources associated.  <a href="#ab1762c3364c8298dbac6c3dd67a1e7aa">More...</a><br /></td></tr>
 <tr class="separator:ab1762c3364c8298dbac6c3dd67a1e7aa"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a37cc4e3ecede2a0bc52f90e49fcbe4a9">is_closed</a> () const noexcept=0</td></tr>
-<tr class="memdesc:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the <em>serversocket</em> is closed or available for further calls of io operations like <a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81" title="Listens for a connection to be made to this socket and accepts it. ">accept()</a>.  <a href="#a37cc4e3ecede2a0bc52f90e49fcbe4a9">More...</a><br /></td></tr>
-<tr class="separator:a37cc4e3ecede2a0bc52f90e49fcbe4a9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a852c0aa25c375834487ffc0e8d818221"><td class="memItemLeft" align="right" valign="top">virtual bool&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1net_1_1serversocket.html#a852c0aa25c375834487ffc0e8d818221">is_closed</a> () const =0</td></tr>
+<tr class="memdesc:a852c0aa25c375834487ffc0e8d818221"><td class="mdescLeft">&#160;</td><td class="mdescRight">Returns if the <em>serversocket</em> is closed or available for further calls of io operations like <a class="el" href="structdevfix_1_1net_1_1serversocket.html#a7b3ea6aad486060acdd1385a08f7db81" title="Listens for a connection to be made to this socket and accepts it. ">accept()</a>.  <a href="#a852c0aa25c375834487ffc0e8d818221">More...</a><br /></td></tr>
+<tr class="separator:a852c0aa25c375834487ffc0e8d818221"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <a name="details" id="details"></a><h2 class="groupheader">Detailed Description</h2>
 <div class="textblock"><p>This class implements server sockets. </p>
@@ -188,8 +188,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="acde0979277bf9536f54bb0fb6a9cc881"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acde0979277bf9536f54bb0fb6a9cc881">&#9670;&nbsp;</a></span>get_accept_timeout()</h2>
+<a id="a9c27c5bcd0adb034fe069ae67e0114c5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c27c5bcd0adb034fe069ae67e0114c5">&#9670;&nbsp;</a></span>get_accept_timeout()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -206,7 +206,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -216,8 +216,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a087a819b8173bfa101ea65ea8a17eb8c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a087a819b8173bfa101ea65ea8a17eb8c">&#9670;&nbsp;</a></span>get_address()</h2>
+<a id="a28fc78cccaa3a40441399ac3b32abec8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a28fc78cccaa3a40441399ac3b32abec8">&#9670;&nbsp;</a></span>get_address()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -234,7 +234,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -244,8 +244,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a7efdb1f57d0e482542fda50a2403230d"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7efdb1f57d0e482542fda50a2403230d">&#9670;&nbsp;</a></span>get_reuse_address()</h2>
+<a id="afb5435c5f70649e8e66c35b3cf907e25"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afb5435c5f70649e8e66c35b3cf907e25">&#9670;&nbsp;</a></span>get_reuse_address()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -262,7 +262,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -272,8 +272,8 @@ Public Member Functions</h2></td></tr>
 
 </div>
 </div>
-<a id="a37cc4e3ecede2a0bc52f90e49fcbe4a9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a37cc4e3ecede2a0bc52f90e49fcbe4a9">&#9670;&nbsp;</a></span>is_closed()</h2>
+<a id="a852c0aa25c375834487ffc0e8d818221"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a852c0aa25c375834487ffc0e8d818221">&#9670;&nbsp;</a></span>is_closed()</h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -290,7 +290,7 @@ Public Member Functions</h2></td></tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">pure virtual</span><span class="mlabel">noexcept</span></span>  </td>
+<span class="mlabels"><span class="mlabel">pure virtual</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">

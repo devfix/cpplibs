@@ -108,20 +108,22 @@ Namespaces</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="define-members"></a>
 Macros</h2></td></tr>
-<tr class="memitem:ad012bfdf381fa2c9100432def38f62ba"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baseexception_8h.html#ad012bfdf381fa2c9100432def38f62ba">exception_guard_m</a>(err,  exception_class,  message)</td></tr>
-<tr class="separator:ad012bfdf381fa2c9100432def38f62ba"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a0c2a0196acc0ae3484a38b3a3172b016"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baseexception_8h.html#a0c2a0196acc0ae3484a38b3a3172b016">exception_guard</a>(err,  exception_class)&#160;&#160;&#160;<a class="el" href="baseexception_8h.html#ad012bfdf381fa2c9100432def38f62ba">exception_guard_m</a>(err, exception_class, std::strerror(errno))</td></tr>
-<tr class="separator:a0c2a0196acc0ae3484a38b3a3172b016"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a97523b08dd198df45ea9ee0ef90358ad"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baseexception_8h.html#a97523b08dd198df45ea9ee0ef90358ad">EXCEPTION_GUARD_ERRNO</a>(err,  exception_class)&#160;&#160;&#160;if (err) throw exception_class(std::string(std::strerror(errno)) + &quot; @ &quot; + <a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>, errno)</td></tr>
+<tr class="separator:a97523b08dd198df45ea9ee0ef90358ad"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac2d164e095c903b86948eb59814428cf"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baseexception_8h.html#ac2d164e095c903b86948eb59814428cf">EXCEPTION_GUARD_MSG</a>(err,  exception_class,  message)&#160;&#160;&#160;if (err) throw exception_class(std::string(message) + &quot; @ &quot; + <a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>, 0)</td></tr>
+<tr class="separator:ac2d164e095c903b86948eb59814428cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ae0842c44c7fb88bbc83a44af469e5c2f"><td class="memItemLeft" align="right" valign="top">#define&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="baseexception_8h.html#ae0842c44c7fb88bbc83a44af469e5c2f">EXCEPTION_GUARD</a>(err,  exception_class)&#160;&#160;&#160;if (err) throw exception_class(<a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>, 0)</td></tr>
+<tr class="separator:ae0842c44c7fb88bbc83a44af469e5c2f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Macro Definition Documentation</h2>
-<a id="a0c2a0196acc0ae3484a38b3a3172b016"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a0c2a0196acc0ae3484a38b3a3172b016">&#9670;&nbsp;</a></span>exception_guard</h2>
+<a id="ae0842c44c7fb88bbc83a44af469e5c2f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ae0842c44c7fb88bbc83a44af469e5c2f">&#9670;&nbsp;</a></span>EXCEPTION_GUARD</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define exception_guard</td>
+          <td class="memname">#define EXCEPTION_GUARD</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">err, </td>
@@ -135,21 +137,49 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td>&#160;&#160;&#160;<a class="el" href="baseexception_8h.html#ad012bfdf381fa2c9100432def38f62ba">exception_guard_m</a>(err, exception_class, std::strerror(errno))</td>
+          <td></td><td>&#160;&#160;&#160;if (err) throw exception_class(<a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>, 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="ad012bfdf381fa2c9100432def38f62ba"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad012bfdf381fa2c9100432def38f62ba">&#9670;&nbsp;</a></span>exception_guard_m</h2>
+<a id="a97523b08dd198df45ea9ee0ef90358ad"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a97523b08dd198df45ea9ee0ef90358ad">&#9670;&nbsp;</a></span>EXCEPTION_GUARD_ERRNO</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">#define exception_guard_m</td>
+          <td class="memname">#define EXCEPTION_GUARD_ERRNO</td>
+          <td>(</td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">err, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">&#160;</td>
+          <td class="paramname">exception_class&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td>&#160;&#160;&#160;if (err) throw exception_class(std::string(std::strerror(errno)) + &quot; @ &quot; + <a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>, errno)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ac2d164e095c903b86948eb59814428cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac2d164e095c903b86948eb59814428cf">&#9670;&nbsp;</a></span>EXCEPTION_GUARD_MSG</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">#define EXCEPTION_GUARD_MSG</td>
           <td>(</td>
           <td class="paramtype">&#160;</td>
           <td class="paramname">err, </td>
@@ -169,12 +199,11 @@ Macros</h2></td></tr>
         <tr>
           <td></td>
           <td>)</td>
-          <td></td><td></td>
+          <td></td><td>&#160;&#160;&#160;if (err) throw exception_class(std::string(message) + &quot; @ &quot; + <a class="el" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>, 0)</td>
         </tr>
       </table>
 </div><div class="memdoc">
-<b>Value:</b><div class="fragment"><div class="line"><span class="keywordflow">if</span> (err) \</div><div class="line">    throw exception_class(message + std::string(<span class="stringliteral">&quot; @ &quot;</span>) + <a class="code" href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a>, errno)</div><div class="ttc" id="platform_8h_html_acf16e3e245e0e3b5d45b2a11075d4d36"><div class="ttname"><a href="platform_8h.html#acf16e3e245e0e3b5d45b2a11075d4d36">SOURCE_LINE</a></div><div class="ttdeci">#define SOURCE_LINE</div><div class="ttdef"><b>Definition:</b> platform.h:48</div></div>
-</div><!-- fragment -->
+
 </div>
 </div>
 </div><!-- contents -->

@@ -30,27 +30,30 @@ struct \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception}{devfix\+::base
 \subsection*{Macros}
 \begin{DoxyCompactItemize}
 \item 
-\#define \hyperlink{baseexception_8h_ad012bfdf381fa2c9100432def38f62ba}{exception\+\_\+guard\+\_\+m}(err,  exception\+\_\+class,  message)
+\#define \hyperlink{baseexception_8h_a97523b08dd198df45ea9ee0ef90358ad}{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+E\+R\+R\+NO}(err,  exception\+\_\+class)~if (err) throw exception\+\_\+class(std\+::string(std\+::strerror(errno)) + \char`\"{} @ \char`\"{} + \hyperlink{platform_8h_acf16e3e245e0e3b5d45b2a11075d4d36}{S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}, errno)
 \item 
-\#define \hyperlink{baseexception_8h_a0c2a0196acc0ae3484a38b3a3172b016}{exception\+\_\+guard}(err,  exception\+\_\+class)~\hyperlink{baseexception_8h_ad012bfdf381fa2c9100432def38f62ba}{exception\+\_\+guard\+\_\+m}(err, exception\+\_\+class, std\+::strerror(errno))
+\#define \hyperlink{baseexception_8h_ac2d164e095c903b86948eb59814428cf}{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+M\+SG}(err,  exception\+\_\+class,  message)~if (err) throw exception\+\_\+class(std\+::string(message) + \char`\"{} @ \char`\"{} + \hyperlink{platform_8h_acf16e3e245e0e3b5d45b2a11075d4d36}{S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}, 0)
+\item 
+\#define \hyperlink{baseexception_8h_ae0842c44c7fb88bbc83a44af469e5c2f}{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+RD}(err,  exception\+\_\+class)~if (err) throw exception\+\_\+class(\hyperlink{platform_8h_acf16e3e245e0e3b5d45b2a11075d4d36}{S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}, 0)
 \end{DoxyCompactItemize}
 
 
 \subsection{Macro Definition Documentation}
-\mbox{\Hypertarget{baseexception_8h_a0c2a0196acc0ae3484a38b3a3172b016}\label{baseexception_8h_a0c2a0196acc0ae3484a38b3a3172b016}} 
-\index{baseexception.\+h@{baseexception.\+h}!exception\+\_\+guard@{exception\+\_\+guard}}
-\index{exception\+\_\+guard@{exception\+\_\+guard}!baseexception.\+h@{baseexception.\+h}}
-\subsubsection{\texorpdfstring{exception\+\_\+guard}{exception\_guard}}
-{\footnotesize\ttfamily \#define exception\+\_\+guard(\begin{DoxyParamCaption}\item[{}]{err,  }\item[{}]{exception\+\_\+class }\end{DoxyParamCaption})~\hyperlink{baseexception_8h_ad012bfdf381fa2c9100432def38f62ba}{exception\+\_\+guard\+\_\+m}(err, exception\+\_\+class, std\+::strerror(errno))}
+\mbox{\Hypertarget{baseexception_8h_ae0842c44c7fb88bbc83a44af469e5c2f}\label{baseexception_8h_ae0842c44c7fb88bbc83a44af469e5c2f}} 
+\index{baseexception.\+h@{baseexception.\+h}!E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+RD@{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+RD}}
+\index{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+RD@{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+RD}!baseexception.\+h@{baseexception.\+h}}
+\subsubsection{\texorpdfstring{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+RD}{EXCEPTION\_GUARD}}
+{\footnotesize\ttfamily \#define E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+RD(\begin{DoxyParamCaption}\item[{}]{err,  }\item[{}]{exception\+\_\+class }\end{DoxyParamCaption})~if (err) throw exception\+\_\+class(\hyperlink{platform_8h_acf16e3e245e0e3b5d45b2a11075d4d36}{S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}, 0)}
 
-\mbox{\Hypertarget{baseexception_8h_ad012bfdf381fa2c9100432def38f62ba}\label{baseexception_8h_ad012bfdf381fa2c9100432def38f62ba}} 
-\index{baseexception.\+h@{baseexception.\+h}!exception\+\_\+guard\+\_\+m@{exception\+\_\+guard\+\_\+m}}
-\index{exception\+\_\+guard\+\_\+m@{exception\+\_\+guard\+\_\+m}!baseexception.\+h@{baseexception.\+h}}
-\subsubsection{\texorpdfstring{exception\+\_\+guard\+\_\+m}{exception\_guard\_m}}
-{\footnotesize\ttfamily \#define exception\+\_\+guard\+\_\+m(\begin{DoxyParamCaption}\item[{}]{err,  }\item[{}]{exception\+\_\+class,  }\item[{}]{message }\end{DoxyParamCaption})}
+\mbox{\Hypertarget{baseexception_8h_a97523b08dd198df45ea9ee0ef90358ad}\label{baseexception_8h_a97523b08dd198df45ea9ee0ef90358ad}} 
+\index{baseexception.\+h@{baseexception.\+h}!E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+E\+R\+R\+NO@{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+E\+R\+R\+NO}}
+\index{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+E\+R\+R\+NO@{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+E\+R\+R\+NO}!baseexception.\+h@{baseexception.\+h}}
+\subsubsection{\texorpdfstring{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+E\+R\+R\+NO}{EXCEPTION\_GUARD\_ERRNO}}
+{\footnotesize\ttfamily \#define E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+E\+R\+R\+NO(\begin{DoxyParamCaption}\item[{}]{err,  }\item[{}]{exception\+\_\+class }\end{DoxyParamCaption})~if (err) throw exception\+\_\+class(std\+::string(std\+::strerror(errno)) + \char`\"{} @ \char`\"{} + \hyperlink{platform_8h_acf16e3e245e0e3b5d45b2a11075d4d36}{S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}, errno)}
 
-{\bfseries Value\+:}
-\begin{DoxyCode}
-\textcolor{keywordflow}{if} (err) \(\backslash\)
-    throw exception\_class(message + std::string(\textcolor{stringliteral}{" @ "}) + \hyperlink{platform_8h_acf16e3e245e0e3b5d45b2a11075d4d36}{SOURCE\_LINE}, errno)
-\end{DoxyCode}
+\mbox{\Hypertarget{baseexception_8h_ac2d164e095c903b86948eb59814428cf}\label{baseexception_8h_ac2d164e095c903b86948eb59814428cf}} 
+\index{baseexception.\+h@{baseexception.\+h}!E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+M\+SG@{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+M\+SG}}
+\index{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+M\+SG@{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+M\+SG}!baseexception.\+h@{baseexception.\+h}}
+\subsubsection{\texorpdfstring{E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+M\+SG}{EXCEPTION\_GUARD\_MSG}}
+{\footnotesize\ttfamily \#define E\+X\+C\+E\+P\+T\+I\+O\+N\+\_\+\+G\+U\+A\+R\+D\+\_\+\+M\+SG(\begin{DoxyParamCaption}\item[{}]{err,  }\item[{}]{exception\+\_\+class,  }\item[{}]{message }\end{DoxyParamCaption})~if (err) throw exception\+\_\+class(std\+::string(message) + \char`\"{} @ \char`\"{} + \hyperlink{platform_8h_acf16e3e245e0e3b5d45b2a11075d4d36}{S\+O\+U\+R\+C\+E\+\_\+\+L\+I\+NE}, 0)}
+

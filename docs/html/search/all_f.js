@@ -1,8 +1,11 @@
 var searchData=
 [
   ['second',['second',['../structdevfix_1_1base_1_1time.html#a7a39795f67f0e3f1bea48cc790ef0bdb',1,'devfix::base::time']]],
+  ['separator',['SEPARATOR',['../structdevfix_1_1base_1_1filesystem.html#ad081255decbcf3dafe5f155b7193b05b',1,'devfix::base::filesystem']]],
+  ['separator_5fsv',['SEPARATOR_SV',['../structdevfix_1_1base_1_1filesystem.html#abc6bdc561a5baa7b4b8da2c3cdb915b9',1,'devfix::base::filesystem']]],
   ['serversocket',['serversocket',['../structdevfix_1_1net_1_1serversocket.html',1,'devfix::net']]],
-  ['serversocket_2eh',['serversocket.h',['../serversocket_8h.html',1,'']]],
+  ['serversocket_2ecpp',['serversocket.cpp',['../serversocket_8cpp.html',1,'']]],
+  ['serversocket_2eh',['serversocket.h',['../lnx_2serversocket_8h.html',1,'(Global Namespace)'],['../serversocket_8h.html',1,'(Global Namespace)'],['../win_2serversocket_8h.html',1,'(Global Namespace)']]],
   ['set_5faccept_5ftimeout',['set_accept_timeout',['../structdevfix_1_1net_1_1serversocket.html#ae67a25cf26fe54ce7b10d07ff9219ce7',1,'devfix::net::serversocket']]],
   ['set_5fenabled',['set_enabled',['../structdevfix_1_1base_1_1strout.html#a49000248c873a593348082f151ccab9b',1,'devfix::base::strout']]],
   ['set_5finterrupted',['set_interrupted',['../structdevfix_1_1net_1_1socket.html#a3fa8d7dcd44e7740b29ad6674005eb5d',1,'devfix::net::socket']]],
@@ -15,7 +18,8 @@ var searchData=
   ['skip',['skip',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a1868a733fd646b29daae6874e07e4e03',1,'devfix::base::io::inputstream::skip()'],['../structdevfix_1_1base_1_1io_1_1source.html#a21cb579307589cbc6f9e02d64c66f4b2',1,'devfix::base::io::source::skip()']]],
   ['skip_5ft',['skip_t',['../namespacedevfix_1_1base_1_1io.html#aeb8f94d85cfeaa405f53a6967e609645',1,'devfix::base::io']]],
   ['socket',['socket',['../structdevfix_1_1net_1_1socket.html',1,'devfix::net']]],
-  ['socket_2eh',['socket.h',['../socket_8h.html',1,'']]],
+  ['socket_2ecpp',['socket.cpp',['../socket_8cpp.html',1,'']]],
+  ['socket_2eh',['socket.h',['../lnx_2socket_8h.html',1,'(Global Namespace)'],['../socket_8h.html',1,'(Global Namespace)'],['../win_2socket_8h.html',1,'(Global Namespace)']]],
   ['socketexception',['socketexception',['../structdevfix_1_1net_1_1socketexception.html',1,'devfix::net::socketexception'],['../structdevfix_1_1net_1_1socketexception.html#aeab5d004d494103b37156a5f23a5296a',1,'devfix::net::socketexception::socketexception(const std::string &amp;what_arg, int err=-1)'],['../structdevfix_1_1net_1_1socketexception.html#a6da69f635eb11f932a0e960545d023bd',1,'devfix::net::socketexception::socketexception(const char *what_arg, int err=-1)']]],
   ['socketexception_2eh',['socketexception.h',['../socketexception_8h.html',1,'']]],
   ['source',['source',['../structdevfix_1_1base_1_1io_1_1source.html',1,'devfix::base::io::source'],['../structdevfix_1_1base_1_1io_1_1source.html#af8bef20f5b54153c3fd1fbc7daa263c5',1,'devfix::base::io::source::source()']]],

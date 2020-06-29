@@ -1,0 +1,135 @@
+\hypertarget{structdevfix_1_1base_1_1filesystem}{}\section{devfix\+:\+:base\+:\+:filesystem Struct Reference}
+\label{structdevfix_1_1base_1_1filesystem}\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+
+
+{\ttfamily \#include $<$filesystem.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static bool \hyperlink{structdevfix_1_1base_1_1filesystem_a0b24e0dc385d1a6257adf3ece7830b7e}{exists} (const std\+::string \&filepath)
+\item 
+static bool \hyperlink{structdevfix_1_1base_1_1filesystem_ab83a752064650b62278367d58e12726a}{is\+\_\+abs\+\_\+path} (const std\+::string \&filepath)
+\item 
+static bool \hyperlink{structdevfix_1_1base_1_1filesystem_aaa31b2edd95e70979e3a932a21d28e59}{isfile} (const std\+::string \&filepath)
+\item 
+static void \hyperlink{structdevfix_1_1base_1_1filesystem_af0b0e1daa40b7d547983d4f70bb5e3b7}{touch} (const std\+::string \&filepath)
+\item 
+static void \hyperlink{structdevfix_1_1base_1_1filesystem_a120ab728ac1fc842a4897571de625f6b}{rm} (const std\+::string \&filepath)
+\item 
+static bool \hyperlink{structdevfix_1_1base_1_1filesystem_a847752381fcd24c3fea6802b04cad5c6}{isdir} (const std\+::string \&filepath)
+\item 
+static void \hyperlink{structdevfix_1_1base_1_1filesystem_aabb99229325d7aafdefe857ba7317aac}{mkdir} (const std\+::string \&filepath, bool parents=false)
+\item 
+static std\+::string \hyperlink{structdevfix_1_1base_1_1filesystem_a93c1a012676ba19073545d6fd59d6ac3}{basename} (const std\+::string \&filepath)
+\item 
+static std\+::string \hyperlink{structdevfix_1_1base_1_1filesystem_a4eda25bbce0188a5b2e9899a054e0854}{dirname} (const std\+::string \&filepath)
+\item 
+static std\+::list$<$ std\+::string $>$ \hyperlink{structdevfix_1_1base_1_1filesystem_a6e922f4a97bb814d002ce058506edfec}{lstdir} (const std\+::string \&filepath)
+\item 
+static void \hyperlink{structdevfix_1_1base_1_1filesystem_ac0256430ab57a86e73b01695a8bff8b8}{rmdir} (const std\+::string \&filepath, bool recursive=false)
+\item 
+static std\+::string \hyperlink{structdevfix_1_1base_1_1filesystem_a2f824476266362a1a98f3f762624a7ae}{get\+\_\+temp\+\_\+dir} ()
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static const char \hyperlink{structdevfix_1_1base_1_1filesystem_ad081255decbcf3dafe5f155b7193b05b}{S\+E\+P\+A\+R\+A\+T\+OR}
+\item 
+static const std\+::string\+\_\+view \hyperlink{structdevfix_1_1base_1_1filesystem_abc6bdc561a5baa7b4b8da2c3cdb915b9}{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+SV}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_a93c1a012676ba19073545d6fd59d6ac3}\label{structdevfix_1_1base_1_1filesystem_a93c1a012676ba19073545d6fd59d6ac3}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!basename@{basename}}
+\index{basename@{basename}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{basename()}{basename()}}
+{\footnotesize\ttfamily static std\+::string devfix\+::base\+::filesystem\+::basename (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_a4eda25bbce0188a5b2e9899a054e0854}\label{structdevfix_1_1base_1_1filesystem_a4eda25bbce0188a5b2e9899a054e0854}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!dirname@{dirname}}
+\index{dirname@{dirname}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{dirname()}{dirname()}}
+{\footnotesize\ttfamily static std\+::string devfix\+::base\+::filesystem\+::dirname (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_a0b24e0dc385d1a6257adf3ece7830b7e}\label{structdevfix_1_1base_1_1filesystem_a0b24e0dc385d1a6257adf3ece7830b7e}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!exists@{exists}}
+\index{exists@{exists}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{exists()}{exists()}}
+{\footnotesize\ttfamily static bool devfix\+::base\+::filesystem\+::exists (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_a2f824476266362a1a98f3f762624a7ae}\label{structdevfix_1_1base_1_1filesystem_a2f824476266362a1a98f3f762624a7ae}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!get\+\_\+temp\+\_\+dir@{get\+\_\+temp\+\_\+dir}}
+\index{get\+\_\+temp\+\_\+dir@{get\+\_\+temp\+\_\+dir}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{get\+\_\+temp\+\_\+dir()}{get\_temp\_dir()}}
+{\footnotesize\ttfamily static std\+::string devfix\+::base\+::filesystem\+::get\+\_\+temp\+\_\+dir (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_ab83a752064650b62278367d58e12726a}\label{structdevfix_1_1base_1_1filesystem_ab83a752064650b62278367d58e12726a}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!is\+\_\+abs\+\_\+path@{is\+\_\+abs\+\_\+path}}
+\index{is\+\_\+abs\+\_\+path@{is\+\_\+abs\+\_\+path}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{is\+\_\+abs\+\_\+path()}{is\_abs\_path()}}
+{\footnotesize\ttfamily static bool devfix\+::base\+::filesystem\+::is\+\_\+abs\+\_\+path (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_a847752381fcd24c3fea6802b04cad5c6}\label{structdevfix_1_1base_1_1filesystem_a847752381fcd24c3fea6802b04cad5c6}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!isdir@{isdir}}
+\index{isdir@{isdir}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{isdir()}{isdir()}}
+{\footnotesize\ttfamily static bool devfix\+::base\+::filesystem\+::isdir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_aaa31b2edd95e70979e3a932a21d28e59}\label{structdevfix_1_1base_1_1filesystem_aaa31b2edd95e70979e3a932a21d28e59}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!isfile@{isfile}}
+\index{isfile@{isfile}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{isfile()}{isfile()}}
+{\footnotesize\ttfamily static bool devfix\+::base\+::filesystem\+::isfile (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_a6e922f4a97bb814d002ce058506edfec}\label{structdevfix_1_1base_1_1filesystem_a6e922f4a97bb814d002ce058506edfec}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!lstdir@{lstdir}}
+\index{lstdir@{lstdir}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{lstdir()}{lstdir()}}
+{\footnotesize\ttfamily static std\+::list$<$std\+::string$>$ devfix\+::base\+::filesystem\+::lstdir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_aabb99229325d7aafdefe857ba7317aac}\label{structdevfix_1_1base_1_1filesystem_aabb99229325d7aafdefe857ba7317aac}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!mkdir@{mkdir}}
+\index{mkdir@{mkdir}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{mkdir()}{mkdir()}}
+{\footnotesize\ttfamily static void devfix\+::base\+::filesystem\+::mkdir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{bool}]{parents = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_a120ab728ac1fc842a4897571de625f6b}\label{structdevfix_1_1base_1_1filesystem_a120ab728ac1fc842a4897571de625f6b}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!rm@{rm}}
+\index{rm@{rm}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{rm()}{rm()}}
+{\footnotesize\ttfamily static void devfix\+::base\+::filesystem\+::rm (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_ac0256430ab57a86e73b01695a8bff8b8}\label{structdevfix_1_1base_1_1filesystem_ac0256430ab57a86e73b01695a8bff8b8}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!rmdir@{rmdir}}
+\index{rmdir@{rmdir}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{rmdir()}{rmdir()}}
+{\footnotesize\ttfamily static void devfix\+::base\+::filesystem\+::rmdir (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath,  }\item[{bool}]{recursive = {\ttfamily false} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_af0b0e1daa40b7d547983d4f70bb5e3b7}\label{structdevfix_1_1base_1_1filesystem_af0b0e1daa40b7d547983d4f70bb5e3b7}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!touch@{touch}}
+\index{touch@{touch}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{touch()}{touch()}}
+{\footnotesize\ttfamily static void devfix\+::base\+::filesystem\+::touch (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{filepath }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_ad081255decbcf3dafe5f155b7193b05b}\label{structdevfix_1_1base_1_1filesystem_ad081255decbcf3dafe5f155b7193b05b}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!S\+E\+P\+A\+R\+A\+T\+OR@{S\+E\+P\+A\+R\+A\+T\+OR}}
+\index{S\+E\+P\+A\+R\+A\+T\+OR@{S\+E\+P\+A\+R\+A\+T\+OR}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{S\+E\+P\+A\+R\+A\+T\+OR}{SEPARATOR}}
+{\footnotesize\ttfamily const char devfix\+::base\+::filesystem\+::\+S\+E\+P\+A\+R\+A\+T\+OR\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1filesystem_abc6bdc561a5baa7b4b8da2c3cdb915b9}\label{structdevfix_1_1base_1_1filesystem_abc6bdc561a5baa7b4b8da2c3cdb915b9}} 
+\index{devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}!S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+SV@{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+SV}}
+\index{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+SV@{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+SV}!devfix\+::base\+::filesystem@{devfix\+::base\+::filesystem}}
+\subsubsection{\texorpdfstring{S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+SV}{SEPARATOR\_SV}}
+{\footnotesize\ttfamily const std\+::string\+\_\+view devfix\+::base\+::filesystem\+::\+S\+E\+P\+A\+R\+A\+T\+O\+R\+\_\+\+SV\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/\hyperlink{filesystem_8h}{filesystem.\+h}\end{DoxyCompactItemize}

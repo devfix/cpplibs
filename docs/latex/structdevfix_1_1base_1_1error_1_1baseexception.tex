@@ -11,7 +11,8 @@ Abstract error base class.
 
 
 
-Inheritance diagram for devfix\+:\+:base\+:\+:error\+:\+:baseexception\+:\nopagebreak
+Inheritance diagram for devfix\+:\+:base\+:\+:error\+:\+:baseexception\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -23,21 +24,21 @@ Inheritance diagram for devfix\+:\+:base\+:\+:error\+:\+:baseexception\+:\nopage
 \item 
 \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_abc1384f68bf47292ab520a96eedec596}{baseexception} ()=delete
 \item 
-\hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a34ac448cc55e4d9ce0ee4495abbb0f86}{baseexception} (std\+::string what\+\_\+arg, int err=-\/1)
+\hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_ad2b9d2672d0a946cabc16bf26be3fe2e}{baseexception} (const std\+::string \&what\+\_\+arg, int err=0)
 \item 
 \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a3ae67c736d3268683cb92556c9f14bd7}{$\sim$baseexception} () override=default
 \item 
 const char $\ast$ \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}{what} () const noexcept final
 \item 
-int \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a1974deee894842b51ba42e15dbd0f8d1}{get\+\_\+errno} () const noexcept
-\end{DoxyCompactItemize}
+int \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_ae2333e7e833e2b922fb8aa50c7fa8e79}{get\+\_\+code} () const noexcept
+\begin{DoxyCompactList}\small\item\em Returns a platform specific error code which corresponds with the exception cause. A value of \textquotesingle{}0\textquotesingle{} means unspecified error code. \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Protected Attributes}
 \begin{DoxyCompactItemize}
 \item 
 std\+::string \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_adec18389f27e1d1dae67f80caa1b617b}{what\+\_\+arg\+\_\+}
 \begin{DoxyCompactList}\small\item\em failure description \end{DoxyCompactList}\item 
 int \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_aa1f58eb33d67ccf87465656f20b6d640}{err\+\_\+}
-\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em platform specific error code \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Detailed Description}
@@ -52,17 +53,17 @@ This class is the parent of more specific exceptions and cannot be thrown direct
 \subsubsection{\texorpdfstring{baseexception()}{baseexception()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
 {\footnotesize\ttfamily devfix\+::base\+::error\+::baseexception\+::baseexception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
 
-Delete simple constructor, always enforce a failure description. \mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1baseexception_a34ac448cc55e4d9ce0ee4495abbb0f86}\label{structdevfix_1_1base_1_1error_1_1baseexception_a34ac448cc55e4d9ce0ee4495abbb0f86}} 
+Delete simple constructor, always enforce a failure description. \mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1baseexception_ad2b9d2672d0a946cabc16bf26be3fe2e}\label{structdevfix_1_1base_1_1error_1_1baseexception_ad2b9d2672d0a946cabc16bf26be3fe2e}} 
 \index{devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}!baseexception@{baseexception}}
 \index{baseexception@{baseexception}!devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}}
 \subsubsection{\texorpdfstring{baseexception()}{baseexception()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily devfix\+::base\+::error\+::baseexception\+::baseexception (\begin{DoxyParamCaption}\item[{std\+::string}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily devfix\+::base\+::error\+::baseexception\+::baseexception (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{what\+\_\+arg,  }\item[{int}]{err = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
 
 Constructs the error object with what\+\_\+arg as explanatory std\+::string that can be accessed through \hyperlink{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}{what()}. 
 \begin{DoxyParams}{Parameters}
 {\em what\+\_\+arg} & failure description \\
 \hline
-{\em err} & c error code (errno) \\
+{\em err} & platform error code (errno) \\
 \hline
 \end{DoxyParams}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1baseexception_a3ae67c736d3268683cb92556c9f14bd7}\label{structdevfix_1_1base_1_1error_1_1baseexception_a3ae67c736d3268683cb92556c9f14bd7}} 
@@ -71,7 +72,8 @@ Constructs the error object with what\+\_\+arg as explanatory std\+::string that
 \subsubsection{\texorpdfstring{$\sim$baseexception()}{~baseexception()}}
 {\footnotesize\ttfamily devfix\+::base\+::error\+::baseexception\+::$\sim$baseexception (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [override]}, {\ttfamily [default]}}
 
-Virtual constructor to make class abstract. Here is the caller graph for this function\+:\nopagebreak
+Virtual constructor to make class abstract. Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -81,12 +83,19 @@ Virtual constructor to make class abstract. Here is the caller graph for this fu
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1baseexception_a1974deee894842b51ba42e15dbd0f8d1}\label{structdevfix_1_1base_1_1error_1_1baseexception_a1974deee894842b51ba42e15dbd0f8d1}} 
-\index{devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}!get\+\_\+errno@{get\+\_\+errno}}
-\index{get\+\_\+errno@{get\+\_\+errno}!devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}}
-\subsubsection{\texorpdfstring{get\+\_\+errno()}{get\_errno()}}
-{\footnotesize\ttfamily int devfix\+::base\+::error\+::baseexception\+::get\+\_\+errno (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1baseexception_ae2333e7e833e2b922fb8aa50c7fa8e79}\label{structdevfix_1_1base_1_1error_1_1baseexception_ae2333e7e833e2b922fb8aa50c7fa8e79}} 
+\index{devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}!get\+\_\+code@{get\+\_\+code}}
+\index{get\+\_\+code@{get\+\_\+code}!devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}}
+\subsubsection{\texorpdfstring{get\+\_\+code()}{get\_code()}}
+{\footnotesize\ttfamily int devfix\+::base\+::error\+::baseexception\+::get\+\_\+code (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [noexcept]}}
 
+
+
+Returns a platform specific error code which corresponds with the exception cause. A value of \textquotesingle{}0\textquotesingle{} means unspecified error code. 
+
+\begin{DoxyReturn}{Returns}
+error code 
+\end{DoxyReturn}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}\label{structdevfix_1_1base_1_1error_1_1baseexception_a16327152a55d65b1e537825231fbd452}} 
 \index{devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}!what@{what}}
 \index{what@{what}!devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}}
@@ -104,6 +113,10 @@ explanatory string
 \index{err\+\_\+@{err\+\_\+}!devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}}
 \subsubsection{\texorpdfstring{err\+\_\+}{err\_}}
 {\footnotesize\ttfamily int devfix\+::base\+::error\+::baseexception\+::err\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+
+
+platform specific error code 
 
 \mbox{\Hypertarget{structdevfix_1_1base_1_1error_1_1baseexception_adec18389f27e1d1dae67f80caa1b617b}\label{structdevfix_1_1base_1_1error_1_1baseexception_adec18389f27e1d1dae67f80caa1b617b}} 
 \index{devfix\+::base\+::error\+::baseexception@{devfix\+::base\+::error\+::baseexception}!what\+\_\+arg\+\_\+@{what\+\_\+arg\+\_\+}}
