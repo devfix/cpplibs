@@ -2,7 +2,7 @@
 // Created by core on 5/25/20.
 //
 
-#if CPPLIBS_ENABLE_TESTS == 1
+#if CPPLIBS_ENABLE_DSP_TESTS == 1
 
 #include <catch/catch.hpp>
 #include <cstring>

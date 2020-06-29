@@ -11,8 +11,8 @@
 #include "lnx/socket.h"
 #include "lnx/serversocket.h"
 #elif PLATFORM_WINDOWS == 1
-#include "win/win_socket.h"
-#include "win/win_serversocket.h"
+#include "win/socket.h"
+#include "win/serversocket.h"
 #else
 PLATPLATFORM_UNSUPPORTED;
 #endif

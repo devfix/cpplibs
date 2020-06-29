@@ -2,7 +2,7 @@
 // Created by core on 12/19/19.
 //
 
-#if CPPLIBS_ENABLE_TESTS == 1
+#if CPPLIBS_ENABLE_NET_TESTS == 1
 
 #include <catch/catch.hpp>
 #include <thread>

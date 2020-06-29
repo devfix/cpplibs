@@ -3,16 +3,13 @@
 //
 
 
-#if CPPLIBS_ENABLE_TESTS == 1
+#if CPPLIBS_ENABLE_DSP_TESTS == 1
 
 #include <catch/catch.hpp>
 #include <functional>
 #include "../fft.h"
 
 using namespace devfix::dsp;
-
-constexpr double ABS_ERROR = 1e-12;
-constexpr double ABS_COARSE_ERROR = 1e-3;
 
 constexpr std::size_t LEN = 1024;
 

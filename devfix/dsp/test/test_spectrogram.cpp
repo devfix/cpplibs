@@ -2,7 +2,7 @@
 // Created by core on 6/3/20.
 //
 
-#if CPPLIBS_ENABLE_TESTS == 1
+#if CPPLIBS_ENABLE_DSP_TESTS == 1
 
 #include <catch/catch.hpp>
 #include "../spectrogram.h"

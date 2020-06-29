@@ -13,7 +13,7 @@
   if (err) throw exception_class(std::string(std::strerror(errno)) + " @ " + SOURCE_LINE, errno)
 
 #define EXCEPTION_GUARD_MSG(err, exception_class, message) \
-  if (err) throw exception_class(std::string(message) + " @ " + SOURCE_LINE, errno)
+  if (err) throw exception_class(std::string(message) + " @ " + SOURCE_LINE, 0)
 
 #define EXCEPTION_GUARD(err, exception_class) \
   if (err) throw exception_class(SOURCE_LINE, 0)

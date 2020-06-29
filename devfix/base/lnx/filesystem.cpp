@@ -12,19 +12,32 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <fcntl.h>
-#include <stdexcept>
+#include <libgen.h>
 #include "../filesystem.h"
 #include "../error/ioexception.h"
+
+#undef basename  // in <libgen.h> it is an alias for __xpg_basename
 
 namespace devfix::base
 {
 	const char filesystem::SEPARATOR = '/';
+	const std::string_view filesystem::SEPARATOR_SV = "/";
 
 	static constexpr __mode_t DEFAULT_LINUX_FILEMODE = S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH;
 
 	bool filesystem::exists(const std::string& filepath)
 	{
-		return ::access(filepath.c_str(), F_OK) != -1;
+		if (::access(filepath.c_str(), F_OK) == 0) { return true; }
+		EXCEPTION_GUARD_ERRNO(errno != ENOENT, devfix::base::error::ioexception);
+		return false;
+	}
+
+	bool filesystem::is_abs_path(const std::string& filepath)
+	{
+		// empty path is illegal
+		EXCEPTION_GUARD_MSG(filepath.empty(), devfix::base::error::ioexception, "empty filepath");
+
+		return filepath[0] == SEPARATOR;
 	}
 
 	bool filesystem::isfile(const std::string& filepath)
@@ -36,7 +49,7 @@ namespace devfix::base
 
 	void filesystem::touch(const std::string& filepath)
 	{
-		int file = ::open(filepath.c_str(), O_RDWR | O_CREAT, DEFFILEMODE);
+		int file = ::open(filepath.c_str(), O_RDWR | O_CREAT, DEFFILEMODE);  // TODO: check permission
 		EXCEPTION_GUARD_ERRNO (file < 0, devfix::base::error::ioexception);
 		EXCEPTION_GUARD_ERRNO (::close(file), devfix::base::error::ioexception);
 	}
@@ -53,9 +66,36 @@ namespace devfix::base
 		return S_ISDIR(file_stat.st_mode);
 	}
 
-	void filesystem::mkdir(const std::string& filepath)
+	void filesystem::mkdir(const std::string& filepath, bool parents)
 	{
+		if (parents)
+		{
+			std::string dir = dirname(filepath);
+			if (!exists(dir)) { mkdir(dir, true); }
+		}
 		EXCEPTION_GUARD_ERRNO(::mkdir(filepath.c_str(), DEFAULT_LINUX_FILEMODE), devfix::base::error::ioexception);
+	}
+
+	std::string filesystem::basename(const std::string& filepath)
+	{
+		// empty path is illegal
+		EXCEPTION_GUARD_MSG(filepath.empty(), devfix::base::error::ioexception, "empty filepath");
+
+		std::string fp(filepath);  // create copy since ::basename can modify the argument
+		return ::__xpg_basename(const_cast<char*>(fp.c_str()));
+	}
+
+	std::string filesystem::dirname(const std::string& filepath)
+	{
+		// empty path is illegal
+		EXCEPTION_GUARD_MSG(filepath.empty(), devfix::base::error::ioexception, "empty filepath");
+
+		// create copy of path and remove all trailing separators '/' except one
+		std::string fp(filepath);
+		if (*fp.rbegin() == SEPARATOR) { while (!fp.empty() && *fp.rbegin() == SEPARATOR) { fp.pop_back(); }}
+		fp.push_back(SEPARATOR);
+
+		return ::dirname(const_cast<char*>(fp.c_str()));
 	}
 
 	std::list<std::string> filesystem::lstdir(const std::string& filepath)

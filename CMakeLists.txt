@@ -21,7 +21,15 @@ set(CMAKE_CXX_STANDARD 20)
 if (NOT DEFINED CPPLIBS_ENABLE_TESTS)
     set(CPPLIBS_ENABLE_TESTS 1)  # tests are enabled by default
 endif ()
-set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCPPLIBS_ENABLE_TESTS=${CPPLIBS_ENABLE_TESTS}")
+if (${CPPLIBS_ENABLE_TESTS})
+    if (NOT DEFINED CPPLIBS_ENABLE_DSP_TESTS)
+        set(CPPLIBS_ENABLE_DSP_TESTS 1)  # tests are enabled by default
+    endif ()
+    if (NOT DEFINED CPPLIBS_ENABLE_NET_TESTS)
+        set(CPPLIBS_ENABLE_NET_TESTS 1)  # tests are enabled by default
+    endif ()
+endif ()
+set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -D CPPLIBS_ENABLE_TESTS=${CPPLIBS_ENABLE_TESTS} -D CPPLIBS_ENABLE_DSP_TESTS=${CPPLIBS_ENABLE_DSP_TESTS} -D CPPLIBS_ENABLE_NET_TESTS=${CPPLIBS_ENABLE_NET_TESTS}")
 
 set(WARNINGS
         -pedantic
@@ -70,5 +78,5 @@ add_subdirectory(devfix/dsp)
 if (${CPPLIBS_ENABLE_TESTS})
     file(GLOB_RECURSE src_tests ${CMAKE_CURRENT_SOURCE_DIR} "test_*.cpp")
     add_executable(testrunner testrunner.cpp "${src_tests}")
-    target_link_libraries(testrunner gtest pthread devfixnet devfixdsp)
+    target_link_libraries(testrunner pthread devfixnet devfixdsp)
 endif ()
