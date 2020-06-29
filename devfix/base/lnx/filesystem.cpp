@@ -12,10 +12,10 @@
 #include <unistd.h>
 #include <dirent.h>
 #include <fcntl.h>
-#include <libgen.h>
 #include "../filesystem.h"
 #include "../error/ioexception.h"
 
+#include <libgen.h>
 #undef basename  // in <libgen.h> it is an alias for __xpg_basename
 
 namespace devfix::base
@@ -23,7 +23,8 @@ namespace devfix::base
 	const char filesystem::SEPARATOR = '/';
 	const std::string_view filesystem::SEPARATOR_SV = "/";
 
-	static constexpr __mode_t DEFAULT_LINUX_FILEMODE = S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH;
+	static constexpr __mode_t DEFAULT_DIR_MODE = S_IRWXU | S_IRWXG | S_IROTH | S_IXOTH;
+	static constexpr __mode_t DEFAULT_FILE_MODE = DEFFILEMODE;
 
 	bool filesystem::exists(const std::string& filepath)
 	{
@@ -49,7 +50,7 @@ namespace devfix::base
 
 	void filesystem::touch(const std::string& filepath)
 	{
-		int file = ::open(filepath.c_str(), O_RDWR | O_CREAT, DEFFILEMODE);  // TODO: check permission
+		int file = ::open(filepath.c_str(), O_RDWR | O_CREAT, DEFAULT_FILE_MODE);
 		EXCEPTION_GUARD_ERRNO (file < 0, devfix::base::error::ioexception);
 		EXCEPTION_GUARD_ERRNO (::close(file), devfix::base::error::ioexception);
 	}
@@ -73,7 +74,7 @@ namespace devfix::base
 			std::string dir = dirname(filepath);
 			if (!exists(dir)) { mkdir(dir, true); }
 		}
-		EXCEPTION_GUARD_ERRNO(::mkdir(filepath.c_str(), DEFAULT_LINUX_FILEMODE), devfix::base::error::ioexception);
+		EXCEPTION_GUARD_ERRNO(::mkdir(filepath.c_str(), DEFAULT_DIR_MODE), devfix::base::error::ioexception);
 	}
 
 	std::string filesystem::basename(const std::string& filepath)

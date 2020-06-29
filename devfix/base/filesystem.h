@@ -7,8 +7,6 @@
 #include <string>
 #include <list>
 
-#undef basename
-
 namespace devfix::base
 {
 	struct filesystem
