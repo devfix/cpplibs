@@ -6,22 +6,14 @@
 
 #if PLATFORM_WINDOWS == 1
 
-#include "../filesystem.h"
-#include "../error/ioexception.h"
-
-#ifdef UNICODE
-#undef UNICODE
-#endif
-#ifdef _UNICODE
-#undef _UNICODE
-#endif
-
 #include <cstring>
 #include <cstdlib>
 #include <fcntl.h>
 #include <io.h>
 #include <sys/stat.h>
 #include <windows.h>
+#include "../filesystem.h"
+#include "../error/ioexception.h"
 
 namespace devfix::base
 {
@@ -138,7 +130,7 @@ namespace devfix::base
 
 
 		std::string searchpath = filepath + SEPARATOR + "*.*";
-		WIN32_FIND_DATA fd_file;
+		_WIN32_FIND_DATAA fd_file;
 		HANDLE handle = ::FindFirstFileA(searchpath.c_str(), &fd_file);
 		EXCEPTION_GUARD_MSG(handle == INVALID_HANDLE_VALUE, devfix::base::error::ioexception, "filepath not found");
 
