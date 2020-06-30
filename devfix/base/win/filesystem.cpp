@@ -131,7 +131,7 @@ namespace devfix::base
 
 		std::string searchpath = filepath + SEPARATOR + "*.*";
 		WIN32_FIND_DATA fd_file;
-		HANDLE handle = ::FindFirstFile(searchpath.c_str(), &fd_file);
+		HANDLE handle = ::FindFirstFileA(searchpath.c_str(), &fd_file);
 		EXCEPTION_GUARD_MSG(handle == INVALID_HANDLE_VALUE, devfix::base::error::ioexception, "filepath not found");
 
 		std::list<std::string> entries;
@@ -142,7 +142,7 @@ namespace devfix::base
 
 			// only add real file name who are not "." or ".."
 			if ((len != 1 || name[0] != '.') && (len != 2 || name[0] != '.' || name[1] != '.')) { entries.emplace_back(name); }
-		} while (::FindNextFile(handle, &fd_file));
+		} while (::FindNextFileA(handle, &fd_file));
 
 		::FindClose(handle);
 		return entries;
