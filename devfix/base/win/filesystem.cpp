@@ -6,14 +6,22 @@
 
 #if PLATFORM_WINDOWS == 1
 
+#include "../filesystem.h"
+#include "../error/ioexception.h"
+
+#ifdef UNICODE
+#undef UNICODE
+#endif
+#ifdef _UNICODE
+#undef _UNICODE
+#endif
+
 #include <cstring>
 #include <cstdlib>
 #include <fcntl.h>
 #include <io.h>
 #include <sys/stat.h>
 #include <windows.h>
-#include "../filesystem.h"
-#include "../error/ioexception.h"
 
 namespace devfix::base
 {
