@@ -72,9 +72,12 @@ TEST_CASE("FileSystem - List")
 	auto list = filesystem::lstdir(tmp_dir);
 	REQUIRE(list.size() == 3);
 	REQUIRE(std::find(list.begin(), list.end(), "z") == list.end());
-	REQUIRE_FALSE(std::find(list.begin(), list.end(), "a") == list.end());
-	REQUIRE_FALSE(std::find(list.begin(), list.end(), "b") == list.end());
-	REQUIRE_FALSE(std::find(list.begin(), list.end(), "c") == list.end());
+	CHECK_FALSE(std::find(list.begin(), list.end(), "a") == list.end());
+	CHECK_FALSE(std::find(list.begin(), list.end(), "b") == list.end());
+	CHECK_FALSE(std::find(list.begin(), list.end(), "c") == list.end());
+	CHECK(filesystem::size(tmp_dir + "a") == 0);
+	CHECK(filesystem::size(tmp_dir + "b") == 0);
+	CHECK_THROWS(filesystem::size(tmp_dir + "c"));
 	epilog();
 }
 

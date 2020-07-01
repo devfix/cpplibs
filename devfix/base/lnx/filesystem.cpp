@@ -49,6 +49,14 @@ namespace devfix::base
 		return S_ISREG(file_stat.st_mode);
 	}
 
+	std::uint64_t filesystem::size(const std::string& filepath)
+	{
+		struct stat file_stat{};
+		EXCEPTION_GUARD_ERRNO(::stat(filepath.c_str(), &file_stat), devfix::base::error::ioexception);
+		EXCEPTION_GUARD_MSG(!S_ISREG(file_stat.st_mode), devfix::base::error::ioexception, "is not regular file");
+		return static_cast<uint64_t>(file_stat.st_size);
+	}
+
 	void filesystem::touch(const std::string& filepath)
 	{
 		int file = ::open(filepath.c_str(), O_RDWR | O_CREAT, DEFAULT_FILE_MODE);

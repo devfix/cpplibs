@@ -17,6 +17,7 @@ namespace devfix::base
 		[[nodiscard]] static bool exists(const std::string& filepath);
 		[[nodiscard]] static bool is_abs_path(const std::string& filepath);
 		[[nodiscard]] static bool isfile(const std::string& filepath);
+		[[nodiscard]] static std::uint64_t size(const std::string& filepath);
 		static void touch(const std::string& filepath);
 		static void rm(const std::string& filepath);
 		[[nodiscard]] static bool isdir(const std::string& filepath);
