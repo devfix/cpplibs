@@ -60,6 +60,7 @@ TEST_CASE("FileSystem - Directories")
 	std::string ldir =dir + filesystem::SEPARATOR + "sub" + filesystem::SEPARATOR + "sub" + filesystem::SEPARATOR + "sub" + filesystem::SEPARATOR
 		+ "sub";
 	REQUIRE_NOTHROW(filesystem::mkdir(ldir, true));
+	REQUIRE_NOTHROW(filesystem::mkdir(ldir, true));  // second time, now all directories exists
 	REQUIRE(filesystem::exists(ldir));
 
 	epilog();

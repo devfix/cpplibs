@@ -16,6 +16,7 @@
 #include "../error/ioexception.h"
 
 #include <libgen.h>
+
 #undef basename  // in <libgen.h> it is an alias for __xpg_basename
 
 namespace devfix::base
@@ -73,6 +74,12 @@ namespace devfix::base
 		{
 			std::string dir = dirname(filepath);
 			if (!exists(dir)) { mkdir(dir, true); }
+
+			if (exists(filepath))
+			{
+				EXCEPTION_GUARD_MSG(!isdir(filepath), devfix::base::error::ioexception, "file exists");
+				return;
+			}
 		}
 		EXCEPTION_GUARD_ERRNO(::mkdir(filepath.c_str(), DEFAULT_DIR_MODE), devfix::base::error::ioexception);
 	}

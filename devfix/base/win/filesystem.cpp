@@ -73,6 +73,12 @@ namespace devfix::base
 		{
 			std::string dir = dirname(filepath);
 			if (!exists(dir)) { mkdir(dir, true); }
+
+			if (exists(filepath))
+			{
+				EXCEPTION_GUARD_MSG(!isdir(filepath), devfix::base::error::ioexception, "file exists");
+				return;
+			}
 		}
 		EXCEPTION_GUARD_ERRNO(::_mkdir(filepath.c_str()), devfix::base::error::ioexception);
 	}
