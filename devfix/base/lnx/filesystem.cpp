@@ -153,7 +153,7 @@ namespace devfix::base
 		else { EXCEPTION_GUARD_ERRNO(::rmdir(filepath.c_str()), devfix::base::error::ioexception); }
 	}
 
-	std::string filesystem::get_temp_dir()
+	std::string filesystem::get_temp_dir() noexcept
 	{
 		const char* filepath = nullptr;
 		if ((filepath = ::getenv("TMPDIR"))) { return filepath; }
@@ -163,7 +163,7 @@ namespace devfix::base
 		return "/tmp";
 	}
 
-	std::string filesystem::get_cache_dir()
+	std::string filesystem::get_cache_dir() noexcept
 	{
 		const char* filepath = nullptr;
 		if ((filepath = ::getenv("HOME"))) { return std::string(filepath) + SEPARATOR + ".cache"; }

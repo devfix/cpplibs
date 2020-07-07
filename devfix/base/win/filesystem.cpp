@@ -180,7 +180,7 @@ namespace devfix::base
 		else { EXCEPTION_GUARD_ERRNO(::_rmdir(filepath.c_str()), devfix::base::error::ioexception); }
 	}
 
-	std::string filesystem::get_temp_dir()
+	std::string filesystem::get_temp_dir() noexcept
 	{
 		char* filepath = nullptr;
 		if ((filepath = ::getenv("TEMP"))) { return filepath; }
@@ -188,7 +188,7 @@ namespace devfix::base
 		throw devfix::base::error::ioexception("could not get temp dir");
 	}
 
-	std::string filesystem::get_cache_dir()
+	std::string filesystem::get_cache_dir() noexcept
 	{
 		const char* filepath = nullptr;
 		if ((filepath = ::getenv("LOCALAPPDATA"))) { return std::string(filepath) + SEPARATOR + "cache"; }
