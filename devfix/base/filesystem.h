@@ -27,5 +27,6 @@ namespace devfix::base
 		[[nodiscard]] static std::list<std::string> lstdir(const std::string& filepath);
 		static void rmdir(const std::string& filepath, bool recursive = false);
 		[[nodiscard]] static std::string get_temp_dir();
+		[[nodiscard]] static std::string get_cache_dir();
 	};
 }

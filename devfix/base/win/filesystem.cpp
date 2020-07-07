@@ -188,6 +188,13 @@ namespace devfix::base
 		throw devfix::base::error::ioexception("could not get temp dir");
 	}
 
+	std::string filesystem::get_cache_dir()
+	{
+		const char* filepath = nullptr;
+		if ((filepath = ::getenv("LOCALAPPDATA"))) { return std::string(filepath) + SEPARATOR + "cache"; }
+		return get_temp_dir() + SEPARATOR + "cache";
+	}
+
 }
 
 #endif

@@ -162,6 +162,13 @@ namespace devfix::base
 		if ((filepath = ::getenv("TEMP"))) { return filepath; }
 		return "/tmp";
 	}
+
+	std::string filesystem::get_cache_dir()
+	{
+		const char* filepath = nullptr;
+		if ((filepath = ::getenv("HOME"))) { return std::string(filepath) + SEPARATOR + ".cache"; }
+		return get_temp_dir() + SEPARATOR + "cache";
+	}
 }
 
 #endif
