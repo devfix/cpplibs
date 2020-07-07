@@ -32,11 +32,7 @@ namespace devfix::base
 
 		explicit slog(const write_t& write, const flush_t& flush) { add_sink(write, flush); }
 
-
-		void add_sink(slog* sl)
-		{
-			sinks_.push_back({sl});
-		}
+		void add_sink(slog* sl) { sinks_.push_back({ sl }); }
 
 		void add_sink(ostream_t* ostream)
 		{
@@ -45,7 +41,7 @@ namespace devfix::base
 				[ostream] { ostream->flush(); }) });
 		}
 
-		//void add_sink(const write_t& write, const flush_t& flush) { sinks_.emplace_back(write, flush); }
+		void add_sink(const write_t& write, const flush_t& flush) { sinks_.push_back({ std::make_pair(write, flush) }); }
 
 		slog(const slog& sl) = delete;
 		slog(slog&& sl) = delete;
