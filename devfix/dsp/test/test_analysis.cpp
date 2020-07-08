@@ -6,8 +6,10 @@
 
 #include <catch/catch.hpp>
 #include "../analysis.h"
+#include "../window.h"
 
 static constexpr double MATH_SQRT2 = 1.41421356237309504880;
+static constexpr double MATH_PI = 3.14159265358979323846;
 static constexpr double PRECISION_FINE = 1e-6;
 
 using namespace devfix::dsp;
@@ -35,6 +37,21 @@ TEST_CASE("Analysis - AmplTHDN")
 		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), 1.) == Approx(0.246170673).margin(PRECISION_FINE));
 		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), 0.2) == Approx(5.051237472).margin(PRECISION_FINE));
 	}
+}
+
+TEST_CASE("Analysis - AmplTHDN with fft")
+{
+	constexpr std::size_t FFT_LEN = 128;
+	std::vector<std::complex<double>> vec(FFT_LEN);
+	for (std::size_t i = 0; i < FFT_LEN; i++)
+	{
+		vec[i] = 0.05 * std::sin(2. * MATH_PI * 8. * double(i) / double(FFT_LEN))
+			+ 0.5 * std::sin(2. * MATH_PI * 2. * double(i) / double(FFT_LEN))
+			- 0.001;
+	}
+
+	CHECK((analysis::ampl_thdn<double, window::rectangle>(vec, 0) == Approx(355.31676008879958).margin(PRECISION_FINE)));
+	CHECK((analysis::ampl_thdn<double, window::rectangle>(vec, 2) == Approx(0.100039992).margin(PRECISION_FINE)));
 }
 
 #endif
