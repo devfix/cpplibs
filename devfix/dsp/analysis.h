@@ -37,22 +37,23 @@ namespace devfix::dsp
 		}
 
 		template<typename FloatT>
-		static constexpr FloatT ampl_thdn(const FloatT* rms, std::size_t len, FloatT sig_rms)
+		static constexpr FloatT ampl_thdn(const FloatT* rms, std::size_t len, const std::vector<std::size_t>& sig_lines)
 		{
-			FloatT sum = 0;
-			for (std::size_t i = 0; i < len; i++) { sum += rms[i] * rms[i]; }
-			sum -= sig_rms * sig_rms;
-			return std::sqrt(sum) / sig_rms;
+			FloatT sum_total = 0;
+			for (std::size_t i = 0; i < len; i++) { sum_total += rms[i] * rms[i]; }
+			FloatT sum_sig = 0;
+			for (auto& l : sig_lines) { sum_sig += rms[l] * rms[l]; }
+			return std::sqrt(sum_total - sum_sig) / std::sqrt(sum_sig);
 		}
 
 		template <typename FloatT, window::win_fun_t<FloatT> win_fun>
-		static constexpr FloatT ampl_thdn(std::vector<std::complex<FloatT>> vec, std::size_t sig_line)
+		static constexpr FloatT ampl_thdn(std::vector<std::complex<FloatT>> vec, const std::vector<std::size_t>& sig_lines)
 		{
 			fft::apply_window<FloatT, win_fun>(vec);
 			fft::transform_inplace(vec);
 			const auto onesided = fft::convert_to_onesided(vec);
 			const auto rms_vec = rms(onesided);
-			return ampl_thdn(rms_vec.data(), rms_vec.size(), rms_vec[sig_line]);
+			return ampl_thdn(rms_vec.data(), rms_vec.size(), sig_lines);
 		}
 
 	private:

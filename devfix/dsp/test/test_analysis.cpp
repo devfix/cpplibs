@@ -29,13 +29,13 @@ TEST_CASE("Analysis - AmplTHDN")
 {
 	{
 		std::vector<double> rms = { 2, 0, 0, 4, 0, 1, 0, 2 };
-		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), 1.) == Approx(4.898979486).margin(PRECISION_FINE));
-		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), 2.) == Approx(2.291287847).margin(PRECISION_FINE));
+		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), { 5 }) == Approx(4.898979486).margin(PRECISION_FINE));
+		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), { 0 }) == Approx(2.291287847).margin(PRECISION_FINE));
 	}
 	{
 		std::vector<double> rms = { 1, 0, 0.1, 0.2, 0, 0.05, 0, 0.09 };
-		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), 1.) == Approx(0.246170673).margin(PRECISION_FINE));
-		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), 0.2) == Approx(5.051237472).margin(PRECISION_FINE));
+		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), { 0 }) == Approx(0.246170673).margin(PRECISION_FINE));
+		CHECK(analysis::ampl_thdn(rms.data(), rms.size(), { 3 }) == Approx(5.051237472).margin(PRECISION_FINE));
 	}
 }
 
@@ -50,8 +50,8 @@ TEST_CASE("Analysis - AmplTHDN with fft")
 			- 0.001;
 	}
 
-	CHECK((analysis::ampl_thdn<double, window::rectangle>(vec, 0) == Approx(355.31676008879958).margin(PRECISION_FINE)));
-	CHECK((analysis::ampl_thdn<double, window::rectangle>(vec, 2) == Approx(0.100039992).margin(PRECISION_FINE)));
+	CHECK((analysis::ampl_thdn<double, window::rectangle>(vec, { 0 }) == Approx(355.31676008879958).margin(PRECISION_FINE)));
+	CHECK((analysis::ampl_thdn<double, window::rectangle>(vec, { 2 }) == Approx(0.100039992).margin(PRECISION_FINE)));
 }
 
 #endif
