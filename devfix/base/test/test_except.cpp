@@ -5,6 +5,7 @@
 #if CPPLIBS_ENABLE_TESTS == 1
 
 #include <catch/catch.hpp>
+#include <iostream>
 #include "../except.h"
 
 using namespace devfix::base;
@@ -23,15 +24,17 @@ TEST_CASE("except - get_trace")
 	catch (...)
 	{
 		auto trace = except::get_trace();
+		CHECK(trace.to_string()
+				  == "std::runtime_error: runtime error\n\u2570\u2574std::invalid_argument: invalid argument\n  \u2570\u2574std::range_error: range error");
 		REQUIRE(trace.size() == 3);
 		REQUIRE(trace.front().has_value());
 		CHECK(trace.front().value().first == "std::runtime_error");
 		CHECK(trace.front().value().second == "runtime error");
-		trace.pop();
+		trace.pop_front();
 		REQUIRE(trace.front().has_value());
 		CHECK(trace.front().value().first == "std::invalid_argument");
 		CHECK(trace.front().value().second == "invalid argument");
-		trace.pop();
+		trace.pop_front();
 		REQUIRE(trace.front().has_value());
 		CHECK(trace.front().value().first == "std::range_error");
 		CHECK(trace.front().value().second == "range error");

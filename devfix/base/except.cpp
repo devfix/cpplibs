@@ -7,14 +7,14 @@
 
 namespace devfix::base
 {
-	except::trace_t except::get_trace()
+	except::trace except::get_trace()
 	{
-		trace_t trace;
+		trace trace;
 		unwind_nested(trace);
 		return trace;
 	}
 
-	void except::unwind_nested(devfix::base::except::trace_t& trace)
+	void except::unwind_nested(devfix::base::except::trace& trace)
 	{
 		try { throw; }
 		catch (...)
@@ -22,9 +22,9 @@ namespace devfix::base
 			try { throw; }
 			catch (const std::exception& e)
 			{
-				trace.emplace(std::make_pair(type::remove_nested(type::demangle(typeid(e).name())), e.what()));
+				trace.emplace_back(std::make_pair(type::remove_nested(type::demangle(typeid(e).name())), e.what()));
 			}
-			catch (...) { trace.emplace(); }
+			catch (...) { trace.emplace_back(); }
 		}
 		try { throw; }
 		catch (const std::nested_exception& nested)

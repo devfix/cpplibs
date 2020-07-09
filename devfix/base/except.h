@@ -7,7 +7,7 @@
 #include <string>
 #include <tuple>
 #include <optional>
-#include <queue>
+#include <list>
 #include "error/baseexception.h"
 #include "error/interruptedexception.h"
 #include "error/ioexception.h"
@@ -19,12 +19,29 @@ namespace devfix::base
 
 	struct except
 	{
-		using trace_t = std::queue<std::optional<std::pair<std::string, std::string>>>;
+		except() = delete;
 
-		[[nodiscard]] static trace_t get_trace();
+		struct trace : public std::list<std::optional<std::pair<std::string, std::string>>>
+		{
+			[[nodiscard]] operator std::string() const
+			{
+				std::size_t depth = 0;
+				std::string str;
+				for (auto it = begin(); it != end(); it++, depth++)
+				{
+					if (depth) { str += "\n" + std::string(depth * 2 - 2, ' ') + "\u2570\u2574"; }
+					str += it->has_value() ? ((**it).first + ": " + (**it).second) : "[...]";
+				}
+				return str;
+			}
+
+			[[nodiscard]] std::string to_string() { return operator std::string(); }
+		};
+
+		[[nodiscard]] static trace get_trace();
 
 	private:
-		static void unwind_nested(trace_t& trace);
+		static void unwind_nested(trace& trace);
 	};
 
 }
