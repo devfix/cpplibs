@@ -47,8 +47,8 @@ namespace devfix::base
 
 	std::uint64_t filesystem::size(const std::string& filepath)
 	{
-		struct stat file_stat{};
-		EXCEPTION_GUARD_ERRNO(::_stat(fp.c_str(), &file_stat), devfix::base::error::ioexception);
+		struct _stat file_stat{};
+		EXCEPTION_GUARD_ERRNO(::_stat(filepath.c_str(), &file_stat), devfix::base::error::ioexception);
 		EXCEPTION_GUARD_MSG(!S_ISREG(file_stat.st_mode), devfix::base::error::ioexception, "is not regular file");
 		return static_cast<uint64_t>(file_stat.st_size);
 	}
