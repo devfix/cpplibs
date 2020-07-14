@@ -4,6 +4,9 @@
 
 #pragma once
 #include <cstdint>
+#include <array>
+#include <vector>
+#include <ccomplex>
 
 namespace devfix::base
 {
@@ -27,7 +30,23 @@ namespace devfix::base
 
 	struct math
 	{
-		static constexpr std::uint32_t reverse_bits(std::uint32_t val, std::size_t bits)
+		template<typename FloatT, std::size_t N>
+		[[nodiscard]] static std::array<std::complex<FloatT>, N> to_complex(const std::array<FloatT, N>& arr)
+		{
+			std::array<std::complex<FloatT>, N> carr;
+			std::transform(arr.begin(), arr.end(), carr.begin(), [](const FloatT& v) { return std::complex<FloatT>(v); });
+			return carr;
+		}
+
+		template<typename FloatT>
+		[[nodiscard]] static std::vector<std::complex<FloatT>> to_complex(const std::vector<FloatT>& vec)
+		{
+			std::vector<std::complex<FloatT>> cvec(vec.size());
+			std::transform(vec.begin(), vec.end(), cvec.begin(), [](const FloatT& v) { return std::complex<FloatT>(v); });
+			return cvec;
+		}
+
+		[[nodiscard]] static constexpr std::uint32_t reverse_bits(std::uint32_t val, std::size_t bits)
 		{
 			val = (((val & 0xaaaaaaaau) >> 1u) | ((val & 0x55555555) << 1u));
 			val = (((val & 0xcccccccc) >> 2u) | ((val & 0x33333333) << 2u));
@@ -37,7 +56,7 @@ namespace devfix::base
 		}
 
 		template<typename T, class = typename std::enable_if<std::is_unsigned<T>::value>::type>
-		static constexpr T popcount(T val)
+		[[nodiscard]] static constexpr T popcount(T val)
 		{
 			T count = 0;
 			while (val >>= 1) { count++; }
