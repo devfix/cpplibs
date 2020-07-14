@@ -8,8 +8,9 @@
 #include <ostream>
 #include <variant>
 #include <sstream>
-#include <mutex>
 #include <atomic>
+#include <mutex>
+#include "spinlock.h"
 
 namespace devfix::base
 {
@@ -49,40 +50,40 @@ namespace devfix::base
 
 		slog& operator<<(const stx_t&)
 		{
-			std::lock_guard<std::mutex> guard(mutex_);
+			spinlock_guard guard(spinlock_);
 			start_text();
 			return *this;
 		}
 
 		slog& operator<<(const std::basic_string<CharT>& str)
 		{
-			std::lock_guard<std::mutex> guard(mutex_);
+			spinlock_guard guard(spinlock_);
 			write(str);
 			return *this;
 		}
 
 		slog& operator<<(const etx_t&)
 		{
-			std::lock_guard<std::mutex> guard(mutex_);
+			spinlock_guard guard(spinlock_);
 			end_text();
 			return *this;
 		}
 
 		void set_prefix(const std::basic_string<CharT>& prefix)
 		{
-			std::lock_guard<std::mutex> guard(mutex_);
+			spinlock_guard guard(spinlock_);
 			prefix_ = prefix;
 		}
 
 		[[nodiscard]] std::basic_string<CharT> get_prefix()
 		{
-			std::lock_guard<std::mutex> guard(mutex_);
+			spinlock_guard guard(spinlock_);
 			return prefix_;
 		}
 
 		void set_enabled(bool enabled) { enabled_ = enabled; }
 
-		[[nodiscard]] bool is_enabled() { return enabled_; }
+		[[nodiscard]] bool is_enabled() const { return enabled_; }
 
 	protected:
 		void start_text()
@@ -163,7 +164,7 @@ namespace devfix::base
 
 		static constexpr CharT CLEAR_LINE[] = { '\033', '[', '2', 'K', '\r' };
 
-		static inline std::mutex mutex_;
+		static inline spinlock spinlock_;
 
 		std::vector<std::variant<slog*, std::pair<write_t, flush_t>, ostream_t*>> sinks_;
 		std::basic_string<CharT> prefix_;
