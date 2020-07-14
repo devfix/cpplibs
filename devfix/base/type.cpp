@@ -36,9 +36,9 @@ namespace devfix::base
 
 	std::string type::remove_nested(const std::string& name)
 	{
-#if _LIBCPP_VERSION
+#if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION
 		static const std::regex re("^std::__nested<(.*)>$");
-#elif __GLIBCXX__
+#elif defined(__GLIBCXX__) && __GLIBCXX__
 		static const std::regex re("^std::_Nested_exception<(.*)>$");
 #endif
 		std::smatch match;
