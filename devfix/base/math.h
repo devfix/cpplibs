@@ -31,6 +31,23 @@ namespace devfix::base
 
 	struct math
 	{
+		template<class UnsignedT>
+		constexpr int countl_zero(UnsignedT x) noexcept
+		{
+			static_assert(std::is_unsigned_v<UnsignedT>, "only unsigned types allowed");
+			int cnt = 0;
+			for (std::size_t i = 1u << (sizeof(x) * 8 - 1); i > 0 && !(x & i); i >>= 1, cnt++) {}
+			return cnt;
+		}
+
+		template<typename UnsignedT>
+		std::size_t floorLog2(UnsignedT v)
+		{
+			static_assert(std::is_unsigned_v<UnsignedT>, "only unsigned types allowed");
+			if (!v) { throw std::invalid_argument("zero argument"); }
+			return sizeof(v) * 8 - 1 - countl_zero(v);
+		}
+
 		template<typename FloatT, std::size_t N>
 		[[nodiscard]] static std::array<std::complex<FloatT>, N> to_complex(const std::array<FloatT, N>& arr)
 		{
