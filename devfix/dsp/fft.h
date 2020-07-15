@@ -9,8 +9,8 @@
 #include <vector>
 #include <array>
 #include <cstring>
-#include "../base/math.h"
 #include "window.h"
+#include "../base/math.h"
 
 namespace devfix::dsp
 {
@@ -21,6 +21,7 @@ namespace devfix::dsp
 		template<typename FloatT>
 		static void transform_inplace(std::complex<FloatT>* win, std::size_t len)
 		{
+			static_assert(std::is_floating_point_v<FloatT>);
 			if ((1u << math::floorLog2(len)) != len) { throw std::invalid_argument("fft length is not a power of two"); }
 
 			double theta = math::pi / len;
@@ -71,46 +72,10 @@ namespace devfix::dsp
 			transform_inplace<FloatT>(win.data(), win.size());
 		}
 
-		template<typename FloatT, window::win_fun_t<FloatT> win_fun>
-		static void apply_window(std::complex<FloatT>* win, std::size_t n)
-		{
-			FloatT gain = window::calc_amplitude_gain<FloatT, win_fun>(n);
-			for (std::size_t i = 0; i < n; i++) { win[i] *= gain * win_fun(n, i); }
-		}
-
-		template<typename FloatT, window::win_fun_t<FloatT> win_fun>
-		static void apply_window(std::vector<std::complex<FloatT>>& win)
-		{
-			apply_window<FloatT, win_fun>(win.data(), win.size());
-		}
-
-		template<typename FloatT, window::win_fun_t<FloatT> win_fun, std::size_t N>
-		static void apply_window(std::array<std::complex<FloatT>, N>& win)
-		{
-			apply_window<FloatT, win_fun>(win.data(), win.size());
-		}
-
-		template<typename FloatT>
-		static void apply_window(std::complex<FloatT>* win, window::win_fun_t<FloatT> win_fun, std::size_t n)
-		{
-			for (std::size_t i = 0; i < n; i++) { win[i] *= win_fun(n, i); }
-		}
-
-		template<typename FloatT>
-		static void apply_window(std::vector<std::complex<FloatT>>& win, window::win_fun_t<FloatT> win_fun)
-		{
-			apply_window<FloatT>(win.data(), win_fun, win.size());
-		}
-
-		template<typename FloatT, std::size_t N>
-		static void apply_window(std::array<std::complex<FloatT>, N>& win, window::win_fun_t<FloatT> win_fun)
-		{
-			apply_window<FloatT>(win.data(), win_fun, win.size());
-		}
-
 		template<typename FloatT>
 		static void convert_to_onesided(const std::complex<FloatT>* win, std::size_t len, std::complex<FloatT>* positive)
 		{
+			static_assert(std::is_floating_point_v<FloatT>);
 			positive[0] = win[0];
 			for (std::size_t i = 1; i < len / 2; i++) { positive[i] = FloatT(2) * win[i]; }
 		}
@@ -118,6 +83,7 @@ namespace devfix::dsp
 		template<typename FloatT>
 		static std::vector<std::complex<FloatT>> convert_to_onesided(const std::vector<std::complex<FloatT>>& win)
 		{
+			static_assert(std::is_floating_point_v<FloatT>);
 			std::vector<std::complex<FloatT>> positive(win.size() / 2);
 			convert_to_onesided(win.data(), win.size(), positive.data());
 			return positive;
@@ -126,6 +92,7 @@ namespace devfix::dsp
 		template<typename FloatT, std::size_t N>
 		static std::array<std::complex<FloatT>, N / 2> convert_to_onesided(const std::array<std::complex<FloatT>, N>& win)
 		{
+			static_assert(std::is_floating_point_v<FloatT>);
 			std::array<std::complex<FloatT>, N / 2> positive;
 			convert_to_onesided(win.data(), win.size(), positive.data());
 			return positive;
@@ -142,6 +109,7 @@ namespace devfix::dsp
 		template<typename FloatT>
 		static void extract_angles(const std::complex<FloatT>* win, std::size_t len, FloatT* angles, FloatT threshold = -1)
 		{
+			static_assert(std::is_floating_point_v<FloatT>);
 			if (threshold < 0)
 			{
 				for (std::size_t i = 1; i < len; i++) { angles[i] = std::arg(win[i]); }

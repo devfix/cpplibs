@@ -8,6 +8,7 @@
 #include <catch/catch.hpp>
 #include <functional>
 #include "../fft.h"
+#include "../dsp.h"
 
 using namespace devfix::base;
 using namespace devfix::dsp;
@@ -66,7 +67,7 @@ TEST_CASE("FFT - MultipleFreqs")
 TEST_CASE("FFT - ApplyWindowPointer")
 {
 	std::vector<std::complex<double>> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
-	fft::apply_window<double, window::linear>(vec.data(), vec.size());
+	apply_window<double, window::linear>(vec.data(), vec.size());
 	std::vector<double> mag(vec.size());
 	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
 	std::vector<double> expected = {
@@ -79,7 +80,7 @@ TEST_CASE("FFT - ApplyWindowPointer")
 TEST_CASE("FFT - ApplyWindowVector")
 {
 	std::vector<std::complex<double>> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
-	fft::apply_window<double, window::linear>(vec);
+	apply_window<double, window::linear>(vec);
 	std::vector<double> mag(vec.size());
 	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
 	std::vector<double> expected = {
@@ -92,7 +93,7 @@ TEST_CASE("FFT - ApplyWindowVector")
 TEST_CASE("FFT - ApplyWindowArray")
 {
 	std::array<std::complex<double>, 8> vec = { 8, 7, 6, 5, 4, 3, 2, 1 };
-	fft::apply_window<double, window::linear>(vec);
+	apply_window<double, window::linear>(vec);
 	std::vector<double> mag(vec.size());
 	std::transform(vec.begin(), vec.end(), mag.begin(), std::abs<double>);
 	std::vector<double> expected = {
@@ -136,7 +137,7 @@ TEST_CASE("FFT - AmplitudeNormalizationWithFlatTop")
 			+ 0.25 * std::sin(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 4);
 	}
 
-	fft::apply_window<double, window::flattop>(vec);
+	apply_window<double, window::flattop>(vec);
 	fft::transform_inplace(vec);
 	auto positive = fft::convert_to_onesided(vec);
 	std::vector<double> mag(positive.size());
@@ -165,7 +166,7 @@ TEST_CASE("FFT - PhaseExtraction")
 			+ 0.25 * std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 4 + math::pi / 4);
 	}
 
-	fft::apply_window<double, window::rectangle>(vec);
+	apply_window<double, window::rectangle>(vec);
 	fft::transform_inplace(vec);
 	auto positive = fft::convert_to_onesided(vec);
 	auto angles = fft::extract_angles(positive, 0.1);

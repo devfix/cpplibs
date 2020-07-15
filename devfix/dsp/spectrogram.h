@@ -11,7 +11,7 @@
 #include <list>
 #include <array>
 #include "fft.h"
-#include "window.h"
+#include "dsp.h"
 
 #include <iostream>
 
@@ -21,6 +21,8 @@ namespace devfix::dsp
 	template<typename FloatT, std::size_t N, FloatT(* win_fun)(std::size_t, std::size_t)>
 	struct spectrogram
 	{
+		static_assert(std::is_floating_point_v<FloatT>);
+
 		using complex_t = std::complex<FloatT>;
 
 		explicit spectrogram(std::size_t window_distance) :
@@ -84,7 +86,7 @@ namespace devfix::dsp
 		{
 			auto& window = data_.emplace_back();
 			std::memcpy(window.data(), field, sizeof(complex_t) * N);
-			fft::apply_window<FloatT, win_fun, N>(window);
+			apply_window<FloatT, win_fun, N>(window);
 			fft::transform_inplace<FloatT>(window.data(), N);
 		}
 	};
