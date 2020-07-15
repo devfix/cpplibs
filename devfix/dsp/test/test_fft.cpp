@@ -55,12 +55,12 @@ TEST_CASE("FFT - MultipleFreqs")
 	for (std::size_t i = 1; i < LEN / 2; i++) { CHECK(mag[i] == mag[LEN - i]); }
 
 	// test expected amplitudes
-	CHECK(mag[0] == Approx(1. * 4).epsilon(PRECISION_FINE));
-	CHECK(mag[1] == Approx(1. / 8).epsilon(PRECISION_FINE));
-	CHECK(mag[2] == Approx(1. / 4).epsilon(PRECISION_FINE));
-	CHECK(mag[3] == Approx(0).margin(PRECISION_FINE));
-	CHECK(mag[4] == Approx(1. / 2).epsilon(PRECISION_FINE));
-	for (std::size_t i = 5; i < LEN / 2; i++) { CHECK(mag[i] == Approx(0).margin(PRECISION_FINE)); }
+	CHECK(mag[0] == Approx(4).epsilon(PRECISION_FINE));
+	CHECK(mag[1] * 2 == Approx(0.25).epsilon(PRECISION_FINE));
+	CHECK(mag[2] * 2 == Approx(0.5).epsilon(PRECISION_FINE));
+	CHECK(mag[3] * 2 == Approx(0).margin(PRECISION_FINE));
+	CHECK(mag[4] * 2 == Approx(1.).epsilon(PRECISION_FINE));
+	for (std::size_t i = 5; i < LEN / 2; i++) { CHECK(mag[i] * 2 == Approx(0).margin(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - ApplyWindowPointer")
@@ -170,7 +170,7 @@ TEST_CASE("FFT - PhaseExtraction")
 	auto positive = fft::convert_to_onesided(vec);
 	auto angles = fft::extract_angles(positive, 0.1);
 
-	std::size_t line_a = FFT_LEN / 32, line_b = FFT_LEN / 8, line_c = FFT_LEN / 4;
+	constexpr std::size_t line_a = FFT_LEN / 32, line_b = FFT_LEN / 8, line_c = FFT_LEN / 4;
 	CHECK(angles[line_a] == Approx(math::pi));
 	CHECK(angles[line_b] == Approx(math::pi / 2));
 	CHECK(angles[line_c] == Approx(math::pi / 4));

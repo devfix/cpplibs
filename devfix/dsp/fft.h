@@ -144,13 +144,13 @@ namespace devfix::dsp
 		{
 			if (threshold < 0)
 			{
-				for (std::size_t i = 1; i < len; i++) { angles[i] = std::atan2<FloatT>(win[i].imag(), win[i].real()); }
+				for (std::size_t i = 1; i < len; i++) { angles[i] = std::arg(win[i]); }
 			}
 			else
 			{
 				for (std::size_t i = 1; i < len; i++)
 				{
-					if (std::abs(win[i]) > threshold) { angles[i] = std::atan2<FloatT>(win[i].imag(), win[i].real()); }
+					if (std::abs(win[i]) > threshold) { angles[i] = std::arg(win[i]); }
 					else { angles[i] = 0; }
 				}
 			}
