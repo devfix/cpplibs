@@ -31,6 +31,9 @@ namespace devfix::base
 
 	struct math
 	{
+		static constexpr inline double pi = 3.14159265358979323846;
+		static constexpr inline double sqrt2 = 1.41421356237309504880;
+
 		template<class UnsignedT>
 		static constexpr int countl_zero(UnsignedT x) noexcept
 		{

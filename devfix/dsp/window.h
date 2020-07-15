@@ -8,6 +8,8 @@
 #include <numeric>
 #include <map>
 
+#include "../base/math.h"
+
 namespace devfix::dsp
 {
 
@@ -21,6 +23,8 @@ namespace devfix::dsp
 		static constexpr double FLATTOP_COEFFICIENT_A4 = 0.006947368;
 
 	public:
+		using math = devfix::base::math;
+
 		template<typename FloatT>
 		using win_fun_t = FloatT(*)(std::size_t, std::size_t);
 
@@ -70,7 +74,7 @@ namespace devfix::dsp
 		template<typename FloatT>
 		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
-			return k < n ? (FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * M_PI * (FloatT(k) - FloatT(.5) * FloatT(n - 1)) / (n - 1))) : 0;
+			return k < n ? (FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * math::pi * (FloatT(k) - FloatT(.5) * FloatT(n - 1)) / (n - 1))) : 0;
 		}
 
 		template<typename FloatT>
@@ -78,10 +82,10 @@ namespace devfix::dsp
 		{
 			return k < n ? (
 				FloatT(FLATTOP_COEFFICIENT_A0)
-					- FloatT(FLATTOP_COEFFICIENT_A1) * std::cos(FloatT(2.) * M_PI * k / (n - 1))
-					+ FloatT(FLATTOP_COEFFICIENT_A2) * std::cos(FloatT(4.) * M_PI * k / (n - 1))
-					- FloatT(FLATTOP_COEFFICIENT_A3) * std::cos(FloatT(6.) * M_PI * k / (n - 1))
-					+ FloatT(FLATTOP_COEFFICIENT_A4) * std::cos(FloatT(8.) * M_PI * k / (n - 1))
+					- FloatT(FLATTOP_COEFFICIENT_A1) * std::cos(FloatT(2.) * math::pi * k / (n - 1))
+					+ FloatT(FLATTOP_COEFFICIENT_A2) * std::cos(FloatT(4.) * math::pi * k / (n - 1))
+					- FloatT(FLATTOP_COEFFICIENT_A3) * std::cos(FloatT(6.) * math::pi * k / (n - 1))
+					+ FloatT(FLATTOP_COEFFICIENT_A4) * std::cos(FloatT(8.) * math::pi * k / (n - 1))
 			) : 0;
 		}
 

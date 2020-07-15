@@ -8,15 +8,14 @@
 #include "../analysis.h"
 #include "../window.h"
 
-static constexpr double MATH_SQRT2 = 1.41421356237309504880;
-static constexpr double MATH_PI = 3.14159265358979323846;
 static constexpr double PRECISION_FINE = 1e-6;
 
+using namespace devfix::base;
 using namespace devfix::dsp;
 
 TEST_CASE("Analysis - RMS")
 {
-	std::vector<std::complex<double>> spec = {{ 1, 0 }, { 0, MATH_SQRT2 }, { -MATH_SQRT2, 0 }, { 0, -MATH_SQRT2 }};
+	std::vector<std::complex<double>> spec = {{ 1, 0 }, { 0, math::sqrt2 }, { -math::sqrt2, 0 }, { 0, -math::sqrt2 }};
 	auto rms = analysis::rms(spec);
 	REQUIRE(rms.size() == spec.size());
 	CHECK(rms[0] == Approx(1).margin(PRECISION_FINE));
@@ -45,8 +44,8 @@ TEST_CASE("Analysis - AmplTHDN with fft")
 	std::vector<std::complex<double>> vec(FFT_LEN);
 	for (std::size_t i = 0; i < FFT_LEN; i++)
 	{
-		vec[i] = 0.05 * std::sin(2. * MATH_PI * 8. * double(i) / double(FFT_LEN))
-			+ 0.5 * std::sin(2. * MATH_PI * 2. * double(i) / double(FFT_LEN))
+		vec[i] = 0.05 * std::sin(2. * math::pi * 8. * double(i) / double(FFT_LEN))
+			+ 0.5 * std::sin(2. * math::pi * 2. * double(i) / double(FFT_LEN))
 			- 0.001;
 	}
 

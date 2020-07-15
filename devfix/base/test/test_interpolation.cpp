@@ -7,6 +7,7 @@
 #include <catch/catch.hpp>
 #include <cmath>
 #include "../interpolation.h"
+#include "../math.h"
 
 static constexpr double PRECISION_FINE = 1e-6;
 static constexpr double PRECISION_COARSE = 1e-3;
@@ -63,7 +64,7 @@ TEST_CASE("Interpolation - Coeffs")
 		std::vector<std::pair<double, double >> points(64);
 		for (int i = 0; i < points.size(); i++)
 		{
-			double x = M_PI * (i - int(points.size() / 2)) / points.size();
+			double x = math::pi * (i - int(points.size() / 2)) / points.size();
 			points[i] = { x, std::sin(x) };
 		}
 		auto coeffs = interpolation<double>::calc_coeffs(points);

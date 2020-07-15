@@ -21,7 +21,9 @@ namespace devfix::dsp
 		template<typename FloatT>
 		static void transform_inplace(std::complex<FloatT>* win, std::size_t len)
 		{
-			double theta = M_PI / len;
+			if ((1u << math::floorLog2(len)) != len) { throw std::invalid_argument("fft length is not a power of two"); }
+
+			double theta = math::pi / len;
 			std::complex<FloatT> phi = std::complex<FloatT>(cos(theta), -sin(theta)), w;
 			for (std::size_t stage = len; stage > 1; stage >>= 1)
 			{

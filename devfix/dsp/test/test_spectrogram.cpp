@@ -9,6 +9,7 @@
 
 static constexpr double PRECISION_FINE = 1e-6;
 
+using namespace devfix::base;
 using namespace devfix::dsp;
 
 template<int digits, typename T>
@@ -32,7 +33,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 	std::size_t end_sine_curve = 12;
 	for (std::size_t i = begin_sine_curve; i < end_sine_curve; i++)
 	{
-		double phi = 2 * M_PI * double(i - begin_sine_curve) / double(end_sine_curve - begin_sine_curve);
+		double phi = 2 * math::pi * double(i - begin_sine_curve) / double(end_sine_curve - begin_sine_curve);
 		test_data[i] = std::sin(phi);
 	}
 
@@ -132,7 +133,7 @@ TEST_CASE("Spectrogram - FlattopWindow")
 	test_data.fill(0);
 	for (std::size_t i = 0; i < fs; i++)
 	{
-		test_data[i] = std::sin(2 * M_PI * fs / 16. * i / fs) + 0.1 * std::sin(2 * M_PI * fs / 4. * i / fs) - 4;
+		test_data[i] = std::sin(2 * math::pi * fs / 16. * i / fs) + 0.1 * std::sin(2 * math::pi * fs / 4. * i / fs) - 4;
 	}
 
 	// create spectrogram and fill it

@@ -9,6 +9,7 @@
 #include <functional>
 #include "../fft.h"
 
+using namespace devfix::base;
 using namespace devfix::dsp;
 
 static constexpr double PRECISION_FINE = 1e-6;
@@ -18,14 +19,30 @@ static constexpr std::size_t LEN = 1024;
 template<int digits, typename T>
 constexpr T round(T val) { return std::round(val * std::pow(10, digits)) * std::pow(10, -digits); }
 
+TEST_CASE("FFT - Exception")
+{
+	{
+		std::vector<std::complex<double>> vec(9);
+		CHECK_THROWS(fft::transform_inplace(vec));
+	}
+	{
+		std::vector<std::complex<double>> vec(7);
+		CHECK_THROWS(fft::transform_inplace(vec));
+	}
+	{
+		std::vector<std::complex<double>> vec(99);
+		CHECK_THROWS(fft::transform_inplace(vec));
+	}
+}
+
 TEST_CASE("FFT - MultipleFreqs")
 {
 	std::vector<std::complex<double>> vec(LEN);
 	for (std::size_t i = 0; i < vec.size(); i++)
 	{
-		vec[i] = (sin(2 * M_PI * double(i) / double(vec.size()) * 4.)
-			+ 0.5 * std::sin(2 * M_PI * double(i) / double(vec.size()) * 2.)
-			+ 0.25 * std::sin(2 * M_PI * double(i) / double(vec.size()) * 1.)
+		vec[i] = (sin(2 * math::pi * double(i) / double(vec.size()) * 4.)
+			+ 0.5 * std::sin(2 * math::pi * double(i) / double(vec.size()) * 2.)
+			+ 0.25 * std::sin(2 * math::pi * double(i) / double(vec.size()) * 1.)
 			+ 4);
 	}
 
@@ -35,15 +52,15 @@ TEST_CASE("FFT - MultipleFreqs")
 	std::transform(mag.begin(), mag.end(), mag.begin(), round<3, double>);
 
 	// symmetric test for fft result
-	for (std::size_t i = 1; i < LEN / 2; i++) { REQUIRE(mag[i] == mag[LEN - i]); }
+	for (std::size_t i = 1; i < LEN / 2; i++) { CHECK(mag[i] == mag[LEN - i]); }
 
 	// test expected amplitudes
-	REQUIRE(mag[0] == Approx(1. * 4).epsilon(PRECISION_FINE));
-	REQUIRE(mag[1] == Approx(1. / 8).epsilon(PRECISION_FINE));
-	REQUIRE(mag[2] == Approx(1. / 4).epsilon(PRECISION_FINE));
-	REQUIRE(mag[3] == Approx(0).margin(PRECISION_FINE));
-	REQUIRE(mag[4] == Approx(1. / 2).epsilon(PRECISION_FINE));
-	for (std::size_t i = 5; i < LEN / 2; i++) { REQUIRE(mag[i] == Approx(0).margin(PRECISION_FINE)); }
+	CHECK(mag[0] == Approx(1. * 4).epsilon(PRECISION_FINE));
+	CHECK(mag[1] == Approx(1. / 8).epsilon(PRECISION_FINE));
+	CHECK(mag[2] == Approx(1. / 4).epsilon(PRECISION_FINE));
+	CHECK(mag[3] == Approx(0).margin(PRECISION_FINE));
+	CHECK(mag[4] == Approx(1. / 2).epsilon(PRECISION_FINE));
+	for (std::size_t i = 5; i < LEN / 2; i++) { CHECK(mag[i] == Approx(0).margin(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - ApplyWindowPointer")
@@ -56,7 +73,7 @@ TEST_CASE("FFT - ApplyWindowPointer")
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
+	for (std::size_t i = 0; i < mag.size(); i++) { CHECK(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - ApplyWindowVector")
@@ -69,7 +86,7 @@ TEST_CASE("FFT - ApplyWindowVector")
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
+	for (std::size_t i = 0; i < mag.size(); i++) { CHECK(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - ApplyWindowArray")
@@ -82,7 +99,7 @@ TEST_CASE("FFT - ApplyWindowArray")
 		0, 2, 3.428571428571428, 4.285714285714286, 4.571428571428571, 4.285714285714286, 3.428571428571428, 2
 	};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
+	for (std::size_t i = 0; i < mag.size(); i++) { CHECK(mag[i] == Approx(expected[i]).epsilon(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - AmplitudeNormalization")
@@ -90,9 +107,9 @@ TEST_CASE("FFT - AmplitudeNormalization")
 	std::vector<std::complex<double>> vec(128);
 	for (std::size_t i = 0; i < vec.size(); i++)
 	{
-		vec[i] = (sin(2 * M_PI * double(i) / double(vec.size()) * 4.)
-			+ 0.5 * std::sin(2 * M_PI * double(i) / double(vec.size()) * 2.)
-			+ 0.25 * std::sin(2 * M_PI * double(i) / double(vec.size()) * 1.)
+		vec[i] = (sin(2 * math::pi * double(i) / double(vec.size()) * 4.)
+			+ 0.5 * std::sin(2 * math::pi * double(i) / double(vec.size()) * 2.)
+			+ 0.25 * std::sin(2 * math::pi * double(i) / double(vec.size()) * 1.)
 			+ 4);
 	}
 
@@ -105,7 +122,7 @@ TEST_CASE("FFT - AmplitudeNormalization")
 		{ 4, 0.25, 0.5, 0, 1, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0,
 		  0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, };
 	REQUIRE(positive.size() == expected.size());
-	for (std::size_t i = 0; i < positive.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
+	for (std::size_t i = 0; i < positive.size(); i++) { CHECK(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 }
 
 TEST_CASE("FFT - AmplitudeNormalizationWithFlatTop")
@@ -114,9 +131,9 @@ TEST_CASE("FFT - AmplitudeNormalizationWithFlatTop")
 	std::vector<std::complex<double>> vec(FFT_LEN);
 	for (std::size_t i = 0; i < vec.size(); i++)
 	{
-		vec[i] = std::sin(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 32)
-			+ 0.5 * std::sin(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 8)
-			+ 0.25 * std::sin(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 4);
+		vec[i] = std::sin(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 32)
+			+ 0.5 * std::sin(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 8)
+			+ 0.25 * std::sin(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 4);
 	}
 
 	fft::apply_window<double, window::flattop>(vec);
@@ -134,7 +151,7 @@ TEST_CASE("FFT - AmplitudeNormalizationWithFlatTop")
 		  1.64719e-06, 1.56058e-06, 1.48654e-06, 1.42403e-06, 1.37227e-06, 1.33064e-06, 1.29868e-06, 1.27607e-06, 1.26258e-06,
 		};
 	REQUIRE(mag.size() == expected.size());
-	for (std::size_t i = 0; i < mag.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).epsilon(PRECISION_COARSE)); }
+	for (std::size_t i = 0; i < mag.size(); i++) { CHECK(mag[i] == Approx(expected[i]).epsilon(PRECISION_COARSE)); }
 }
 
 TEST_CASE("FFT - PhaseExtraction")
@@ -143,9 +160,9 @@ TEST_CASE("FFT - PhaseExtraction")
 	std::vector<std::complex<double>> vec(FFT_LEN);
 	for (std::size_t i = 0; i < vec.size(); i++)
 	{
-		vec[i] = std::cos(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 32 + M_PI)
-			+ 0.5 * std::cos(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 8 + M_PI / 2)
-			+ 0.25 * std::cos(2 * M_PI * double(i) / double(vec.size()) * FFT_LEN / 4 + M_PI / 4);
+		vec[i] = std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 32 + math::pi)
+			+ 0.5 * std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 8 + math::pi / 2)
+			+ 0.25 * std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 4 + math::pi / 4);
 	}
 
 	fft::apply_window<double, window::rectangle>(vec);
@@ -154,12 +171,12 @@ TEST_CASE("FFT - PhaseExtraction")
 	auto angles = fft::extract_angles(positive, 0.1);
 
 	std::size_t line_a = FFT_LEN / 32, line_b = FFT_LEN / 8, line_c = FFT_LEN / 4;
-	REQUIRE(angles[line_a] == Approx(M_PI));
-	REQUIRE(angles[line_b] == Approx(M_PI / 2));
-	REQUIRE(angles[line_c] == Approx(M_PI / 4));
+	CHECK(angles[line_a] == Approx(math::pi));
+	CHECK(angles[line_b] == Approx(math::pi / 2));
+	CHECK(angles[line_c] == Approx(math::pi / 4));
 	for (std::size_t i = 0; i < angles.size(); i++)
 	{
-		if (i != line_a && i != line_b && i != line_c) { REQUIRE(angles[i] == Approx(0).margin(PRECISION_FINE)); }
+		if (i != line_a && i != line_b && i != line_c) { CHECK(angles[i] == Approx(0).margin(PRECISION_FINE)); }
 	}
 }
 
