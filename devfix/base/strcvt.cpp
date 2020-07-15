@@ -15,10 +15,10 @@ namespace devfix::base
 		return converter.from_bytes(str);
 	}
 
-	std::string strcvt::str(const std::wstring& str)
+	std::string strcvt::str(const std::wstring& wstr)
 	{
 		std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>> converter;
-		return converter.to_bytes(str);
+		return converter.to_bytes(wstr);
 	}
 
 }
