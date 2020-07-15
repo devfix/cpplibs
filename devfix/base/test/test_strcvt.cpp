@@ -16,24 +16,24 @@ const std::array<unsigned char, 12> test_b_utf16{ 0xF6, 0x00, 0x00, 0x00, 0xBB, 
 
 TEST_CASE("StrCvt - to_wstring")
 {
-	CHECK(strcvt::to_wstring("").empty());
-	CHECK(strcvt::to_wstring("test") == L"test");
-	CHECK(strcvt::to_wstring("test\n") == L"test\n");
-	CHECK(strcvt::to_wstring(reinterpret_cast<const char*>(test_a_utf8.data()))
+	CHECK(strcvt::wstr("").empty());
+	CHECK(strcvt::wstr("test") == L"test");
+	CHECK(strcvt::wstr("test\n") == L"test\n");
+	CHECK(strcvt::wstr(reinterpret_cast<const char*>(test_a_utf8.data()))
 			  == std::wstring(reinterpret_cast<const wchar_t*>(test_a_utf16.data())));
-	CHECK(strcvt::to_wstring(reinterpret_cast<const char*>(test_b_utf8.data()))
+	CHECK(strcvt::wstr(reinterpret_cast<const char*>(test_b_utf8.data()))
 			  == std::wstring(reinterpret_cast<const wchar_t*>(test_b_utf16.data())));
 }
 
 TEST_CASE("StrCvt - to_string")
 {
-	CHECK(strcvt::to_string(L"").empty());
-	CHECK(strcvt::to_string(L"test") == "test");
-	CHECK(strcvt::to_string(L"test\n") == "test\n");
+	CHECK(strcvt::str(L"").empty());
+	CHECK(strcvt::str(L"test") == "test");
+	CHECK(strcvt::str(L"test\n") == "test\n");
 	CHECK(
-		strcvt::to_string(reinterpret_cast<const wchar_t*>(test_a_utf16.data()))
+		strcvt::str(reinterpret_cast<const wchar_t*>(test_a_utf16.data()))
 			== std::string(reinterpret_cast<const char*>(test_a_utf8.data())));
-	CHECK(strcvt::to_string(reinterpret_cast<const wchar_t*>(test_b_utf16.data()))
+	CHECK(strcvt::str(reinterpret_cast<const wchar_t*>(test_b_utf16.data()))
 			  == std::string(reinterpret_cast<const char*>(test_b_utf8.data())));
 }
 

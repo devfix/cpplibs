@@ -9,7 +9,7 @@ namespace devfix::base
 {
 	struct strcvt
 	{
-		[[nodiscard]] static std::wstring to_wstring(const std::string& str);
-		[[nodiscard]] static std::string to_string(const std::wstring& str);
+		[[nodiscard]] static std::wstring wstr(const std::string& str);
+		[[nodiscard]] static std::string str(const std::wstring& str);
 	};
 }
