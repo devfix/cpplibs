@@ -21,6 +21,12 @@ namespace devfix::dsp
 		static constexpr double FLATTOP_COEFFICIENT_A2 = 0.277263158;
 		static constexpr double FLATTOP_COEFFICIENT_A3 = 0.083578947;
 		static constexpr double FLATTOP_COEFFICIENT_A4 = 0.006947368;
+		static constexpr double BLACKMANHARRIS_COEFFICIENT_A0 = 0.35875;
+		static constexpr double BLACKMANHARRIS_COEFFICIENT_A1 = 0.48829;
+		static constexpr double BLACKMANHARRIS_COEFFICIENT_A2 = 0.14128;
+		static constexpr double BLACKMANHARRIS_COEFFICIENT_A3 = 0.01168;
+		static constexpr double HAMMING_COEFFICIENT_A = 0.54;
+		static constexpr double HAMMING_COEFFICIENT_B = 1 - HAMMING_COEFFICIENT_A;
 
 	public:
 		using math = devfix::base::math;
@@ -74,7 +80,17 @@ namespace devfix::dsp
 		template<typename FloatT>
 		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
-			return k < n ? (FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * math::pi * (FloatT(k) - FloatT(.5) * FloatT(n - 1)) / (n - 1))) : 0;
+			return k < n ? (
+				FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * math::pi * (FloatT(k) - FloatT(.5) * FloatT(n - 1)) / (n - 1))
+			) : 0;
+		}
+
+		template<typename FloatT>
+		static constexpr FloatT hamming(std::size_t n, std::size_t k)
+		{
+			return k < n ? (
+				FloatT(HAMMING_COEFFICIENT_A) - FloatT(HAMMING_COEFFICIENT_B) * std::cos(FloatT(2) * math::pi * k / (n - 1))
+			) : 0;
 		}
 
 		template<typename FloatT>
@@ -82,10 +98,21 @@ namespace devfix::dsp
 		{
 			return k < n ? (
 				FloatT(FLATTOP_COEFFICIENT_A0)
-					- FloatT(FLATTOP_COEFFICIENT_A1) * std::cos(FloatT(2.) * math::pi * k / (n - 1))
-					+ FloatT(FLATTOP_COEFFICIENT_A2) * std::cos(FloatT(4.) * math::pi * k / (n - 1))
-					- FloatT(FLATTOP_COEFFICIENT_A3) * std::cos(FloatT(6.) * math::pi * k / (n - 1))
-					+ FloatT(FLATTOP_COEFFICIENT_A4) * std::cos(FloatT(8.) * math::pi * k / (n - 1))
+					- FloatT(FLATTOP_COEFFICIENT_A1) * std::cos(FloatT(2) * math::pi * k / (n - 1))
+					+ FloatT(FLATTOP_COEFFICIENT_A2) * std::cos(FloatT(4) * math::pi * k / (n - 1))
+					- FloatT(FLATTOP_COEFFICIENT_A3) * std::cos(FloatT(6) * math::pi * k / (n - 1))
+					+ FloatT(FLATTOP_COEFFICIENT_A4) * std::cos(FloatT(8) * math::pi * k / (n - 1))
+			) : 0;
+		}
+
+		template<typename FloatT>
+		static constexpr FloatT blackmanharris(std::size_t n, std::size_t k)
+		{
+			return k < n ? (
+				FloatT(BLACKMANHARRIS_COEFFICIENT_A0)
+					- FloatT(BLACKMANHARRIS_COEFFICIENT_A1) * std::cos(FloatT(2) * math::pi * k / (n - 1))
+					+ FloatT(BLACKMANHARRIS_COEFFICIENT_A2) * std::cos(FloatT(4) * math::pi * k / (n - 1))
+					- FloatT(BLACKMANHARRIS_COEFFICIENT_A3) * std::cos(FloatT(6) * math::pi * k / (n - 1))
 			) : 0;
 		}
 
