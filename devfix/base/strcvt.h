@@ -4,6 +4,7 @@
 #pragma once
 
 #include <string>
+#include <locale>
 
 namespace devfix::base
 {
@@ -22,5 +23,54 @@ namespace devfix::base
 		 * \return converted string
 		 */
 		[[nodiscard]] static std::string str(const std::wstring& wstr);
+
+		/**
+		 * \brief convert string to float always with "C" locale
+		 * \tparam CharT character type, either 'char' or 'wchar_t'
+		 * \param str input string
+		 * \return converted float
+		 */
+		template <typename CharT>
+		[[nodiscard]] static auto stof(const std::basic_string<CharT>& str)
+		{
+			const auto old_locale = std::setlocale(LC_NUMERIC, nullptr);
+			std::setlocale(LC_NUMERIC, "C");
+			auto d = std::stof(str);
+			std::setlocale(LC_NUMERIC, old_locale);
+			return d;
+		}
+
+		/**
+		 * \brief convert string to double always with "C" locale
+		 * \tparam CharT character type, either 'char' or 'wchar_t'
+		 * \param str input string
+		 * \return converted double
+		 */
+		template <typename CharT>
+		[[nodiscard]] static auto stod(const std::basic_string<CharT>& str)
+		{
+			const auto old_locale = std::setlocale(LC_NUMERIC, nullptr);
+			std::setlocale(LC_NUMERIC, "C");
+			auto d = std::stod(str);
+			std::setlocale(LC_NUMERIC, old_locale);
+			return d;
+		}
+
+		/**
+		 * \brief convert string to long double always with "C" locale
+		 * \tparam CharT character type, either 'char' or 'wchar_t'
+		 * \param str input string
+		 * \return converted long double
+		 */
+		template <typename CharT>
+		[[nodiscard]] static auto stold(const std::basic_string<CharT>& str)
+		{
+			const auto old_locale = std::setlocale(LC_NUMERIC, nullptr);
+			std::setlocale(LC_NUMERIC, "C");
+			auto d = std::stold(str);
+			std::setlocale(LC_NUMERIC, old_locale);
+			return d;
+		}
+
 	};
 }

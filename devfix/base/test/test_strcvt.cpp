@@ -9,6 +9,8 @@
 
 using namespace devfix::base;
 
+constexpr double PRECISION = 1e-6;
+
 const std::array<unsigned char, 3> test_a_utf8{ 0xC3, 0xB6, 0x00 }; // test german oe
 const std::array<unsigned char, 8> test_a_utf16{ 0xF6, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 const std::array<unsigned char, 5> test_b_utf8{ 0xC3, 0xB6, 0xCE, 0xBB, 0x00 };  // german oe and lambda
@@ -35,6 +37,30 @@ TEST_CASE("StrCvt - to_string")
 			== std::string(reinterpret_cast<const char*>(test_a_utf8.data())));
 	CHECK(strcvt::str(reinterpret_cast<const wchar_t*>(test_b_utf16.data()))
 			  == std::string(reinterpret_cast<const char*>(test_b_utf8.data())));
+}
+
+TEST_CASE("StrCvt - stof")
+{
+	CHECK(strcvt::stof(std::string("+0.5")) == Approx(0.5f).epsilon(PRECISION));
+	CHECK(strcvt::stof(std::string("1.9")) == Approx(1.9f).epsilon(PRECISION));
+	CHECK(strcvt::stof(std::string("-6")) == Approx(-6.f).epsilon(PRECISION));
+	CHECK(strcvt::stof(std::string("-0.1")) == Approx(-0.1f).epsilon(PRECISION));
+}
+
+TEST_CASE("StrCvt - stod")
+{
+	CHECK(strcvt::stod(std::string("+0.5")) == Approx(0.5).epsilon(PRECISION));
+	CHECK(strcvt::stod(std::string("1.9")) == Approx(1.9).epsilon(PRECISION));
+	CHECK(strcvt::stod(std::string("-6")) == Approx(-6.).epsilon(PRECISION));
+	CHECK(strcvt::stod(std::string("-0.1")) == Approx(-0.1).epsilon(PRECISION));
+}
+
+TEST_CASE("StrCvt - stold")
+{
+	CHECK(strcvt::stold(std::string("+0.5")) == Approx(0.5l).epsilon(PRECISION));
+	CHECK(strcvt::stold(std::string("1.9")) == Approx(1.9l).epsilon(PRECISION));
+	CHECK(strcvt::stold(std::string("-6")) == Approx(-6.l).epsilon(PRECISION));
+	CHECK(strcvt::stold(std::string("-0.1")) == Approx(-0.1l).epsilon(PRECISION));
 }
 
 #endif
