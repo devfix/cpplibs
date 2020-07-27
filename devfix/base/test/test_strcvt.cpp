@@ -16,27 +16,39 @@ const std::array<unsigned char, 8> test_a_utf16{ 0xF6, 0x00, 0x00, 0x00, 0x00, 0
 const std::array<unsigned char, 5> test_b_utf8{ 0xC3, 0xB6, 0xCE, 0xBB, 0x00 };  // german oe and lambda
 const std::array<unsigned char, 12> test_b_utf16{ 0xF6, 0x00, 0x00, 0x00, 0xBB, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
 
+template<typename T>
+auto a2sv(const T* arr)
+{
+	return std::string_view(reinterpret_cast<const char*>(arr));
+}
+
+template<typename T>
+auto a2wsv(const T* arr)
+{
+	return std::wstring_view(reinterpret_cast<const wchar_t*>(arr));
+}
+
 TEST_CASE("StrCvt - to_wstring")
 {
-	CHECK(strcvt::wstr("").empty());
-	CHECK(strcvt::wstr("test") == L"test");
-	CHECK(strcvt::wstr("test\n") == L"test\n");
-	CHECK(strcvt::wstr(reinterpret_cast<const char*>(test_a_utf8.data()))
-			  == std::wstring(reinterpret_cast<const wchar_t*>(test_a_utf16.data())));
-	CHECK(strcvt::wstr(reinterpret_cast<const char*>(test_b_utf8.data()))
-			  == std::wstring(reinterpret_cast<const wchar_t*>(test_b_utf16.data())));
+	CHECK(strcvt::wstr(a2sv("")).empty());
+	CHECK(strcvt::wstr(a2sv("test")) == L"test");
+	CHECK(strcvt::wstr(a2sv("test\n")) == L"test\n");
+	CHECK(strcvt::wstr(a2sv(test_a_utf8.data()))
+			  == std::wstring(a2wsv(test_a_utf16.data())));
+	CHECK(strcvt::wstr(a2sv(test_b_utf8.data()))
+			  == std::wstring(a2wsv(test_b_utf16.data())));
 }
 
 TEST_CASE("StrCvt - to_string")
 {
-	CHECK(strcvt::str(L"").empty());
-	CHECK(strcvt::str(L"test") == "test");
-	CHECK(strcvt::str(L"test\n") == "test\n");
+	CHECK(strcvt::str(a2wsv(L"")).empty());
+	CHECK(strcvt::str(a2wsv(L"test")) == "test");
+	CHECK(strcvt::str(a2wsv(L"test\n")) == "test\n");
 	CHECK(
-		strcvt::str(reinterpret_cast<const wchar_t*>(test_a_utf16.data()))
-			== std::string(reinterpret_cast<const char*>(test_a_utf8.data())));
-	CHECK(strcvt::str(reinterpret_cast<const wchar_t*>(test_b_utf16.data()))
-			  == std::string(reinterpret_cast<const char*>(test_b_utf8.data())));
+		strcvt::str(a2wsv(test_a_utf16.data()))
+			== std::string(a2sv(test_a_utf8.data())));
+	CHECK(strcvt::str(a2wsv(test_b_utf16.data()))
+			  == std::string(a2sv(test_b_utf8.data())));
 }
 
 TEST_CASE("StrCvt - stof")
