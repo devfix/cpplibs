@@ -61,7 +61,10 @@ namespace devfix::base
 		 * \return converted float
 		 */
 		template<typename CharT>
-		[[nodiscard]] static auto stof(std::basic_string_view<CharT> sv) { return stof(sv); }
+		[[nodiscard]] static auto stof(std::basic_string_view<CharT> sv)
+		{
+			return std::basic_string<CharT>(stof(sv));
+		}
 
 		/**
 		 * \brief convert string to double always with "C" locale
@@ -86,7 +89,10 @@ namespace devfix::base
 		 * \return converted double
 		 */
 		template<typename CharT>
-		[[nodiscard]] static auto stod(std::basic_string_view<CharT> sv) { return stod(sv); }
+		[[nodiscard]] static auto stod(std::basic_string_view<CharT> sv)
+		{
+			return std::basic_string<CharT>(stod(sv));
+		}
 
 		/**
 		 * \brief convert string to long double always with "C" locale
@@ -111,7 +117,10 @@ namespace devfix::base
 		 * \return converted long double
 		 */
 		template<typename CharT>
-		[[nodiscard]] static auto stold(std::basic_string_view<CharT> sv) { return stold(sv); }
+		[[nodiscard]] static auto stold(std::basic_string_view<CharT> sv)
+		{
+			return std::basic_string<CharT>(stold(sv));
+		}
 
 	};
 }
