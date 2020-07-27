@@ -12,30 +12,30 @@ namespace devfix::base
 	{
 		/**
 		 * \brief convert std::string to std::wstring
-		 * \param str input string
+		 * \param sv input string
 		 * \return converted wstring
 		 */
-		[[nodiscard]] static std::wstring wstr(const std::string& str);
+		[[nodiscard]] static std::wstring wstr(std::string_view sv);
 
 		/**
 		 * \brief convert std::wstring to std::string
-		 * \param wstr input wstring
+		 * \param wsv input wstring
 		 * \return converted string
 		 */
-		[[nodiscard]] static std::string str(const std::wstring& wstr);
+		[[nodiscard]] static std::string str(std::wstring_view wsv);
 
 		/**
 		 * \brief convert string to float always with "C" locale
 		 * \tparam CharT character type, either 'char' or 'wchar_t'
-		 * \param str input string
+		 * \param sv input string
 		 * \return converted float
 		 */
 		template <typename CharT>
-		[[nodiscard]] static auto stof(const std::basic_string<CharT>& str)
+		[[nodiscard]] static auto stof(std::basic_string_view<CharT> sv)
 		{
 			const auto old_locale = std::setlocale(LC_NUMERIC, nullptr);
 			std::setlocale(LC_NUMERIC, "C");
-			auto d = std::stof(str);
+			auto d = std::stof(sv);
 			std::setlocale(LC_NUMERIC, old_locale);
 			return d;
 		}
@@ -43,15 +43,15 @@ namespace devfix::base
 		/**
 		 * \brief convert string to double always with "C" locale
 		 * \tparam CharT character type, either 'char' or 'wchar_t'
-		 * \param str input string
+		 * \param sv input string
 		 * \return converted double
 		 */
 		template <typename CharT>
-		[[nodiscard]] static auto stod(const std::basic_string<CharT>& str)
+		[[nodiscard]] static auto stod(std::basic_string_view<CharT> sv)
 		{
 			const auto old_locale = std::setlocale(LC_NUMERIC, nullptr);
 			std::setlocale(LC_NUMERIC, "C");
-			auto d = std::stod(str);
+			auto d = std::stod(sv);
 			std::setlocale(LC_NUMERIC, old_locale);
 			return d;
 		}
@@ -59,15 +59,15 @@ namespace devfix::base
 		/**
 		 * \brief convert string to long double always with "C" locale
 		 * \tparam CharT character type, either 'char' or 'wchar_t'
-		 * \param str input string
+		 * \param sv input string
 		 * \return converted long double
 		 */
 		template <typename CharT>
-		[[nodiscard]] static auto stold(const std::basic_string<CharT>& str)
+		[[nodiscard]] static auto stold(std::basic_string_view<CharT> sv)
 		{
 			const auto old_locale = std::setlocale(LC_NUMERIC, nullptr);
 			std::setlocale(LC_NUMERIC, "C");
-			auto d = std::stold(str);
+			auto d = std::stold(sv);
 			std::setlocale(LC_NUMERIC, old_locale);
 			return d;
 		}
