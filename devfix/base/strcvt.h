@@ -63,7 +63,7 @@ namespace devfix::base
 		template<typename CharT>
 		[[nodiscard]] static auto stof(std::basic_string_view<CharT> sv)
 		{
-			return std::basic_string<CharT>(stof(sv));
+			return stof(std::basic_string<CharT>(sv));
 		}
 
 		/**
@@ -91,7 +91,7 @@ namespace devfix::base
 		template<typename CharT>
 		[[nodiscard]] static auto stod(std::basic_string_view<CharT> sv)
 		{
-			return std::basic_string<CharT>(stod(sv));
+			return stod(std::basic_string<CharT>(sv));
 		}
 
 		/**
@@ -119,7 +119,7 @@ namespace devfix::base
 		template<typename CharT>
 		[[nodiscard]] static auto stold(std::basic_string_view<CharT> sv)
 		{
-			return std::basic_string<CharT>(stold(sv));
+			return stold(std::basic_string<CharT>(sv));
 		}
 
 	};
