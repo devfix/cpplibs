@@ -52,20 +52,34 @@ namespace devfix::base
 			return sizeof(v) * 8 - 1 - countl_zero(v);
 		}
 
+		template<typename FloatT, std::size_t N, std::size_t len>
+		[[nodiscard]] static std::array<std::complex<FloatT>, N> to_complex(const std::array<FloatT, N>& arr)
+		{
+			static_assert(len <= N);
+			std::array<std::complex<FloatT>, len> carr;
+			for (std::size_t i = 0; i < len; i++) { carr[i] = std::complex<FloatT>(arr[i]); }
+			return carr;
+		}
+
 		template<typename FloatT, std::size_t N>
 		[[nodiscard]] static std::array<std::complex<FloatT>, N> to_complex(const std::array<FloatT, N>& arr)
 		{
-			std::array<std::complex<FloatT>, N> carr;
-			std::transform(arr.begin(), arr.end(), carr.begin(), [](const FloatT& v) { return std::complex<FloatT>(v); });
-			return carr;
+			return to_complex<FloatT, N, N>(arr);
+		}
+
+		template<typename FloatT>
+		[[nodiscard]] static std::vector<std::complex<FloatT>> to_complex(const std::vector<FloatT>& vec, std::size_t len)
+		{
+			if (len > vec.size()) { throw std::invalid_argument("bad vector length requested"); }
+			std::vector<std::complex<FloatT>> cvec(len);
+			for (std::size_t i = 0; i < len; i++) { cvec[i] = std::complex<FloatT>(vec[i]); }
+			return cvec;
 		}
 
 		template<typename FloatT>
 		[[nodiscard]] static std::vector<std::complex<FloatT>> to_complex(const std::vector<FloatT>& vec)
 		{
-			std::vector<std::complex<FloatT>> cvec(vec.size());
-			std::transform(vec.begin(), vec.end(), cvec.begin(), [](const FloatT& v) { return std::complex<FloatT>(v); });
-			return cvec;
+			return to_complex<FloatT>(vec, vec.size());
 		}
 
 		[[nodiscard]] static constexpr std::uint32_t reverse_bits(std::uint32_t val, std::size_t bits)
