@@ -1,5 +1,6 @@
 # project specific
 /docs/latex
+.vs
 
 ### C++ template
 # Prerequisites
