@@ -38,11 +38,13 @@ namespace devfix::base
 	{
 #if defined(_LIBCPP_VERSION) && _LIBCPP_VERSION
 		static const std::regex re("^std::__nested<(.*)>$");
-#elif defined(__GLIBCXX__) && __GLIBCXX__
-		static const std::regex re("^std::_Nested_exception<(.*)>$");
-#endif
 		std::smatch match;
 		if (std::regex_match(name, match, re)) { return match[1].str(); }
+#elif defined(__GLIBCXX__) && __GLIBCXX__
+		static const std::regex re("^std::_Nested_exception<(.*)>$");
+		std::smatch match;
+		if (std::regex_match(name, match, re)) { return match[1].str(); }
+#endif
 		return name;
 	}
 
