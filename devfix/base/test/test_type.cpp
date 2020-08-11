@@ -11,6 +11,8 @@
 
 using namespace devfix::base;
 
+enum class Enum {};  // dummy enum
+
 TEST_CASE("type - demangle")
 {
 	CHECK(type::demangle(typeid(std::invalid_argument("")).name()) == "std::invalid_argument");
@@ -21,7 +23,11 @@ TEST_CASE("type - demangle")
 	CHECK(type::demangle(typeid(true).name()) == "bool");
 	CHECK(type::demangle(typeid(char*).name()) == "char*");
 	CHECK(type::demangle(typeid(std::vector<int>).name()) == "std::vector<int,std::allocator<int>>");
+	CHECK(type::demangle(typeid(std::vector<std::vector<Enum*>*>*).name())
+			  == "std::vector<std::vector<Enum*,std::allocator<Enum*>>*,std::allocator<std::vector<Enum*,std::allocator<Enum*>>*>>*");
 	CHECK(type::demangle(typeid(std::unique_ptr<int>).name()) == "std::unique_ptr<int,std::default_delete<int>>");
+	CHECK(type::demangle(typeid(std::unique_ptr<std::shared_ptr<float>>).name())
+			  == "std::unique_ptr<std::shared_ptr<float>,std::default_delete<std::shared_ptr<float>>>");
 }
 
 TEST_CASE("type - removed nested")
