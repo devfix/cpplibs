@@ -45,8 +45,7 @@ const auto a32 = u32s(test_a_utf32);
 TEST_CASE("StrCvt - u08 <> u16")
 {
 	CHECK(strcvt::c08to16(a08) == a16);
-	CHECK(strcvt::c16to08
-			  (a16) == a08);
+	CHECK(strcvt::c16to08(a16) == a08);
 }
 
 TEST_CASE("StrCvt - u16 <> u32")
