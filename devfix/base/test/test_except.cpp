@@ -4,7 +4,7 @@
 
 #if CPPLIBS_ENABLE_TESTS == 1
 
-#include <catch/catch.hpp>
+#include <catch.hpp>
 #include <iostream>
 #include "../except.h"
 

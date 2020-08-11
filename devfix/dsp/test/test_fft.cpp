@@ -5,7 +5,7 @@
 
 #if CPPLIBS_ENABLE_DSP_TESTS == 1
 
-#include <catch/catch.hpp>
+#include <catch.hpp>
 #include <functional>
 #include "../fft.h"
 #include "../dsp.h"
