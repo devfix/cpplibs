@@ -5,6 +5,7 @@
 #if CPPLIBS_ENABLE_TESTS == 1
 
 #include <catch2/catch.hpp>
+#include <array>
 #include "../strcvt.h"
 
 using namespace devfix::base;
@@ -12,31 +13,23 @@ using namespace devfix::base;
 constexpr double PRECISION = 1e-6;
 
 const std::array<unsigned char, 3> test_a_utf8{ 0xC3, 0xB6, 0x00 }; // test german oe
-const std::array<unsigned char, 8> test_a_utf16{ 0xF6, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+const std::array<unsigned char, 4> test_a_utf16{ 0xF6, 0x00, 0x00, 0x00 };
 const std::array<unsigned char, 5> test_b_utf8{ 0xC3, 0xB6, 0xCE, 0xBB, 0x00 };  // german oe and lambda
-const std::array<unsigned char, 12> test_b_utf16{ 0xF6, 0x00, 0x00, 0x00, 0xBB, 0x03, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00 };
+const std::array<unsigned char, 6> test_b_utf16{ 0xF6, 0x00, 0xBB, 0x03, 0x00, 0x00 };
 
-template<typename T>
-auto a2sv(const T* arr)
-{
-	return std::string_view(reinterpret_cast<const char*>(arr));
-}
+std::string a2sv(const char* arr) { return std::string(arr); }
+std::string a2sv(const unsigned char* arr) { return a2sv(reinterpret_cast<const char*>(arr)); }
 
-template<typename T>
-auto a2wsv(const T* arr)
-{
-	return std::wstring_view(reinterpret_cast<const wchar_t*>(arr));
-}
+std::wstring a2wsv(const wchar_t* arr) { return std::wstring(arr); }
+std::wstring a2wsv(const unsigned char* arr) { return a2wsv(reinterpret_cast<const wchar_t*>(arr)); }
 
 TEST_CASE("StrCvt - to_wstring")
 {
 	CHECK(strcvt::wstr(a2sv("")).empty());
 	CHECK(strcvt::wstr(a2sv("test")) == L"test");
 	CHECK(strcvt::wstr(a2sv("test\n")) == L"test\n");
-	CHECK(strcvt::wstr(a2sv(test_a_utf8.data()))
-			  == std::wstring(a2wsv(test_a_utf16.data())));
-	CHECK(strcvt::wstr(a2sv(test_b_utf8.data()))
-			  == std::wstring(a2wsv(test_b_utf16.data())));
+	CHECK(strcvt::wstr(a2sv(test_a_utf8.data())) == std::wstring(a2wsv(test_a_utf16.data())));
+	CHECK(strcvt::wstr(a2sv(test_b_utf8.data())) == std::wstring(a2wsv(test_b_utf16.data())));
 }
 
 TEST_CASE("StrCvt - to_string")

@@ -5,7 +5,6 @@
 #if CPPLIBS_ENABLE_TESTS == 1
 
 #include <catch2/catch.hpp>
-#include <iostream>
 #include "../slog.h"
 
 using namespace devfix::base;
@@ -61,7 +60,6 @@ TEST_CASE("slog - stx char")
 	sl.set_prefix("[abc] ");
 
 	sl << "test" << stx;
-    std::cout << "UFFFFF\"" << out.str() << "\"\n";
 	CHECK(out.str() == "[abc] test\033[2K\r");
 
 	out.str("");

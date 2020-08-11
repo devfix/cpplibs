@@ -2,6 +2,7 @@
 // Created by core on 7/9/20.
 //
 
+#include <typeinfo>
 #include "except.h"
 #include "type.h"
 

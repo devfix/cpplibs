@@ -11,6 +11,7 @@
 #include <fcntl.h>
 #include <io.h>
 #include <sys/stat.h>
+#include <direct.h>
 #include <windows.h>
 #include "../filesystem.h"
 #include "../error/ioexception.h"
@@ -19,6 +20,9 @@ namespace devfix::base
 {
 	const char filesystem::SEPARATOR = '\\';
 	const std::string_view filesystem::SEPARATOR_SV = "\\";
+
+	constexpr bool S_ISREG(unsigned short mode) { return mode & S_IFREG; }
+	constexpr bool S_ISDIR(unsigned short mode) { return mode & S_IFDIR; }
 
 	bool filesystem::exists(const std::string& filepath)
 	{

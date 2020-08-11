@@ -20,6 +20,10 @@ endif ()
 project(cpplibs CXX)
 
 
+
+#######################
+# detect enable tests #
+#######################
 set(CMAKE_CXX_STANDARD 20)
 if (NOT DEFINED CPPLIBS_ENABLE_TESTS)
     set(CPPLIBS_ENABLE_TESTS 1)  # tests are enabled by default
@@ -44,6 +48,11 @@ else()
     endif()
 endif()
 
+
+
+###########################
+# compiler specific flags #
+###########################
 
 if (UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCPPLIBS_ENABLE_TESTS=${CPPLIBS_ENABLE_TESTS} -DCPPLIBS_ENABLE_DSP_TESTS=${CPPLIBS_ENABLE_DSP_TESTS} -DCPPLIBS_ENABLE_NET_TESTS=${CPPLIBS_ENABLE_NET_TESTS}")
@@ -88,18 +97,33 @@ if (UNIX)
 endif(UNIX)
 
 if (WIN32)
+    option(CMAKE_USE_WIN32_THREADS_INIT "using WIN32 threads" ON)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} /DCPPLIBS_ENABLE_TESTS=${CPPLIBS_ENABLE_TESTS} /DCPPLIBS_ENABLE_DSP_TESTS=${CPPLIBS_ENABLE_DSP_TESTS} /DCPPLIBS_ENABLE_NET_TESTS=${CPPLIBS_ENABLE_NET_TESTS}")
 endif(WIN32)
 
+
+
+############################
+# cpplibs static libraries #
+############################
 
 add_subdirectory(devfix/base)
 add_subdirectory(devfix/net)
 add_subdirectory(devfix/dsp)
 
 
+
+#####################
+# testrunner target #
+#####################
+
 if (${CPPLIBS_ENABLE_TESTS})
     file(GLOB_RECURSE src_tests "${CMAKE_CURRENT_LIST_DIR}/devfix/*test_*.cpp")
     add_executable(testrunner testrunner.cpp "${src_tests}")
     target_include_directories(testrunner PUBLIC "Catch2/single_include")  # include Catch2 library header files
-    target_link_libraries(testrunner pthread devfixnet devfixdsp)
+    target_link_libraries(testrunner devfixnet devfixdsp)
+
+    if (UNIX)
+        target_link_libraries(testrunner pthread)
+    endif()
 endif ()
