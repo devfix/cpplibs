@@ -7,11 +7,13 @@
 
 #include <catch2/catch.hpp>
 #include <iostream>
+#include <array>
 #include "../type.h"
 
 using namespace devfix::base;
 
 enum class Enum {};  // dummy enum
+struct Struct {};  // dummy struct
 
 TEST_CASE("type - demangle")
 {
@@ -21,7 +23,14 @@ TEST_CASE("type - demangle")
 	CHECK(type::demangle(typeid(1.1).name()) == "double");
 	CHECK(type::demangle(typeid(1.f).name()) == "float");
 	CHECK(type::demangle(typeid(true).name()) == "bool");
+	CHECK(type::demangle(typeid(Enum).name()) == "Enum");
+	CHECK(type::demangle(typeid(Enum*).name()) == "Enum*");
+	CHECK(type::demangle(typeid(Struct).name()) == "Struct");
+	CHECK(type::demangle(typeid(Struct*).name()) == "Struct*");
+	CHECK(type::demangle(typeid(std::array<Struct, 8>).name()) == "std::array<Struct,8>");
 	CHECK(type::demangle(typeid(char*).name()) == "char*");
+	CHECK(type::demangle(typeid(char**).name()) == "char**");
+	CHECK(type::demangle(typeid(std::array<char*,4>).name()) == "std::array<char*,4>");
 	CHECK(type::demangle(typeid(std::vector<int>).name()) == "std::vector<int,std::allocator<int>>");
 	CHECK(type::demangle(typeid(std::vector<std::vector<Enum*>*>*).name())
 			  == "std::vector<std::vector<Enum*,std::allocator<Enum*>>*,std::allocator<std::vector<Enum*,std::allocator<Enum*>>*>>*");

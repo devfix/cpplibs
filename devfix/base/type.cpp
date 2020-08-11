@@ -38,19 +38,27 @@ namespace devfix::base
 	{
 		std::string name(mangled_name);
 
-		constexpr std::string_view mvc_prefix_class = "class ";
-		constexpr std::string_view mvc_prefix_struct= "struct ";
-		for (std::size_t pos = 0; (pos = name.find(mvc_prefix_class, pos)) != std::string::npos;) { name.erase(pos, mvc_prefix_class.length()); }
-		for (std::size_t pos = 0; (pos = name.find(mvc_prefix_struct, pos)) != std::string::npos;) { name.erase(pos, mvc_prefix_struct.length()); }
+		// remove class, struct, enum
+		{
+			static const std::regex re("((class)|(struct)|(enum)) ");
+			std::smatch match;
+			while (std::regex_search(name, match, re)) {
+				name = std::string(match.prefix()) + std::string(match.suffix());
+			}
+		}
 		
 		// remove spaces
 		for (std::size_t pos = 0; (pos = name.find_first_of(' ', pos)) != std::string::npos;) { name.erase(pos, 1); }
 
-		// remove suffix of pointers (mvc)
-		if (std::size_t pos = name.find_first_of('*'); pos != std::string::npos && pos != name.length() - 1)
-		{
-			name.erase(pos + 1, name.length() - pos - 1);
+		// remove pointer suffixes
+		static const std::regex re("\\*[A-Za-z0-9_]+(\\*|,|>|$)");
+		std::smatch match;
+		while (std::regex_search(name, match, re)) {
+			const auto pre = std::string(match.prefix());
+			const bool end = match.suffix().length() == 0;
+			name = pre + "*" + name.substr(pre.length() + match[0].length() - (end ? 0 : 1));
 		}
+
 		return name;
 	}
 #endif
