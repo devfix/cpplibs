@@ -22,7 +22,7 @@ std::array<double, FFT_LEN> get_magnitudes(const std::array<std::complex<double>
 	std::transform(win.begin(), win.end(), mag.begin(), std::abs<double>);
 	return mag;
 }
-
+/*
 TEST_CASE("Spectrogram - RectangleWindow")
 {
 	// generate test data
@@ -122,7 +122,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 	}
 
 	REQUIRE_THROWS(spec.pop());
-}
+}*//*
 
 TEST_CASE("Spectrogram - FlattopWindow")
 {
@@ -191,6 +191,6 @@ TEST_CASE("Spectrogram - FlattopWindow")
 	for (std::size_t i = 0; i < win.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 
 	REQUIRE_THROWS(spec.pop());
-}
+}*/
 
 #endif
