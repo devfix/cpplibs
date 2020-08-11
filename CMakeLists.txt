@@ -8,6 +8,7 @@
 
 cmake_minimum_required(VERSION 3.0)
 
+
 find_program(CCACHE_PROGRAM ccache)
 if (CCACHE_PROGRAM)
     set_property(GLOBAL PROPERTY RULE_LAUNCH_COMPILE "${CCACHE_PROGRAM}")
@@ -15,7 +16,9 @@ else ()
     message(STATUS "ccache not found")
 endif ()
 
+
 project(cpplibs CXX)
+
 
 set(CMAKE_CXX_STANDARD 20)
 if (NOT DEFINED CPPLIBS_ENABLE_TESTS)
@@ -33,8 +36,8 @@ endif ()
 
 if (UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCPPLIBS_ENABLE_TESTS=${CPPLIBS_ENABLE_TESTS} -DCPPLIBS_ENABLE_DSP_TESTS=${CPPLIBS_ENABLE_DSP_TESTS} -DCPPLIBS_ENABLE_NET_TESTS=${CPPLIBS_ENABLE_NET_TESTS}")
-    
-set(WARNINGS
+
+    set(WARNINGS
         -pedantic
         -Wall
         -Wextra
@@ -59,8 +62,6 @@ set(WARNINGS
         -Wswitch-default
         -Wundef
         -Wno-unused
-        )
-set(WARNINGS ${WARNINGS}
         -Wconversion
         -Weffc++
         -Winline
@@ -71,8 +72,8 @@ set(WARNINGS ${WARNINGS}
         -Wstack-protector
         -Wswitch-enum
         -Wunsafe-loop-optimizations
-        )
-#set(WARNINGS ${WARNINGS} -Werror)
+    )
+    #set(WARNINGS ${WARNINGS} -Werror)
 endif(UNIX)
 
 if (WIN32)
@@ -80,14 +81,16 @@ if (WIN32)
 endif(WIN32)
 
 
+#include_directories(SYSTEM Catch2/include)
+
 add_subdirectory(devfix/base)
 add_subdirectory(devfix/net)
 add_subdirectory(devfix/dsp)
 
 
 if (${CPPLIBS_ENABLE_TESTS})
-    file(GLOB_RECURSE src_tests ${CMAKE_CURRENT_SOURCE_DIR} "test_*.cpp")
+    #file(GLOB_RECURSE src_tests "${CMAKE_CURRENT_LIST_DIR}/devfix/*test_*.cpp")
     add_executable(testrunner testrunner.cpp "${src_tests}")
-    target_include_directories(testrunner PRIVATE Catch2/include)  # include Catch2 library header files
+    target_include_directories(testrunner PRIVATE Catch2/single_include)  # include Catch2 library header files
     target_link_libraries(testrunner pthread devfixnet devfixdsp)
 endif ()
