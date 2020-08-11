@@ -2,25 +2,53 @@
 // Created by core on 7/7/20.
 //
 
-#include <locale>
 #include <codecvt>
+#include <type_traits>
 #include "strcvt.h"
+
+// utility wrapper to adapt locale-bound facets for wstring/wbuffer convert
+template<class Facet>
+struct deletable_facet : Facet
+{
+	template<class ...Args>
+	explicit deletable_facet(Args&& ...args) : Facet(std::forward<Args>(args)...) {}
+
+	~deletable_facet() override = default;
+};
+
+using c16c08 =  std::wstring_convert<deletable_facet<std::codecvt<char16_t, char08_t, std::mbstate_t>>, char16_t>;
+using c32c08 =  std::wstring_convert<deletable_facet<std::codecvt<char32_t, char08_t, std::mbstate_t>>, char32_t>;
 
 namespace devfix::base
 {
 
-	std::wstring strcvt::wstr(std::string_view sv) { return wstr(std::string(sv)); }
-
-	std::wstring strcvt::wstr(const std::string& str)
+	strcvt::u16string strcvt::c08to16(const u08string& s)
 	{
-		return std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>>().from_bytes(str);
+		return c16c08().from_bytes(s);
 	}
 
-	std::string strcvt::str(std::wstring_view wsv) { return str(std::wstring(wsv)); }
-
-	std::string strcvt::str(const std::wstring& wstr)
+	strcvt::u32string strcvt::c08to32(const u08string& s)
 	{
-		return std::wstring_convert<std::codecvt_utf8_utf16<wchar_t>>().to_bytes(wstr);
+		return c32c08().from_bytes(s);
 	}
 
+	strcvt::u08string strcvt::c16to08(const u16string& s)
+	{
+		return c16c08().to_bytes(s);
+	}
+
+	strcvt::u32string strcvt::c16to32(const u16string& s)
+	{
+		return c08to32(c16to08(s));
+	}
+
+	strcvt::u08string strcvt::c32to08(const u32string& s)
+	{
+		return c32c08().to_bytes(s);
+	}
+
+	strcvt::u16string strcvt::c32to16(const u32string& s)
+	{
+		return c08to16(c32to08(s));
+	}
 }

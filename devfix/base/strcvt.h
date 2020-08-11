@@ -4,39 +4,91 @@
 #pragma once
 
 #include <string>
-#include <clocale>
+#include <cstdint>
+#include <locale>
+#include <algorithm>
+
+using char08_t = char;
 
 namespace devfix::base
 {
 	struct strcvt
 	{
-		/**
-		 * \brief convert std::string to std::wstring
-		 * \param sv input string
-		 * \return converted wstring
-		 */
-		[[nodiscard]] static std::wstring wstr(std::string_view sv);
+		using u08string= std::basic_string<char08_t>;
+		using u16string = std::u16string;
+		using u32string = std::u32string;
 
+		[[nodiscard]] static u16string c08to16(const u08string& s);
+		[[nodiscard]] static u32string c08to32(const u08string& s);
+		[[nodiscard]] static u08string c16to08(const u16string& s);
+		[[nodiscard]] static u32string c16to32(const u16string& s);
+		[[nodiscard]] static u08string c32to08(const u32string& s);
+		[[nodiscard]] static u16string c32to16(const u32string& s);
+
+
+	private:
+		template<typename T, std::size_t W = sizeof(T)>
+		struct wstr_t;
+		template<typename T>
+		struct wstr_t<T, 2>
+		{
+			std::wstring conv(const std::string& str)
+			{
+				auto u16 = c08to16(str);
+				std::wstring wstr(u16.length(), 0);
+				std::transform(u16.begin(), u16.end(), wstr.begin(), [](auto c) { return c; });
+				return wstr;
+			}
+		};
+		template<typename T>
+		struct wstr_t<T, 4>
+		{
+			std::wstring conv(const std::string& str)
+			{
+				auto u32 = c08to32(str);
+				std::wstring wstr(u32.length(), 0);
+				std::transform(u32.begin(), u32.end(), wstr.begin(), [](auto c) { return c; });
+				return wstr;
+			}
+		};
+
+		template<typename T, std::size_t W = sizeof(T)>
+		struct str_t;
+		template<typename T>
+		struct str_t<T, 2>
+		{
+			std::string conv(const std::wstring& wstr)
+			{
+				u16string u16(wstr.length(), 0);
+				std::transform(wstr.begin(), wstr.end(), u16.begin(), [](auto c) { return c; });
+				return c16to08(u16);
+			}
+		};
+		template<typename T>
+		struct str_t<T, 4>
+		{
+			std::string conv(const std::wstring& wstr)
+			{
+				u32string u32(wstr.length(), 0);
+				std::transform(wstr.begin(), wstr.end(), u32.begin(), [](auto c) { return c; });
+				return c32to08(u32);
+			}
+		};
+
+	public:
 		/**
 		 * \brief convert std::string to std::wstring
 		 * \param str input string
 		 * \return converted wstring
 		 */
-		[[nodiscard]] static std::wstring wstr(const std::string& str);
-
-		/**
-		 * \brief convert std::wstring to std::string
-		 * \param wsv input wstring
-		 * \return converted string
-		 */
-		[[nodiscard]] static std::string str(std::wstring_view wsv);
+		[[nodiscard]] std::wstring wstr(const std::string& str) { return wstr_t<wchar_t>().conv(str); }
 
 		/**
 		 * \brief convert std::wstring to std::string
 		 * \param wstr input wstring
 		 * \return converted string
 		 */
-		[[nodiscard]] static std::string str(const std::wstring& wstr);
+		[[nodiscard]] std::string str(const std::wstring& wstr) { return str_t<wchar_t>().conv(wstr); }
 
 		/**
 		 * \brief convert string to float always with "C" locale
