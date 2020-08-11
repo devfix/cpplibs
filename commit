@@ -4,33 +4,20 @@ set -e  # exit on errors
 # log to file , see https://unix.stackexchange.com/a/145654/427788
 exec &> >(tee commit.log)
 
-
-build_type="Release"
-parallel="4"
-
-dir="cmake-build-${build_type,,}"
-
-echo "update local repo"
+echo -e "\033[48;5;16m\033[1;97mupdate local repo\033[0m"
 git pull
 git --no-pager diff --check
 
-echo "rebuild project"
-rm -rf cmake-build-*
-cmake . -B $dir -DCMAKE_BUILD_TYPE=$build_type
-cmake --build $dir --parallel $parallel --target testrunner --config $build_type
+./rebuild
 
-echo "run tests"
-$dir/testrunner
-
-echo "update documentation"
+echo -e "\033[48;5;16m\033[1;97mupdate documentation\033[0m"
 doxygen Doxyfile
 
 echo "commit to git"
 git add .
 git add -f docs
 printf '━%.0s' $(seq $(tput cols))
-echo "All tests run successful und documemtation updated."
-echo "Please use git commit now."
+echo -e "\033[48;5;16m\033[1;97mAll tests run successful und documemtation updated.\nPlease use git commit now.\033[0m"
 com
 git push
 

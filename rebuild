@@ -1,0 +1,16 @@
+#!/bin/bash
+set -e  # exit on errors
+
+build_type="Release"
+parallel="4"
+
+dir="cmake-build-${build_type,,}"
+
+echo -e "\033[48;5;16m\033[1;97mrebuild project\033[0m"
+rm -rf cmake-build-*
+cmake . -B $dir -DCMAKE_BUILD_TYPE=$build_type
+cmake --build $dir --parallel $parallel --target testrunner --config $build_type
+
+echo -e "\033[48;5;16m\033[1;97mrun tests\033[0m"
+$dir/testrunner
+

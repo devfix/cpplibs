@@ -1,6 +1,6 @@
 <map id="devfix/dsp/spectrogram.h" name="devfix/dsp/spectrogram.h">
-<area shape="rect" id="node8" href="$fft_8h.html" title="fft.h" alt="" coords="361,80,406,107"/>
-<area shape="rect" id="node17" href="$dsp_8h.html" title="dsp.h" alt="" coords="613,80,668,107"/>
-<area shape="rect" id="node10" href="$window_8h.html" title="window.h" alt="" coords="383,155,461,181"/>
-<area shape="rect" id="node13" href="$math_8h.html" title="../base/math.h" alt="" coords="630,229,737,256"/>
+<area shape="rect" id="node8" href="$fft_8h.html" title="fft.h" alt="" coords="367,80,413,107"/>
+<area shape="rect" id="node16" href="$dsp_8h.html" title="dsp.h" alt="" coords="628,80,683,107"/>
+<area shape="rect" id="node10" href="$window_8h.html" title="window.h" alt="" coords="546,155,623,181"/>
+<area shape="rect" id="node13" href="$math_8h.html" title="../base/math.h" alt="" coords="731,229,838,256"/>
 </map>
