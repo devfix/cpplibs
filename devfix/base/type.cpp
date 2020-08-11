@@ -15,10 +15,10 @@
 namespace devfix::base
 {
 
-#ifdef __GNUG__
-
 	std::string type::demangle(const char* mangled_name)
 	{
+
+#ifdef __GNUG__
 		int status;
 		char* name = abi::__cxa_demangle(mangled_name, nullptr, nullptr, &status);
 		if (status == 0 && name != nullptr)
@@ -31,11 +31,7 @@ namespace devfix::base
 			return retval;
 		}
 		throw std::invalid_argument("cannot demangle type name");
-	}
-
 #else
-	std::string type::demangle(const char* mangled_name)
-	{
 		std::string name(mangled_name);
 
 		// remove class, struct, enum
@@ -60,8 +56,8 @@ namespace devfix::base
 		}
 
 		return name;
-	}
 #endif
+	}
 
 	std::string type::remove_nested(const std::string& name)
 	{
