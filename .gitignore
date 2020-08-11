@@ -1,6 +1,7 @@
 # project specific
 /docs/latex
 .vs
+commit.log
 
 ### C++ template
 # Prerequisites

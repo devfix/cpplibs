@@ -4,7 +4,7 @@
 
 #if CPPLIBS_ENABLE_DSP_TESTS == 1
 
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 #include "../spectrogram.h"
 
 static constexpr double PRECISION_FINE = 1e-6;

@@ -33,6 +33,17 @@ if (${CPPLIBS_ENABLE_TESTS})
     endif ()
 endif ()
 
+if(NOT ${CPPLIBS_ENABLE_TESTS})
+    message(STATUS "cpplibs tests are disabled")
+else()
+    if(NOT ${CPPLIBS_ENABLE_DSP_TESTS})
+        message(STATUS "cpplibs dsp tests are disabled")
+    endif()
+    if(NOT ${CPPLIBS_ENABLE_NET_TESTS})
+        message(STATUS "cpplibs net tests are disabled")
+    endif()
+endif()
+
 
 if (UNIX)
     set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -DCPPLIBS_ENABLE_TESTS=${CPPLIBS_ENABLE_TESTS} -DCPPLIBS_ENABLE_DSP_TESTS=${CPPLIBS_ENABLE_DSP_TESTS} -DCPPLIBS_ENABLE_NET_TESTS=${CPPLIBS_ENABLE_NET_TESTS}")
@@ -81,16 +92,14 @@ if (WIN32)
 endif(WIN32)
 
 
-#include_directories(SYSTEM Catch2/include)
-
 add_subdirectory(devfix/base)
 add_subdirectory(devfix/net)
 add_subdirectory(devfix/dsp)
 
 
 if (${CPPLIBS_ENABLE_TESTS})
-    #file(GLOB_RECURSE src_tests "${CMAKE_CURRENT_LIST_DIR}/devfix/*test_*.cpp")
+    file(GLOB_RECURSE src_tests "${CMAKE_CURRENT_LIST_DIR}/devfix/*test_*.cpp")
     add_executable(testrunner testrunner.cpp "${src_tests}")
-    target_include_directories(testrunner PRIVATE Catch2/single_include)  # include Catch2 library header files
+    target_include_directories(testrunner PUBLIC "Catch2/single_include")  # include Catch2 library header files
     target_link_libraries(testrunner pthread devfixnet devfixdsp)
 endif ()

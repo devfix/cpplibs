@@ -16,7 +16,9 @@ static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation_a327edb7c780e1020
 static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation_abd881b1363ade2c258fc8b7acf093648}{bisec} (const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&points, const std\+::vector$<$ FloatT $>$ \&coeffs, FloatT x\+\_\+low, FloatT x\+\_\+up, FloatT y, FloatT abs\+\_\+error)
 \begin{DoxyCompactList}\small\item\em Finds the argument for a given value y. \end{DoxyCompactList}\item 
 static FloatT \hyperlink{structdevfix_1_1base_1_1interpolation_ae25fe895dbd5dc7e815655f16b6debe0}{bisec} (const std\+::vector$<$ FloatT $>$ \&xs, const std\+::vector$<$ FloatT $>$ \&coeffs, FloatT x\+\_\+low, FloatT x\+\_\+up, FloatT y, FloatT abs\+\_\+error)
-\begin{DoxyCompactList}\small\item\em Finds the argument for a given value y. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\begin{DoxyCompactList}\small\item\em Finds the argument for a given value y. \end{DoxyCompactList}\item 
+static std\+::pair$<$ double, double $>$ \hyperlink{structdevfix_1_1base_1_1interpolation_a4acd3972967c379b755b9782351b0c5f}{find\+\_\+max} (const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&points, const std\+::vector$<$ FloatT $>$ \&coeffs, FloatT x\+\_\+low, FloatT x\+\_\+up, FloatT step\+\_\+width)
+\end{DoxyCompactItemize}
 
 
 \subsection{Member Function Documentation}
@@ -150,6 +152,13 @@ evaluates the polynomial by an argument
 \begin{DoxyReturn}{Returns}
 value of polynomial at x 
 \end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1interpolation_a4acd3972967c379b755b9782351b0c5f}\label{structdevfix_1_1base_1_1interpolation_a4acd3972967c379b755b9782351b0c5f}} 
+\index{devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}!find\+\_\+max@{find\+\_\+max}}
+\index{find\+\_\+max@{find\+\_\+max}!devfix\+::base\+::interpolation@{devfix\+::base\+::interpolation}}
+\subsubsection{\texorpdfstring{find\+\_\+max()}{find\_max()}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+static std\+::pair$<$double, double$>$ \hyperlink{structdevfix_1_1base_1_1interpolation}{devfix\+::base\+::interpolation}$<$ FloatT $>$\+::find\+\_\+max (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::pair$<$ FloatT, FloatT $>$$>$ \&}]{points,  }\item[{const std\+::vector$<$ FloatT $>$ \&}]{coeffs,  }\item[{FloatT}]{x\+\_\+low,  }\item[{FloatT}]{x\+\_\+up,  }\item[{FloatT}]{step\+\_\+width }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

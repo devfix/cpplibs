@@ -1,0 +1,76 @@
+\hypertarget{structdevfix_1_1dsp_1_1analysis}{}\section{devfix\+:\+:dsp\+:\+:analysis Struct Reference}
+\label{structdevfix_1_1dsp_1_1analysis}\index{devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}}
+
+
+{\ttfamily \#include $<$analysis.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static constexpr void \hyperlink{structdevfix_1_1dsp_1_1analysis_aee4afbd42b3519c1827b49b21042ee37}{rms} (const std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len, FloatT $\ast$res)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static constexpr std\+::array$<$ FloatT, N $>$ \hyperlink{structdevfix_1_1dsp_1_1analysis_a415630d073c18ee5ab1e270ee3845500}{rms} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static constexpr std\+::vector$<$ FloatT $>$ \hyperlink{structdevfix_1_1dsp_1_1analysis_acad800a46b767f69e8df2940694614a4}{rms} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1analysis_ae65db46c95c0f6bd98f9d2f26f7f8c4c}{ampl\+\_\+thdn} (const FloatT $\ast$\hyperlink{structdevfix_1_1dsp_1_1analysis_aee4afbd42b3519c1827b49b21042ee37}{rms}, std\+::size\+\_\+t len, const std\+::vector$<$ std\+::size\+\_\+t $>$ \&sig\+\_\+lines)
+\item 
+{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1analysis_a3448d6f6aeaf71facdac78999b3ad177}{ampl\+\_\+thdn} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ vec, const std\+::vector$<$ std\+::size\+\_\+t $>$ \&sig\+\_\+lines)
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1analysis_ae65db46c95c0f6bd98f9d2f26f7f8c4c}\label{structdevfix_1_1dsp_1_1analysis_ae65db46c95c0f6bd98f9d2f26f7f8c4c}} 
+\index{devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}!ampl\+\_\+thdn@{ampl\+\_\+thdn}}
+\index{ampl\+\_\+thdn@{ampl\+\_\+thdn}!devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}}
+\subsubsection{\texorpdfstring{ampl\+\_\+thdn()}{ampl\_thdn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static constexpr FloatT devfix\+::dsp\+::analysis\+::ampl\+\_\+thdn (\begin{DoxyParamCaption}\item[{const FloatT $\ast$}]{rms,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{const std\+::vector$<$ std\+::size\+\_\+t $>$ \&}]{sig\+\_\+lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{structdevfix_1_1dsp_1_1analysis_ae65db46c95c0f6bd98f9d2f26f7f8c4c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1analysis_a3448d6f6aeaf71facdac78999b3ad177}\label{structdevfix_1_1dsp_1_1analysis_a3448d6f6aeaf71facdac78999b3ad177}} 
+\index{devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}!ampl\+\_\+thdn@{ampl\+\_\+thdn}}
+\index{ampl\+\_\+thdn@{ampl\+\_\+thdn}!devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}}
+\subsubsection{\texorpdfstring{ampl\+\_\+thdn()}{ampl\_thdn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ \\
+static constexpr FloatT devfix\+::dsp\+::analysis\+::ampl\+\_\+thdn (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$}]{vec,  }\item[{const std\+::vector$<$ std\+::size\+\_\+t $>$ \&}]{sig\+\_\+lines }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1analysis_aee4afbd42b3519c1827b49b21042ee37}\label{structdevfix_1_1dsp_1_1analysis_aee4afbd42b3519c1827b49b21042ee37}} 
+\index{devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}!rms@{rms}}
+\index{rms@{rms}!devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}}
+\subsubsection{\texorpdfstring{rms()}{rms()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static constexpr void devfix\+::dsp\+::analysis\+::rms (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ FloatT $>$ $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{FloatT $\ast$}]{res }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdevfix_1_1dsp_1_1analysis_aee4afbd42b3519c1827b49b21042ee37_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1analysis_a415630d073c18ee5ab1e270ee3845500}\label{structdevfix_1_1dsp_1_1analysis_a415630d073c18ee5ab1e270ee3845500}} 
+\index{devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}!rms@{rms}}
+\index{rms@{rms}!devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}}
+\subsubsection{\texorpdfstring{rms()}{rms()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+static constexpr std\+::array$<$FloatT, N$>$ devfix\+::dsp\+::analysis\+::rms (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1analysis_acad800a46b767f69e8df2940694614a4}\label{structdevfix_1_1dsp_1_1analysis_acad800a46b767f69e8df2940694614a4}} 
+\index{devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}!rms@{rms}}
+\index{rms@{rms}!devfix\+::dsp\+::analysis@{devfix\+::dsp\+::analysis}}
+\subsubsection{\texorpdfstring{rms()}{rms()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static constexpr std\+::vector$<$FloatT$>$ devfix\+::dsp\+::analysis\+::rms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/dsp/\hyperlink{analysis_8h}{analysis.\+h}\end{DoxyCompactItemize}

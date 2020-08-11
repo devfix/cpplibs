@@ -1,0 +1,61 @@
+\hypertarget{dsp_8h}{}\section{devfix/dsp/dsp.h File Reference}
+\label{dsp_8h}\index{devfix/dsp/dsp.\+h@{devfix/dsp/dsp.\+h}}
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include \char`\"{}window.\+h\char`\"{}}\newline
+{\ttfamily \#include \char`\"{}../base/math.\+h\char`\"{}}\newline
+Include dependency graph for dsp.\+h\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{dsp_8h__incl}
+\end{center}
+\end{figure}
+This graph shows which files directly or indirectly include this file\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=334pt]{dsp_8h__dep__incl}
+\end{center}
+\end{figure}
+\subsection*{Namespaces}
+\begin{DoxyCompactItemize}
+\item 
+ \hyperlink{namespacedevfix_1_1dsp}{devfix\+::dsp}
+\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{dsp_8h_ada00c11c52a95ce6547ca2c64485ca38}{math} = \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
+\end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215}{devfix\+::dsp\+::goertzel} (const std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len, std\+::size\+\_\+t k)
+\begin{DoxyCompactList}\small\item\em calculates an individual term of the discrete Fourier transform \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a9c0640ca74af740499f9c3da2019930c}{devfix\+::dsp\+::goertzel} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec, std\+::size\+\_\+t k)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a3eed4648161700e03c0f6d900bea9f73}{devfix\+::dsp\+::goertzel} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr, std\+::size\+\_\+t k)
+\item 
+{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a45835752ed90577a53430b19eb80348c}{devfix\+::dsp\+::apply\+\_\+window} (std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t n)
+\item 
+{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a299d793e30216ab3dc270c45fc1a1611}{devfix\+::dsp\+::apply\+\_\+window} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun, std\+::size\+\_\+t N$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a2843d1ef6aea33bdd37a84657b228414}{devfix\+::dsp\+::apply\+\_\+window} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a400e0dd8341bfbcfe42e60388c7a2494}{devfix\+::dsp\+::apply\+\_\+window} (std\+::complex$<$ FloatT $>$ $\ast$win, window\+::win\+\_\+fun\+\_\+t$<$ FloatT $>$ win\+\_\+fun, std\+::size\+\_\+t n)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a7f5d2ade6feeeba107861b7040ee89b6}{devfix\+::dsp\+::apply\+\_\+window} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win, window\+::win\+\_\+fun\+\_\+t$<$ FloatT $>$ win\+\_\+fun)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_aa05b8f98b6ec005c5c7e08efa0afb08a}{devfix\+::dsp\+::apply\+\_\+window} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win, window\+::win\+\_\+fun\+\_\+t$<$ FloatT $>$ win\+\_\+fun)
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{dsp_8h_ada00c11c52a95ce6547ca2c64485ca38}\label{dsp_8h_ada00c11c52a95ce6547ca2c64485ca38}} 
+\index{dsp.\+h@{dsp.\+h}!math@{math}}
+\index{math@{math}!dsp.\+h@{dsp.\+h}}
+\subsubsection{\texorpdfstring{math}{math}}
+{\footnotesize\ttfamily using \hyperlink{dsp_8h_ada00c11c52a95ce6547ca2c64485ca38}{math} =  \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
+

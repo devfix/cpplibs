@@ -90,6 +90,8 @@ Static Public Member Functions</h2></td></tr>
 <tr class="memitem:ae25fe895dbd5dc7e815655f16b6debe0"><td class="memItemLeft" align="right" valign="top">static FloatT&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1interpolation.html#ae25fe895dbd5dc7e815655f16b6debe0">bisec</a> (const std::vector&lt; FloatT &gt; &amp;xs, const std::vector&lt; FloatT &gt; &amp;coeffs, FloatT x_low, FloatT x_up, FloatT y, FloatT abs_error)</td></tr>
 <tr class="memdesc:ae25fe895dbd5dc7e815655f16b6debe0"><td class="mdescLeft">&#160;</td><td class="mdescRight">Finds the argument for a given value y.  <a href="#ae25fe895dbd5dc7e815655f16b6debe0">More...</a><br /></td></tr>
 <tr class="separator:ae25fe895dbd5dc7e815655f16b6debe0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4acd3972967c379b755b9782351b0c5f"><td class="memItemLeft" align="right" valign="top">static std::pair&lt; double, double &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1interpolation.html#a4acd3972967c379b755b9782351b0c5f">find_max</a> (const std::vector&lt; std::pair&lt; FloatT, FloatT &gt;&gt; &amp;points, const std::vector&lt; FloatT &gt; &amp;coeffs, FloatT x_low, FloatT x_up, FloatT step_width)</td></tr>
+<tr class="separator:a4acd3972967c379b755b9782351b0c5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Function Documentation</h2>
 <a id="abd881b1363ade2c258fc8b7acf093648"></a>
@@ -338,7 +340,7 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101_icgraph.png" border="0" usemap="#structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101_icgraph" alt=""/></div>
 <map name="structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101_icgraph" id="structdevfix_1_1base_1_1interpolation_ab769ce14a1e3bb758fa7b8b8db812101_icgraph">
-<area shape="rect" id="node2" href="structdevfix_1_1base_1_1interpolation.html#ae25fe895dbd5dc7e815655f16b6debe0" title="Finds the argument for a given value y. " alt="" coords="224,5,395,47"/>
+<area shape="rect" id="node2" href="structdevfix_1_1base_1_1interpolation.html#a4acd3972967c379b755b9782351b0c5f" title="devfix::base::interpolation\l::find_max" alt="" coords="224,5,395,47"/>
 </map>
 </div>
 
@@ -396,6 +398,62 @@ template&lt;typename FloatT&gt; </div>
   </dd>
 </dl>
 <dl class="section return"><dt>Returns</dt><dd>value of polynomial at x </dd></dl>
+
+</div>
+</div>
+<a id="a4acd3972967c379b755b9782351b0c5f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4acd3972967c379b755b9782351b0c5f">&#9670;&nbsp;</a></span>find_max()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::pair&lt;double, double&gt; <a class="el" href="structdevfix_1_1base_1_1interpolation.html">devfix::base::interpolation</a>&lt; FloatT &gt;::find_max </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::pair&lt; FloatT, FloatT &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>points</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>coeffs</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>x_low</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>x_up</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>step_width</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -3,9 +3,126 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+struct \hyperlink{structdevfix_1_1dsp_1_1analysis}{analysis}
+\item 
 struct \hyperlink{structdevfix_1_1dsp_1_1fft}{fft}
 \item 
 struct \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{spectrogram}
 \item 
 struct \hyperlink{structdevfix_1_1dsp_1_1window}{window}
 \end{DoxyCompactItemize}
+\subsection*{Functions}
+\begin{DoxyCompactItemize}
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215}{goertzel} (const std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len, std\+::size\+\_\+t k)
+\begin{DoxyCompactList}\small\item\em calculates an individual term of the discrete Fourier transform \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a9c0640ca74af740499f9c3da2019930c}{goertzel} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec, std\+::size\+\_\+t k)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a3eed4648161700e03c0f6d900bea9f73}{goertzel} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr, std\+::size\+\_\+t k)
+\item 
+{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a45835752ed90577a53430b19eb80348c}{apply\+\_\+window} (std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t n)
+\item 
+{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a299d793e30216ab3dc270c45fc1a1611}{apply\+\_\+window} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun, std\+::size\+\_\+t N$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a2843d1ef6aea33bdd37a84657b228414}{apply\+\_\+window} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a400e0dd8341bfbcfe42e60388c7a2494}{apply\+\_\+window} (std\+::complex$<$ FloatT $>$ $\ast$win, \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$ win\+\_\+fun, std\+::size\+\_\+t n)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a7f5d2ade6feeeba107861b7040ee89b6}{apply\+\_\+window} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win, \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$ win\+\_\+fun)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_aa05b8f98b6ec005c5c7e08efa0afb08a}{apply\+\_\+window} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win, \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$ win\+\_\+fun)
+\end{DoxyCompactItemize}
+
+
+\subsection{Function Documentation}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a45835752ed90577a53430b19eb80348c}\label{namespacedevfix_1_1dsp_a45835752ed90577a53430b19eb80348c}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ \\
+static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a299d793e30216ab3dc270c45fc1a1611}\label{namespacedevfix_1_1dsp_a299d793e30216ab3dc270c45fc1a1611}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ \\
+static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a2843d1ef6aea33bdd37a84657b228414}\label{namespacedevfix_1_1dsp_a2843d1ef6aea33bdd37a84657b228414}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun, std\+::size\+\_\+t N$>$ \\
+static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a400e0dd8341bfbcfe42e60388c7a2494}\label{namespacedevfix_1_1dsp_a400e0dd8341bfbcfe42e60388c7a2494}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{\hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$}]{win\+\_\+fun,  }\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a7f5d2ade6feeeba107861b7040ee89b6}\label{namespacedevfix_1_1dsp_a7f5d2ade6feeeba107861b7040ee89b6}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win,  }\item[{\hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$}]{win\+\_\+fun }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_aa05b8f98b6ec005c5c7e08efa0afb08a}\label{namespacedevfix_1_1dsp_aa05b8f98b6ec005c5c7e08efa0afb08a}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
+\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win,  }\item[{\hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$}]{win\+\_\+fun }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215}\label{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!goertzel@{goertzel}}
+\index{goertzel@{goertzel}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{goertzel()}{goertzel()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::goertzel (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ FloatT $>$ $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})}
+
+
+
+calculates an individual term of the discrete Fourier transform 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & floating point type \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em field} & \\
+\hline
+{\em len} & \\
+\hline
+{\em k} & \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=326pt]{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a9c0640ca74af740499f9c3da2019930c}\label{namespacedevfix_1_1dsp_a9c0640ca74af740499f9c3da2019930c}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!goertzel@{goertzel}}
+\index{goertzel@{goertzel}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{goertzel()}{goertzel()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::goertzel (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a3eed4648161700e03c0f6d900bea9f73}\label{namespacedevfix_1_1dsp_a3eed4648161700e03c0f6d900bea9f73}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!goertzel@{goertzel}}
+\index{goertzel@{goertzel}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{goertzel()}{goertzel()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::goertzel (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})}
+

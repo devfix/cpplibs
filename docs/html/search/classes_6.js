@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['platform',['platform',['../structdevfix_1_1base_1_1platform.html',1,'devfix::base']]]
+  ['netbuilder',['netbuilder',['../structdevfix_1_1net_1_1netbuilder.html',1,'devfix::net']]]
 ];

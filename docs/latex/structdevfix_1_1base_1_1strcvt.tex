@@ -1,0 +1,275 @@
+\hypertarget{structdevfix_1_1base_1_1strcvt}{}\section{devfix\+:\+:base\+:\+:strcvt Struct Reference}
+\label{structdevfix_1_1base_1_1strcvt}\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+
+
+{\ttfamily \#include $<$strcvt.\+h$>$}
+
+\subsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static std\+::wstring \hyperlink{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}{wstr} (std\+::string\+\_\+view sv)
+\begin{DoxyCompactList}\small\item\em convert std\+::string to std\+::wstring \end{DoxyCompactList}\item 
+static std\+::wstring \hyperlink{structdevfix_1_1base_1_1strcvt_acc5ba74410abd732c4559800b1ff2852}{wstr} (const std\+::string \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
+\begin{DoxyCompactList}\small\item\em convert std\+::string to std\+::wstring \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str} (std\+::wstring\+\_\+view wsv)
+\begin{DoxyCompactList}\small\item\em convert std\+::wstring to std\+::string \end{DoxyCompactList}\item 
+static std\+::string \hyperlink{structdevfix_1_1base_1_1strcvt_a721e180085ba30dbdb37ac878d75d350}{str} (const std\+::wstring \&\hyperlink{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}{wstr})
+\begin{DoxyCompactList}\small\item\em convert std\+::wstring to std\+::string \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a5b28d529cfbbf026c8e1550e92e2e557}{stof} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
+\begin{DoxyCompactList}\small\item\em convert string to float always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_ad124ced1e4a75974cdf8065985028265}{stof} (std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$ sv)
+\begin{DoxyCompactList}\small\item\em convert string to float always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5}{stod} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
+\begin{DoxyCompactList}\small\item\em convert string to double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_aec0faa61c87e1206ef3a50d5bb197fe7}{stod} (std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$ sv)
+\begin{DoxyCompactList}\small\item\em convert string to double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a387c5ad278f568abb921df0ebac489c3}{stold} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
+\begin{DoxyCompactList}\small\item\em convert string to long double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_acd3c558da236cbab738a9014df5979ac}{stold} (std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$ sv)
+\begin{DoxyCompactList}\small\item\em convert string to long double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5}\label{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!stod@{stod}}
+\index{stod@{stod}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{stod()}{stod()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT $>$ \\
+static auto devfix\+::base\+::strcvt\+::stod (\begin{DoxyParamCaption}\item[{const std\+::basic\+\_\+string$<$ CharT $>$ \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+convert string to double always with \char`\"{}\+C\char`\"{} locale 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em CharT} & character type, either \textquotesingle{}char\textquotesingle{} or \textquotesingle{}wchar\+\_\+t\textquotesingle{} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted double 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_aec0faa61c87e1206ef3a50d5bb197fe7}\label{structdevfix_1_1base_1_1strcvt_aec0faa61c87e1206ef3a50d5bb197fe7}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!stod@{stod}}
+\index{stod@{stod}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{stod()}{stod()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT $>$ \\
+static auto devfix\+::base\+::strcvt\+::stod (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+convert string to double always with \char`\"{}\+C\char`\"{} locale 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em CharT} & character type, either \textquotesingle{}char\textquotesingle{} or \textquotesingle{}wchar\+\_\+t\textquotesingle{} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a5b28d529cfbbf026c8e1550e92e2e557}\label{structdevfix_1_1base_1_1strcvt_a5b28d529cfbbf026c8e1550e92e2e557}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!stof@{stof}}
+\index{stof@{stof}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{stof()}{stof()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT $>$ \\
+static auto devfix\+::base\+::strcvt\+::stof (\begin{DoxyParamCaption}\item[{const std\+::basic\+\_\+string$<$ CharT $>$ \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+convert string to float always with \char`\"{}\+C\char`\"{} locale 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em CharT} & character type, either \textquotesingle{}char\textquotesingle{} or \textquotesingle{}wchar\+\_\+t\textquotesingle{} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted float 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{structdevfix_1_1base_1_1strcvt_a5b28d529cfbbf026c8e1550e92e2e557_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_ad124ced1e4a75974cdf8065985028265}\label{structdevfix_1_1base_1_1strcvt_ad124ced1e4a75974cdf8065985028265}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!stof@{stof}}
+\index{stof@{stof}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{stof()}{stof()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT $>$ \\
+static auto devfix\+::base\+::strcvt\+::stof (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+convert string to float always with \char`\"{}\+C\char`\"{} locale 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em CharT} & character type, either \textquotesingle{}char\textquotesingle{} or \textquotesingle{}wchar\+\_\+t\textquotesingle{} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted float 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a387c5ad278f568abb921df0ebac489c3}\label{structdevfix_1_1base_1_1strcvt_a387c5ad278f568abb921df0ebac489c3}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!stold@{stold}}
+\index{stold@{stold}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{stold()}{stold()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily template$<$typename CharT $>$ \\
+static auto devfix\+::base\+::strcvt\+::stold (\begin{DoxyParamCaption}\item[{const std\+::basic\+\_\+string$<$ CharT $>$ \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+convert string to long double always with \char`\"{}\+C\char`\"{} locale 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em CharT} & character type, either \textquotesingle{}char\textquotesingle{} or \textquotesingle{}wchar\+\_\+t\textquotesingle{} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em str} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted long double 
+\end{DoxyReturn}
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=318pt]{structdevfix_1_1base_1_1strcvt_a387c5ad278f568abb921df0ebac489c3_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_acd3c558da236cbab738a9014df5979ac}\label{structdevfix_1_1base_1_1strcvt_acd3c558da236cbab738a9014df5979ac}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!stold@{stold}}
+\index{stold@{stold}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{stold()}{stold()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily template$<$typename CharT $>$ \\
+static auto devfix\+::base\+::strcvt\+::stold (\begin{DoxyParamCaption}\item[{std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+convert string to long double always with \char`\"{}\+C\char`\"{} locale 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em CharT} & character type, either \textquotesingle{}char\textquotesingle{} or \textquotesingle{}wchar\+\_\+t\textquotesingle{} \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted long double 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}\label{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!str@{str}}
+\index{str@{str}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::string devfix\+::base\+::strcvt\+::str (\begin{DoxyParamCaption}\item[{std\+::wstring\+\_\+view}]{wsv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+convert std\+::wstring to std\+::string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wsv} & input wstring \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a721e180085ba30dbdb37ac878d75d350}\label{structdevfix_1_1base_1_1strcvt_a721e180085ba30dbdb37ac878d75d350}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!str@{str}}
+\index{str@{str}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::string devfix\+::base\+::strcvt\+::str (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{wstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+convert std\+::wstring to std\+::string 
+
+
+\begin{DoxyParams}{Parameters}
+{\em wstr} & input wstring \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted string 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}\label{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!wstr@{wstr}}
+\index{wstr@{wstr}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{wstr()}{wstr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
+{\footnotesize\ttfamily std\+::wstring devfix\+::base\+::strcvt\+::wstr (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+convert std\+::string to std\+::wstring 
+
+
+\begin{DoxyParams}{Parameters}
+{\em sv} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted wstring 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_acc5ba74410abd732c4559800b1ff2852}\label{structdevfix_1_1base_1_1strcvt_acc5ba74410abd732c4559800b1ff2852}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!wstr@{wstr}}
+\index{wstr@{wstr}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{wstr()}{wstr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
+{\footnotesize\ttfamily std\+::wstring devfix\+::base\+::strcvt\+::wstr (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+
+
+convert std\+::string to std\+::wstring 
+
+
+\begin{DoxyParams}{Parameters}
+{\em str} & input string \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+converted wstring 
+\end{DoxyReturn}
+
+
+The documentation for this struct was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/\hyperlink{strcvt_8h}{strcvt.\+h}\item 
+devfix/base/\hyperlink{strcvt_8cpp}{strcvt.\+cpp}\end{DoxyCompactItemize}

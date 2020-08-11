@@ -17,7 +17,7 @@ var searchData=
   ['is_5fabs_5fpath',['is_abs_path',['../structdevfix_1_1base_1_1filesystem.html#ab83a752064650b62278367d58e12726a',1,'devfix::base::filesystem']]],
   ['is_5fclosed',['is_closed',['../structdevfix_1_1base_1_1io_1_1inputstream.html#a9da6b400424ff476ed0479193c219fa9',1,'devfix::base::io::inputstream::is_closed()'],['../structdevfix_1_1base_1_1io_1_1outputstream.html#a52bd2eac8f6fbc496eab5138a48d2f06',1,'devfix::base::io::outputstream::is_closed()'],['../structdevfix_1_1base_1_1io_1_1sink.html#a7d006bfd462ad29884aef9f6a7f40006',1,'devfix::base::io::sink::is_closed()'],['../structdevfix_1_1base_1_1io_1_1source.html#a406834cf6651d48949b96d0ef49cc6c1',1,'devfix::base::io::source::is_closed()'],['../structdevfix_1_1net_1_1serversocket.html#a852c0aa25c375834487ffc0e8d818221',1,'devfix::net::serversocket::is_closed()']]],
   ['is_5fclosed_5ft',['is_closed_t',['../namespacedevfix_1_1base_1_1io.html#a14f89d4437ced6ede49c044ee8e71f17',1,'devfix::base::io']]],
-  ['is_5fenabled',['is_enabled',['../structdevfix_1_1base_1_1strout.html#a62b7808c3d8b54dd926bdecabea7cbd2',1,'devfix::base::strout']]],
+  ['is_5fenabled',['is_enabled',['../structdevfix_1_1base_1_1slog.html#ae17c8415ef92091f6b7741919c4f6cdb',1,'devfix::base::slog::is_enabled()'],['../structdevfix_1_1base_1_1strout.html#a62b7808c3d8b54dd926bdecabea7cbd2',1,'devfix::base::strout::is_enabled()']]],
   ['isdir',['isdir',['../structdevfix_1_1base_1_1filesystem.html#a847752381fcd24c3fea6802b04cad5c6',1,'devfix::base::filesystem']]],
   ['isfile',['isfile',['../structdevfix_1_1base_1_1filesystem.html#aaa31b2edd95e70979e3a932a21d28e59',1,'devfix::base::filesystem']]]
 ];

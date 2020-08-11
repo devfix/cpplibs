@@ -1,0 +1,281 @@
+\hypertarget{structdevfix_1_1base_1_1slog}{}\section{devfix\+:\+:base\+:\+:slog$<$ CharT $>$ Struct Template Reference}
+\label{structdevfix_1_1base_1_1slog}\index{devfix\+::base\+::slog$<$ Char\+T $>$@{devfix\+::base\+::slog$<$ Char\+T $>$}}
+
+
+{\ttfamily \#include $<$slog.\+h$>$}
+
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t} = std\+::basic\+\_\+ostream$<$ CharT $>$
+\item 
+using \hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t} = std\+::function$<$ void(const std\+::basic\+\_\+string$<$ CharT $>$ \&str)$>$
+\item 
+using \hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t} = std\+::function$<$ void()$>$
+\end{DoxyCompactItemize}
+\subsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog_aa27391ee2412df5d659cf98121a8e198}{slog} (\hyperlink{structdevfix_1_1base_1_1slog}{slog} $\ast$sl)
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog_a240d2ff14130c8a4ab8b25705a08fbe9}{slog} (\hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t} $\ast$ostream)
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog_a13059c5e76ff1647b9a397a868879708}{slog} (const \hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t} \&\hyperlink{structdevfix_1_1base_1_1slog_ab9939cb04b4d419ce97687d5823ee79e}{write}, const \hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t} \&flush)
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_a4899c65f6f5192f74995be3fffe799bf}{add\+\_\+sink} (\hyperlink{structdevfix_1_1base_1_1slog}{slog} $\ast$sl)
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_ade4230b2bd4b60aeec8935bc8217916e}{add\+\_\+sink} (\hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t} $\ast$ostream)
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_a60153602299e16dca17dadc19f218814}{add\+\_\+sink} (const \hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t} \&\hyperlink{structdevfix_1_1base_1_1slog_ab9939cb04b4d419ce97687d5823ee79e}{write}, const \hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t} \&flush)
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog_a6518d5f010a788a97ce0b2ea69474b1e}{slog} (const \hyperlink{structdevfix_1_1base_1_1slog}{slog} \&sl)=delete
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog_af82a828dcb966a06214de6116a9b2f21}{slog} (\hyperlink{structdevfix_1_1base_1_1slog}{slog} \&\&sl)=delete
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog}{slog} \& \hyperlink{structdevfix_1_1base_1_1slog_aad58f8eb55caedcc390357019b3f2d9f}{operator=} (const \hyperlink{structdevfix_1_1base_1_1slog}{slog} \&sl)=delete
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog}{slog} \& \hyperlink{structdevfix_1_1base_1_1slog_aeb652e46530be0f44e33f88e17c5b8aa}{operator$<$$<$} (const \hyperlink{structdevfix_1_1base_1_1stx__t}{stx\+\_\+t} \&)
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog}{slog} \& \hyperlink{structdevfix_1_1base_1_1slog_ae29889ec05f8930826cdf5ec1947a8d1}{operator$<$$<$} (const std\+::basic\+\_\+string$<$ CharT $>$ \&str)
+\item 
+\hyperlink{structdevfix_1_1base_1_1slog}{slog} \& \hyperlink{structdevfix_1_1base_1_1slog_a856573b0121225a0bd80c0f02645227c}{operator$<$$<$} (const \hyperlink{structdevfix_1_1base_1_1etx__t}{etx\+\_\+t} \&)
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_a45b6fbc2f61c949d8cb6762629707ca3}{set\+\_\+prefix} (const std\+::basic\+\_\+string$<$ CharT $>$ \&prefix)
+\item 
+std\+::basic\+\_\+string$<$ CharT $>$ \hyperlink{structdevfix_1_1base_1_1slog_a692072f9ce3409f287c4f1f57fdf0e99}{get\+\_\+prefix} ()
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_aec2d689cb06eb795bbd75c7df45df768}{set\+\_\+enabled} (bool enabled)
+\item 
+bool \hyperlink{structdevfix_1_1base_1_1slog_ae17c8415ef92091f6b7741919c4f6cdb}{is\+\_\+enabled} () const
+\end{DoxyCompactItemize}
+\subsection*{Protected Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_a5e3a84ea7bcce1a17c5cf43398666f21}{start\+\_\+text} ()
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_ab9939cb04b4d419ce97687d5823ee79e}{write} (const std\+::basic\+\_\+string$<$ CharT $>$ \&str)
+\item 
+void \hyperlink{structdevfix_1_1base_1_1slog_ac4610846d3f7b2dfa506ea6e1a9b1826}{end\+\_\+text} ()
+\end{DoxyCompactItemize}
+\subsection*{Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+std\+::vector$<$ std\+::variant$<$ \hyperlink{structdevfix_1_1base_1_1slog}{slog} $\ast$, std\+::pair$<$ \hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t}, \hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t} $>$, \hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t} $\ast$ $>$ $>$ \hyperlink{structdevfix_1_1base_1_1slog_ad2da16c81e93026a8094c53c2261cb33}{sinks\+\_\+}
+\item 
+std\+::basic\+\_\+string$<$ CharT $>$ \hyperlink{structdevfix_1_1base_1_1slog_a32d647fa732679ecb1fe679f1305f43a}{prefix\+\_\+}
+\item 
+std\+::atomic\+\_\+bool \hyperlink{structdevfix_1_1base_1_1slog_a5376d7ddd91f95c9d7fcb8629fcfcdf0}{enabled\+\_\+} = true
+\end{DoxyCompactItemize}
+\subsection*{Static Protected Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr CharT \hyperlink{structdevfix_1_1base_1_1slog_aa308e2dc79a5ef8ad14db038232b0fe3}{C\+L\+E\+A\+R\+\_\+\+L\+I\+NE} \mbox{[}$\,$\mbox{]} = \{ \textquotesingle{}\textbackslash{}033\textquotesingle{}, \textquotesingle{}\mbox{[}\textquotesingle{}, \textquotesingle{}2\textquotesingle{}, \textquotesingle{}K\textquotesingle{}, \textquotesingle{}\textbackslash{}r\textquotesingle{} \}
+\item 
+static \hyperlink{structdevfix_1_1base_1_1spinlock}{spinlock} \hyperlink{structdevfix_1_1base_1_1slog_a6bfea192aed809edbca0deacdce5b8df}{spinlock\+\_\+}
+\end{DoxyCompactItemize}
+
+
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}\label{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!flush\+\_\+t@{flush\+\_\+t}}
+\index{flush\+\_\+t@{flush\+\_\+t}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{flush\+\_\+t}{flush\_t}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+using \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t} =  std\+::function$<$void()$>$}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}\label{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!ostream\+\_\+t@{ostream\+\_\+t}}
+\index{ostream\+\_\+t@{ostream\+\_\+t}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{ostream\+\_\+t}{ostream\_t}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+using \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t} =  std\+::basic\+\_\+ostream$<$CharT$>$}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}\label{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!write\+\_\+t@{write\+\_\+t}}
+\index{write\+\_\+t@{write\+\_\+t}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{write\+\_\+t}{write\_t}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+using \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t} =  std\+::function$<$void(const std\+::basic\+\_\+string$<$CharT$>$\& str)$>$}
+
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_aa27391ee2412df5d659cf98121a8e198}\label{structdevfix_1_1base_1_1slog_aa27391ee2412df5d659cf98121a8e198}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!slog@{slog}}
+\index{slog@{slog}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{slog()}{slog()}\hspace{0.1cm}{\footnotesize\ttfamily [1/5]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog}{slog} (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1base_1_1slog}{slog}$<$ CharT $>$ $\ast$}]{sl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a240d2ff14130c8a4ab8b25705a08fbe9}\label{structdevfix_1_1base_1_1slog_a240d2ff14130c8a4ab8b25705a08fbe9}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!slog@{slog}}
+\index{slog@{slog}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{slog()}{slog()}\hspace{0.1cm}{\footnotesize\ttfamily [2/5]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog}{slog} (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t} $\ast$}]{ostream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a13059c5e76ff1647b9a397a868879708}\label{structdevfix_1_1base_1_1slog_a13059c5e76ff1647b9a397a868879708}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!slog@{slog}}
+\index{slog@{slog}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{slog()}{slog()}\hspace{0.1cm}{\footnotesize\ttfamily [3/5]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog}{slog} (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t} \&}]{write,  }\item[{const \hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t} \&}]{flush }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a6518d5f010a788a97ce0b2ea69474b1e}\label{structdevfix_1_1base_1_1slog_a6518d5f010a788a97ce0b2ea69474b1e}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!slog@{slog}}
+\index{slog@{slog}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{slog()}{slog()}\hspace{0.1cm}{\footnotesize\ttfamily [4/5]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog}{slog} (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1slog}{slog}$<$ CharT $>$ \&}]{sl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_af82a828dcb966a06214de6116a9b2f21}\label{structdevfix_1_1base_1_1slog_af82a828dcb966a06214de6116a9b2f21}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!slog@{slog}}
+\index{slog@{slog}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{slog()}{slog()}\hspace{0.1cm}{\footnotesize\ttfamily [5/5]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::\hyperlink{structdevfix_1_1base_1_1slog}{slog} (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1base_1_1slog}{slog}$<$ CharT $>$ \&\&}]{sl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+
+
+\subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a4899c65f6f5192f74995be3fffe799bf}\label{structdevfix_1_1base_1_1slog_a4899c65f6f5192f74995be3fffe799bf}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!add\+\_\+sink@{add\+\_\+sink}}
+\index{add\+\_\+sink@{add\+\_\+sink}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{add\+\_\+sink()}{add\_sink()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::add\+\_\+sink (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1base_1_1slog}{slog}$<$ CharT $>$ $\ast$}]{sl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_ade4230b2bd4b60aeec8935bc8217916e}\label{structdevfix_1_1base_1_1slog_ade4230b2bd4b60aeec8935bc8217916e}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!add\+\_\+sink@{add\+\_\+sink}}
+\index{add\+\_\+sink@{add\+\_\+sink}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{add\+\_\+sink()}{add\_sink()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::add\+\_\+sink (\begin{DoxyParamCaption}\item[{\hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t} $\ast$}]{ostream }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a60153602299e16dca17dadc19f218814}\label{structdevfix_1_1base_1_1slog_a60153602299e16dca17dadc19f218814}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!add\+\_\+sink@{add\+\_\+sink}}
+\index{add\+\_\+sink@{add\+\_\+sink}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{add\+\_\+sink()}{add\_sink()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::add\+\_\+sink (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t} \&}]{write,  }\item[{const \hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t} \&}]{flush }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_ac4610846d3f7b2dfa506ea6e1a9b1826}\label{structdevfix_1_1base_1_1slog_ac4610846d3f7b2dfa506ea6e1a9b1826}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!end\+\_\+text@{end\+\_\+text}}
+\index{end\+\_\+text@{end\+\_\+text}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{end\+\_\+text()}{end\_text()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::end\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a692072f9ce3409f287c4f1f57fdf0e99}\label{structdevfix_1_1base_1_1slog_a692072f9ce3409f287c4f1f57fdf0e99}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!get\+\_\+prefix@{get\+\_\+prefix}}
+\index{get\+\_\+prefix@{get\+\_\+prefix}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{get\+\_\+prefix()}{get\_prefix()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+std\+::basic\+\_\+string$<$CharT$>$ \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::get\+\_\+prefix (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_ae17c8415ef92091f6b7741919c4f6cdb}\label{structdevfix_1_1base_1_1slog_ae17c8415ef92091f6b7741919c4f6cdb}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!is\+\_\+enabled@{is\+\_\+enabled}}
+\index{is\+\_\+enabled@{is\+\_\+enabled}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{is\+\_\+enabled()}{is\_enabled()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+bool \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::is\+\_\+enabled (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_aeb652e46530be0f44e33f88e17c5b8aa}\label{structdevfix_1_1base_1_1slog_aeb652e46530be0f44e33f88e17c5b8aa}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{slog}\& \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1stx__t}{stx\+\_\+t} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_ae29889ec05f8930826cdf5ec1947a8d1}\label{structdevfix_1_1base_1_1slog_ae29889ec05f8930826cdf5ec1947a8d1}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{slog}\& \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const std\+::basic\+\_\+string$<$ CharT $>$ \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a856573b0121225a0bd80c0f02645227c}\label{structdevfix_1_1base_1_1slog_a856573b0121225a0bd80c0f02645227c}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!operator$<$$<$@{operator$<$$<$}}
+\index{operator$<$$<$@{operator$<$$<$}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{operator$<$$<$()}{operator<<()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{slog}\& \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::operator$<$$<$ (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1etx__t}{etx\+\_\+t} \&}]{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_aad58f8eb55caedcc390357019b3f2d9f}\label{structdevfix_1_1base_1_1slog_aad58f8eb55caedcc390357019b3f2d9f}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!operator=@{operator=}}
+\index{operator=@{operator=}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{operator=()}{operator=()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1slog}{slog}\& \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::operator= (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1slog}{slog}$<$ CharT $>$ \&}]{sl }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [delete]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_aec2d689cb06eb795bbd75c7df45df768}\label{structdevfix_1_1base_1_1slog_aec2d689cb06eb795bbd75c7df45df768}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!set\+\_\+enabled@{set\+\_\+enabled}}
+\index{set\+\_\+enabled@{set\+\_\+enabled}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{set\+\_\+enabled()}{set\_enabled()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::set\+\_\+enabled (\begin{DoxyParamCaption}\item[{bool}]{enabled }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a45b6fbc2f61c949d8cb6762629707ca3}\label{structdevfix_1_1base_1_1slog_a45b6fbc2f61c949d8cb6762629707ca3}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!set\+\_\+prefix@{set\+\_\+prefix}}
+\index{set\+\_\+prefix@{set\+\_\+prefix}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{set\+\_\+prefix()}{set\_prefix()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::set\+\_\+prefix (\begin{DoxyParamCaption}\item[{const std\+::basic\+\_\+string$<$ CharT $>$ \&}]{prefix }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a5e3a84ea7bcce1a17c5cf43398666f21}\label{structdevfix_1_1base_1_1slog_a5e3a84ea7bcce1a17c5cf43398666f21}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!start\+\_\+text@{start\+\_\+text}}
+\index{start\+\_\+text@{start\+\_\+text}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{start\+\_\+text()}{start\_text()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::start\+\_\+text (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_ab9939cb04b4d419ce97687d5823ee79e}\label{structdevfix_1_1base_1_1slog_ab9939cb04b4d419ce97687d5823ee79e}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!write@{write}}
+\index{write@{write}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{write()}{write()}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+void \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::write (\begin{DoxyParamCaption}\item[{const std\+::basic\+\_\+string$<$ CharT $>$ \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [protected]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_aa308e2dc79a5ef8ad14db038232b0fe3}\label{structdevfix_1_1base_1_1slog_aa308e2dc79a5ef8ad14db038232b0fe3}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!C\+L\+E\+A\+R\+\_\+\+L\+I\+NE@{C\+L\+E\+A\+R\+\_\+\+L\+I\+NE}}
+\index{C\+L\+E\+A\+R\+\_\+\+L\+I\+NE@{C\+L\+E\+A\+R\+\_\+\+L\+I\+NE}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{C\+L\+E\+A\+R\+\_\+\+L\+I\+NE}{CLEAR\_LINE}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+constexpr CharT \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::C\+L\+E\+A\+R\+\_\+\+L\+I\+NE\mbox{[}$\,$\mbox{]} = \{ \textquotesingle{}\textbackslash{}033\textquotesingle{}, \textquotesingle{}\mbox{[}\textquotesingle{}, \textquotesingle{}2\textquotesingle{}, \textquotesingle{}K\textquotesingle{}, \textquotesingle{}\textbackslash{}r\textquotesingle{} \}\hspace{0.3cm}{\ttfamily [static]}, {\ttfamily [protected]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a5376d7ddd91f95c9d7fcb8629fcfcdf0}\label{structdevfix_1_1base_1_1slog_a5376d7ddd91f95c9d7fcb8629fcfcdf0}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!enabled\+\_\+@{enabled\+\_\+}}
+\index{enabled\+\_\+@{enabled\+\_\+}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{enabled\+\_\+}{enabled\_}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+std\+::atomic\+\_\+bool \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::enabled\+\_\+ = true\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a32d647fa732679ecb1fe679f1305f43a}\label{structdevfix_1_1base_1_1slog_a32d647fa732679ecb1fe679f1305f43a}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!prefix\+\_\+@{prefix\+\_\+}}
+\index{prefix\+\_\+@{prefix\+\_\+}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{prefix\+\_\+}{prefix\_}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+std\+::basic\+\_\+string$<$CharT$>$ \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::prefix\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_ad2da16c81e93026a8094c53c2261cb33}\label{structdevfix_1_1base_1_1slog_ad2da16c81e93026a8094c53c2261cb33}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!sinks\+\_\+@{sinks\+\_\+}}
+\index{sinks\+\_\+@{sinks\+\_\+}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{sinks\+\_\+}{sinks\_}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+std\+::vector$<$std\+::variant$<$\hyperlink{structdevfix_1_1base_1_1slog}{slog}$\ast$, std\+::pair$<$\hyperlink{structdevfix_1_1base_1_1slog_a5897ebe6b65ffd7a1845a6bca989f288}{write\+\_\+t}, \hyperlink{structdevfix_1_1base_1_1slog_a5c957ca5d7392786ede9f813ec40fb40}{flush\+\_\+t}$>$, \hyperlink{structdevfix_1_1base_1_1slog_a3602226e6adc9ea19626e25a0df085a6}{ostream\+\_\+t}$\ast$$>$ $>$ \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::sinks\+\_\+\hspace{0.3cm}{\ttfamily [protected]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1slog_a6bfea192aed809edbca0deacdce5b8df}\label{structdevfix_1_1base_1_1slog_a6bfea192aed809edbca0deacdce5b8df}} 
+\index{devfix\+::base\+::slog@{devfix\+::base\+::slog}!spinlock\+\_\+@{spinlock\+\_\+}}
+\index{spinlock\+\_\+@{spinlock\+\_\+}!devfix\+::base\+::slog@{devfix\+::base\+::slog}}
+\subsubsection{\texorpdfstring{spinlock\+\_\+}{spinlock\_}}
+{\footnotesize\ttfamily template$<$typename CharT$>$ \\
+\hyperlink{structdevfix_1_1base_1_1spinlock}{spinlock} \hyperlink{structdevfix_1_1base_1_1slog}{devfix\+::base\+::slog}$<$ CharT $>$\+::spinlock\+\_\+\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [protected]}}
+
+
+
+The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+devfix/base/\hyperlink{slog_8h}{slog.\+h}\end{DoxyCompactItemize}

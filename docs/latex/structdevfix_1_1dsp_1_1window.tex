@@ -12,6 +12,8 @@ struct \hyperlink{structdevfix_1_1dsp_1_1window_1_1buffer}{buffer}
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
+using \hyperlink{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}{math} = \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
+\item 
 {\footnotesize template$<$typename FloatT $>$ }\\using \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{win\+\_\+fun\+\_\+t} = FloatT($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t)
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
@@ -21,7 +23,11 @@ struct \hyperlink{structdevfix_1_1dsp_1_1window_1_1buffer}{buffer}
 \item 
 {\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}{hanning} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
 \item 
+{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_ab4cca67d04f3380ac55bcc0a347624f2}{hamming} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
+\item 
 {\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a43beeead6e8922f5be05b6e17f7f2664}{flattop} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_ab01ab810661e7cd05d0616e6dd1eeaca}{blackmanharris} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
 \item 
 {\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a15b34e7a9a7b76046b63347ac56b3236}{rectangle} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
 \item 
@@ -30,6 +36,12 @@ struct \hyperlink{structdevfix_1_1dsp_1_1window_1_1buffer}{buffer}
 
 
 \subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}\label{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!math@{math}}
+\index{math@{math}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{math}{math}}
+{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}{devfix\+::dsp\+::window\+::math} =  \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
+
 \mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}\label{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}} 
 \index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!win\+\_\+fun\+\_\+t@{win\+\_\+fun\+\_\+t}}
 \index{win\+\_\+fun\+\_\+t@{win\+\_\+fun\+\_\+t}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
@@ -40,6 +52,13 @@ using \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ab01ab810661e7cd05d0616e6dd1eeaca}\label{structdevfix_1_1dsp_1_1window_ab01ab810661e7cd05d0616e6dd1eeaca}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!blackmanharris@{blackmanharris}}
+\index{blackmanharris@{blackmanharris}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{blackmanharris()}{blackmanharris()}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static constexpr FloatT devfix\+::dsp\+::window\+::blackmanharris (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
 \mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}\label{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}} 
 \index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!calc\+\_\+amplitude\+\_\+gain@{calc\+\_\+amplitude\+\_\+gain}}
 \index{calc\+\_\+amplitude\+\_\+gain@{calc\+\_\+amplitude\+\_\+gain}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
@@ -53,6 +72,13 @@ static constexpr FloatT devfix\+::dsp\+::window\+::calc\+\_\+amplitude\+\_\+gain
 \subsubsection{\texorpdfstring{flattop()}{flattop()}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
 static constexpr FloatT devfix\+::dsp\+::window\+::flattop (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ab4cca67d04f3380ac55bcc0a347624f2}\label{structdevfix_1_1dsp_1_1window_ab4cca67d04f3380ac55bcc0a347624f2}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!hamming@{hamming}}
+\index{hamming@{hamming}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{hamming()}{hamming()}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static constexpr FloatT devfix\+::dsp\+::window\+::hamming (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 \mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}\label{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}} 
 \index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!hanning@{hanning}}

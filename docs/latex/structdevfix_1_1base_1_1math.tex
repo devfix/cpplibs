@@ -12,9 +12,30 @@
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$class UnsignedT $>$ }\\static constexpr int \hyperlink{structdevfix_1_1base_1_1math_a01f04c02cfad1ad74a133d85214bfdf0}{countl\+\_\+zero} (UnsignedT x) noexcept
+\item 
+{\footnotesize template$<$typename UnsignedT $>$ }\\static std\+::size\+\_\+t \hyperlink{structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e}{floor\+Log2} (UnsignedT v)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N, std\+::size\+\_\+t len$>$ }\\static std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \hyperlink{structdevfix_1_1base_1_1math_aa125625a1d4063dc4bd4de82f7367f14}{to\+\_\+complex} (const std\+::array$<$ FloatT, N $>$ \&arr)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \hyperlink{structdevfix_1_1base_1_1math_ad142f8342011042e1420eed41c833db0}{to\+\_\+complex} (const std\+::array$<$ FloatT, N $>$ \&arr)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static std\+::vector$<$ std\+::complex$<$ FloatT $>$ $>$ \hyperlink{structdevfix_1_1base_1_1math_a0178a6ca347209c523138b9bbaddd9cf}{to\+\_\+complex} (const std\+::vector$<$ FloatT $>$ \&vec, std\+::size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static std\+::vector$<$ std\+::complex$<$ FloatT $>$ $>$ \hyperlink{structdevfix_1_1base_1_1math_adcc63e97e0ff2fed3526451d56a28d24}{to\+\_\+complex} (const std\+::vector$<$ FloatT $>$ \&vec)
+\item 
 static constexpr std\+::uint32\+\_\+t \hyperlink{structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796}{reverse\+\_\+bits} (std\+::uint32\+\_\+t val, std\+::size\+\_\+t bits)
 \item 
 {\footnotesize template$<$typename T , class  = typename std\+::enable\+\_\+if$<$std\+::is\+\_\+unsigned$<$\+T$>$\+::value$>$\+::type$>$ }\\static constexpr T \hyperlink{structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11}{popcount} (T val)
+\end{DoxyCompactItemize}
+\subsection*{Static Public Attributes}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr double \hyperlink{structdevfix_1_1base_1_1math_a8c1abe5113400c369f55d3e0bd12c25d}{pi} = 3.\+14159265358979323846
+\item 
+static constexpr double \hyperlink{structdevfix_1_1base_1_1math_aa947bd4fd2f8ed24b477c01be61cb785}{sqrt2} = 1.\+41421356237309504880
+\item 
+static constexpr double \hyperlink{structdevfix_1_1base_1_1math_af56711a6b6b8b6143993b13ca9e06b6e}{sqrt1\+\_\+2} = 0.\+70710678118654752440
 \end{DoxyCompactItemize}
 
 
@@ -29,6 +50,27 @@ using \hyperlink{structdevfix_1_1base_1_1math_a6f2114ac2cf825b518cf5fefa00af6e3}
 
 
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_a01f04c02cfad1ad74a133d85214bfdf0}\label{structdevfix_1_1base_1_1math_a01f04c02cfad1ad74a133d85214bfdf0}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!countl\+\_\+zero@{countl\+\_\+zero}}
+\index{countl\+\_\+zero@{countl\+\_\+zero}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{countl\+\_\+zero()}{countl\_zero()}}
+{\footnotesize\ttfamily template$<$class UnsignedT $>$ \\
+static constexpr int devfix\+::base\+::math\+::countl\+\_\+zero (\begin{DoxyParamCaption}\item[{UnsignedT}]{x }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}, {\ttfamily [noexcept]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e}\label{structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!floor\+Log2@{floor\+Log2}}
+\index{floor\+Log2@{floor\+Log2}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{floor\+Log2()}{floorLog2()}}
+{\footnotesize\ttfamily template$<$typename UnsignedT $>$ \\
+static std\+::size\+\_\+t devfix\+::base\+::math\+::floor\+Log2 (\begin{DoxyParamCaption}\item[{UnsignedT}]{v }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+Here is the caller graph for this function\+:\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e_icgraph}
+\end{center}
+\end{figure}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11}\label{structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11}} 
 \index{devfix\+::base\+::math@{devfix\+::base\+::math}!popcount@{popcount}}
 \index{popcount@{popcount}!devfix\+::base\+::math@{devfix\+::base\+::math}}
@@ -40,7 +82,7 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11_icgraph}
+\includegraphics[width=350pt]{structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796}\label{structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796}} 
@@ -53,9 +95,58 @@ Here is the caller graph for this function\+:\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=341pt]{structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796_icgraph}
+\includegraphics[width=350pt]{structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796_icgraph}
 \end{center}
 \end{figure}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_aa125625a1d4063dc4bd4de82f7367f14}\label{structdevfix_1_1base_1_1math_aa125625a1d4063dc4bd4de82f7367f14}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!to\+\_\+complex@{to\+\_\+complex}}
+\index{to\+\_\+complex@{to\+\_\+complex}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{to\+\_\+complex()}{to\_complex()}\hspace{0.1cm}{\footnotesize\ttfamily [1/4]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, std\+::size\+\_\+t len$>$ \\
+static std\+::array$<$std\+::complex$<$FloatT$>$, N$>$ devfix\+::base\+::math\+::to\+\_\+complex (\begin{DoxyParamCaption}\item[{const std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_ad142f8342011042e1420eed41c833db0}\label{structdevfix_1_1base_1_1math_ad142f8342011042e1420eed41c833db0}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!to\+\_\+complex@{to\+\_\+complex}}
+\index{to\+\_\+complex@{to\+\_\+complex}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{to\+\_\+complex()}{to\_complex()}\hspace{0.1cm}{\footnotesize\ttfamily [2/4]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+static std\+::array$<$std\+::complex$<$FloatT$>$, N$>$ devfix\+::base\+::math\+::to\+\_\+complex (\begin{DoxyParamCaption}\item[{const std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_a0178a6ca347209c523138b9bbaddd9cf}\label{structdevfix_1_1base_1_1math_a0178a6ca347209c523138b9bbaddd9cf}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!to\+\_\+complex@{to\+\_\+complex}}
+\index{to\+\_\+complex@{to\+\_\+complex}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{to\+\_\+complex()}{to\_complex()}\hspace{0.1cm}{\footnotesize\ttfamily [3/4]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static std\+::vector$<$std\+::complex$<$FloatT$>$ $>$ devfix\+::base\+::math\+::to\+\_\+complex (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ FloatT $>$ \&}]{vec,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_adcc63e97e0ff2fed3526451d56a28d24}\label{structdevfix_1_1base_1_1math_adcc63e97e0ff2fed3526451d56a28d24}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!to\+\_\+complex@{to\+\_\+complex}}
+\index{to\+\_\+complex@{to\+\_\+complex}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{to\+\_\+complex()}{to\_complex()}\hspace{0.1cm}{\footnotesize\ttfamily [4/4]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static std\+::vector$<$std\+::complex$<$FloatT$>$ $>$ devfix\+::base\+::math\+::to\+\_\+complex (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ FloatT $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+\subsection{Member Data Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_a8c1abe5113400c369f55d3e0bd12c25d}\label{structdevfix_1_1base_1_1math_a8c1abe5113400c369f55d3e0bd12c25d}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!pi@{pi}}
+\index{pi@{pi}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{pi}{pi}}
+{\footnotesize\ttfamily constexpr double devfix\+::base\+::math\+::pi = 3.\+14159265358979323846\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_af56711a6b6b8b6143993b13ca9e06b6e}\label{structdevfix_1_1base_1_1math_af56711a6b6b8b6143993b13ca9e06b6e}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!sqrt1\+\_\+2@{sqrt1\+\_\+2}}
+\index{sqrt1\+\_\+2@{sqrt1\+\_\+2}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{sqrt1\+\_\+2}{sqrt1\_2}}
+{\footnotesize\ttfamily constexpr double devfix\+::base\+::math\+::sqrt1\+\_\+2 = 0.\+70710678118654752440\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1math_aa947bd4fd2f8ed24b477c01be61cb785}\label{structdevfix_1_1base_1_1math_aa947bd4fd2f8ed24b477c01be61cb785}} 
+\index{devfix\+::base\+::math@{devfix\+::base\+::math}!sqrt2@{sqrt2}}
+\index{sqrt2@{sqrt2}!devfix\+::base\+::math@{devfix\+::base\+::math}}
+\subsubsection{\texorpdfstring{sqrt2}{sqrt2}}
+{\footnotesize\ttfamily constexpr double devfix\+::base\+::math\+::sqrt2 = 1.\+41421356237309504880\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

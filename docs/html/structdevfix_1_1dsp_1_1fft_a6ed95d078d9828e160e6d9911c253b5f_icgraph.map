@@ -1,3 +1,4 @@
 <map id="devfix::dsp::fft::convert_to_onesided" name="devfix::dsp::fft::convert_to_onesided">
-<area shape="rect" id="node2" href="$structdevfix_1_1dsp_1_1fft.html#a595260b93cce8bcec41570a93521b263" title="devfix::dsp::fft::convert\l_to_onesided" alt="" coords="211,5,368,47"/>
+<area shape="rect" id="node2" href="$structdevfix_1_1dsp_1_1analysis.html#a3448d6f6aeaf71facdac78999b3ad177" title="devfix::dsp::analysis\l::ampl_thdn" alt="" coords="218,5,361,47"/>
+<area shape="rect" id="node3" href="$structdevfix_1_1dsp_1_1fft.html#a595260b93cce8bcec41570a93521b263" title="devfix::dsp::fft::convert\l_to_onesided" alt="" coords="211,71,368,112"/>
 </map>

@@ -5,7 +5,7 @@
 
 #if CPPLIBS_ENABLE_DSP_TESTS == 1
 
-#include <catch/catch.hpp>
+#include <catch2/catch.hpp>
 #include "../dsp.h"
 #include "../../base/math.h"
 

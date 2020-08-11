@@ -66,6 +66,7 @@ $(function() {
   <div class="summary">
 <a href="#pub-types">Public Types</a> &#124;
 <a href="#pub-static-methods">Static Public Member Functions</a> &#124;
+<a href="#pub-static-attribs">Static Public Attributes</a> &#124;
 <a href="structdevfix_1_1base_1_1math-members.html">List of all members</a>  </div>
   <div class="headertitle">
 <div class="title">devfix::base::math Struct Reference</div>  </div>
@@ -82,11 +83,38 @@ Public Types</h2></td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
+<tr class="memitem:a01f04c02cfad1ad74a133d85214bfdf0"><td class="memTemplParams" colspan="2">template&lt;class UnsignedT &gt; </td></tr>
+<tr class="memitem:a01f04c02cfad1ad74a133d85214bfdf0"><td class="memTemplItemLeft" align="right" valign="top">static constexpr int&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#a01f04c02cfad1ad74a133d85214bfdf0">countl_zero</a> (UnsignedT x) noexcept</td></tr>
+<tr class="separator:a01f04c02cfad1ad74a133d85214bfdf0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8d1fda6ee4b131fffded8562f4f5ad4e"><td class="memTemplParams" colspan="2">template&lt;typename UnsignedT &gt; </td></tr>
+<tr class="memitem:a8d1fda6ee4b131fffded8562f4f5ad4e"><td class="memTemplItemLeft" align="right" valign="top">static std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#a8d1fda6ee4b131fffded8562f4f5ad4e">floorLog2</a> (UnsignedT v)</td></tr>
+<tr class="separator:a8d1fda6ee4b131fffded8562f4f5ad4e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa125625a1d4063dc4bd4de82f7367f14"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N, std::size_t len&gt; </td></tr>
+<tr class="memitem:aa125625a1d4063dc4bd4de82f7367f14"><td class="memTemplItemLeft" align="right" valign="top">static std::array&lt; std::complex&lt; FloatT &gt;, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#aa125625a1d4063dc4bd4de82f7367f14">to_complex</a> (const std::array&lt; FloatT, N &gt; &amp;arr)</td></tr>
+<tr class="separator:aa125625a1d4063dc4bd4de82f7367f14"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ad142f8342011042e1420eed41c833db0"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:ad142f8342011042e1420eed41c833db0"><td class="memTemplItemLeft" align="right" valign="top">static std::array&lt; std::complex&lt; FloatT &gt;, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#ad142f8342011042e1420eed41c833db0">to_complex</a> (const std::array&lt; FloatT, N &gt; &amp;arr)</td></tr>
+<tr class="separator:ad142f8342011042e1420eed41c833db0"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0178a6ca347209c523138b9bbaddd9cf"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a0178a6ca347209c523138b9bbaddd9cf"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; std::complex&lt; FloatT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#a0178a6ca347209c523138b9bbaddd9cf">to_complex</a> (const std::vector&lt; FloatT &gt; &amp;vec, std::size_t len)</td></tr>
+<tr class="separator:a0178a6ca347209c523138b9bbaddd9cf"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:adcc63e97e0ff2fed3526451d56a28d24"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:adcc63e97e0ff2fed3526451d56a28d24"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; std::complex&lt; FloatT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#adcc63e97e0ff2fed3526451d56a28d24">to_complex</a> (const std::vector&lt; FloatT &gt; &amp;vec)</td></tr>
+<tr class="separator:adcc63e97e0ff2fed3526451d56a28d24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:af3260ac1a62b3e9f6feb0f212aa8f796"><td class="memItemLeft" align="right" valign="top">static constexpr std::uint32_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#af3260ac1a62b3e9f6feb0f212aa8f796">reverse_bits</a> (std::uint32_t val, std::size_t bits)</td></tr>
 <tr class="separator:af3260ac1a62b3e9f6feb0f212aa8f796"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a43815037f45e01d90a6c0cb0e1d8ef11"><td class="memTemplParams" colspan="2">template&lt;typename T , class  = typename std::enable_if&lt;std::is_unsigned&lt;T&gt;::value&gt;::type&gt; </td></tr>
 <tr class="memitem:a43815037f45e01d90a6c0cb0e1d8ef11"><td class="memTemplItemLeft" align="right" valign="top">static constexpr T&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#a43815037f45e01d90a6c0cb0e1d8ef11">popcount</a> (T val)</td></tr>
 <tr class="separator:a43815037f45e01d90a6c0cb0e1d8ef11"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-attribs"></a>
+Static Public Attributes</h2></td></tr>
+<tr class="memitem:a8c1abe5113400c369f55d3e0bd12c25d"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#a8c1abe5113400c369f55d3e0bd12c25d">pi</a> = 3.14159265358979323846</td></tr>
+<tr class="separator:a8c1abe5113400c369f55d3e0bd12c25d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa947bd4fd2f8ed24b477c01be61cb785"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#aa947bd4fd2f8ed24b477c01be61cb785">sqrt2</a> = 1.41421356237309504880</td></tr>
+<tr class="separator:aa947bd4fd2f8ed24b477c01be61cb785"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af56711a6b6b8b6143993b13ca9e06b6e"><td class="memItemLeft" align="right" valign="top">static constexpr double&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1base_1_1math.html#af56711a6b6b8b6143993b13ca9e06b6e">sqrt1_2</a> = 0.70710678118654752440</td></tr>
+<tr class="separator:af56711a6b6b8b6143993b13ca9e06b6e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
 <a id="a6f2114ac2cf825b518cf5fefa00af6e3"></a>
@@ -106,6 +134,71 @@ template&lt;typename T , std::size_t N, typename G , typename ... Args&gt; </div
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
+<a id="a01f04c02cfad1ad74a133d85214bfdf0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a01f04c02cfad1ad74a133d85214bfdf0">&#9670;&nbsp;</a></span>countl_zero()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;class UnsignedT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static constexpr int devfix::base::math::countl_zero </td>
+          <td>(</td>
+          <td class="paramtype">UnsignedT&#160;</td>
+          <td class="paramname"><em>x</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span><span class="mlabel">noexcept</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a8d1fda6ee4b131fffded8562f4f5ad4e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8d1fda6ee4b131fffded8562f4f5ad4e">&#9670;&nbsp;</a></span>floorLog2()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename UnsignedT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::size_t devfix::base::math::floorLog2 </td>
+          <td>(</td>
+          <td class="paramtype">UnsignedT&#160;</td>
+          <td class="paramname"><em>v</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e_icgraph.png" border="0" usemap="#structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e_icgraph" alt=""/></div>
+<map name="structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e_icgraph" id="structdevfix_1_1base_1_1math_a8d1fda6ee4b131fffded8562f4f5ad4e_icgraph">
+<area shape="rect" id="node2" href="structdevfix_1_1dsp_1_1fft.html#af0c91dff74868f580ad295448e50693f" title="devfix::dsp::fft::transform\l_inplace" alt="" coords="184,5,353,47"/>
+<area shape="rect" id="node3" href="structdevfix_1_1dsp_1_1analysis.html#a3448d6f6aeaf71facdac78999b3ad177" title="devfix::dsp::analysis\l::ampl_thdn" alt="" coords="401,5,544,47"/>
+</map>
+</div>
+
+</div>
+</div>
 <a id="a43815037f45e01d90a6c0cb0e1d8ef11"></a>
 <h2 class="memtitle"><span class="permalink"><a href="#a43815037f45e01d90a6c0cb0e1d8ef11">&#9670;&nbsp;</a></span>popcount()</h2>
 
@@ -137,6 +230,7 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11_icgraph.png" border="0" usemap="#structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11_icgraph" alt=""/></div>
 <map name="structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11_icgraph" id="structdevfix_1_1base_1_1math_a43815037f45e01d90a6c0cb0e1d8ef11_icgraph">
 <area shape="rect" id="node2" href="structdevfix_1_1dsp_1_1fft.html#af0c91dff74868f580ad295448e50693f" title="devfix::dsp::fft::transform\l_inplace" alt="" coords="184,5,353,47"/>
+<area shape="rect" id="node3" href="structdevfix_1_1dsp_1_1analysis.html#a3448d6f6aeaf71facdac78999b3ad177" title="devfix::dsp::analysis\l::ampl_thdn" alt="" coords="401,5,544,47"/>
 </map>
 </div>
 
@@ -181,8 +275,198 @@ Here is the caller graph for this function:</div>
 <div class="center"><img src="structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796_icgraph.png" border="0" usemap="#structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796_icgraph" alt=""/></div>
 <map name="structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796_icgraph" id="structdevfix_1_1base_1_1math_af3260ac1a62b3e9f6feb0f212aa8f796_icgraph">
 <area shape="rect" id="node2" href="structdevfix_1_1dsp_1_1fft.html#af0c91dff74868f580ad295448e50693f" title="devfix::dsp::fft::transform\l_inplace" alt="" coords="184,5,353,47"/>
+<area shape="rect" id="node3" href="structdevfix_1_1dsp_1_1analysis.html#a3448d6f6aeaf71facdac78999b3ad177" title="devfix::dsp::analysis\l::ampl_thdn" alt="" coords="401,5,544,47"/>
 </map>
 </div>
+
+</div>
+</div>
+<a id="aa125625a1d4063dc4bd4de82f7367f14"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa125625a1d4063dc4bd4de82f7367f14">&#9670;&nbsp;</a></span>to_complex() <span class="overload">[1/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N, std::size_t len&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::array&lt;std::complex&lt;FloatT&gt;, N&gt; devfix::base::math::to_complex </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; FloatT, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad142f8342011042e1420eed41c833db0"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad142f8342011042e1420eed41c833db0">&#9670;&nbsp;</a></span>to_complex() <span class="overload">[2/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::array&lt;std::complex&lt;FloatT&gt;, N&gt; devfix::base::math::to_complex </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; FloatT, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a0178a6ca347209c523138b9bbaddd9cf"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0178a6ca347209c523138b9bbaddd9cf">&#9670;&nbsp;</a></span>to_complex() <span class="overload">[3/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;std::complex&lt;FloatT&gt; &gt; devfix::base::math::to_complex </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="adcc63e97e0ff2fed3526451d56a28d24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#adcc63e97e0ff2fed3526451d56a28d24">&#9670;&nbsp;</a></span>to_complex() <span class="overload">[4/4]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;std::complex&lt;FloatT&gt; &gt; devfix::base::math::to_complex </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<h2 class="groupheader">Member Data Documentation</h2>
+<a id="a8c1abe5113400c369f55d3e0bd12c25d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8c1abe5113400c369f55d3e0bd12c25d">&#9670;&nbsp;</a></span>pi</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double devfix::base::math::pi = 3.14159265358979323846</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af56711a6b6b8b6143993b13ca9e06b6e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af56711a6b6b8b6143993b13ca9e06b6e">&#9670;&nbsp;</a></span>sqrt1_2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double devfix::base::math::sqrt1_2 = 0.70710678118654752440</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="aa947bd4fd2f8ed24b477c01be61cb785"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa947bd4fd2f8ed24b477c01be61cb785">&#9670;&nbsp;</a></span>sqrt2</h2>
+
+<div class="memitem">
+<div class="memproto">
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr double devfix::base::math::sqrt2 = 1.41421356237309504880</td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
 
 </div>
 </div>

@@ -4,7 +4,7 @@
 
 #if CPPLIBS_ENABLE_NET_TESTS == 1
 
-#include <catch/catch.hpp>
+#include <catch2/catch.hpp>
 #include <thread>
 #include <unistd.h>
 #include <cstring>

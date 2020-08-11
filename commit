@@ -1,14 +1,26 @@
 #!/bin/bash
 set -e  # exit on errors
 
+# log to file , see https://unix.stackexchange.com/a/145654/427788
+exec &> >(tee commit.log)
+
+
+build_type="Release"
+parallel="4"
+
+dir="cmake-build-${build_type,,}"
+
 echo "update local repo"
 git pull
 git --no-pager diff --check
 
 echo "rebuild project"
 rm -rf cmake-build-*
-cmake . -B cmake-build-release -DCMAKE_BUILD_TYPE=Release
-cmake --build cmake-build-release --parallel 4 --target testrunner --config Release
+cmake . -B $dir -DCMAKE_BUILD_TYPE=$build_type
+cmake --build $dir --parallel $parallel --target testrunner --config $build_type
+
+echo "run tests"
+$dir/testrunner
 
 echo "update documentation"
 doxygen Doxyfile

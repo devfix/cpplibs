@@ -17,6 +17,10 @@ Root namespace of devfix base library.
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
+struct \hyperlink{structdevfix_1_1base_1_1etx__t}{etx\+\_\+t}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1except}{except}
+\item 
 struct \hyperlink{structdevfix_1_1base_1_1filesystem}{filesystem}
 \item 
 struct \hyperlink{structdevfix_1_1base_1_1interpolation}{interpolation}
@@ -25,11 +29,23 @@ struct \hyperlink{structdevfix_1_1base_1_1math}{math}
 \item 
 struct \hyperlink{structdevfix_1_1base_1_1platform}{platform}
 \item 
+struct \hyperlink{structdevfix_1_1base_1_1slog}{slog}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1spinlock}{spinlock}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1spinlock__guard}{spinlock\+\_\+guard}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1strcvt}{strcvt}
+\item 
 struct \hyperlink{structdevfix_1_1base_1_1strout}{strout}
 \item 
 struct \hyperlink{structdevfix_1_1base_1_1strutil}{strutil}
 \item 
+struct \hyperlink{structdevfix_1_1base_1_1stx__t}{stx\+\_\+t}
+\item 
 struct \hyperlink{structdevfix_1_1base_1_1time}{time}
+\item 
+struct \hyperlink{structdevfix_1_1base_1_1type}{type}
 \end{DoxyCompactItemize}
 \subsection*{Typedefs}
 \begin{DoxyCompactItemize}
@@ -46,6 +62,13 @@ struct \hyperlink{structdevfix_1_1base_1_1time}{time}
 {\footnotesize template$<$$>$ }\\constexpr const char $\ast$ \hyperlink{namespacedevfix_1_1base_a1d6f6a1a767fa54cd6ff94ae14b43e90}{get\+\_\+from\+\_\+multistring$<$ char $>$} (const char $\ast$str, const wchar\+\_\+t $\ast$wstr)
 \item 
 {\footnotesize template$<$$>$ }\\constexpr const wchar\+\_\+t $\ast$ \hyperlink{namespacedevfix_1_1base_a100ea64654a747f262206d9e4b31e6f2}{get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$} (const char $\ast$str, const wchar\+\_\+t $\ast$wstr)
+\end{DoxyCompactItemize}
+\subsection*{Variables}
+\begin{DoxyCompactItemize}
+\item 
+static constexpr \hyperlink{structdevfix_1_1base_1_1stx__t}{stx\+\_\+t} \hyperlink{namespacedevfix_1_1base_af808feea9b7c85902ead58a187f6cced}{stx} \{\}
+\item 
+static constexpr \hyperlink{structdevfix_1_1base_1_1etx__t}{etx\+\_\+t} \hyperlink{namespacedevfix_1_1base_a875309a22b6e69dd0e2340814fb44973}{etx} \{\}
 \end{DoxyCompactItemize}
 
 
@@ -100,4 +123,19 @@ constexpr const char$\ast$ \hyperlink{namespacedevfix_1_1base_a84282bc5458412dfe
 \subsubsection{\texorpdfstring{get\+\_\+from\+\_\+multistring$<$ wchar\+\_\+t $>$()}{get\_from\_multistring< wchar\_t >()}}
 {\footnotesize\ttfamily template$<$$>$ \\
 constexpr const wchar\+\_\+t$\ast$ \hyperlink{namespacedevfix_1_1base_a84282bc5458412dfed5ce8b039a70519}{devfix\+::base\+::get\+\_\+from\+\_\+multistring}$<$ wchar\+\_\+t $>$ (\begin{DoxyParamCaption}\item[{const char $\ast$}]{str,  }\item[{const wchar\+\_\+t $\ast$}]{wstr }\end{DoxyParamCaption})}
+
+
+
+\subsection{Variable Documentation}
+\mbox{\Hypertarget{namespacedevfix_1_1base_a875309a22b6e69dd0e2340814fb44973}\label{namespacedevfix_1_1base_a875309a22b6e69dd0e2340814fb44973}} 
+\index{devfix\+::base@{devfix\+::base}!etx@{etx}}
+\index{etx@{etx}!devfix\+::base@{devfix\+::base}}
+\subsubsection{\texorpdfstring{etx}{etx}}
+{\footnotesize\ttfamily constexpr \hyperlink{structdevfix_1_1base_1_1etx__t}{etx\+\_\+t} devfix\+::base\+::etx \{\}\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1base_af808feea9b7c85902ead58a187f6cced}\label{namespacedevfix_1_1base_af808feea9b7c85902ead58a187f6cced}} 
+\index{devfix\+::base@{devfix\+::base}!stx@{stx}}
+\index{stx@{stx}!devfix\+::base@{devfix\+::base}}
+\subsubsection{\texorpdfstring{stx}{stx}}
+{\footnotesize\ttfamily constexpr \hyperlink{structdevfix_1_1base_1_1stx__t}{stx\+\_\+t} devfix\+::base\+::stx \{\}\hspace{0.3cm}{\ttfamily [static]}}
 

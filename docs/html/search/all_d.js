@@ -1,6 +1,7 @@
 var searchData=
 [
   ['pair_5ft',['pair_t',['../structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb',1,'devfix::base::strout']]],
+  ['pi',['pi',['../structdevfix_1_1base_1_1math.html#a8c1abe5113400c369f55d3e0bd12c25d',1,'devfix::base::math']]],
   ['pipe_5ffun_5ft',['pipe_fun_t',['../structdevfix_1_1base_1_1strout.html#a89bb8340fe2e43bb14c829a1d427d9c0',1,'devfix::base::strout']]],
   ['pipes_5f',['pipes_',['../structdevfix_1_1base_1_1strout.html#aa92f98e253e448a0ea897760764486e7',1,'devfix::base::strout']]],
   ['pipes_5ft',['pipes_t',['../structdevfix_1_1base_1_1strout.html#acf852ff3e37e6d10e2cf0332df2b8e2d',1,'devfix::base::strout']]],
@@ -12,7 +13,7 @@ var searchData=
   ['pop',['pop',['../structdevfix_1_1dsp_1_1spectrogram.html#acdc5a2253a62ae50ae24607cd4f3b555',1,'devfix::dsp::spectrogram']]],
   ['popcount',['popcount',['../structdevfix_1_1base_1_1math.html#a43815037f45e01d90a6c0cb0e1d8ef11',1,'devfix::base::math']]],
   ['port_5ft',['port_t',['../structdevfix_1_1net_1_1inetaddress.html#a3eaadc730f2b4625987cf948ea485410',1,'devfix::net::inetaddress']]],
-  ['prefix_5f',['prefix_',['../structdevfix_1_1base_1_1strout.html#a664c76563ab0f7f0625779aaf0c56395',1,'devfix::base::strout']]],
+  ['prefix_5f',['prefix_',['../structdevfix_1_1base_1_1slog.html#a32d647fa732679ecb1fe679f1305f43a',1,'devfix::base::slog::prefix_()'],['../structdevfix_1_1base_1_1strout.html#a664c76563ab0f7f0625779aaf0c56395',1,'devfix::base::strout::prefix_()']]],
   ['prefixed_5f',['prefixed_',['../structdevfix_1_1base_1_1strout.html#a1e56005b02772de34fddd5e4f44741c3',1,'devfix::base::strout']]],
   ['prepare',['prepare',['../structdevfix_1_1dsp_1_1window_1_1buffer.html#a3ace062676326a9981118d53b8ba5900',1,'devfix::dsp::window::buffer']]]
 ];

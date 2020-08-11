@@ -4,7 +4,7 @@
 
 #if CPPLIBS_ENABLE_DSP_TESTS == 1
 
-#include <catch.hpp>
+#include <catch2/catch.hpp>
 #include <cstring>
 #include "../window.h"
 
