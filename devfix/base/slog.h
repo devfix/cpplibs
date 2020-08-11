@@ -162,7 +162,7 @@ namespace devfix::base
 			}
 		}
 
-		static constexpr CharT CLEAR_LINE[] = { '\033', '[', '2', 'K', '\r' };
+		static constexpr CharT CLEAR_LINE[] = { '\033', '[', '2', 'K', '\r', '\0' };
 
 		static inline spinlock spinlock_;
 
