@@ -22,7 +22,7 @@ std::array<double, FFT_LEN> get_magnitudes(const std::array<std::complex<double>
 	std::transform(win.begin(), win.end(), mag.begin(), std::abs<double>);
 	return mag;
 }
-/*
+
 TEST_CASE("Spectrogram - RectangleWindow")
 {
 	// generate test data
@@ -122,7 +122,7 @@ TEST_CASE("Spectrogram - RectangleWindow")
 	}
 
 	REQUIRE_THROWS(spec.pop());
-}*//*
+}
 
 TEST_CASE("Spectrogram - FlattopWindow")
 {
@@ -138,13 +138,15 @@ TEST_CASE("Spectrogram - FlattopWindow")
 
 	// create spectrogram and fill it
 	int k = 0;
-	spectrogram<double, FFT_LEN, window::flattop> spec(fs - FFT_LEN + 1);
+	spectrogram<double, FFT_LEN, window::linear> spec(fs - FFT_LEN + 1);
 	spec.add(test_data);
 
+	
 	// get window, calc abs and divide amplitudes
 	auto win = spec.pop();
 	auto mag = get_magnitudes<FFT_LEN>(win);
 	std::transform(mag.begin(), mag.end(), mag.begin(), [](auto& d) { return d / FFT_LEN; });
+
 
 	std::array<double, fs> expected = {
 		3.999999329229854, 3.867385376577055, 2.587170583638193, 0.791185219869575, 0.068008341276636, 0.000061689156986, 0.000033678236519,
@@ -191,6 +193,6 @@ TEST_CASE("Spectrogram - FlattopWindow")
 	for (std::size_t i = 0; i < win.size(); i++) { REQUIRE(mag[i] == Approx(expected[i]).margin(PRECISION_FINE)); }
 
 	REQUIRE_THROWS(spec.pop());
-}*/
+}
 
 #endif
