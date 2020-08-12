@@ -60,7 +60,7 @@ namespace devfix::base
 
 	void type::remove_number_suffix(std::string& name)
 	{
-		static const std::string_view regex = "(,|<|^)((\\.)|([0-9]))+(u|l)";
+		static const std::string_view regex = "(,|<|^)((\\.)|([0-9]))+(u|l|U|L)";
 		for (auto res = strutil::find_regex(name, std::string(regex)); res.has_value(); res = strutil::find_regex(name, std::string(regex)))
 		{
 			name.erase(res->first + res->second - 1, 1);
