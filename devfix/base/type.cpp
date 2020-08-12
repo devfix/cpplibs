@@ -11,52 +11,33 @@
 #endif
 
 #include "type.h"
+#include "strutil.h"
 
 namespace devfix::base
 {
 
 	std::string type::demangle(const char* mangled_name)
 	{
-
-#ifdef __GNUG__
-		int status;
-		char* name = abi::__cxa_demangle(mangled_name, nullptr, nullptr, &status);
-		if (status == 0 && name != nullptr)
-		{
-			std::string retval(name);
-			free(name);
-
-			// remove spaces
-			for (std::size_t pos = 0; (pos = retval.find_first_of(' ', pos)) != std::string::npos;) { retval.erase(pos, 1); }
-			return retval;
-		}
-		throw std::invalid_argument("cannot demangle type name");
-#else
 		std::string name(mangled_name);
 
-		// remove class, struct, enum
+#ifdef __GNUG__
+		// gnu demangle
+		int status;
+		char* cxa_name = abi::__cxa_demangle(mangled_name, nullptr, nullptr, &status);
+		if (status == 0 && cxa_name != nullptr)
 		{
-			static const std::regex re("((class)|(struct)|(enum)) ");
-			std::smatch match;
-			while (std::regex_search(name, match, re)) {
-				name = std::string(match.prefix()) + std::string(match.suffix());
-			}
+			name = cxa_name;
+			free(cxa_name);
 		}
-		
-		// remove spaces
-		for (std::size_t pos = 0; (pos = name.find_first_of(' ', pos)) != std::string::npos;) { name.erase(pos, 1); }
+		else { throw std::invalid_argument("cannot demangle type name"); }
+#endif
 
-		// remove pointer suffixes
-		static const std::regex re("\\*[A-Za-z0-9_]+(\\*|,|>|$)");
-		std::smatch match;
-		while (std::regex_search(name, match, re)) {
-			const auto pre = std::string(match.prefix());
-			const bool end = match.suffix().length() == 0;
-			name = pre + "*" + name.substr(pre.length() + match[0].length() - (end ? 0 : 1));
-		}
+		remove_type_label(name);
+		remove_spaces(name);
+		remove_number_suffix(name);
+		remove_pointer_suffix(name);
 
 		return name;
-#endif
 	}
 
 	std::string type::remove_nested(const std::string& name)
@@ -77,6 +58,43 @@ namespace devfix::base
 		return name;
 	}
 
-}
+	void type::remove_number_suffix(std::string& name)
+	{
+		static const std::string_view regex = "(,|<|^)((\\.)|([0-9]))+(u|l)";
+		for (auto res = strutil::find_regex(name, std::string(regex)); res.has_value(); res = strutil::find_regex(name, std::string(regex)))
+		{
+			name.erase(res->first + res->second - 1, 1);
+		}
+	}
 
+	void type::remove_type_label(std::string& name)
+	{
+		static const std::string_view regex = "((class)|(struct)|(enum)) ";
+		for (auto res = strutil::find_regex(name, std::string(regex)); res.has_value(); res = strutil::find_regex(name, std::string(regex)))
+		{
+			name.erase(res->first, res->second);
+		}
+	}
+
+	void type::remove_spaces(std::string& name)
+	{
+		for (std::size_t pos = 0; (pos = name.find_first_of(' ', pos)) != std::string::npos;)
+		{
+			name.erase(pos, 1);
+		}
+	}
+
+	void type::remove_pointer_suffix(std::string& name)
+	{
+		static const std::string_view regex = "\\*[A-Za-z0-9_]+(\\*|,|>|$)";
+		for (auto res = strutil::find_regex(name, std::string(regex)); res.has_value(); res = strutil::find_regex(name, std::string(regex)))
+		{
+			const std::size_t pos = res->first + 1;
+			std::size_t len = res->second - 1;
+			if (pos + len != name.length()) { len--; }
+			name.erase(pos, len);
+		}
+	}
+
+}
 

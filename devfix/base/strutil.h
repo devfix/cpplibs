@@ -5,6 +5,9 @@
 #pragma once
 
 #include <string>
+#include <tuple>
+#include <optional>
+#include <regex>
 
 
 #define MULTISTRING(CharT, str) devfix::base::get_from_multistring<CharT>(str, L##str)
@@ -23,7 +26,15 @@ namespace devfix::base
 
 	struct strutil
 	{
-
+		template<typename CharT>
+		static std::optional<std::pair<std::size_t, std::size_t>> find_regex(const std::basic_string<CharT>& sv,
+			const std::basic_string<CharT>& regex)
+		{
+			const std::basic_regex<CharT> re(regex);
+			std::smatch match;
+			if (std::regex_search(sv, match, re)) { return {{ match.position(0), match[0].length() }}; }
+			return std::nullopt;
+		}
 	};
 
 }
