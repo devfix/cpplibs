@@ -6,6 +6,7 @@
 
 #include <array>
 #include <vector>
+#include <complex>
 #include <stdexcept>
 #include <numeric>
 
@@ -69,6 +70,37 @@ namespace devfix::dsp
 		 */
 		template<std::size_t N>
 		void apply(std::array<FloatT, N>& arr)
+		{
+			if (arr.size() != window_.size()) { throw std::invalid_argument("mismatch of array size"); }
+			apply(arr.data());
+		}
+
+		/**
+		 * \brief multiplies each complex field element with the corresponding window value
+		 * \param field input field
+		 */
+		void apply(std::complex<FloatT>* field) const
+		{
+			for (std::size_t i = 0; i < window_.size(); i++) { field[i] *= window_[i]; }
+		}
+
+		/**
+		 * \brief multiplies each complex vector element with the corresponding window value
+		 * \param vec input vector
+		 */
+		void apply(std::vector<std::complex<FloatT>>& vec) const
+		{
+			if (vec.size() != window_.size()) { throw std::invalid_argument("mismatch of vector size"); }
+			apply(vec.data());
+		}
+
+		/**
+		 * \brief multiplies each complex array element with the corresponding window value
+		 * \tparam N array length
+		 * \param arr input array
+		 */
+		template<std::size_t N>
+		void apply(std::array<std::complex<FloatT>, N>& arr)
 		{
 			if (arr.size() != window_.size()) { throw std::invalid_argument("mismatch of array size"); }
 			apply(arr.data());
