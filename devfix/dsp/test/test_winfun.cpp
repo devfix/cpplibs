@@ -6,8 +6,6 @@
 #if CPPLIBS_ENABLE_DSP_TESTS == 1
 
 #include <catch2/catch.hpp>
-#include <iostream>
-#include <iomanip>
 #include "../../../testutil.h"
 #include "../window.h"
 #include "../winfun.h"

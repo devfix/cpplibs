@@ -16,6 +16,8 @@ namespace devfix::dsp
 	template<typename FloatT>
 	struct window
 	{
+		static_assert(std::is_floating_point_v<FloatT>);
+
 		/**
 		 * \brief create new window and calculates all values using a window function
 		 * \param function window function for this window

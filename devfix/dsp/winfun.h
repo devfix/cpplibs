@@ -13,6 +13,8 @@ namespace devfix::dsp
 	template<typename FloatT>
 	struct winfun
 	{
+		static_assert(std::is_floating_point_v<FloatT>);
+
 		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
 			return k < n ? FloatT

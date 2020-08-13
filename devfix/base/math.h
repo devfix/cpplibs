@@ -45,11 +45,18 @@ namespace devfix::base
 		}
 
 		template<typename UnsignedT>
-		static std::size_t floorLog2(UnsignedT v)
+		static constexpr std::size_t floorLog2(UnsignedT v)
 		{
 			static_assert(std::is_unsigned_v<UnsignedT>, "only unsigned types allowed");
 			if (!v) { throw std::invalid_argument("zero argument"); }
-			return sizeof(v) * 8 - 1 - countl_zero(v);
+			return sizeof(v) * 8u - 1u - countl_zero(v);
+		}
+
+		template<typename UnsignedT>
+		static constexpr std::size_t exp2(UnsignedT v)
+		{
+			static_assert(std::is_unsigned_v<UnsignedT>, "only unsigned types allowed");
+			return 1u << v;
 		}
 
 		template<typename FloatT, std::size_t N, std::size_t len>
@@ -91,10 +98,11 @@ namespace devfix::base
 			return ((val >> 16) | (val << 16)) >> (32 - bits);
 		}
 
-		template<typename T, class = typename std::enable_if<std::is_unsigned<T>::value>::type>
-		[[nodiscard]] static constexpr T popcount(T val)
+		template<typename UnsignedT>
+		[[nodiscard]] static constexpr UnsignedT popcount(UnsignedT val)
 		{
-			T count = 0;
+			static_assert(std::is_unsigned_v<UnsignedT>, "only unsigned types allowed");
+			UnsignedT count = 0;
 			while (val >>= 1) { count++; }
 			return count;
 		}
