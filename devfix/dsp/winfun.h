@@ -39,7 +39,7 @@ namespace devfix::dsp
 		}
 
 	private:
-		static FloatT get_cosine_win(std::size_t n, std::size_t k, std::vector<FloatT> coeffs)
+		static constexpr FloatT get_cosine_win(std::size_t n, std::size_t k, const std::vector<FloatT>& coeffs)
 		{
 			if (k < n)
 			{
