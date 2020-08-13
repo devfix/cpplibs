@@ -16,9 +16,9 @@ namespace devfix::dsp
 
 		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
-			return k < n ? (
-				FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * base::math::pi * (FloatT(k) - FloatT(.5) * FloatT(n - 1)) / (n - 1))
-			) : 0;
+			return k < n ? FloatT(
+				FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * base::math::pi * (FloatT(k) - FloatT(.5) * (FloatT(n) - 1)) / (n - 1))
+			) : FloatT(0);
 		}
 
 		static constexpr FloatT flattop_matlab(std::size_t n, std::size_t k)

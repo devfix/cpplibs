@@ -189,7 +189,7 @@ namespace devfix::base
 		char* filepath = nullptr;
 		if ((filepath = ::getenv("TEMP"))) { return filepath; }
 		if ((filepath = ::getenv("TMP"))) { return filepath; }
-		throw devfix::base::error::ioexception("could not get temp dir");
+		return "tmp";
 	}
 
 	std::string filesystem::get_cache_dir() noexcept

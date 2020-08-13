@@ -8,7 +8,11 @@
 #include <locale>
 #include <algorithm>
 
+//#ifdef __cplusplus > 201703L
+//using char08_t = char8_t;
+//#else
 using char08_t = char;
+//#endif
 
 namespace devfix::base
 {
@@ -34,7 +38,9 @@ namespace devfix::base
 		{
 			std::wstring conv(const std::string& str)
 			{
-				auto u16 = c08to16(str);
+				u08string u8(str.length(), 0);
+				std::transform(str.begin(), str.end(), u8.begin(), [](auto c) { return c; });
+				auto u16 = c08to16(u8);
 				std::wstring wstr(u16.length(), 0);
 				std::transform(u16.begin(), u16.end(), wstr.begin(), [](auto c) { return c; });
 				return wstr;
@@ -45,7 +51,9 @@ namespace devfix::base
 		{
 			std::wstring conv(const std::string& str)
 			{
-				auto u32 = c08to32(str);
+				u08string u8(str.length(), 0);
+				std::transform(str.begin(), str.end(), u8.begin(), [](auto c) { return c; });
+				auto u32 = c08to32(u8);
 				std::wstring wstr(u32.length(), 0);
 				std::transform(u32.begin(), u32.end(), wstr.begin(), [](auto c) { return c; });
 				return wstr;
@@ -61,7 +69,9 @@ namespace devfix::base
 			{
 				u16string u16(wstr.length(), 0);
 				std::transform(wstr.begin(), wstr.end(), u16.begin(), [](auto c) { return c; });
-				return c16to08(u16);
+				auto u8 = c16to08(u16);
+				std::string str(u8.length(), 0);
+				std::transform(u8.begin(), u8.end(), str.begin(), [](auto c) { return c; });
 			}
 		};
 		template<typename T>
@@ -71,7 +81,9 @@ namespace devfix::base
 			{
 				u32string u32(wstr.length(), 0);
 				std::transform(wstr.begin(), wstr.end(), u32.begin(), [](auto c) { return c; });
-				return c32to08(u32);
+				auto u8 = c32to08(u16);
+				std::string str(u8.length(), 0);
+				std::transform(u8.begin(), u8.end(), str.begin(), [](auto c) { return c; });
 			}
 		};
 
