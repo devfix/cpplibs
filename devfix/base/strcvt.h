@@ -81,7 +81,7 @@ namespace devfix::base
 			{
 				u32string u32(wstr.length(), 0);
 				std::transform(wstr.begin(), wstr.end(), u32.begin(), [](auto c) { return c; });
-				auto u8 = c32to08(u16);
+				auto u8 = c32to08(u32);
 				std::string str(u8.length(), 0);
 				std::transform(u8.begin(), u8.end(), str.begin(), [](auto c) { return c; });
 			}

@@ -16,24 +16,21 @@ namespace devfix::dsp
 
 		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
-			return k < n ? FloatT(
-				FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * base::math::pi * (FloatT(k) - FloatT(.5) * (FloatT(n) - 1)) / (n - 1))
-			) : FloatT(0);
+			return k < n ? FloatT
+				(FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * base::math::pi * (FloatT(k) - FloatT(.5) * (FloatT(n) - 1)) / (n - 1)))
+						 : FloatT(0);
 		}
 
 		static constexpr FloatT flattop_matlab(std::size_t n, std::size_t k)
 		{
-			return get_cosine_win<0.21557895, 0.41663158, 0.277263158, 0.083578947, 0.006947368>(n, k);
+			return get_cosine_win(n, k, { 0.21557895, -0.41663158, 0.277263158, -0.083578947, 0.006947368 });
 		}
 
 	private:
-
-		template<FloatT... Coeffs>
-		static FloatT get_cosine_win(std::size_t n, std::size_t k)
+		static FloatT get_cosine_win(std::size_t n, std::size_t k, std::vector<FloatT> coeffs)
 		{
-			std::array<FloatT, sizeof...(Coeffs)> coeffs = { Coeffs... };
 			FloatT sum = 0;
-			for (std::size_t i = 0; i < coeffs.size(); i++) { sum += coeffs[i] * std::cos(FloatT(2 * base::math::pi * i * k) / n); }
+			for (std::size_t i = 0; i < coeffs.size(); i++) { sum += coeffs[i] * std::cos(FloatT(2 * base::math::pi * i * k) / (n - 1)); }
 			return sum;
 		}
 
