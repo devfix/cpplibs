@@ -14,6 +14,7 @@ struct testutil
 	template<typename T>
 	static void check_equals(const T* a, const T* b, double margin, std::size_t len)
 	{
+		REQUIRE(len > 0);
 		for (std::size_t i = 0; i < len; i++) { CHECK(a[i] == Approx(b[i]).margin(margin)); }
 	}
 
@@ -33,6 +34,6 @@ struct testutil
 	static void check_equals(const std::vector<T>& a, const std::vector<T>& b, double margin)
 	{
 		REQUIRE(a.size() == b.size());
-		check_equals<T>(a.data(), b.data(), a.size(), margin);
+		check_equals<T>(a.data(), b.data(), margin, a.size());
 	}
 };
