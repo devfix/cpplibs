@@ -30,6 +30,14 @@ namespace devfix::dsp
 			return get_cosine_win(n, k, { 0.21557895, -0.41663158, 0.277263158, -0.083578947, 0.006947368 });
 		}
 
+		static constexpr FloatT flattop_hft248d(std::size_t n, std::size_t k)
+		{
+			return get_cosine_win(n, k, {
+				1, -1.985844164102, 1.791176438506, -1.282075284005, 0.667777530266, -0.240160796576, 0.056656381764, -0.008134974479,
+				0.000624544650, -0.000019808998, 0.000000132974,
+			});
+		}
+
 	private:
 		static FloatT get_cosine_win(std::size_t n, std::size_t k, std::vector<FloatT> coeffs)
 		{
