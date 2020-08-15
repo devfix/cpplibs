@@ -21,6 +21,13 @@ namespace devfix::dsp
 		// transform_inplace //
 		///////////////////////
 
+		/**
+		 * \brief performs the inplace discrete-fourier-transformation for an complex field
+		 * the field length has to be a power of two
+		 * \tparam FloatT type of floating pointer numbers
+		 * \param field complex field
+		 * \param len complex field length
+		 */
 		template<typename FloatT>
 		static void transform_inplace(std::complex<FloatT>* field, std::size_t len)
 		{
@@ -28,7 +35,7 @@ namespace devfix::dsp
 			namespace numbers = devfix::base::numbers;
 			if (math::exp2(math::floorLog2(len)) != len) { throw std::invalid_argument("len is not a power of 2"); }
 
-			double theta = numbers::pi_v<FloatT> / len;
+			const auto theta = numbers::pi_v<FloatT> / len;
 			std::complex<FloatT> phi = std::complex<FloatT>(cos(theta), -sin(theta)), w;
 			for (std::size_t stage = len; stage > 1; stage >>= 1u)
 			{
@@ -47,6 +54,7 @@ namespace devfix::dsp
 				}
 			}
 
+			// order field bit reversed
 			for (std::size_t a = 1; a < len; a++)
 			{
 				std::size_t b = math::reverse_bits(a, math::popcount(len));
@@ -59,12 +67,25 @@ namespace devfix::dsp
 			}
 		}
 
+		/**
+		 * \brief performs the inplace discrete-fourier-transformation for an complex vector
+		 * the vector length has to be a power of two
+		 * \tparam FloatT type of floating pointer numbers
+		 * \param vec complex vector
+		 */
 		template<typename FloatT>
 		static void transform_inplace(std::vector<std::complex<FloatT>>& vec)
 		{
 			transform_inplace<FloatT>(vec.data(), vec.size());
 		}
 
+		/**
+		 * \brief performs the inplace discrete-fourier-transformation for an complex array
+		 * the array length has to be a power of two
+		 * \tparam FloatT type of floating pointer numbers
+		 * \tparam N array length
+		 * \param arr complex array
+		 */
 		template<typename FloatT, std::size_t N>
 		static void transform_inplace(std::array<std::complex<FloatT>, N>& arr)
 		{

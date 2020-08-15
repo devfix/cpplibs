@@ -21,7 +21,7 @@ namespace devfix::dsp
 	 * \return
 	 */
 	template<typename FloatT>
-	constexpr FloatT calcfreqbin(std::size_t sample_rate, std::size_t fft_len, FloatT freq)
+	[[nodiscard]] constexpr FloatT calcfreqbin(std::size_t sample_rate, std::size_t fft_len, FloatT freq)
 	{
 		static_assert(std::is_floating_point_v<FloatT>);
 		return freq * fft_len / sample_rate;
@@ -36,7 +36,7 @@ namespace devfix::dsp
 	 * \return
 	 */
 	template<typename FloatT>
-	constexpr std::size_t calcfreqidx(std::size_t sample_rate, std::size_t fft_len, FloatT freq)
+	[[nodiscard]] constexpr std::size_t calcfreqidx(std::size_t sample_rate, std::size_t fft_len, FloatT freq)
 	{
 		return std::round(calcfreqbin<FloatT>(sample_rate, fft_len, freq));
 	}
@@ -50,7 +50,7 @@ namespace devfix::dsp
 	 * \return
 	 */
 	template<typename FloatT>
-	constexpr std::complex<FloatT> calcphasecorrector(std::size_t sample_rate, std::size_t fft_len, FloatT freq)
+	[[nodiscard]] constexpr std::complex<FloatT> calcphasecorrector(std::size_t sample_rate, std::size_t fft_len, FloatT freq)
 	{
 		const auto offset = calcfreqbin<FloatT>(sample_rate, fft_len, freq) - calcfreqidx<FloatT>(sample_rate, fft_len, freq);
 		return std::polar(FloatT(1), -devfix::base::numbers::pi_v<FloatT> * offset);
