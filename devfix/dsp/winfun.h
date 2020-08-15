@@ -5,15 +5,12 @@
 #pragma once
 
 #include <cmath>
-
-#include "../base/math.h"
 #include "../base/numbers.h"
 
 namespace devfix::dsp
 {
 	struct winfun
 	{
-
 		template<typename FloatT>
 		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
@@ -46,6 +43,14 @@ namespace devfix::dsp
 		}
 
 	private:
+		/**
+		 * \brief return the window coefficient of a cosine window function
+		 * \tparam FloatT type of floating point numbers
+		 * \param n length of window
+		 * \param k index in window
+		 * \param coeffs vector of coefficients for the weighted sum of cosine terms, determines count of terms to add
+		 * \return calculated window coefficient
+		 */
 		template<typename FloatT>
 		static constexpr FloatT get_cosine_win(std::size_t n, std::size_t k, const std::vector<FloatT>& coeffs)
 		{
