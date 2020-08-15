@@ -8,7 +8,7 @@
 #include <type_traits>
 #include <cmath>
 #include <complex>
-#include "../base/math.h"
+#include "../base/numbers.h"
 
 namespace devfix::dsp
 {
@@ -17,7 +17,7 @@ namespace devfix::dsp
 	 * \tparam FloatT type for floating point numbers, determines precision
 	 * \param sample_rate used sample rate
 	 * \param fft_len used fft length
-	 * \param freq frequency of which the bin index gets
+	 * \param freq frequency of which the bin index gets calculated
 	 * \return
 	 */
 	template<typename FloatT>
@@ -32,7 +32,7 @@ namespace devfix::dsp
 	 * \tparam FloatT type for floating point numbers, determines precision
 	 * \param sample_rate used sample rate
 	 * \param fft_len used fft length
-	 * \param freq frequency of which the bin index gets
+	 * \param freq frequency of which the bin index gets calculated
 	 * \return
 	 */
 	template<typename FloatT>
@@ -41,11 +41,18 @@ namespace devfix::dsp
 		return std::round(calcfreqbin<FloatT>(sample_rate, fft_len, freq));
 	}
 
+	/**
+	 * \brief calculates the phase corrector factor for a non coherent frequency
+	 * \tparam FloatT type for floating point numbers, determines precision
+	 * \param sample_rate
+	 * \param fft_len used fft length
+	 * \param freq frequency of which the corrector factor gets calculated
+	 * \return
+	 */
 	template<typename FloatT>
 	constexpr std::complex<FloatT> calcphasecorrector(std::size_t sample_rate, std::size_t fft_len, FloatT freq)
 	{
 		const auto offset = calcfreqbin<FloatT>(sample_rate, fft_len, freq) - calcfreqidx<FloatT>(sample_rate, fft_len, freq);
-		return std::polar(FloatT(1), -devfix::base::math::pi * offset);
+		return std::polar(FloatT(1), -devfix::base::numbers::pi_v<FloatT> * offset);
 	}
 }
-

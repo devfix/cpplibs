@@ -7,6 +7,7 @@
 #include <cmath>
 
 #include "../base/math.h"
+#include "../base/numbers.h"
 
 namespace devfix::dsp
 {
@@ -17,8 +18,9 @@ namespace devfix::dsp
 		static constexpr FloatT hanning(std::size_t n, std::size_t k)
 		{
 			static_assert(std::is_floating_point_v<FloatT>);
+			namespace numbers = devfix::base::numbers;
 			return k < n ? FloatT
-				(FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * base::math::pi * (FloatT(k) - FloatT(.5) * (FloatT(n) - 1)) / (n - 1)))
+				(FloatT(.5) + FloatT(.5) * std::cos(FloatT(2) * numbers::pi_v<FloatT> * (FloatT(k) - FloatT(.5) * (FloatT(n) - 1)) / (n - 1)))
 						 : FloatT(0);
 		}
 
@@ -48,12 +50,13 @@ namespace devfix::dsp
 		static constexpr FloatT get_cosine_win(std::size_t n, std::size_t k, const std::vector<FloatT>& coeffs)
 		{
 			static_assert(std::is_floating_point_v<FloatT>);
+			namespace numbers = devfix::base::numbers;
 			if (k < n)
 			{
 				FloatT sum = 0;
 				for (std::size_t i = 0; i < coeffs.size(); i++)
 				{
-					sum += coeffs[i] * std::cos(FloatT(2 * base::math::pi * i * k) / (n - 1));
+					sum += coeffs[i] * std::cos(FloatT(2 * numbers::pi_v<FloatT> * i * k) / (n - 1));
 				}
 				return sum;
 			}

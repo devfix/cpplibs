@@ -72,6 +72,7 @@ namespace devfix::base
 				auto u8 = c16to08(u16);
 				std::string str(u8.length(), 0);
 				std::transform(u8.begin(), u8.end(), str.begin(), [](auto c) { return c; });
+				return str;
 			}
 		};
 		template<typename T>
@@ -84,6 +85,7 @@ namespace devfix::base
 				auto u8 = c32to08(u32);
 				std::string str(u8.length(), 0);
 				std::transform(u8.begin(), u8.end(), str.begin(), [](auto c) { return c; });
+				return str;
 			}
 		};
 

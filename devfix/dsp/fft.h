@@ -9,13 +9,13 @@
 #include <vector>
 #include <array>
 #include "../base/math.h"
+#include "../base/numbers.h"
 
 namespace devfix::dsp
 {
 	struct fft
 	{
-
-		using math = devfix::base::math;
+		using math  = ::devfix::base::math;
 
 		///////////////////////
 		// transform_inplace //
@@ -25,9 +25,10 @@ namespace devfix::dsp
 		static void transform_inplace(std::complex<FloatT>* win, std::size_t len)
 		{
 			static_assert(std::is_floating_point_v<FloatT>);
+			namespace numbers = devfix::base::numbers;
 			if (math::exp2(math::floorLog2(len)) != len) { throw std::invalid_argument("len is not a power of 2"); }
 
-			double theta = math::pi / len;
+			double theta = numbers::pi_v<FloatT> / len;
 			std::complex<FloatT> phi = std::complex<FloatT>(cos(theta), -sin(theta)), w;
 			for (std::size_t stage = len; stage > 1; stage >>= 1u)
 			{

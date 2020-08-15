@@ -42,9 +42,9 @@ TEST_CASE("devfix/dsp/fft/coherent")
 	for (std::size_t i = 0; i < vec.size(); i++)
 	{
 		vec[i] = 4
-			+ 0.25 * std::cos(2 * math::pi * double(i) / double(vec.size()) * 1. + 0.1)
-			+ 0.50 * std::cos(2 * math::pi * double(i) / double(vec.size()) * 2. + 0.2)
-			+ 1.00 * std::cos(2 * math::pi * double(i) / double(vec.size()) * 4. + 0.3);
+			+ 0.25 * std::cos(2 * numbers::pi * double(i) / double(vec.size()) * 1. + 0.1)
+			+ 0.50 * std::cos(2 * numbers::pi * double(i) / double(vec.size()) * 2. + 0.2)
+			+ 1.00 * std::cos(2 * numbers::pi * double(i) / double(vec.size()) * 4. + 0.3);
 	}
 
 	fft::transform_inplace(vec);
@@ -67,27 +67,6 @@ TEST_CASE("devfix/dsp/fft/coherent")
 	CHECK(ph[2] == Approx(0.2).margin(testutil::MARGIN_FINE));
 	CHECK(ph[4] == Approx(0.3).margin(testutil::MARGIN_FINE));
 }
-/*
-TEST_CASE("FFT - PhaseExtraction")
-{
-	constexpr std::size_t FFT_LEN = 128;
-	std::vector<std::complex<double>> vec(FFT_LEN);
-	for (std::size_t i = 0; i < vec.size(); i++)
-	{
-		vec[i] = std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 32 + math::pi / 8)
-			+ 0.5 * std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 8 + math::pi / 2)
-			+ 0.25 * std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 4 * 1 + math::pi / 4);
-	}
-	window win(winfun::flattop_hft248d<double>, vec.size(), true);
-	win.apply(vec);
-	fft::transform_inplace(vec);
-	const auto magphase = fft::get_magnitude(vec);
-
-	constexpr std::size_t line_a = FFT_LEN / 32, line_b = FFT_LEN / 8, line_c = FFT_LEN / 4;
-	CHECK(magphase[line_a].second == Approx(math::pi / 8).margin(testutil::MARGIN_COARSE));
-	CHECK(magphase[line_b].second == Approx(math::pi / 2).margin(testutil::MARGIN_COARSE));
-	CHECK(magphase[line_c].second == Approx(math::pi / 4).margin(testutil::MARGIN_COARSE));
-}*/
 
 TEST_CASE("devfix/dsp/fft/large_len")
 {
@@ -98,9 +77,9 @@ TEST_CASE("devfix/dsp/fft/large_len")
 	{
 		const double t = double(i) / fs;
 		vec[i] = 1.2
-			+ 1.0 * std::cos(2 * math::pi * 220 * t + 0.1)
-			+ 0.8 * std::cos(2 * math::pi * 440 * t + 0.2)
-			+ 0.6 * std::cos(2 * math::pi * 880 * t + 0.3);
+			+ 1.0 * std::cos(2 * numbers::pi * 220 * t + 0.1)
+			+ 0.8 * std::cos(2 * numbers::pi * 440 * t + 0.2)
+			+ 0.6 * std::cos(2 * numbers::pi * 880 * t + 0.3);
 	}
 
 	window win(winfun::flattop_hft248d<double>, vec.size(), true);
