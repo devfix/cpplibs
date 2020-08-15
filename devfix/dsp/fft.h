@@ -8,7 +8,6 @@
 #include <cmath>
 #include <vector>
 #include <array>
-#include <tuple>
 #include "../base/math.h"
 
 namespace devfix::dsp
@@ -17,6 +16,10 @@ namespace devfix::dsp
 	{
 
 		using math = devfix::base::math;
+
+		///////////////////////
+		// transform_inplace //
+		///////////////////////
 
 		template<typename FloatT>
 		static void transform_inplace(std::complex<FloatT>* win, std::size_t len)
@@ -70,39 +73,89 @@ namespace devfix::dsp
 			transform_inplace<FloatT>(win.data(), win.size());
 		}
 
+		///////////////////////
+		// normalize inplace //
+		///////////////////////
+
 		template<typename FloatT>
-		static void get_mag_and_phase(const std::complex<FloatT>* win, std::size_t len, std::pair<FloatT, FloatT>* magphase)
+		static void normalize_inplace(std::complex<FloatT>* win, std::size_t len, std::size_t n = 0)
 		{
 			static_assert(std::is_floating_point_v<FloatT>);
-			if (len == 0) { throw std::invalid_argument("len is not greater zero"); }
-			const FloatT inv_n = FloatT(1) / len;
-			magphase->first = std::abs(win[0] * inv_n);
-			magphase->second = std::arg(win[0] * inv_n);
-			for (std::size_t i = 1; i < len / 2; i++)
-			{
-				const auto dft = win[i] * inv_n * 2.;
-				magphase[i].first = std::abs(dft);
-				magphase[i].second = std::arg(dft);
-			}
+			if (n == 0) { n = len; }
+			const FloatT inv_n = FloatT(1) / n;
+			for (std::size_t i = 0; i < len; i++) { win[i] *= inv_n; }
 		}
 
 		template<typename FloatT>
-		static std::vector<std::pair<FloatT, FloatT>> get_mag_and_phase(const std::vector<std::complex<FloatT>>& win)
+		static void normalize_inplace(std::vector<std::complex<FloatT>>& win, std::size_t n = 0)
 		{
-			static_assert(std::is_floating_point_v<FloatT>);
-			std::vector<std::pair<FloatT, FloatT>> magphase(win.size() / 2);
-			get_mag_and_phase(win.data(), win.size(), magphase.data());
-			return magphase;
+			normalize_inplace<FloatT>(win.data(), win.size(), n);
 		}
 
 		template<typename FloatT, std::size_t N>
-		static std::array<std::pair<FloatT, FloatT>, N / 2> get_mag_and_phase(const std::array<std::complex<FloatT>, N>& win)
+		static void normalize_inplace(std::array<std::complex<FloatT>, N>& win, std::size_t n = 0)
+		{
+			normalize_inplace<FloatT>(win.data(), win.size(), n);
+		}
+
+		///////////////////
+		// get magnitude //
+		///////////////////
+
+		template<typename FloatT>
+		static void get_magnitude(const std::complex<FloatT>* win, std::size_t len, FloatT* mag)
 		{
 			static_assert(std::is_floating_point_v<FloatT>);
+			if (len == 0) { throw std::invalid_argument("len is not greater zero"); }
+			mag[0] = std::abs(win[0]);
+			for (std::size_t i = 1; i < len / 2; i++) { mag[i] = std::abs(win[i]) * FloatT(2); }
+		}
+
+		template<typename FloatT>
+		static std::vector<FloatT> get_magnitude(const std::vector<std::complex<FloatT>>& win)
+		{
+			std::vector<FloatT> mag(win.size() / 2);
+			get_magnitude<FloatT>(win.data(), win.size(), mag.data());
+			return mag;
+		}
+
+		template<typename FloatT, std::size_t N>
+		static std::array<FloatT, N / 2> get_magnitude(const std::array<std::complex<FloatT>, N>& win)
+		{
 			static_assert(N > 0, "len is not greater zero");
-			std::array<std::pair<FloatT, FloatT>, N / 2> magphase;
-			get_mag_and_phase(win.data(), win.size(), magphase.data());
-			return magphase;
+			std::array<FloatT, N / 2> mag;
+			get_magnitude<FloatT>(win.data(), win.size(), mag.data());
+			return mag;
+		}
+
+		///////////////
+		// get phase //
+		///////////////
+
+		template<typename FloatT>
+		static void get_phase(const std::complex<FloatT>* win, std::size_t len, FloatT* ph)
+		{
+			static_assert(std::is_floating_point_v<FloatT>);
+			if (len == 0) { throw std::invalid_argument("len is not greater zero"); }
+			ph[0] = std::arg(win[0]);
+			for (std::size_t i = 1; i < len; i++) { ph[i] = std::arg(win[i]); }
+		}
+
+		template<typename FloatT>
+		static std::vector<FloatT> get_phase(const std::vector<std::complex<FloatT>>& win)
+		{
+			std::vector<FloatT> ph(win.size());
+			get_phase<FloatT>(win.data(), win.size(), ph.data());
+			return ph;
+		}
+
+		template<typename FloatT, std::size_t N>
+		static std::array<FloatT, N / 2> get_phase(const std::array<std::complex<FloatT>, N>& win)
+		{
+			static_assert(N > 0, "len is not greater zero");
+			std::array<FloatT, win.size()> ph;
+			get_phase<FloatT>(win.data(), win.size(), ph.data());
+			return ph;
 		}
 	};
 }

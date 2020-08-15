@@ -39,8 +39,8 @@ TEST_CASE("devfix/dsp/window/gain")
 		};
 
 		// register all window functions to be tested here
-		test_winfun(winfun < FloatT > ::hanning);
-		test_winfun(winfun < FloatT > ::flattop_matlab);
+		test_winfun(winfun::hanning);
+		test_winfun(winfun::flattop_matlab);
 	};
 
 	test_types((float) (1), testutil::MARGIN_COARSE);

@@ -10,8 +10,9 @@
 #include <fstream>
 #include "../fft.h"
 #include "../window.h"
-#include "../../../testutil.h"
 #include "../winfun.h"
+#include "../dsp.h"
+#include "../../../testutil.h"
 
 using namespace devfix::base;
 using namespace devfix::dsp;
@@ -47,52 +48,91 @@ TEST_CASE("devfix/dsp/fft/coherent")
 	}
 
 	fft::transform_inplace(vec);
-	const auto magphase = fft::get_mag_and_phase(vec);
+	vec.resize(vec.size() / 2);
+	fft::normalize_inplace(vec, vec.size() * 2);
+	const auto mag = fft::get_magnitude(vec);
+	const auto ph = fft::get_phase(vec);
 
 	// test magnitudes
-	CHECK(magphase[0].first == Approx(4).margin(testutil::MARGIN_FINE));
-	CHECK(magphase[1].first == Approx(0.25).margin(testutil::MARGIN_FINE));
-	CHECK(magphase[2].first == Approx(0.5).margin(testutil::MARGIN_FINE));
-	CHECK(magphase[3].first == Approx(0).margin(testutil::MARGIN_FINE));
-	CHECK(magphase[4].first == Approx(1.).margin(testutil::MARGIN_FINE));
-	for (std::size_t i = 5; i < magphase.size(); i++) { CHECK(magphase[i].first == Approx(0).margin(testutil::MARGIN_FINE)); }
+	CHECK(mag[0] == Approx(4).margin(testutil::MARGIN_FINE));
+	CHECK(mag[1] == Approx(0.25).margin(testutil::MARGIN_FINE));
+	CHECK(mag[2] == Approx(0.5).margin(testutil::MARGIN_FINE));
+	CHECK(mag[3] == Approx(0).margin(testutil::MARGIN_FINE));
+	CHECK(mag[4] == Approx(1.).margin(testutil::MARGIN_FINE));
+	for (std::size_t i = 5; i < mag.size(); i++) { CHECK(mag[i] == Approx(0).margin(testutil::MARGIN_FINE)); }
 
 	// test phases
-	CHECK(magphase[0].second == Approx(0).margin(testutil::MARGIN_FINE));
-	CHECK(magphase[1].second == Approx(0.1).margin(testutil::MARGIN_FINE));
-	CHECK(magphase[2].second == Approx(0.2).margin(testutil::MARGIN_FINE));
-	CHECK(magphase[4].second == Approx(0.3).margin(testutil::MARGIN_FINE));
+	CHECK(ph[0] == Approx(0).margin(testutil::MARGIN_FINE));
+	CHECK(ph[1] == Approx(0.1).margin(testutil::MARGIN_FINE));
+	CHECK(ph[2] == Approx(0.2).margin(testutil::MARGIN_FINE));
+	CHECK(ph[4] == Approx(0.3).margin(testutil::MARGIN_FINE));
 }
+/*
+TEST_CASE("FFT - PhaseExtraction")
+{
+	constexpr std::size_t FFT_LEN = 128;
+	std::vector<std::complex<double>> vec(FFT_LEN);
+	for (std::size_t i = 0; i < vec.size(); i++)
+	{
+		vec[i] = std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 32 + math::pi / 8)
+			+ 0.5 * std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 8 + math::pi / 2)
+			+ 0.25 * std::cos(2 * math::pi * double(i) / double(vec.size()) * FFT_LEN / 4 * 1 + math::pi / 4);
+	}
+	window win(winfun::flattop_hft248d<double>, vec.size(), true);
+	win.apply(vec);
+	fft::transform_inplace(vec);
+	const auto magphase = fft::get_magnitude(vec);
+
+	constexpr std::size_t line_a = FFT_LEN / 32, line_b = FFT_LEN / 8, line_c = FFT_LEN / 4;
+	CHECK(magphase[line_a].second == Approx(math::pi / 8).margin(testutil::MARGIN_COARSE));
+	CHECK(magphase[line_b].second == Approx(math::pi / 2).margin(testutil::MARGIN_COARSE));
+	CHECK(magphase[line_c].second == Approx(math::pi / 4).margin(testutil::MARGIN_COARSE));
+}*/
 
 TEST_CASE("devfix/dsp/fft/large_len")
 {
+	constexpr std::size_t N = 1u << 16u;
 	constexpr double fs = 44100;
-	std::vector<std::complex<double>> vec(1u << 16u);
+	std::vector<std::complex<double>> vec(N);
 	for (std::size_t i = 0; i < vec.size(); i++)
 	{
 		const double t = double(i) / fs;
-		vec[i] = (std::cos(2 * math::pi * 440 * t + 0.3 * math::pi)
-			+ 0.8 * std::cos(2 * math::pi * 220 * t + 0.2 * math::pi)
-			+ 0.6 * std::cos(2 * math::pi * 880 * t + 0.3 * math::pi)
-			+ 0.4);
+		vec[i] = 1.2
+			+ 1.0 * std::cos(2 * math::pi * 220 * t + 0.1)
+			+ 0.8 * std::cos(2 * math::pi * 440 * t + 0.2)
+			+ 0.6 * std::cos(2 * math::pi * 880 * t + 0.3);
 	}
 
-	window win(winfun<double>::flattop_hft248d, vec.size(), true);
+	window win(winfun::flattop_hft248d<double>, vec.size(), true);
 	win.apply(vec);
 	fft::transform_inplace(vec);
-	const auto magphase = fft::get_mag_and_phase(vec);
+	vec.resize(N / 2);
+	fft::normalize_inplace(vec, N);
 
-	const std::size_t line_440 = std::round(440. * vec.size() / fs);
-	const std::size_t line_220 = std::round(220. * vec.size() / fs);
-	const std::size_t line_880 = std::round(880. * vec.size() / fs);
+	const auto bin220 = calcfreqbin(fs, N, 220.);
+	const auto idx220 = calcfreqidx(fs, N, 220.);
+	const auto bin440 = calcfreqbin(fs, N, 440.);
+	const auto idx440 = calcfreqidx(fs, N, 440.);
+	const auto bin880 = calcfreqbin(fs, N, 880.);
+	const auto idx880 = calcfreqidx(fs, N, 880.);
 
 	// test magnitudes
-	CHECK(magphase[line_440].first == Approx(1).margin(testutil::MARGIN_COARSE));
-	CHECK(magphase[line_220].first == Approx(0.8).margin(testutil::MARGIN_COARSE));
-	CHECK(magphase[line_880].first == Approx(0.6).margin(testutil::MARGIN_COARSE));
-	CHECK(magphase[0].first == Approx(0.4).margin(testutil::MARGIN_COARSE));
+	const auto mag = fft::get_magnitude(vec);
+	CHECK(mag[0] == Approx(1.2).margin(testutil::MARGIN_COARSE));
+	CHECK(mag[idx220] == Approx(1.0).margin(testutil::MARGIN_COARSE));
+	CHECK(mag[idx440] == Approx(0.8).margin(testutil::MARGIN_COARSE));
+	CHECK(mag[idx880] == Approx(0.6).margin(testutil::MARGIN_COARSE));
 
-	// phases cannot be testedco with this window
+	// correct phases inplace
+	vec[idx220] *= calcphasecorrector(fs, N, 220.);
+	vec[idx440] *= calcphasecorrector(fs, N, 440.);
+	vec[idx880] *= calcphasecorrector(fs, N, 880.);
+
+	// test phases
+	const auto ph = fft::get_phase(vec);
+	CHECK(ph[idx220] == Approx(0.1).margin(testutil::MARGIN_COARSE));
+	CHECK(ph[idx440] == Approx(0.2).margin(testutil::MARGIN_COARSE));
+	CHECK(ph[idx880] == Approx(0.3).margin(testutil::MARGIN_COARSE));
 }
 
 #endif
