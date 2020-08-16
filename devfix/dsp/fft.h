@@ -22,7 +22,7 @@ namespace devfix::dsp
 		///////////////////////
 
 		/**
-		 * \brief performs the inplace discrete-fourier-transformation for an complex field
+		 * \brief performs the inplace discrete-fourier-transformation for an complex field,
 		 * the field length has to be a power of two
 		 * \tparam FloatT type of floating pointer numbers
 		 * \param field complex field
@@ -68,7 +68,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief performs the inplace discrete-fourier-transformation for an complex vector
+		 * \brief performs the inplace discrete-fourier-transformation for an complex vector,
 		 * the vector length has to be a power of two
 		 * \tparam FloatT type of floating pointer numbers
 		 * \param vec complex vector
@@ -80,7 +80,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief performs the inplace discrete-fourier-transformation for an complex array
+		 * \brief performs the inplace discrete-fourier-transformation for an complex array,
 		 * the array length has to be a power of two
 		 * \tparam FloatT type of floating pointer numbers
 		 * \tparam N array length
@@ -98,7 +98,7 @@ namespace devfix::dsp
 		///////////////////////
 
 		/**
-		 * \brief divides each element of the field by the fft size
+		 * \brief divides each element of the field by the fft size,
 		 * if the fft size is zero, it gets set to the field length
 		 * \tparam FloatT type of floating point numbers
 		 * \param field field
@@ -115,7 +115,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief divides each element of the vector by the fft size
+		 * \brief divides each element of the vector by the fft size,
 		 * if the fft size is zero, it gets set to the vector size
 		 * \tparam FloatT type of floating point numbers
 		 * \param vec vector
@@ -128,7 +128,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief divides each element of the array by the fft size
+		 * \brief divides each element of the array by the fft size,
 		 * if the fft size is zero, it gets set to the array size
 		 * \tparam FloatT type of floating point numbers
 		 * \tparam N array length

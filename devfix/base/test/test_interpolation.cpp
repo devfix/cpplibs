@@ -4,7 +4,7 @@
 
 #if CPPLIBS_ENABLE_TESTS == 1
 
-#include <catch2/catch.hpp>
+#include <testutil.h>
 #include <cmath>
 #include "../interpolation.h"
 #include "../numbers.h"

@@ -121,6 +121,7 @@ if (${CPPLIBS_ENABLE_TESTS})
     file(GLOB_RECURSE src_tests "${CMAKE_CURRENT_LIST_DIR}/devfix/*test_*.cpp")
     add_executable(testrunner testrunner.cpp "${src_tests}")
     target_include_directories(testrunner PUBLIC "Catch2/single_include")  # include Catch2 library header files
+    target_include_directories(testrunner PUBLIC "devfix")                 # include test util header files
     target_link_libraries(testrunner devfixnet devfixdsp)
 
     if (UNIX)

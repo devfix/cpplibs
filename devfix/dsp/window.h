@@ -49,7 +49,7 @@ namespace devfix::dsp
 		[[nodiscard]] std::size_t size() const { return window_.size(); }
 
 		/**
-		 * \brief multiplies each real field element with the window value at the same index
+		 * \brief multiplies each real field element with the window value at the same index,
 		 * the length of the field has to be the same as the window size
 		 * \param field input field of real numbers
 		 */
@@ -59,7 +59,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief multiplies each real vector element with the window value at the same index
+		 * \brief multiplies each real vector element with the window value at the same index,
 		 * the length of the vector has to be the same as the window size
 		 * \param vec input vector of real numbers
 		 */
@@ -70,7 +70,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief multiplies each real array element with the window value at the same index
+		 * \brief multiplies each real array element with the window value at the same index,
 		 * the length of the array has to be the same as the window size
 		 * \tparam N array length
 		 * \param arr input array of real numbers
@@ -83,7 +83,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief multiplies each complex field element with the window value at the same index
+		 * \brief multiplies each complex field element with the window value at the same index,
 		 * the length of the field has to be the same as the window size
 		 * \param field input field of complex numbers
 		 */
@@ -93,7 +93,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief multiplies each complex vector element with the window value at the same index
+		 * \brief multiplies each complex vector element with the window value at the same index,
 		 * the length of the vector has to be the same as the window size
 		 * \param vec input vector of complex numbers
 		 */
@@ -104,7 +104,7 @@ namespace devfix::dsp
 		}
 
 		/**
-		 * \brief multiplies each complex array element with the window value at the same index
+		 * \brief multiplies each complex array element with the window value at the same index,
 		 * the length of the array has to be the same as the window size
 		 * \tparam N array length
 		 * \param arr input array of complex numbers

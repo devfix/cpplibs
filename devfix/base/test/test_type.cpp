@@ -5,8 +5,7 @@
 
 #if CPPLIBS_ENABLE_TESTS == 1
 
-#include <catch2/catch.hpp>
-#include <iostream>
+#include <testutil.h>
 #include <array>
 #include "../type.h"
 

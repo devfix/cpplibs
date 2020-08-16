@@ -32,10 +32,10 @@ namespace devfix::base
 	struct math
 	{
 		template<class UnsignedT>
-		static constexpr int countl_zero(UnsignedT x) noexcept
+		static constexpr std::size_t countl_zero(UnsignedT x) noexcept
 		{
 			static_assert(std::is_unsigned_v<UnsignedT>, "only unsigned types allowed");
-			int cnt = 0;
+			std::size_t cnt = 0;
 			for (UnsignedT i = UnsignedT(1u) << (std::numeric_limits<UnsignedT>::digits - 1); i > 0 && !(x & i); i >>= 1, cnt++) {}
 			return cnt;
 		}
@@ -55,34 +55,33 @@ namespace devfix::base
 			return 1u << v;
 		}
 
-		template<typename FloatT, std::size_t N, std::size_t len>
-		[[nodiscard]] static std::array<std::complex<FloatT>, N> to_complex(const std::array<FloatT, N>& arr)
-		{
-			static_assert(len <= N);
-			std::array<std::complex<FloatT>, len> carr;
-			for (std::size_t i = 0; i < len; i++) { carr[i] = std::complex<FloatT>(arr[i]); }
-			return carr;
-		}
+		////////////////
+		// to complex //
+		////////////////
 
-		template<typename FloatT, std::size_t N>
-		[[nodiscard]] static std::array<std::complex<FloatT>, N> to_complex(const std::array<FloatT, N>& arr)
+		template<typename FloatT>
+		static void to_complex(const FloatT* field, std::size_t len, std::complex<FloatT>* cfield)
 		{
-			return to_complex<FloatT, N, N>(arr);
+			for (std::size_t i = 0; i < len; i++) { cfield[i] = std::complex<FloatT>(field[i]); }
 		}
 
 		template<typename FloatT>
-		[[nodiscard]] static std::vector<std::complex<FloatT>> to_complex(const std::vector<FloatT>& vec, std::size_t len)
+		[[nodiscard]] static std::vector<std::complex<FloatT>> to_complex(const std::vector<FloatT>& vec, std::size_t len = 0)
 		{
 			if (len > vec.size()) { throw std::invalid_argument("bad vector length requested"); }
+			if (len == 0) { len = vec.size(); }
 			std::vector<std::complex<FloatT>> cvec(len);
-			for (std::size_t i = 0; i < len; i++) { cvec[i] = std::complex<FloatT>(vec[i]); }
+			to_complex(vec.data(), len, cvec.data());
 			return cvec;
 		}
 
-		template<typename FloatT>
-		[[nodiscard]] static std::vector<std::complex<FloatT>> to_complex(const std::vector<FloatT>& vec)
+		template<typename FloatT, std::size_t N, std::size_t Len = 0>
+		[[nodiscard]] static std::array<std::complex<FloatT>, N> to_complex(const std::array<FloatT, N>& arr)
 		{
-			return to_complex<FloatT>(vec, vec.size());
+			static_assert(Len <= N);
+			std::array<std::complex<FloatT>, Len == 0 ? N : Len> carr;
+			to_complex(arr.data(), carr.size(), carr.data());
+			return carr;
 		}
 
 		[[nodiscard]] static constexpr std::uint32_t reverse_bits(std::uint32_t val, std::size_t bits)

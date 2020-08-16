@@ -5,14 +5,9 @@
 
 #if CPPLIBS_ENABLE_DSP_TESTS == 1
 
-#include <catch2/catch.hpp>
+#include <testutil.h>
 #include <functional>
-#include <fstream>
-#include "../fft.h"
-#include "../window.h"
-#include "../winfun.h"
 #include "../dsp.h"
-#include "../../../testutil.h"
 
 using namespace devfix::base;
 using namespace devfix::dsp;
@@ -68,7 +63,7 @@ TEST_CASE("devfix/dsp/fft/coherent")
 	CHECK(ph[4] == Approx(0.3).margin(testutil::MARGIN_FINE));
 }
 
-TEST_CASE("devfix/dsp/fft/large_len")
+TEST_CASE("devfix/dsp/fft/incoherent")
 {
 	constexpr std::size_t N = 1u << 16u;
 	constexpr double fs = 44100;
@@ -88,11 +83,8 @@ TEST_CASE("devfix/dsp/fft/large_len")
 	vec.resize(N / 2);
 	fft::normalize_inplace(vec, N);
 
-	const auto bin220 = calcfreqbin(fs, N, 220.);
 	const auto idx220 = calcfreqidx(fs, N, 220.);
-	const auto bin440 = calcfreqbin(fs, N, 440.);
 	const auto idx440 = calcfreqidx(fs, N, 440.);
-	const auto bin880 = calcfreqbin(fs, N, 880.);
 	const auto idx880 = calcfreqidx(fs, N, 880.);
 
 	// test magnitudes
