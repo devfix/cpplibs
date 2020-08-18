@@ -64,6 +64,40 @@ namespace devfix::dsp
 		return std::polar(FloatT(1), -devfix::base::numbers::pi_v<FloatT> * offset);
 	}
 
+	/**
+	 * \brief calculates an dft coefficient of the discrete Fourier-transformation
+	 * \tparam FloatT floating point type
+	 * \param field
+	 * \param len
+	 * \param k
+	 * \return
+	 */
+	template<typename FloatT>
+	[[nodiscard]] std::complex<FloatT> goertzel(const std::complex<FloatT>* field, std::size_t len, std::size_t k)
+	{
+		static_assert(std::is_floating_point_v<FloatT>);
+		const auto wn = std::polar(FloatT(1), FloatT(numbers::pi * 2. * k / len));
+		std::complex<FloatT> s = field[0];
+		for (std::int32_t i = 1; i < len; i++)
+		{
+			s *= wn;
+			s += field[i];
+		}
+		return s * wn;
+	}
+
+	template<typename FloatT>
+	[[nodiscard]] std::complex<FloatT> goertzel(const std::vector<std::complex<FloatT>>& vec, std::size_t k)
+	{
+		return goertzel(vec.data(), vec.size(), k);
+	}
+
+	template<typename FloatT, std::size_t N>
+	[[nodiscard]] std::complex<FloatT> goertzel(const std::array<std::complex<FloatT>, N>& arr, std::size_t k)
+	{
+		return goertzel(arr.data(), arr.size(), k);
+	}
+
 	////////////////////////
 	// calcsignal inplace //
 	////////////////////////
@@ -75,9 +109,9 @@ namespace devfix::dsp
 		static_assert(std::is_floating_point_v<FloatT>);
 		const auto fft_len = math::exp2(math::floorLog2(len));
 		window(winfun::flattop_hft248d<FloatT>, fft_len).apply(field);
-		fft::transform_inplace(field, fft_len);
 		const auto idx = calcfreqidx(sample_rate, fft_len, freq);
-		return field[idx] * (FloatT(2) / fft_len) * calcphasecorrector(sample_rate, fft_len, freq);
+		const auto dft = goertzel(field, fft_len, idx);
+		return dft * (FloatT(2) / fft_len) * calcphasecorrector(sample_rate, fft_len, freq);
 	}
 
 	template<typename FloatT>
