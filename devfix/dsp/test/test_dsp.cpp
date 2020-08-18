@@ -46,4 +46,100 @@ TEST_CASE("devfix/dsp/dsp/calcsignal")
 	CHECK(std::arg(dftniq) == Approx(0.4).margin(testutil::MARGIN_COARSE));
 }
 
+TEST_CASE("devfix/dsp/dsp/calcrms")
+{
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++) { data[i] = 1 + std::sin(2 * numbers::pi * 8 * double(i) / data.size()); }
+		CHECK(calcrms(data) == Approx(std::sqrt(1.5)).margin(testutil::MARGIN_FINE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] = 4
+				+ 1.00 * std::sin(2 * numbers::pi * 8 * double(i) / data.size())
+				+ 0.20 * std::sin(2 * numbers::pi * 64 * double(i) / data.size())
+				+ 0.05 * std::sin(2 * numbers::pi * 256 * double(i) / data.size())
+				+ 9.00 * std::sin(2 * numbers::pi * 200 * double(i) / data.size());
+		}
+		CHECK(calcrms(data) == Approx(7.55124162).margin(testutil::MARGIN_FINE));
+	}
+}
+
+TEST_CASE("devfix/dsp/dsp/calcmean")
+{
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++) { data[i] = 1 + std::sin(2 * numbers::pi * 8 * double(i) / data.size()); }
+		CHECK(calcmean(data) == Approx(1).margin(testutil::MARGIN_FINE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] = 4
+				+ 1.00 * std::sin(2 * numbers::pi * 8 * double(i) / data.size())
+				+ 0.20 * std::sin(2 * numbers::pi * 64 * double(i) / data.size())
+				+ 0.05 * std::sin(2 * numbers::pi * 256 * double(i) / data.size());
+		}
+		CHECK(calcmean(data) == Approx(4).margin(testutil::MARGIN_FINE));
+	}
+}
+
+TEST_CASE("devfix/dsp/dsp/calcacrms")
+{
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++) { data[i] = 1 + std::sin(2 * numbers::pi * 8 * double(i) / data.size()); }
+		CHECK(calcacrms(data) == Approx(1. / numbers::sqrt2).margin(testutil::MARGIN_FINE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] = 4
+				+ 1.00 * std::sin(2 * numbers::pi * 8 * double(i) / data.size())
+				+ 0.20 * std::sin(2 * numbers::pi * 64 * double(i) / data.size())
+				+ 0.05 * std::sin(2 * numbers::pi * 256 * double(i) / data.size());
+		}
+		CHECK(calcacrms(data) == Approx(0.721976454).margin(testutil::MARGIN_FINE));
+	}
+}
+
+TEST_CASE("devfix/dsp/dsp/calcthdn")
+{
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++) { data[i] = 1 + std::sin(2 * numbers::pi * 8 * double(i) / data.size()); }
+		CHECK(calcthdn(data.size(), 8., data) == Approx(0).margin(testutil::MARGIN_COARSE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] = 4
+				+ 1.00 * std::sin(2 * numbers::pi * 8 * double(i) / data.size())
+				+ 0.20 * std::sin(2 * numbers::pi * 64 * double(i) / data.size())
+				+ 0.05 * std::sin(2 * numbers::pi * 256 * double(i) / data.size());
+		}
+		CHECK(calcthdn(data.size(), 8., data) == Approx(0.001287879).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 64., data) == Approx(0.031289014).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 256., data) == Approx(0.032497461).margin(testutil::MARGIN_COARSE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] =
+				+ 1.00 * std::sin(2 * numbers::pi * 10 * double(i) / data.size())
+				+ 0.20 * std::sin(2 * numbers::pi * 100 * double(i) / data.size())
+				+ 0.05 * std::sin(2 * numbers::pi * 200 * double(i) / data.size());
+		}
+		CHECK(calcthdn(data.size(), 10., data) == Approx(0.0425).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 100., data) == Approx(25.0625).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 200., data) == Approx(416.).margin(testutil::MARGIN_COARSE));
+	}
+}
+
 #endif

@@ -36,7 +36,7 @@ namespace devfix::base
 		template<typename T>
 		struct wstr_t<T, 2>
 		{
-			std::wstring conv(const std::string& str)
+			static std::wstring conv(const std::string& str)
 			{
 				u08string u8(str.length(), 0);
 				std::transform(str.begin(), str.end(), u8.begin(), [](auto c) { return c; });
@@ -49,7 +49,7 @@ namespace devfix::base
 		template<typename T>
 		struct wstr_t<T, 4>
 		{
-			std::wstring conv(const std::string& str)
+			static std::wstring conv(const std::string& str)
 			{
 				u08string u8(str.length(), 0);
 				std::transform(str.begin(), str.end(), u8.begin(), [](auto c) { return c; });
@@ -65,7 +65,7 @@ namespace devfix::base
 		template<typename T>
 		struct str_t<T, 2>
 		{
-			std::string conv(const std::wstring& wstr)
+			static std::string conv(const std::wstring& wstr)
 			{
 				u16string u16(wstr.length(), 0);
 				std::transform(wstr.begin(), wstr.end(), u16.begin(), [](auto c) { return c; });
@@ -78,7 +78,7 @@ namespace devfix::base
 		template<typename T>
 		struct str_t<T, 4>
 		{
-			std::string conv(const std::wstring& wstr)
+			static std::string conv(const std::wstring& wstr)
 			{
 				u32string u32(wstr.length(), 0);
 				std::transform(wstr.begin(), wstr.end(), u32.begin(), [](auto c) { return c; });
@@ -95,14 +95,14 @@ namespace devfix::base
 		 * \param str input string
 		 * \return converted wstring
 		 */
-		[[nodiscard]] std::wstring wstr(const std::string& str) { return wstr_t<wchar_t>().conv(str); }
+		[[nodiscard]] static std::wstring wstr(const std::string& str) { return wstr_t<wchar_t>::conv(str); }
 
 		/**
 		 * \brief convert std::wstring to std::string
 		 * \param wstr input wstring
 		 * \return converted string
 		 */
-		[[nodiscard]] std::string str(const std::wstring& wstr) { return str_t<wchar_t>().conv(wstr); }
+		[[nodiscard]] static std::string str(const std::wstring& wstr) { return str_t<wchar_t>::conv(wstr); }
 
 		/**
 		 * \brief convert string to float always with "C" locale

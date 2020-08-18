@@ -18,6 +18,7 @@
 namespace devfix::dsp
 {
 	using math = ::devfix::base::math;
+	namespace numbers = devfix::base::numbers;
 
 	/**
 	 * \brief calculates the ideal (unrounded) bin index in the spectrum
@@ -117,5 +118,86 @@ namespace devfix::dsp
 	{
 		auto carr = math::to_complex(arr);
 		return calcsignal_inplace(sample_rate, freq, carr);
+	}
+
+	/////////////
+	// calcrms //
+	/////////////
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcrms(const FloatT* field, std::size_t len)
+	{
+		FloatT rms = 0;
+		for (std::size_t i = 0; i < len; i++) { rms += field[i] * field[i]; }
+		return std::sqrt(rms / len);
+	}
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcrms(const std::vector<FloatT>& vec) { return calcrms<FloatT>(vec.data(), vec.size()); }
+
+	template<typename FloatT, std::size_t N>
+	[[nodiscard]] FloatT calcrms(const std::array<FloatT, N>& arr) { return calcrms<FloatT>(arr.data(), arr.size()); }
+
+	//////////////
+	// calcmean //
+	//////////////
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcmean(const FloatT* field, std::size_t len)
+	{
+		FloatT rms = 0;
+		for (std::size_t i = 0; i < len; i++) { rms += field[i]; }
+		return rms / len;
+	}
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcmean(const std::vector<FloatT>& vec) { return calcmean<FloatT>(vec.data(), vec.size()); }
+
+	template<typename FloatT, std::size_t N>
+	[[nodiscard]] FloatT calcmean(const std::array<FloatT, N>& arr) { return calcmean<FloatT>(arr.data(), arr.size()); }
+
+	///////////////
+	// calcacrms //
+	///////////////
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcacrms(const FloatT* field, std::size_t len)
+	{
+		auto rms = calcrms(field, len);
+		auto mean = calcmean(field, len);
+		return std::sqrt(rms * rms - mean * mean);
+	}
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcacrms(const std::vector<FloatT>& vec) { return calcacrms<FloatT>(vec.data(), vec.size()); }
+
+	template<typename FloatT, std::size_t N>
+	[[nodiscard]] FloatT calcacrms(const std::array<FloatT, N>& arr) { return calcacrms<FloatT>(arr.data(), arr.size()); }
+
+	//////////////
+	// calcthdn //
+	//////////////
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcthdn(std::size_t sample_rate, FloatT freq, const FloatT* field, std::size_t len)
+	{
+		const auto fft_len = math::exp2(math::floorLog2(len));
+		auto dc = calcmean(field, fft_len);
+		auto ac = std::abs(calcsignal(sample_rate, freq, field, fft_len)) / numbers::sqrt2;
+		auto signal = dc * dc + ac * ac;
+		auto rms = calcrms(field, fft_len);
+		return (rms * rms - signal) / signal;
+	}
+
+	template<typename FloatT>
+	[[nodiscard]] FloatT calcthdn(std::size_t sample_rate, FloatT freq, const std::vector<FloatT>& vec)
+	{
+		return calcthdn(sample_rate, freq, vec.data(), vec.size());
+	}
+
+	template<typename FloatT, std::size_t N>
+	[[nodiscard]] FloatT calcthdn(std::size_t sample_rate, FloatT freq, const std::array<FloatT, N>& arr)
+	{
+		return calcthdn(sample_rate, freq, arr.data(), arr.size());
 	}
 }
