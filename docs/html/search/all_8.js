@@ -10,6 +10,8 @@ var searchData=
   ['interpolation_2eh',['interpolation.h',['../interpolation_8h.html',1,'']]],
   ['interruptedexception',['interruptedexception',['../structdevfix_1_1base_1_1error_1_1interruptedexception.html',1,'devfix::base::error::interruptedexception'],['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#ab89281cb08ca7481da32bde8da8e7a00',1,'devfix::base::error::interruptedexception::interruptedexception(const std::string &amp;what_arg, int err=0)'],['../structdevfix_1_1base_1_1error_1_1interruptedexception.html#ac84d255100c72753ea35f8e7007413c1',1,'devfix::base::error::interruptedexception::interruptedexception(const char *what_arg, int err=0)']]],
   ['interruptedexception_2eh',['interruptedexception.h',['../interruptedexception_8h.html',1,'']]],
+  ['inv_5fpi',['inv_pi',['../namespacedevfix_1_1base_1_1numbers.html#a0c850245b7f9f2fb02a8101843a3e819',1,'devfix::base::numbers']]],
+  ['inv_5fpi_5fv',['inv_pi_v',['../namespacedevfix_1_1base_1_1numbers.html#a1b2a3987b0982788bc7f1088e468a13c',1,'devfix::base::numbers']]],
   ['ioexception',['ioexception',['../structdevfix_1_1base_1_1error_1_1ioexception.html',1,'devfix::base::error::ioexception'],['../structdevfix_1_1base_1_1error_1_1ioexception.html#ac44798aad44f6803e385ad36effed298',1,'devfix::base::error::ioexception::ioexception(const std::string &amp;what_arg, int err=0)'],['../structdevfix_1_1base_1_1error_1_1ioexception.html#a2f029b0f81a5a369705cf7920cadd8cd',1,'devfix::base::error::ioexception::ioexception(const char *what_arg, int err=0)']]],
   ['ioexception_2eh',['ioexception.h',['../ioexception_8h.html',1,'']]],
   ['iotypes_2eh',['iotypes.h',['../iotypes_8h.html',1,'']]],

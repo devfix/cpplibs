@@ -65,6 +65,7 @@ $(function() {
 <div class="header">
   <div class="summary">
 <a href="#nested-classes">Classes</a> &#124;
+<a href="#typedef-members">Typedefs</a> &#124;
 <a href="#func-members">Functions</a>  </div>
   <div class="headertitle">
 <div class="title">devfix::dsp Namespace Reference</div>  </div>
@@ -73,20 +74,42 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="nested-classes"></a>
 Classes</h2></td></tr>
-<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1analysis.html">analysis</a></td></tr>
-<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html">fft</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">spectrogram</a></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1window.html">window</a></td></tr>
+<tr class="memdesc:"><td class="mdescLeft">&#160;</td><td class="mdescRight">buffer for the values of window function for a specific window length  <a href="structdevfix_1_1dsp_1_1window.html#details">More...</a><br /></td></tr>
 <tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:"><td class="memItemLeft" align="right" valign="top">struct &#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1winfun.html">winfun</a></td></tr>
+<tr class="separator:"><td class="memSeparator" colspan="2">&#160;</td></tr>
+</table><table class="memberdecls">
+<tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="typedef-members"></a>
+Typedefs</h2></td></tr>
+<tr class="memitem:a4d41815e9c6481fb760733a11d5b633a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a4d41815e9c6481fb760733a11d5b633a">math</a> = ::<a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td></tr>
+<tr class="separator:a4d41815e9c6481fb760733a11d5b633a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6667d1bec03c0d82f87521b87d3fcf24"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a6667d1bec03c0d82f87521b87d3fcf24"><td class="memTemplItemLeft" align="right" valign="top">using&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a6667d1bec03c0d82f87521b87d3fcf24">winfun_t</a> = FloatT(*)(std::size_t n, std::size_t k)</td></tr>
+<tr class="memdesc:a6667d1bec03c0d82f87521b87d3fcf24"><td class="mdescLeft">&#160;</td><td class="mdescRight">type for window functions  <a href="#a6667d1bec03c0d82f87521b87d3fcf24">More...</a><br /></td></tr>
+<tr class="separator:a6667d1bec03c0d82f87521b87d3fcf24"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
+<tr class="memitem:ad26b42af732561241b1d5260634c6a8f"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:ad26b42af732561241b1d5260634c6a8f"><td class="memTemplItemLeft" align="right" valign="top">constexpr FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#ad26b42af732561241b1d5260634c6a8f">calcfreqbin</a> (std::size_t sample_rate, std::size_t fft_len, FloatT freq)</td></tr>
+<tr class="memdesc:ad26b42af732561241b1d5260634c6a8f"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the ideal (unrounded) bin index in the spectrum  <a href="#ad26b42af732561241b1d5260634c6a8f">More...</a><br /></td></tr>
+<tr class="separator:ad26b42af732561241b1d5260634c6a8f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a4c340dc6f142977c46850c3bd5467914"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a4c340dc6f142977c46850c3bd5467914"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::size_t&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a4c340dc6f142977c46850c3bd5467914">calcfreqidx</a> (std::size_t sample_rate, std::size_t fft_len, FloatT freq)</td></tr>
+<tr class="memdesc:a4c340dc6f142977c46850c3bd5467914"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the closest real (rounded) bin index in the spectrum  <a href="#a4c340dc6f142977c46850c3bd5467914">More...</a><br /></td></tr>
+<tr class="separator:a4c340dc6f142977c46850c3bd5467914"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f84878d478c956e3dd2e4d0939a31e4"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a3f84878d478c956e3dd2e4d0939a31e4"><td class="memTemplItemLeft" align="right" valign="top">constexpr std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a3f84878d478c956e3dd2e4d0939a31e4">calcphasecorrector</a> (std::size_t sample_rate, std::size_t fft_len, FloatT freq)</td></tr>
+<tr class="memdesc:a3f84878d478c956e3dd2e4d0939a31e4"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the phase corrector factor for a non coherent frequency  <a href="#a3f84878d478c956e3dd2e4d0939a31e4">More...</a><br /></td></tr>
+<tr class="separator:a3f84878d478c956e3dd2e4d0939a31e4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a5e776756816f3429899134f5c8b8b215"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
 <tr class="memitem:a5e776756816f3429899134f5c8b8b215"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a5e776756816f3429899134f5c8b8b215">goertzel</a> (const std::complex&lt; FloatT &gt; *field, std::size_t len, std::size_t k)</td></tr>
-<tr class="memdesc:a5e776756816f3429899134f5c8b8b215"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates an individual term of the discrete Fourier transform  <a href="#a5e776756816f3429899134f5c8b8b215">More...</a><br /></td></tr>
+<tr class="memdesc:a5e776756816f3429899134f5c8b8b215"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates an dft coefficient of the discrete Fourier-transformation  <a href="#a5e776756816f3429899134f5c8b8b215">More...</a><br /></td></tr>
 <tr class="separator:a5e776756816f3429899134f5c8b8b215"><td class="memSeparator" colspan="2">&#160;</td></tr>
 <tr class="memitem:a9c0640ca74af740499f9c3da2019930c"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
 <tr class="memitem:a9c0640ca74af740499f9c3da2019930c"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a9c0640ca74af740499f9c3da2019930c">goertzel</a> (const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;vec, std::size_t k)</td></tr>
@@ -94,148 +117,121 @@ Functions</h2></td></tr>
 <tr class="memitem:a3eed4648161700e03c0f6d900bea9f73"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
 <tr class="memitem:a3eed4648161700e03c0f6d900bea9f73"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a3eed4648161700e03c0f6d900bea9f73">goertzel</a> (const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;arr, std::size_t k)</td></tr>
 <tr class="separator:a3eed4648161700e03c0f6d900bea9f73"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a45835752ed90577a53430b19eb80348c"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , window::win_fun_t&lt; FloatT &gt; win_fun&gt; </td></tr>
-<tr class="memitem:a45835752ed90577a53430b19eb80348c"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a45835752ed90577a53430b19eb80348c">apply_window</a> (std::complex&lt; FloatT &gt; *win, std::size_t n)</td></tr>
-<tr class="separator:a45835752ed90577a53430b19eb80348c"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a299d793e30216ab3dc270c45fc1a1611"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , window::win_fun_t&lt; FloatT &gt; win_fun&gt; </td></tr>
-<tr class="memitem:a299d793e30216ab3dc270c45fc1a1611"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a299d793e30216ab3dc270c45fc1a1611">apply_window</a> (std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win)</td></tr>
-<tr class="separator:a299d793e30216ab3dc270c45fc1a1611"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a2843d1ef6aea33bdd37a84657b228414"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , window::win_fun_t&lt; FloatT &gt; win_fun, std::size_t N&gt; </td></tr>
-<tr class="memitem:a2843d1ef6aea33bdd37a84657b228414"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a2843d1ef6aea33bdd37a84657b228414">apply_window</a> (std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win)</td></tr>
-<tr class="separator:a2843d1ef6aea33bdd37a84657b228414"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a400e0dd8341bfbcfe42e60388c7a2494"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:a400e0dd8341bfbcfe42e60388c7a2494"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a400e0dd8341bfbcfe42e60388c7a2494">apply_window</a> (std::complex&lt; FloatT &gt; *win, <a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">window::win_fun_t</a>&lt; FloatT &gt; win_fun, std::size_t n)</td></tr>
-<tr class="separator:a400e0dd8341bfbcfe42e60388c7a2494"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f5d2ade6feeeba107861b7040ee89b6"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:a7f5d2ade6feeeba107861b7040ee89b6"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a7f5d2ade6feeeba107861b7040ee89b6">apply_window</a> (std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win, <a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">window::win_fun_t</a>&lt; FloatT &gt; win_fun)</td></tr>
-<tr class="separator:a7f5d2ade6feeeba107861b7040ee89b6"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:aa05b8f98b6ec005c5c7e08efa0afb08a"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
-<tr class="memitem:aa05b8f98b6ec005c5c7e08efa0afb08a"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#aa05b8f98b6ec005c5c7e08efa0afb08a">apply_window</a> (std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win, <a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">window::win_fun_t</a>&lt; FloatT &gt; win_fun)</td></tr>
-<tr class="separator:aa05b8f98b6ec005c5c7e08efa0afb08a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a38dc66c795b9ebe6e8408d95c7a006c9"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a38dc66c795b9ebe6e8408d95c7a006c9"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a38dc66c795b9ebe6e8408d95c7a006c9">calcsignal_inplace</a> (std::size_t sample_rate, FloatT freq, std::complex&lt; FloatT &gt; *field, std::size_t len)</td></tr>
+<tr class="separator:a38dc66c795b9ebe6e8408d95c7a006c9"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2bf29501002d08830f1a7ac3ff22289"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:af2bf29501002d08830f1a7ac3ff22289"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#af2bf29501002d08830f1a7ac3ff22289">calcsignal_inplace</a> (std::size_t sample_rate, FloatT freq, std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;vec)</td></tr>
+<tr class="separator:af2bf29501002d08830f1a7ac3ff22289"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab4671999093ac0b52a1f3fdce063750d"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:ab4671999093ac0b52a1f3fdce063750d"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#ab4671999093ac0b52a1f3fdce063750d">calcsignal_inplace</a> (std::size_t sample_rate, FloatT freq, std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;arr)</td></tr>
+<tr class="separator:ab4671999093ac0b52a1f3fdce063750d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1dc562f09e21a538a14df82aaa083526"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a1dc562f09e21a538a14df82aaa083526"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a1dc562f09e21a538a14df82aaa083526">calcsignal</a> (std::size_t sample_rate, FloatT freq, const FloatT *field, std::size_t len)</td></tr>
+<tr class="separator:a1dc562f09e21a538a14df82aaa083526"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa8a0808fce2bd9ec139788f9d7fa7e59"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:aa8a0808fce2bd9ec139788f9d7fa7e59"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#aa8a0808fce2bd9ec139788f9d7fa7e59">calcsignal</a> (std::size_t sample_rate, FloatT freq, const std::vector&lt; FloatT &gt; &amp;vec)</td></tr>
+<tr class="separator:aa8a0808fce2bd9ec139788f9d7fa7e59"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af2156150e070c8ec603f0134371187d4"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:af2156150e070c8ec603f0134371187d4"><td class="memTemplItemLeft" align="right" valign="top">std::complex&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#af2156150e070c8ec603f0134371187d4">calcsignal</a> (std::size_t sample_rate, FloatT freq, const std::array&lt; FloatT, N &gt; &amp;arr)</td></tr>
+<tr class="separator:af2156150e070c8ec603f0134371187d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1d758c2b667d7d48c41677641086387f"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a1d758c2b667d7d48c41677641086387f"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a1d758c2b667d7d48c41677641086387f">calcrms</a> (const FloatT *field, std::size_t len)</td></tr>
+<tr class="separator:a1d758c2b667d7d48c41677641086387f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a18e7f97d5726a6273908d87a480446a5"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a18e7f97d5726a6273908d87a480446a5"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a18e7f97d5726a6273908d87a480446a5">calcrms</a> (const std::vector&lt; FloatT &gt; &amp;vec)</td></tr>
+<tr class="separator:a18e7f97d5726a6273908d87a480446a5"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a19c2e4d076954efbf0dab3daded46ba7"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:a19c2e4d076954efbf0dab3daded46ba7"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a19c2e4d076954efbf0dab3daded46ba7">calcrms</a> (const std::array&lt; FloatT, N &gt; &amp;arr)</td></tr>
+<tr class="separator:a19c2e4d076954efbf0dab3daded46ba7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:acc73b4642ca4cb49621e76efc6732186"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:acc73b4642ca4cb49621e76efc6732186"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#acc73b4642ca4cb49621e76efc6732186">calcmean</a> (const FloatT *field, std::size_t len)</td></tr>
+<tr class="separator:acc73b4642ca4cb49621e76efc6732186"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ab8e51dea953cabfc246e2e45fbff010c"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:ab8e51dea953cabfc246e2e45fbff010c"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#ab8e51dea953cabfc246e2e45fbff010c">calcmean</a> (const std::vector&lt; FloatT &gt; &amp;vec)</td></tr>
+<tr class="separator:ab8e51dea953cabfc246e2e45fbff010c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9f44af4b1a42d61d8a52afb7a5628001"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:a9f44af4b1a42d61d8a52afb7a5628001"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a9f44af4b1a42d61d8a52afb7a5628001">calcmean</a> (const std::array&lt; FloatT, N &gt; &amp;arr)</td></tr>
+<tr class="separator:a9f44af4b1a42d61d8a52afb7a5628001"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a844dcfe9edcac8ffc347b67f561dd46a"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a844dcfe9edcac8ffc347b67f561dd46a"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a844dcfe9edcac8ffc347b67f561dd46a">calcacrms</a> (const FloatT *field, std::size_t len)</td></tr>
+<tr class="separator:a844dcfe9edcac8ffc347b67f561dd46a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1540e2d4c0a38da18dc948c84823ad73"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a1540e2d4c0a38da18dc948c84823ad73"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a1540e2d4c0a38da18dc948c84823ad73">calcacrms</a> (const std::vector&lt; FloatT &gt; &amp;vec)</td></tr>
+<tr class="separator:a1540e2d4c0a38da18dc948c84823ad73"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aedca7ae194c9a13164a2fdf91f37545a"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:aedca7ae194c9a13164a2fdf91f37545a"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#aedca7ae194c9a13164a2fdf91f37545a">calcacrms</a> (const std::array&lt; FloatT, N &gt; &amp;arr)</td></tr>
+<tr class="separator:aedca7ae194c9a13164a2fdf91f37545a"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a1982c6b562b8c196dd3322c207c0ac86"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a1982c6b562b8c196dd3322c207c0ac86"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86">calcthdn</a> (std::size_t sample_rate, FloatT freq, const FloatT *field, std::size_t len)</td></tr>
+<tr class="separator:a1982c6b562b8c196dd3322c207c0ac86"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a424b6903cca9ea1aebfa4712ea070a1e"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a424b6903cca9ea1aebfa4712ea070a1e"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e">calcthdn</a> (std::size_t sample_rate, FloatT freq, const std::vector&lt; FloatT &gt; &amp;vec)</td></tr>
+<tr class="separator:a424b6903cca9ea1aebfa4712ea070a1e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a54194236560fd3dd40df38df44966d8e"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:a54194236560fd3dd40df38df44966d8e"><td class="memTemplItemLeft" align="right" valign="top">FloatT&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="namespacedevfix_1_1dsp.html#a54194236560fd3dd40df38df44966d8e">calcthdn</a> (std::size_t sample_rate, FloatT freq, const std::array&lt; FloatT, N &gt; &amp;arr)</td></tr>
+<tr class="separator:a54194236560fd3dd40df38df44966d8e"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
+<h2 class="groupheader">Typedef Documentation</h2>
+<a id="a4d41815e9c6481fb760733a11d5b633a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4d41815e9c6481fb760733a11d5b633a">&#9670;&nbsp;</a></span>math</h2>
+
+<div class="memitem">
+<div class="memproto">
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacedevfix_1_1dsp.html#a4d41815e9c6481fb760733a11d5b633a">devfix::dsp::math</a> = typedef ::<a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a6667d1bec03c0d82f87521b87d3fcf24"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6667d1bec03c0d82f87521b87d3fcf24">&#9670;&nbsp;</a></span>winfun_t</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="namespacedevfix_1_1dsp.html#a6667d1bec03c0d82f87521b87d3fcf24">devfix::dsp::winfun_t</a> = typedef FloatT(*)(std::size_t n, std::size_t k)</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>type for window functions </p>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">n</td><td>window size </td></tr>
+    <tr><td class="paramname">k</td><td>window element index </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
 <h2 class="groupheader">Function Documentation</h2>
-<a id="a45835752ed90577a53430b19eb80348c"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a45835752ed90577a53430b19eb80348c">&#9670;&nbsp;</a></span>apply_window() <span class="overload">[1/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatT , window::win_fun_t&lt; FloatT &gt; win_fun&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void devfix::dsp::apply_window </td>
-          <td>(</td>
-          <td class="paramtype">std::complex&lt; FloatT &gt; *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a299d793e30216ab3dc270c45fc1a1611"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a299d793e30216ab3dc270c45fc1a1611">&#9670;&nbsp;</a></span>apply_window() <span class="overload">[2/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatT , window::win_fun_t&lt; FloatT &gt; win_fun&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void devfix::dsp::apply_window </td>
-          <td>(</td>
-          <td class="paramtype">std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a2843d1ef6aea33bdd37a84657b228414"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a2843d1ef6aea33bdd37a84657b228414">&#9670;&nbsp;</a></span>apply_window() <span class="overload">[3/6]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatT , window::win_fun_t&lt; FloatT &gt; win_fun, std::size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void devfix::dsp::apply_window </td>
-          <td>(</td>
-          <td class="paramtype">std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a400e0dd8341bfbcfe42e60388c7a2494"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a400e0dd8341bfbcfe42e60388c7a2494">&#9670;&nbsp;</a></span>apply_window() <span class="overload">[4/6]</span></h2>
+<a id="a844dcfe9edcac8ffc347b67f561dd46a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a844dcfe9edcac8ffc347b67f561dd46a">&#9670;&nbsp;</a></span>calcacrms() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename FloatT &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void devfix::dsp::apply_window </td>
+          <td class="memname">FloatT devfix::dsp::calcacrms </td>
           <td>(</td>
-          <td class="paramtype">std::complex&lt; FloatT &gt; *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype"><a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">window::win_fun_t</a>&lt; FloatT &gt;&#160;</td>
-          <td class="paramname"><em>win_fun</em>, </td>
+          <td class="paramtype">const FloatT *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>n</em>&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -243,75 +239,75 @@ template&lt;typename FloatT &gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="a7f5d2ade6feeeba107861b7040ee89b6"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f5d2ade6feeeba107861b7040ee89b6">&#9670;&nbsp;</a></span>apply_window() <span class="overload">[5/6]</span></h2>
+<a id="a1540e2d4c0a38da18dc948c84823ad73"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1540e2d4c0a38da18dc948c84823ad73">&#9670;&nbsp;</a></span>calcacrms() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename FloatT &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void devfix::dsp::apply_window </td>
+          <td class="memname">FloatT devfix::dsp::calcacrms </td>
           <td>(</td>
-          <td class="paramtype">std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">window::win_fun_t</a>&lt; FloatT &gt;&#160;</td>
-          <td class="paramname"><em>win_fun</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
 </div><div class="memdoc">
 
 </div>
 </div>
-<a id="aa05b8f98b6ec005c5c7e08efa0afb08a"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#aa05b8f98b6ec005c5c7e08efa0afb08a">&#9670;&nbsp;</a></span>apply_window() <span class="overload">[6/6]</span></h2>
+<a id="aedca7ae194c9a13164a2fdf91f37545a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aedca7ae194c9a13164a2fdf91f37545a">&#9670;&nbsp;</a></span>calcacrms() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
 template&lt;typename FloatT , std::size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void devfix::dsp::apply_window </td>
+          <td class="memname">FloatT devfix::dsp::calcacrms </td>
           <td>(</td>
-          <td class="paramtype">std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
+          <td class="paramtype">const std::array&lt; FloatT, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ad26b42af732561241b1d5260634c6a8f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ad26b42af732561241b1d5260634c6a8f">&#9670;&nbsp;</a></span>calcfreqbin()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr FloatT devfix::dsp::calcfreqbin </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype"><a class="el" href="structdevfix_1_1dsp_1_1window.html#ab2d2c0c5f5fca6dbcf91895115b69eac">window::win_fun_t</a>&lt; FloatT &gt;&#160;</td>
-          <td class="paramname"><em>win_fun</em>&#160;</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>fft_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -319,11 +315,683 @@ template&lt;typename FloatT , std::size_t N&gt; </div>
           <td></td><td></td>
         </tr>
       </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
+</div><div class="memdoc">
+
+<p>calculates the ideal (unrounded) bin index in the spectrum </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type for floating point numbers, determines precision </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample_rate</td><td>used sample rate </td></tr>
+    <tr><td class="paramname">fft_len</td><td>used fft length </td></tr>
+    <tr><td class="paramname">freq</td><td>frequency of which the bin index gets calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+
+</div>
+</div>
+<a id="a4c340dc6f142977c46850c3bd5467914"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a4c340dc6f142977c46850c3bd5467914">&#9670;&nbsp;</a></span>calcfreqidx()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::size_t devfix::dsp::calcfreqidx </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>fft_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calculates the closest real (rounded) bin index in the spectrum </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type for floating point numbers, determines precision </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample_rate</td><td>used sample rate </td></tr>
+    <tr><td class="paramname">fft_len</td><td>used fft length </td></tr>
+    <tr><td class="paramname">freq</td><td>frequency of which the bin index gets calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914_icgraph" alt=""/></div>
+<map name="namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914_icgraph" id="namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914_icgraph">
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a38dc66c795b9ebe6e8408d95c7a006c9" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="211,35,363,76"/>
+<area shape="rect" id="node3" href="namespacedevfix_1_1dsp.html#af2bf29501002d08830f1a7ac3ff22289" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="411,5,563,47"/>
+<area shape="rect" id="node4" href="namespacedevfix_1_1dsp.html#a1dc562f09e21a538a14df82aaa083526" title="devfix::dsp::calcsignal" alt="" coords="411,71,563,98"/>
+<area shape="rect" id="node5" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="611,71,753,98"/>
+<area shape="rect" id="node6" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="801,71,944,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="acc73b4642ca4cb49621e76efc6732186"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#acc73b4642ca4cb49621e76efc6732186">&#9670;&nbsp;</a></span>calcmean() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcmean </td>
+          <td>(</td>
+          <td class="paramtype">const FloatT *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186_icgraph" alt=""/></div>
+<map name="namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186_icgraph" id="namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186_icgraph">
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a844dcfe9edcac8ffc347b67f561dd46a" title="devfix::dsp::calcacrms" alt="" coords="204,5,359,32"/>
+<area shape="rect" id="node3" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="210,56,353,83"/>
+<area shape="rect" id="node4" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="407,56,549,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="ab8e51dea953cabfc246e2e45fbff010c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab8e51dea953cabfc246e2e45fbff010c">&#9670;&nbsp;</a></span>calcmean() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcmean </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a9f44af4b1a42d61d8a52afb7a5628001"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9f44af4b1a42d61d8a52afb7a5628001">&#9670;&nbsp;</a></span>calcmean() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcmean </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; FloatT, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a3f84878d478c956e3dd2e4d0939a31e4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f84878d478c956e3dd2e4d0939a31e4">&#9670;&nbsp;</a></span>calcphasecorrector()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">constexpr std::complex&lt;FloatT&gt; devfix::dsp::calcphasecorrector </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>fft_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+<p>calculates the phase corrector factor for a non coherent frequency </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type for floating point numbers, determines precision </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">sample_rate</td><td></td></tr>
+    <tr><td class="paramname">fft_len</td><td>used fft length </td></tr>
+    <tr><td class="paramname">freq</td><td>frequency of which the corrector factor gets calculated </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd></dd></dl>
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4_icgraph" alt=""/></div>
+<map name="namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4_icgraph" id="namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4_icgraph">
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a38dc66c795b9ebe6e8408d95c7a006c9" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="257,35,409,76"/>
+<area shape="rect" id="node3" href="namespacedevfix_1_1dsp.html#af2bf29501002d08830f1a7ac3ff22289" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="457,5,609,47"/>
+<area shape="rect" id="node4" href="namespacedevfix_1_1dsp.html#a1dc562f09e21a538a14df82aaa083526" title="devfix::dsp::calcsignal" alt="" coords="457,71,609,98"/>
+<area shape="rect" id="node5" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="657,71,800,98"/>
+<area shape="rect" id="node6" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="848,71,991,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a1d758c2b667d7d48c41677641086387f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1d758c2b667d7d48c41677641086387f">&#9670;&nbsp;</a></span>calcrms() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcrms </td>
+          <td>(</td>
+          <td class="paramtype">const FloatT *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f_icgraph" alt=""/></div>
+<map name="namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f_icgraph" id="namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f_icgraph">
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a844dcfe9edcac8ffc347b67f561dd46a" title="devfix::dsp::calcacrms" alt="" coords="193,5,348,32"/>
+<area shape="rect" id="node3" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="199,56,342,83"/>
+<area shape="rect" id="node4" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="396,56,539,83"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a18e7f97d5726a6273908d87a480446a5"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a18e7f97d5726a6273908d87a480446a5">&#9670;&nbsp;</a></span>calcrms() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcrms </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a19c2e4d076954efbf0dab3daded46ba7"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a19c2e4d076954efbf0dab3daded46ba7">&#9670;&nbsp;</a></span>calcrms() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcrms </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; FloatT, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1dc562f09e21a538a14df82aaa083526"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1dc562f09e21a538a14df82aaa083526">&#9670;&nbsp;</a></span>calcsignal() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::complex&lt;FloatT&gt; devfix::dsp::calcsignal </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FloatT *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526_icgraph" alt=""/></div>
+<map name="namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526_icgraph" id="namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526_icgraph">
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="205,5,348,32"/>
+<area shape="rect" id="node3" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="396,5,539,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="aa8a0808fce2bd9ec139788f9d7fa7e59"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa8a0808fce2bd9ec139788f9d7fa7e59">&#9670;&nbsp;</a></span>calcsignal() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::complex&lt;FloatT&gt; devfix::dsp::calcsignal </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="af2156150e070c8ec603f0134371187d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2156150e070c8ec603f0134371187d4">&#9670;&nbsp;</a></span>calcsignal() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::complex&lt;FloatT&gt; devfix::dsp::calcsignal </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; FloatT, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a38dc66c795b9ebe6e8408d95c7a006c9"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a38dc66c795b9ebe6e8408d95c7a006c9">&#9670;&nbsp;</a></span>calcsignal_inplace() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::complex&lt;FloatT&gt; devfix::dsp::calcsignal_inplace </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::complex&lt; FloatT &gt; *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9_icgraph" alt=""/></div>
+<map name="namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9_icgraph" id="namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9_icgraph">
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#af2bf29501002d08830f1a7ac3ff22289" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="205,5,357,47"/>
+<area shape="rect" id="node3" href="namespacedevfix_1_1dsp.html#a1dc562f09e21a538a14df82aaa083526" title="devfix::dsp::calcsignal" alt="" coords="205,71,357,98"/>
+<area shape="rect" id="node4" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="405,71,548,98"/>
+<area shape="rect" id="node5" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="596,71,739,98"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="af2bf29501002d08830f1a7ac3ff22289"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af2bf29501002d08830f1a7ac3ff22289">&#9670;&nbsp;</a></span>calcsignal_inplace() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::complex&lt;FloatT&gt; devfix::dsp::calcsignal_inplace </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="ab4671999093ac0b52a1f3fdce063750d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ab4671999093ac0b52a1f3fdce063750d">&#9670;&nbsp;</a></span>calcsignal_inplace() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">std::complex&lt;FloatT&gt; devfix::dsp::calcsignal_inplace </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a1982c6b562b8c196dd3322c207c0ac86"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a1982c6b562b8c196dd3322c207c0ac86">&#9670;&nbsp;</a></span>calcthdn() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcthdn </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const FloatT *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86_icgraph" alt=""/></div>
+<map name="namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86_icgraph" id="namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86_icgraph">
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="196,5,339,32"/>
+</map>
+</div>
+
+</div>
+</div>
+<a id="a424b6903cca9ea1aebfa4712ea070a1e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a424b6903cca9ea1aebfa4712ea070a1e">&#9670;&nbsp;</a></span>calcthdn() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcthdn </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::vector&lt; FloatT &gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a54194236560fd3dd40df38df44966d8e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a54194236560fd3dd40df38df44966d8e">&#9670;&nbsp;</a></span>calcthdn() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">FloatT devfix::dsp::calcthdn </td>
+          <td>(</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>sample_rate</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT&#160;</td>
+          <td class="paramname"><em>freq</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">const std::array&lt; FloatT, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
 </div><div class="memdoc">
 
 </div>
@@ -362,7 +1030,7 @@ template&lt;typename FloatT &gt; </div>
       </table>
 </div><div class="memdoc">
 
-<p>calculates an individual term of the discrete Fourier transform </p>
+<p>calculates an dft coefficient of the discrete Fourier-transformation </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
     <tr><td class="paramname">FloatT</td><td>floating point type </td></tr>
@@ -383,7 +1051,12 @@ Here is the caller graph for this function:</div>
 <div class="dyncontent">
 <div class="center"><img src="namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215_icgraph.png" border="0" usemap="#namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215_icgraph" alt=""/></div>
 <map name="namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215_icgraph" id="namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215_icgraph">
-<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a9c0640ca74af740499f9c3da2019930c" title="devfix::dsp::goertzel" alt="" coords="193,5,333,32"/>
+<area shape="rect" id="node2" href="namespacedevfix_1_1dsp.html#a9c0640ca74af740499f9c3da2019930c" title="devfix::dsp::goertzel" alt="" coords="199,5,339,32"/>
+<area shape="rect" id="node3" href="namespacedevfix_1_1dsp.html#a38dc66c795b9ebe6e8408d95c7a006c9" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="193,57,345,98"/>
+<area shape="rect" id="node4" href="namespacedevfix_1_1dsp.html#af2bf29501002d08830f1a7ac3ff22289" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="393,27,545,69"/>
+<area shape="rect" id="node5" href="namespacedevfix_1_1dsp.html#a1dc562f09e21a538a14df82aaa083526" title="devfix::dsp::calcsignal" alt="" coords="393,93,545,120"/>
+<area shape="rect" id="node6" href="namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="593,93,736,120"/>
+<area shape="rect" id="node7" href="namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="784,93,927,120"/>
 </map>
 </div>
 

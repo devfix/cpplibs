@@ -3,79 +3,367 @@
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structdevfix_1_1dsp_1_1analysis}{analysis}
-\item 
 struct \hyperlink{structdevfix_1_1dsp_1_1fft}{fft}
 \item 
 struct \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{spectrogram}
 \item 
 struct \hyperlink{structdevfix_1_1dsp_1_1window}{window}
+\begin{DoxyCompactList}\small\item\em buffer for the values of window function for a specific window length \end{DoxyCompactList}\item 
+struct \hyperlink{structdevfix_1_1dsp_1_1winfun}{winfun}
 \end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{namespacedevfix_1_1dsp_a4d41815e9c6481fb760733a11d5b633a}{math} = \+::\hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\using \hyperlink{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}{winfun\+\_\+t} = FloatT($\ast$)(std\+::size\+\_\+t n, std\+::size\+\_\+t k)
+\begin{DoxyCompactList}\small\item\em type for window functions \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Functions}
 \begin{DoxyCompactItemize}
 \item 
+{\footnotesize template$<$typename FloatT $>$ }\\constexpr FloatT \hyperlink{namespacedevfix_1_1dsp_ad26b42af732561241b1d5260634c6a8f}{calcfreqbin} (std\+::size\+\_\+t sample\+\_\+rate, std\+::size\+\_\+t fft\+\_\+len, FloatT freq)
+\begin{DoxyCompactList}\small\item\em calculates the ideal (unrounded) bin index in the spectrum \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\constexpr std\+::size\+\_\+t \hyperlink{namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914}{calcfreqidx} (std\+::size\+\_\+t sample\+\_\+rate, std\+::size\+\_\+t fft\+\_\+len, FloatT freq)
+\begin{DoxyCompactList}\small\item\em calculates the closest real (rounded) bin index in the spectrum \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\constexpr std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4}{calcphasecorrector} (std\+::size\+\_\+t sample\+\_\+rate, std\+::size\+\_\+t fft\+\_\+len, FloatT freq)
+\begin{DoxyCompactList}\small\item\em calculates the phase corrector factor for a non coherent frequency \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215}{goertzel} (const std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len, std\+::size\+\_\+t k)
-\begin{DoxyCompactList}\small\item\em calculates an individual term of the discrete Fourier transform \end{DoxyCompactList}\item 
+\begin{DoxyCompactList}\small\item\em calculates an dft coefficient of the discrete Fourier-\/transformation \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a9c0640ca74af740499f9c3da2019930c}{goertzel} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec, std\+::size\+\_\+t k)
 \item 
 {\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a3eed4648161700e03c0f6d900bea9f73}{goertzel} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr, std\+::size\+\_\+t k)
 \item 
-{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a45835752ed90577a53430b19eb80348c}{apply\+\_\+window} (std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t n)
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9}{calcsignal\+\_\+inplace} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len)
 \item 
-{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a299d793e30216ab3dc270c45fc1a1611}{apply\+\_\+window} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_af2bf29501002d08830f1a7ac3ff22289}{calcsignal\+\_\+inplace} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec)
 \item 
-{\footnotesize template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun, std\+::size\+\_\+t N$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a2843d1ef6aea33bdd37a84657b228414}{apply\+\_\+window} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_ab4671999093ac0b52a1f3fdce063750d}{calcsignal\+\_\+inplace} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr)
 \item 
-{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a400e0dd8341bfbcfe42e60388c7a2494}{apply\+\_\+window} (std\+::complex$<$ FloatT $>$ $\ast$win, \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$ win\+\_\+fun, std\+::size\+\_\+t n)
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526}{calcsignal} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, const FloatT $\ast$field, std\+::size\+\_\+t len)
 \item 
-{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_a7f5d2ade6feeeba107861b7040ee89b6}{apply\+\_\+window} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win, \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$ win\+\_\+fun)
+{\footnotesize template$<$typename FloatT $>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_aa8a0808fce2bd9ec139788f9d7fa7e59}{calcsignal} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, const std\+::vector$<$ FloatT $>$ \&vec)
 \item 
-{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static void \hyperlink{namespacedevfix_1_1dsp_aa05b8f98b6ec005c5c7e08efa0afb08a}{apply\+\_\+window} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win, \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$ win\+\_\+fun)
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\std\+::complex$<$ FloatT $>$ \hyperlink{namespacedevfix_1_1dsp_af2156150e070c8ec603f0134371187d4}{calcsignal} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, const std\+::array$<$ FloatT, N $>$ \&arr)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f}{calcrms} (const FloatT $\ast$field, std\+::size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a18e7f97d5726a6273908d87a480446a5}{calcrms} (const std\+::vector$<$ FloatT $>$ \&vec)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a19c2e4d076954efbf0dab3daded46ba7}{calcrms} (const std\+::array$<$ FloatT, N $>$ \&arr)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186}{calcmean} (const FloatT $\ast$field, std\+::size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_ab8e51dea953cabfc246e2e45fbff010c}{calcmean} (const std\+::vector$<$ FloatT $>$ \&vec)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a9f44af4b1a42d61d8a52afb7a5628001}{calcmean} (const std\+::array$<$ FloatT, N $>$ \&arr)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a844dcfe9edcac8ffc347b67f561dd46a}{calcacrms} (const FloatT $\ast$field, std\+::size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a1540e2d4c0a38da18dc948c84823ad73}{calcacrms} (const std\+::vector$<$ FloatT $>$ \&vec)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_aedca7ae194c9a13164a2fdf91f37545a}{calcacrms} (const std\+::array$<$ FloatT, N $>$ \&arr)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86}{calcthdn} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, const FloatT $\ast$field, std\+::size\+\_\+t len)
+\item 
+{\footnotesize template$<$typename FloatT $>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a424b6903cca9ea1aebfa4712ea070a1e}{calcthdn} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, const std\+::vector$<$ FloatT $>$ \&vec)
+\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\FloatT \hyperlink{namespacedevfix_1_1dsp_a54194236560fd3dd40df38df44966d8e}{calcthdn} (std\+::size\+\_\+t sample\+\_\+rate, FloatT freq, const std\+::array$<$ FloatT, N $>$ \&arr)
 \end{DoxyCompactItemize}
 
 
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a4d41815e9c6481fb760733a11d5b633a}\label{namespacedevfix_1_1dsp_a4d41815e9c6481fb760733a11d5b633a}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!math@{math}}
+\index{math@{math}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{math}{math}}
+{\footnotesize\ttfamily using \hyperlink{namespacedevfix_1_1dsp_a4d41815e9c6481fb760733a11d5b633a}{devfix\+::dsp\+::math} = typedef \+::\hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}\label{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!winfun\+\_\+t@{winfun\+\_\+t}}
+\index{winfun\+\_\+t@{winfun\+\_\+t}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{winfun\+\_\+t}{winfun\_t}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+using \hyperlink{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}{devfix\+::dsp\+::winfun\+\_\+t} = typedef FloatT($\ast$)(std\+::size\+\_\+t n, std\+::size\+\_\+t k)}
+
+
+
+type for window functions 
+
+
+\begin{DoxyParams}{Parameters}
+{\em n} & window size \\
+\hline
+{\em k} & window element index \\
+\hline
+\end{DoxyParams}
+
+
 \subsection{Function Documentation}
-\mbox{\Hypertarget{namespacedevfix_1_1dsp_a45835752ed90577a53430b19eb80348c}\label{namespacedevfix_1_1dsp_a45835752ed90577a53430b19eb80348c}} 
-\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
-\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
-\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
-{\footnotesize\ttfamily template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ \\
-static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{namespacedevfix_1_1dsp_a299d793e30216ab3dc270c45fc1a1611}\label{namespacedevfix_1_1dsp_a299d793e30216ab3dc270c45fc1a1611}} 
-\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
-\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
-\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
-{\footnotesize\ttfamily template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ \\
-static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{namespacedevfix_1_1dsp_a2843d1ef6aea33bdd37a84657b228414}\label{namespacedevfix_1_1dsp_a2843d1ef6aea33bdd37a84657b228414}} 
-\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
-\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
-\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
-{\footnotesize\ttfamily template$<$typename FloatT , window\+::win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun, std\+::size\+\_\+t N$>$ \\
-static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-\mbox{\Hypertarget{namespacedevfix_1_1dsp_a400e0dd8341bfbcfe42e60388c7a2494}\label{namespacedevfix_1_1dsp_a400e0dd8341bfbcfe42e60388c7a2494}} 
-\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
-\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
-\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a844dcfe9edcac8ffc347b67f561dd46a}\label{namespacedevfix_1_1dsp_a844dcfe9edcac8ffc347b67f561dd46a}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcacrms@{calcacrms}}
+\index{calcacrms@{calcacrms}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcacrms()}{calcacrms()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{\hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$}]{win\+\_\+fun,  }\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+FloatT devfix\+::dsp\+::calcacrms (\begin{DoxyParamCaption}\item[{const FloatT $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespacedevfix_1_1dsp_a7f5d2ade6feeeba107861b7040ee89b6}\label{namespacedevfix_1_1dsp_a7f5d2ade6feeeba107861b7040ee89b6}} 
-\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
-\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
-\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a1540e2d4c0a38da18dc948c84823ad73}\label{namespacedevfix_1_1dsp_a1540e2d4c0a38da18dc948c84823ad73}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcacrms@{calcacrms}}
+\index{calcacrms@{calcacrms}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcacrms()}{calcacrms()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win,  }\item[{\hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$}]{win\+\_\+fun }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+FloatT devfix\+::dsp\+::calcacrms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ FloatT $>$ \&}]{vec }\end{DoxyParamCaption})}
 
-\mbox{\Hypertarget{namespacedevfix_1_1dsp_aa05b8f98b6ec005c5c7e08efa0afb08a}\label{namespacedevfix_1_1dsp_aa05b8f98b6ec005c5c7e08efa0afb08a}} 
-\index{devfix\+::dsp@{devfix\+::dsp}!apply\+\_\+window@{apply\+\_\+window}}
-\index{apply\+\_\+window@{apply\+\_\+window}!devfix\+::dsp@{devfix\+::dsp}}
-\subsubsection{\texorpdfstring{apply\+\_\+window()}{apply\_window()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_aedca7ae194c9a13164a2fdf91f37545a}\label{namespacedevfix_1_1dsp_aedca7ae194c9a13164a2fdf91f37545a}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcacrms@{calcacrms}}
+\index{calcacrms@{calcacrms}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcacrms()}{calcacrms()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
-static void devfix\+::dsp\+::apply\+\_\+window (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win,  }\item[{\hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{window\+::win\+\_\+fun\+\_\+t}$<$ FloatT $>$}]{win\+\_\+fun }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+FloatT devfix\+::dsp\+::calcacrms (\begin{DoxyParamCaption}\item[{const std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_ad26b42af732561241b1d5260634c6a8f}\label{namespacedevfix_1_1dsp_ad26b42af732561241b1d5260634c6a8f}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcfreqbin@{calcfreqbin}}
+\index{calcfreqbin@{calcfreqbin}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcfreqbin()}{calcfreqbin()}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+constexpr FloatT devfix\+::dsp\+::calcfreqbin (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{std\+::size\+\_\+t}]{fft\+\_\+len,  }\item[{FloatT}]{freq }\end{DoxyParamCaption})}
+
+
+
+calculates the ideal (unrounded) bin index in the spectrum 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type for floating point numbers, determines precision \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+\_\+rate} & used sample rate \\
+\hline
+{\em fft\+\_\+len} & used fft length \\
+\hline
+{\em freq} & frequency of which the bin index gets calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914}\label{namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcfreqidx@{calcfreqidx}}
+\index{calcfreqidx@{calcfreqidx}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcfreqidx()}{calcfreqidx()}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+constexpr std\+::size\+\_\+t devfix\+::dsp\+::calcfreqidx (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{std\+::size\+\_\+t}]{fft\+\_\+len,  }\item[{FloatT}]{freq }\end{DoxyParamCaption})}
+
+
+
+calculates the closest real (rounded) bin index in the spectrum 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type for floating point numbers, determines precision \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+\_\+rate} & used sample rate \\
+\hline
+{\em fft\+\_\+len} & used fft length \\
+\hline
+{\em freq} & frequency of which the bin index gets calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedevfix_1_1dsp_a4c340dc6f142977c46850c3bd5467914_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186}\label{namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcmean@{calcmean}}
+\index{calcmean@{calcmean}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcmean()}{calcmean()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+FloatT devfix\+::dsp\+::calcmean (\begin{DoxyParamCaption}\item[{const FloatT $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedevfix_1_1dsp_acc73b4642ca4cb49621e76efc6732186_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_ab8e51dea953cabfc246e2e45fbff010c}\label{namespacedevfix_1_1dsp_ab8e51dea953cabfc246e2e45fbff010c}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcmean@{calcmean}}
+\index{calcmean@{calcmean}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcmean()}{calcmean()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+FloatT devfix\+::dsp\+::calcmean (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ FloatT $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a9f44af4b1a42d61d8a52afb7a5628001}\label{namespacedevfix_1_1dsp_a9f44af4b1a42d61d8a52afb7a5628001}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcmean@{calcmean}}
+\index{calcmean@{calcmean}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcmean()}{calcmean()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+FloatT devfix\+::dsp\+::calcmean (\begin{DoxyParamCaption}\item[{const std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4}\label{namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcphasecorrector@{calcphasecorrector}}
+\index{calcphasecorrector@{calcphasecorrector}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcphasecorrector()}{calcphasecorrector()}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+constexpr std\+::complex$<$FloatT$>$ devfix\+::dsp\+::calcphasecorrector (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{std\+::size\+\_\+t}]{fft\+\_\+len,  }\item[{FloatT}]{freq }\end{DoxyParamCaption})}
+
+
+
+calculates the phase corrector factor for a non coherent frequency 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type for floating point numbers, determines precision \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em sample\+\_\+rate} & \\
+\hline
+{\em fft\+\_\+len} & used fft length \\
+\hline
+{\em freq} & frequency of which the corrector factor gets calculated \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+
+\end{DoxyReturn}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedevfix_1_1dsp_a3f84878d478c956e3dd2e4d0939a31e4_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f}\label{namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcrms@{calcrms}}
+\index{calcrms@{calcrms}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcrms()}{calcrms()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+FloatT devfix\+::dsp\+::calcrms (\begin{DoxyParamCaption}\item[{const FloatT $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedevfix_1_1dsp_a1d758c2b667d7d48c41677641086387f_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a18e7f97d5726a6273908d87a480446a5}\label{namespacedevfix_1_1dsp_a18e7f97d5726a6273908d87a480446a5}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcrms@{calcrms}}
+\index{calcrms@{calcrms}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcrms()}{calcrms()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+FloatT devfix\+::dsp\+::calcrms (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ FloatT $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a19c2e4d076954efbf0dab3daded46ba7}\label{namespacedevfix_1_1dsp_a19c2e4d076954efbf0dab3daded46ba7}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcrms@{calcrms}}
+\index{calcrms@{calcrms}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcrms()}{calcrms()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+FloatT devfix\+::dsp\+::calcrms (\begin{DoxyParamCaption}\item[{const std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526}\label{namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcsignal@{calcsignal}}
+\index{calcsignal@{calcsignal}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcsignal()}{calcsignal()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::calcsignal (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{const FloatT $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedevfix_1_1dsp_a1dc562f09e21a538a14df82aaa083526_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_aa8a0808fce2bd9ec139788f9d7fa7e59}\label{namespacedevfix_1_1dsp_aa8a0808fce2bd9ec139788f9d7fa7e59}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcsignal@{calcsignal}}
+\index{calcsignal@{calcsignal}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcsignal()}{calcsignal()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::calcsignal (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{const std\+::vector$<$ FloatT $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_af2156150e070c8ec603f0134371187d4}\label{namespacedevfix_1_1dsp_af2156150e070c8ec603f0134371187d4}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcsignal@{calcsignal}}
+\index{calcsignal@{calcsignal}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcsignal()}{calcsignal()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::calcsignal (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{const std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9}\label{namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcsignal\+\_\+inplace@{calcsignal\+\_\+inplace}}
+\index{calcsignal\+\_\+inplace@{calcsignal\+\_\+inplace}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcsignal\+\_\+inplace()}{calcsignal\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::calcsignal\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{namespacedevfix_1_1dsp_a38dc66c795b9ebe6e8408d95c7a006c9_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_af2bf29501002d08830f1a7ac3ff22289}\label{namespacedevfix_1_1dsp_af2bf29501002d08830f1a7ac3ff22289}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcsignal\+\_\+inplace@{calcsignal\+\_\+inplace}}
+\index{calcsignal\+\_\+inplace@{calcsignal\+\_\+inplace}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcsignal\+\_\+inplace()}{calcsignal\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::calcsignal\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_ab4671999093ac0b52a1f3fdce063750d}\label{namespacedevfix_1_1dsp_ab4671999093ac0b52a1f3fdce063750d}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcsignal\+\_\+inplace@{calcsignal\+\_\+inplace}}
+\index{calcsignal\+\_\+inplace@{calcsignal\+\_\+inplace}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcsignal\+\_\+inplace()}{calcsignal\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+std\+::complex$<$FloatT$>$ devfix\+::dsp\+::calcsignal\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86}\label{namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcthdn@{calcthdn}}
+\index{calcthdn@{calcthdn}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcthdn()}{calcthdn()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+FloatT devfix\+::dsp\+::calcthdn (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{const FloatT $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})}
+
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=330pt]{namespacedevfix_1_1dsp_a1982c6b562b8c196dd3322c207c0ac86_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a424b6903cca9ea1aebfa4712ea070a1e}\label{namespacedevfix_1_1dsp_a424b6903cca9ea1aebfa4712ea070a1e}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcthdn@{calcthdn}}
+\index{calcthdn@{calcthdn}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcthdn()}{calcthdn()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+FloatT devfix\+::dsp\+::calcthdn (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{const std\+::vector$<$ FloatT $>$ \&}]{vec }\end{DoxyParamCaption})}
+
+\mbox{\Hypertarget{namespacedevfix_1_1dsp_a54194236560fd3dd40df38df44966d8e}\label{namespacedevfix_1_1dsp_a54194236560fd3dd40df38df44966d8e}} 
+\index{devfix\+::dsp@{devfix\+::dsp}!calcthdn@{calcthdn}}
+\index{calcthdn@{calcthdn}!devfix\+::dsp@{devfix\+::dsp}}
+\subsubsection{\texorpdfstring{calcthdn()}{calcthdn()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+FloatT devfix\+::dsp\+::calcthdn (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{sample\+\_\+rate,  }\item[{FloatT}]{freq,  }\item[{const std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})}
 
 \mbox{\Hypertarget{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215}\label{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215}} 
 \index{devfix\+::dsp@{devfix\+::dsp}!goertzel@{goertzel}}
@@ -86,7 +374,7 @@ std\+::complex$<$FloatT$>$ devfix\+::dsp\+::goertzel (\begin{DoxyParamCaption}\i
 
 
 
-calculates an individual term of the discrete Fourier transform 
+calculates an dft coefficient of the discrete Fourier-\/transformation 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
@@ -105,11 +393,12 @@ calculates an individual term of the discrete Fourier transform
 \begin{DoxyReturn}{Returns}
 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=326pt]{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215_icgraph}
+\includegraphics[width=350pt]{namespacedevfix_1_1dsp_a5e776756816f3429899134f5c8b8b215_icgraph}
 \end{center}
 \end{figure}
 \mbox{\Hypertarget{namespacedevfix_1_1dsp_a9c0640ca74af740499f9c3da2019930c}\label{namespacedevfix_1_1dsp_a9c0640ca74af740499f9c3da2019930c}} 

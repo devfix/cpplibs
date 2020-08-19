@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['window',['window',['../structdevfix_1_1dsp_1_1window.html',1,'devfix::dsp']]]
+  ['window',['window',['../structdevfix_1_1dsp_1_1window.html',1,'devfix::dsp']]],
+  ['winfun',['winfun',['../structdevfix_1_1dsp_1_1winfun.html',1,'devfix::dsp']]]
 ];

@@ -8,6 +8,7 @@ var searchData=
   ['default_5fread_5fblocking_5ftime',['DEFAULT_READ_BLOCKING_TIME',['../structdevfix_1_1net_1_1socket.html#a77c3214eb436d06825a4cc2aafcc63ce',1,'devfix::net::socket']]],
   ['default_5ftimeout',['DEFAULT_TIMEOUT',['../structdevfix_1_1net_1_1socket.html#a1bd6468be497aed208ad6d5632683a5d',1,'devfix::net::socket']]],
   ['default_5fwrite_5fblocking_5ftime',['DEFAULT_WRITE_BLOCKING_TIME',['../structdevfix_1_1net_1_1socket.html#a57ab1333bbc83d51468d33e11042f107',1,'devfix::net::socket']]],
+  ['deletable_5ffacet',['deletable_facet',['../structdeletable__facet.html',1,'deletable_facet&lt; Facet &gt;'],['../structdeletable__facet.html#aad9b2bab1462589baf93408da989036a',1,'deletable_facet::deletable_facet()']]],
   ['demangle',['demangle',['../structdevfix_1_1base_1_1type.html#a51dfa5bc70b1befb7f877ab11ad59215',1,'devfix::base::type']]],
   ['devfix',['devfix',['../namespacedevfix.html',1,'']]],
   ['dirname',['dirname',['../structdevfix_1_1base_1_1filesystem.html#a4eda25bbce0188a5b2e9899a054e0854',1,'devfix::base::filesystem']]],
@@ -16,5 +17,6 @@ var searchData=
   ['dsp_2eh',['dsp.h',['../dsp_8h.html',1,'']]],
   ['error',['error',['../namespacedevfix_1_1base_1_1error.html',1,'devfix::base']]],
   ['io',['io',['../namespacedevfix_1_1base_1_1io.html',1,'devfix::base']]],
-  ['net',['net',['../namespacedevfix_1_1net.html',1,'devfix']]]
+  ['net',['net',['../namespacedevfix_1_1net.html',1,'devfix']]],
+  ['numbers',['numbers',['../namespacedevfix_1_1base_1_1numbers.html',1,'devfix::base']]]
 ];

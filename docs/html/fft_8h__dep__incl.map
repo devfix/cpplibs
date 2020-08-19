@@ -1,4 +1,5 @@
 <map id="devfix/dsp/fft.h" name="devfix/dsp/fft.h">
-<area shape="rect" id="node2" href="$analysis_8h.html" title="devfix/dsp/analysis.h" alt="" coords="5,80,151,107"/>
-<area shape="rect" id="node3" href="$spectrogram_8h.html" title="devfix/dsp/spectrogram.h" alt="" coords="175,80,344,107"/>
+<area shape="rect" id="node2" href="$dsp_8h.html" title="devfix/dsp/dsp.h" alt="" coords="12,80,131,107"/>
+<area shape="rect" id="node4" href="$spectrogram_8h.html" title="devfix/dsp/spectrogram.h" alt="" coords="155,80,324,107"/>
+<area shape="rect" id="node3" href="$dsp_8cpp.html" title="devfix/dsp/dsp.cpp" alt="" coords="5,155,137,181"/>
 </map>

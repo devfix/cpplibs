@@ -1,17 +1,45 @@
 \hypertarget{strcvt_8cpp}{}\section{devfix/base/strcvt.cpp File Reference}
 \label{strcvt_8cpp}\index{devfix/base/strcvt.\+cpp@{devfix/base/strcvt.\+cpp}}
-{\ttfamily \#include $<$locale$>$}\newline
 {\ttfamily \#include $<$codecvt$>$}\newline
+{\ttfamily \#include $<$type\+\_\+traits$>$}\newline
 {\ttfamily \#include \char`\"{}strcvt.\+h\char`\"{}}\newline
-Include dependency graph for strcvt.\+cpp\+:\nopagebreak
+Include dependency graph for strcvt.\+cpp\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=290pt]{strcvt_8cpp__incl}
+\includegraphics[width=350pt]{strcvt_8cpp__incl}
 \end{center}
 \end{figure}
+\subsection*{Classes}
+\begin{DoxyCompactItemize}
+\item 
+struct \hyperlink{structdeletable__facet}{deletable\+\_\+facet$<$ Facet $>$}
+\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 
  \hyperlink{namespacedevfix_1_1base}{devfix\+::base}
 \begin{DoxyCompactList}\small\item\em Root namespace of devfix base library. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\subsection*{Typedefs}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{strcvt_8cpp_a5f1913cb54805d7086561e4b755b5724}{c16c08} = std\+::wstring\+\_\+convert$<$ \hyperlink{structdeletable__facet}{deletable\+\_\+facet}$<$ std\+::codecvt$<$ char16\+\_\+t, \hyperlink{strcvt_8h_a4af1e597c87b7893007a4ea68d648e91}{char08\+\_\+t}, std\+::mbstate\+\_\+t $>$ $>$, char16\+\_\+t $>$
+\item 
+using \hyperlink{strcvt_8cpp_a428656e0f5e3def05a1b91f2320eb0e5}{c32c08} = std\+::wstring\+\_\+convert$<$ \hyperlink{structdeletable__facet}{deletable\+\_\+facet}$<$ std\+::codecvt$<$ char32\+\_\+t, \hyperlink{strcvt_8h_a4af1e597c87b7893007a4ea68d648e91}{char08\+\_\+t}, std\+::mbstate\+\_\+t $>$ $>$, char32\+\_\+t $>$
+\end{DoxyCompactItemize}
+
+
+\subsection{Typedef Documentation}
+\mbox{\Hypertarget{strcvt_8cpp_a5f1913cb54805d7086561e4b755b5724}\label{strcvt_8cpp_a5f1913cb54805d7086561e4b755b5724}} 
+\index{strcvt.\+cpp@{strcvt.\+cpp}!c16c08@{c16c08}}
+\index{c16c08@{c16c08}!strcvt.\+cpp@{strcvt.\+cpp}}
+\subsubsection{\texorpdfstring{c16c08}{c16c08}}
+{\footnotesize\ttfamily using \hyperlink{strcvt_8cpp_a5f1913cb54805d7086561e4b755b5724}{c16c08} =  std\+::wstring\+\_\+convert$<$\hyperlink{structdeletable__facet}{deletable\+\_\+facet}$<$std\+::codecvt$<$char16\+\_\+t, \hyperlink{strcvt_8h_a4af1e597c87b7893007a4ea68d648e91}{char08\+\_\+t}, std\+::mbstate\+\_\+t$>$ $>$, char16\+\_\+t$>$}
+
+\mbox{\Hypertarget{strcvt_8cpp_a428656e0f5e3def05a1b91f2320eb0e5}\label{strcvt_8cpp_a428656e0f5e3def05a1b91f2320eb0e5}} 
+\index{strcvt.\+cpp@{strcvt.\+cpp}!c32c08@{c32c08}}
+\index{c32c08@{c32c08}!strcvt.\+cpp@{strcvt.\+cpp}}
+\subsubsection{\texorpdfstring{c32c08}{c32c08}}
+{\footnotesize\ttfamily using \hyperlink{strcvt_8cpp_a428656e0f5e3def05a1b91f2320eb0e5}{c32c08} =  std\+::wstring\+\_\+convert$<$\hyperlink{structdeletable__facet}{deletable\+\_\+facet}$<$std\+::codecvt$<$char32\+\_\+t, \hyperlink{strcvt_8h_a4af1e597c87b7893007a4ea68d648e91}{char08\+\_\+t}, std\+::mbstate\+\_\+t$>$ $>$, char32\+\_\+t$>$}
+

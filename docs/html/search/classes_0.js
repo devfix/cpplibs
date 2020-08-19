@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['analysis',['analysis',['../structdevfix_1_1dsp_1_1analysis.html',1,'devfix::dsp']]]
+  ['baseexception',['baseexception',['../structdevfix_1_1base_1_1error_1_1baseexception.html',1,'devfix::base::error']]]
 ];

@@ -1,5 +1,5 @@
-\hypertarget{structdevfix_1_1dsp_1_1spectrogram}{}\section{devfix\+:\+:dsp\+:\+:spectrogram$<$ FloatT, N, win\+\_\+fun $>$ Struct Template Reference}
-\label{structdevfix_1_1dsp_1_1spectrogram}\index{devfix\+::dsp\+::spectrogram$<$ Float\+T, N, win\+\_\+fun $>$@{devfix\+::dsp\+::spectrogram$<$ Float\+T, N, win\+\_\+fun $>$}}
+\hypertarget{structdevfix_1_1dsp_1_1spectrogram}{}\section{devfix\+:\+:dsp\+:\+:spectrogram$<$ FloatT $>$ Struct Template Reference}
+\label{structdevfix_1_1dsp_1_1spectrogram}\index{devfix\+::dsp\+::spectrogram$<$ Float\+T $>$@{devfix\+::dsp\+::spectrogram$<$ Float\+T $>$}}
 
 
 {\ttfamily \#include $<$spectrogram.\+h$>$}
@@ -7,89 +7,137 @@
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t} = std\+::complex$<$ FloatT $>$
+using \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a53742b1396ec0554de79059ab4b173ff}{math} = \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
+\item 
+using \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t} = std\+::complex$<$ FloatT $>$
 \end{DoxyCompactItemize}
 \subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-\hyperlink{structdevfix_1_1dsp_1_1spectrogram_ad1d11586447533319ec37e5e9de6e6e9}{spectrogram} (std\+::size\+\_\+t window\+\_\+distance)
+\hyperlink{structdevfix_1_1dsp_1_1spectrogram_a9edbcaca234c9552386ca57cd2d4681c}{spectrogram} (std\+::size\+\_\+t fft\+\_\+len, std\+::size\+\_\+t fft\+\_\+dist, \hyperlink{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}{winfun\+\_\+t}$<$ FloatT $>$ \hyperlink{structdevfix_1_1dsp_1_1winfun}{winfun}=nullptr)
 \item 
-void \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1}{add} (const \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t} $\ast$data, std\+::size\+\_\+t len)
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a0989eec947375fa7696feda0f59c1438}{fftlen} ()
 \item 
-void \hyperlink{structdevfix_1_1dsp_1_1spectrogram_abf5e5730f6248014f7ee5a22a0e96662}{add} (const std\+::vector$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t} $>$ \&vec)
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a52a5bc587a41bb8606c7766c58177f57}{fftdist} ()
 \item 
-{\footnotesize template$<$std\+::size\+\_\+t N\+\_\+elems$>$ }\\void \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a030123c941c6acc6ea535514c2d138da}{add} (const std\+::array$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t}, N\+\_\+elems $>$ \&arr)
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram_aa9ac5beddc07be29082a1ef11ff2392b}{size} ()
 \item 
-std\+::array$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t}, N $>$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_acdc5a2253a62ae50ae24607cd4f3b555}{pop} ()
+std\+::vector$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t} $>$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a9fd6a138c1efb217256677a84906109f}{pop} ()
 \item 
-std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a6dc48452751bc4b4f4e14088998ddbb7}{size} () const
+void \hyperlink{structdevfix_1_1dsp_1_1spectrogram_aa99ba03723f89062409935a8eddfe48e}{add} (const \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t} $\ast$field, std\+::size\+\_\+t len)
+\item 
+void \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085}{add} (const std\+::vector$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t} $>$ \&vec)
+\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\void \hyperlink{structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c}{add} (const std\+::array$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t}, N $>$ \&arr)
 \end{DoxyCompactItemize}
 
 
 \subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}\label{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}} 
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}\label{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}} 
 \index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!complex\+\_\+t@{complex\+\_\+t}}
 \index{complex\+\_\+t@{complex\+\_\+t}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
 \subsubsection{\texorpdfstring{complex\+\_\+t}{complex\_t}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-using \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT, N, win\+\_\+fun $>$\+::\hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t} =  std\+::complex$<$FloatT$>$}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+using \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::\hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t} =  std\+::complex$<$FloatT$>$}
+
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a53742b1396ec0554de79059ab4b173ff}\label{structdevfix_1_1dsp_1_1spectrogram_a53742b1396ec0554de79059ab4b173ff}} 
+\index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!math@{math}}
+\index{math@{math}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
+\subsubsection{\texorpdfstring{math}{math}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+using \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::\hyperlink{structdevfix_1_1dsp_1_1spectrogram_a53742b1396ec0554de79059ab4b173ff}{math} =  \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
 
 
 
 \subsection{Constructor \& Destructor Documentation}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_ad1d11586447533319ec37e5e9de6e6e9}\label{structdevfix_1_1dsp_1_1spectrogram_ad1d11586447533319ec37e5e9de6e6e9}} 
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a9edbcaca234c9552386ca57cd2d4681c}\label{structdevfix_1_1dsp_1_1spectrogram_a9edbcaca234c9552386ca57cd2d4681c}} 
 \index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!spectrogram@{spectrogram}}
 \index{spectrogram@{spectrogram}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
 \subsubsection{\texorpdfstring{spectrogram()}{spectrogram()}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-\hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT, N, win\+\_\+fun $>$\+::\hyperlink{structdevfix_1_1dsp_1_1spectrogram}{spectrogram} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{window\+\_\+distance }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [explicit]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+\hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::\hyperlink{structdevfix_1_1dsp_1_1spectrogram}{spectrogram} (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{fft\+\_\+len,  }\item[{std\+::size\+\_\+t}]{fft\+\_\+dist,  }\item[{\hyperlink{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}{winfun\+\_\+t}$<$ FloatT $>$}]{winfun = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1}\label{structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1}} 
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_aa99ba03723f89062409935a8eddfe48e}\label{structdevfix_1_1dsp_1_1spectrogram_aa99ba03723f89062409935a8eddfe48e}} 
 \index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!add@{add}}
 \index{add@{add}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
 \subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-void \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT, N, win\+\_\+fun $>$\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t} $\ast$}]{data,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::add (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t} $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_abf5e5730f6248014f7ee5a22a0e96662}\label{structdevfix_1_1dsp_1_1spectrogram_abf5e5730f6248014f7ee5a22a0e96662}} 
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085}\label{structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085}} 
 \index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!add@{add}}
 \index{add@{add}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
 \subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-void \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT, N, win\+\_\+fun $>$\+::add (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t} $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::add (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t} $>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a030123c941c6acc6ea535514c2d138da}\label{structdevfix_1_1dsp_1_1spectrogram_a030123c941c6acc6ea535514c2d138da}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c}\label{structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c}} 
 \index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!add@{add}}
 \index{add@{add}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
 \subsubsection{\texorpdfstring{add()}{add()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-template$<$std\+::size\+\_\+t N\+\_\+elems$>$ \\
-void \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT, N, win\+\_\+fun $>$\+::add (\begin{DoxyParamCaption}\item[{const std\+::array$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t}, N\+\_\+elems $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+template$<$std\+::size\+\_\+t N$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::add (\begin{DoxyParamCaption}\item[{const std\+::array$<$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t}, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_acdc5a2253a62ae50ae24607cd4f3b555}\label{structdevfix_1_1dsp_1_1spectrogram_acdc5a2253a62ae50ae24607cd4f3b555}} 
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=226pt]{structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a52a5bc587a41bb8606c7766c58177f57}\label{structdevfix_1_1dsp_1_1spectrogram_a52a5bc587a41bb8606c7766c58177f57}} 
+\index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!fftdist@{fftdist}}
+\index{fftdist@{fftdist}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
+\subsubsection{\texorpdfstring{fftdist()}{fftdist()}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::fftdist (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+fft distance 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a0989eec947375fa7696feda0f59c1438}\label{structdevfix_1_1dsp_1_1spectrogram_a0989eec947375fa7696feda0f59c1438}} 
+\index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!fftlen@{fftlen}}
+\index{fftlen@{fftlen}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
+\subsubsection{\texorpdfstring{fftlen()}{fftlen()}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::fftlen (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+fft length 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a9fd6a138c1efb217256677a84906109f}\label{structdevfix_1_1dsp_1_1spectrogram_a9fd6a138c1efb217256677a84906109f}} 
 \index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!pop@{pop}}
 \index{pop@{pop}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
 \subsubsection{\texorpdfstring{pop()}{pop()}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-std\+::array$<$\hyperlink{structdevfix_1_1dsp_1_1spectrogram_a920fdda446509cfe81fa287773c709cb}{complex\+\_\+t}, N$>$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT, N, win\+\_\+fun $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+std\+::vector$<$\hyperlink{structdevfix_1_1dsp_1_1spectrogram_a222d1efa23713b334a001e625594b4d4}{complex\+\_\+t}$>$ \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::pop (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_a6dc48452751bc4b4f4e14088998ddbb7}\label{structdevfix_1_1dsp_1_1spectrogram_a6dc48452751bc4b4f4e14088998ddbb7}} 
+\begin{DoxyReturn}{Returns}
+pops the oldest spectrum from the internal list 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1spectrogram_aa9ac5beddc07be29082a1ef11ff2392b}\label{structdevfix_1_1dsp_1_1spectrogram_aa9ac5beddc07be29082a1ef11ff2392b}} 
 \index{devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}!size@{size}}
 \index{size@{size}!devfix\+::dsp\+::spectrogram@{devfix\+::dsp\+::spectrogram}}
 \subsubsection{\texorpdfstring{size()}{size()}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N, Float\+T($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t) win\+\_\+fun$>$ \\
-std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT, N, win\+\_\+fun $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1spectrogram}{devfix\+::dsp\+::spectrogram}$<$ FloatT $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
 
+\begin{DoxyReturn}{Returns}
+count of available spectra 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

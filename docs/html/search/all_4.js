@@ -1,5 +1,7 @@
 var searchData=
 [
+  ['e',['e',['../namespacedevfix_1_1base_1_1numbers.html#abe3d84907a3ddf233c18d66f501be208',1,'devfix::base::numbers']]],
+  ['e_5fv',['e_v',['../namespacedevfix_1_1base_1_1numbers.html#a11634193bb03cbb76be900ae781d238a',1,'devfix::base::numbers']]],
   ['enabled_5f',['enabled_',['../structdevfix_1_1base_1_1slog.html#a5376d7ddd91f95c9d7fcb8629fcfcdf0',1,'devfix::base::slog::enabled_()'],['../structdevfix_1_1base_1_1strout.html#a813fc6630d6565cf5a00e620b536671c',1,'devfix::base::strout::enabled_()']]],
   ['end_5ftext',['end_text',['../structdevfix_1_1base_1_1slog.html#ac4610846d3f7b2dfa506ea6e1a9b1826',1,'devfix::base::slog']]],
   ['err_5f',['err_',['../structdevfix_1_1base_1_1error_1_1baseexception.html#aa1f58eb33d67ccf87465656f20b6d640',1,'devfix::base::error::baseexception']]],
@@ -14,5 +16,5 @@ var searchData=
   ['exception_5fguard_5ferrno',['EXCEPTION_GUARD_ERRNO',['../baseexception_8h.html#a97523b08dd198df45ea9ee0ef90358ad',1,'baseexception.h']]],
   ['exception_5fguard_5fmsg',['EXCEPTION_GUARD_MSG',['../baseexception_8h.html#ac2d164e095c903b86948eb59814428cf',1,'baseexception.h']]],
   ['exists',['exists',['../structdevfix_1_1base_1_1filesystem.html#a0b24e0dc385d1a6257adf3ece7830b7e',1,'devfix::base::filesystem']]],
-  ['extract_5fangles',['extract_angles',['../structdevfix_1_1dsp_1_1fft.html#ac2be4d53cf6ae645c4be7b773f55e3ca',1,'devfix::dsp::fft::extract_angles(const std::complex&lt; FloatT &gt; *win, std::size_t len, FloatT *angles, FloatT threshold=-1)'],['../structdevfix_1_1dsp_1_1fft.html#a7f34943ae3b66b6cf77b397f1a1c2386',1,'devfix::dsp::fft::extract_angles(const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win, FloatT threshold=-1)'],['../structdevfix_1_1dsp_1_1fft.html#a34854b817edfebadae41362b399c7f34',1,'devfix::dsp::fft::extract_angles(const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win, FloatT threshold=-1)']]]
+  ['exp2',['exp2',['../structdevfix_1_1base_1_1math.html#a4aa317a84af4eb10be4474c90cb47afe',1,'devfix::base::math']]]
 ];

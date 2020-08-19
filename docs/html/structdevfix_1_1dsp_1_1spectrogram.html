@@ -5,7 +5,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.13"/>
 <meta name="viewport" content="width=device-width, initial-scale=1"/>
-<title>c++ library collection: devfix::dsp::spectrogram&lt; FloatT, N, win_fun &gt; Struct Template Reference</title>
+<title>c++ library collection: devfix::dsp::spectrogram&lt; FloatT &gt; Struct Template Reference</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -68,7 +68,7 @@ $(function() {
 <a href="#pub-methods">Public Member Functions</a> &#124;
 <a href="structdevfix_1_1dsp_1_1spectrogram-members.html">List of all members</a>  </div>
   <div class="headertitle">
-<div class="title">devfix::dsp::spectrogram&lt; FloatT, N, win_fun &gt; Struct Template Reference</div>  </div>
+<div class="title">devfix::dsp::spectrogram&lt; FloatT &gt; Struct Template Reference</div>  </div>
 </div><!--header-->
 <div class="contents">
 
@@ -76,36 +76,58 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a920fdda446509cfe81fa287773c709cb"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a> = std::complex&lt; FloatT &gt;</td></tr>
-<tr class="separator:a920fdda446509cfe81fa287773c709cb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a53742b1396ec0554de79059ab4b173ff"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a53742b1396ec0554de79059ab4b173ff">math</a> = <a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td></tr>
+<tr class="separator:a53742b1396ec0554de79059ab4b173ff"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a222d1efa23713b334a001e625594b4d4"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a> = std::complex&lt; FloatT &gt;</td></tr>
+<tr class="separator:a222d1efa23713b334a001e625594b4d4"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-methods"></a>
 Public Member Functions</h2></td></tr>
-<tr class="memitem:ad1d11586447533319ec37e5e9de6e6e9"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#ad1d11586447533319ec37e5e9de6e6e9">spectrogram</a> (std::size_t window_distance)</td></tr>
-<tr class="separator:ad1d11586447533319ec37e5e9de6e6e9"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a9204dfb17067382f9e01295bc349d4f1"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a9204dfb17067382f9e01295bc349d4f1">add</a> (const <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a> *data, std::size_t len)</td></tr>
-<tr class="separator:a9204dfb17067382f9e01295bc349d4f1"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:abf5e5730f6248014f7ee5a22a0e96662"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#abf5e5730f6248014f7ee5a22a0e96662">add</a> (const std::vector&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a> &gt; &amp;vec)</td></tr>
-<tr class="separator:abf5e5730f6248014f7ee5a22a0e96662"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a030123c941c6acc6ea535514c2d138da"><td class="memTemplParams" colspan="2">template&lt;std::size_t N_elems&gt; </td></tr>
-<tr class="memitem:a030123c941c6acc6ea535514c2d138da"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a030123c941c6acc6ea535514c2d138da">add</a> (const std::array&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a>, N_elems &gt; &amp;arr)</td></tr>
-<tr class="separator:a030123c941c6acc6ea535514c2d138da"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:acdc5a2253a62ae50ae24607cd4f3b555"><td class="memItemLeft" align="right" valign="top">std::array&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a>, N &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#acdc5a2253a62ae50ae24607cd4f3b555">pop</a> ()</td></tr>
-<tr class="separator:acdc5a2253a62ae50ae24607cd4f3b555"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6dc48452751bc4b4f4e14088998ddbb7"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a6dc48452751bc4b4f4e14088998ddbb7">size</a> () const</td></tr>
-<tr class="separator:a6dc48452751bc4b4f4e14088998ddbb7"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9edbcaca234c9552386ca57cd2d4681c"><td class="memItemLeft" align="right" valign="top">&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a9edbcaca234c9552386ca57cd2d4681c">spectrogram</a> (std::size_t fft_len, std::size_t fft_dist, <a class="el" href="namespacedevfix_1_1dsp.html#a6667d1bec03c0d82f87521b87d3fcf24">winfun_t</a>&lt; FloatT &gt; <a class="el" href="structdevfix_1_1dsp_1_1winfun.html">winfun</a>=nullptr)</td></tr>
+<tr class="separator:a9edbcaca234c9552386ca57cd2d4681c"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a0989eec947375fa7696feda0f59c1438"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a0989eec947375fa7696feda0f59c1438">fftlen</a> ()</td></tr>
+<tr class="separator:a0989eec947375fa7696feda0f59c1438"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a52a5bc587a41bb8606c7766c58177f57"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a52a5bc587a41bb8606c7766c58177f57">fftdist</a> ()</td></tr>
+<tr class="separator:a52a5bc587a41bb8606c7766c58177f57"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa9ac5beddc07be29082a1ef11ff2392b"><td class="memItemLeft" align="right" valign="top">std::size_t&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#aa9ac5beddc07be29082a1ef11ff2392b">size</a> ()</td></tr>
+<tr class="separator:aa9ac5beddc07be29082a1ef11ff2392b"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9fd6a138c1efb217256677a84906109f"><td class="memItemLeft" align="right" valign="top">std::vector&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a> &gt;&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a9fd6a138c1efb217256677a84906109f">pop</a> ()</td></tr>
+<tr class="separator:a9fd6a138c1efb217256677a84906109f"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aa99ba03723f89062409935a8eddfe48e"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#aa99ba03723f89062409935a8eddfe48e">add</a> (const <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a> *field, std::size_t len)</td></tr>
+<tr class="separator:aa99ba03723f89062409935a8eddfe48e"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a2ad71f3d58619d29de6e655ddc1c2085"><td class="memItemLeft" align="right" valign="top">void&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a2ad71f3d58619d29de6e655ddc1c2085">add</a> (const std::vector&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a> &gt; &amp;vec)</td></tr>
+<tr class="separator:a2ad71f3d58619d29de6e655ddc1c2085"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:afd4fde92b022e1a0a98fa06da03d6e3c"><td class="memTemplParams" colspan="2">template&lt;std::size_t N&gt; </td></tr>
+<tr class="memitem:afd4fde92b022e1a0a98fa06da03d6e3c"><td class="memTemplItemLeft" align="right" valign="top">void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#afd4fde92b022e1a0a98fa06da03d6e3c">add</a> (const std::array&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a>, N &gt; &amp;arr)</td></tr>
+<tr class="separator:afd4fde92b022e1a0a98fa06da03d6e3c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a920fdda446509cfe81fa287773c709cb"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a920fdda446509cfe81fa287773c709cb">&#9670;&nbsp;</a></span>complex_t</h2>
+<a id="a222d1efa23713b334a001e625594b4d4"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a222d1efa23713b334a001e625594b4d4">&#9670;&nbsp;</a></span>complex_t</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT&gt; </div>
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT, N, win_fun &gt;::<a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a> =  std::complex&lt;FloatT&gt;</td>
+          <td class="memname">using <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::<a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a> =  std::complex&lt;FloatT&gt;</td>
+        </tr>
+      </table>
+</div><div class="memdoc">
+
+</div>
+</div>
+<a id="a53742b1396ec0554de79059ab4b173ff"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a53742b1396ec0554de79059ab4b173ff">&#9670;&nbsp;</a></span>math</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT&gt; </div>
+      <table class="memname">
+        <tr>
+          <td class="memname">using <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::<a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a53742b1396ec0554de79059ab4b173ff">math</a> =  <a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -113,28 +135,44 @@ template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t)
 </div>
 </div>
 <h2 class="groupheader">Constructor &amp; Destructor Documentation</h2>
-<a id="ad1d11586447533319ec37e5e9de6e6e9"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ad1d11586447533319ec37e5e9de6e6e9">&#9670;&nbsp;</a></span>spectrogram()</h2>
+<a id="a9edbcaca234c9552386ca57cd2d4681c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9edbcaca234c9552386ca57cd2d4681c">&#9670;&nbsp;</a></span>spectrogram()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT, N, win_fun &gt;::<a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">spectrogram</a> </td>
+          <td class="memname"><a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::<a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">spectrogram</a> </td>
           <td>(</td>
           <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>window_distance</em></td><td>)</td>
+          <td class="paramname"><em>fft_len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
           <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>fft_dist</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype"><a class="el" href="namespacedevfix_1_1dsp.html#a6667d1bec03c0d82f87521b87d3fcf24">winfun_t</a>&lt; FloatT &gt;&#160;</td>
+          <td class="paramname"><em>winfun</em> = <code>nullptr</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
         </tr>
       </table>
   </td>
   <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">explicit</span></span>  </td>
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
   </tr>
 </table>
 </div><div class="memdoc">
@@ -142,22 +180,22 @@ template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t)
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a9204dfb17067382f9e01295bc349d4f1"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a9204dfb17067382f9e01295bc349d4f1">&#9670;&nbsp;</a></span>add() <span class="overload">[1/3]</span></h2>
+<a id="aa99ba03723f89062409935a8eddfe48e"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa99ba03723f89062409935a8eddfe48e">&#9670;&nbsp;</a></span>add() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT, N, win_fun &gt;::add </td>
+          <td class="memname">void <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::add </td>
           <td>(</td>
-          <td class="paramtype">const <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a> *&#160;</td>
-          <td class="paramname"><em>data</em>, </td>
+          <td class="paramtype">const <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a> *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -177,32 +215,24 @@ template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t)
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1_icgraph.png" border="0" usemap="#structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1_icgraph" alt=""/></div>
-<map name="structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1_icgraph" id="structdevfix_1_1dsp_1_1spectrogram_a9204dfb17067382f9e01295bc349d4f1_icgraph">
-<area shape="rect" id="node2" href="structdevfix_1_1dsp_1_1spectrogram.html#abf5e5730f6248014f7ee5a22a0e96662" title="devfix::dsp::spectrogram::add" alt="" coords="248,5,443,32"/>
-</map>
-</div>
 
 </div>
 </div>
-<a id="abf5e5730f6248014f7ee5a22a0e96662"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#abf5e5730f6248014f7ee5a22a0e96662">&#9670;&nbsp;</a></span>add() <span class="overload">[2/3]</span></h2>
+<a id="a2ad71f3d58619d29de6e655ddc1c2085"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a2ad71f3d58619d29de6e655ddc1c2085">&#9670;&nbsp;</a></span>add() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT, N, win_fun &gt;::add </td>
+          <td class="memname">void <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::add </td>
           <td>(</td>
-          <td class="paramtype">const std::vector&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a> &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::vector&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a> &gt; &amp;&#160;</td>
           <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
         </tr>
@@ -213,26 +243,33 @@ template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t)
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085_icgraph.png" border="0" usemap="#structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085_icgraph" alt=""/></div>
+<map name="structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085_icgraph" id="structdevfix_1_1dsp_1_1spectrogram_a2ad71f3d58619d29de6e655ddc1c2085_icgraph">
+</map>
+</div>
 
 </div>
 </div>
-<a id="a030123c941c6acc6ea535514c2d138da"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a030123c941c6acc6ea535514c2d138da">&#9670;&nbsp;</a></span>add() <span class="overload">[3/3]</span></h2>
+<a id="afd4fde92b022e1a0a98fa06da03d6e3c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#afd4fde92b022e1a0a98fa06da03d6e3c">&#9670;&nbsp;</a></span>add() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT&gt; </div>
 <div class="memtemplate">
-template&lt;std::size_t N_elems&gt; </div>
+template&lt;std::size_t N&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">void <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT, N, win_fun &gt;::add </td>
+          <td class="memname">void <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::add </td>
           <td>(</td>
-          <td class="paramtype">const std::array&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a>, N_elems &gt; &amp;&#160;</td>
+          <td class="paramtype">const std::array&lt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a>, N &gt; &amp;&#160;</td>
           <td class="paramname"><em>arr</em></td><td>)</td>
           <td></td>
         </tr>
@@ -243,22 +280,29 @@ template&lt;std::size_t N_elems&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+<div class="dynheader">
+Here is the caller graph for this function:</div>
+<div class="dyncontent">
+<div class="center"><img src="structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c_icgraph.png" border="0" usemap="#structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c_icgraph" alt=""/></div>
+<map name="structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c_icgraph" id="structdevfix_1_1dsp_1_1spectrogram_afd4fde92b022e1a0a98fa06da03d6e3c_icgraph">
+</map>
+</div>
 
 </div>
 </div>
-<a id="acdc5a2253a62ae50ae24607cd4f3b555"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#acdc5a2253a62ae50ae24607cd4f3b555">&#9670;&nbsp;</a></span>pop()</h2>
+<a id="a52a5bc587a41bb8606c7766c58177f57"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a52a5bc587a41bb8606c7766c58177f57">&#9670;&nbsp;</a></span>fftdist()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::array&lt;<a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a920fdda446509cfe81fa287773c709cb">complex_t</a>, N&gt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT, N, win_fun &gt;::pop </td>
+          <td class="memname">std::size_t <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::fftdist </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
           <td></td>
@@ -270,25 +314,26 @@ template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t)
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>fft distance </dd></dl>
 
 </div>
 </div>
-<a id="a6dc48452751bc4b4f4e14088998ddbb7"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6dc48452751bc4b4f4e14088998ddbb7">&#9670;&nbsp;</a></span>size()</h2>
+<a id="a0989eec947375fa7696feda0f59c1438"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a0989eec947375fa7696feda0f59c1438">&#9670;&nbsp;</a></span>fftlen()</h2>
 
 <div class="memitem">
 <div class="memproto">
 <div class="memtemplate">
-template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t) win_fun&gt; </div>
+template&lt;typename FloatT&gt; </div>
 <table class="mlabels">
   <tr>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">std::size_t <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT, N, win_fun &gt;::size </td>
+          <td class="memname">std::size_t <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::fftlen </td>
           <td>(</td>
           <td class="paramname"></td><td>)</td>
-          <td> const</td>
+          <td></td>
         </tr>
       </table>
   </td>
@@ -297,6 +342,63 @@ template&lt;typename FloatT , std::size_t N, FloatT(*)(std::size_t, std::size_t)
   </tr>
 </table>
 </div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>fft length </dd></dl>
+
+</div>
+</div>
+<a id="a9fd6a138c1efb217256677a84906109f"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9fd6a138c1efb217256677a84906109f">&#9670;&nbsp;</a></span>pop()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::vector&lt;<a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html#a222d1efa23713b334a001e625594b4d4">complex_t</a>&gt; <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::pop </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>pops the oldest spectrum from the internal list </dd></dl>
+
+</div>
+</div>
+<a id="aa9ac5beddc07be29082a1ef11ff2392b"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aa9ac5beddc07be29082a1ef11ff2392b">&#9670;&nbsp;</a></span>size()</h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">std::size_t <a class="el" href="structdevfix_1_1dsp_1_1spectrogram.html">devfix::dsp::spectrogram</a>&lt; FloatT &gt;::size </td>
+          <td>(</td>
+          <td class="paramname"></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+<dl class="section return"><dt>Returns</dt><dd>count of available spectra </dd></dl>
 
 </div>
 </div>

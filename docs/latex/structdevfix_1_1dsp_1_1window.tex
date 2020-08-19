@@ -1,106 +1,198 @@
-\hypertarget{structdevfix_1_1dsp_1_1window}{}\section{devfix\+:\+:dsp\+:\+:window Struct Reference}
-\label{structdevfix_1_1dsp_1_1window}\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\hypertarget{structdevfix_1_1dsp_1_1window}{}\section{devfix\+:\+:dsp\+:\+:window$<$ FloatT $>$ Struct Template Reference}
+\label{structdevfix_1_1dsp_1_1window}\index{devfix\+::dsp\+::window$<$ Float\+T $>$@{devfix\+::dsp\+::window$<$ Float\+T $>$}}
+
+
+buffer for the values of window function for a specific window length  
+
+
 
 
 {\ttfamily \#include $<$window.\+h$>$}
 
-\subsection*{Classes}
+\subsection*{Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structdevfix_1_1dsp_1_1window_1_1buffer}{buffer}
-\end{DoxyCompactItemize}
-\subsection*{Public Types}
-\begin{DoxyCompactItemize}
+\hyperlink{structdevfix_1_1dsp_1_1window_a9a95322d9d9547f393e528cdfe3ec2aa}{window} (\hyperlink{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}{winfun\+\_\+t}$<$ FloatT $>$ function, std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1window_a24610f1f5682113df6e949575517d171}{size}, bool correct\+\_\+gain=true)
+\begin{DoxyCompactList}\small\item\em create new window and calculate all its values using a window function \end{DoxyCompactList}\item 
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1window_a24610f1f5682113df6e949575517d171}{size} () const
 \item 
-using \hyperlink{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}{math} = \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\using \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{win\+\_\+fun\+\_\+t} = FloatT($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t)
-\end{DoxyCompactItemize}
-\subsection*{Static Public Member Functions}
-\begin{DoxyCompactItemize}
-\item 
-{\footnotesize template$<$typename FloatT , win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}{calc\+\_\+amplitude\+\_\+gain} (std\+::size\+\_\+t n)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}{hanning} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_ab4cca67d04f3380ac55bcc0a347624f2}{hamming} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a43beeead6e8922f5be05b6e17f7f2664}{flattop} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_ab01ab810661e7cd05d0616e6dd1eeaca}{blackmanharris} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a15b34e7a9a7b76046b63347ac56b3236}{rectangle} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static constexpr FloatT \hyperlink{structdevfix_1_1dsp_1_1window_a334a42b01504381fb13459f566aa2025}{linear} (std\+::size\+\_\+t n, std\+::size\+\_\+t k)
-\end{DoxyCompactItemize}
+void \hyperlink{structdevfix_1_1dsp_1_1window_aebc5f8902372df2cb349e009660f6752}{apply} (FloatT $\ast$field) const
+\begin{DoxyCompactList}\small\item\em multiplies each real field element with the window value at the same index, the length of the field has to be the same as the window size \end{DoxyCompactList}\item 
+void \hyperlink{structdevfix_1_1dsp_1_1window_ac048886c4ae01a95d5272cbf73eac542}{apply} (std\+::vector$<$ FloatT $>$ \&vec) const
+\begin{DoxyCompactList}\small\item\em multiplies each real vector element with the window value at the same index, the length of the vector has to be the same as the window size \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\void \hyperlink{structdevfix_1_1dsp_1_1window_a3c9dc67499f51b6a70657fd71be5faa3}{apply} (std\+::array$<$ FloatT, N $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em multiplies each real array element with the window value at the same index, the length of the array has to be the same as the window size \end{DoxyCompactList}\item 
+void \hyperlink{structdevfix_1_1dsp_1_1window_a8c378c67016543fe7d69bf84145994e6}{apply} (std\+::complex$<$ FloatT $>$ $\ast$field) const
+\begin{DoxyCompactList}\small\item\em multiplies each complex field element with the window value at the same index, the length of the field has to be the same as the window size \end{DoxyCompactList}\item 
+void \hyperlink{structdevfix_1_1dsp_1_1window_a7d9fb193d2286f50aabc2ea0243a5465}{apply} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec) const
+\begin{DoxyCompactList}\small\item\em multiplies each complex vector element with the window value at the same index, the length of the vector has to be the same as the window size \end{DoxyCompactList}\item 
+{\footnotesize template$<$std\+::size\+\_\+t N$>$ }\\void \hyperlink{structdevfix_1_1dsp_1_1window_a3b101f8761a003d0bdbd90c6f1de2183}{apply} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em multiplies each complex array element with the window value at the same index, the length of the array has to be the same as the window size \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
-\subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}\label{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!math@{math}}
-\index{math@{math}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{math}{math}}
-{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1dsp_1_1window_a821ff669dee3e30555dcf32e7643dd0e}{devfix\+::dsp\+::window\+::math} =  \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
+\subsection{Detailed Description}
+\subsubsection*{template$<$typename FloatT$>$\newline
+struct devfix\+::dsp\+::window$<$ Float\+T $>$}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}\label{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!win\+\_\+fun\+\_\+t@{win\+\_\+fun\+\_\+t}}
-\index{win\+\_\+fun\+\_\+t@{win\+\_\+fun\+\_\+t}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{win\+\_\+fun\+\_\+t}{win\_fun\_t}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-using \hyperlink{structdevfix_1_1dsp_1_1window_ab2d2c0c5f5fca6dbcf91895115b69eac}{devfix\+::dsp\+::window\+::win\+\_\+fun\+\_\+t} =  FloatT($\ast$)(std\+::size\+\_\+t, std\+::size\+\_\+t)}
+buffer for the values of window function for a specific window length 
 
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating point numbers \\
+\hline
+\end{DoxyTemplParams}
+
+
+\subsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a9a95322d9d9547f393e528cdfe3ec2aa}\label{structdevfix_1_1dsp_1_1window_a9a95322d9d9547f393e528cdfe3ec2aa}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!window@{window}}
+\index{window@{window}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{window()}{window()}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+\hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::\hyperlink{structdevfix_1_1dsp_1_1window}{window} (\begin{DoxyParamCaption}\item[{\hyperlink{namespacedevfix_1_1dsp_a6667d1bec03c0d82f87521b87d3fcf24}{winfun\+\_\+t}$<$ FloatT $>$}]{function,  }\item[{std\+::size\+\_\+t}]{size,  }\item[{bool}]{correct\+\_\+gain = {\ttfamily true} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+create new window and calculate all its values using a window function 
+
+
+\begin{DoxyParams}{Parameters}
+{\em function} & window function to calculate the window values with \\
+\hline
+{\em size} & window size, count of values \\
+\hline
+{\em correct\+\_\+gain} & if true, calculates the window\textquotesingle{}s gain and multiplies each window value with it \\
+\hline
+\end{DoxyParams}
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ab01ab810661e7cd05d0616e6dd1eeaca}\label{structdevfix_1_1dsp_1_1window_ab01ab810661e7cd05d0616e6dd1eeaca}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!blackmanharris@{blackmanharris}}
-\index{blackmanharris@{blackmanharris}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{blackmanharris()}{blackmanharris()}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::blackmanharris (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_aebc5f8902372df2cb349e009660f6752}\label{structdevfix_1_1dsp_1_1window_aebc5f8902372df2cb349e009660f6752}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!apply@{apply}}
+\index{apply@{apply}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [1/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::apply (\begin{DoxyParamCaption}\item[{FloatT $\ast$}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}\label{structdevfix_1_1dsp_1_1window_aeba7905479c64bca5ac2fce0c6dbbf0b}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!calc\+\_\+amplitude\+\_\+gain@{calc\+\_\+amplitude\+\_\+gain}}
-\index{calc\+\_\+amplitude\+\_\+gain@{calc\+\_\+amplitude\+\_\+gain}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{calc\+\_\+amplitude\+\_\+gain()}{calc\_amplitude\_gain()}}
-{\footnotesize\ttfamily template$<$typename FloatT , win\+\_\+fun\+\_\+t$<$ Float\+T $>$ win\+\_\+fun$>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::calc\+\_\+amplitude\+\_\+gain (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a43beeead6e8922f5be05b6e17f7f2664}\label{structdevfix_1_1dsp_1_1window_a43beeead6e8922f5be05b6e17f7f2664}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!flattop@{flattop}}
-\index{flattop@{flattop}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{flattop()}{flattop()}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::flattop (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ab4cca67d04f3380ac55bcc0a347624f2}\label{structdevfix_1_1dsp_1_1window_ab4cca67d04f3380ac55bcc0a347624f2}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!hamming@{hamming}}
-\index{hamming@{hamming}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{hamming()}{hamming()}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::hamming (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+multiplies each real field element with the window value at the same index, the length of the field has to be the same as the window size 
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}\label{structdevfix_1_1dsp_1_1window_a94b16d1da4a560e625ae93284ed6f1a4}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!hanning@{hanning}}
-\index{hanning@{hanning}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{hanning()}{hanning()}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::hanning (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a334a42b01504381fb13459f566aa2025}\label{structdevfix_1_1dsp_1_1window_a334a42b01504381fb13459f566aa2025}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!linear@{linear}}
-\index{linear@{linear}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{linear()}{linear()}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::linear (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+\begin{DoxyParams}{Parameters}
+{\em field} & input field of real numbers \\
+\hline
+\end{DoxyParams}
+Here is the caller graph for this function\+:
+\nopagebreak
+\begin{figure}[H]
+\begin{center}
+\leavevmode
+\includegraphics[width=350pt]{structdevfix_1_1dsp_1_1window_aebc5f8902372df2cb349e009660f6752_icgraph}
+\end{center}
+\end{figure}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_ac048886c4ae01a95d5272cbf73eac542}\label{structdevfix_1_1dsp_1_1window_ac048886c4ae01a95d5272cbf73eac542}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!apply@{apply}}
+\index{apply@{apply}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [2/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::apply (\begin{DoxyParamCaption}\item[{std\+::vector$<$ FloatT $>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a15b34e7a9a7b76046b63347ac56b3236}\label{structdevfix_1_1dsp_1_1window_a15b34e7a9a7b76046b63347ac56b3236}} 
-\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!rectangle@{rectangle}}
-\index{rectangle@{rectangle}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
-\subsubsection{\texorpdfstring{rectangle()}{rectangle()}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static constexpr FloatT devfix\+::dsp\+::window\+::rectangle (\begin{DoxyParamCaption}\item[{std\+::size\+\_\+t}]{n,  }\item[{std\+::size\+\_\+t}]{k }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+multiplies each real vector element with the window value at the same index, the length of the vector has to be the same as the window size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & input vector of real numbers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a3c9dc67499f51b6a70657fd71be5faa3}\label{structdevfix_1_1dsp_1_1window_a3c9dc67499f51b6a70657fd71be5faa3}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!apply@{apply}}
+\index{apply@{apply}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [3/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+template$<$std\+::size\+\_\+t N$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::apply (\begin{DoxyParamCaption}\item[{std\+::array$<$ FloatT, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+multiplies each real array element with the window value at the same index, the length of the array has to be the same as the window size 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & array length \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & input array of real numbers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a8c378c67016543fe7d69bf84145994e6}\label{structdevfix_1_1dsp_1_1window_a8c378c67016543fe7d69bf84145994e6}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!apply@{apply}}
+\index{apply@{apply}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [4/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::apply (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{field }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+multiplies each complex field element with the window value at the same index, the length of the field has to be the same as the window size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em field} & input field of complex numbers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a7d9fb193d2286f50aabc2ea0243a5465}\label{structdevfix_1_1dsp_1_1window_a7d9fb193d2286f50aabc2ea0243a5465}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!apply@{apply}}
+\index{apply@{apply}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [5/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::apply (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+multiplies each complex vector element with the window value at the same index, the length of the vector has to be the same as the window size 
+
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & input vector of complex numbers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a3b101f8761a003d0bdbd90c6f1de2183}\label{structdevfix_1_1dsp_1_1window_a3b101f8761a003d0bdbd90c6f1de2183}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!apply@{apply}}
+\index{apply@{apply}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{apply()}{apply()}\hspace{0.1cm}{\footnotesize\ttfamily [6/6]}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+template$<$std\+::size\+\_\+t N$>$ \\
+void \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::apply (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}}
+
+
+
+multiplies each complex array element with the window value at the same index, the length of the array has to be the same as the window size 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em N} & array length \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & input array of complex numbers \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1window_a24610f1f5682113df6e949575517d171}\label{structdevfix_1_1dsp_1_1window_a24610f1f5682113df6e949575517d171}} 
+\index{devfix\+::dsp\+::window@{devfix\+::dsp\+::window}!size@{size}}
+\index{size@{size}!devfix\+::dsp\+::window@{devfix\+::dsp\+::window}}
+\subsubsection{\texorpdfstring{size()}{size()}}
+{\footnotesize\ttfamily template$<$typename FloatT$>$ \\
+std\+::size\+\_\+t \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}$<$ FloatT $>$\+::size (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [inline]}}
+
+\begin{DoxyReturn}{Returns}
+count of window values 
+\end{DoxyReturn}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

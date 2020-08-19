@@ -1,3 +1,8 @@
 <map id="devfix::dsp::goertzel" name="devfix::dsp::goertzel">
-<area shape="rect" id="node2" href="$namespacedevfix_1_1dsp.html#a9c0640ca74af740499f9c3da2019930c" title="devfix::dsp::goertzel" alt="" coords="193,5,333,32"/>
+<area shape="rect" id="node2" href="$namespacedevfix_1_1dsp.html#a9c0640ca74af740499f9c3da2019930c" title="devfix::dsp::goertzel" alt="" coords="199,5,339,32"/>
+<area shape="rect" id="node3" href="$namespacedevfix_1_1dsp.html#a38dc66c795b9ebe6e8408d95c7a006c9" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="193,57,345,98"/>
+<area shape="rect" id="node4" href="$namespacedevfix_1_1dsp.html#af2bf29501002d08830f1a7ac3ff22289" title="devfix::dsp::calcsignal\l_inplace" alt="" coords="393,27,545,69"/>
+<area shape="rect" id="node5" href="$namespacedevfix_1_1dsp.html#a1dc562f09e21a538a14df82aaa083526" title="devfix::dsp::calcsignal" alt="" coords="393,93,545,120"/>
+<area shape="rect" id="node6" href="$namespacedevfix_1_1dsp.html#a1982c6b562b8c196dd3322c207c0ac86" title="devfix::dsp::calcthdn" alt="" coords="593,93,736,120"/>
+<area shape="rect" id="node7" href="$namespacedevfix_1_1dsp.html#a424b6903cca9ea1aebfa4712ea070a1e" title="devfix::dsp::calcthdn" alt="" coords="784,93,927,120"/>
 </map>

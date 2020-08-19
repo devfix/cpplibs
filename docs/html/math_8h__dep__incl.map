@@ -1,7 +1,6 @@
 <map id="devfix/base/math.h" name="devfix/base/math.h">
-<area shape="rect" id="node2" href="$window_8h.html" title="devfix/dsp/window.h" alt="" coords="111,80,253,107"/>
-<area shape="rect" id="node3" href="$fft_8h.html" title="devfix/dsp/fft.h" alt="" coords="205,155,314,181"/>
-<area shape="rect" id="node4" href="$analysis_8h.html" title="devfix/dsp/analysis.h" alt="" coords="5,229,151,256"/>
-<area shape="rect" id="node6" href="$dsp_8h.html" title="devfix/dsp/dsp.h" alt="" coords="61,155,180,181"/>
-<area shape="rect" id="node5" href="$spectrogram_8h.html" title="devfix/dsp/spectrogram.h" alt="" coords="175,229,344,256"/>
+<area shape="rect" id="node2" href="$fft_8h.html" title="devfix/dsp/fft.h" alt="" coords="105,80,214,107"/>
+<area shape="rect" id="node3" href="$dsp_8h.html" title="devfix/dsp/dsp.h" alt="" coords="12,155,131,181"/>
+<area shape="rect" id="node5" href="$spectrogram_8h.html" title="devfix/dsp/spectrogram.h" alt="" coords="163,155,332,181"/>
+<area shape="rect" id="node4" href="$dsp_8cpp.html" title="devfix/dsp/dsp.cpp" alt="" coords="5,229,137,256"/>
 </map>

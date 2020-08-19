@@ -7,185 +7,337 @@
 \subsection*{Public Types}
 \begin{DoxyCompactItemize}
 \item 
-using \hyperlink{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}{math} = \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
+using \hyperlink{structdevfix_1_1dsp_1_1fft_a6309eb88cede0b11f17067f8892af91a}{math} = \+::\hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}
 \end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f}{transform\+\_\+inplace} (std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t len)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_ae3d7d5529ffad8aa929c5353252df7f5}{transform\+\_\+inplace} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
-\item 
-{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a56cf2ee0f12d0a4c4bdcded3db38e088}{transform\+\_\+inplace} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f}{convert\+\_\+to\+\_\+onesided} (const std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t len, std\+::complex$<$ FloatT $>$ $\ast$positive)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static std\+::vector$<$ std\+::complex$<$ FloatT $>$ $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a595260b93cce8bcec41570a93521b263}{convert\+\_\+to\+\_\+onesided} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win)
-\item 
-{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static std\+::array$<$ std\+::complex$<$ FloatT $>$, N/2 $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a7529cbbcd074fe451c13791acfb77fb0}{convert\+\_\+to\+\_\+onesided} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win)
-\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca}{extract\+\_\+angles} (const std\+::complex$<$ FloatT $>$ $\ast$win, std\+::size\+\_\+t len, FloatT $\ast$angles, FloatT threshold=-\/1)
-\begin{DoxyCompactList}\small\item\em calculates the angles (phase) in radians for each complex number \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename FloatT $>$ }\\static std\+::vector$<$ FloatT $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a7f34943ae3b66b6cf77b397f1a1c2386}{extract\+\_\+angles} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&win, FloatT threshold=-\/1)
-\begin{DoxyCompactList}\small\item\em calculates the angles (phase) in radians for each complex number \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static std\+::array$<$ FloatT, N $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a34854b817edfebadae41362b399c7f34}{extract\+\_\+angles} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&win, FloatT threshold=-\/1)
-\begin{DoxyCompactList}\small\item\em calculates the angles (phase) in radians for each complex number \end{DoxyCompactList}\end{DoxyCompactItemize}
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a8e6e4580cc075ebaa7be5d2781a8e3eb}{transform\+\_\+inplace} (std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len)
+\begin{DoxyCompactList}\small\item\em performs the inplace discrete-\/fourier-\/transformation for an complex field, the field length has to be a power of two \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a3f9d520b7ee8f9fe233bbed45f0c10d8}{transform\+\_\+inplace} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec)
+\begin{DoxyCompactList}\small\item\em performs the inplace discrete-\/fourier-\/transformation for an complex vector, the vector length has to be a power of two \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a92d4ff21f87fd2d1607c60788158cf62}{transform\+\_\+inplace} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em performs the inplace discrete-\/fourier-\/transformation for an complex array, the array length has to be a power of two \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_ac05e043eb9375c77ff7e4ab5843d82af}{normalize\+\_\+inplace} (std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len, std\+::size\+\_\+t n=0)
+\begin{DoxyCompactList}\small\item\em divides each element of the field by the fft size, if the fft size is zero, it gets set to the field length \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_af4e943d0958fc382656380ca2bc993cc}{normalize\+\_\+inplace} (std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec, std\+::size\+\_\+t n=0)
+\begin{DoxyCompactList}\small\item\em divides each element of the vector by the fft size, if the fft size is zero, it gets set to the vector size \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a7b52c39390680041aa9800295f310f9d}{normalize\+\_\+inplace} (std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr, std\+::size\+\_\+t n=0)
+\begin{DoxyCompactList}\small\item\em divides each element of the array by the fft size, if the fft size is zero, it gets set to the array size \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a5e56000eec31a31dc7a2fc7af198b709}{get\+\_\+magnitude} (const std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len, FloatT $\ast$mag)
+\begin{DoxyCompactList}\small\item\em calculates the magnitudes of a normalized fft field \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static std\+::vector$<$ FloatT $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a9c937104cad67dd01f56870e44dd9556}{get\+\_\+magnitude} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec)
+\begin{DoxyCompactList}\small\item\em calculates the magnitudes of a normalized fft vector \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static std\+::array$<$ FloatT, N/2 $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_aca37b18e5e6352088d9f24a71a6e3573}{get\+\_\+magnitude} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em calculates the magnitudes of a normalized fft vector \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static void \hyperlink{structdevfix_1_1dsp_1_1fft_a330303a45a2dfd49d19fff95d9cf14cd}{get\+\_\+phase} (const std\+::complex$<$ FloatT $>$ $\ast$field, std\+::size\+\_\+t len, FloatT $\ast$ph)
+\begin{DoxyCompactList}\small\item\em calculates the phases of a normalized fft field \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT $>$ }\\static std\+::vector$<$ FloatT $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_a3efcfd1a671e6558cf7ca25379317ada}{get\+\_\+phase} (const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&vec)
+\begin{DoxyCompactList}\small\item\em calculates the phases of a normalized fft vector \end{DoxyCompactList}\item 
+{\footnotesize template$<$typename FloatT , std\+::size\+\_\+t N$>$ }\\static std\+::array$<$ FloatT, N/2 $>$ \hyperlink{structdevfix_1_1dsp_1_1fft_abee685e0c6688e55a353ca019ea2793c}{get\+\_\+phase} (const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&arr)
+\begin{DoxyCompactList}\small\item\em calculates the phases of a normalized fft array \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
 \subsection{Member Typedef Documentation}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}\label{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}} 
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a6309eb88cede0b11f17067f8892af91a}\label{structdevfix_1_1dsp_1_1fft_a6309eb88cede0b11f17067f8892af91a}} 
 \index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!math@{math}}
 \index{math@{math}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
 \subsubsection{\texorpdfstring{math}{math}}
-{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1dsp_1_1fft_a466499f45d4ae1240f5ba7e8c44a4691}{devfix\+::dsp\+::fft\+::math} =  \hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
+{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1dsp_1_1fft_a6309eb88cede0b11f17067f8892af91a}{devfix\+::dsp\+::fft\+::math} =  \+::\hyperlink{structdevfix_1_1base_1_1math}{devfix\+::base\+::math}}
 
 
 
 \subsection{Member Function Documentation}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f}\label{structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f}} 
-\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!convert\+\_\+to\+\_\+onesided@{convert\+\_\+to\+\_\+onesided}}
-\index{convert\+\_\+to\+\_\+onesided@{convert\+\_\+to\+\_\+onesided}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
-\subsubsection{\texorpdfstring{convert\+\_\+to\+\_\+onesided()}{convert\_to\_onesided()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a5e56000eec31a31dc7a2fc7af198b709}\label{structdevfix_1_1dsp_1_1fft_a5e56000eec31a31dc7a2fc7af198b709}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!get\+\_\+magnitude@{get\+\_\+magnitude}}
+\index{get\+\_\+magnitude@{get\+\_\+magnitude}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{get\+\_\+magnitude()}{get\_magnitude()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static void devfix\+::dsp\+::fft\+::convert\+\_\+to\+\_\+onesided (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{positive }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a595260b93cce8bcec41570a93521b263}\label{structdevfix_1_1dsp_1_1fft_a595260b93cce8bcec41570a93521b263}} 
-\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!convert\+\_\+to\+\_\+onesided@{convert\+\_\+to\+\_\+onesided}}
-\index{convert\+\_\+to\+\_\+onesided@{convert\+\_\+to\+\_\+onesided}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
-\subsubsection{\texorpdfstring{convert\+\_\+to\+\_\+onesided()}{convert\_to\_onesided()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static std\+::vector$<$std\+::complex$<$FloatT$>$ $>$ devfix\+::dsp\+::fft\+::convert\+\_\+to\+\_\+onesided (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a7529cbbcd074fe451c13791acfb77fb0}\label{structdevfix_1_1dsp_1_1fft_a7529cbbcd074fe451c13791acfb77fb0}} 
-\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!convert\+\_\+to\+\_\+onesided@{convert\+\_\+to\+\_\+onesided}}
-\index{convert\+\_\+to\+\_\+onesided@{convert\+\_\+to\+\_\+onesided}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
-\subsubsection{\texorpdfstring{convert\+\_\+to\+\_\+onesided()}{convert\_to\_onesided()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
-{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
-static std\+::array$<$std\+::complex$<$FloatT$>$, N / 2$>$ devfix\+::dsp\+::fft\+::convert\+\_\+to\+\_\+onesided (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
-
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca}\label{structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca}} 
-\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!extract\+\_\+angles@{extract\+\_\+angles}}
-\index{extract\+\_\+angles@{extract\+\_\+angles}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
-\subsubsection{\texorpdfstring{extract\+\_\+angles()}{extract\_angles()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
-{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static void devfix\+::dsp\+::fft\+::extract\+\_\+angles (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{FloatT $\ast$}]{angles,  }\item[{FloatT}]{threshold = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static void devfix\+::dsp\+::fft\+::get\+\_\+magnitude (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ FloatT $>$ $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{FloatT $\ast$}]{mag }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
-calculates the angles (phase) in radians for each complex number 
+calculates the magnitudes of a normalized fft field 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em FloatT} & floating point type \\
+{\em FloatT} & type of floating point numbers \\
 \hline
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em win} & field of complex numbers to extract the angles from \\
+{\em field} & input field \\
 \hline
-{\em len} & length of field \\
+{\em len} & input field length \\
 \hline
-{\em angles} & target field to store the angles in, should have at least same size as win \\
-\hline
-{\em threshold} & if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold \\
+{\em mag} & output field for the magnitudes \\
 \hline
 \end{DoxyParams}
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=348pt]{structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a7f34943ae3b66b6cf77b397f1a1c2386}\label{structdevfix_1_1dsp_1_1fft_a7f34943ae3b66b6cf77b397f1a1c2386}} 
-\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!extract\+\_\+angles@{extract\+\_\+angles}}
-\index{extract\+\_\+angles@{extract\+\_\+angles}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
-\subsubsection{\texorpdfstring{extract\+\_\+angles()}{extract\_angles()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a9c937104cad67dd01f56870e44dd9556}\label{structdevfix_1_1dsp_1_1fft_a9c937104cad67dd01f56870e44dd9556}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!get\+\_\+magnitude@{get\+\_\+magnitude}}
+\index{get\+\_\+magnitude@{get\+\_\+magnitude}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{get\+\_\+magnitude()}{get\_magnitude()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static std\+::vector$<$FloatT$>$ devfix\+::dsp\+::fft\+::extract\+\_\+angles (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win,  }\item[{FloatT}]{threshold = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static std\+::vector$<$FloatT$>$ devfix\+::dsp\+::fft\+::get\+\_\+magnitude (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
-calculates the angles (phase) in radians for each complex number 
+calculates the magnitudes of a normalized fft vector 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em FloatT} & floating point type \\
+{\em FloatT} & type of floating point numbers \\
 \hline
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em win} & vector of complex numbers to extract the angles from \\
-\hline
-{\em threshold} & if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold \\
+{\em vec} & input vector \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-vector of extracted angles, same length as win 
+output vector with magnitudes 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a34854b817edfebadae41362b399c7f34}\label{structdevfix_1_1dsp_1_1fft_a34854b817edfebadae41362b399c7f34}} 
-\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!extract\+\_\+angles@{extract\+\_\+angles}}
-\index{extract\+\_\+angles@{extract\+\_\+angles}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
-\subsubsection{\texorpdfstring{extract\+\_\+angles()}{extract\_angles()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_aca37b18e5e6352088d9f24a71a6e3573}\label{structdevfix_1_1dsp_1_1fft_aca37b18e5e6352088d9f24a71a6e3573}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!get\+\_\+magnitude@{get\+\_\+magnitude}}
+\index{get\+\_\+magnitude@{get\+\_\+magnitude}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{get\+\_\+magnitude()}{get\_magnitude()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
-static std\+::array$<$FloatT, N$>$ devfix\+::dsp\+::fft\+::extract\+\_\+angles (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win,  }\item[{FloatT}]{threshold = {\ttfamily -\/1} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static std\+::array$<$FloatT, N / 2$>$ devfix\+::dsp\+::fft\+::get\+\_\+magnitude (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
-calculates the angles (phase) in radians for each complex number 
+calculates the magnitudes of a normalized fft vector 
 
 
 \begin{DoxyTemplParams}{Template Parameters}
-{\em FloatT} & floating point type \\
+{\em FloatT} & type of floating point numbers \\
 \hline
-{\em N} & length of array \\
+{\em N} & input array length \\
 \hline
 \end{DoxyTemplParams}
 
 \begin{DoxyParams}{Parameters}
-{\em win} & array of complex numbers to extract the angles from \\
-\hline
-{\em threshold} & if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold \\
+{\em arr} & input array \\
 \hline
 \end{DoxyParams}
 \begin{DoxyReturn}{Returns}
-array of extracted angles, same length as win 
+output array with magnitudes 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f}\label{structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f}} 
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a330303a45a2dfd49d19fff95d9cf14cd}\label{structdevfix_1_1dsp_1_1fft_a330303a45a2dfd49d19fff95d9cf14cd}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!get\+\_\+phase@{get\+\_\+phase}}
+\index{get\+\_\+phase@{get\+\_\+phase}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{get\+\_\+phase()}{get\_phase()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::fft\+::get\+\_\+phase (\begin{DoxyParamCaption}\item[{const std\+::complex$<$ FloatT $>$ $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{FloatT $\ast$}]{ph }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+calculates the phases of a normalized fft field 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating point numbers \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em field} & input field \\
+\hline
+{\em len} & input field length \\
+\hline
+{\em ph} & output field for the phases \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a3efcfd1a671e6558cf7ca25379317ada}\label{structdevfix_1_1dsp_1_1fft_a3efcfd1a671e6558cf7ca25379317ada}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!get\+\_\+phase@{get\+\_\+phase}}
+\index{get\+\_\+phase@{get\+\_\+phase}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{get\+\_\+phase()}{get\_phase()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static std\+::vector$<$FloatT$>$ devfix\+::dsp\+::fft\+::get\+\_\+phase (\begin{DoxyParamCaption}\item[{const std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+calculates the phases of a normalized fft vector 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating point numbers \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & input vector \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output vector with phases 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_abee685e0c6688e55a353ca019ea2793c}\label{structdevfix_1_1dsp_1_1fft_abee685e0c6688e55a353ca019ea2793c}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!get\+\_\+phase@{get\+\_\+phase}}
+\index{get\+\_\+phase@{get\+\_\+phase}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{get\+\_\+phase()}{get\_phase()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+static std\+::array$<$FloatT, N / 2$>$ devfix\+::dsp\+::fft\+::get\+\_\+phase (\begin{DoxyParamCaption}\item[{const std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+calculates the phases of a normalized fft array 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating point numbers \\
+\hline
+{\em N} & input array length \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & input array \\
+\hline
+\end{DoxyParams}
+\begin{DoxyReturn}{Returns}
+output array with phases 
+\end{DoxyReturn}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_ac05e043eb9375c77ff7e4ab5843d82af}\label{structdevfix_1_1dsp_1_1fft_ac05e043eb9375c77ff7e4ab5843d82af}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!normalize\+\_\+inplace@{normalize\+\_\+inplace}}
+\index{normalize\+\_\+inplace@{normalize\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{normalize\+\_\+inplace()}{normalize\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::fft\+::normalize\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len,  }\item[{std\+::size\+\_\+t}]{n = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+divides each element of the field by the fft size, if the fft size is zero, it gets set to the field length 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating point numbers \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em field} & field \\
+\hline
+{\em len} & input field length \\
+\hline
+{\em n} & fft size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_af4e943d0958fc382656380ca2bc993cc}\label{structdevfix_1_1dsp_1_1fft_af4e943d0958fc382656380ca2bc993cc}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!normalize\+\_\+inplace@{normalize\+\_\+inplace}}
+\index{normalize\+\_\+inplace@{normalize\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{normalize\+\_\+inplace()}{normalize\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT $>$ \\
+static void devfix\+::dsp\+::fft\+::normalize\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec,  }\item[{std\+::size\+\_\+t}]{n = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+divides each element of the vector by the fft size, if the fft size is zero, it gets set to the vector size 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating point numbers \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & vector \\
+\hline
+{\em n} & fft size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a7b52c39390680041aa9800295f310f9d}\label{structdevfix_1_1dsp_1_1fft_a7b52c39390680041aa9800295f310f9d}} 
+\index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!normalize\+\_\+inplace@{normalize\+\_\+inplace}}
+\index{normalize\+\_\+inplace@{normalize\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
+\subsubsection{\texorpdfstring{normalize\+\_\+inplace()}{normalize\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
+{\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
+static void devfix\+::dsp\+::fft\+::normalize\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr,  }\item[{std\+::size\+\_\+t}]{n = {\ttfamily 0} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+
+
+
+divides each element of the array by the fft size, if the fft size is zero, it gets set to the array size 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating point numbers \\
+\hline
+{\em N} & array length \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & array \\
+\hline
+{\em n} & fft size \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a8e6e4580cc075ebaa7be5d2781a8e3eb}\label{structdevfix_1_1dsp_1_1fft_a8e6e4580cc075ebaa7be5d2781a8e3eb}} 
 \index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!transform\+\_\+inplace@{transform\+\_\+inplace}}
 \index{transform\+\_\+inplace@{transform\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
 \subsubsection{\texorpdfstring{transform\+\_\+inplace()}{transform\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [1/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{win,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::complex$<$ FloatT $>$ $\ast$}]{field,  }\item[{std\+::size\+\_\+t}]{len }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-Here is the caller graph for this function\+:\nopagebreak
-\begin{figure}[H]
-\begin{center}
-\leavevmode
-\includegraphics[width=350pt]{structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f_icgraph}
-\end{center}
-\end{figure}
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_ae3d7d5529ffad8aa929c5353252df7f5}\label{structdevfix_1_1dsp_1_1fft_ae3d7d5529ffad8aa929c5353252df7f5}} 
+
+
+performs the inplace discrete-\/fourier-\/transformation for an complex field, the field length has to be a power of two 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating pointer numbers \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em field} & complex field \\
+\hline
+{\em len} & complex field length \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a3f9d520b7ee8f9fe233bbed45f0c10d8}\label{structdevfix_1_1dsp_1_1fft_a3f9d520b7ee8f9fe233bbed45f0c10d8}} 
 \index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!transform\+\_\+inplace@{transform\+\_\+inplace}}
 \index{transform\+\_\+inplace@{transform\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
 \subsubsection{\texorpdfstring{transform\+\_\+inplace()}{transform\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [2/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT $>$ \\
-static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::vector$<$ std\+::complex$<$ FloatT $>$$>$ \&}]{vec }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
-\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a56cf2ee0f12d0a4c4bdcded3db38e088}\label{structdevfix_1_1dsp_1_1fft_a56cf2ee0f12d0a4c4bdcded3db38e088}} 
+
+
+performs the inplace discrete-\/fourier-\/transformation for an complex vector, the vector length has to be a power of two 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating pointer numbers \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em vec} & complex vector \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{structdevfix_1_1dsp_1_1fft_a92d4ff21f87fd2d1607c60788158cf62}\label{structdevfix_1_1dsp_1_1fft_a92d4ff21f87fd2d1607c60788158cf62}} 
 \index{devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}!transform\+\_\+inplace@{transform\+\_\+inplace}}
 \index{transform\+\_\+inplace@{transform\+\_\+inplace}!devfix\+::dsp\+::fft@{devfix\+::dsp\+::fft}}
 \subsubsection{\texorpdfstring{transform\+\_\+inplace()}{transform\_inplace()}\hspace{0.1cm}{\footnotesize\ttfamily [3/3]}}
 {\footnotesize\ttfamily template$<$typename FloatT , std\+::size\+\_\+t N$>$ \\
-static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{win }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
+static void devfix\+::dsp\+::fft\+::transform\+\_\+inplace (\begin{DoxyParamCaption}\item[{std\+::array$<$ std\+::complex$<$ FloatT $>$, N $>$ \&}]{arr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
+
+
+performs the inplace discrete-\/fourier-\/transformation for an complex array, the array length has to be a power of two 
+
+
+\begin{DoxyTemplParams}{Template Parameters}
+{\em FloatT} & type of floating pointer numbers \\
+\hline
+{\em N} & array length \\
+\hline
+\end{DoxyTemplParams}
+
+\begin{DoxyParams}{Parameters}
+{\em arr} & complex array \\
+\hline
+\end{DoxyParams}
 
 
 The documentation for this struct was generated from the following file\+:\begin{DoxyCompactItemize}

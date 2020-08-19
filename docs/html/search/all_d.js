@@ -1,7 +1,8 @@
 var searchData=
 [
   ['pair_5ft',['pair_t',['../structdevfix_1_1base_1_1strout.html#a2212cb8a99abec10490e891cc67820bb',1,'devfix::base::strout']]],
-  ['pi',['pi',['../structdevfix_1_1base_1_1math.html#a8c1abe5113400c369f55d3e0bd12c25d',1,'devfix::base::math']]],
+  ['pi',['pi',['../namespacedevfix_1_1base_1_1numbers.html#a4d453d2292be52311d9a508a0d5817d1',1,'devfix::base::numbers']]],
+  ['pi_5fv',['pi_v',['../namespacedevfix_1_1base_1_1numbers.html#a5dc03b283872fcc39e2b3c4bacbaa40d',1,'devfix::base::numbers']]],
   ['pipe_5ffun_5ft',['pipe_fun_t',['../structdevfix_1_1base_1_1strout.html#a89bb8340fe2e43bb14c829a1d427d9c0',1,'devfix::base::strout']]],
   ['pipes_5f',['pipes_',['../structdevfix_1_1base_1_1strout.html#aa92f98e253e448a0ea897760764486e7',1,'devfix::base::strout']]],
   ['pipes_5ft',['pipes_t',['../structdevfix_1_1base_1_1strout.html#acf852ff3e37e6d10e2cf0332df2b8e2d',1,'devfix::base::strout']]],
@@ -10,10 +11,9 @@ var searchData=
   ['platform_5flinux',['PLATFORM_LINUX',['../platform_8h.html#affcc3790504b838f9ce56a008cce0950',1,'platform.h']]],
   ['platform_5fwindows',['PLATFORM_WINDOWS',['../platform_8h.html#a20cd3c4775f1897fb5658d2dc61382c3',1,'platform.h']]],
   ['platplatform_5funsupported',['PLATPLATFORM_UNSUPPORTED',['../netbuilder_8h.html#a38d7e898d71e6854cea66709e389b190',1,'netbuilder.h']]],
-  ['pop',['pop',['../structdevfix_1_1dsp_1_1spectrogram.html#acdc5a2253a62ae50ae24607cd4f3b555',1,'devfix::dsp::spectrogram']]],
-  ['popcount',['popcount',['../structdevfix_1_1base_1_1math.html#a43815037f45e01d90a6c0cb0e1d8ef11',1,'devfix::base::math']]],
+  ['pop',['pop',['../structdevfix_1_1dsp_1_1spectrogram.html#a9fd6a138c1efb217256677a84906109f',1,'devfix::dsp::spectrogram']]],
+  ['popcount',['popcount',['../structdevfix_1_1base_1_1math.html#ac3c5661a2ec82e7ae00e899c2a3d2049',1,'devfix::base::math']]],
   ['port_5ft',['port_t',['../structdevfix_1_1net_1_1inetaddress.html#a3eaadc730f2b4625987cf948ea485410',1,'devfix::net::inetaddress']]],
   ['prefix_5f',['prefix_',['../structdevfix_1_1base_1_1slog.html#a32d647fa732679ecb1fe679f1305f43a',1,'devfix::base::slog::prefix_()'],['../structdevfix_1_1base_1_1strout.html#a664c76563ab0f7f0625779aaf0c56395',1,'devfix::base::strout::prefix_()']]],
-  ['prefixed_5f',['prefixed_',['../structdevfix_1_1base_1_1strout.html#a1e56005b02772de34fddd5e4f44741c3',1,'devfix::base::strout']]],
-  ['prepare',['prepare',['../structdevfix_1_1dsp_1_1window_1_1buffer.html#a3ace062676326a9981118d53b8ba5900',1,'devfix::dsp::window::buffer']]]
+  ['prefixed_5f',['prefixed_',['../structdevfix_1_1base_1_1strout.html#a1e56005b02772de34fddd5e4f44741c3',1,'devfix::base::strout']]]
 ];

@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['minute',['minute',['../structdevfix_1_1base_1_1time.html#a2e36d9cbccf1144093e09674d4d9db24',1,'devfix::base::time']]],
-  ['month',['month',['../structdevfix_1_1base_1_1time.html#a781a7e9d96a916305e1a9e2c261c1a0f',1,'devfix::base::time']]]
+  ['inv_5fpi',['inv_pi',['../namespacedevfix_1_1base_1_1numbers.html#a0c850245b7f9f2fb02a8101843a3e819',1,'devfix::base::numbers']]],
+  ['inv_5fpi_5fv',['inv_pi_v',['../namespacedevfix_1_1base_1_1numbers.html#a1b2a3987b0982788bc7f1088e468a13c',1,'devfix::base::numbers']]]
 ];

@@ -1,6 +1,8 @@
 var searchData=
 [
-  ['math',['math',['../structdevfix_1_1base_1_1math.html',1,'devfix::base::math'],['../structdevfix_1_1dsp_1_1fft.html#a466499f45d4ae1240f5ba7e8c44a4691',1,'devfix::dsp::fft::math()'],['../structdevfix_1_1dsp_1_1window.html#a821ff669dee3e30555dcf32e7643dd0e',1,'devfix::dsp::window::math()'],['../dsp_8h.html#ada00c11c52a95ce6547ca2c64485ca38',1,'math():&#160;dsp.h']]],
+  ['margin_5fcoarse',['MARGIN_COARSE',['../structtestutil.html#a9fc0c46780b519e3e09e38337058ae3d',1,'testutil']]],
+  ['margin_5ffine',['MARGIN_FINE',['../structtestutil.html#a7a42df59c058fb72e784d1e4420ff392',1,'testutil']]],
+  ['math',['math',['../structdevfix_1_1base_1_1math.html',1,'devfix::base::math'],['../structdevfix_1_1dsp_1_1fft.html#a6309eb88cede0b11f17067f8892af91a',1,'devfix::dsp::fft::math()'],['../structdevfix_1_1dsp_1_1spectrogram.html#a53742b1396ec0554de79059ab4b173ff',1,'devfix::dsp::spectrogram::math()'],['../namespacedevfix_1_1dsp.html#a4d41815e9c6481fb760733a11d5b633a',1,'devfix::dsp::math()']]],
   ['math_2eh',['math.h',['../math_8h.html',1,'']]],
   ['memory_2eh',['memory.h',['../memory_8h.html',1,'']]],
   ['minute',['minute',['../structdevfix_1_1base_1_1time.html#a2e36d9cbccf1144093e09674d4d9db24',1,'devfix::base::time']]],

@@ -1,7 +1,6 @@
 var searchData=
 [
   ['table',['Table',['../structdevfix_1_1base_1_1__math_1_1Table.html',1,'devfix::base::_math::Table&lt; T, N, G, Args &gt;'],['../structdevfix_1_1base_1_1math.html#a6f2114ac2cf825b518cf5fefa00af6e3',1,'devfix::base::math::Table()'],['../structdevfix_1_1base_1_1__math_1_1Table.html#acc5b398c45b9dcd7846f5228611a43b9',1,'devfix::base::_math::Table::Table()']]],
-  ['test_5fanalysis_2ecpp',['test_analysis.cpp',['../test__analysis_8cpp.html',1,'']]],
   ['test_5fdsp_2ecpp',['test_dsp.cpp',['../test__dsp_8cpp.html',1,'']]],
   ['test_5fexcept_2ecpp',['test_except.cpp',['../test__except_8cpp.html',1,'']]],
   ['test_5ffft_2ecpp',['test_fft.cpp',['../test__fft_8cpp.html',1,'']]],
@@ -15,19 +14,24 @@ var searchData=
   ['test_5fspectrogram_2ecpp',['test_spectrogram.cpp',['../test__spectrogram_8cpp.html',1,'']]],
   ['test_5fstrcvt_2ecpp',['test_strcvt.cpp',['../test__strcvt_8cpp.html',1,'']]],
   ['test_5fstrout_2ecpp',['test_strout.cpp',['../test__strout_8cpp.html',1,'']]],
+  ['test_5fstrutil_2ecpp',['test_strutil.cpp',['../test__strutil_8cpp.html',1,'']]],
   ['test_5ftype_2ecpp',['test_type.cpp',['../test__type_8cpp.html',1,'']]],
   ['test_5fwindow_2ecpp',['test_window.cpp',['../test__window_8cpp.html',1,'']]],
+  ['test_5fwinfun_2ecpp',['test_winfun.cpp',['../test__winfun_8cpp.html',1,'']]],
+  ['testutil',['testutil',['../structtestutil.html',1,'']]],
+  ['testutil_2eh',['testutil.h',['../testutil_8h.html',1,'']]],
   ['time',['time',['../structdevfix_1_1base_1_1time.html',1,'devfix::base']]],
   ['time_2eh',['time.h',['../time_8h.html',1,'']]],
   ['timeout_5ft',['timeout_t',['../structdevfix_1_1net_1_1socket.html#a80a3bf4cb7292bae31ea9c6575539c68',1,'devfix::net::socket']]],
   ['timeoutexception',['timeoutexception',['../structdevfix_1_1base_1_1error_1_1timeoutexception.html',1,'devfix::base::error::timeoutexception'],['../structdevfix_1_1base_1_1error_1_1timeoutexception.html#a1795157a577b45e026b11c3b3cec80b3',1,'devfix::base::error::timeoutexception::timeoutexception(const std::string &amp;what_arg, int err=0)'],['../structdevfix_1_1base_1_1error_1_1timeoutexception.html#ac35d347533a4a8ba1d19900846784e72',1,'devfix::base::error::timeoutexception::timeoutexception(const char *what_arg, int err=0)']]],
   ['timeoutexception_2eh',['timeoutexception.h',['../timeoutexception_8h.html',1,'']]],
-  ['to_5fcomplex',['to_complex',['../structdevfix_1_1base_1_1math.html#aa125625a1d4063dc4bd4de82f7367f14',1,'devfix::base::math::to_complex(const std::array&lt; FloatT, N &gt; &amp;arr)'],['../structdevfix_1_1base_1_1math.html#ad142f8342011042e1420eed41c833db0',1,'devfix::base::math::to_complex(const std::array&lt; FloatT, N &gt; &amp;arr)'],['../structdevfix_1_1base_1_1math.html#a0178a6ca347209c523138b9bbaddd9cf',1,'devfix::base::math::to_complex(const std::vector&lt; FloatT &gt; &amp;vec, std::size_t len)'],['../structdevfix_1_1base_1_1math.html#adcc63e97e0ff2fed3526451d56a28d24',1,'devfix::base::math::to_complex(const std::vector&lt; FloatT &gt; &amp;vec)']]],
+  ['to_5fcomplex',['to_complex',['../structdevfix_1_1base_1_1math.html#a212f0b2e675de08688438e5bafb450c7',1,'devfix::base::math::to_complex(const FloatT *field, std::size_t len, std::complex&lt; FloatT &gt; *cfield)'],['../structdevfix_1_1base_1_1math.html#ace2cb831db8aeccad7108bc411612544',1,'devfix::base::math::to_complex(const std::vector&lt; FloatT &gt; &amp;vec, std::size_t len=0)'],['../structdevfix_1_1base_1_1math.html#aa125625a1d4063dc4bd4de82f7367f14',1,'devfix::base::math::to_complex(const std::array&lt; FloatT, N &gt; &amp;arr)']]],
   ['to_5fstring',['to_string',['../structdevfix_1_1base_1_1except_1_1trace.html#a8adac52a0781afcb7a399fb6b743f115',1,'devfix::base::except::trace']]],
   ['touch',['touch',['../structdevfix_1_1base_1_1filesystem.html#af0b0e1daa40b7d547983d4f70bb5e3b7',1,'devfix::base::filesystem']]],
   ['trace',['trace',['../structdevfix_1_1base_1_1except_1_1trace.html',1,'devfix::base::except']]],
-  ['transform_5finplace',['transform_inplace',['../structdevfix_1_1dsp_1_1fft.html#af0c91dff74868f580ad295448e50693f',1,'devfix::dsp::fft::transform_inplace(std::complex&lt; FloatT &gt; *win, std::size_t len)'],['../structdevfix_1_1dsp_1_1fft.html#ae3d7d5529ffad8aa929c5353252df7f5',1,'devfix::dsp::fft::transform_inplace(std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win)'],['../structdevfix_1_1dsp_1_1fft.html#a56cf2ee0f12d0a4c4bdcded3db38e088',1,'devfix::dsp::fft::transform_inplace(std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win)']]],
+  ['transform_5finplace',['transform_inplace',['../structdevfix_1_1dsp_1_1fft.html#a8e6e4580cc075ebaa7be5d2781a8e3eb',1,'devfix::dsp::fft::transform_inplace(std::complex&lt; FloatT &gt; *field, std::size_t len)'],['../structdevfix_1_1dsp_1_1fft.html#a3f9d520b7ee8f9fe233bbed45f0c10d8',1,'devfix::dsp::fft::transform_inplace(std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;vec)'],['../structdevfix_1_1dsp_1_1fft.html#a92d4ff21f87fd2d1607c60788158cf62',1,'devfix::dsp::fft::transform_inplace(std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;arr)']]],
   ['type',['type',['../structdevfix_1_1base_1_1type.html',1,'devfix::base::type'],['../structdevfix_1_1base_1_1type.html#aedbe0f20a35aa5dc6165eb552f132844',1,'devfix::base::type::type()']]],
   ['type_2ecpp',['type.cpp',['../type_8cpp.html',1,'']]],
-  ['type_2eh',['type.h',['../type_8h.html',1,'']]]
+  ['type_2eh',['type.h',['../type_8h.html',1,'']]],
+  ['types_2eh',['types.h',['../types_8h.html',1,'']]]
 ];

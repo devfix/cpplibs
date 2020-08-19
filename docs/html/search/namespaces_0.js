@@ -6,5 +6,6 @@ var searchData=
   ['dsp',['dsp',['../namespacedevfix_1_1dsp.html',1,'devfix']]],
   ['error',['error',['../namespacedevfix_1_1base_1_1error.html',1,'devfix::base']]],
   ['io',['io',['../namespacedevfix_1_1base_1_1io.html',1,'devfix::base']]],
-  ['net',['net',['../namespacedevfix_1_1net.html',1,'devfix']]]
+  ['net',['net',['../namespacedevfix_1_1net.html',1,'devfix']]],
+  ['numbers',['numbers',['../namespacedevfix_1_1base_1_1numbers.html',1,'devfix::base']]]
 ];

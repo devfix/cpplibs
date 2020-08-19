@@ -1,30 +1,32 @@
 \hypertarget{window_8h}{}\section{devfix/dsp/window.h File Reference}
 \label{window_8h}\index{devfix/dsp/window.\+h@{devfix/dsp/window.\+h}}
-{\ttfamily \#include $<$cmath$>$}\newline
+{\ttfamily \#include $<$array$>$}\newline
+{\ttfamily \#include $<$vector$>$}\newline
+{\ttfamily \#include $<$complex$>$}\newline
+{\ttfamily \#include $<$stdexcept$>$}\newline
 {\ttfamily \#include $<$numeric$>$}\newline
-{\ttfamily \#include $<$map$>$}\newline
-{\ttfamily \#include \char`\"{}../base/math.\+h\char`\"{}}\newline
-Include dependency graph for window.\+h\+:\nopagebreak
+{\ttfamily \#include \char`\"{}types.\+h\char`\"{}}\newline
+Include dependency graph for window.\+h\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
 \includegraphics[width=350pt]{window_8h__incl}
 \end{center}
 \end{figure}
-This graph shows which files directly or indirectly include this file\+:\nopagebreak
+This graph shows which files directly or indirectly include this file\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
-\includegraphics[width=334pt]{window_8h__dep__incl}
+\includegraphics[width=319pt]{window_8h__dep__incl}
 \end{center}
 \end{figure}
 \subsection*{Classes}
 \begin{DoxyCompactItemize}
 \item 
-struct \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window}
-\item 
-struct \hyperlink{structdevfix_1_1dsp_1_1window_1_1buffer}{devfix\+::dsp\+::window\+::buffer$<$ Float\+T, win\+\_\+fun $>$}
-\end{DoxyCompactItemize}
+struct \hyperlink{structdevfix_1_1dsp_1_1window}{devfix\+::dsp\+::window$<$ Float\+T $>$}
+\begin{DoxyCompactList}\small\item\em buffer for the values of window function for a specific window length \end{DoxyCompactList}\end{DoxyCompactItemize}
 \subsection*{Namespaces}
 \begin{DoxyCompactItemize}
 \item 

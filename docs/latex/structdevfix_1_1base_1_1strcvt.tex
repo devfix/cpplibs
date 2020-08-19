@@ -4,32 +4,106 @@
 
 {\ttfamily \#include $<$strcvt.\+h$>$}
 
+\subsection*{Public Types}
+\begin{DoxyCompactItemize}
+\item 
+using \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{u08string} = std\+::basic\+\_\+string$<$ \hyperlink{strcvt_8h_a4af1e597c87b7893007a4ea68d648e91}{char08\+\_\+t} $>$
+\item 
+using \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{u16string} = std\+::u16string
+\item 
+using \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{u32string} = std\+::u32string
+\end{DoxyCompactItemize}
 \subsection*{Static Public Member Functions}
 \begin{DoxyCompactItemize}
 \item 
-static std\+::wstring \hyperlink{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}{wstr} (std\+::string\+\_\+view sv)
+static \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{u16string} \hyperlink{structdevfix_1_1base_1_1strcvt_a98341e594aacd83ff26fcfdf985d906f}{c08to16} (const \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{u08string} \&s)
+\item 
+static \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{u32string} \hyperlink{structdevfix_1_1base_1_1strcvt_a71910c157f438d82de7e072988321d66}{c08to32} (const \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{u08string} \&s)
+\item 
+static \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{u08string} \hyperlink{structdevfix_1_1base_1_1strcvt_a45c7479d1adbebb5ed2c35f3f34dad60}{c16to08} (const \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{u16string} \&s)
+\item 
+static \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{u32string} \hyperlink{structdevfix_1_1base_1_1strcvt_a2f1f217dca92b8043e9e8ba298caede9}{c16to32} (const \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{u16string} \&s)
+\item 
+static \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{u08string} \hyperlink{structdevfix_1_1base_1_1strcvt_a0ccc0689bd1a56aae9c10364d100943e}{c32to08} (const \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{u32string} \&s)
+\item 
+static \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{u16string} \hyperlink{structdevfix_1_1base_1_1strcvt_aa174cae3c3c133848799549be4b0cb16}{c32to16} (const \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{u32string} \&s)
+\item 
+static std\+::wstring \hyperlink{structdevfix_1_1base_1_1strcvt_a968c3adb34ac1ab9e687280ddc0742ff}{wstr} (const std\+::string \&\hyperlink{structdevfix_1_1base_1_1strcvt_a469b02dcc803d1b740643d6809660851}{str})
 \begin{DoxyCompactList}\small\item\em convert std\+::string to std\+::wstring \end{DoxyCompactList}\item 
-static std\+::wstring \hyperlink{structdevfix_1_1base_1_1strcvt_acc5ba74410abd732c4559800b1ff2852}{wstr} (const std\+::string \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
-\begin{DoxyCompactList}\small\item\em convert std\+::string to std\+::wstring \end{DoxyCompactList}\item 
-static std\+::string \hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str} (std\+::wstring\+\_\+view wsv)
+static std\+::string \hyperlink{structdevfix_1_1base_1_1strcvt_a469b02dcc803d1b740643d6809660851}{str} (const std\+::wstring \&\hyperlink{structdevfix_1_1base_1_1strcvt_a968c3adb34ac1ab9e687280ddc0742ff}{wstr})
 \begin{DoxyCompactList}\small\item\em convert std\+::wstring to std\+::string \end{DoxyCompactList}\item 
-static std\+::string \hyperlink{structdevfix_1_1base_1_1strcvt_a721e180085ba30dbdb37ac878d75d350}{str} (const std\+::wstring \&\hyperlink{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}{wstr})
-\begin{DoxyCompactList}\small\item\em convert std\+::wstring to std\+::string \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a5b28d529cfbbf026c8e1550e92e2e557}{stof} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a5b28d529cfbbf026c8e1550e92e2e557}{stof} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a469b02dcc803d1b740643d6809660851}{str})
 \begin{DoxyCompactList}\small\item\em convert string to float always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_ad124ced1e4a75974cdf8065985028265}{stof} (std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$ sv)
 \begin{DoxyCompactList}\small\item\em convert string to float always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5}{stod} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5}{stod} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a469b02dcc803d1b740643d6809660851}{str})
 \begin{DoxyCompactList}\small\item\em convert string to double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_aec0faa61c87e1206ef3a50d5bb197fe7}{stod} (std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$ sv)
 \begin{DoxyCompactList}\small\item\em convert string to double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
-{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a387c5ad278f568abb921df0ebac489c3}{stold} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}{str})
+{\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_a387c5ad278f568abb921df0ebac489c3}{stold} (const std\+::basic\+\_\+string$<$ CharT $>$ \&\hyperlink{structdevfix_1_1base_1_1strcvt_a469b02dcc803d1b740643d6809660851}{str})
 \begin{DoxyCompactList}\small\item\em convert string to long double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\item 
 {\footnotesize template$<$typename CharT $>$ }\\static auto \hyperlink{structdevfix_1_1base_1_1strcvt_acd3c558da236cbab738a9014df5979ac}{stold} (std\+::basic\+\_\+string\+\_\+view$<$ CharT $>$ sv)
 \begin{DoxyCompactList}\small\item\em convert string to long double always with \char`\"{}\+C\char`\"{} locale \end{DoxyCompactList}\end{DoxyCompactItemize}
 
 
+\subsection{Member Typedef Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}\label{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!u08string@{u08string}}
+\index{u08string@{u08string}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{u08string}{u08string}}
+{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{devfix\+::base\+::strcvt\+::u08string} =  std\+::basic\+\_\+string$<$\hyperlink{strcvt_8h_a4af1e597c87b7893007a4ea68d648e91}{char08\+\_\+t}$>$}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}\label{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!u16string@{u16string}}
+\index{u16string@{u16string}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{u16string}{u16string}}
+{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{devfix\+::base\+::strcvt\+::u16string} =  std\+::u16string}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}\label{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!u32string@{u32string}}
+\index{u32string@{u32string}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{u32string}{u32string}}
+{\footnotesize\ttfamily using \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{devfix\+::base\+::strcvt\+::u32string} =  std\+::u32string}
+
+
+
 \subsection{Member Function Documentation}
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a98341e594aacd83ff26fcfdf985d906f}\label{structdevfix_1_1base_1_1strcvt_a98341e594aacd83ff26fcfdf985d906f}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!c08to16@{c08to16}}
+\index{c08to16@{c08to16}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{c08to16()}{c08to16()}}
+{\footnotesize\ttfamily \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{strcvt\+::u16string} devfix\+::base\+::strcvt\+::c08to16 (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{u08string} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a71910c157f438d82de7e072988321d66}\label{structdevfix_1_1base_1_1strcvt_a71910c157f438d82de7e072988321d66}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!c08to32@{c08to32}}
+\index{c08to32@{c08to32}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{c08to32()}{c08to32()}}
+{\footnotesize\ttfamily \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{strcvt\+::u32string} devfix\+::base\+::strcvt\+::c08to32 (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{u08string} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a45c7479d1adbebb5ed2c35f3f34dad60}\label{structdevfix_1_1base_1_1strcvt_a45c7479d1adbebb5ed2c35f3f34dad60}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!c16to08@{c16to08}}
+\index{c16to08@{c16to08}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{c16to08()}{c16to08()}}
+{\footnotesize\ttfamily \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{strcvt\+::u08string} devfix\+::base\+::strcvt\+::c16to08 (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{u16string} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a2f1f217dca92b8043e9e8ba298caede9}\label{structdevfix_1_1base_1_1strcvt_a2f1f217dca92b8043e9e8ba298caede9}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!c16to32@{c16to32}}
+\index{c16to32@{c16to32}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{c16to32()}{c16to32()}}
+{\footnotesize\ttfamily \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{strcvt\+::u32string} devfix\+::base\+::strcvt\+::c16to32 (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{u16string} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a0ccc0689bd1a56aae9c10364d100943e}\label{structdevfix_1_1base_1_1strcvt_a0ccc0689bd1a56aae9c10364d100943e}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!c32to08@{c32to08}}
+\index{c32to08@{c32to08}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{c32to08()}{c32to08()}}
+{\footnotesize\ttfamily \hyperlink{structdevfix_1_1base_1_1strcvt_ad2a80b923d1d235cee3d4cd0bc560b64}{strcvt\+::u08string} devfix\+::base\+::strcvt\+::c32to08 (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{u32string} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_aa174cae3c3c133848799549be4b0cb16}\label{structdevfix_1_1base_1_1strcvt_aa174cae3c3c133848799549be4b0cb16}} 
+\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!c32to16@{c32to16}}
+\index{c32to16@{c32to16}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
+\subsubsection{\texorpdfstring{c32to16()}{c32to16()}}
+{\footnotesize\ttfamily \hyperlink{structdevfix_1_1base_1_1strcvt_a33a324a669607cdb717d84bbfa1f844b}{strcvt\+::u16string} devfix\+::base\+::strcvt\+::c32to16 (\begin{DoxyParamCaption}\item[{const \hyperlink{structdevfix_1_1base_1_1strcvt_a34f169167c3c7c1315df2eca9d5532d7}{u32string} \&}]{s }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
 \mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5}\label{structdevfix_1_1base_1_1strcvt_a63350be05c30f4cffee9d8dc8eed54d5}} 
 \index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!stod@{stod}}
 \index{stod@{stod}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
@@ -54,7 +128,8 @@ convert string to double always with \char`\"{}\+C\char`\"{} locale
 \begin{DoxyReturn}{Returns}
 converted double 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -109,7 +184,8 @@ convert string to float always with \char`\"{}\+C\char`\"{} locale
 \begin{DoxyReturn}{Returns}
 converted float 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -164,7 +240,8 @@ convert string to long double always with \char`\"{}\+C\char`\"{} locale
 \begin{DoxyReturn}{Returns}
 converted long double 
 \end{DoxyReturn}
-Here is the caller graph for this function\+:\nopagebreak
+Here is the caller graph for this function\+:
+\nopagebreak
 \begin{figure}[H]
 \begin{center}
 \leavevmode
@@ -195,29 +272,11 @@ convert string to long double always with \char`\"{}\+C\char`\"{} locale
 \begin{DoxyReturn}{Returns}
 converted long double 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}\label{structdevfix_1_1base_1_1strcvt_a22dadaf95d340097e76fb077898578a7}} 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a469b02dcc803d1b740643d6809660851}\label{structdevfix_1_1base_1_1strcvt_a469b02dcc803d1b740643d6809660851}} 
 \index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!str@{str}}
 \index{str@{str}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
-\subsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily std\+::string devfix\+::base\+::strcvt\+::str (\begin{DoxyParamCaption}\item[{std\+::wstring\+\_\+view}]{wsv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-convert std\+::wstring to std\+::string 
-
-
-\begin{DoxyParams}{Parameters}
-{\em wsv} & input wstring \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-converted string 
-\end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a721e180085ba30dbdb37ac878d75d350}\label{structdevfix_1_1base_1_1strcvt_a721e180085ba30dbdb37ac878d75d350}} 
-\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!str@{str}}
-\index{str@{str}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
-\subsubsection{\texorpdfstring{str()}{str()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily std\+::string devfix\+::base\+::strcvt\+::str (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{wstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\subsubsection{\texorpdfstring{str()}{str()}}
+{\footnotesize\ttfamily static std\+::string devfix\+::base\+::strcvt\+::str (\begin{DoxyParamCaption}\item[{const std\+::wstring \&}]{wstr }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 
@@ -231,29 +290,11 @@ convert std\+::wstring to std\+::string
 \begin{DoxyReturn}{Returns}
 converted string 
 \end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}\label{structdevfix_1_1base_1_1strcvt_aa7148029839299a29e74e422fdb48567}} 
+\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_a968c3adb34ac1ab9e687280ddc0742ff}\label{structdevfix_1_1base_1_1strcvt_a968c3adb34ac1ab9e687280ddc0742ff}} 
 \index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!wstr@{wstr}}
 \index{wstr@{wstr}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
-\subsubsection{\texorpdfstring{wstr()}{wstr()}\hspace{0.1cm}{\footnotesize\ttfamily [1/2]}}
-{\footnotesize\ttfamily std\+::wstring devfix\+::base\+::strcvt\+::wstr (\begin{DoxyParamCaption}\item[{std\+::string\+\_\+view}]{sv }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
-
-
-
-convert std\+::string to std\+::wstring 
-
-
-\begin{DoxyParams}{Parameters}
-{\em sv} & input string \\
-\hline
-\end{DoxyParams}
-\begin{DoxyReturn}{Returns}
-converted wstring 
-\end{DoxyReturn}
-\mbox{\Hypertarget{structdevfix_1_1base_1_1strcvt_acc5ba74410abd732c4559800b1ff2852}\label{structdevfix_1_1base_1_1strcvt_acc5ba74410abd732c4559800b1ff2852}} 
-\index{devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}!wstr@{wstr}}
-\index{wstr@{wstr}!devfix\+::base\+::strcvt@{devfix\+::base\+::strcvt}}
-\subsubsection{\texorpdfstring{wstr()}{wstr()}\hspace{0.1cm}{\footnotesize\ttfamily [2/2]}}
-{\footnotesize\ttfamily std\+::wstring devfix\+::base\+::strcvt\+::wstr (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+\subsubsection{\texorpdfstring{wstr()}{wstr()}}
+{\footnotesize\ttfamily static std\+::wstring devfix\+::base\+::strcvt\+::wstr (\begin{DoxyParamCaption}\item[{const std\+::string \&}]{str }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [inline]}, {\ttfamily [static]}}
 
 
 

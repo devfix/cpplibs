@@ -76,51 +76,69 @@ $(function() {
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-types"></a>
 Public Types</h2></td></tr>
-<tr class="memitem:a466499f45d4ae1240f5ba7e8c44a4691"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a466499f45d4ae1240f5ba7e8c44a4691">math</a> = <a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td></tr>
-<tr class="separator:a466499f45d4ae1240f5ba7e8c44a4691"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a6309eb88cede0b11f17067f8892af91a"><td class="memItemLeft" align="right" valign="top">using&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a6309eb88cede0b11f17067f8892af91a">math</a> = ::<a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td></tr>
+<tr class="separator:a6309eb88cede0b11f17067f8892af91a"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table><table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="pub-static-methods"></a>
 Static Public Member Functions</h2></td></tr>
-<tr class="memitem:af0c91dff74868f580ad295448e50693f"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:af0c91dff74868f580ad295448e50693f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#af0c91dff74868f580ad295448e50693f">transform_inplace</a> (std::complex&lt; FloatT &gt; *win, std::size_t len)</td></tr>
-<tr class="separator:af0c91dff74868f580ad295448e50693f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ae3d7d5529ffad8aa929c5353252df7f5"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:ae3d7d5529ffad8aa929c5353252df7f5"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#ae3d7d5529ffad8aa929c5353252df7f5">transform_inplace</a> (std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win)</td></tr>
-<tr class="separator:ae3d7d5529ffad8aa929c5353252df7f5"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a56cf2ee0f12d0a4c4bdcded3db38e088"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
-<tr class="memitem:a56cf2ee0f12d0a4c4bdcded3db38e088"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a56cf2ee0f12d0a4c4bdcded3db38e088">transform_inplace</a> (std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win)</td></tr>
-<tr class="separator:a56cf2ee0f12d0a4c4bdcded3db38e088"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a6ed95d078d9828e160e6d9911c253b5f"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:a6ed95d078d9828e160e6d9911c253b5f"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a6ed95d078d9828e160e6d9911c253b5f">convert_to_onesided</a> (const std::complex&lt; FloatT &gt; *win, std::size_t len, std::complex&lt; FloatT &gt; *positive)</td></tr>
-<tr class="separator:a6ed95d078d9828e160e6d9911c253b5f"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a595260b93cce8bcec41570a93521b263"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:a595260b93cce8bcec41570a93521b263"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; std::complex&lt; FloatT &gt; &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a595260b93cce8bcec41570a93521b263">convert_to_onesided</a> (const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win)</td></tr>
-<tr class="separator:a595260b93cce8bcec41570a93521b263"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7529cbbcd074fe451c13791acfb77fb0"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
-<tr class="memitem:a7529cbbcd074fe451c13791acfb77fb0"><td class="memTemplItemLeft" align="right" valign="top">static std::array&lt; std::complex&lt; FloatT &gt;, N/2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a7529cbbcd074fe451c13791acfb77fb0">convert_to_onesided</a> (const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win)</td></tr>
-<tr class="separator:a7529cbbcd074fe451c13791acfb77fb0"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac2be4d53cf6ae645c4be7b773f55e3ca"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:ac2be4d53cf6ae645c4be7b773f55e3ca"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#ac2be4d53cf6ae645c4be7b773f55e3ca">extract_angles</a> (const std::complex&lt; FloatT &gt; *win, std::size_t len, FloatT *angles, FloatT threshold=-1)</td></tr>
-<tr class="memdesc:ac2be4d53cf6ae645c4be7b773f55e3ca"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the angles (phase) in radians for each complex number  <a href="#ac2be4d53cf6ae645c4be7b773f55e3ca">More...</a><br /></td></tr>
-<tr class="separator:ac2be4d53cf6ae645c4be7b773f55e3ca"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a7f34943ae3b66b6cf77b397f1a1c2386"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
-<tr class="memitem:a7f34943ae3b66b6cf77b397f1a1c2386"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a7f34943ae3b66b6cf77b397f1a1c2386">extract_angles</a> (const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;win, FloatT threshold=-1)</td></tr>
-<tr class="memdesc:a7f34943ae3b66b6cf77b397f1a1c2386"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the angles (phase) in radians for each complex number  <a href="#a7f34943ae3b66b6cf77b397f1a1c2386">More...</a><br /></td></tr>
-<tr class="separator:a7f34943ae3b66b6cf77b397f1a1c2386"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a34854b817edfebadae41362b399c7f34"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
-<tr class="memitem:a34854b817edfebadae41362b399c7f34"><td class="memTemplItemLeft" align="right" valign="top">static std::array&lt; FloatT, N &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a34854b817edfebadae41362b399c7f34">extract_angles</a> (const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;win, FloatT threshold=-1)</td></tr>
-<tr class="memdesc:a34854b817edfebadae41362b399c7f34"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the angles (phase) in radians for each complex number  <a href="#a34854b817edfebadae41362b399c7f34">More...</a><br /></td></tr>
-<tr class="separator:a34854b817edfebadae41362b399c7f34"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a8e6e4580cc075ebaa7be5d2781a8e3eb"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a8e6e4580cc075ebaa7be5d2781a8e3eb"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a8e6e4580cc075ebaa7be5d2781a8e3eb">transform_inplace</a> (std::complex&lt; FloatT &gt; *field, std::size_t len)</td></tr>
+<tr class="memdesc:a8e6e4580cc075ebaa7be5d2781a8e3eb"><td class="mdescLeft">&#160;</td><td class="mdescRight">performs the inplace discrete-fourier-transformation for an complex field, the field length has to be a power of two  <a href="#a8e6e4580cc075ebaa7be5d2781a8e3eb">More...</a><br /></td></tr>
+<tr class="separator:a8e6e4580cc075ebaa7be5d2781a8e3eb"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3f9d520b7ee8f9fe233bbed45f0c10d8"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a3f9d520b7ee8f9fe233bbed45f0c10d8"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a3f9d520b7ee8f9fe233bbed45f0c10d8">transform_inplace</a> (std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;vec)</td></tr>
+<tr class="memdesc:a3f9d520b7ee8f9fe233bbed45f0c10d8"><td class="mdescLeft">&#160;</td><td class="mdescRight">performs the inplace discrete-fourier-transformation for an complex vector, the vector length has to be a power of two  <a href="#a3f9d520b7ee8f9fe233bbed45f0c10d8">More...</a><br /></td></tr>
+<tr class="separator:a3f9d520b7ee8f9fe233bbed45f0c10d8"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a92d4ff21f87fd2d1607c60788158cf62"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:a92d4ff21f87fd2d1607c60788158cf62"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a92d4ff21f87fd2d1607c60788158cf62">transform_inplace</a> (std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;arr)</td></tr>
+<tr class="memdesc:a92d4ff21f87fd2d1607c60788158cf62"><td class="mdescLeft">&#160;</td><td class="mdescRight">performs the inplace discrete-fourier-transformation for an complex array, the array length has to be a power of two  <a href="#a92d4ff21f87fd2d1607c60788158cf62">More...</a><br /></td></tr>
+<tr class="separator:a92d4ff21f87fd2d1607c60788158cf62"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:ac05e043eb9375c77ff7e4ab5843d82af"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:ac05e043eb9375c77ff7e4ab5843d82af"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#ac05e043eb9375c77ff7e4ab5843d82af">normalize_inplace</a> (std::complex&lt; FloatT &gt; *field, std::size_t len, std::size_t n=0)</td></tr>
+<tr class="memdesc:ac05e043eb9375c77ff7e4ab5843d82af"><td class="mdescLeft">&#160;</td><td class="mdescRight">divides each element of the field by the fft size, if the fft size is zero, it gets set to the field length  <a href="#ac05e043eb9375c77ff7e4ab5843d82af">More...</a><br /></td></tr>
+<tr class="separator:ac05e043eb9375c77ff7e4ab5843d82af"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:af4e943d0958fc382656380ca2bc993cc"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:af4e943d0958fc382656380ca2bc993cc"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#af4e943d0958fc382656380ca2bc993cc">normalize_inplace</a> (std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;vec, std::size_t n=0)</td></tr>
+<tr class="memdesc:af4e943d0958fc382656380ca2bc993cc"><td class="mdescLeft">&#160;</td><td class="mdescRight">divides each element of the vector by the fft size, if the fft size is zero, it gets set to the vector size  <a href="#af4e943d0958fc382656380ca2bc993cc">More...</a><br /></td></tr>
+<tr class="separator:af4e943d0958fc382656380ca2bc993cc"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a7b52c39390680041aa9800295f310f9d"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:a7b52c39390680041aa9800295f310f9d"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a7b52c39390680041aa9800295f310f9d">normalize_inplace</a> (std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;arr, std::size_t n=0)</td></tr>
+<tr class="memdesc:a7b52c39390680041aa9800295f310f9d"><td class="mdescLeft">&#160;</td><td class="mdescRight">divides each element of the array by the fft size, if the fft size is zero, it gets set to the array size  <a href="#a7b52c39390680041aa9800295f310f9d">More...</a><br /></td></tr>
+<tr class="separator:a7b52c39390680041aa9800295f310f9d"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a5e56000eec31a31dc7a2fc7af198b709"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a5e56000eec31a31dc7a2fc7af198b709"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a5e56000eec31a31dc7a2fc7af198b709">get_magnitude</a> (const std::complex&lt; FloatT &gt; *field, std::size_t len, FloatT *mag)</td></tr>
+<tr class="memdesc:a5e56000eec31a31dc7a2fc7af198b709"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the magnitudes of a normalized fft field  <a href="#a5e56000eec31a31dc7a2fc7af198b709">More...</a><br /></td></tr>
+<tr class="separator:a5e56000eec31a31dc7a2fc7af198b709"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a9c937104cad67dd01f56870e44dd9556"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a9c937104cad67dd01f56870e44dd9556"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a9c937104cad67dd01f56870e44dd9556">get_magnitude</a> (const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;vec)</td></tr>
+<tr class="memdesc:a9c937104cad67dd01f56870e44dd9556"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the magnitudes of a normalized fft vector  <a href="#a9c937104cad67dd01f56870e44dd9556">More...</a><br /></td></tr>
+<tr class="separator:a9c937104cad67dd01f56870e44dd9556"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:aca37b18e5e6352088d9f24a71a6e3573"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:aca37b18e5e6352088d9f24a71a6e3573"><td class="memTemplItemLeft" align="right" valign="top">static std::array&lt; FloatT, N/2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#aca37b18e5e6352088d9f24a71a6e3573">get_magnitude</a> (const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;arr)</td></tr>
+<tr class="memdesc:aca37b18e5e6352088d9f24a71a6e3573"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the magnitudes of a normalized fft vector  <a href="#aca37b18e5e6352088d9f24a71a6e3573">More...</a><br /></td></tr>
+<tr class="separator:aca37b18e5e6352088d9f24a71a6e3573"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a330303a45a2dfd49d19fff95d9cf14cd"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a330303a45a2dfd49d19fff95d9cf14cd"><td class="memTemplItemLeft" align="right" valign="top">static void&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a330303a45a2dfd49d19fff95d9cf14cd">get_phase</a> (const std::complex&lt; FloatT &gt; *field, std::size_t len, FloatT *ph)</td></tr>
+<tr class="memdesc:a330303a45a2dfd49d19fff95d9cf14cd"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the phases of a normalized fft field  <a href="#a330303a45a2dfd49d19fff95d9cf14cd">More...</a><br /></td></tr>
+<tr class="separator:a330303a45a2dfd49d19fff95d9cf14cd"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:a3efcfd1a671e6558cf7ca25379317ada"><td class="memTemplParams" colspan="2">template&lt;typename FloatT &gt; </td></tr>
+<tr class="memitem:a3efcfd1a671e6558cf7ca25379317ada"><td class="memTemplItemLeft" align="right" valign="top">static std::vector&lt; FloatT &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#a3efcfd1a671e6558cf7ca25379317ada">get_phase</a> (const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;vec)</td></tr>
+<tr class="memdesc:a3efcfd1a671e6558cf7ca25379317ada"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the phases of a normalized fft vector  <a href="#a3efcfd1a671e6558cf7ca25379317ada">More...</a><br /></td></tr>
+<tr class="separator:a3efcfd1a671e6558cf7ca25379317ada"><td class="memSeparator" colspan="2">&#160;</td></tr>
+<tr class="memitem:abee685e0c6688e55a353ca019ea2793c"><td class="memTemplParams" colspan="2">template&lt;typename FloatT , std::size_t N&gt; </td></tr>
+<tr class="memitem:abee685e0c6688e55a353ca019ea2793c"><td class="memTemplItemLeft" align="right" valign="top">static std::array&lt; FloatT, N/2 &gt;&#160;</td><td class="memTemplItemRight" valign="bottom"><a class="el" href="structdevfix_1_1dsp_1_1fft.html#abee685e0c6688e55a353ca019ea2793c">get_phase</a> (const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;arr)</td></tr>
+<tr class="memdesc:abee685e0c6688e55a353ca019ea2793c"><td class="mdescLeft">&#160;</td><td class="mdescRight">calculates the phases of a normalized fft array  <a href="#abee685e0c6688e55a353ca019ea2793c">More...</a><br /></td></tr>
+<tr class="separator:abee685e0c6688e55a353ca019ea2793c"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
 <h2 class="groupheader">Member Typedef Documentation</h2>
-<a id="a466499f45d4ae1240f5ba7e8c44a4691"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a466499f45d4ae1240f5ba7e8c44a4691">&#9670;&nbsp;</a></span>math</h2>
+<a id="a6309eb88cede0b11f17067f8892af91a"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a6309eb88cede0b11f17067f8892af91a">&#9670;&nbsp;</a></span>math</h2>
 
 <div class="memitem">
 <div class="memproto">
       <table class="memname">
         <tr>
-          <td class="memname">using <a class="el" href="structdevfix_1_1dsp_1_1fft.html#a466499f45d4ae1240f5ba7e8c44a4691">devfix::dsp::fft::math</a> =  <a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td>
+          <td class="memname">using <a class="el" href="structdevfix_1_1dsp_1_1fft.html#a6309eb88cede0b11f17067f8892af91a">devfix::dsp::fft::math</a> =  ::<a class="el" href="structdevfix_1_1base_1_1math.html">devfix::base::math</a></td>
         </tr>
       </table>
 </div><div class="memdoc">
@@ -128,8 +146,8 @@ Static Public Member Functions</h2></td></tr>
 </div>
 </div>
 <h2 class="groupheader">Member Function Documentation</h2>
-<a id="a6ed95d078d9828e160e6d9911c253b5f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a6ed95d078d9828e160e6d9911c253b5f">&#9670;&nbsp;</a></span>convert_to_onesided() <span class="overload">[1/3]</span></h2>
+<a id="a5e56000eec31a31dc7a2fc7af198b709"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a5e56000eec31a31dc7a2fc7af198b709">&#9670;&nbsp;</a></span>get_magnitude() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -140,119 +158,10 @@ template&lt;typename FloatT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static void devfix::dsp::fft::convert_to_onesided </td>
+          <td class="memname">static void devfix::dsp::fft::get_magnitude </td>
           <td>(</td>
           <td class="paramtype">const std::complex&lt; FloatT &gt; *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::size_t&#160;</td>
-          <td class="paramname"><em>len</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">std::complex&lt; FloatT &gt; *&#160;</td>
-          <td class="paramname"><em>positive</em>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f_icgraph.png" border="0" usemap="#structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f_icgraph" alt=""/></div>
-<map name="structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f_icgraph" id="structdevfix_1_1dsp_1_1fft_a6ed95d078d9828e160e6d9911c253b5f_icgraph">
-<area shape="rect" id="node2" href="structdevfix_1_1dsp_1_1analysis.html#a3448d6f6aeaf71facdac78999b3ad177" title="devfix::dsp::analysis\l::ampl_thdn" alt="" coords="218,5,361,47"/>
-<area shape="rect" id="node3" href="structdevfix_1_1dsp_1_1fft.html#a595260b93cce8bcec41570a93521b263" title="devfix::dsp::fft::convert\l_to_onesided" alt="" coords="211,71,368,112"/>
-</map>
-</div>
-
-</div>
-</div>
-<a id="a595260b93cce8bcec41570a93521b263"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a595260b93cce8bcec41570a93521b263">&#9670;&nbsp;</a></span>convert_to_onesided() <span class="overload">[2/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatT &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::vector&lt;std::complex&lt;FloatT&gt; &gt; devfix::dsp::fft::convert_to_onesided </td>
-          <td>(</td>
-          <td class="paramtype">const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="a7529cbbcd074fe451c13791acfb77fb0"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7529cbbcd074fe451c13791acfb77fb0">&#9670;&nbsp;</a></span>convert_to_onesided() <span class="overload">[3/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatT , std::size_t N&gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static std::array&lt;std::complex&lt;FloatT&gt;, N / 2&gt; devfix::dsp::fft::convert_to_onesided </td>
-          <td>(</td>
-          <td class="paramtype">const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
-          <td></td>
-        </tr>
-      </table>
-  </td>
-  <td class="mlabels-right">
-<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
-  </tr>
-</table>
-</div><div class="memdoc">
-
-</div>
-</div>
-<a id="ac2be4d53cf6ae645c4be7b773f55e3ca"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ac2be4d53cf6ae645c4be7b773f55e3ca">&#9670;&nbsp;</a></span>extract_angles() <span class="overload">[1/3]</span></h2>
-
-<div class="memitem">
-<div class="memproto">
-<div class="memtemplate">
-template&lt;typename FloatT &gt; </div>
-<table class="mlabels">
-  <tr>
-  <td class="mlabels-left">
-      <table class="memname">
-        <tr>
-          <td class="memname">static void devfix::dsp::fft::extract_angles </td>
-          <td>(</td>
-          <td class="paramtype">const std::complex&lt; FloatT &gt; *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
+          <td class="paramname"><em>field</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -264,13 +173,7 @@ template&lt;typename FloatT &gt; </div>
           <td class="paramkey"></td>
           <td></td>
           <td class="paramtype">FloatT *&#160;</td>
-          <td class="paramname"><em>angles</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
-          <td></td>
-          <td class="paramtype">FloatT&#160;</td>
-          <td class="paramname"><em>threshold</em> = <code>-1</code>&#160;</td>
+          <td class="paramname"><em>mag</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -285,35 +188,26 @@ template&lt;typename FloatT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>calculates the angles (phase) in radians for each complex number </p>
+<p>calculates the magnitudes of a normalized fft field </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">FloatT</td><td>floating point type </td></tr>
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">win</td><td>field of complex numbers to extract the angles from </td></tr>
-    <tr><td class="paramname">len</td><td>length of field </td></tr>
-    <tr><td class="paramname">angles</td><td>target field to store the angles in, should have at least same size as win </td></tr>
-    <tr><td class="paramname">threshold</td><td>if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold </td></tr>
+    <tr><td class="paramname">field</td><td>input field </td></tr>
+    <tr><td class="paramname">len</td><td>input field length </td></tr>
+    <tr><td class="paramname">mag</td><td>output field for the magnitudes </td></tr>
   </table>
   </dd>
 </dl>
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca_icgraph.png" border="0" usemap="#structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca_icgraph" alt=""/></div>
-<map name="structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca_icgraph" id="structdevfix_1_1dsp_1_1fft_ac2be4d53cf6ae645c4be7b773f55e3ca_icgraph">
-<area shape="rect" id="node2" href="structdevfix_1_1dsp_1_1fft.html#a7f34943ae3b66b6cf77b397f1a1c2386" title="calculates the angles (phase) in radians for each complex number " alt="" coords="208,5,363,47"/>
-</map>
-</div>
 
 </div>
 </div>
-<a id="a7f34943ae3b66b6cf77b397f1a1c2386"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a7f34943ae3b66b6cf77b397f1a1c2386">&#9670;&nbsp;</a></span>extract_angles() <span class="overload">[2/3]</span></h2>
+<a id="a9c937104cad67dd01f56870e44dd9556"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a9c937104cad67dd01f56870e44dd9556">&#9670;&nbsp;</a></span>get_magnitude() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -324,21 +218,11 @@ template&lt;typename FloatT &gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::vector&lt;FloatT&gt; devfix::dsp::fft::extract_angles </td>
+          <td class="memname">static std::vector&lt;FloatT&gt; devfix::dsp::fft::get_magnitude </td>
           <td>(</td>
           <td class="paramtype">const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
-        </tr>
-        <tr>
-          <td class="paramkey"></td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
-          <td class="paramtype">FloatT&#160;</td>
-          <td class="paramname"><em>threshold</em> = <code>-1</code>&#160;</td>
-        </tr>
-        <tr>
-          <td></td>
-          <td>)</td>
-          <td></td><td></td>
         </tr>
       </table>
   </td>
@@ -348,26 +232,25 @@ template&lt;typename FloatT &gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>calculates the angles (phase) in radians for each complex number </p>
+<p>calculates the magnitudes of a normalized fft vector </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">FloatT</td><td>floating point type </td></tr>
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">win</td><td>vector of complex numbers to extract the angles from </td></tr>
-    <tr><td class="paramname">threshold</td><td>if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold </td></tr>
+    <tr><td class="paramname">vec</td><td>input vector </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>vector of extracted angles, same length as win </dd></dl>
+<dl class="section return"><dt>Returns</dt><dd>output vector with magnitudes </dd></dl>
 
 </div>
 </div>
-<a id="a34854b817edfebadae41362b399c7f34"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a34854b817edfebadae41362b399c7f34">&#9670;&nbsp;</a></span>extract_angles() <span class="overload">[3/3]</span></h2>
+<a id="aca37b18e5e6352088d9f24a71a6e3573"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#aca37b18e5e6352088d9f24a71a6e3573">&#9670;&nbsp;</a></span>get_magnitude() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -378,16 +261,66 @@ template&lt;typename FloatT , std::size_t N&gt; </div>
   <td class="mlabels-left">
       <table class="memname">
         <tr>
-          <td class="memname">static std::array&lt;FloatT, N&gt; devfix::dsp::fft::extract_angles </td>
+          <td class="memname">static std::array&lt;FloatT, N / 2&gt; devfix::dsp::fft::get_magnitude </td>
           <td>(</td>
           <td class="paramtype">const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calculates the magnitudes of a normalized fft vector </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
+    <tr><td class="paramname">N</td><td>input array length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>input array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>output array with magnitudes </dd></dl>
+
+</div>
+</div>
+<a id="a330303a45a2dfd49d19fff95d9cf14cd"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a330303a45a2dfd49d19fff95d9cf14cd">&#9670;&nbsp;</a></span>get_phase() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void devfix::dsp::fft::get_phase </td>
+          <td>(</td>
+          <td class="paramtype">const std::complex&lt; FloatT &gt; *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
           <td></td>
-          <td class="paramtype">FloatT&#160;</td>
-          <td class="paramname"><em>threshold</em> = <code>-1</code>&#160;</td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">FloatT *&#160;</td>
+          <td class="paramname"><em>ph</em>&#160;</td>
         </tr>
         <tr>
           <td></td>
@@ -402,27 +335,280 @@ template&lt;typename FloatT , std::size_t N&gt; </div>
 </table>
 </div><div class="memdoc">
 
-<p>calculates the angles (phase) in radians for each complex number </p>
+<p>calculates the phases of a normalized fft field </p>
 <dl class="tparams"><dt>Template Parameters</dt><dd>
   <table class="tparams">
-    <tr><td class="paramname">FloatT</td><td>floating point type </td></tr>
-    <tr><td class="paramname">N</td><td>length of array </td></tr>
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
   </table>
   </dd>
 </dl>
 <dl class="params"><dt>Parameters</dt><dd>
   <table class="params">
-    <tr><td class="paramname">win</td><td>array of complex numbers to extract the angles from </td></tr>
-    <tr><td class="paramname">threshold</td><td>if set to a positive value, the angles is set to zero if the abs value of the complex number is below this threshold </td></tr>
+    <tr><td class="paramname">field</td><td>input field </td></tr>
+    <tr><td class="paramname">len</td><td>input field length </td></tr>
+    <tr><td class="paramname">ph</td><td>output field for the phases </td></tr>
   </table>
   </dd>
 </dl>
-<dl class="section return"><dt>Returns</dt><dd>array of extracted angles, same length as win </dd></dl>
 
 </div>
 </div>
-<a id="af0c91dff74868f580ad295448e50693f"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#af0c91dff74868f580ad295448e50693f">&#9670;&nbsp;</a></span>transform_inplace() <span class="overload">[1/3]</span></h2>
+<a id="a3efcfd1a671e6558cf7ca25379317ada"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3efcfd1a671e6558cf7ca25379317ada">&#9670;&nbsp;</a></span>get_phase() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::vector&lt;FloatT&gt; devfix::dsp::fft::get_phase </td>
+          <td>(</td>
+          <td class="paramtype">const std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calculates the phases of a normalized fft vector </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>input vector </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>output vector with phases </dd></dl>
+
+</div>
+</div>
+<a id="abee685e0c6688e55a353ca019ea2793c"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#abee685e0c6688e55a353ca019ea2793c">&#9670;&nbsp;</a></span>get_phase() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static std::array&lt;FloatT, N / 2&gt; devfix::dsp::fft::get_phase </td>
+          <td>(</td>
+          <td class="paramtype">const std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
+          <td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>calculates the phases of a normalized fft array </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
+    <tr><td class="paramname">N</td><td>input array length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>input array </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="section return"><dt>Returns</dt><dd>output array with phases </dd></dl>
+
+</div>
+</div>
+<a id="ac05e043eb9375c77ff7e4ab5843d82af"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#ac05e043eb9375c77ff7e4ab5843d82af">&#9670;&nbsp;</a></span>normalize_inplace() <span class="overload">[1/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void devfix::dsp::fft::normalize_inplace </td>
+          <td>(</td>
+          <td class="paramtype">std::complex&lt; FloatT &gt; *&#160;</td>
+          <td class="paramname"><em>field</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>len</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>divides each element of the field by the fft size, if the fft size is zero, it gets set to the field length </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>field </td></tr>
+    <tr><td class="paramname">len</td><td>input field length </td></tr>
+    <tr><td class="paramname">n</td><td>fft size </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="af4e943d0958fc382656380ca2bc993cc"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#af4e943d0958fc382656380ca2bc993cc">&#9670;&nbsp;</a></span>normalize_inplace() <span class="overload">[2/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT &gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void devfix::dsp::fft::normalize_inplace </td>
+          <td>(</td>
+          <td class="paramtype">std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
+          <td class="paramname"><em>vec</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>divides each element of the vector by the fft size, if the fft size is zero, it gets set to the vector size </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>vector </td></tr>
+    <tr><td class="paramname">n</td><td>fft size </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a7b52c39390680041aa9800295f310f9d"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a7b52c39390680041aa9800295f310f9d">&#9670;&nbsp;</a></span>normalize_inplace() <span class="overload">[3/3]</span></h2>
+
+<div class="memitem">
+<div class="memproto">
+<div class="memtemplate">
+template&lt;typename FloatT , std::size_t N&gt; </div>
+<table class="mlabels">
+  <tr>
+  <td class="mlabels-left">
+      <table class="memname">
+        <tr>
+          <td class="memname">static void devfix::dsp::fft::normalize_inplace </td>
+          <td>(</td>
+          <td class="paramtype">std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
+          <td class="paramname"><em>arr</em>, </td>
+        </tr>
+        <tr>
+          <td class="paramkey"></td>
+          <td></td>
+          <td class="paramtype">std::size_t&#160;</td>
+          <td class="paramname"><em>n</em> = <code>0</code>&#160;</td>
+        </tr>
+        <tr>
+          <td></td>
+          <td>)</td>
+          <td></td><td></td>
+        </tr>
+      </table>
+  </td>
+  <td class="mlabels-right">
+<span class="mlabels"><span class="mlabel">inline</span><span class="mlabel">static</span></span>  </td>
+  </tr>
+</table>
+</div><div class="memdoc">
+
+<p>divides each element of the array by the fft size, if the fft size is zero, it gets set to the array size </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating point numbers </td></tr>
+    <tr><td class="paramname">N</td><td>array length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>array </td></tr>
+    <tr><td class="paramname">n</td><td>fft size </td></tr>
+  </table>
+  </dd>
+</dl>
+
+</div>
+</div>
+<a id="a8e6e4580cc075ebaa7be5d2781a8e3eb"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a8e6e4580cc075ebaa7be5d2781a8e3eb">&#9670;&nbsp;</a></span>transform_inplace() <span class="overload">[1/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -436,7 +622,7 @@ template&lt;typename FloatT &gt; </div>
           <td class="memname">static void devfix::dsp::fft::transform_inplace </td>
           <td>(</td>
           <td class="paramtype">std::complex&lt; FloatT &gt; *&#160;</td>
-          <td class="paramname"><em>win</em>, </td>
+          <td class="paramname"><em>field</em>, </td>
         </tr>
         <tr>
           <td class="paramkey"></td>
@@ -456,19 +642,26 @@ template&lt;typename FloatT &gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
-<div class="dynheader">
-Here is the caller graph for this function:</div>
-<div class="dyncontent">
-<div class="center"><img src="structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f_icgraph.png" border="0" usemap="#structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f_icgraph" alt=""/></div>
-<map name="structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f_icgraph" id="structdevfix_1_1dsp_1_1fft_af0c91dff74868f580ad295448e50693f_icgraph">
-<area shape="rect" id="node2" href="structdevfix_1_1dsp_1_1analysis.html#a3448d6f6aeaf71facdac78999b3ad177" title="devfix::dsp::analysis\l::ampl_thdn" alt="" coords="223,5,365,47"/>
-</map>
-</div>
+
+<p>performs the inplace discrete-fourier-transformation for an complex field, the field length has to be a power of two </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating pointer numbers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">field</td><td>complex field </td></tr>
+    <tr><td class="paramname">len</td><td>complex field length </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
-<a id="ae3d7d5529ffad8aa929c5353252df7f5"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#ae3d7d5529ffad8aa929c5353252df7f5">&#9670;&nbsp;</a></span>transform_inplace() <span class="overload">[2/3]</span></h2>
+<a id="a3f9d520b7ee8f9fe233bbed45f0c10d8"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a3f9d520b7ee8f9fe233bbed45f0c10d8">&#9670;&nbsp;</a></span>transform_inplace() <span class="overload">[2/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -482,7 +675,7 @@ template&lt;typename FloatT &gt; </div>
           <td class="memname">static void devfix::dsp::fft::transform_inplace </td>
           <td>(</td>
           <td class="paramtype">std::vector&lt; std::complex&lt; FloatT &gt;&gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
+          <td class="paramname"><em>vec</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -493,10 +686,24 @@ template&lt;typename FloatT &gt; </div>
 </table>
 </div><div class="memdoc">
 
+<p>performs the inplace discrete-fourier-transformation for an complex vector, the vector length has to be a power of two </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating pointer numbers </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">vec</td><td>complex vector </td></tr>
+  </table>
+  </dd>
+</dl>
+
 </div>
 </div>
-<a id="a56cf2ee0f12d0a4c4bdcded3db38e088"></a>
-<h2 class="memtitle"><span class="permalink"><a href="#a56cf2ee0f12d0a4c4bdcded3db38e088">&#9670;&nbsp;</a></span>transform_inplace() <span class="overload">[3/3]</span></h2>
+<a id="a92d4ff21f87fd2d1607c60788158cf62"></a>
+<h2 class="memtitle"><span class="permalink"><a href="#a92d4ff21f87fd2d1607c60788158cf62">&#9670;&nbsp;</a></span>transform_inplace() <span class="overload">[3/3]</span></h2>
 
 <div class="memitem">
 <div class="memproto">
@@ -510,7 +717,7 @@ template&lt;typename FloatT , std::size_t N&gt; </div>
           <td class="memname">static void devfix::dsp::fft::transform_inplace </td>
           <td>(</td>
           <td class="paramtype">std::array&lt; std::complex&lt; FloatT &gt;, N &gt; &amp;&#160;</td>
-          <td class="paramname"><em>win</em></td><td>)</td>
+          <td class="paramname"><em>arr</em></td><td>)</td>
           <td></td>
         </tr>
       </table>
@@ -520,6 +727,21 @@ template&lt;typename FloatT , std::size_t N&gt; </div>
   </tr>
 </table>
 </div><div class="memdoc">
+
+<p>performs the inplace discrete-fourier-transformation for an complex array, the array length has to be a power of two </p>
+<dl class="tparams"><dt>Template Parameters</dt><dd>
+  <table class="tparams">
+    <tr><td class="paramname">FloatT</td><td>type of floating pointer numbers </td></tr>
+    <tr><td class="paramname">N</td><td>array length </td></tr>
+  </table>
+  </dd>
+</dl>
+<dl class="params"><dt>Parameters</dt><dd>
+  <table class="params">
+    <tr><td class="paramname">arr</td><td>complex array </td></tr>
+  </table>
+  </dd>
+</dl>
 
 </div>
 </div>
