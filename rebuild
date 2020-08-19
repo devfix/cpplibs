@@ -14,3 +14,4 @@ cmake --build $dir --parallel $parallel --target testrunner --config $build_type
 echo -e "\033[48;5;16m\033[1;97mrun tests\033[0m"
 $dir/testrunner
 
+rm -rf cmake-build-*
