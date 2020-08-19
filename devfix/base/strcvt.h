@@ -6,6 +6,7 @@
 #include <string>
 #include <cstdint>
 #include <locale>
+#include <clocale>
 #include <algorithm>
 
 //#ifdef __cplusplus > 201703L
