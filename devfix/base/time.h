@@ -16,8 +16,9 @@ namespace devfix::base
 			t.year = tm->tm_year + 1900;
 			t.month = tm->tm_mon + 1;
 			t.day = tm->tm_mday;
-			if (tm->tm_isdst == 1) { t.hour = (tm->tm_hour + 1) % 24; }
-			else { t.hour = tm->tm_hour; }
+			t.hour = tm->tm_hour;
+			//if (tm->tm_isdst == 1) { t.hour++; }
+			//t.hour %= 24;
 			t.minute = tm->tm_min;
 			t.second = tm->tm_sec;
 			return t;
