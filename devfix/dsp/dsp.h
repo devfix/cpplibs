@@ -216,11 +216,12 @@ namespace devfix::dsp
 	[[nodiscard]] FloatT calcthdn(std::size_t sample_rate, FloatT freq, const FloatT* field, std::size_t len)
 	{
 		const auto fft_len = math::exp2(math::floorLog2(len));
-		auto dc = calcmean(field, fft_len);
-		auto ac = std::abs(calcsignal(sample_rate, freq, field, fft_len)) / numbers::sqrt2;
-		auto signal = dc * dc + ac * ac;
-		auto rms = calcrms(field, fft_len);
-		return (rms * rms - signal) / signal;
+		const auto rms = calcrms(field, fft_len);
+		const auto dc = calcmean(field, fft_len);
+		const auto ac = std::abs(calcsignal(sample_rate, freq, field, fft_len)) / numbers::sqrt2;
+		const auto p_total = rms * rms;
+		const auto p_signal = dc * dc + ac * ac;
+		return std::max((p_total - p_signal) / p_total, FloatT(0));
 	}
 
 	template<typename FloatT>

@@ -6,6 +6,7 @@
 #if CPPLIBS_ENABLE_DSP_TESTS == 1
 
 #include <testutil.h>
+#include <fstream>
 #include "../dsp.h"
 
 using namespace devfix::dsp;
@@ -125,20 +126,20 @@ TEST_CASE("devfix/dsp/dsp/calcthdn")
 		}
 		CHECK(calcthdn(data.size(), 8., data) == Approx(0.001287879).margin(testutil::MARGIN_COARSE));
 		CHECK(calcthdn(data.size(), 64., data) == Approx(0.031289014).margin(testutil::MARGIN_COARSE));
-		CHECK(calcthdn(data.size(), 256., data) == Approx(0.032497461).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 256., data) == Approx(0.031474616).margin(testutil::MARGIN_COARSE));
 	}
 	{
 		std::array<double, 1024> data{};
 		for (std::size_t i = 0; i < data.size(); i++)
 		{
 			data[i] =
-				+ 1.00 * std::sin(2 * numbers::pi * 10 * double(i) / data.size())
-				+ 0.20 * std::sin(2 * numbers::pi * 100 * double(i) / data.size())
-				+ 0.05 * std::sin(2 * numbers::pi * 200 * double(i) / data.size());
+				+1.00 * std::sin(2 * numbers::pi * 10 * double(i) / data.size())
+					+ 0.20 * std::sin(2 * numbers::pi * 100 * double(i) / data.size())
+					+ 0.05 * std::sin(2 * numbers::pi * 200 * double(i) / data.size());
 		}
-		CHECK(calcthdn(data.size(), 10., data) == Approx(0.0425).margin(testutil::MARGIN_COARSE));
-		CHECK(calcthdn(data.size(), 100., data) == Approx(25.0625).margin(testutil::MARGIN_COARSE));
-		CHECK(calcthdn(data.size(), 200., data) == Approx(416.).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 10., data) == Approx(0.0407673861).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 100., data) == Approx(0.9616306954).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn(data.size(), 200., data) == Approx(0.9976019185).margin(testutil::MARGIN_COARSE));
 	}
 }
 
