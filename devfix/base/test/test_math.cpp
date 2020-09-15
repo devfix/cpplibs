@@ -43,6 +43,27 @@ TEST_CASE("Math - Log2")
 	CHECK(math::popcount(128u) == 7);
 }
 
+TEST_CASE("Math - mod")
+{
+	CHECK(math::mod(3, 4) == 3);
+	CHECK(math::mod(7, 4) == 3);
+	CHECK(math::mod(11, 9) == 2);
+	CHECK(math::mod(-1, 2) == 1);
+	CHECK(math::mod(-6, 3) == 0);
+	CHECK(math::mod(-7, 3) == 2);
+
+	CHECK(math::mod(3., 4.) == Approx(3.).margin(testutil::MARGIN_FINE));
+	CHECK(math::mod(7., 4.) == Approx(3.).margin(testutil::MARGIN_FINE));
+	CHECK(math::mod(11., 9.) == Approx(2.).margin(testutil::MARGIN_FINE));
+	CHECK(math::mod(-1., 2.) == Approx(1.).margin(testutil::MARGIN_FINE));
+	CHECK(math::mod(-6., 3.) == Approx(0.).margin(testutil::MARGIN_FINE));
+	CHECK(math::mod(-7., 3.) == Approx(2.).margin(testutil::MARGIN_FINE));
+
+	CHECK(math::mod(1.5, 2.) == Approx(1.5).margin(testutil::MARGIN_FINE));
+	CHECK(math::mod(2.5, 2.) == Approx(0.5).margin(testutil::MARGIN_FINE));
+	CHECK(math::mod(-9.1, 8.) == Approx(6.9).margin(testutil::MARGIN_FINE));
+}
+
 TEST_CASE("Math - ReverseBitsSimpple")
 {
 	CHECK(math::reverse_bits(0, 10) == 0);

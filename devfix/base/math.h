@@ -55,6 +55,18 @@ namespace devfix::base
 			return 1u << v;
 		}
 
+		template<typename NumberT>
+		static constexpr NumberT mod(NumberT v, NumberT m)
+		{
+			if constexpr (std::is_floating_point_v<NumberT>) { return v - m * std::floor(v / m); }
+			else
+			{
+				v %= m;
+				if (v < 0) { v += m; }
+				return v;
+			}
+		}
+
 		////////////////
 		// to complex //
 		////////////////
