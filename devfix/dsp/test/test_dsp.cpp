@@ -111,6 +111,18 @@ TEST_CASE("devfix/dsp/dsp/calcacrms")
 TEST_CASE("devfix/dsp/dsp/calcthdn")
 {
 	{
+		std::ifstream ifs
+			("/home/core/.cache/geofoncheck/2020-09-15_13-23-15-shaker/freq-response-000.80/attenuation-26.0/voltage-z-dbl.pcm",
+			 std::ios_base::binary);
+		std::size_t n = 1 << 16;
+		std::vector<double> d(n / sizeof(double));
+		ifs.read(reinterpret_cast<char*>(d.data()), n);
+		ifs.close();
+
+		auto thdn = calcthdn(3200, 0.8, d);
+		asm("nop");
+	}
+	{
 		std::array<double, 1024> data{};
 		for (std::size_t i = 0; i < data.size(); i++) { data[i] = 1 + std::sin(2 * numbers::pi * 8 * double(i) / data.size()); }
 		CHECK(calcthdn(data.size(), 8., data) == Approx(0).margin(testutil::MARGIN_COARSE));

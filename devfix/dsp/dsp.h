@@ -108,7 +108,7 @@ namespace devfix::dsp
 	{
 		static_assert(std::is_floating_point_v<FloatT>);
 		const auto fft_len = math::exp2(math::floorLog2(len));
-		window(winfun::flattop_hft248d<FloatT>, fft_len).apply(field);
+		window(winfun::flattop_matlab<FloatT>, fft_len).apply(field);
 		const auto idx = calcfreqidx(sample_rate, fft_len, freq);
 		const auto dft = goertzel(field, fft_len, idx);
 		return dft * (FloatT(2) / fft_len) * calcphasecorrector(sample_rate, fft_len, freq);
@@ -221,7 +221,8 @@ namespace devfix::dsp
 		const auto ac = std::abs(calcsignal(sample_rate, freq, field, fft_len)) / numbers::sqrt2;
 		const auto p_total = rms * rms;
 		const auto p_signal = dc * dc + ac * ac;
-		return std::max((p_total - p_signal) / p_total, FloatT(0));
+		const auto thdn = (p_total - p_signal) / p_total;
+		return std::clamp(thdn, FloatT(0), FloatT(1));
 	}
 
 	template<typename FloatT>
