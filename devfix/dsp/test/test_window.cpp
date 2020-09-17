@@ -26,11 +26,11 @@ TEST_CASE("devfix/dsp/window/gain")
 	_, long double
 	margin)
 	{
-		auto test_winfun = [&](winfun_t<FloatT> winfun)
+		auto test_winfun = [&](winfun_t<FloatT>&& winfun)
 		{
 			for (std::size_t n = 4; n <= (1u << 16u); n <<= 2u)
 			{
-				window<FloatT> win(winfun, n, true);
+				window<FloatT> win(decltype(winfun)(winfun), n, true);
 				auto vals = get_win_vals(win);
 				auto gain = std::accumulate(vals.begin(), vals.end(), FloatT(0)) / vals.size();
 				CHECK(gain == Approx(FloatT(1)).margin(margin));
@@ -38,8 +38,10 @@ TEST_CASE("devfix/dsp/window/gain")
 		};
 
 		// register all window functions to be tested here
-		test_winfun(winfun::hanning);
-		test_winfun(winfun::flattop_matlab);
+		test_winfun(winfun::hanning<FloatT>());
+		test_winfun(winfun::hamming<FloatT>());
+		test_winfun(winfun::flattop_matlab<FloatT>());
+		test_winfun(winfun::flattop_hft248d<FloatT>());
 	};
 
 	test_types((float) (1), testutil::MARGIN_COARSE);

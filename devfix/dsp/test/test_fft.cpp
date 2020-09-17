@@ -12,9 +12,6 @@
 using namespace devfix::base;
 using namespace devfix::dsp;
 
-template<int digits, typename T>
-constexpr T round(T val) { return std::round(val * std::pow(10, digits)) * std::pow(10, -digits); }
-
 TEST_CASE("devfix/dsp/fft/exception")
 {
 	{
@@ -77,7 +74,7 @@ TEST_CASE("devfix/dsp/fft/incoherent")
 			+ 0.6 * std::cos(2 * numbers::pi * 880 * t + 0.3);
 	}
 
-	window win(winfun::flattop_hft248d<double>, vec.size(), true);
+	window win(winfun::flattop_hft248d<double>(), vec.size(), true);
 	win.apply(vec);
 	fft::transform_inplace(vec);
 	vec.resize(N / 2);

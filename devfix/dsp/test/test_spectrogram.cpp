@@ -33,7 +33,7 @@ TEST_CASE("devfix/dsp/spectrogram/rectangle")
 	}
 
 	// create spectrogram and fill it
-	spectrogram<double> spec(FFT_LEN, 1, nullptr);
+	spectrogram<double> spec(FFT_LEN, 1, winfun::rectangle<double>());
 	for (auto& c : test_data) { spec.add(&c, 1); }
 
 	{

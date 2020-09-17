@@ -7,13 +7,14 @@
 
 #include <testutil.h>
 #include <fstream>
+#include <iostream>
 #include "../dsp.h"
 
 using namespace devfix::dsp;
 namespace numbers = devfix::base::numbers;
 
 
-TEST_CASE("devfix/dsp/dsp/calcsignal")
+TEST_CASE("devfix/dsp/dsp/calcsignal_multi")
 {
 	constexpr std::size_t N = 1u << 16u;
 	constexpr double fs = 44100;
@@ -51,6 +52,72 @@ TEST_CASE("devfix/dsp/dsp/calcsignal")
 	CHECK(std::arg(dft440) == Approx(0.2).margin(testutil::MARGIN_COARSE));
 	CHECK(std::arg(dft880) == Approx(0.3).margin(testutil::MARGIN_COARSE));
 	CHECK(std::arg(dftniq) == Approx(0.4).margin(testutil::MARGIN_COARSE));
+}
+
+TEST_CASE("devfix/dsp/dsp/calcsignal_all_44100_16")
+{
+	constexpr std::size_t N = 1u << 16u;
+	constexpr double fs = 44100;
+	constexpr std::size_t n_test = 128;
+	const auto a = double(n_test - 1) / std::log2((fs / 2.) - 3 * fs / N);
+	std::vector<double> vec(N);
+	for (std::size_t k = 0; k < n_test; k++)
+	{
+		const double f = std::exp2(double(k) / a) - 1. + fs / N;
+		for (std::size_t i = 0; i < vec.size(); i++)
+		{
+			const double t = double(i) / fs;
+			vec[i] = std::cos(2 * numbers::pi * f * t);
+		}
+
+		const auto dft = calcsignal(fs, f, vec);
+		CHECK(std::abs(dft) == Approx(1.0).margin(testutil::MARGIN_COARSE));
+		CHECK(std::arg(dft) == Approx(0).margin(testutil::MARGIN_COARSE));
+	}
+}
+
+TEST_CASE("devfix/dsp/dsp/calcsignal_all_3200_12")
+{
+	constexpr std::size_t N = 1u << 12u;
+	constexpr double fs = 3200;
+	constexpr std::size_t n_test = 64;
+	const auto a = double(n_test - 1) / std::log2((fs / 2.) - 3 * fs / N);
+	std::vector<double> vec(N);
+	for (std::size_t k = 0; k < n_test; k++)
+	{
+		const double f = std::exp2(double(k) / a) - 1. + fs / N;
+		for (std::size_t i = 0; i < vec.size(); i++)
+		{
+			const double t = double(i) / fs;
+			vec[i] = std::cos(2 * numbers::pi * f * t);
+		}
+
+		const auto dft = calcsignal(fs, f, vec);
+		CHECK(std::abs(dft) == Approx(1.0).margin(testutil::MARGIN_COARSE));
+		CHECK(std::arg(dft) == Approx(0).margin(testutil::MARGIN_COARSE));
+	}
+}
+
+TEST_CASE("devfix/dsp/dsp/calcsignal_all_3200_7")
+{
+	constexpr std::size_t N = 1u << 7u;
+	constexpr double fs = 3200;
+	constexpr std::size_t n_test = 64;
+	const auto a = double(n_test - 1) / std::log2((fs / 2.) - 3 * fs / N);
+	std::vector<double> vec(N);
+	for (std::size_t k = 0; k < n_test; k++)
+	{
+		const double f = std::exp2(double(k) / a) - 1. + fs / N;
+		for (std::size_t i = 0; i < vec.size(); i++)
+		{
+			const double t = double(i) / fs;
+			vec[i] = std::cos(2 * numbers::pi * f * t);
+		}
+
+		const auto dft = calcsignal(fs, f, vec);
+		CHECK(std::abs(dft) == Approx(1.0).margin(testutil::MARGIN_BAD));
+		CHECK(std::arg(dft) == Approx(0).margin(testutil::MARGIN_BAD));
+	}
 }
 
 TEST_CASE("devfix/dsp/dsp/calcrms")

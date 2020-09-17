@@ -9,7 +9,6 @@
 #include <cstring>
 #include <optional>
 #include "../base/math.h"
-#include "types.h"
 #include "fft.h"
 #include "window.h"
 
@@ -23,9 +22,9 @@ namespace devfix::dsp
 		using math = devfix::base::math;
 		using complex_t = std::complex<FloatT>;
 
-		spectrogram(std::size_t fft_len, std::size_t fft_dist, winfun_t<FloatT> winfun = nullptr) :
+		spectrogram(std::size_t fft_len, std::size_t fft_dist, winfun_t<FloatT>&& winfun) :
 			fft_len_(fft_len), fft_dist_(fft_dist),
-			window_(winfun ? decltype(window_)(window<FloatT>(winfun, fft_len, true)) : std::nullopt)
+			window_(decltype(window_)(window<FloatT>(std::move(winfun), fft_len, true)))
 		{
 			if (fft_len_ == 0) { throw std::invalid_argument("fft len invalid"); }
 			if (fft_len_ != math::exp2(math::floorLog2(fft_len_))) { throw std::invalid_argument("fft len is has to be power of two"); }

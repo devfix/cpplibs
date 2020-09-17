@@ -29,7 +29,7 @@ TEST_CASE("devfix/dsp/winfun/hanning/small")
 		const std::vector<FloatT> expected = {
 			0, 0.188255099070633, 0.611260466978157, 0.950484433951210, 0.950484433951210, 0.611260466978157, 0.188255099070633, 0
 		};
-		window<FloatT> win(winfun::hanning, expected.size(), false);
+		window<FloatT> win(winfun::hanning<FloatT>(), expected.size(), false);
 		const auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};
@@ -89,7 +89,7 @@ TEST_CASE("devfix/dsp/winfun/hanning/large")
 			0.009682614765511, 0.007418883266247, 0.005454195814427, 0.003789745164032, 0.002426541796468, 0.001365413307106,
 			0.000607003902855, 0.000151774011064, 0
 		};
-		window<FloatT> win(winfun::hanning, expected.size(), false);
+		window<FloatT> win(winfun::hanning<FloatT>(), expected.size(), false);
 		const auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};
@@ -108,7 +108,7 @@ TEST_CASE("devfix/dsp/winfun/flattop_matlab/small")
 			-0.000421051000000, -0.036840781154923, 0.010703716716153, 0.780873914938770, 0.780873914938770, 0.010703716716153,
 			-0.036840781154923, -0.000421051000000
 		};
-		window<FloatT> win(winfun::flattop_matlab, expected.size(), false);
+		window<FloatT> win(winfun::flattop_matlab<FloatT>(), expected.size(), false);
 		const auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};
@@ -168,7 +168,7 @@ TEST_CASE("devfix/dsp/winfun/flattop_matlab/large")
 			-0.001779556231563, -0.001478940442443, -0.001220417976986, -0.001001543085212, -0.000820144979401, -0.000674349696856,
 			-0.000562598641738, -0.000483663782943, -0.000436659490782, -0.000421051000000
 		};
-		window<FloatT> win(winfun::flattop_matlab, expected.size(), false);
+		window<FloatT> win(winfun::flattop_matlab<FloatT>(), expected.size(), false);
 		auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};
@@ -187,7 +187,7 @@ TEST_CASE("devfix/dsp/winfun/hamming/small")
 			0.080000000000000, 0.253194691144983, 0.642359629619905, 0.954445679235113, 0.954445679235113, 0.642359629619905,
 			0.253194691144983, 0.080000000000000
 		};
-		window<FloatT> win(winfun::hamming, expected.size(), false);
+		window<FloatT> win(winfun::hamming<FloatT>(), expected.size(), false);
 		const auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};
@@ -247,7 +247,7 @@ TEST_CASE("devfix/dsp/winfun/hamming/large")
 			0.091264494728999, 0.088908005584270, 0.086825372604947, 0.085017860149273, 0.083486565550910, 0.082232418452750,
 			0.081256180242538, 0.080558443590627, 0.080139632090179, 0.080000000000000
 		};
-		window<FloatT> win(winfun::hamming, expected.size(), false);
+		window<FloatT> win(winfun::hamming<FloatT>(), expected.size(), false);
 		const auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};
@@ -264,7 +264,7 @@ TEST_CASE("devfix/dsp/winfun/flattop_hft248d/small")
 	{
 		const std::vector<FloatT> expected = { 3.978352935973817e-08, -0.002240566303953528, -0.3593963980674744, 3.833164215087891,
 											   3.833165168762207, -0.3593966066837311, -0.002241416368633509, 3.978352935973817e-08, };
-		window<FloatT> win(winfun::flattop_hft248d, expected.size(), false);
+		window<FloatT> win(winfun::flattop_hft248d<FloatT>(), expected.size(), false);
 		const auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};
@@ -328,7 +328,7 @@ TEST_CASE("devfix/dsp/winfun/flattop_hft248d/large")
 			  -3.514547298385372e-08, -1.734841880881906e-08, -8.019862747819099e-09, -3.403027547260952e-09, -1.28032000196343e-09,
 			  -3.952557869800693e-10, -7.536733772166016e-11, 3.312666447372764e-17,
 			};
-		window<FloatT> win(winfun::flattop_hft248d, expected.size(), false);
+		window<FloatT> win(winfun::flattop_hft248d<FloatT>(), expected.size(), false);
 		auto vals = get_win_vals(win);
 		testutil::check_equals(vals, expected, margin);
 	};

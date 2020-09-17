@@ -10,6 +10,7 @@ struct testutil
 {
 	static constexpr double MARGIN_FINE = 1e-6;
 	static constexpr double MARGIN_COARSE = 1e-3;
+	static constexpr double MARGIN_BAD = 0.1;
 
 	template<typename T>
 	static void check_equals(const T* a, const T* b, double margin, std::size_t len)

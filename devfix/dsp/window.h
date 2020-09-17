@@ -10,7 +10,7 @@
 #include <stdexcept>
 #include <numeric>
 
-#include "types.h"
+#include "winfun.h"
 
 namespace devfix::dsp
 {
@@ -29,7 +29,7 @@ namespace devfix::dsp
 		 * \param size window size, count of values
 		 * \param correct_gain if true, calculates the window's gain and multiplies each window value with it
 		 */
-		window(winfun_t<FloatT> function, std::size_t size, bool correct_gain = true) :
+		window(winfun_t<FloatT>&& function, std::size_t size, bool correct_gain = true) :
 			window_(size)
 		{
 			// calculate and store all window values

@@ -107,11 +107,29 @@ namespace devfix::dsp
 		std::size_t len)
 	{
 		static_assert(std::is_floating_point_v<FloatT>);
-		const auto fft_len = math::exp2(math::floorLog2(len));
-		window(winfun::flattop_matlab<FloatT>, fft_len).apply(field);
-		const auto idx = calcfreqidx(sample_rate, fft_len, freq);
-		const auto dft = goertzel(field, fft_len, idx);
-		return dft * (FloatT(2) / fft_len) * calcphasecorrector(sample_rate, fft_len, freq);
+		auto idx = std::round(calcfreqbin<FloatT>(sample_rate, len, freq));
+
+		auto winfun = winfun::flattop_sft5f<FloatT>();
+		const auto enbw = winfun.get_nenbw() * sample_rate / len;
+
+		FloatT ampl_corr = 2.0;
+		const std::size_t threshold = std::round(enbw * 6 + 2);
+		if(idx == 0)
+		{
+			ampl_corr = 1.0;
+			window(std::move(winfun), len).apply(field);
+		}
+		else if (idx > threshold)
+		{
+			window(std::move(winfun), len).apply(field);
+		}
+		else
+		{
+			idx = std::floor(calcfreqbin<FloatT>(sample_rate, len, freq));
+			len = idx * sample_rate / freq;
+		}
+		const auto dft = goertzel(field, len, idx);
+		return dft * (ampl_corr / len) * calcphasecorrector(sample_rate, len, freq);
 	}
 
 	template<typename FloatT>
