@@ -184,9 +184,20 @@ TEST_CASE("devfix/dsp/dsp/calcacrms")
 TEST_CASE("devfix/dsp/dsp/calcthdn")
 {
 	{
+		std::ifstream ifs
+			("/home/core/.cache/geofoncheck/2020-09-15_13-23-15-shaker/freq-response-000.80/attenuation-26.0/voltage-z-dbl.pcm",
+			 std::ios_base::binary);
+		std::size_t n = 65536;
+		std::vector<double> d(n / sizeof(double));
+		ifs.read(reinterpret_cast<char*>(d.data()), n);
+		ifs.close();
+		auto thdn = calcthdn(3200., 0.8, d);
+		std::cout << std::endl;
+	}
+	{
 		std::array<double, 1024> data{};
 		for (std::size_t i = 0; i < data.size(); i++) { data[i] = 1 + std::sin(2 * numbers::pi * 8 * double(i) / data.size()); }
-		CHECK(calcthdn(data.size(), 8., data) == Approx(0).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 8, data) == Approx(0).margin(testutil::MARGIN_COARSE));
 	}
 	{
 		std::array<double, 1024> data{};
@@ -197,9 +208,9 @@ TEST_CASE("devfix/dsp/dsp/calcthdn")
 				+ 0.20 * std::sin(2 * numbers::pi * 64 * double(i) / data.size())
 				+ 0.05 * std::sin(2 * numbers::pi * 256 * double(i) / data.size());
 		}
-		CHECK(calcthdn(data.size(), 8., data) == Approx(0.001287879).margin(testutil::MARGIN_COARSE));
-		CHECK(calcthdn(data.size(), 64., data) == Approx(0.031289014).margin(testutil::MARGIN_COARSE));
-		CHECK(calcthdn(data.size(), 256., data) == Approx(0.031474616).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 8, data) == Approx(0.001287879).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 64, data) == Approx(0.031289014).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 256, data) == Approx(0.031474616).margin(testutil::MARGIN_COARSE));
 	}
 	{
 		std::array<double, 1024> data{};
@@ -210,9 +221,42 @@ TEST_CASE("devfix/dsp/dsp/calcthdn")
 					+ 0.20 * std::sin(2 * numbers::pi * 100 * double(i) / data.size())
 					+ 0.05 * std::sin(2 * numbers::pi * 200 * double(i) / data.size());
 		}
-		CHECK(calcthdn(data.size(), 10., data) == Approx(0.0407673861).margin(testutil::MARGIN_COARSE));
-		CHECK(calcthdn(data.size(), 100., data) == Approx(0.9616306954).margin(testutil::MARGIN_COARSE));
-		CHECK(calcthdn(data.size(), 200., data) == Approx(0.9976019185).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 10, data) == Approx(0.0407673861).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 100, data) == Approx(0.9616306954).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 200, data) == Approx(0.9976019185).margin(testutil::MARGIN_COARSE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] = 0.2 * std::cos(2 * numbers::pi * 100 * double(i) / data.size())
+				+ 0.2 * std::cos(2 * numbers::pi * 200 * double(i) / data.size());
+		}
+		CHECK(calcthdn<double>(data.size(), 100, data) == Approx(0.5).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 200, data) == Approx(0.5).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 300, data) == Approx(1).margin(testutil::MARGIN_COARSE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] = 0.2 * std::cos(2 * numbers::pi * 1 * double(i) / data.size())
+				+ 0.2 * std::cos(2 * numbers::pi * 2 * double(i) / data.size());
+		}
+		CHECK(calcthdn<double>(data.size(), 1, data) == Approx(0.5).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 2, data) == Approx(0.5).margin(testutil::MARGIN_COARSE));
+		CHECK(calcthdn<double>(data.size(), 3, data) == Approx(1).margin(testutil::MARGIN_COARSE));
+	}
+	{
+		std::array<double, 1024> data{};
+		for (std::size_t i = 0; i < data.size(); i++)
+		{
+			data[i] = 0.2 * std::cos(2 * numbers::pi * 1.5 * double(i) / data.size())
+				+ 0.2 * std::cos(2 * numbers::pi * 9 * double(i) / data.size());
+		}
+		CHECK(calcthdn<double>(data.size(), 1.5, data) == Approx(0.5).margin(testutil::MARGIN_BAD));
+		CHECK(calcthdn<double>(data.size(), 9, data) == Approx(0.5).margin(testutil::MARGIN_BAD));
+		CHECK(calcthdn<double>(data.size(), 12, data) == Approx(1).margin(testutil::MARGIN_BAD));
 	}
 }
 

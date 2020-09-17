@@ -103,7 +103,7 @@ namespace devfix::dsp
 	////////////////////////
 
 	template<typename FloatT>
-	[[nodiscard]] std::complex<FloatT> calcsignal_inplace(std::size_t sample_rate, FloatT freq, std::complex<FloatT>* field,
+	[[nodiscard]] std::complex<FloatT> calcsignal_inplace(double sample_rate, FloatT freq, std::complex<FloatT>* field,
 		std::size_t len)
 	{
 		static_assert(std::is_floating_point_v<FloatT>);
@@ -126,21 +126,21 @@ namespace devfix::dsp
 		else
 		{
 			idx = std::floor(calcfreqbin<FloatT>(sample_rate, len, freq));
-			len = idx * sample_rate / freq;
+			len = std::min(std::size_t(std::round(sample_rate * idx / freq)), len);
 		}
 		const auto dft = goertzel(field, len, idx);
 		return dft * (ampl_corr / len) * calcphasecorrector(sample_rate, len, freq);
 	}
 
 	template<typename FloatT>
-	[[nodiscard]] std::complex<FloatT> calcsignal_inplace(std::size_t sample_rate, FloatT freq,
+	[[nodiscard]] std::complex<FloatT> calcsignal_inplace(double sample_rate, FloatT freq,
 		std::vector<std::complex<FloatT>>& vec)
 	{
 		return calcsignal_inplace(sample_rate, freq, vec.data(), vec.size());
 	}
 
 	template<typename FloatT, std::size_t N>
-	[[nodiscard]] std::complex<FloatT> calcsignal_inplace(std::size_t sample_rate, FloatT freq,
+	[[nodiscard]] std::complex<FloatT> calcsignal_inplace(double sample_rate, FloatT freq,
 		std::array<std::complex<FloatT>, N>& arr)
 	{
 		return calcsignal_inplace(sample_rate, freq, arr.data(), arr.size());
@@ -151,7 +151,7 @@ namespace devfix::dsp
 	////////////////
 
 	template<typename FloatT>
-	[[nodiscard]] std::complex<FloatT> calcsignal(std::size_t sample_rate, FloatT freq, const FloatT* field, std::size_t len)
+	[[nodiscard]] std::complex<FloatT> calcsignal(double sample_rate, FloatT freq, const FloatT* field, std::size_t len)
 	{
 		std::vector<std::complex<FloatT>> cvec(len);
 		math::to_complex(field, len, cvec.data());
@@ -159,14 +159,14 @@ namespace devfix::dsp
 	}
 
 	template<typename FloatT>
-	[[nodiscard]] std::complex<FloatT> calcsignal(std::size_t sample_rate, FloatT freq, const std::vector<FloatT>& vec)
+	[[nodiscard]] std::complex<FloatT> calcsignal(double sample_rate, FloatT freq, const std::vector<FloatT>& vec)
 	{
 		auto cvec = math::to_complex(vec);
 		return calcsignal_inplace(sample_rate, freq, cvec);
 	}
 
 	template<typename FloatT, std::size_t N>
-	[[nodiscard]] std::complex<FloatT> calcsignal(std::size_t sample_rate, FloatT freq, const std::array<FloatT, N>& arr)
+	[[nodiscard]] std::complex<FloatT> calcsignal(double sample_rate, FloatT freq, const std::array<FloatT, N>& arr)
 	{
 		auto carr = math::to_complex(arr);
 		return calcsignal_inplace(sample_rate, freq, carr);
@@ -231,9 +231,10 @@ namespace devfix::dsp
 	//////////////
 
 	template<typename FloatT>
-	[[nodiscard]] FloatT calcthdn(std::size_t sample_rate, FloatT freq, const FloatT* field, std::size_t len)
+	[[nodiscard]] FloatT calcthdn(FloatT sample_rate, FloatT freq, const FloatT* field, std::size_t len)
 	{
-		const auto fft_len = math::exp2(math::floorLog2(len));
+		const auto idx = std::floor(freq / sample_rate * len);
+		const auto fft_len = std::min(std::size_t(std::round(sample_rate * idx / freq)), len);
 		const auto rms = calcrms(field, fft_len);
 		const auto dc = calcmean(field, fft_len);
 		const auto ac = std::abs(calcsignal(sample_rate, freq, field, fft_len)) / numbers::sqrt2;
@@ -244,13 +245,13 @@ namespace devfix::dsp
 	}
 
 	template<typename FloatT>
-	[[nodiscard]] FloatT calcthdn(std::size_t sample_rate, FloatT freq, const std::vector<FloatT>& vec)
+	[[nodiscard]] FloatT calcthdn(FloatT sample_rate, FloatT freq, const std::vector<FloatT>& vec)
 	{
 		return calcthdn(sample_rate, freq, vec.data(), vec.size());
 	}
 
 	template<typename FloatT, std::size_t N>
-	[[nodiscard]] FloatT calcthdn(std::size_t sample_rate, FloatT freq, const std::array<FloatT, N>& arr)
+	[[nodiscard]] FloatT calcthdn(FloatT sample_rate, FloatT freq, const std::array<FloatT, N>& arr)
 	{
 		return calcthdn(sample_rate, freq, arr.data(), arr.size());
 	}
